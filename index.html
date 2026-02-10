@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8bitConcepts — Custom AI & Automation Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --primary: #5093AD;
+    --primary-light: #74D5FA;
+    --primary-dark: #3D7085;
+    --primary-bg: #EDF6FA;
+    --accent: #63B5D6;
+    --deep: #2A4E5C;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --text-lighter: #94a3b8;
+    --bg: #ffffff;
+    --bg-alt: #f8fafc;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow: 0 4px 24px rgba(0,0,0,0.06);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.08);
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .logo {
+    font-weight: 800; font-size: 1.25rem; color: var(--text);
+    text-decoration: none; letter-spacing: -0.02em;
+  }
+  .logo span { color: var(--primary); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-light);
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--primary); }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.95rem; font-weight: 600;
+    border-radius: 10px; border: none; cursor: pointer;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-primary {
+    background: var(--primary); color: #fff;
+  }
+  .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn-outline {
+    background: transparent; color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+  .btn-outline:hover { background: var(--primary-bg); }
+  .btn-large { padding: 1rem 2.25rem; font-size: 1.05rem; border-radius: var(--radius); }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    display: inline-block;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--primary);
+    background: var(--primary-bg);
+    padding: 0.4rem 1rem; border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.03em; color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .section-subtitle {
+    font-size: 1.15rem; color: var(--text-light);
+    max-width: 640px; line-height: 1.7;
+  }
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-header .section-subtitle { margin: 0 auto; }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top: 10rem; padding-bottom: 6rem;
+    background: linear-gradient(180deg, var(--primary-bg) 0%, var(--bg) 100%);
+    text-align: center;
+  }
+  .hero .section-title { font-size: clamp(2.5rem, 5.5vw, 4rem); max-width: 800px; margin: 0 auto 1.25rem; }
+  .hero .section-subtitle { max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.2rem; }
+  .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center; margin-top: 4rem;
+    flex-wrap: wrap;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .number { font-size: 2.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.03em; }
+  .hero-stat .label { font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem; }
+
+  /* ── VALUE PROPS ── */
+  .value-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  .value-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2.5rem;
+    transition: all 0.3s;
+  }
+  .value-card:hover { border-color: var(--primary-light); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .value-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--primary-bg);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .value-icon svg { width: 28px; height: 28px; }
+  .value-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .value-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
+
+  /* ── SAVINGS BANNER ── */
+  .savings {
+    background: linear-gradient(135deg, #2A4E5C 0%, #3D7085 50%, #5093AD 100%);
+    border-radius: var(--radius-lg);
+    padding: 4rem 3rem;
+    color: #fff;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .savings h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .savings p { font-size: 1.1rem; opacity: 0.9; max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .savings-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem; max-width: 800px; margin: 0 auto;
+  }
+  .savings-item .big { font-size: 2.75rem; font-weight: 800; display: block; }
+  .savings-item .desc { font-size: 0.9rem; opacity: 0.85; }
+
+  /* ── PORTFOLIO ── */
+  .portfolio-section { background: var(--bg-alt); }
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2rem;
+  }
+  .project-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    transition: all 0.3s;
+  }
+  .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+  .project-thumb {
+    height: 220px; position: relative; overflow: hidden;
+  }
+  .project-thumb svg { width: 100%; height: 100%; }
+  .project-tag {
+    position: absolute; top: 1rem; left: 1rem;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+    padding: 0.35rem 0.85rem; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; color: var(--primary-dark);
+  }
+  .project-body { padding: 1.75rem; }
+  .project-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .project-body .client { font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-bottom: 0.75rem; }
+  .project-body p { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; margin-bottom: 1.25rem; }
+  .project-results { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .project-result { font-size: 0.8rem; }
+  .project-result strong { display: block; font-size: 1.1rem; color: var(--primary); font-weight: 700; }
+  .project-result span { color: var(--text-light); }
+
+  /* ── HOW IT WORKS ── */
+  .steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem; counter-reset: step;
+  }
+  .step {
+    text-align: center; padding: 2rem 1.5rem;
+    counter-increment: step;
+    position: relative;
+  }
+  .step::before {
+    content: counter(step);
+    display: flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 1.1rem; font-weight: 700;
+    margin: 0 auto 1.25rem;
+  }
+  .step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .step p { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; }
+
+  /* ── PRICING ── */
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem; max-width: 800px; margin: 0 auto;
+  }
+  .pricing-card {
+    background: var(--bg); border: 2px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2.5rem;
+    position: relative;
+  }
+  .pricing-card.featured { border-color: var(--primary); }
+  .pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--primary); color: #fff;
+    padding: 0.3rem 1.25rem; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pricing-type { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); margin-bottom: 0.75rem; }
+  .pricing-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .pricing-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6; }
+  .pricing-price { margin-bottom: 2rem; }
+  .pricing-price .amount { font-size: 2.5rem; font-weight: 800; color: var(--text); letter-spacing: -0.03em; }
+  .pricing-price .period { font-size: 0.9rem; color: var(--text-light); }
+  .pricing-features { list-style: none; margin-bottom: 2rem; }
+  .pricing-features li {
+    padding: 0.6rem 0; font-size: 0.9rem; color: var(--text-light);
+    display: flex; align-items: flex-start; gap: 0.75rem;
+  }
+  .pricing-features li::before {
+    content: '';
+    width: 20px; height: 20px; flex-shrink: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23EDF6FA'/%3E%3Cpath d='M6 10l3 3 5-5' stroke='%235093AD' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  }
+  .pricing-card .btn { width: 100%; justify-content: center; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: var(--bg-alt); }
+  .testimonial-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+  .testimonial-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2rem;
+  }
+  .testimonial-card .stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
+  .testimonial-card blockquote { font-size: 0.95rem; color: var(--text); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+  .testimonial-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--primary-bg); color: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+  }
+  .testimonial-name { font-weight: 600; font-size: 0.9rem; }
+  .testimonial-role { font-size: 0.8rem; color: var(--text-light); }
+
+  /* ── CTA ── */
+  .cta-section {
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--primary-bg) 100%);
+  }
+  .cta-section .section-title { max-width: 700px; margin: 0 auto 1rem; }
+  .cta-section .section-subtitle { margin: 0 auto 2.5rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 2rem; text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  footer p { font-size: 0.85rem; color: var(--text-lighter); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    section { padding: 4rem 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a:not(.btn) { display: none; }
+    .hero { padding-top: 8rem; }
+    .hero-stats { gap: 2rem; }
+    .savings { padding: 3rem 1.5rem; margin: 0 1rem; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 440px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="#work">Our Work</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="section-label">AI & Automation Agency</span>
+    <h1 class="section-title">We build the AI systems<br>so you don't have to.</h1>
+    <p class="section-subtitle">Custom AI automations built for your business, maintained by us. Save thousands of hours and reclaim your team's time — with zero technical burden on your end.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary btn-large">Book a Free Consultation →</a>
+      <a href="#work" class="btn btn-outline btn-large">See Our Work</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="number">40+</div>
+        <div class="label">Systems Delivered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">12,000+</div>
+        <div class="label">Hours Saved for Clients</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">97%</div>
+        <div class="label">Client Retention</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROPS -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Why 8bitConcepts</span>
+      <h2 class="section-title">Your time is too valuable<br>to waste on repetitive work.</h2>
+      <p class="section-subtitle">We handle everything — from scoping to deployment to ongoing maintenance. You get a system that works, without hiring a single developer.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="11" stroke="#5093AD" stroke-width="2"/>
+            <circle cx="14" cy="14" r="4" fill="#5093AD"/>
+            <path d="M14 3v4M14 21v4M3 14h4M21 14h4" stroke="#74D5FA" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>100% Custom to You</h3>
+        <p>No templates. No cookie-cutter tools. Every system is designed around your exact workflows, tools, and goals — so it fits like a glove from day one.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 4L7 7l3 3" stroke="#5093AD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 7h10a4 4 0 014 4v1" stroke="#5093AD" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 24l3-3-3-3" stroke="#74D5FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 21H11a4 4 0 01-4-4v-1" stroke="#74D5FA" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>We Maintain Everything</h3>
+        <p>Your subscription covers all updates, fixes, and improvements. When something changes in your business, we adapt the system. You never touch a line of code.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 20l6-6 4 4 10-12" stroke="#5093AD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 6h6v6" stroke="#74D5FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Fraction of a Full-Time Hire</h3>
+        <p>A single automation engineer costs $120K+/year. Our build-and-maintain model delivers the same output at a fraction of the cost — with better reliability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAVINGS BANNER -->
+<section style="padding-top: 0;">
+  <div class="savings">
+    <h2>Save your team hours every week so they can focus on what actually grows your business.</h2>
+    <p>We handle the repetitive work behind the scenes — so your people spend their time on strategy, relationships, and the high-value decisions only humans can make. ROI typically hits within 30 days.</p>
+    <div class="savings-grid">
+      <div class="savings-item">
+        <span class="big">80%</span>
+        <span class="desc">Reduction in manual task time</span>
+      </div>
+      <div class="savings-item">
+        <span class="big">$54K</span>
+        <span class="desc">Average annual savings per client</span>
+      </div>
+      <div class="savings-item">
+        <span class="big">30 days</span>
+        <span class="desc">Average time to full ROI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-section" id="work">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">Real results for real businesses.</h2>
+      <p class="section-subtitle">From lead generation to operations to customer support — here's a look at what we've built and the impact it's had.</p>
+    </div>
+    <div class="portfolio-grid">
+
+      <!-- Project 1: Lead Generation -->
+      <div class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EDF6FA"/><stop offset="100%" stop-color="#C5E4F2"/></linearGradient></defs>
+            <rect width="600" height="220" fill="url(#g1)"/>
+            <!-- Dashboard mockup -->
+            <rect x="60" y="30" width="480" height="160" rx="12" fill="white" opacity="0.9"/>
+            <rect x="80" y="50" width="120" height="14" rx="4" fill="#5093AD" opacity="0.3"/>
+            <rect x="80" y="74" width="80" height="10" rx="3" fill="#e2e8f0"/>
+            <!-- Bar chart -->
+            <rect x="80" y="150" width="30" height="20" rx="3" fill="#74D5FA"/>
+            <rect x="120" y="130" width="30" height="40" rx="3" fill="#63B5D6"/>
+            <rect x="160" y="110" width="30" height="60" rx="3" fill="#5093AD"/>
+            <rect x="200" y="95" width="30" height="75" rx="3" fill="#3D7085"/>
+            <rect x="240" y="80" width="30" height="90" rx="3" fill="#2A4E5C"/>
+            <!-- Side panel -->
+            <rect x="320" y="50" width="200" height="120" rx="8" fill="#EDF6FA"/>
+            <circle cx="345" cy="75" r="12" fill="#5093AD" opacity="0.4"/>
+            <rect x="365" y="70" width="80" height="10" rx="3" fill="#5093AD" opacity="0.3"/>
+            <circle cx="345" cy="105" r="12" fill="#74D5FA" opacity="0.4"/>
+            <rect x="365" y="100" width="100" height="10" rx="3" fill="#74D5FA" opacity="0.4"/>
+            <circle cx="345" cy="135" r="12" fill="#63B5D6" opacity="0.4"/>
+            <rect x="365" y="130" width="60" height="10" rx="3" fill="#63B5D6" opacity="0.3"/>
+          </svg>
+          <span class="project-tag">Lead Generation</span>
+        </div>
+        <div class="project-body">
+          <div class="client">Meridian Financial Group</div>
+          <h3>AI-Powered Lead Scoring & Outreach Engine</h3>
+          <p>Built a system that scrapes, qualifies, and auto-nurtures inbound leads via email and SMS — replacing a 3-person SDR team's manual workflow entirely.</p>
+          <div class="project-results">
+            <div class="project-result"><strong>3x</strong><span>More qualified leads</span></div>
+            <div class="project-result"><strong>22 hrs</strong><span>Saved per week</span></div>
+            <div class="project-result"><strong>$8K/mo</strong><span>Cost savings</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Customer Support -->
+      <div class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E8F4F0"/><stop offset="100%" stop-color="#C2E5DC"/></linearGradient></defs>
+            <rect width="600" height="220" fill="url(#g2)"/>
+            <!-- Chat interface -->
+            <rect x="120" y="20" width="360" height="180" rx="16" fill="white" opacity="0.95"/>
+            <!-- Chat header -->
+            <rect x="120" y="20" width="360" height="44" rx="16" fill="#5093AD"/>
+            <rect x="120" y="48" width="360" height="16" fill="#5093AD"/>
+            <circle cx="148" cy="42" r="12" fill="white" opacity="0.3"/>
+            <rect x="168" y="36" width="80" height="12" rx="4" fill="white" opacity="0.5"/>
+            <!-- Messages -->
+            <rect x="280" y="78" width="170" height="28" rx="12" fill="#EDF6FA"/>
+            <rect x="148" y="116" width="200" height="28" rx="12" fill="#5093AD" opacity="0.15"/>
+            <rect x="300" y="154" width="150" height="28" rx="12" fill="#EDF6FA"/>
+            <!-- Typing indicator -->
+            <circle cx="160" cy="182" r="4" fill="#5093AD" opacity="0.4"/>
+            <circle cx="174" cy="182" r="4" fill="#5093AD" opacity="0.6"/>
+            <circle cx="188" cy="182" r="4" fill="#5093AD" opacity="0.8"/>
+          </svg>
+          <span class="project-tag">Customer Support</span>
+        </div>
+        <div class="project-body">
+          <div class="client">NovaCare Health</div>
+          <h3>AI Triage Chatbot + Ticket Router</h3>
+          <p>Deployed a custom chatbot that handles 70% of tier-1 support inquiries autonomously and routes complex tickets to the right specialist with full context.</p>
+          <div class="project-results">
+            <div class="project-result"><strong>70%</strong><span>Tickets auto-resolved</span></div>
+            <div class="project-result"><strong>4 min</strong><span>Avg. resolution time</span></div>
+            <div class="project-result"><strong>$62K</strong><span>Annual savings</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Operations -->
+      <div class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFF8ED"/><stop offset="100%" stop-color="#FDE9C4"/></linearGradient></defs>
+            <rect width="600" height="220" fill="url(#g3)"/>
+            <!-- Flow diagram -->
+            <rect x="40" y="80" width="100" height="60" rx="10" fill="white" stroke="#5093AD" stroke-width="2"/>
+            <rect x="55" y="96" width="70" height="8" rx="3" fill="#5093AD" opacity="0.4"/>
+            <rect x="55" y="112" width="50" height="8" rx="3" fill="#5093AD" opacity="0.25"/>
+            <!-- Arrow -->
+            <line x1="140" y1="110" x2="190" y2="110" stroke="#74D5FA" stroke-width="2"/>
+            <polygon points="188,105 198,110 188,115" fill="#74D5FA"/>
+            <!-- Middle box -->
+            <rect x="200" y="65" width="120" height="90" rx="10" fill="white" stroke="#3D7085" stroke-width="2"/>
+            <rect x="220" y="82" width="30" height="30" rx="6" fill="#5093AD" opacity="0.2"/>
+            <rect x="260" y="86" width="40" height="8" rx="3" fill="#3D7085" opacity="0.4"/>
+            <rect x="260" y="100" width="30" height="8" rx="3" fill="#3D7085" opacity="0.25"/>
+            <rect x="220" y="125" width="80" height="14" rx="5" fill="#5093AD" opacity="0.15"/>
+            <!-- Arrow -->
+            <line x1="320" y1="110" x2="370" y2="80" stroke="#74D5FA" stroke-width="2"/>
+            <line x1="320" y1="110" x2="370" y2="140" stroke="#74D5FA" stroke-width="2"/>
+            <!-- Output boxes -->
+            <rect x="380" y="50" width="100" height="55" rx="10" fill="white" stroke="#63B5D6" stroke-width="2"/>
+            <rect x="395" y="66" width="70" height="8" rx="3" fill="#63B5D6" opacity="0.4"/>
+            <rect x="395" y="82" width="50" height="8" rx="3" fill="#63B5D6" opacity="0.25"/>
+            <rect x="380" y="120" width="100" height="55" rx="10" fill="white" stroke="#63B5D6" stroke-width="2"/>
+            <rect x="395" y="136" width="70" height="8" rx="3" fill="#63B5D6" opacity="0.4"/>
+            <rect x="395" y="152" width="50" height="8" rx="3" fill="#63B5D6" opacity="0.25"/>
+            <!-- Connector dots -->
+            <circle cx="530" cy="78" r="14" fill="#5093AD" opacity="0.15" stroke="#5093AD" stroke-width="1.5"/>
+            <circle cx="530" cy="148" r="14" fill="#5093AD" opacity="0.15" stroke="#5093AD" stroke-width="1.5"/>
+            <line x1="480" y1="78" x2="516" y2="78" stroke="#74D5FA" stroke-width="1.5"/>
+            <line x1="480" y1="148" x2="516" y2="148" stroke="#74D5FA" stroke-width="1.5"/>
+          </svg>
+          <span class="project-tag">Operations</span>
+        </div>
+        <div class="project-body">
+          <div class="client">Apex Logistics Co.</div>
+          <h3>Automated Inventory & Reorder System</h3>
+          <p>Connected their warehouse software, POS system, and supplier portals into a single AI-driven pipeline that forecasts demand and auto-generates purchase orders.</p>
+          <div class="project-results">
+            <div class="project-result"><strong>91%</strong><span>Forecast accuracy</span></div>
+            <div class="project-result"><strong>35 hrs</strong><span>Saved per week</span></div>
+            <div class="project-result"><strong>$0</strong><span>Stockouts since launch</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Content & Marketing -->
+      <div class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0EDFA"/><stop offset="100%" stop-color="#DDD6FE"/></linearGradient></defs>
+            <rect width="600" height="220" fill="url(#g4)"/>
+            <!-- Content cards layout -->
+            <rect x="50" y="30" width="160" height="160" rx="12" fill="white" opacity="0.95"/>
+            <rect x="65" y="45" width="130" height="70" rx="8" fill="#5093AD" opacity="0.12"/>
+            <rect x="65" y="125" width="100" height="10" rx="3" fill="#2A4E5C" opacity="0.3"/>
+            <rect x="65" y="143" width="120" height="8" rx="3" fill="#94a3b8" opacity="0.4"/>
+            <rect x="65" y="157" width="80" height="8" rx="3" fill="#94a3b8" opacity="0.3"/>
+            <!-- Card 2 -->
+            <rect x="225" y="30" width="160" height="160" rx="12" fill="white" opacity="0.95"/>
+            <rect x="240" y="45" width="130" height="70" rx="8" fill="#74D5FA" opacity="0.2"/>
+            <rect x="240" y="125" width="90" height="10" rx="3" fill="#2A4E5C" opacity="0.3"/>
+            <rect x="240" y="143" width="120" height="8" rx="3" fill="#94a3b8" opacity="0.4"/>
+            <rect x="240" y="157" width="100" height="8" rx="3" fill="#94a3b8" opacity="0.3"/>
+            <!-- Card 3 -->
+            <rect x="400" y="30" width="160" height="160" rx="12" fill="white" opacity="0.95"/>
+            <rect x="415" y="45" width="130" height="70" rx="8" fill="#63B5D6" opacity="0.15"/>
+            <rect x="415" y="125" width="110" height="10" rx="3" fill="#2A4E5C" opacity="0.3"/>
+            <rect x="415" y="143" width="100" height="8" rx="3" fill="#94a3b8" opacity="0.4"/>
+            <rect x="415" y="157" width="70" height="8" rx="3" fill="#94a3b8" opacity="0.3"/>
+            <!-- Publish icons -->
+            <circle cx="180" cy="80" r="16" fill="#5093AD" opacity="0.25"/>
+            <path d="M175 80l4 4 7-7" stroke="#5093AD" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="355" cy="80" r="16" fill="#74D5FA" opacity="0.3"/>
+            <path d="M350 80l4 4 7-7" stroke="#5093AD" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="530" cy="80" r="16" fill="#63B5D6" opacity="0.25"/>
+            <path d="M525 80l4 4 7-7" stroke="#5093AD" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span class="project-tag">Content & Marketing</span>
+        </div>
+        <div class="project-body">
+          <div class="client">Bloom Digital Agency</div>
+          <h3>Content Pipeline Automation</h3>
+          <p>Built an end-to-end content system: AI drafts blog posts and social copy from briefs, routes for human review, then auto-publishes across 4 platforms on schedule.</p>
+          <div class="project-results">
+            <div class="project-result"><strong>8x</strong><span>Content output</span></div>
+            <div class="project-result"><strong>15 hrs</strong><span>Saved per week</span></div>
+            <div class="project-result"><strong>2 days</strong><span>Brief to publish</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: HR & Recruiting -->
+      <div class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FCEEF5"/><stop offset="100%" stop-color="#F5D0E3"/></linearGradient></defs>
+            <rect width="600" height="220" fill="url(#g5)"/>
+            <!-- Resume stack -->
+            <rect x="60" y="55" width="150" height="130" rx="8" fill="white" opacity="0.6" transform="rotate(-3 135 120)"/>
+            <rect x="60" y="50" width="150" height="130" rx="8" fill="white" opacity="0.8" transform="rotate(-1 135 115)"/>
+            <rect x="60" y="45" width="150" height="130" rx="8" fill="white" opacity="0.95"/>
+            <rect x="78" y="62" width="60" height="10" rx="3" fill="#5093AD" opacity="0.4"/>
+            <rect x="78" y="80" width="115" height="6" rx="2" fill="#e2e8f0"/>
+            <rect x="78" y="93" width="100" height="6" rx="2" fill="#e2e8f0"/>
+            <rect x="78" y="106" width="110" height="6" rx="2" fill="#e2e8f0"/>
+            <rect x="78" y="119" width="90" height="6" rx="2" fill="#e2e8f0"/>
+            <rect x="78" y="140" width="70" height="20" rx="6" fill="#5093AD" opacity="0.15"/>
+            <!-- Arrow to AI -->
+            <line x1="220" y1="110" x2="270" y2="110" stroke="#74D5FA" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <polygon points="268,105 280,110 268,115" fill="#74D5FA"/>
+            <!-- AI brain -->
+            <circle cx="330" cy="110" r="45" fill="white" stroke="#5093AD" stroke-width="2"/>
+            <circle cx="315" cy="100" r="8" fill="#5093AD" opacity="0.2"/>
+            <circle cx="340" cy="95" r="6" fill="#74D5FA" opacity="0.3"/>
+            <circle cx="325" cy="120" r="7" fill="#63B5D6" opacity="0.25"/>
+            <circle cx="348" cy="115" r="5" fill="#3D7085" opacity="0.2"/>
+            <line x1="315" y1="100" x2="340" y2="95" stroke="#5093AD" stroke-width="1" opacity="0.4"/>
+            <line x1="315" y1="100" x2="325" y2="120" stroke="#5093AD" stroke-width="1" opacity="0.4"/>
+            <line x1="340" y1="95" x2="348" y2="115" stroke="#5093AD" stroke-width="1" opacity="0.4"/>
+            <line x1="325" y1="120" x2="348" y2="115" stroke="#5093AD" stroke-width="1" opacity="0.4"/>
+            <!-- Arrow to ranked list -->
+            <line x1="380" y1="110" x2="430" y2="110" stroke="#74D5FA" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <polygon points="428,105 440,110 428,115" fill="#74D5FA"/>
+            <!-- Ranked candidates -->
+            <rect x="445" y="50" width="120" height="120" rx="8" fill="white" opacity="0.95"/>
+            <rect x="460" y="68" width="16" height="16" rx="4" fill="#5093AD"/>
+            <text x="465" y="80" font-size="10" fill="white" font-weight="700" font-family="Inter">1</text>
+            <rect x="484" y="70" width="60" height="10" rx="3" fill="#2A4E5C" opacity="0.35"/>
+            <rect x="460" y="96" width="16" height="16" rx="4" fill="#63B5D6"/>
+            <text x="465" y="108" font-size="10" fill="white" font-weight="700" font-family="Inter">2</text>
+            <rect x="484" y="98" width="50" height="10" rx="3" fill="#2A4E5C" opacity="0.25"/>
+            <rect x="460" y="124" width="16" height="16" rx="4" fill="#74D5FA"/>
+            <text x="465" y="136" font-size="10" fill="white" font-weight="700" font-family="Inter">3</text>
+            <rect x="484" y="126" width="55" height="10" rx="3" fill="#2A4E5C" opacity="0.2"/>
+          </svg>
+          <span class="project-tag">HR & Recruiting</span>
+        </div>
+        <div class="project-body">
+          <div class="client">TrueHire Staffing</div>
+          <h3>AI Resume Screener & Interview Scheduler</h3>
+          <p>Automated resume parsing, candidate ranking against job-specific criteria, and self-serve interview scheduling — cutting time-to-first-interview by 75%.</p>
+          <div class="project-results">
+            <div class="project-result"><strong>75%</strong><span>Faster screening</span></div>
+            <div class="project-result"><strong>200+</strong><span>Resumes/day processed</span></div>
+            <div class="project-result"><strong>$4.2K/mo</strong><span>Cost savings</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: Sales -->
+      <div class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EDF6FA"/><stop offset="100%" stop-color="#C5E4F2"/></linearGradient></defs>
+            <rect width="600" height="220" fill="url(#g6)"/>
+            <!-- CRM interface -->
+            <rect x="60" y="25" width="480" height="170" rx="12" fill="white" opacity="0.95"/>
+            <!-- Sidebar -->
+            <rect x="60" y="25" width="130" height="170" rx="12" fill="#2A4E5C" opacity="0.06"/>
+            <rect x="60" y="25" width="130" height="40" rx="12" fill="#5093AD" opacity="0.1"/>
+            <rect x="60" y="53" width="130" height="12" fill="#5093AD" opacity="0.1"/>
+            <rect x="78" y="36" width="80" height="10" rx="3" fill="#5093AD" opacity="0.4"/>
+            <rect x="78" y="78" width="70" height="8" rx="3" fill="#3D7085" opacity="0.2"/>
+            <rect x="78" y="98" width="90" height="8" rx="3" fill="#3D7085" opacity="0.15"/>
+            <rect x="78" y="118" width="60" height="8" rx="3" fill="#3D7085" opacity="0.15"/>
+            <rect x="78" y="138" width="80" height="8" rx="3" fill="#3D7085" opacity="0.15"/>
+            <!-- Main content - pipeline columns -->
+            <rect x="205" y="42" width="95" height="140" rx="8" fill="#EDF6FA"/>
+            <rect x="215" y="54" width="75" height="8" rx="3" fill="#5093AD" opacity="0.3"/>
+            <rect x="215" y="72" width="75" height="35" rx="6" fill="white"/>
+            <rect x="215" y="115" width="75" height="35" rx="6" fill="white"/>
+            <rect x="310" y="42" width="95" height="140" rx="8" fill="#EDF6FA" opacity="0.7"/>
+            <rect x="320" y="54" width="75" height="8" rx="3" fill="#63B5D6" opacity="0.3"/>
+            <rect x="320" y="72" width="75" height="35" rx="6" fill="white"/>
+            <rect x="320" y="115" width="75" height="35" rx="6" fill="white"/>
+            <rect x="320" y="158" width="75" height="20" rx="6" fill="white" opacity="0.6"/>
+            <rect x="415" y="42" width="95" height="140" rx="8" fill="#EDF6FA" opacity="0.5"/>
+            <rect x="425" y="54" width="75" height="8" rx="3" fill="#74D5FA" opacity="0.4"/>
+            <rect x="425" y="72" width="75" height="35" rx="6" fill="white"/>
+            <!-- Notification badge -->
+            <circle cx="522" cy="38" r="10" fill="#5093AD"/>
+            <text x="519" y="42" font-size="10" fill="white" font-weight="700" font-family="Inter">3</text>
+          </svg>
+          <span class="project-tag">Sales</span>
+        </div>
+        <div class="project-body">
+          <div class="client">Redline Auto Group</div>
+          <h3>AI Sales Assistant & CRM Automation</h3>
+          <p>Integrated an AI assistant into their CRM that auto-responds to web inquiries, books test drives, follows up on cold leads, and logs every interaction — 24/7.</p>
+          <div class="project-results">
+            <div class="project-result"><strong>40%</strong><span>More test drives booked</span></div>
+            <div class="project-result"><strong>24/7</strong><span>Instant responses</span></div>
+            <div class="project-result"><strong>$71K</strong><span>Annual revenue lift</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">From idea to automation<br>in four simple steps.</h2>
+      <p class="section-subtitle">We handle the complexity. You just tell us what's slowing your team down.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Discovery Call</h3>
+        <p>We learn your workflows, pain points, and tools. No jargon, no sales pitch — just a conversation about where automation can save you the most time and money.</p>
+      </div>
+      <div class="step">
+        <h3>Custom Blueprint</h3>
+        <p>We design a tailored solution architecture with clear scope, timeline, and pricing. You approve it before any work begins.</p>
+      </div>
+      <div class="step">
+        <h3>Build & Deploy</h3>
+        <p>We build your system, test it rigorously, and deploy it into your existing stack. You're involved at every milestone — never in the dark.</p>
+      </div>
+      <div class="step">
+        <h3>Maintain & Improve</h3>
+        <p>Your subscription keeps everything running. We monitor, fix, optimize, and evolve your system as your business grows. You never worry about it breaking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">One build. One subscription.<br>Zero headaches.</h2>
+      <p class="section-subtitle">Transparent pricing with no hidden fees. Pay once to build it, then a simple monthly subscription to keep it running and improving.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-type">One-Time</div>
+        <h3>Custom Build</h3>
+        <p class="pricing-desc">Your AI system, designed and deployed from scratch to fit your exact needs.</p>
+        <div class="pricing-price">
+          <span class="amount">Custom</span><br>
+          <span class="period">Scoped to your project</span>
+        </div>
+        <ul class="pricing-features">
+          <li>Full discovery & requirements workshop</li>
+          <li>Custom-designed system architecture</li>
+          <li>Development, testing & deployment</li>
+          <li>Integration with your existing tools</li>
+          <li>Team training & documentation</li>
+          <li>30-day post-launch support included</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get a Quote →</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-type">Monthly</div>
+        <h3>Ongoing Maintenance</h3>
+        <p class="pricing-desc">We keep your system running, updated, and improving — so you never have to think about it.</p>
+        <div class="pricing-price">
+          <span class="amount">From $497</span><br>
+          <span class="period">per month</span>
+        </div>
+        <ul class="pricing-features">
+          <li>24/7 system monitoring & uptime</li>
+          <li>Bug fixes & performance optimization</li>
+          <li>Monthly improvement recommendations</li>
+          <li>Priority support (< 4hr response)</li>
+          <li>Workflow updates as your business changes</li>
+          <li>Cancel anytime — you keep everything we built</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get Started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What Clients Say</span>
+      <h2 class="section-title">They came for automation.<br>They stayed for the peace of mind.</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We were spending 30+ hours a week on manual data entry and follow-ups. 8bitConcepts built us a system in 3 weeks that does it all automatically. Best investment we've made this year."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JR</div>
+          <div>
+            <div class="testimonial-name">Jason Reeves</div>
+            <div class="testimonial-role">COO, Meridian Financial Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The fact that they maintain everything is the real game-changer. I don't have an engineering team — I just have 8bitConcepts. And that's all I need."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SP</div>
+          <div>
+            <div class="testimonial-name">Sarah Park</div>
+            <div class="testimonial-role">Founder, Bloom Digital Agency</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"They didn't just automate a process — they rethought how our entire sales pipeline works. Revenue is up 40% and my team has time to actually sell instead of doing admin."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MK</div>
+          <div>
+            <div class="testimonial-name">Marcus Kim</div>
+            <div class="testimonial-role">VP Sales, Redline Auto Group</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <span class="section-label">Ready to Start?</span>
+    <h2 class="section-title">Let's build the system your business deserves.</h2>
+    <p class="section-subtitle">Book a free 30-minute discovery call. We'll map out exactly where AI can save you the most time and money — no obligation.</p>
+    <div class="hero-buttons">
+      <a href="mailto:hello@8bitconcepts.com" class="btn btn-primary btn-large">Book Your Free Call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 8bitConcepts. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
