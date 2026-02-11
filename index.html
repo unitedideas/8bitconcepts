@@ -217,8 +217,10 @@
   .logo {
     font-weight: 800; font-size: 1.25rem; color: var(--text);
     text-decoration: none; letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 0.6rem;
   }
   .logo span { color: var(--primary); }
+  .logo-icon { width: 36px; height: 36px; flex-shrink: 0; }
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-links a {
     text-decoration: none; color: var(--text-light);
@@ -471,7 +473,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo">8bit<span>concepts</span></a>
+    <a href="#" class="logo"><svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="14" fill="#2A4E5C"/><rect x="20" y="10" width="6" height="6" fill="#74D5FA"/><rect x="26" y="10" width="6" height="6" fill="#74D5FA"/><rect x="32" y="10" width="6" height="6" fill="#74D5FA"/><rect x="14" y="16" width="6" height="6" fill="#74D5FA"/><rect x="38" y="16" width="6" height="6" fill="#74D5FA"/><rect x="14" y="22" width="6" height="6" fill="#74D5FA"/><rect x="38" y="22" width="6" height="6" fill="#74D5FA"/><rect x="20" y="28" width="6" height="6" fill="#5093AD"/><rect x="26" y="28" width="6" height="6" fill="#5093AD"/><rect x="32" y="28" width="6" height="6" fill="#5093AD"/><rect x="14" y="34" width="6" height="6" fill="#74D5FA"/><rect x="38" y="34" width="6" height="6" fill="#74D5FA"/><rect x="14" y="40" width="6" height="6" fill="#74D5FA"/><rect x="38" y="40" width="6" height="6" fill="#74D5FA"/><rect x="20" y="46" width="6" height="6" fill="#74D5FA"/><rect x="26" y="46" width="6" height="6" fill="#74D5FA"/><rect x="32" y="46" width="6" height="6" fill="#74D5FA"/></svg>8bit<span>concepts</span></a>
     <div class="nav-links">
       <a href="#work">Our Work</a>
       <a href="#how">How It Works</a>
