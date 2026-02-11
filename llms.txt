@@ -1,0 +1,64 @@
+# 8bitConcepts
+
+> 8bitConcepts is an AI and automation agency that builds and maintains custom AI systems for businesses. We design, deploy, and manage tailored automation solutions so our clients save time, reduce costs, and scale operations without hiring technical staff.
+
+## About
+
+8bitConcepts specializes in building custom AI automations for small and mid-size businesses. Unlike SaaS tools or templates, every system we build is designed from scratch around the client's exact workflows, tools, and goals. We handle ongoing maintenance through a monthly subscription, so clients never need to manage or update their systems.
+
+Founded by Shane Cheek, 8bitConcepts operates on a build-and-maintain model: clients pay a one-time build fee for their custom AI system, then a monthly subscription (starting at $497/month) for 24/7 monitoring, bug fixes, performance optimization, and workflow updates. Clients can cancel anytime and keep everything that was built.
+
+## Services
+
+- **Custom AI System Development**: End-to-end design, development, and deployment of AI automation systems tailored to each client's business processes, tools, and objectives.
+- **AI-Powered Lead Generation**: Automated lead scraping, qualification, scoring, and nurture sequences via email and SMS, replacing manual SDR workflows.
+- **AI Customer Support Systems**: Custom chatbots and triage systems that auto-resolve tier-1 support tickets and route complex issues with full context.
+- **Operations Automation**: AI-driven inventory management, demand forecasting, purchase order generation, and supply chain optimization.
+- **Content Pipeline Automation**: Automated content creation, review routing, and multi-platform publishing systems.
+- **HR & Recruiting Automation**: AI resume screening, candidate ranking, and automated interview scheduling.
+- **Sales Automation & CRM Integration**: AI sales assistants integrated with existing CRMs for auto-response, follow-up, appointment booking, and activity logging.
+- **Ongoing Maintenance & Optimization**: 24/7 system monitoring, bug fixes, performance tuning, and continuous improvement as business needs evolve.
+
+## Key Facts
+
+- 40+ AI systems delivered to clients across financial services, healthcare, logistics, marketing, staffing, and automotive industries
+- 12,000+ hours saved for clients through automation
+- 97% client retention rate
+- Average client saves $54,000 per year
+- 80% reduction in manual task time on average
+- ROI typically achieved within 30 days of deployment
+- Maintenance plans start at $497/month with no contracts
+- Cancel anytime policy: clients keep everything that was built
+
+## Industries Served
+
+- Financial Services (lead generation, compliance workflows)
+- Healthcare (patient support, triage, scheduling)
+- Logistics & Supply Chain (inventory, forecasting, procurement)
+- Marketing & Creative Agencies (content pipelines, social media)
+- Staffing & Recruiting (resume screening, interview scheduling)
+- Automotive (sales automation, CRM, lead response)
+- E-commerce (customer support, order management)
+- Professional Services (workflow automation, client onboarding)
+
+## How It Works
+
+1. **Discovery Call**: We learn your workflows, pain points, and tools through a no-obligation consultation.
+2. **Custom Blueprint**: We design a tailored solution architecture with clear scope, timeline, and pricing for your approval.
+3. **Build & Deploy**: We develop, test, and deploy the system into your existing tech stack with involvement at every milestone.
+4. **Maintain & Improve**: Your monthly subscription covers monitoring, fixes, optimization, and evolution as your business grows.
+
+## Case Studies
+
+- [Meridian Financial Group](https://8bitconcepts.com/#work): AI-powered lead scoring and outreach engine that tripled qualified leads, saved 22 hours per week, and cut costs by $8K/month.
+- [NovaCare Health](https://8bitconcepts.com/#work): AI triage chatbot that auto-resolves 70% of tier-1 tickets with 4-minute average resolution time, saving $62K annually.
+- [Apex Logistics Co.](https://8bitconcepts.com/#work): Automated inventory and reorder system achieving 91% forecast accuracy, saving 35 hours per week with zero stockouts since launch.
+- [Bloom Digital Agency](https://8bitconcepts.com/#work): Content pipeline automation delivering 8x content output, saving 15 hours per week with 2-day brief-to-publish turnaround.
+- [TrueHire Staffing](https://8bitconcepts.com/#work): AI resume screener processing 200+ resumes per day with 75% faster screening, saving $4.2K/month.
+- [Redline Auto Group](https://8bitconcepts.com/#work): AI sales assistant with 24/7 response, 40% more test drives booked, and $71K annual revenue lift.
+
+## Contact
+
+- Website: https://8bitconcepts.com
+- Email: hello@8bitconcepts.com
+- Consultation: Free 30-minute discovery call available
