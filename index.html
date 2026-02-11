@@ -440,13 +440,51 @@
   .testimonial-name { font-weight: 600; font-size: 0.9rem; }
   .testimonial-role { font-size: 0.8rem; color: var(--text-light); }
 
-  /* ── CTA ── */
-  .cta-section {
-    text-align: center;
+  /* ── CONTACT FORM ── */
+  .contact-section {
     background: linear-gradient(180deg, var(--bg) 0%, var(--primary-bg) 100%);
   }
-  .cta-section .section-title { max-width: 700px; margin: 0 auto 1rem; }
-  .cta-section .section-subtitle { margin: 0 auto 2.5rem; }
+  .contact-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start;
+  }
+  .contact-info h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; }
+  .contact-info p { color: var(--text-light); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem; }
+  .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .contact-detail-icon {
+    width: 40px; height: 40px; border-radius: 10px; background: var(--primary-bg);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .contact-detail-icon svg { width: 20px; height: 20px; }
+  .contact-detail span { font-size: 0.95rem; color: var(--text); }
+  .contact-form {
+    background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 2.5rem; box-shadow: var(--shadow);
+  }
+  .contact-form h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .contact-form .form-sub { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 0.75rem 1rem; font-size: 0.95rem;
+    border: 1.5px solid var(--border); border-radius: 10px;
+    font-family: inherit; color: var(--text); background: #fff;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { outline: none; border-color: var(--primary); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-form .btn { width: 100%; justify-content: center; margin-top: 0.5rem; }
+  .form-note { font-size: 0.8rem; color: var(--text-lighter); text-align: center; margin-top: 1rem; }
+
+  @media (max-width: 768px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -996,14 +1034,72 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
   <div class="container">
-    <span class="section-label">Ready to Start?</span>
-    <h2 class="section-title">Let's build the system your business deserves.</h2>
-    <p class="section-subtitle">Book a free 30-minute discovery call. We'll map out exactly where AI can save you the most time and money — no obligation.</p>
-    <div class="hero-buttons">
-      <a href="mailto:hello@8bitconcepts.com" class="btn btn-primary btn-large">Book Your Free Call →</a>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <span class="section-label">Get in Touch</span>
+        <h2>Let's build the system your business deserves.</h2>
+        <p>Book a free 30-minute discovery call. We'll map out exactly where AI can save you the most time and money — no obligation, no pressure.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M2 4a2 2 0 012-2h12a2 2 0 012 2v.01L10 11 2 4.01V4z" fill="#5093AD" opacity="0.2"/><path d="M2 4l8 7 8-7M2 4a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4z" stroke="#5093AD" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <span>hello@8bitconcepts.com</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#5093AD" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="#5093AD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Typically respond within 4 hours</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 016 6c0 4.5-6 10-6 10S4 12.5 4 8a6 6 0 016-6z" stroke="#5093AD" stroke-width="1.5"/><circle cx="10" cy="8" r="2" fill="#5093AD" opacity="0.3" stroke="#5093AD" stroke-width="1.5"/></svg>
+          </div>
+          <span>Serving clients worldwide</span>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Start your free consultation</h3>
+        <p class="form-sub">Tell us a bit about your business and we'll be in touch.</p>
+        <form action="https://formspree.io/f/xplaceholder" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label for="interest">What are you looking to automate?</label>
+            <select id="interest" name="interest">
+              <option value="" disabled selected>Select an area</option>
+              <option value="lead-generation">Lead Generation</option>
+              <option value="customer-support">Customer Support</option>
+              <option value="operations">Operations & Workflows</option>
+              <option value="sales">Sales & CRM</option>
+              <option value="content">Content & Marketing</option>
+              <option value="hr">HR & Recruiting</option>
+              <option value="other">Something Else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell us more</label>
+            <textarea id="message" name="message" placeholder="What's taking up too much of your team's time? What would you love to automate?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large">Send Message →</button>
+          <p class="form-note">Free consultation. No commitment required.</p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
