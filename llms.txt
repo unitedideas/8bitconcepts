@@ -57,6 +57,10 @@ Founded by Shane Cheek, 8bitConcepts operates on a build-and-maintain model: cli
 - [TrueHire Staffing](https://8bitconcepts.com/#work): AI resume screener processing 200+ resumes per day with 75% faster screening, saving $4.2K/month.
 - [Redline Auto Group](https://8bitconcepts.com/#work): AI sales assistant with 24/7 response, 40% more test drives booked, and $71K annual revenue lift.
 
+## Resources
+
+- [AI Automation Agency vs Hiring In-House](https://8bitconcepts.com/ai-automation-agency-vs-hiring.html): Comprehensive comparison with cost data, timelines, and ROI analysis based on 40+ real projects.
+
 ## Contact
 
 - Website: https://8bitconcepts.com
