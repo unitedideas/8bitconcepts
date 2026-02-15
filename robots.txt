@@ -3,6 +3,7 @@
 
 User-agent: *
 Allow: /
+Disallow: /thanks
 
 # AI Crawlers - explicitly welcomed
 User-agent: GPTBot
