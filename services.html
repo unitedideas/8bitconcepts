@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — 8bitConcepts | AI Automation Consulting</title>
+<meta name="description" content="AI automation consulting packages for solopreneurs and small businesses. Starter ($2,500), Professional ($5,000), and Strategic Partnership ($2,500/mo) tiers. Direct, personal service from an experienced solo consultant.">
+<meta name="keywords" content="AI automation consulting, workflow automation, n8n automation, business automation services, solo automation consultant">
+<meta name="author" content="8bitConcepts">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://8bitconcepts.com/services.html">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#2A4E5C">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Automation Services — 8bitConcepts">
+<meta property="og:description" content="Transparent pricing for AI automation consulting. Three tiers designed for solopreneurs and small businesses. Personal service, direct communication.">
+<meta property="og:url" content="https://8bitconcepts.com/services.html">
+<meta property="og:site_name" content="8bitConcepts">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --primary: #5093AD;
+    --primary-light: #74D5FA;
+    --primary-dark: #3D7085;
+    --primary-bg: #EDF6FA;
+    --accent: #63B5D6;
+    --deep: #2A4E5C;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --text-lighter: #94a3b8;
+    --bg: #f5f5f5;
+    --bg-alt: #f8fafc;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow: 0 4px 24px rgba(0,0,0,0.06);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.08);
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .logo {
+    font-weight: 800; font-size: 1.25rem; color: var(--text);
+    text-decoration: none; letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .logo span { color: var(--primary); }
+  .logo-icon { width: 44px; height: 44px; flex-shrink: 0; }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-light);
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-links a.active { color: var(--primary); font-weight: 600; }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.95rem; font-weight: 600;
+    border-radius: 10px; border: none; cursor: pointer;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-primary {
+    background: var(--primary); color: #fff;
+  }
+  .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn-outline {
+    background: transparent; color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+  .btn-outline:hover { background: var(--primary-bg); }
+  .btn-large { padding: 1rem 2.25rem; font-size: 1.05rem; border-radius: var(--radius); }
+  .btn-white {
+    background: #fff; color: var(--deep);
+  }
+  .btn-white:hover { background: var(--primary-bg); }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    display: inline-block;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--primary);
+    background: var(--primary-bg);
+    padding: 0.4rem 1rem; border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.03em; color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .section-subtitle {
+    font-size: 1.15rem; color: var(--text-light);
+    max-width: 640px; line-height: 1.7;
+  }
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-header .section-subtitle { margin: 0 auto; }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top: 10rem; padding-bottom: 6rem;
+    background: linear-gradient(180deg, var(--primary-bg) 0%, var(--bg) 100%);
+    text-align: center;
+  }
+  .hero .section-title { font-size: clamp(2.5rem, 5.5vw, 3.5rem); max-width: 800px; margin: 0 auto 1.25rem; }
+  .hero .section-subtitle { max-width: 650px; margin: 0 auto 2rem; font-size: 1.2rem; }
+  .hero-note {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,255,255,0.7);
+    padding: 0.5rem 1rem; border-radius: 100px;
+    font-size: 0.85rem; color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+  .hero-note svg { width: 18px; height: 18px; }
+
+  /* ── PRICING CARDS ── */
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem; max-width: 1100px; margin: 0 auto;
+  }
+  .pricing-card {
+    background: var(--bg); border: 2px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2.5rem;
+    position: relative; display: flex; flex-direction: column;
+  }
+  .pricing-card.featured { border-color: var(--primary); transform: scale(1.02); }
+  .pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--primary); color: #fff;
+    padding: 0.3rem 1.25rem; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pricing-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--primary);
+    background: var(--primary-bg);
+    padding: 0.35rem 0.9rem; border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .pricing-card h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .pricing-desc { font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6; }
+  .pricing-price { margin-bottom: 1.5rem; }
+  .pricing-price .amount { font-size: 2.75rem; font-weight: 800; color: var(--text); letter-spacing: -0.03em; }
+  .pricing-price .period { font-size: 0.95rem; color: var(--text-light); }
+  .pricing-price .note { font-size: 0.8rem; color: var(--text-lighter); margin-top: 0.25rem; }
+  .pricing-features { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
+  .pricing-features li {
+    padding: 0.6rem 0; font-size: 0.9rem; color: var(--text-light);
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .pricing-features li:last-child { border-bottom: none; }
+  .pricing-features li::before {
+    content: '';
+    width: 20px; height: 20px; flex-shrink: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23EDF6FA'/%3E%3Cpath d='M6 10l3 3 5-5' stroke='%235093AD' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  }
+  .pricing-card .btn { width: 100%; justify-content: center; }
+
+  /* ── PROCESS SECTION ── */
+  .process-section { background: var(--bg-alt); }
+  .process-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem; counter-reset: step;
+  }
+  .process-step {
+    text-align: center; padding: 2rem 1.5rem;
+    counter-increment: step;
+    position: relative;
+  }
+  .process-step::before {
+    content: counter(step);
+    display: flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 1.1rem; font-weight: 700;
+    margin: 0 auto 1.25rem;
+  }
+  .process-step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; }
+
+  /* ── ADD-ONS ── */
+  .addons-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .addon-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .addon-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .addon-card p { font-size: 0.8rem; color: var(--text-light); }
+  .addon-price { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+
+  /* ── CAPACITY BANNER ── */
+  .capacity-banner {
+    background: linear-gradient(135deg, #2A4E5C 0%, #3D7085 50%, #5093AD 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    color: #fff;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .capacity-banner h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 1rem; }
+  .capacity-banner p { font-size: 1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 1.5rem; }
+  .capacity-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem; max-width: 700px; margin: 0 auto;
+  }
+  .capacity-item .big { font-size: 2rem; font-weight: 800; display: block; }
+  .capacity-item .desc { font-size: 0.85rem; opacity: 0.85; }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--bg-alt); }
+  .faq-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem; max-width: 900px; margin: 0 auto;
+  }
+  .faq-item {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+  }
+  .faq-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .faq-item p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--bg) 100%);
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+  .cta-section h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; margin-bottom: 1rem; }
+  .cta-section p { font-size: 1.1rem; color: var(--text-light); max-width: 500px; margin: 0 auto 2rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 2rem; text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  footer p { font-size: 0.85rem; color: var(--text-lighter); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    section { padding: 4rem 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a:not(.btn) { display: none; }
+    .hero { padding-top: 8rem; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 440px; }
+    .pricing-card.featured { transform: none; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .capacity-banner { margin: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="14" fill="#2A4E5C"/><rect x="20" y="10" width="6" height="6" fill="#74D5FA"/><rect x="26" y="10" width="6" height="6" fill="#74D5FA"/><rect x="32" y="10" width="6" height="6" fill="#74D5FA"/><rect x="14" y="16" width="6" height="6" fill="#74D5FA"/><rect x="38" y="16" width="6" height="6" fill="#74D5FA"/><rect x="14" y="22" width="6" height="6" fill="#74D5FA"/><rect x="38" y="22" width="6" height="6" fill="#74D5FA"/><rect x="20" y="28" width="6" height="6" fill="#5093AD"/><rect x="26" y="28" width="6" height="6" fill="#5093AD"/><rect x="32" y="28" width="6" height="6" fill="#5093AD"/><rect x="14" y="34" width="6" height="6" fill="#74D5FA"/><rect x="38" y="34" width="6" height="6" fill="#74D5FA"/><rect x="14" y="40" width="6" height="6" fill="#74D5FA"/><rect x="38" y="40" width="6" height="6" fill="#74D5FA"/><rect x="20" y="46" width="6" height="6" fill="#74D5FA"/><rect x="26" y="46" width="6" height="6" fill="#74D5FA"/><rect x="32" y="46" width="6" height="6" fill="#74D5FA"/></svg></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/services.html" class="active">Services</a>
+      <a href="/#work">Work</a>
+      <a href="/#contact" class="btn btn-primary">Book Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="section-label">Transparent Pricing</span>
+    <h1 class="section-title">AI Automation Services</h1>
+    <p class="section-subtitle">Straightforward packages for solopreneurs and small businesses. No agencies, no account managers — just direct, personal service from someone who's been building software for 7+ years.</p>
+    <div class="hero-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Solo operator — you work directly with me
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Service Packages</span>
+      <h2 class="section-title">Choose what fits your needs.</h2>
+      <p class="section-subtitle">Three tiers designed for different stages of automation maturity. All packages include personal attention and clear deliverables.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="pricing-card">
+        <div class="pricing-badge">🚀 Starter</div>
+        <h3>Starter Automation</h3>
+        <p class="pricing-desc">For solopreneurs and small teams with 1-2 key workflows to automate. Test the waters without ongoing commitment.</p>
+        <div class="pricing-price">
+          <span class="amount">$2,500</span><br>
+          <span class="period">one-time project</span>
+          <p class="note">No monthly retainer — pay per project</p>
+        </div>
+        <ul class="pricing-features">
+          <li><strong>Single workflow</strong> (up to 10 steps)</li>
+          <li><strong>Up to 3 integrations</strong> (Gmail, Airtable, Slack, etc.)</li>
+          <li><strong>1-hour training session</strong> + documentation</li>
+          <li><strong>30 days of bug fixes</strong> (not new features)</li>
+          <li>Timeline: 1-2 weeks</li>
+        </ul>
+        <a href="/#contact" class="btn btn-outline">Get Started →</a>
+      </div>
+
+      <!-- Professional -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">💼 Professional</div>
+        <h3>Professional Automation</h3>
+        <p class="pricing-desc">For growing businesses with multiple processes to streamline. Build a foundation for serious automation.</p>
+        <div class="pricing-price">
+          <span class="amount">$5,000</span><br>
+          <span class="period">one-time project</span>
+          <p class="note">Or $1,500/mo for 4 months (+$500 setup)</p>
+        </div>
+        <ul class="pricing-features">
+          <li><strong>3-5 workflows</strong> (up to 20 steps each)</li>
+          <li><strong>Up to 8 integrations</strong></li>
+          <li><strong>1 simple chatbot</strong> (1,000 conversations/mo)</li>
+          <li><strong>2 hours training</strong> + video documentation</li>
+          <li><strong>60 days support</strong> + 2 revision rounds</li>
+          <li>Timeline: 4-6 weeks</li>
+        </ul>
+        <a href="/#contact" class="btn btn-primary">Get Started →</a>
+      </div>
+
+      <!-- Strategic Partnership -->
+      <div class="pricing-card">
+        <div class="pricing-badge">🎯 Strategic</div>
+        <h3>Strategic Partnership</h3>
+        <p class="pricing-desc">For businesses wanting ongoing automation support. Limited to 3 clients max — I'm your dedicated automation resource.</p>
+        <div class="pricing-price">
+          <span class="amount">$2,500</span><br>
+          <span class="period">per month</span>
+          <p class="note">6-month minimum commitment</p>
+        </div>
+        <ul class="pricing-features">
+          <li><strong>Up to 10 hours</strong> of development work monthly</li>
+          <li><strong>Unlimited workflows</strong> (built over time)</li>
+          <li><strong>Priority response</strong> (24-48 hours, business hours)</li>
+          <li><strong>Monthly strategy call</strong> (30 min)</li>
+          <li><strong>Quarterly automation audit</strong></li>
+          <li>Additional work at $150/hour (vs $200 for non-retainer)</li>
+        </ul>
+        <a href="/#contact" class="btn btn-outline">Apply Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACITY STATUS -->
+<section style="padding-top: 0;">
+  <div class="capacity-banner">
+    <h2>Realistic Capacity, Quality Work</h2>
+    <p>As a solo operator, I maintain strict limits to ensure every client gets the attention they deserve. No overcommitment, no burnout.</p>
+    <div class="capacity-grid">
+      <div class="capacity-item">
+        <span class="big">3-5</span>
+        <span class="desc">Active Projects Max</span>
+      </div>
+      <div class="capacity-item">
+        <span class="big">24-48hrs</span>
+        <span class="desc">Response Time</span>
+      </div>
+      <div class="capacity-item">
+        <span class="big">3 Max</span>
+        <span class="desc">Retainer Clients</span>
+      </div>
+      <div class="capacity-item">
+        <span class="big">You Own</span>
+        <span class="desc">All Automations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">From discovery to deployment.</h2>
+      <p class="section-subtitle">A proven 5-week process that keeps you informed and involved at every step.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <h3>Week 1: Discovery</h3>
+        <p>1-hour kickoff call to review your processes, identify top 3 automation opportunities, and prioritize based on ROI.</p>
+      </div>
+      <div class="process-step">
+        <h3>Week 2-3: Build</h3>
+        <p>I build in my staging environment with weekly async updates. Mid-point review available if needed.</p>
+      </div>
+      <div class="process-step">
+        <h3>Week 4: Deploy</h3>
+        <p>You test in your environment, I fix issues, then deploy to production with thorough validation.</p>
+      </div>
+      <div class="process-step">
+        <h3>Week 5: Handoff</h3>
+        <p>Documentation delivered, training session conducted, and transition to support period begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">À La Carte</span>
+      <h2 class="section-title">Additional Services</h2>
+      <p class="section-subtitle">Need something specific? These can be added to any package or purchased standalone.</p>
+    </div>
+    <div class="addons-grid">
+      <div class="addon-card">
+        <div>
+          <h4>Automation Audit</h4>
+          <p>Deep dive + recommendations report</p>
+        </div>
+        <span class="addon-price">$500</span>
+      </div>
+      <div class="addon-card">
+        <div>
+          <h4>Single Workflow</h4>
+          <p>Standalone workflow build</p>
+        </div>
+        <span class="addon-price">$1,500+</span>
+      </div>
+      <div class="addon-card">
+        <div>
+          <h4>Chatbot Build</h4>
+          <p>Custom conversational AI</p>
+        </div>
+        <span class="addon-price">$2,000+</span>
+      </div>
+      <div class="addon-card">
+        <div>
+          <h4>AI Agent (Simple)</h4>
+          <p>Research/data gathering agent</p>
+        </div>
+        <span class="addon-price">$3,000+</span>
+      </div>
+      <div class="addon-card">
+        <div>
+          <h4>Integration Project</h4>
+          <p>Complex system connections</p>
+        </div>
+        <span class="addon-price">$2,500+</span>
+      </div>
+      <div class="addon-card">
+        <div>
+          <h4>Team Training</h4>
+          <p>Custom training sessions</p>
+        </div>
+        <span class="addon-price">$500/hr</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Why don't you offer "unlimited" plans?</h4>
+        <p>Because I'm one person. "Unlimited" leads to burnout and bad work. Clear scope = quality results you can count on.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What if I need something after the project ends?</h4>
+        <p>I'm available for additional work at $200/hour. Strategic Partnership clients get a discounted rate of $150/hour.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Who owns the automations you build?</h4>
+        <p>You do. I provide full documentation and handoff. You can modify or hire someone else later — no lock-in.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What tools do you work with?</h4>
+        <p>Primarily n8n (open source), Make.com, Zapier, Voiceflow, Airtable, Notion, and OpenAI/Claude APIs.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you cover software costs?</h4>
+        <p>No — you pay for tools directly (Make.com, OpenAI API, etc.). This keeps pricing transparent with no markup.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What's your response time?</h4>
+        <p>24-48 hours during business hours (Pacific Time). I'm not 24/7, but I am responsive and reliable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to automate?</h2>
+    <p>Book a free 30-minute consultation. We'll discuss your pain points and I'll suggest 2-3 automation opportunities — no pressure, no sales pitch.</p>
+    <a href="/#contact" class="btn btn-primary btn-large">Book Free Consultation →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 8bitConcepts. Solo AI Automation Consulting.</p>
+</footer>
+
+</body>
+</html>
