@@ -46,3 +46,6 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://8bitconcepts.com/sitemap.xml
+
+# Host
+Host: https://8bitconcepts.com

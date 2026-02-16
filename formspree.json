@@ -1,0 +1,13 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Contact Form",
+      "actions": [
+        {
+          "type": "email",
+          "to": "hello@8bitconcepts.com"
+        }
+      ]
+    }
+  }
+}

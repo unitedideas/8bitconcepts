@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shane Cheek",
+  "jobTitle": "Founder & CEO",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "8bitConcepts",
+    "url": "https://8bitconcepts.com"
+  },
+  "url": "https://8bitconcepts.com/about-shane-cheek",
+  "description": "Shane Cheek is the Founder and CEO of 8bitConcepts, an AI automation agency specializing in custom AI systems for small and mid-size businesses. With expertise in artificial intelligence, business automation, and digital transformation, Shane has led the delivery of 40+ AI automation systems, helping clients save an average of $54,000 annually through intelligent workflow automation.",
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Business Automation",
+    "AI Integration",
+    "Workflow Optimization",
+    "Machine Learning",
+    "Digital Transformation",
+    "Process Automation",
+    "AI Strategy",
+    "Small Business Technology",
+    "CRM Automation"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/shanecheek/",
+    "https://twitter.com/shanecheek"
+  ],
+  "image": "https://8bitconcepts.com/images/shane-cheek.jpg"
+}

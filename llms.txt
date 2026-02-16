@@ -59,9 +59,10 @@ Founded by Shane Cheek, 8bitConcepts operates on a build-and-maintain model: cli
 
 ## Resources
 
-- [AI Automation Agency vs Hiring In-House](https://8bitconcepts.com/ai-automation-agency-vs-hiring.html): Comprehensive comparison with cost data, timelines, and ROI analysis based on 40+ real projects.
-- [How Much Does AI Automation Cost?](https://8bitconcepts.com/how-much-does-ai-automation-cost.html): Detailed pricing guide with cost breakdowns by automation type, ROI calculations, and budget recommendations by business size.
-- [Best AI Tools for Small Business 2026](https://8bitconcepts.com/best-ai-tools-for-small-business.html): Comparison of off-the-shelf SaaS tools vs no-code platforms vs custom AI solutions, with cost analysis and decision framework.
+- [AI Automation Agency vs Hiring In-House](https://8bitconcepts.com/blog/ai-automation-agency-vs-hiring.html): Comprehensive comparison with cost data, timelines, and ROI analysis based on 40+ real projects.
+- [How Much Does AI Automation Cost?](https://8bitconcepts.com/blog/how-much-does-ai-automation-cost.html): Detailed pricing guide with cost breakdowns by automation type, ROI calculations, and budget recommendations by business size.
+- [Best AI Tools for Small Business 2026](https://8bitconcepts.com/blog/best-ai-tools-for-small-business.html): Comparison of off-the-shelf SaaS tools vs no-code platforms vs custom AI solutions, with cost analysis and decision framework.
+- [Multi-Agent AI: How Businesses Use Agent Swarms](https://8bitconcepts.com/blog/multi-agent-ai-business-productivity.html): Guide to orchestrating multi-agent AI for business productivity, covering the OMC pattern and real-world examples.
 
 ## Contact
 
