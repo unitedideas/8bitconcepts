@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refer a Friend - Get Free Months</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .reward-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .reward-amount {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #4ade80;
+        }
+        .share-box {
+            margin: 30px 0;
+        }
+        .share-link {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            word-break: break-all;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+        .copy-btn {
+            background: #4ade80;
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .social-btns {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+        .twitter { background: #1da1f2; }
+        .facebook { background: #4267B2; }
+        .linkedin { background: #0077b5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎁 Refer a Friend</h1>
+        <p class="subtitle">Help a friend save 15+ hours/week on email</p>
+        
+        <div class="reward-box">
+            <div class="reward-amount">$100</div>
+            <p>For every friend who signs up</p>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">They get 50% off, you get $100</p>
+        </div>
+        
+        <div class="share-box">
+            <p>Share your unique link:</p>
+            <div class="share-link" id="shareLink">https://8bitconcepts.com/special-offer/?ref=FOUNDING</div>
+            <button class="copy-btn" onclick="copyLink()">Copy Link</button>
+            
+            <div class="social-btns">
+                <a href="#" class="social-btn twitter" onclick="shareTwitter()">Share on Twitter</a>
+                <a href="#" class="social-btn facebook" onclick="shareFacebook()">Share on Facebook</a>
+                <a href="#" class="social-btn linkedin" onclick="shareLinkedIn()">Share on LinkedIn</a>
+            </div>
+        </div>
+        
+        <p style="opacity: 0.8; margin-top: 30px;">
+            Know a business owner drowning in email?<br>
+            Help them automate. Earn $100. Everyone wins.
+        </p>
+    </div>
+    
+    <script>
+        function copyLink() {
+            navigator.clipboard.writeText(document.getElementById('shareLink').textContent);
+            alert('Link copied to clipboard!');
+        }
+        
+        function shareTwitter() {
+            const text = 'Just found this AI email automation service. Saves 15+ hours/week! Check it out:';
+            const url = document.getElementById('shareLink').textContent;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+        
+        function shareFacebook() {
+            const url = document.getElementById('shareLink').textContent;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+        }
+        
+        function shareLinkedIn() {
+            const url = document.getElementById('shareLink').textContent;
+            const title = 'AI Email Automation - Save 15+ Hours Per Week';
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
