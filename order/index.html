@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book AI Email Setup - 8bitConcepts</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+        }
+        .order-summary {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .order-summary h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4ade80;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .payment-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .guarantee {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .guarantee h3 {
+            color: #4ade80;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Your AI Email Setup</h1>
+        <p class="subtitle">Fill out the form below. I'll send you a payment link within 2 hours.</p>
+        
+        <div class="order-summary">
+            <h2>AI Email Automation Setup</h2>
+            <ul style="color: #aaa; margin: 15px 0; padding-left: 20px;">
+                <li>Custom AI email agent</li>
+                <li>Smart lead qualification</li>
+                <li>Calendar integration</li>
+                <li>Follow-up sequences</li>
+                <li>48-hour setup</li>
+            </ul>
+            <div class="price-tag">$500</div>
+            <p style="color: #666; font-size: 0.9rem;">One-time payment</p>
+        </div>
+        
+        <form action="https://formspree.io/p/2937244252880502746/f/contact" method="POST">
+            <input type="hidden" name="subject" value="NEW ORDER: AI Email Automation Setup - $500">
+            <input type="hidden" name="product" value="AI Email Automation Setup">
+            <input type="hidden" name="price" value="$500">
+            
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="business">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="Your company">
+            </div>
+            
+            <div class="form-group">
+                <label for="email_volume">How many emails do you get per day? *</label>
+                <select id="email_volume" name="email_volume" required>
+                    <option value="">Select one...</option>
+                    <option value="10-25">10-25 emails/day</option>
+                    <option value="25-50">25-50 emails/day</option>
+                    <option value="50-100">50-100 emails/day</option>
+                    <option value="100+">100+ emails/day</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="email_provider">What email provider do you use? *</label>
+                <select id="email_provider" name="email_provider" required>
+                    <option value="">Select one...</option>
+                    <option value="gmail">Gmail / Google Workspace</option>
+                    <option value="outlook">Outlook / Microsoft 365</option>
+                    <option value="zoho">Zoho Mail</option>
+                    <option value="other">Other (I'll specify below)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="pain_point">What's your biggest email challenge? *</label>
+                <textarea id="pain_point" name="pain_point" required placeholder="e.g., I spend 3 hours a day on email and miss important leads..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="timeline">When do you want this done? *</label>
+                <select id="timeline" name="timeline" required>
+                    <option value="">Select one...</option>
+                    <option value="asap">ASAP (within 48 hours)</option>
+                    <option value="this-week">This week</option>
+                    <option value="next-week">Next week</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="submit-btn">Book My Spot →</button>
+        </form>
+        
+        <p class="payment-note">
+            🔒 You'll receive a secure payment link via email within 2 hours.<br>
+            100% money-back guarantee if not satisfied.
+        </p>
+        
+        <div class="guarantee">
+            <h3>⚡ Only 2 Spots Left This Week</h3>
+            <p>I personally configure each system. Once spots fill, next availability is 2+ weeks out.</p>
+        </div>
+        
+        <footer>
+            <p>Questions? Email <a href="mailto:hello@8bitconcepts.com" style="color: #667eea;">hello@8bitconcepts.com</a></p>
+            <p style="margin-top: 10px;"><a href="https://8bitconcepts.com/sales" style="color: #666;">← Back to sales page</a></p>
+        </footer>
+    </div>
+</body>
+</html>
