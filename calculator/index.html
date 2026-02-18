@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Time Cost Calculator - What's Your Email Overhead?</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .calculator {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: #4ade80;
+        }
+        button {
+            width: 100%;
+            padding: 20px;
+            background: #4ade80;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .results {
+            display: none;
+            background: rgba(0,0,0,0.4);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .results.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .big-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #f5576c;
+            margin: 20px 0;
+        }
+        .cta-box {
+            background: rgba(102, 126, 234, 0.3);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        .share-box {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .share-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin: 5px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Email Time Cost Calculator</h1>
+        <p class="subtitle">Find out how much email is really costing you</p>
+        
+        <div class="calculator">
+            <div class="input-group">
+                <label>How many hours per day do you spend on email?</label>
+                <input type="number" id="hoursPerDay" placeholder="e.g., 3" min="0" max="24" step="0.5">
+            </div>
+            
+            <div class="input-group">
+                <label>What's your hourly rate (or value of your time)?</label>
+                <input type="number" id="hourlyRate" placeholder="e.g., 100" min="1">
+            </div>
+            
+            <div class="input-group">
+                <label>How many email inquiries do you get per week?</label>
+                <input type="number" id="emailsPerWeek" placeholder="e.g., 50" min="1">
+            </div>
+            
+            <div class="input-group">
+                <label>How many leads do you think you lose to slow response?</label>
+                <select id="lostLeads">
+                    <option value="0">None - I respond instantly</option>
+                    <option value="10">About 10%</option>
+                    <option value="25" selected>About 25%</option>
+                    <option value="50">About 50%</option>
+                    <option value="75">Most of them</option>
+                </select>
+            </div>
+            
+            <button onclick="calculate()">Calculate My Email Cost →</button>
+        </div>
+        
+        <div class="results" id="results">
+            <h2>Your Email Overhead</h2>
+            
+            <div class="stat">
+                <p>Time spent on email per year:</p>
+                <div class="big-number" id="yearlyHours">0 hours</div>
+            </div>
+            
+            <div class="stat">
+                <p>Cost of your time on email per year:</p>
+                <div class="big-number" id="yearlyCost">$0</div>
+            </div>
+            
+            <div class="stat">
+                <p>Estimated leads lost per year:</p>
+                <div class="big-number" id="lostLeadsCount">0</div>
+            </div>
+            
+            <div class="stat">
+                <p>Estimated revenue lost:</p>
+                <div class="big-number" id="lostRevenue">$0</div>
+            </div>
+            
+            <div class="cta-box">
+                <h3>🚀 Want to Fix This?</h3>
+                <p>AI Email Automation can save you <strong id="savings">0 hours</strong> per year</p>
+                <p>Founding customer special: <strong>50% OFF</strong></p>
+                <a href="https://8bitconcepts.com/special-offer/" class="cta-button">
+                    Get AI Email Setup - $250 →
+                </a>
+            </div>
+            
+            <div class="share-box">
+                <p>Know someone drowning in email?</p>
+                <a href="#" class="share-button" onclick="share()">Share This Calculator</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function calculate() {
+            const hoursPerDay = parseFloat(document.getElementById('hoursPerDay').value) || 0;
+            const hourlyRate = parseFloat(document.getElementById('hourlyRate').value) || 0;
+            const emailsPerWeek = parseInt(document.getElementById('emailsPerWeek').value) || 0;
+            const lostLeadPercent = parseInt(document.getElementById('lostLeads').value) || 0;
+            
+            // Calculate yearly stats
+            const yearlyHours = Math.round(hoursPerDay * 5 * 52); // work days per year
+            const yearlyCost = yearlyHours * hourlyRate;
+            const yearlyEmails = emailsPerWeek * 52;
+            const lostLeads = Math.round(yearlyEmails * (lostLeadPercent / 100));
+            const lostRevenue = lostLeads * 500; // assuming $500 average customer value
+            const savings = Math.round(yearlyHours * 0.75); // AI saves 75% of time
+            
+            // Display results
+            document.getElementById('yearlyHours').textContent = yearlyHours.toLocaleString() + ' hours';
+            document.getElementById('yearlyCost').textContent = '$' + yearlyCost.toLocaleString();
+            document.getElementById('lostLeadsCount').textContent = lostLeads.toLocaleString() + ' leads';
+            document.getElementById('lostRevenue').textContent = '$' + lostRevenue.toLocaleString();
+            document.getElementById('savings').textContent = savings.toLocaleString() + ' hours';
+            
+            document.getElementById('results').classList.add('show');
+            
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function share() {
+            const url = window.location.href;
+            const text = 'I just calculated my email overhead. Eye-opening!';
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Email Time Cost Calculator',
+                    text: text,
+                    url: url
+                });
+            } else {
+                // Copy to clipboard
+                navigator.clipboard.writeText(url);
+                alert('Link copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+</html>
