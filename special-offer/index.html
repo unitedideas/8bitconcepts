@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founding Customer Special - 8bitConcepts</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .urgency-banner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        .urgency-banner h2 {
+            font-size: 1.5rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        .offer-box {
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .original-price {
+            font-size: 2rem;
+            color: #666;
+            text-decoration: line-through;
+        }
+        .sale-price {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #4ade80;
+            margin: 20px 0;
+        }
+        .sale-price span {
+            font-size: 1.5rem;
+            color: #888;
+        }
+        .savings {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .benefits {
+            text-align: left;
+            margin: 30px 0;
+        }
+        .benefits li {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+            list-style: none;
+            font-size: 1.1rem;
+        }
+        .benefits li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .bonus-box {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .bonus-box h3 {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+        .guarantee {
+            text-align: center;
+            color: #888;
+            margin-top: 20px;
+        }
+        .scarcity {
+            background: rgba(245, 87, 108, 0.1);
+            border: 1px solid rgba(245, 87, 108, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .scarcity h3 {
+            color: #f5576c;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="urgency-banner">
+            <h2>⚡ EXCLUSIVE: First 3 Customers Only</h2>
+        </div>
+        
+        <h1>Be a Founding Customer</h1>
+        <p class="subtitle">Help shape the future of AI Email Automation</p>
+        
+        <div class="offer-box">
+            <div class="original-price">$500</div>
+            <div class="sale-price">$250<span> flat fee</span></div>
+            <div class="savings">SAVE 50% - LIMITED TIME</div>
+            
+            <ul class="benefits">
+                <li><strong>Everything in standard package</strong> (AI agent, lead qualification, calendar booking, follow-ups)</li>
+                <li><strong>Priority setup</strong> - Live in 24 hours</li>
+                <li><strong>90-day support</strong> (3x longer)</li>
+                <li><strong>Custom AI training</strong> - I personally tune it to your voice</li>
+                <li><strong>Quarterly strategy calls</strong> - Optimize your system</li>
+                <li><strong>Lifetime updates</strong> - New features included</li>
+                <li><strong>Case study feature</strong> - Highlight your success (optional)</li>
+            </ul>
+        </div>
+        
+        <div class="bonus-box">
+            <h3>🎁 BONUS: Email Templates Library ($500 Value)</h3>
+            <p>Get my private collection of 50+ high-converting email templates for:</p>
+            <ul style="margin-top: 15px; padding-left: 20px; color: #aaa;">
+                <li>Lead qualification</li>
+                <li>Follow-up sequences</li>
+                <li>Meeting booking</li>
+                <li>Proposal sending</li>
+                <li>Customer onboarding</li>
+            </ul>
+        </div>
+        
+        <a href="https://8bitconcepts.com/checkout/" class="cta-button">
+            Claim My 50% Discount →
+        </a>
+        
+        <p class="guarantee">
+            ✅ 100% Money-Back Guarantee<br>
+            Not satisfied? Full refund within 30 days.
+        </p>
+        
+        <div class="scarcity">
+            <h3>🔥 Only 1 Spot Remaining at This Price</h3>
+            <p>After these 3 founding customers, price returns to $500.</p>
+            <p style="margin-top: 10px; color: #888;">Last updated: <span id="timestamp"></span></p>
+        </div>
+        
+        <footer>
+            <p>Questions? <a href="mailto:hello@8bitconcepts.com" style="color: #667eea;">hello@8bitconcepts.com</a></p>
+            <p style="margin-top: 10px;">© 2026 8bitConcepts</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>
