@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8bitconcepts -- AI Enablement & Integration Consulting</title>
+  <meta name="description" content="8bitconcepts helps Series B-D companies build the organizational and technical foundation for AI at scale. Research, strategy, and hands-on implementation." />
+  <link rel="canonical" href="https://8bitconcepts.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate: #0d0d0e;
+      --slate-1: #111214;
+      --slate-2: #1a1c1f;
+      --slate-3: #242729;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757;
+      --terra-dim: rgba(217,119,87,0.15);
+      --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9;
+      --text-dim: #8b8d91;
+      --text-dimmer: #5a5c61;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--slate);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--terra); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--terra);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* HERO */
+    .hero {
+      padding: 140px 32px 96px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--terra);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--text-dim);
+      max-width: 600px;
+      margin-bottom: 44px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--terra);
+      color: white;
+      padding: 13px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-dim);
+      padding: 13px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.18); color: var(--text); }
+
+    /* STATS BAR */
+    .stats-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 32px;
+      background: var(--slate-1);
+    }
+
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 32px;
+    }
+
+    .stat-item {}
+
+    .stat-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--terra);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-desc {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    /* RESEARCH SECTION */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 32px;
+    }
+
+    .section-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-bottom: 48px;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .research-card {
+      background: var(--slate-1);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .research-card:hover {
+      border-color: rgba(217,119,87,0.3);
+      background: var(--slate-2);
+    }
+
+    .research-card-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 14px;
+    }
+
+    .research-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .research-card-desc {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.55;
+    }
+
+    /* SERVICES SECTION */
+    .services-bg {
+      background: var(--slate-1);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0;
+    }
+
+    .service-item {
+      padding: 40px 32px;
+      border-right: 1px solid var(--border);
+    }
+
+    .service-item:last-child { border-right: none; }
+
+    .service-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--terra);
+      margin-bottom: 16px;
+    }
+
+    .service-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .service-price {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: var(--text-dimmer);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 32px;
+      text-align: center;
+    }
+
+    .cta-box {
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      border-radius: 12px;
+      padding: 56px 48px;
+    }
+
+    .cta-box h2 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .cta-box p {
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--text-dimmer);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 120px 20px 72px; }
+      .section { padding: 60px 20px; }
+      .stats-bar { padding: 32px 20px; }
+      .service-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .service-item:last-child { border-bottom: none; }
+      .cta-box { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#services">Services</a>
+      <a href="mailto:hello@8bitconcepts.com" class="nav-cta">Talk to us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">AI Enablement &amp; Integration Consulting</div>
+    <h1>The model is the<br><em>easy part.</em></h1>
+    <p class="hero-sub">We work with Series B-D companies to build the organizational and technical foundation for AI that actually compounds. Strategy, implementation, and the hard conversations most firms skip.</p>
+    <div class="hero-actions">
+      <a href="mailto:hello@8bitconcepts.com" class="btn-primary">Talk to us</a>
+      <a href="#research" class="btn-secondary">Read our research</a>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">6%</div>
+        <div class="stat-desc">of companies deploying AI see meaningful returns (McKinsey, 2025)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">95%</div>
+        <div class="stat-desc">of generative AI pilots fail to deliver business impact (MIT, 2025)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5&times;</div>
+        <div class="stat-desc">minimum multiplier on model cost to estimate real AI project spend</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">84%</div>
+        <div class="stat-desc">of developer time that AI tools don't touch unless you redesign workflows</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="section" id="research">
+    <div class="section-eyebrow">Research</div>
+    <h2 class="section-title">What we know from the field</h2>
+    <p class="section-sub">Practitioner research from working with engineering teams across Series B to D companies. Data-backed, direct, and written for the people doing the work.</p>
+
+    <div class="research-grid">
+      <a class="research-card" href="/research/the-integration-tax.html">
+        <div class="research-card-tag">Cost Analysis</div>
+        <div class="research-card-title">The Integration Tax</div>
+        <div class="research-card-desc">Model API costs are 10-20% of what AI actually costs to ship. Where the other 80% goes -- and why most budgets are wrong before they start.</div>
+      </a>
+      <a class="research-card" href="/research/beyond-the-prompt.html">
+        <div class="research-card-tag">Engineering Maturity</div>
+        <div class="research-card-title">Beyond the Prompt</div>
+        <div class="research-card-desc">The teams shipping reliable production agentic systems are not prompting harder. They have moved through a specific engineering maturity ladder.</div>
+      </a>
+      <a class="research-card" href="/research/the-six-percent.html">
+        <div class="research-card-tag">Adoption Economics</div>
+        <div class="research-card-title">The Six Percent</div>
+        <div class="research-card-desc">88% of organizations use AI. Only 6% see meaningful returns. What McKinsey found in nearly 2,000 companies across 105 countries.</div>
+      </a>
+      <a class="research-card" href="/research/the-mandate-trap.html">
+        <div class="research-card-tag">AI Leadership</div>
+        <div class="research-card-title">The Mandate Trap</div>
+        <div class="research-card-desc">Shopify's AI mandate worked. Duolingo's didn't. The companies copying the Shopify memo template are learning the wrong lesson.</div>
+      </a>
+      <a class="research-card" href="/research/the-measurement-problem.html">
+        <div class="research-card-tag">MLOps</div>
+        <div class="research-card-title">The Measurement Problem</div>
+        <div class="research-card-desc">A company ran an AI system for eight months before discovering four months of silent degradation. Most companies have no better detection mechanism.</div>
+      </a>
+      <a class="research-card" href="/research/the-org-chart-problem.html">
+        <div class="research-card-tag">Organizational Design</div>
+        <div class="research-card-title">The Org Chart Problem</div>
+        <div class="research-card-desc">AI transformation fails not because of technology but because of where it gets placed in the org chart. Every placement encodes a ceiling.</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="services-bg" id="services">
+    <div class="section" style="padding-bottom: 0;">
+      <div class="section-eyebrow">Services</div>
+      <h2 class="section-title">How we work</h2>
+      <p class="section-sub">Three engagements, each designed for where you actually are -- not where the deck says you should be.</p>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto; padding: 0 0 0 0;">
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-num">01</div>
+          <div class="service-name">Discovery</div>
+          <div class="service-desc">Four weeks. We audit your current AI posture -- tools, workflows, org structure, and the gap between where you are and where the 6% are. Deliverable: a prioritized 90-day roadmap and an honest assessment of what is blocking you.</div>
+          <div class="service-price">$8,000 -- $15,000</div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">02</div>
+          <div class="service-name">Implementation</div>
+          <div class="service-desc">Eight to sixteen weeks. We build the missing layer -- evaluation infrastructure, agent workflows, skill libraries, measurement systems. We do the work alongside your team, not instead of them.</div>
+          <div class="service-price">$30,000 -- $80,000</div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">03</div>
+          <div class="service-name">Embedded Advisory</div>
+          <div class="service-desc">Ongoing. One day per week embedded with your engineering leadership. We track the adoption curve, catch the measurement gaps before they become incidents, and handle the decisions that need someone who has done this before.</div>
+          <div class="service-price">$12,000 / month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-box">
+      <h2>Start with a conversation</h2>
+      <p>Most engagements start with a 30-minute call where we find out whether we can actually help. No deck, no pitch. Just an honest assessment of where you are and whether we are the right fit.</p>
+      <a href="mailto:hello@8bitconcepts.com" class="btn-primary">hello@8bitconcepts.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 8bitconcepts &mdash; AI Enablement &amp; Integration Consulting &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
+  </footer>
+
+</body>
+</html>
