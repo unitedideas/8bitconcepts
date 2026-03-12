@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Org Diagnostic -- 8bitconcepts</title>
+  <meta name="description" content="30-minute focused diagnostic of your AI organizational structure. Find out which placement trap you are in and what structural change breaks through it." />
+  <link rel="canonical" href="https://8bitconcepts.com/diagnostic.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate: #0d0d0e;
+      --slate-1: #111214;
+      --slate-2: #1a1c1f;
+      --slate-3: #242729;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757;
+      --terra-dim: rgba(217,119,87,0.15);
+      --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9;
+      --text-dim: #8b8d91;
+      --text-dimmer: #5a5c61;
+      --green: #4ade80;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--slate);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--terra); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--terra);
+      color: white !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: opacity 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 96px 24px 80px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--terra);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .price-card {
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px;
+      margin-bottom: 48px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .price-amount {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
+
+    .price-desc {
+      font-size: 16px;
+      color: var(--text-dim);
+    }
+
+    .buy-btn {
+      display: block;
+      width: 100%;
+      background: var(--terra);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: opacity 0.15s, transform 0.1s;
+      margin-bottom: 16px;
+    }
+
+    .buy-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .buy-sub {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dimmer);
+    }
+
+    .what-you-get {
+      margin-bottom: 48px;
+    }
+
+    .what-you-get h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .deliverable {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .deliverable:last-child { border-bottom: none; }
+
+    .del-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--terra);
+      min-width: 28px;
+      padding-top: 2px;
+    }
+
+    .del-body {}
+
+    .del-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .del-desc {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .who-its-for {
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.15);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .who-its-for h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .who-its-for ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .who-its-for li {
+      font-size: 15px;
+      color: var(--text-dim);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .who-its-for li::before {
+      content: '--';
+      position: absolute;
+      left: 0;
+      color: var(--terra);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .context {
+      margin-bottom: 48px;
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
+
+    .context p { margin-bottom: 16px; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .stat-box {
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .stat-num {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--terra);
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .faq {
+      margin-bottom: 48px;
+    }
+
+    .faq h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+
+    .faq-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .faq-a {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+
+    .bottom-cta {
+      text-align: center;
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .bottom-cta h2 {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .bottom-cta p {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+    }
+
+    .bottom-buy-btn {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+
+    .bottom-buy-btn:hover { opacity: 0.88; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+      color: var(--text-dimmer);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      .page-wrap { padding: 88px 20px 60px; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+      .price-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://8bitconcepts.com">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="https://8bitconcepts.com/#research">Research</a>
+      <a href="https://8bitconcepts.com/#services">Services</a>
+      <a href="mailto:hello@8bitconcepts.com" class="nav-cta">Talk to us</a>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+
+    <div class="eyebrow">Diagnostic Service</div>
+
+    <h1>Find Your AI Ceiling</h1>
+
+    <p class="subtitle">A 30-minute focused diagnostic that identifies which organizational trap is limiting your AI program -- and the specific structural change required to break through it.</p>
+
+    <div class="price-card">
+      <div class="price-row">
+        <span class="price-amount">$500</span>
+        <span class="price-desc">one-time, delivered within 48 hours</span>
+      </div>
+      <a class="buy-btn" href="https://buy.stripe.com/9B600j8Nu22J4A05d9gjC00" target="_blank">
+        Book the Diagnostic &rarr;
+      </a>
+      <p class="buy-sub">Secure checkout via Stripe &middot; You'll receive a calendar link immediately after payment</p>
+    </div>
+
+    <div class="what-you-get">
+      <h2>What you get</h2>
+
+      <div class="deliverable">
+        <div class="del-num">01</div>
+        <div class="del-body">
+          <div class="del-title">The 30-minute session</div>
+          <div class="del-desc">Focused conversation covering where your AI function reports, what it owns, how success is measured, and where cross-functional initiatives break down. No prep required from your side.</div>
+        </div>
+      </div>
+
+      <div class="deliverable">
+        <div class="del-num">02</div>
+        <div class="del-body">
+          <div class="del-title">Placement diagnosis</div>
+          <div class="del-desc">A written assessment of which placement trap your organization is in (IT ceiling, Marketing ceiling, or Operations ceiling) with the specific evidence from your answers that points to it.</div>
+        </div>
+      </div>
+
+      <div class="deliverable">
+        <div class="del-num">03</div>
+        <div class="del-body">
+          <div class="del-title">The structural change required</div>
+          <div class="del-desc">One specific, actionable structural recommendation -- not a 50-page deck, not a vague framework. The single organizational decision that unlocks the ceiling you are currently hitting.</div>
+        </div>
+      </div>
+
+      <div class="deliverable">
+        <div class="del-num">04</div>
+        <div class="del-body">
+          <div class="del-title">Written summary</div>
+          <div class="del-desc">The diagnosis and recommendation delivered in writing within 48 hours of the session. Shareable with your CEO, board, or leadership team.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="who-its-for">
+      <h2>This is for you if...</h2>
+      <ul>
+        <li>Your AI initiatives are producing departmental wins but not system-level outcomes</li>
+        <li>You have an AI team but are not sure where it should sit in the org</li>
+        <li>You are about to write or received an AI mandate and want to know if the foundation is right</li>
+        <li>Your team is technically capable but AI ROI is not materializing</li>
+        <li>You want a second opinion before making an expensive structural change</li>
+      </ul>
+    </div>
+
+    <div class="context">
+      <p>BCG surveyed 1,000 CxOs and found 74% of companies have yet to generate tangible value from AI. MIT research puts generative AI pilot failure rates at 95%. Most explanations focus on technology, data quality, or change management.</p>
+
+      <p>The primary variable is organizational -- specifically, where AI lives in the org chart and what ceiling that placement creates. This is diagnosable in 30 minutes from the answers to five questions.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">74%</div>
+          <div class="stat-label">of companies fail to generate tangible AI value (BCG, n=1,000)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">95%</div>
+          <div class="stat-label">of generative AI pilots fail to deliver business impact (MIT)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">$500</div>
+          <div class="stat-label">to know exactly why you are in that 74% and what to do about it</div>
+        </div>
+      </div>
+
+      <p>The companies in the 26% that generate real AI value invest 70% of their resources on organizational change, not technology. The diagnostic tells you what that change is for your specific situation.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Who runs the diagnostic?</div>
+        <div class="faq-a">The diagnostic is run directly by the principals at 8bitconcepts, not an analyst or associate. The same people who wrote the research are the ones on the call.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What if I want more than the diagnostic?</div>
+        <div class="faq-a">The diagnostic is designed to give you a clear picture and a specific action. If the action requires hands-on implementation support, we will discuss that separately. The $500 covers the diagnostic itself -- there is no upsell baked into the session.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What size company is this for?</div>
+        <div class="faq-a">Series B through D, typically 50 to 600 employees. You need to have deployed AI in at least one business function and have a person responsible for AI strategy, whether or not that person has a formal AI title.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What if the diagnostic finds I do not have a structural problem?</div>
+        <div class="faq-a">That is a possible outcome. If your organizational structure is sound and the bottleneck is technical, we will tell you that directly and point you to where the actual problem is.</div>
+      </div>
+
+    </div>
+
+    <div class="bottom-cta">
+      <h2>Know what you are hitting and why</h2>
+      <p>30 minutes. Written diagnosis. One actionable structural recommendation. $500.</p>
+      <a class="bottom-buy-btn" href="https://buy.stripe.com/9B600j8Nu22J4A05d9gjC00" target="_blank">Book the Diagnostic &rarr;</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 8bitconcepts &mdash; AI Enablement &amp; Integration Consulting &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
+  </footer>
+
+</body>
+</html>
