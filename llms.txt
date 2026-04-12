@@ -15,6 +15,7 @@
 - [The Six Percent](https://8bitconcepts.com/research/the-six-percent.html): The small fraction of organizations getting real value from AI
 - [Beyond the Prompt](https://8bitconcepts.com/research/beyond-the-prompt.html): Moving past prompt engineering to systematic AI integration
 - [Shift Handoff Intelligence](https://8bitconcepts.com/research/shift-handoff-intelligence.html): Maintaining context and knowledge across AI system transitions
+- [The Agentic Accountability Gap](https://8bitconcepts.com/research/the-agentic-accountability-gap.html): Why governance frameworks built for generative AI fail for agentic systems
 
 ## Contact
 

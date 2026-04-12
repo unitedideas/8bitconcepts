@@ -395,11 +395,46 @@ def update_index_html(topic):
         print(f"  WARNING: Could not find insertion point in index.html", file=sys.stderr)
 
 
+def update_sitemap(topic):
+    """Add new paper to sitemap.xml."""
+    sitemap_path = SCRIPT_DIR / "sitemap.xml"
+    if not sitemap_path.exists():
+        return
+    with open(sitemap_path) as f:
+        content = f.read()
+    new_entry = f"""  <url>
+    <loc>https://8bitconcepts.com/research/{topic['slug']}.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>"""
+    content = content.replace("</urlset>", f"{new_entry}\n</urlset>")
+    with open(sitemap_path, "w") as f:
+        f.write(content)
+    print(f"  Updated sitemap.xml")
+
+
+def update_llms_txt(topic):
+    """Add new paper to llms.txt."""
+    llms_path = SCRIPT_DIR / "llms.txt"
+    if not llms_path.exists():
+        return
+    with open(llms_path) as f:
+        content = f.read()
+    desc = topic.get("subtitle", topic.get("thesis", ""))[:100]
+    new_line = f"- [{topic['title']}](https://8bitconcepts.com/research/{topic['slug']}.html): {desc}"
+    # Insert before ## Contact
+    content = content.replace("\n## Contact", f"\n{new_line}\n\n## Contact")
+    with open(llms_path, "w") as f:
+        f.write(content)
+    print(f"  Updated llms.txt")
+
+
 def git_commit_and_push(topic):
     """Commit new paper and push to deploy."""
     os.chdir(SCRIPT_DIR)
     slug = topic["slug"]
-    subprocess.run(["git", "add", f"research/{slug}.html", "index.html", "research/.topics-generated.json"],
+    subprocess.run(["git", "add", f"research/{slug}.html", "index.html",
+                    "research/.topics-generated.json", "sitemap.xml", "llms.txt"],
                     capture_output=True)
     subprocess.run(["git", "commit", "-m",
                     f"research: {topic['title']}\n\nAutonomously generated research paper.\n\nCo-Authored-By: Claude <noreply@anthropic.com>"],
@@ -467,9 +502,11 @@ Return JSON only:
     with open(paper_path, "w") as f:
         f.write(html)
 
-    # 5. Update index.html
+    # 5. Update index.html, sitemap, llms.txt
     print("\n5. Updating index.html...")
     update_index_html(topic)
+    update_sitemap(topic)
+    update_llms_txt(topic)
 
     # 6. Log topic
     log = load_topics_log()
