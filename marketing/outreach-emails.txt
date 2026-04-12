@@ -1,0 +1,281 @@
+8bitconcepts.com -- Personalized Cold Outreach
+From: hello@8bitconcepts.com
+Date: 2026-03-12
+12 emails -- send Tier 1 first, then Tier 2
+
+
+================================================================================
+EMAIL 1 OF 12 -- TIER 1
+TO: Alexander Christie <[find via LinkedIn]>
+RE: Attio / Series B
+================================================================================
+SUBJECT: the hidden cost of "AI-native" at 5K customers
+
+Hi Alexander,
+
+Congrats on the Series B. "AI-native CRM" is a strong positioning.
+
+I've been watching Attio's trajectory and wanted to flag something we see consistently at this stage: the AI-native pitch is clean in the deck but executing it across 5K+ customer data models is where the actual cost lives. Model API is usually 10-20% of what AI integration actually costs. The other 80% is in the infrastructure, the observability, the customer data variability.
+
+Wrote about the specific cost breakdown here if it's useful: https://8bitconcepts.com/research/the-integration-tax.html
+
+If you're curious whether your current architecture has a structural ceiling before Series C, we do a 30-min AI Org Diagnostic for $500 -- written analysis delivered in 24 hours: https://8bitconcepts.com/diagnostic.html
+
+Worth it or not, the essay is free.
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 2 OF 12 -- TIER 1
+TO: Albert Strasheim <[find via LinkedIn]>
+RE: Rippling / Series E
+================================================================================
+SUBJECT: Rippling's AI setup -- the org chart question
+
+Hi Albert,
+
+Congrats on the Series E. Rippling's multi-product structure (HR, IT, Payroll, Spend) is genuinely impressive. One thing I'd be curious about from the outside: where does AI report in that structure?
+
+BCG published data this year showing 74% of companies fail to generate AI value not because of the technology, but because of where AI gets placed in the org. When AI initiative crosses product boundaries -- which yours clearly does -- the reporting line becomes the primary constraint on velocity.
+
+I wrote about the specific patterns here: https://8bitconcepts.com/research/the-org-chart-problem.html
+
+If you want an outside read on whether your current structure is set up to scale AI across the product surface, we do a 30-min AI Org Diagnostic for $500: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 3 OF 12 -- TIER 1
+TO: Ant Wilson <[find via LinkedIn]>
+RE: Supabase / Series E
+================================================================================
+SUBJECT: $2B to $5B in 4 months -- the org question that doesn't scale itself
+
+Hi Ant,
+
+$2B to $5B valuation in 4 months is a fast trajectory. Congrats.
+
+One thing I watch for at that growth rate: the org structure that worked at $2B usually has a ceiling that appears around $5B. Specifically on the AI side -- pgvector and "AI-native database" are easy to ship as features. Scaling that claim across enterprise customers with different data models, compliance requirements, and integration stacks is a different engineering org challenge than what got you here.
+
+Wrote something about where that hidden cost lives: https://8bitconcepts.com/research/the-integration-tax.html
+
+If you're thinking through what the org needs to look like at $10B, we do a 30-min AI Org Diagnostic for $500 that maps the structural constraints before they become expensive: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 4 OF 12 -- TIER 1
+TO: Yuki Matsumoto <[find via LinkedIn/LayerX]>
+RE: LayerX / US expansion
+================================================================================
+SUBJECT: $100M Series B -- the org question that kills US expansion
+
+Hi Yuki,
+
+Congrats on the $100M Series B and the US market push.
+
+One pattern we see consistently with Japanese-origin companies entering the US market with AI products: the internal org structure that built the product in Japan (consensus-driven, long cycle, deeply integrated team) doesn't map cleanly onto what US enterprise buyers expect from an AI automation vendor (rapid iteration, direct accountability, quarterly measurement). The gap usually shows up 12-18 months in.
+
+Wrote about how org placement determines AI returns -- the data holds across market contexts: https://8bitconcepts.com/research/the-org-chart-problem.html
+
+If it's useful, we do a 30-min AI Org Diagnostic for $500 that would specifically map what needs to change in your structure to optimize for the US expansion: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 5 OF 12 -- TIER 2
+TO: Fuzzy Khosrowshahi <[find via LinkedIn/Notion]>
+RE: Notion / CTO hire + AI agents
+================================================================================
+SUBJECT: Notion AI agents -- the org structure behind $500M ARR
+
+Hi Fuzzy,
+
+I've been following Notion's AI trajectory since the agent launch in September. Impressive milestone.
+
+You joined as CTO 15 months ago to lead exactly this transition -- from document collaboration to programmable AI platform. That's a materially different engineering org than what Notion had before. The infrastructure mindset, the reliability requirements, the measurement system -- all different.
+
+BCG data shows 74% of companies at this transition point fail to generate AI value due to structural issues, not technical ones. The companies in the 26% restructured deliberately before the AI surface area grew too large to change.
+
+I wrote about the specific patterns here: https://8bitconcepts.com/research/the-org-chart-problem.html
+
+If useful, we do a 30-min AI Org Diagnostic for $500 that would assess whether Notion's current structure is set up to compound at $1B ARR: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 6 OF 12 -- TIER 2
+TO: Jorn Van Dijk <[find via Framer/LinkedIn]>
+RE: Framer / Series D + AI launch
+================================================================================
+SUBJECT: Framer AI -- what scales after Series D
+
+Hi Jorn,
+
+$2B valuation, $100M Series D, and AI features shipping in May. Strong year.
+
+One thing worth thinking through at this stage: the AI features you launched (page drafts, copy, imagery from 100+ sections) are built for the solo designer mental model. Framer's growth trajectory now requires enterprise customers, teams, and multiplayer workflows. Those have different AI requirements -- and usually a different org structure.
+
+Wrote about how founder-CTOs handle this inflection point: https://8bitconcepts.com/research/the-org-chart-problem.html
+
+We do a 30-min AI Org Diagnostic for $500 if you want an outside read on where your current structure caps you before Series E: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 7 OF 12 -- TIER 2
+TO: Abhik Pramanik <[find via Ashby/LinkedIn]>
+RE: Ashby / Series D
+================================================================================
+SUBJECT: Ashby Series D -- the org structure question for AI recruiting
+
+Hi Abhik,
+
+Congrats on Series D. Ashby's trajectory from W19 to this stage is genuinely strong.
+
+Interesting angle from the outside: you're selling "AI-powered recruiting" to customers trying to scale their hiring, while your own engineering team is scaling through exactly the inflection point your product is designed to help with. The drinking-your-own-champagne challenge.
+
+At 150-200 people with Series D capital, the AI org question shifts from "how do we build these features" to "how do we structure the team to compound on them." Those are different problems.
+
+Wrote about the structural patterns here: https://8bitconcepts.com/research/the-org-chart-problem.html
+
+If useful: 30-min AI Org Diagnostic, $500, written summary in 24 hours: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 8 OF 12 -- TIER 2
+TO: David Hsu (CEO) <[find via LinkedIn]>
+RE: Retool / AI features (no public CTO)
+================================================================================
+SUBJECT: Retool's AI features -- the integration cost question
+
+Hi David,
+
+Retool's AppGen and Agents features are a strong response to the low-code market shift. One thing I'd be curious about: how are you measuring the real cost of AI integration across the 1000+ legacy enterprise databases and permission models your customers connect?
+
+The model API cost is usually 10-20% of what AI integration actually costs at enterprise scale. The other 80% is in the infrastructure, the support load, the edge cases in customer data. Most companies building AI-on-top-of-enterprise-data don't map that cost until 12 months in.
+
+Wrote about the breakdown: https://8bitconcepts.com/research/the-integration-tax.html
+
+We do a 30-min AI Org Diagnostic for $500 if useful -- maps the structural constraints before they become expensive at Series D: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 9 OF 12 -- TIER 3
+TO: Kris Rasmussen <[find via LinkedIn]>
+RE: Figma / post-IPO + multiple AI partnerships
+================================================================================
+SUBJECT: Figma's AI partnerships -- the measurement question for investors
+
+Hi Kris,
+
+Post-IPO, the question your investors are asking is "what % of NRR is AI?" and "where's the moat across Anthropic, OpenAI, and Google partnerships?" Those are measurement questions before they're technology questions.
+
+Most engineering organizations at this stage have shipped AI features without building the measurement layer that tells you which feature is working, for which user cohort, at what cost per interaction. That gap gets expensive when the analyst questions start.
+
+Wrote about how companies discover this 8 months too late: https://8bitconcepts.com/research/the-measurement-problem.html
+
+We do a 30-min AI Org Diagnostic for $500 that would specifically assess your current measurement posture against what public company investors expect: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 10 OF 12 -- TIER 3
+TO: Darragh Curran <[find via LinkedIn]>
+RE: Intercom / Fin adoption gap
+================================================================================
+SUBJECT: Fin at 7K of 10K customers -- the adoption gap question
+
+Hi Darragh,
+
+Fin is one of the most visible AI agent deployments in the market. Impressive build.
+
+One data point I noticed from outside: 7K business adoption out of 10K+ customer base. That's 30% not adopting. The gap between capability and adoption is almost always a customer integration problem, not a product problem -- and that usually traces back to internal structure: who owns the adoption curve, how is it measured, what does success look like at the rep level.
+
+Wrote about how companies run AI blind and what it costs: https://8bitconcepts.com/research/the-measurement-problem.html
+
+If useful: 30-min AI Org Diagnostic, $500, written summary in 24 hours: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 11 OF 12 -- TIER 3
+TO: Christina Cacioppo (CEO) <[find via LinkedIn]>
+RE: Vanta / $4B valuation + AI compliance
+================================================================================
+SUBJECT: AI compliance automation -- the org question at $4B
+
+Hi Christina,
+
+Vanta's trajectory from SOC 2 to 35+ frameworks is impressive. "AI automates compliance" is a strong positioning.
+
+At $4B, the question that usually surfaces: which AI model handles which compliance framework, and who owns that decision? Most founder-led companies at this stage don't have a defined answer, because the compliance team knows compliance and the engineering team knows AI -- and those two don't naturally connect.
+
+Wrote about the structural patterns that determine AI ROI: https://8bitconcepts.com/research/the-org-chart-problem.html
+
+We do a 30-min AI Org Diagnostic for $500 if you're thinking through what the org needs to look like before Series D: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+EMAIL 12 OF 12 -- TIER 3
+TO: [Canva engineering leadership -- approach via engineering blog/open source]
+RE: Canva / AI acquisitions integration
+================================================================================
+SUBJECT: Canva's AI acquisitions -- the integration architecture question
+
+Hi [Name],
+
+Canva's AI strategy -- Phoenix foundation model, Leonardo AI acquisition ($370M), Runway partnerships -- is one of the most aggressive in the design space. Impressive.
+
+One thing I'd be curious about from the outside: how are you architecting the integration between Leonardo's generative models, the Phoenix foundation model, and the legacy Canva product for 100M+ users? That's three different AI stacks serving the same user surface. The integration tax on that kind of architecture is real and usually shows up in engineering velocity and incident rate 12-18 months post-acquisition.
+
+Wrote about where the hidden cost lives: https://8bitconcepts.com/research/the-integration-tax.html
+
+We do a 30-min AI Org Diagnostic for $500 if you want an outside architecture read before the next acquisition: https://8bitconcepts.com/diagnostic.html
+
+Shane
+8bitconcepts.com | hello@8bitconcepts.com
+
+
+================================================================================
+FOLLOW-UP TEMPLATE (Day 4, no reply)
+================================================================================
+SUBJECT: Re: [original subject]
+
+Hi [Name],
+
+Quick follow-up in case this got buried.
+
+One question: is the constraint on your AI ROI right now primarily technical (model performance, latency, reliability) or structural (who owns it, how it's measured, how it scales)?
+
+Most teams say both, but structural is almost always the harder one to see and the easier one to fix once named.
+
+Diagnostic is here if useful: https://8bitconcepts.com/diagnostic.html
+
+Shane
+================================================================================
