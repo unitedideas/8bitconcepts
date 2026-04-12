@@ -91,6 +91,29 @@ def fetch_page_text(url, max_chars=8000):
         return ""
 
 
+def send_discord_alert(message):
+    """Send alert to Discord via Owl Bot."""
+    try:
+        token = subprocess.run(
+            ["/usr/bin/security", "find-generic-password", "-a", "foundry", "-s", "discord-bot-token", "-w"],
+            capture_output=True, text=True
+        ).stdout.strip()
+        channel = subprocess.run(
+            ["/usr/bin/security", "find-generic-password", "-a", "foundry", "-s", "discord-channel-id", "-w"],
+            capture_output=True, text=True
+        ).stdout.strip()
+        if token and channel:
+            payload = json.dumps({"content": message[:1900]}).encode()
+            req = urllib.request.Request(
+                f"https://discord.com/api/v10/channels/{channel}/messages",
+                data=payload,
+                headers={"Authorization": f"Bot {token}", "Content-Type": "application/json"},
+            )
+            urllib.request.urlopen(req, timeout=10)
+    except Exception:
+        pass
+
+
 def call_claude(messages, max_tokens=8192, model="claude-sonnet-4-6"):
     """Call Claude API directly."""
     api_key = get_secret("anthropic-api-key")
@@ -106,9 +129,18 @@ def call_claude(messages, max_tokens=8192, model="claude-sonnet-4-6"):
         "content-type": "application/json",
     })
 
-    with urllib.request.urlopen(req, timeout=300) as resp:
-        data = json.loads(resp.read())
-        return data["content"][0]["text"]
+    try:
+        with urllib.request.urlopen(req, timeout=300) as resp:
+            data = json.loads(resp.read())
+            return data["content"][0]["text"]
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="ignore")
+        if e.code == 400 and ("credit" in body.lower() or "billing" in body.lower()):
+            print(f"Anthropic API credits exhausted. Skipping this run.", file=sys.stderr)
+            send_discord_alert("**8bitconcepts Research Pipeline** — skipped: Anthropic API credits exhausted. Refill at console.anthropic.com.")
+            sys.exit(0)
+        print(f"Claude API error {e.code}: {body[:500]}", file=sys.stderr)
+        raise
 
 
 def get_existing_topics():
