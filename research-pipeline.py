@@ -333,6 +333,13 @@ Return ONLY the complete HTML document. Use this exact structure:
   <title>{topic['title']} -- 8bitconcepts</title>
   <meta name="description" content="[subtitle text]" />
   <link rel="canonical" href="https://8bitconcepts.com/research/{topic['slug']}.html" />
+  <meta property="og:title" content="{topic['title']} — 8bitconcepts" />
+  <meta property="og:description" content="[subtitle text]" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://8bitconcepts.com/research/{topic['slug']}.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{topic['title']}" />
+  <meta name="twitter:description" content="[subtitle text]" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
