@@ -4,5 +4,11 @@
     "slug": "the-guardrails-gap",
     "tag": "Agentic AI Risk",
     "generated_at": "2026-04-12T21:12:59.617134+00:00"
+  },
+  {
+    "title": "The Hallucination Budget",
+    "slug": "the-hallucination-budget",
+    "tag": "LLMOps",
+    "generated_at": "2026-04-12T21:22:30.573229+00:00"
   }
 ]
