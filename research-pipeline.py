@@ -340,6 +340,28 @@ Return ONLY the complete HTML document. Use this exact structure:
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="{topic['title']}" />
   <meta name="twitter:description" content="[subtitle text]" />
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "{topic['title']}",
+    "url": "https://8bitconcepts.com/research/{topic['slug']}.html",
+    "datePublished": "{topic.get('date','2026-04-01')}",
+    "author": {{
+      "@type": "Organization",
+      "name": "8bitconcepts",
+      "url": "https://8bitconcepts.com"
+    }},
+    "publisher": {{
+      "@type": "Organization",
+      "name": "8bitconcepts",
+      "url": "https://8bitconcepts.com"
+    }},
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "about": "enterprise AI adoption"
+  }}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
