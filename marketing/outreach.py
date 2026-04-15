@@ -306,12 +306,111 @@ def cmd_status():
         print(f"  - {t['contact_name']} @ {t['company']} <{t['email']}>  hook={t.get('hook')}")
 
 
+FOLLOWUP_TEMPLATE = """\
+Hi {contact},
+
+Quick follow-up on my note from earlier. I wanted to make sure you saw the research on enterprise AI — it's the piece that gets the most reach-outs from VPs and CTOs at companies your size.
+
+{hook_line}
+
+Full piece if you have a spare 5 minutes: {url}
+
+No ask — if the timing is off or the topic's not relevant, happy to drop it and clear your inbox.
+
+Shane
+8bitconcepts | hello@8bitconcepts.com
+"""
+
+HOOK_FOLLOWUP_LINE = {
+    "integration-tax": "The short version: model API cost is only 10–20% of what enterprise AI actually costs. The 80% that eats budgets is data pipelines, integration, evaluation, maintenance.",
+    "org-chart-problem": "The short version: where AI reports in your org chart predicts outcomes more than what model you're using. Most teams don't pull AI out from under IT until they've already stalled.",
+    "measurement-problem": "The short version: the AI metric that predicts ROI is 'irreversible decisions the AI made per quarter.' Usage counts and cost avoidance don't correlate with actual value.",
+    "six-percent": "The short version: McKinsey says 6% of companies see real returns from AI. The 6% treat AI as compounding capability, not point solutions.",
+    "media-integration-tax": "The short version: AI projects consistently run 5-8x over initial budgets; the cost distribution I sent is a reusable data point.",
+    "media-six-percent": "The short version: the 6% story isn't about tech sophistication — it's organizational discipline, and that's the untold angle in most coverage.",
+    "founder-integration-tax": "The short version: your enterprise buyers will push on the TCO math in ~6 months. 5x the model cost for standard deals, 8x for complex.",
+    "founder-six-percent": "The short version: the startups that make it to 'AI that compounds' put the discipline in place pre-scale. Retrofitting at Series B is expensive.",
+}
+
+HOOK_URL = {
+    "integration-tax": "https://8bitconcepts.com/research/the-integration-tax.html",
+    "org-chart-problem": "https://8bitconcepts.com/research/the-org-chart-problem.html",
+    "measurement-problem": "https://8bitconcepts.com/research/the-measurement-problem.html",
+    "six-percent": "https://8bitconcepts.com/research/the-six-percent.html",
+    "media-integration-tax": "https://8bitconcepts.com/research/the-integration-tax.html",
+    "media-six-percent": "https://8bitconcepts.com/research/the-six-percent.html",
+    "founder-integration-tax": "https://8bitconcepts.com/research/the-integration-tax.html",
+    "founder-six-percent": "https://8bitconcepts.com/research/the-six-percent.html",
+}
+
+
+def cmd_followup(after_days, dry_run=False):
+    """Send follow-up to targets whose initial was delivered >= N days ago and no followup yet."""
+    from datetime import datetime, timezone, timedelta
+    sent = load_sent()
+    # Build delivered-initial set
+    cutoff = datetime.now(timezone.utc) - timedelta(days=after_days)
+    initials = [e for e in sent if e.get("type", "initial") == "initial" and not e.get("error")]
+    followed_up = {e["email"].lower() for e in sent if e.get("type") == "follow-up"}
+    eligible = []
+    for e in initials:
+        if e["email"].lower() in followed_up:
+            continue
+        try:
+            sent_at = datetime.fromisoformat(e["sent_at"].replace("Z", "+00:00"))
+        except Exception:
+            continue
+        if sent_at > cutoff:
+            continue
+        eligible.append(e)
+    if not eligible:
+        print(f"No follow-ups due (after_days={after_days}).")
+        return
+    print(f"{len(eligible)} follow-ups due")
+    api_key = None if dry_run else get_resend_key()
+    for e in eligible:
+        hook = e.get("hook", "integration-tax")
+        if hook not in HOOK_FOLLOWUP_LINE:
+            print(f"  SKIP unknown hook {hook} on {e.get('email')}")
+            continue
+        # Extract first name
+        first = (e.get("contact_name") or "").split()[0] if e.get("contact_name") else "there"
+        subject = "Re: " + (e.get("subject") or "8bitconcepts research")
+        body = FOLLOWUP_TEMPLATE.format(
+            contact=first,
+            hook_line=HOOK_FOLLOWUP_LINE[hook],
+            url=HOOK_URL[hook],
+        )
+        print(f"\n-- {e['contact_name']} <{e['email']}> --\n{subject}\n{body}")
+        if dry_run:
+            continue
+        ok, info = send_via_resend(api_key, e["email"], subject, body)
+        sent.append({
+            "type": "follow-up",
+            "company": e["company"],
+            "contact_name": e["contact_name"],
+            "email": e["email"],
+            "hook": hook,
+            "subject": subject,
+            "sent_at": datetime.now(timezone.utc).isoformat(),
+            "resend_id": info if ok else None,
+            "error": None if ok else info,
+            "original_resend_id": e.get("resend_id"),
+        })
+        save_sent(sent)
+        status = "SENT" if ok else "FAILED"
+        print(f"  {status}: {info}")
+
+
 def main():
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("send")
     sub.add_parser("dry-run")
     sub.add_parser("status")
+    f = sub.add_parser("follow-up")
+    f.add_argument("--after-days", type=int, default=4)
+    f.add_argument("--dry-run", action="store_true")
     args = p.parse_args()
 
     if args.cmd == "send":
@@ -320,6 +419,8 @@ def main():
         cmd_send(dry_run=True)
     elif args.cmd == "status":
         cmd_status()
+    elif args.cmd == "follow-up":
+        cmd_followup(args.after_days, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
