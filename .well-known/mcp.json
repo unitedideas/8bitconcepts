@@ -2,8 +2,12 @@
   "name": "eightbitconcepts-research",
   "version": "0.1.0-preview",
   "status": "preview",
-  "description": "Read-only access to the 8bitconcepts enterprise-AI research corpus. Preview-stage MCP manifest declaring the tool surface; JSON-RPC endpoint activates once hosted behind a worker.",
-  "endpoint": "https://8bitconcepts.com/mcp",
+  "description": "Read-only access to the 8bitconcepts enterprise-AI research corpus. Preview-stage manifest — the tool surface is declared but the JSON-RPC endpoint is NOT yet hosted (GitHub Pages is static-only). Until a Cloudflare Worker fronts /mcp, agents should fetch the corpus directly via /research.json and /research/{slug}.html.",
+  "endpoint": null,
+  "fallback": {
+    "research_index_url": "https://8bitconcepts.com/research.json",
+    "paper_url_template": "https://8bitconcepts.com/research/{slug}.html"
+  },
   "tools": [
     {
       "name": "list_research_papers",
