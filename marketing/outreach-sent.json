@@ -198,5 +198,105 @@
     "sent_at": "2026-04-15T19:20:28.511766+00:00",
     "resend_id": "8d8eb0ff-e8d1-4b52-b95a-b6ae9d3e921f",
     "error": null
+  },
+  {
+    "company": "Sequoia Capital",
+    "contact_name": "Sonya Huang",
+    "email": "shuang@sequoiacap.com",
+    "hook": "six-percent",
+    "subject": "why 94% of AI programs don't compound",
+    "sent_at": "2026-04-15T21:02:51.857604+00:00",
+    "resend_id": "802f079c-8c37-4b73-af9e-5bbb9e3b2a5f",
+    "error": null
+  },
+  {
+    "company": "Sequoia Capital",
+    "contact_name": "Pat Grady",
+    "email": "grady@sequoiacap.com",
+    "hook": "org-chart-problem",
+    "subject": "where AI reports in Sequoia Capital's org chart",
+    "sent_at": "2026-04-15T21:02:52.181280+00:00",
+    "resend_id": "9a6f74f0-cff3-41a1-a618-5de9ca908957",
+    "error": null
+  },
+  {
+    "company": "Greylock",
+    "contact_name": "Saam Motamedi",
+    "email": "smotamedi@greylock.com",
+    "hook": "integration-tax",
+    "subject": "the hidden 80% of AI cost at Greylock",
+    "sent_at": "2026-04-15T21:02:52.481213+00:00",
+    "resend_id": "be1b071a-42ef-4531-a906-232c9750bc28",
+    "error": null
+  },
+  {
+    "company": "Greylock",
+    "contact_name": "Corinne Riley",
+    "email": "corinne@greylock.com",
+    "hook": "measurement-problem",
+    "subject": "the AI metric that actually predicts ROI at Greylock",
+    "sent_at": "2026-04-15T21:02:52.711727+00:00",
+    "resend_id": "1de21b2f-6c66-42fa-b010-211701242522",
+    "error": null
+  },
+  {
+    "company": "Amplify Partners",
+    "contact_name": "Sarah Catanzaro",
+    "email": "sarah@amplifypartners.com",
+    "hook": "integration-tax",
+    "subject": "the hidden 80% of AI cost at Amplify Partners",
+    "sent_at": "2026-04-15T21:02:52.961515+00:00",
+    "resend_id": "bfdd9c01-a4ff-4198-aded-f0fd0df6a4a7",
+    "error": null
+  },
+  {
+    "company": "Amplify Partners",
+    "contact_name": "Lenny Pruss",
+    "email": "lenny@amplifypartners.com",
+    "hook": "six-percent",
+    "subject": "why 94% of AI programs don't compound",
+    "sent_at": "2026-04-15T21:02:53.183867+00:00",
+    "resend_id": "af4d55e3-5213-416f-94cf-09cafe50dd0b",
+    "error": null
+  },
+  {
+    "company": "Amplify Partners",
+    "contact_name": "Mike Dauber",
+    "email": "mike@amplifypartners.com",
+    "hook": "measurement-problem",
+    "subject": "the AI metric that actually predicts ROI at Amplify Partners",
+    "sent_at": "2026-04-15T21:02:53.439164+00:00",
+    "resend_id": "6d64bfd1-df8d-40b7-9dfa-5a5443aa2957",
+    "error": null
+  },
+  {
+    "company": "Databricks",
+    "contact_name": "Matei Zaharia",
+    "email": "matei@berkeley.edu",
+    "hook": "integration-tax",
+    "subject": "the hidden 80% of AI cost at Databricks",
+    "sent_at": "2026-04-15T21:02:53.695395+00:00",
+    "resend_id": "5fb51784-8a93-4628-a1a1-12de65d4a2e3",
+    "error": null
+  },
+  {
+    "company": "Turing Post",
+    "contact_name": "Ksenia Se",
+    "email": "ks@turingpost.com",
+    "hook": "media-six-percent",
+    "subject": "McKinsey says 88% use AI, 6% see returns \u2014 what the 6% actually do differently",
+    "sent_at": "2026-04-15T21:02:53.937976+00:00",
+    "resend_id": "ca6ee5dc-54e2-43c5-b74e-5905ee279d91",
+    "error": null
+  },
+  {
+    "company": "OnlyCFO",
+    "contact_name": "OnlyCFO",
+    "email": "onlyrealcfo@gmail.com",
+    "hook": "measurement-problem",
+    "subject": "the AI metric that actually predicts ROI at OnlyCFO",
+    "sent_at": "2026-04-15T21:02:54.170292+00:00",
+    "resend_id": "640d7ce6-4c17-4915-adf3-38f63a3d2de3",
+    "error": null
   }
 ]

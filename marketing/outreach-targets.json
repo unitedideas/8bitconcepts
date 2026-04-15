@@ -178,5 +178,95 @@
     "hook": "founder-six-percent",
     "source_confidence": "verified",
     "source": "YC company page mailto"
+  },
+  {
+    "company": "Sequoia Capital",
+    "contact_name": "Sonya Huang",
+    "role": "Partner, AI/Growth",
+    "email": "shuang@sequoiacap.com",
+    "hook": "six-percent",
+    "source_confidence": "verified",
+    "source": "https://sequoiacap.com/people/sonya-huang/"
+  },
+  {
+    "company": "Sequoia Capital",
+    "contact_name": "Pat Grady",
+    "role": "Partner (enterprise SaaS, AI)",
+    "email": "grady@sequoiacap.com",
+    "hook": "org-chart-problem",
+    "source_confidence": "verified",
+    "source": "https://sequoiacap.com/people/pat-grady/"
+  },
+  {
+    "company": "Greylock",
+    "contact_name": "Saam Motamedi",
+    "role": "Partner (enterprise software, AI)",
+    "email": "smotamedi@greylock.com",
+    "hook": "integration-tax",
+    "source_confidence": "verified",
+    "source": "https://greylock.com/team/saam-motamedi/"
+  },
+  {
+    "company": "Greylock",
+    "contact_name": "Corinne Riley",
+    "role": "Partner (AI infrastructure and applications)",
+    "email": "corinne@greylock.com",
+    "hook": "measurement-problem",
+    "source_confidence": "verified",
+    "source": "https://greylock.com/team/corinne-riley/"
+  },
+  {
+    "company": "Amplify Partners",
+    "contact_name": "Sarah Catanzaro",
+    "role": "General Partner (AI/ML, data infrastructure)",
+    "email": "sarah@amplifypartners.com",
+    "hook": "integration-tax",
+    "source_confidence": "verified",
+    "source": "https://www.amplifypartners.com/team/sarah-catanzaro"
+  },
+  {
+    "company": "Amplify Partners",
+    "contact_name": "Lenny Pruss",
+    "role": "General Partner (cloud, data, developer tools)",
+    "email": "lenny@amplifypartners.com",
+    "hook": "six-percent",
+    "source_confidence": "verified",
+    "source": "https://www.amplifypartners.com/team/lenny-pruss"
+  },
+  {
+    "company": "Amplify Partners",
+    "contact_name": "Mike Dauber",
+    "role": "General Partner (enterprise infrastructure)",
+    "email": "mike@amplifypartners.com",
+    "hook": "measurement-problem",
+    "source_confidence": "verified",
+    "source": "https://www.amplifypartners.com/team/mike-dauber"
+  },
+  {
+    "company": "Databricks",
+    "contact_name": "Matei Zaharia",
+    "role": "Co-founder and CTO",
+    "email": "matei@berkeley.edu",
+    "hook": "integration-tax",
+    "source_confidence": "verified",
+    "source": "https://people.eecs.berkeley.edu/~matei/"
+  },
+  {
+    "company": "Turing Post",
+    "contact_name": "Ksenia Se",
+    "role": "Founder/Editor (25k+ AI newsletter)",
+    "email": "ks@turingpost.com",
+    "hook": "media-six-percent",
+    "source_confidence": "verified",
+    "source": "https://turingpost.substack.com/about"
+  },
+  {
+    "company": "OnlyCFO",
+    "contact_name": "OnlyCFO",
+    "role": "Founder/author, finance+AI newsletter",
+    "email": "onlyrealcfo@gmail.com",
+    "hook": "measurement-problem",
+    "source_confidence": "verified",
+    "source": "https://www.onlycfo.io/about"
   }
 ]
