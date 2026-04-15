@@ -70,5 +70,50 @@
     "hook": "media-integration-tax",
     "source_confidence": "verified",
     "source": "https://www.andrewng.org/contact"
+  },
+  {
+    "company": "One Useful Thing (newsletter)",
+    "contact_name": "Ethan Mollick",
+    "role": "Wharton Professor / Substack",
+    "email": "emollick@wharton.upenn.edu",
+    "hook": "media-six-percent",
+    "source_confidence": "verified",
+    "source": "https://mgmt.wharton.upenn.edu/profile/emollick/ (Wharton faculty page)"
+  },
+  {
+    "company": "Big Technology (newsletter)",
+    "contact_name": "Alex Kantrowitz",
+    "role": "Journalist / Author",
+    "email": "alex.kantrowitz@gmail.com",
+    "hook": "media-integration-tax",
+    "source_confidence": "verified",
+    "source": "https://alexkantrowitz.com/contact/ (personal site mailto)"
+  },
+  {
+    "company": "Not Boring (newsletter)",
+    "contact_name": "Packy McCormick",
+    "role": "Writer / Not Boring Capital",
+    "email": "packymcc@gmail.com",
+    "hook": "media-six-percent",
+    "source_confidence": "verified",
+    "source": "https://www.notboring.co/p/per-my-last-e-mail-21 (self-disclosed in post)"
+  },
+  {
+    "company": "Theory VC (newsletter)",
+    "contact_name": "Tomasz Tunguz",
+    "role": "VC / Author",
+    "email": "tomasz@theoryvc.com",
+    "hook": "media-integration-tax",
+    "source_confidence": "verified",
+    "source": "https://theoryvc.com/team-members/tomasz-tunguz (firm profile)"
+  },
+  {
+    "company": "Unsupervised Learning (newsletter)",
+    "contact_name": "Daniel Miessler",
+    "role": "Author",
+    "email": "daniel@danielmiessler.com",
+    "hook": "media-six-percent",
+    "source_confidence": "verified",
+    "source": "https://danielmiessler.com/about (personal site mailto)"
   }
 ]

@@ -78,5 +78,55 @@
     "sent_at": "2026-04-15T19:00:59.881537+00:00",
     "resend_id": "8bcd7c38-1037-4611-af97-8f769c0ac6ea",
     "error": null
+  },
+  {
+    "company": "One Useful Thing (newsletter)",
+    "contact_name": "Ethan Mollick",
+    "email": "emollick@wharton.upenn.edu",
+    "hook": "media-six-percent",
+    "subject": "McKinsey says 88% use AI, 6% see returns \u2014 what the 6% actually do differently",
+    "sent_at": "2026-04-15T19:09:37.864218+00:00",
+    "resend_id": "99cf96ad-f48f-487b-aa7c-953d36991372",
+    "error": null
+  },
+  {
+    "company": "Big Technology (newsletter)",
+    "contact_name": "Alex Kantrowitz",
+    "email": "alex.kantrowitz@gmail.com",
+    "hook": "media-integration-tax",
+    "subject": "data: AI projects are running 5-8x over budget. Here's where the cost actually goes.",
+    "sent_at": "2026-04-15T19:09:38.157734+00:00",
+    "resend_id": "622cc491-8da4-4f16-a591-69a9408c63ce",
+    "error": null
+  },
+  {
+    "company": "Not Boring (newsletter)",
+    "contact_name": "Packy McCormick",
+    "email": "packymcc@gmail.com",
+    "hook": "media-six-percent",
+    "subject": "McKinsey says 88% use AI, 6% see returns \u2014 what the 6% actually do differently",
+    "sent_at": "2026-04-15T19:09:38.456335+00:00",
+    "resend_id": "a1539792-59d6-464a-b9af-834b5ebe88ee",
+    "error": null
+  },
+  {
+    "company": "Theory VC (newsletter)",
+    "contact_name": "Tomasz Tunguz",
+    "email": "tomasz@theoryvc.com",
+    "hook": "media-integration-tax",
+    "subject": "data: AI projects are running 5-8x over budget. Here's where the cost actually goes.",
+    "sent_at": "2026-04-15T19:09:38.693670+00:00",
+    "resend_id": "43e73980-c03f-43b5-a2ab-4382bcf2f151",
+    "error": null
+  },
+  {
+    "company": "Unsupervised Learning (newsletter)",
+    "contact_name": "Daniel Miessler",
+    "email": "daniel@danielmiessler.com",
+    "hook": "media-six-percent",
+    "subject": "McKinsey says 88% use AI, 6% see returns \u2014 what the 6% actually do differently",
+    "sent_at": "2026-04-15T19:09:38.964562+00:00",
+    "resend_id": "d0051dab-7e90-415c-919f-0853bddf0f4a",
+    "error": null
   }
 ]
