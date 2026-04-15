@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: 8bitconcepts Research API
+  description: |
+    Programmatic access to 8bitconcepts research on enterprise AI strategy,
+    governance, and operational risk. Designed for AI agents and crawlers
+    that need a discoverable, structured index of available research.
+  version: "1.0.0"
+  contact:
+    name: 8bitconcepts
+    url: https://8bitconcepts.com
+    email: hello@8bitconcepts.com
+  license:
+    name: Proprietary — research summaries citable, full text © 8bitconcepts
+    url: https://8bitconcepts.com
+servers:
+  - url: https://8bitconcepts.com
+    description: Production
+paths:
+  /research.json:
+    get:
+      operationId: listResearchPapers
+      summary: List all research papers
+      description: |
+        Returns a structured ItemList of every research paper, including slug,
+        title, summary, canonical URL, and topic tags. Use this as the entry
+        point for discovering research programmatically.
+      responses:
+        "200":
+          description: ItemList of research papers
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResearchIndex"
+  /research/{slug}.html:
+    get:
+      operationId: getResearchPaper
+      summary: Fetch a single research paper as HTML
+      description: |
+        Returns the full HTML article for a given paper slug. Each paper
+        includes Open Graph + Twitter card metadata and is structured for
+        clean text extraction by AI crawlers.
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          description: Paper slug from the research index (e.g. `the-guardrails-gap`).
+          schema:
+            type: string
+            pattern: "^[a-z0-9-]+$"
+      responses:
+        "200":
+          description: HTML article body
+          content:
+            text/html:
+              schema:
+                type: string
+        "404":
+          description: Slug not found
+  /llms.txt:
+    get:
+      operationId: getLLMsTxt
+      summary: AI-agent discovery file
+      description: Plain-text index of research papers in the llms.txt format.
+      responses:
+        "200":
+          description: llms.txt index
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    ResearchIndex:
+      type: object
+      properties:
+        $schema:
+          type: string
+          example: "https://schema.org/ItemList"
+        name:
+          type: string
+        description:
+          type: string
+        publisher:
+          type: object
+          properties:
+            name:
+              type: string
+            url:
+              type: string
+        license:
+          type: string
+        updated_at:
+          type: string
+          format: date
+        total:
+          type: integer
+        papers:
+          type: array
+          items:
+            $ref: "#/components/schemas/ResearchPaper"
+    ResearchPaper:
+      type: object
+      required: [slug, title, summary, url, tags]
+      properties:
+        slug:
+          type: string
+          pattern: "^[a-z0-9-]+$"
+        title:
+          type: string
+        summary:
+          type: string
+        url:
+          type: string
+          format: uri
+        tags:
+          type: array
+          items:
+            type: string

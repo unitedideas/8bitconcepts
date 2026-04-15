@@ -9,6 +9,91 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="8bitconcepts" />
+  <meta property="og:title" content="8bitconcepts — AI Enablement &amp; Integration Consulting" />
+  <meta property="og:description" content="Independent research on enterprise AI strategy, governance, and operational risk. Series B-D consulting for teams shipping AI that actually compounds." />
+  <meta property="og:url" content="https://8bitconcepts.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="8bitconcepts — AI Enablement &amp; Integration Consulting" />
+  <meta name="twitter:description" content="Independent research on enterprise AI strategy, governance, and operational risk." />
+
+  <!-- Agent / API discovery -->
+  <link rel="alternate" type="application/json" href="/research.json" title="8bitconcepts Research Index (JSON)" />
+  <link rel="alternate" type="application/yaml" href="/openapi.yaml" title="8bitconcepts OpenAPI 3.1 Spec" />
+
+  <!-- Schema.org: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "8bitconcepts",
+    "url": "https://8bitconcepts.com",
+    "email": "hello@8bitconcepts.com",
+    "description": "AI enablement and integration consulting. Independent research on enterprise AI strategy, governance, and operational risk.",
+    "foundingDate": "2025",
+    "knowsAbout": [
+      "Enterprise AI Strategy",
+      "AI Governance",
+      "Agentic AI Risk",
+      "LLM Operations",
+      "AI Organizational Design",
+      "AI Measurement and ROI"
+    ],
+    "sameAs": [
+      "https://aidevboard.com",
+      "https://nothumansearch.ai"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org: ItemList of research papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "8bitconcepts Research Papers",
+    "description": "Independent research on enterprise AI strategy, governance, and operational risk.",
+    "numberOfItems": 10,
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "url": "https://8bitconcepts.com/research/the-guardrails-gap.html", "name": "The Guardrails Gap"},
+      {"@type": "ListItem", "position": 2, "url": "https://8bitconcepts.com/research/the-hallucination-budget.html", "name": "The Hallucination Budget"},
+      {"@type": "ListItem", "position": 3, "url": "https://8bitconcepts.com/research/the-measurement-problem.html", "name": "The Measurement Problem"},
+      {"@type": "ListItem", "position": 4, "url": "https://8bitconcepts.com/research/the-org-chart-problem.html", "name": "The Org Chart Problem"},
+      {"@type": "ListItem", "position": 5, "url": "https://8bitconcepts.com/research/the-mandate-trap.html", "name": "The Mandate Trap"},
+      {"@type": "ListItem", "position": 6, "url": "https://8bitconcepts.com/research/the-integration-tax.html", "name": "The Integration Tax"},
+      {"@type": "ListItem", "position": 7, "url": "https://8bitconcepts.com/research/the-six-percent.html", "name": "The Six Percent"},
+      {"@type": "ListItem", "position": 8, "url": "https://8bitconcepts.com/research/beyond-the-prompt.html", "name": "Beyond the Prompt"},
+      {"@type": "ListItem", "position": 9, "url": "https://8bitconcepts.com/research/shift-handoff-intelligence.html", "name": "Shift Handoff Intelligence"},
+      {"@type": "ListItem", "position": 10, "url": "https://8bitconcepts.com/research/the-agentic-accountability-gap.html", "name": "The Agentic Accountability Gap"}
+    ]
+  }
+  </script>
+
+  <!-- Schema.org: ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "8bitconcepts",
+    "url": "https://8bitconcepts.com",
+    "email": "hello@8bitconcepts.com",
+    "areaServed": "Worldwide",
+    "serviceType": "AI Enablement &amp; Integration Consulting",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Consulting Services",
+      "itemListElement": [
+        {"@type": "Offer", "name": "AI Org Diagnostic", "price": "500", "priceCurrency": "USD", "description": "30-minute session + written placement diagnosis delivered within 24 hours."},
+        {"@type": "Offer", "name": "Discovery Engagement", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "8000", "maxPrice": "15000", "priceCurrency": "USD"}, "description": "4-week AI posture audit with 90-day roadmap."},
+        {"@type": "Offer", "name": "Implementation", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "30000", "maxPrice": "80000", "priceCurrency": "USD"}, "description": "8–16 week build of evaluation infrastructure, agent workflows, and measurement systems."},
+        {"@type": "Offer", "name": "Embedded Advisory", "price": "12000", "priceCurrency": "USD", "description": "One day per week embedded with engineering leadership."}
+      ]
+    }
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

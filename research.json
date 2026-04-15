@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schema.org/ItemList",
+  "name": "8bitconcepts Research Papers",
+  "description": "Independent research on enterprise AI strategy, governance, and operational risk. Programmatically discoverable index for AI agents and crawlers.",
+  "publisher": {
+    "name": "8bitconcepts",
+    "url": "https://8bitconcepts.com"
+  },
+  "license": "https://8bitconcepts.com/about",
+  "updated_at": "2026-04-15",
+  "total": 10,
+  "papers": [
+    {
+      "slug": "the-guardrails-gap",
+      "title": "The Guardrails Gap",
+      "summary": "Why enterprise AI safety frameworks fail when agents act autonomously.",
+      "url": "https://8bitconcepts.com/research/the-guardrails-gap.html",
+      "tags": ["agents", "safety", "governance", "enterprise"]
+    },
+    {
+      "slug": "the-hallucination-budget",
+      "title": "The Hallucination Budget",
+      "summary": "Quantifying the cost of AI hallucinations and mitigation strategies for production systems.",
+      "url": "https://8bitconcepts.com/research/the-hallucination-budget.html",
+      "tags": ["llm", "reliability", "evaluation", "enterprise"]
+    },
+    {
+      "slug": "the-measurement-problem",
+      "title": "The Measurement Problem",
+      "summary": "How enterprises measure AI ROI and where standard metrics fail.",
+      "url": "https://8bitconcepts.com/research/the-measurement-problem.html",
+      "tags": ["roi", "metrics", "evaluation", "enterprise"]
+    },
+    {
+      "slug": "the-org-chart-problem",
+      "title": "The Org Chart Problem",
+      "summary": "Why organizational structure determines AI adoption outcomes.",
+      "url": "https://8bitconcepts.com/research/the-org-chart-problem.html",
+      "tags": ["adoption", "organizational-design", "change-management"]
+    },
+    {
+      "slug": "the-mandate-trap",
+      "title": "The Mandate Trap",
+      "summary": "Top-down AI mandates vs. bottom-up adoption — which actually drives results.",
+      "url": "https://8bitconcepts.com/research/the-mandate-trap.html",
+      "tags": ["adoption", "leadership", "strategy"]
+    },
+    {
+      "slug": "the-integration-tax",
+      "title": "The Integration Tax",
+      "summary": "Hidden costs of integrating AI into existing workflows and systems.",
+      "url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "tags": ["integration", "tco", "infrastructure", "enterprise"]
+    },
+    {
+      "slug": "the-six-percent",
+      "title": "The Six Percent",
+      "summary": "The small fraction of organizations getting real value from AI — and what they do differently.",
+      "url": "https://8bitconcepts.com/research/the-six-percent.html",
+      "tags": ["adoption", "case-studies", "best-practices"]
+    },
+    {
+      "slug": "beyond-the-prompt",
+      "title": "Beyond the Prompt",
+      "summary": "Moving past prompt engineering to systematic AI integration.",
+      "url": "https://8bitconcepts.com/research/beyond-the-prompt.html",
+      "tags": ["llm", "engineering", "systems-design"]
+    },
+    {
+      "slug": "shift-handoff-intelligence",
+      "title": "Shift Handoff Intelligence",
+      "summary": "Maintaining context and knowledge across AI system transitions and human-agent handoffs.",
+      "url": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "tags": ["agents", "context", "handoff", "operations"]
+    },
+    {
+      "slug": "the-agentic-accountability-gap",
+      "title": "The Agentic Accountability Gap",
+      "summary": "Why governance frameworks built for generative AI fail for agentic systems.",
+      "url": "https://8bitconcepts.com/research/the-agentic-accountability-gap.html",
+      "tags": ["agents", "governance", "accountability", "compliance"]
+    }
+  ]
+}

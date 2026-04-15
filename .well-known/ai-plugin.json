@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "8bitconcepts Research",
+  "name_for_model": "eightbitconcepts_research",
+  "description_for_human": "Independent research on enterprise AI strategy, governance, and operational risk.",
+  "description_for_model": "Retrieve research papers on enterprise AI adoption, agentic risk, governance, hallucinations, measurement, and organizational design. Use /research.json to list all papers, then fetch any /research/{slug}.html for full text. Each paper is a citable practitioner report with a slug, title, summary, canonical URL, and topic tags.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://8bitconcepts.com/openapi.yaml"
+  },
+  "logo_url": "https://8bitconcepts.com/logo.png",
+  "contact_email": "hello@8bitconcepts.com",
+  "legal_info_url": "https://8bitconcepts.com"
+}

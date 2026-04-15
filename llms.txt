@@ -17,6 +17,13 @@
 - [Shift Handoff Intelligence](https://8bitconcepts.com/research/shift-handoff-intelligence.html): Maintaining context and knowledge across AI system transitions
 - [The Agentic Accountability Gap](https://8bitconcepts.com/research/the-agentic-accountability-gap.html): Why governance frameworks built for generative AI fail for agentic systems
 
+## Programmatic Access (for AI agents)
+
+- [Research Index (JSON)](https://8bitconcepts.com/research.json): structured ItemList of every paper with slug, title, summary, URL, and tags
+- [OpenAPI Spec](https://8bitconcepts.com/openapi.yaml): OpenAPI 3.1 description of the research endpoints
+- [AI Plugin Manifest](https://8bitconcepts.com/.well-known/ai-plugin.json): plugin manifest pointing at the OpenAPI spec
+
 ## Contact
 
 Website: https://8bitconcepts.com
+Email: hello@8bitconcepts.com
