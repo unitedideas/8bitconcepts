@@ -655,17 +655,8 @@ def cmd_list_topics(args):
 
 
 def _cronpilot_ping(slug):
-    """Best-effort cronpilot heartbeat. Silent on any failure."""
-    import urllib.request, urllib.error
-    try:
-        req = urllib.request.Request(
-            f"https://cronpilot.arflow.io/cp/v1/ping/{slug}",
-            method="GET",
-            headers={"User-Agent": "curl/8.7.1"},
-        )
-        urllib.request.urlopen(req, timeout=5).close()
-    except Exception:
-        pass
+    # Archived 2026-04-15 — cronpilot.arflow.io paused. No-op until revival.
+    return
 
 
 if __name__ == "__main__":
