@@ -795,6 +795,22 @@
 
     </div>
 
+    
+    <div class="article-cta" style="margin-top:40px;">
+      <p style="margin-bottom:10px;"><strong>Get new research by email</strong></p>
+      <p style="margin-bottom:14px;font-size:15px;">Two papers a week on what's actually happening inside enterprise AI programs. No promo, no hype.</p>
+      <form onsubmit="return sub8bc(event)" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <input type="email" name="email" placeholder="you@company.com" required
+          style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #ccc;border-radius:6px;font-size:15px;" />
+        <button type="submit" style="padding:10px 18px;background:#d97757;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Subscribe</button>
+      </form>
+      <p id="sub-status" style="margin-top:10px;font-size:14px;min-height:1em;"></p>
+      <p style="margin-top:6px;font-size:13px;color:#888;">Prefer a reader? <a href="/feed.xml">RSS feed</a>.</p>
+    </div>
+    <script>
+    async function sub8bc(e){e.preventDefault();const f=e.target;const email=f.email.value.trim();const s=document.getElementById('sub-status');s.textContent='Subscribing…';try{const r=await fetch('https://aidevboard.com/api/v1/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tags:['8bitconcepts-research'],frequency:'weekly'})});if(r.ok){s.textContent='Subscribed. Check your inbox.';s.style.color='#0a0';f.reset();}else{s.textContent='Error subscribing. Email hello@8bitconcepts.com instead.';s.style.color='#c00';}}catch(err){s.textContent='Network error. Email hello@8bitconcepts.com.';s.style.color='#c00';}return false;}
+    </script>
+
     <div class="article-cta">
       <p>PassDown is a digital shift intelligence platform for 24/7 operations. AI-generated briefings, cross-shift pattern detection, and built-in audit trails -- generated as a byproduct of normal operations, not as a separate compliance activity.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
