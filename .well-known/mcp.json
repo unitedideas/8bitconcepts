@@ -1,0 +1,31 @@
+{
+  "name": "eightbitconcepts-research",
+  "version": "0.1.0-preview",
+  "status": "preview",
+  "description": "Read-only access to the 8bitconcepts enterprise-AI research corpus. Preview-stage MCP manifest declaring the tool surface; JSON-RPC endpoint activates once hosted behind a worker.",
+  "endpoint": "https://8bitconcepts.com/mcp",
+  "tools": [
+    {
+      "name": "list_research_papers",
+      "description": "Return the full index of research papers with slug, title, summary, and publication date. Mirrors https://8bitconcepts.com/research.json.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "limit": {"type": "integer", "default": 20},
+          "offset": {"type": "integer", "default": 0}
+        }
+      }
+    },
+    {
+      "name": "get_research_paper",
+      "description": "Return the full markdown content of a specific research paper by slug. Content is also reachable directly at https://8bitconcepts.com/research/{slug}.html.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "slug": {"type": "string", "description": "Paper slug, e.g. 'the-guardrails-gap'"}
+        },
+        "required": ["slug"]
+      }
+    }
+  ]
+}
