@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schema.org/ItemList",
+  "name": "8bitconcepts Research API v1",
+  "description": "Static JSON index of 8bitconcepts research papers. Designed for AI agents discovering the corpus via /api/v1.",
+  "version": "1.0",
+  "endpoints": {
+    "research_index": "https://8bitconcepts.com/research.json",
+    "openapi_spec": "https://8bitconcepts.com/openapi.yaml",
+    "ai_plugin": "https://8bitconcepts.com/.well-known/ai-plugin.json",
+    "llms_txt": "https://8bitconcepts.com/llms.txt"
+  },
+  "publisher": {
+    "name": "8bitconcepts",
+    "url": "https://8bitconcepts.com",
+    "email": "hello@8bitconcepts.com"
+  },
+  "total_papers": 10,
+  "papers_url": "https://8bitconcepts.com/research.json"
+}
