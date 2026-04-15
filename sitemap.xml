@@ -70,4 +70,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url><loc>https://8bitconcepts.com/topic/agentic-ai.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://8bitconcepts.com/topic/enterprise-ai-roi.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://8bitconcepts.com/topic/ai-governance.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://8bitconcepts.com/topic/ai-organizational-design.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://8bitconcepts.com/topic/ai-reliability-evaluation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

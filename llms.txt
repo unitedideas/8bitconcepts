@@ -17,6 +17,14 @@
 - [Shift Handoff Intelligence](https://8bitconcepts.com/research/shift-handoff-intelligence.html): Maintaining context and knowledge across AI system transitions
 - [The Agentic Accountability Gap](https://8bitconcepts.com/research/the-agentic-accountability-gap.html): Why governance frameworks built for generative AI fail for agentic systems
 
+## Research Topics
+
+- [Agentic AI in Production](https://8bitconcepts.com/topic/agentic-ai.html): Research on production agentic AI: governance gaps, handoff patterns, and the maturity ladder most teams skip. Six papers on what separates shipping agentic systems from pilots.
+- [Enterprise AI ROI](https://8bitconcepts.com/topic/enterprise-ai-roi.html): McKinsey says 88% use AI, 6% see returns. Research on the actual cost math, the metrics that predict value, and why mandates alone don't move the P&L.
+- [AI Governance](https://8bitconcepts.com/topic/ai-governance.html): Governance frameworks built for generative AI break the moment agents act autonomously. Research on guardrails, accountability gaps, and compliance for production agents.
+- [AI Organizational Design](https://8bitconcepts.com/topic/ai-organizational-design.html): The under-discussed predictor of AI outcomes: where AI reports in the org chart. Research on structure, mandates, and why bottom-up adoption outperforms top-down memos.
+- [AI Reliability & Evaluation](https://8bitconcepts.com/topic/ai-reliability-evaluation.html): Most AI systems have no systematic ground truth. Research on hallucination budgets, measurement frameworks, and the evaluation discipline that separates production from pilot.
+
 ## Programmatic Access (for AI agents)
 
 - [Research Index (JSON)](https://8bitconcepts.com/research.json): structured ItemList of every paper with slug, title, summary, URL, and tags

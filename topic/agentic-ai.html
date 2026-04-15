@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Agentic AI Research — What Actually Works in Production</title>
+<meta name="description" content="Research on production agentic AI: governance gaps, handoff patterns, and the maturity ladder most teams skip. Six papers on what separates shipping agentic systems from pilots." />
+<link rel="canonical" href="https://8bitconcepts.com/topic/agentic-ai.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Agentic AI Research — What Actually Works in Production" />
+<meta property="og:description" content="Research on production agentic AI: governance gaps, handoff patterns, and the maturity ladder most teams skip. Six papers on what separates shipping agentic systems from pilots." />
+<meta property="og:url" content="https://8bitconcepts.com/topic/agentic-ai.html" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Agentic AI Research — What Actually Works in Production" />
+<meta name="twitter:description" content="Research on production agentic AI: governance gaps, handoff patterns, and the maturity ladder most teams skip. Six papers on what separates shipping agentic systems from pilots." />
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="8bitconcepts Research" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Agentic AI in Production",
+  "description": "Research on production agentic AI: governance gaps, handoff patterns, and the maturity ladder most teams skip. Six papers on what separates shipping agentic systems from pilots.",
+  "url": "https://8bitconcepts.com/topic/agentic-ai.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "8bitconcepts",
+    "url": "https://8bitconcepts.com"
+  },
+  "hasPart": [
+    {
+      "@type": "Article",
+      "name": "Beyond the Prompt",
+      "url": "https://8bitconcepts.com/research/beyond-the-prompt.html"
+    },
+    {
+      "@type": "Article",
+      "name": "Shift Handoff Intelligence",
+      "url": "https://8bitconcepts.com/research/shift-handoff-intelligence.html"
+    },
+    {
+      "@type": "Article",
+      "name": "The Agentic Accountability Gap",
+      "url": "https://8bitconcepts.com/research/the-agentic-accountability-gap.html"
+    },
+    {
+      "@type": "Article",
+      "name": "The Guardrails Gap",
+      "url": "https://8bitconcepts.com/research/the-guardrails-gap.html"
+    }
+  ],
+  "about": [
+    "agentic-ai",
+    "ai-agents",
+    "production-ai"
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d0d0e;color:#e8e8e9;font-family:'Inter',system-ui,sans-serif;line-height:1.7;padding:40px 20px;}
+.wrap{max-width:760px;margin:0 auto;}
+h1{font-size:38px;letter-spacing:-0.02em;margin-bottom:16px;color:#fff;}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:#d97757;margin-bottom:12px;}
+.intro{font-size:18px;color:#c5c5c9;margin-bottom:36px;}
+.section-title{font-size:22px;margin:40px 0 16px;color:#fff;}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;}
+.card{display:block;padding:20px;background:#111214;border:1px solid rgba(255,255,255,0.07);border-radius:8px;text-decoration:none;color:inherit;transition:border-color .15s;}
+.card:hover{border-color:#d97757;}
+.card-title{font-size:17px;font-weight:600;color:#fff;margin-bottom:6px;}
+.card-desc{font-size:15px;color:#8b8d91;}
+.nav-back{display:inline-block;margin-bottom:24px;color:#d97757;text-decoration:none;font-size:14px;}
+.cta{margin-top:48px;padding:24px;background:#111214;border-left:3px solid #d97757;border-radius:6px;}
+.cta h2{font-size:18px;margin-bottom:8px;color:#fff;}
+.cta p{color:#c5c5c9;margin-bottom:14px;font-size:15px;}
+.cta form{display:flex;gap:8px;flex-wrap:wrap;}
+.cta input{flex:1;min-width:220px;padding:10px 14px;border:1px solid #333;background:#0d0d0e;color:#fff;border-radius:6px;font-size:15px;}
+.cta button{padding:10px 20px;background:#d97757;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;}
+#sub-status{margin-top:10px;font-size:14px;min-height:1em;}
+footer{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);font-size:13px;color:#8b8d91;}
+footer a{color:#d97757;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="nav-back" href="/">← 8bitconcepts</a>
+  <div class="eyebrow">Research Topic</div>
+  <h1>Agentic AI in Production</h1>
+  <p class="intro">Agentic AI means systems that take autonomous action on behalf of humans — agents that call APIs, mutate databases, and make irreversible decisions without a human in the loop for every step. The gap between "we have agents" and "our agents compound in production" is not prompting skill. It is systems engineering: versioned skills, shift-aware handoffs, evaluation infrastructure, and governance that was not designed for generative AI. The research below covers the specific patterns we see in engineering teams that ship agentic AI without incident — and the patterns that predictably produce incidents.</p>
+
+  <div class="section-title">Research Papers</div>
+  <div class="grid">
+      <a class="card" href="/research/beyond-the-prompt.html">
+        <div class="card-title">Beyond the Prompt</div>
+        <div class="card-desc">Moving past prompt engineering to systematic AI integration.</div>
+      </a>
+      <a class="card" href="/research/shift-handoff-intelligence.html">
+        <div class="card-title">Shift Handoff Intelligence</div>
+        <div class="card-desc">Maintaining context across AI system transitions and human-agent handoffs.</div>
+      </a>
+      <a class="card" href="/research/the-agentic-accountability-gap.html">
+        <div class="card-title">The Agentic Accountability Gap</div>
+        <div class="card-desc">Why governance frameworks built for generative AI fail for agentic systems.</div>
+      </a>
+      <a class="card" href="/research/the-guardrails-gap.html">
+        <div class="card-title">The Guardrails Gap</div>
+        <div class="card-desc">Why enterprise AI safety frameworks fail when agents act autonomously.</div>
+      </a>
+  </div>
+
+  <div class="cta">
+    <h2>Get new research by email</h2>
+    <p>Two papers a week on what's actually happening inside enterprise AI programs. No promo, no hype.</p>
+    <form onsubmit="return sub8bc(event)">
+      <input type="email" name="email" placeholder="you@company.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p id="sub-status"></p>
+    <p style="margin-top:8px;font-size:13px;color:#5a5c61;">Prefer a reader? <a href="/feed.xml" style="color:#d97757;">RSS feed</a>.</p>
+  </div>
+  <script>
+  async function sub8bc(e){e.preventDefault();const f=e.target;const email=f.email.value.trim();const s=document.getElementById('sub-status');s.textContent='Subscribing...';try{const r=await fetch('https://aidevboard.com/api/v1/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tags:['8bitconcepts-research'],frequency:'weekly'})});if(r.ok){s.textContent='Subscribed.';s.style.color='#4ade80';f.reset();}else{s.textContent='Error. Email hello@8bitconcepts.com instead.';s.style.color='#f87171';}}catch(err){s.textContent='Network error.';s.style.color='#f87171';}return false;}
+  </script>
+
+  <footer>
+    <p>&copy; 2026 8bitconcepts — Enterprise AI strategy research</p>
+    <p style="margin-top:6px;">More topics: <a href="/topic/agentic-ai.html">Agentic AI</a> · <a href="/topic/enterprise-ai-roi.html">Enterprise AI ROI</a> · <a href="/topic/ai-governance.html">AI Governance</a> · <a href="/topic/ai-organizational-design.html">Org Design</a> · <a href="/topic/ai-reliability-evaluation.html">Reliability &amp; Evaluation</a></p>
+  </footer>
+</div>
+</body>
+</html>
