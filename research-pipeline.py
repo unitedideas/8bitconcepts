@@ -653,6 +653,21 @@ def cmd_list_topics(args):
         print(f"     Thesis: {topic['thesis'][:120]}...")
 
 
+
+def _cronpilot_ping(slug):
+    """Best-effort cronpilot heartbeat. Silent on any failure."""
+    import urllib.request, urllib.error
+    try:
+        req = urllib.request.Request(
+            f"https://cronpilot.arflow.io/cp/v1/ping/{slug}",
+            method="GET",
+            headers={"User-Agent": "curl/8.7.1"},
+        )
+        urllib.request.urlopen(req, timeout=5).close()
+    except Exception:
+        pass
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="8bitconcepts research paper pipeline")
     sub = parser.add_subparsers(dest="command")
@@ -674,3 +689,5 @@ if __name__ == "__main__":
         "list-topics": cmd_list_topics,
     }
     cmds[args.command](args)
+
+    _cronpilot_ping("8bc-research")
