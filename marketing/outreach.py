@@ -102,6 +102,44 @@ Shane
 8bitconcepts | hello@8bitconcepts.com
 """,
     },
+    # Media pitch — for journalists. Different framing: leads with a data point,
+    # offers as a story angle, explicitly invites follow-up interview.
+    "media-integration-tax": {
+        "subject": "data: AI projects are running 5-8x over budget. Here's where the cost actually goes.",
+        "body": """Hi {contact},
+
+Pitching a data piece for {company} — might be relevant to your beat.
+
+We published research on why enterprise AI programs are consistently running 5–8x over initial budget. The pattern across real client engagements: model API cost is 10–20% of actual AI cost. The remaining 80% is data pipelines (20–30%), integration (15–25%), evaluation (10–20%), and maintenance (15–25% annually).
+
+Concrete case in the piece: an $80K AI project that burned $74K by month four, still not in production. Model costs: $12K. The rest went to everything CFOs don't budget for.
+
+Full research with breakdown, heuristics, and methodology: https://8bitconcepts.com/research/the-integration-tax.html
+
+Happy to share the underlying data or do a 20-min interview if useful.
+
+Shane Cheek
+8bitconcepts — enterprise AI strategy research
+hello@8bitconcepts.com
+""",
+    },
+    "media-six-percent": {
+        "subject": "McKinsey says 88% use AI, 6% see returns — what the 6% actually do differently",
+        "body": """Hi {contact},
+
+Pitching a story angle for {company}.
+
+The McKinsey "88% use AI, 6% see returns" stat is everywhere right now. We dug into the 6% and the gap isn't what most coverage is saying — it's not model sophistication. It's organizational: the 6% treat AI as compounding capability (reusable skills, evaluation discipline, systematic standards). The 94% treat it as a sequence of point solutions.
+
+Full analysis with case studies across Shopify, Duolingo, and late-stage B2B SaaS: https://8bitconcepts.com/research/the-six-percent.html
+
+Happy to talk through the data or share underlying interview notes if useful for a piece.
+
+Shane Cheek
+8bitconcepts — enterprise AI strategy research
+hello@8bitconcepts.com
+""",
+    },
 }
 
 

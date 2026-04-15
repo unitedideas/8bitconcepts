@@ -28,5 +28,55 @@
     "sent_at": "2026-04-15T18:56:06.933271+00:00",
     "resend_id": "4b636a00-5a12-4d05-a0aa-4f404a065086",
     "error": null
+  },
+  {
+    "company": "Platformer",
+    "contact_name": "Casey Newton",
+    "email": "casey@platformer.news",
+    "hook": "media-six-percent",
+    "subject": "McKinsey says 88% use AI, 6% see returns \u2014 what the 6% actually do differently",
+    "sent_at": "2026-04-15T19:00:58.870909+00:00",
+    "resend_id": "11a13e4f-6f17-43fb-9dc1-02032b332528",
+    "error": null
+  },
+  {
+    "company": "Fortune (Eye on AI)",
+    "contact_name": "Sharon Goldman",
+    "email": "sharon.goldman@fortune.com",
+    "hook": "media-integration-tax",
+    "subject": "data: AI projects are running 5-8x over budget. Here's where the cost actually goes.",
+    "sent_at": "2026-04-15T19:00:59.114954+00:00",
+    "resend_id": "de2edea7-a494-4c7e-9997-35da327c044e",
+    "error": null
+  },
+  {
+    "company": "Reuters",
+    "contact_name": "Deepa Seetharaman",
+    "email": "deepa.seetharaman@tr.com",
+    "hook": "media-integration-tax",
+    "subject": "data: AI projects are running 5-8x over budget. Here's where the cost actually goes.",
+    "sent_at": "2026-04-15T19:00:59.376174+00:00",
+    "resend_id": "4be4db44-bdd8-4faf-b716-fec3edb1884f",
+    "error": null
+  },
+  {
+    "company": "VentureBeat",
+    "contact_name": "Editorial tips",
+    "email": "tips@venturebeat.com",
+    "hook": "media-six-percent",
+    "subject": "McKinsey says 88% use AI, 6% see returns \u2014 what the 6% actually do differently",
+    "sent_at": "2026-04-15T19:00:59.637309+00:00",
+    "resend_id": "a9384d54-6533-4829-848f-24a88057ceff",
+    "error": null
+  },
+  {
+    "company": "DeepLearning.AI / The Batch",
+    "contact_name": "press",
+    "email": "press@deeplearning.ai",
+    "hook": "media-integration-tax",
+    "subject": "data: AI projects are running 5-8x over budget. Here's where the cost actually goes.",
+    "sent_at": "2026-04-15T19:00:59.881537+00:00",
+    "resend_id": "8bcd7c38-1037-4611-af97-8f769c0ac6ea",
+    "error": null
   }
 ]

@@ -25,5 +25,50 @@
     "hook": "measurement-problem",
     "source_confidence": "high",
     "source": "https://www.intercom.com/about/darragh-curran (official bio + confirmed intercom.io email domain)"
+  },
+  {
+    "company": "Platformer",
+    "contact_name": "Casey Newton",
+    "role": "Independent journalist",
+    "email": "casey@platformer.news",
+    "hook": "media-six-percent",
+    "source_confidence": "verified",
+    "source": "https://www.platformer.news/about/ (public mailto)"
+  },
+  {
+    "company": "Fortune (Eye on AI)",
+    "contact_name": "Sharon Goldman",
+    "role": "Senior AI reporter",
+    "email": "sharon.goldman@fortune.com",
+    "hook": "media-integration-tax",
+    "source_confidence": "verified",
+    "source": "https://fortune.com/author/sharon-goldman/ (author page mailto)"
+  },
+  {
+    "company": "Reuters",
+    "contact_name": "Deepa Seetharaman",
+    "role": "AI reporter",
+    "email": "deepa.seetharaman@tr.com",
+    "hook": "media-integration-tax",
+    "source_confidence": "verified",
+    "source": "Reuters hire Sept 2025 (current domain tr.com)"
+  },
+  {
+    "company": "VentureBeat",
+    "contact_name": "Editorial tips",
+    "role": "Newsroom",
+    "email": "tips@venturebeat.com",
+    "hook": "media-six-percent",
+    "source_confidence": "verified",
+    "source": "https://venturebeat.com/contact-2"
+  },
+  {
+    "company": "DeepLearning.AI / The Batch",
+    "contact_name": "press",
+    "role": "Press desk",
+    "email": "press@deeplearning.ai",
+    "hook": "media-integration-tax",
+    "source_confidence": "verified",
+    "source": "https://www.andrewng.org/contact"
   }
 ]
