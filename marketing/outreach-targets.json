@@ -1,0 +1,29 @@
+[
+  {
+    "company": "Retool",
+    "contact_name": "David Hsu",
+    "role": "CEO",
+    "email": "d@davidh.su",
+    "hook": "integration-tax",
+    "source_confidence": "verified",
+    "source": "https://davidh.su/about (personal site mailto)"
+  },
+  {
+    "company": "Vanta",
+    "contact_name": "Christina Cacioppo",
+    "role": "CEO/Founder",
+    "email": "christina@vanta.com",
+    "hook": "org-chart-problem",
+    "source_confidence": "verified",
+    "source": "https://www.christinacacioppo.com (personal site mailto)"
+  },
+  {
+    "company": "Intercom",
+    "contact_name": "Darragh Curran",
+    "role": "CTO",
+    "email": "darragh@intercom.io",
+    "hook": "measurement-problem",
+    "source_confidence": "high",
+    "source": "https://www.intercom.com/about/darragh-curran (official bio + confirmed intercom.io email domain)"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "company": "Retool",
+    "contact_name": "David Hsu",
+    "email": "d@davidh.su",
+    "hook": "integration-tax",
+    "subject": "the hidden 80% of AI cost at Retool",
+    "sent_at": "2026-04-15T18:56:06.355031+00:00",
+    "resend_id": "18b8732d-9719-4660-9061-5b6b4f3af5c3",
+    "error": null
+  },
+  {
+    "company": "Vanta",
+    "contact_name": "Christina Cacioppo",
+    "email": "christina@vanta.com",
+    "hook": "org-chart-problem",
+    "subject": "where AI reports in Vanta's org chart",
+    "sent_at": "2026-04-15T18:56:06.676070+00:00",
+    "resend_id": "351d90f3-0875-4762-b743-e87ebc876cac",
+    "error": null
+  },
+  {
+    "company": "Intercom",
+    "contact_name": "Darragh Curran",
+    "email": "darragh@intercom.io",
+    "hook": "measurement-problem",
+    "subject": "the AI metric that actually predicts ROI at Intercom",
+    "sent_at": "2026-04-15T18:56:06.933271+00:00",
+    "resend_id": "4b636a00-5a12-4d05-a0aa-4f404a065086",
+    "error": null
+  }
+]
