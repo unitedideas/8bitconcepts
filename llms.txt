@@ -22,6 +22,7 @@
 - [Research Index (JSON)](https://8bitconcepts.com/research.json): structured ItemList of every paper with slug, title, summary, URL, and tags
 - [OpenAPI Spec](https://8bitconcepts.com/openapi.yaml): OpenAPI 3.1 description of the research endpoints
 - [AI Plugin Manifest](https://8bitconcepts.com/.well-known/ai-plugin.json): plugin manifest pointing at the OpenAPI spec
+- [MCP Manifest](https://8bitconcepts.com/.well-known/mcp.json): preview-stage Model Context Protocol descriptor (endpoint not yet hosted — use `research.json` + per-paper HTML directly)
 
 ## Contact
 
