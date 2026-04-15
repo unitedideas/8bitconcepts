@@ -490,12 +490,48 @@ def update_llms_txt(topic):
     print(f"  Updated llms.txt")
 
 
+def update_feed_xml(topic, research_data):
+    """Regenerate feed.xml from research.json so the new paper shows up at the top."""
+    import datetime, json as _json
+    feed_path = SCRIPT_DIR / "feed.xml"
+    json_path = SCRIPT_DIR / "research.json"
+    if not json_path.exists():
+        return
+    with open(json_path) as f:
+        d = _json.load(f)
+    papers = d.get("papers", [])
+    now = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S GMT")
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+        '<channel>',
+        '<title>8bitconcepts Research</title>',
+        '<link>https://8bitconcepts.com/</link>',
+        '<atom:link href="https://8bitconcepts.com/feed.xml" rel="self" type="application/rss+xml" />',
+        '<description>Independent research on enterprise AI strategy, governance, and operational risk.</description>',
+        '<language>en-us</language>',
+        f'<lastBuildDate>{now}</lastBuildDate>',
+        '<managingEditor>hello@8bitconcepts.com (8bitconcepts)</managingEditor>',
+    ]
+    for p in reversed(papers):  # newest-first
+        cats = "".join(f"<category>{t}</category>" for t in p.get("tags", []))
+        lines.append(
+            f'<item><title>{p["title"]}</title><link>{p["url"]}</link><guid>{p["url"]}</guid>'
+            f'<pubDate>{now}</pubDate><description><![CDATA[{p["summary"]}]]></description>{cats}</item>'
+        )
+    lines.append("</channel></rss>")
+    with open(feed_path, "w") as f:
+        f.write("\n".join(lines))
+    print(f"  Updated feed.xml ({len(papers)} items)")
+
+
 def git_commit_and_push(topic):
     """Commit new paper and push to deploy."""
     os.chdir(SCRIPT_DIR)
     slug = topic["slug"]
     subprocess.run(["git", "add", f"research/{slug}.html", "index.html",
-                    "research/.topics-generated.json", "sitemap.xml", "llms.txt"],
+                    "research/.topics-generated.json", "sitemap.xml", "llms.txt",
+                    "feed.xml", "research.json"],
                     capture_output=True)
     subprocess.run(["git", "commit", "-m",
                     f"research: {topic['title']}\n\nAutonomously generated research paper.\n\nCo-Authored-By: Claude <noreply@anthropic.com>"],
@@ -563,11 +599,12 @@ Return JSON only:
     with open(paper_path, "w") as f:
         f.write(html)
 
-    # 5. Update index.html, sitemap, llms.txt
+    # 5. Update index.html, sitemap, llms.txt, feed.xml
     print("\n5. Updating index.html...")
     update_index_html(topic)
     update_sitemap(topic)
     update_llms_txt(topic)
+    update_feed_xml(topic, research_data)
 
     # 6. Log topic
     log = load_topics_log()
