@@ -140,6 +140,46 @@ Shane Cheek
 hello@8bitconcepts.com
 """,
     },
+    # Founder hook — tactical framing for YC-stage / early-stage founders.
+    # Leads with survival math, not McKinsey's enterprise lens.
+    "founder-integration-tax": {
+        "subject": "for {company}: the AI cost trap enterprise buyers will push on in 6 months",
+        "body": """Hi {contact},
+
+Quick note — found {company} via YC.
+
+Sharing a piece of research you'll almost certainly get pushed on by enterprise prospects in the next 6 months: the real cost breakdown of AI projects.
+
+Model API cost is 10–20% of actual AI spend. Data pipelines 20–30%, integration 15–25%, evaluation 10–20%, maintenance 15–25% annually. When your enterprise buyer does their TCO analysis, this is the math they'll use — and if your pitch doesn't match, they'll wonder what you're hiding.
+
+Full breakdown: https://8bitconcepts.com/research/the-integration-tax.html
+
+Also written as a quick rule you can repeat in sales calls: 5x the model cost for standard deals, 8x for complex.
+
+No ask — just thought {company}'s stage is exactly when this starts to come up in deals.
+
+Shane
+8bitconcepts | hello@8bitconcepts.com
+""",
+    },
+    "founder-six-percent": {
+        "subject": "{company}: why most AI startups never get to 'AI that compounds'",
+        "body": """Hi {contact},
+
+Quick note — found {company} via YC.
+
+Sharing research I think is directly useful to you: 88% of companies use AI, 6% see real returns. The gap isn't tech sophistication — it's whether the org treats AI as a compounding capability (reusable skills, evaluation discipline, systematic standards) or as a series of point solutions.
+
+For a startup, the key practical bit: the 6% put the discipline in place before they hit scale. The 94% plan to "figure it out later" and then have to rebuild their whole ML ops layer at Series B.
+
+Full piece: https://8bitconcepts.com/research/the-six-percent.html
+
+No ask — happy to talk through the framework if useful when you're making architecture calls.
+
+Shane
+8bitconcepts | hello@8bitconcepts.com
+""",
+    },
 }
 
 
