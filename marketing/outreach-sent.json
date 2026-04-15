@@ -128,5 +128,75 @@
     "sent_at": "2026-04-15T19:09:38.964562+00:00",
     "resend_id": "d0051dab-7e90-415c-919f-0853bddf0f4a",
     "error": null
+  },
+  {
+    "company": "Mem0 (YC S24)",
+    "contact_name": "Taranjeet Singh",
+    "email": "taranjeet@mem0.ai",
+    "hook": "founder-six-percent",
+    "subject": "Mem0 (YC S24): why most AI startups never get to 'AI that compounds'",
+    "sent_at": "2026-04-15T19:20:26.928463+00:00",
+    "resend_id": "6801f4ef-3437-4b2f-a85a-e82c585a62d8",
+    "error": null
+  },
+  {
+    "company": "Agentin AI (YC W25)",
+    "contact_name": "Sankeerth Rao Karingula",
+    "email": "sankeerthrao@agentin.ai",
+    "hook": "founder-integration-tax",
+    "subject": "for Agentin AI (YC W25): the AI cost trap enterprise buyers will push on in 6 months",
+    "sent_at": "2026-04-15T19:20:27.207472+00:00",
+    "resend_id": "5dd226bc-58e3-4548-9b75-6f13154ee47e",
+    "error": null
+  },
+  {
+    "company": "Lucidic AI (YC W25)",
+    "contact_name": "Abhinav Sinha",
+    "email": "abhinav@lucidic.ai",
+    "hook": "founder-six-percent",
+    "subject": "Lucidic AI (YC W25): why most AI startups never get to 'AI that compounds'",
+    "sent_at": "2026-04-15T19:20:27.472657+00:00",
+    "resend_id": "9d3a5635-21ca-445a-866c-71d254454edf",
+    "error": null
+  },
+  {
+    "company": "Opslane (YC S24)",
+    "contact_name": "Abhishek Ray",
+    "email": "founders@opslane.com",
+    "hook": "founder-six-percent",
+    "subject": "Opslane (YC S24): why most AI startups never get to 'AI that compounds'",
+    "sent_at": "2026-04-15T19:20:27.751857+00:00",
+    "resend_id": "659f6423-e752-4ff1-b95e-4acbd5e45c19",
+    "error": null
+  },
+  {
+    "company": "RowBoat Labs (YC S24)",
+    "contact_name": "Arjun Maheswaran",
+    "email": "founders@rowboatlabs.com",
+    "hook": "founder-six-percent",
+    "subject": "RowBoat Labs (YC S24): why most AI startups never get to 'AI that compounds'",
+    "sent_at": "2026-04-15T19:20:27.996007+00:00",
+    "resend_id": "38f84b66-1c9b-462f-b3cc-7d462a4b3a49",
+    "error": null
+  },
+  {
+    "company": "Induction Labs (YC S25)",
+    "contact_name": "Jonathan Li",
+    "email": "founders@inductionlabs.com",
+    "hook": "founder-six-percent",
+    "subject": "Induction Labs (YC S25): why most AI startups never get to 'AI that compounds'",
+    "sent_at": "2026-04-15T19:20:28.257499+00:00",
+    "resend_id": "a41a76a9-6921-4558-9543-8fb059188593",
+    "error": null
+  },
+  {
+    "company": "Omnara (YC S25)",
+    "contact_name": "Ishaan Sehgal",
+    "email": "founders@omnara.com",
+    "hook": "founder-six-percent",
+    "subject": "Omnara (YC S25): why most AI startups never get to 'AI that compounds'",
+    "sent_at": "2026-04-15T19:20:28.511766+00:00",
+    "resend_id": "8d8eb0ff-e8d1-4b52-b95a-b6ae9d3e921f",
+    "error": null
   }
 ]

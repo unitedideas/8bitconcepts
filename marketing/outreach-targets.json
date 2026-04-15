@@ -115,5 +115,68 @@
     "hook": "media-six-percent",
     "source_confidence": "verified",
     "source": "https://danielmiessler.com/about (personal site mailto)"
+  },
+  {
+    "company": "Mem0 (YC S24)",
+    "contact_name": "Taranjeet Singh",
+    "role": "Co-founder & CEO",
+    "email": "taranjeet@mem0.ai",
+    "hook": "founder-six-percent",
+    "source_confidence": "verified",
+    "source": "YC company page mailto"
+  },
+  {
+    "company": "Agentin AI (YC W25)",
+    "contact_name": "Sankeerth Rao Karingula",
+    "role": "Founder & CEO",
+    "email": "sankeerthrao@agentin.ai",
+    "hook": "founder-integration-tax",
+    "source_confidence": "verified",
+    "source": "YC launch post body"
+  },
+  {
+    "company": "Lucidic AI (YC W25)",
+    "contact_name": "Abhinav Sinha",
+    "role": "Co-founder & CEO",
+    "email": "abhinav@lucidic.ai",
+    "hook": "founder-six-percent",
+    "source_confidence": "verified",
+    "source": "YC company page mailto"
+  },
+  {
+    "company": "Opslane (YC S24)",
+    "contact_name": "Abhishek Ray",
+    "role": "Co-founder",
+    "email": "founders@opslane.com",
+    "hook": "founder-six-percent",
+    "source_confidence": "verified",
+    "source": "YC page explicit invite"
+  },
+  {
+    "company": "RowBoat Labs (YC S24)",
+    "contact_name": "Arjun Maheswaran",
+    "role": "Co-founder",
+    "email": "founders@rowboatlabs.com",
+    "hook": "founder-six-percent",
+    "source_confidence": "verified",
+    "source": "YC page explicit invite"
+  },
+  {
+    "company": "Induction Labs (YC S25)",
+    "contact_name": "Jonathan Li",
+    "role": "Co-founder & CEO",
+    "email": "founders@inductionlabs.com",
+    "hook": "founder-six-percent",
+    "source_confidence": "verified",
+    "source": "YC launch post body"
+  },
+  {
+    "company": "Omnara (YC S25)",
+    "contact_name": "Ishaan Sehgal",
+    "role": "Co-founder",
+    "email": "founders@omnara.com",
+    "hook": "founder-six-percent",
+    "source_confidence": "verified",
+    "source": "YC company page mailto"
   }
 ]
