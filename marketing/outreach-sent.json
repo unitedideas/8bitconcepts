@@ -298,5 +298,155 @@
     "sent_at": "2026-04-15T21:02:54.170292+00:00",
     "resend_id": "640d7ce6-4c17-4915-adf3-38f63a3d2de3",
     "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "tips@techcrunch.com",
+    "hook": "distribution-sprint",
+    "subject": "Research: governance frameworks built for generative AI fail for agentic systems",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "e0f199ba-54cf-446e-9915-4571ff5daf1a",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "show@no-priors.com",
+    "hook": "distribution-sprint",
+    "subject": "Research resource: the accountability gap between generative AI and agentic AI",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "5e189e8b-2863-4639-b184-9c4f8d04965a",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "olivermpatel@gmail.com",
+    "hook": "distribution-sprint",
+    "subject": "your AI governance newsletter readers might find this useful",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "21d8fe9b-9e75-43a5-a17c-a49889fbbfed",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "mail@sebastianraschka.com",
+    "hook": "distribution-sprint",
+    "subject": "enterprise AI governance research \u2014 might fit Ahead of AI",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "0709ea15-8b79-4614-8100-c05174b89fe1",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "jordan@chinatalk.media",
+    "hook": "distribution-sprint",
+    "subject": "research on why 94% of enterprises fail to get value from AI",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "b58fa364-4b7a-404a-b6a0-492fbccf27cf",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "nathan@waymark.com",
+    "hook": "distribution-sprint",
+    "subject": "research on the agentic accountability gap \u2014 for Cognitive Revolution",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "02bd39fd-c0aa-4881-ba20-15d4e532a767",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "chip@huyenchip.com",
+    "hook": "distribution-sprint",
+    "subject": "research you might cite: the hallucination budget for production LLMs",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "b2130f1a-da04-42d9-ab0c-3e982a24d55a",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "editors@theinformation.com",
+    "hook": "distribution-sprint",
+    "subject": "data point: governance frameworks fail for agentic AI \u2014 new research",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "c4040b21-19f2-494d-ae34-04e4def4090e",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "ben@bensbites.com",
+    "hook": "distribution-sprint",
+    "subject": "research: the agentic accountability gap",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "a6b0dac7-869b-42a8-ae87-44ad6c7ef6de",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "hello@theneurondaily.com",
+    "hook": "distribution-sprint",
+    "subject": "research tip: 94% of enterprises using AI see no material returns",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "1c671b57-1530-4044-8e75-5f78f42ddf36",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "founders@tldr.tech",
+    "hook": "distribution-sprint",
+    "subject": "research: governance frameworks fail for agentic AI systems",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "8f6e1d7f-449a-4d9a-96d1-02db184c7bd9",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "hello@superhuman.ai",
+    "hook": "distribution-sprint",
+    "subject": "research resource: the six percent of enterprises getting real AI value",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "01f5746b-a8c3-4b3e-b372-37efefb974cc",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "news@artificialintelligence-news.com",
+    "hook": "distribution-sprint",
+    "subject": "original research: the agentic accountability gap",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "7e668b50-d493-4952-852a-6dfeb3da2d86",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "hello@therundown.ai",
+    "hook": "distribution-sprint",
+    "subject": "research: only 6% of enterprises see material AI returns",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "e5686ac3-3a50-450d-816e-51db2f85ff47",
+    "error": null
+  },
+  {
+    "company": "",
+    "contact_name": "",
+    "email": "nathan@nathanbenaich.com",
+    "hook": "distribution-sprint",
+    "subject": "enterprise AI governance research for State of AI Report",
+    "sent_at": "2026-04-15T00:00:00+00:00",
+    "resend_id": "11a2d2b4-8184-4a13-ac81-3929b4f85917",
+    "error": null
   }
 ]
