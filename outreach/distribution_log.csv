@@ -86,3 +86,6 @@ date,to,subject,send_id,status
 2026-04-17,websub-appspot-superfeedr,Q2 2026 AI Compensation by Skill feed.xml,websub-compensation-by-skill,accepted-204
 2026-04-17,nothumansearch.ai/api/v1/submit,Q2 2026 AI Compensation by Skill,nhs-submit-compensation-by-skill,rate-limited-429
 2026-04-17,launchd-install,com.foundry.8bitconcepts.compensation,mon-8-30am-weekly,loaded
+2026-04-17,email-pitch,team@levels.fyi,resend:68e86f58-dcee-4c9e-8604-1ce857cdbd17,sent-comp-by-skill-data-partnership
+2026-04-17,email-pitch,editor@hackernoon.com,resend:13dc869d-2c35-4f93-a2ce-d5254cafa103,sent-hackernoon-research-premium-angle
+2026-04-17,email-pitch,hello@dev.to,resend:9f414950-af9c-4be7-8a37-dad7033ed183,sent-devto-comp-editorial
