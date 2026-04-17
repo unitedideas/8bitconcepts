@@ -579,6 +579,8 @@
 
       <p>Weekly submission volume is running at 7,631 candidates for the week starting 2026-04-10, most from autonomous discovery agents rather than human submissions.</p>
 
+      <p><strong>Download raw data:</strong> The MCP ecosystem health dataset is mirrored as a public gist &mdash; <a href="https://gist.githubusercontent.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b/raw/mcp-ecosystem-health.csv">CSV</a> &middot; <a href="https://gist.githubusercontent.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b/raw/mcp-ecosystem-health.md">Markdown</a> &middot; <a href="https://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b">view on GitHub</a>. Auto-updated every weekly regeneration, canonical raw URLs are stable across revisions.</p>
+
       <h2>Implications for builders</h2>
 
       <p><strong>Implications for builders.</strong> If you are shipping an MCP server: the live-probe bar is low but not everyone clears it &mdash; make sure your deployment actually answers <code>initialize</code>, not just serves a manifest. If you are building an agent that consumes MCP servers at runtime: discover against a live-verified index, not a static list. And if you are choosing a vertical: the crowded categories (developer tools, AI-native tools) are fighting over the same agent integrations, while finance, health, and education are asking to be built.</p>
@@ -629,7 +631,7 @@
     <div class="footnotes">
       <h4>Sources</h4>
       <ol>
-        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T22:40:57Z. Public unauthenticated endpoint. Backing index: 5,578 agent-ready sites / 575 MCP-verified via JSON-RPC handshake.</li>
+        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T22:47:25Z. Public unauthenticated endpoint. Backing index: 5,578 agent-ready sites / 575 MCP-verified via JSON-RPC handshake.</li>
         <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/mcp">/mcp</a>, live MCP server exposing <code>verify_mcp</code>, <code>search</code>, <code>get_site</code>, <code>list_categories</code>, <code>get_top_sites</code>, and four more tools over JSON-RPC 2.0.</li>
         <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/methodology">/methodology</a>, open-source scoring rubric with 7 weighted signals.</li>
         <li>Verification means a TCP connection + HTTP POST to the declared <code>/mcp</code> endpoint with a JSON-RPC 2.0 <code>initialize</code> request, followed by a valid <code>result</code> response containing a <code>protocolVersion</code>. Sites that host a manifest but fail the handshake are counted in the index total but not in the MCP-verified total.</li>

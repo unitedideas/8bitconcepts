@@ -26,6 +26,7 @@ import argparse
 import json
 import subprocess
 import sys
+import tempfile
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -45,6 +46,15 @@ USER_AGENT = "curl/8.7.1"
 NHS_DIGEST_URL = "https://nothumansearch.ai/digest.json"
 NHS_STATS_URL = "https://nothumansearch.ai/api/v1/stats"
 NHS_SUBMIT_URL = "https://nothumansearch.ai/api/v1/submit"
+
+# Public gist: https://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b
+GIST_ID = "c93bd6d9984729070c59b2ea6c6b301b"
+GIST_CSV_FILENAME = "mcp-ecosystem-health.csv"
+GIST_MD_FILENAME = "mcp-ecosystem-health.md"
+# Canonical raw URLs (always latest revision — no commit hash in path)
+GIST_CSV_RAW_URL = f"https://gist.githubusercontent.com/unitedideas/{GIST_ID}/raw/{GIST_CSV_FILENAME}"
+GIST_MD_RAW_URL = f"https://gist.githubusercontent.com/unitedideas/{GIST_ID}/raw/{GIST_MD_FILENAME}"
+GIST_URL = f"https://gist.github.com/unitedideas/{GIST_ID}"
 
 
 def http_get_json(url: str, timeout: int = 30) -> dict[str, Any]:
@@ -294,6 +304,15 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
         f"a site that an autonomous agent can realistically integrate without human help. The full probe "
         f"methodology is open-source at <a href=\"https://nothumansearch.ai/methodology\">"
         f"nothumansearch.ai/methodology</a>."
+    )
+
+    # Download raw data callout (CSV + MD gist) — mirrors hiring-snapshot pattern
+    download_para = (
+        f'<strong>Download raw data:</strong> The MCP ecosystem health dataset is mirrored as a public gist '
+        f'&mdash; <a href="{GIST_CSV_RAW_URL}">CSV</a> &middot; '
+        f'<a href="{GIST_MD_RAW_URL}">Markdown</a> &middot; '
+        f'<a href="{GIST_URL}">view on GitHub</a>. '
+        f"Auto-updated every weekly regeneration, canonical raw URLs are stable across revisions."
     )
 
     # Submissions stat sentence
@@ -879,6 +898,8 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
 
       <p>{submissions_sentence}</p>
 
+      <p>{download_para}</p>
+
       <h2>Implications for builders</h2>
 
       <p>{tldr_para}</p>
@@ -946,6 +967,168 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
 </body>
 </html>
 """
+
+
+def build_gist_content(digest: dict[str, Any], today: str) -> tuple[str, str]:
+    """Build the CSV + Markdown content that mirrors the MCP ecosystem health snapshot
+    into the public gist. Returns (csv_text, md_text).
+
+    CSV: rank,name,category,agentic_score,url,mcp_verified — top 25 newly-indexed MCP servers.
+    MD: last-updated header, global verification rate, top 15 categories table,
+        top 25 newly-indexed MCP servers table, methodology + attribution + sibling links.
+    """
+    total_sites = int(digest.get("total_sites", 0))
+    mcp_verified = int(digest.get("mcp_verified", 0))
+    llms_txt_count = int(digest.get("llms_txt_count", 0))
+    openapi_count = int(digest.get("openapi_count", 0))
+    pct_mcp = float(digest.get("pct_mcp", 0.0))
+    submissions_week = int(digest.get("submissions_week", 0))
+
+    categories = digest.get("categories", []) or []
+    new_mcp_servers = digest.get("new_mcp_servers", []) or []
+
+    # Top 25 newly-indexed MCP servers (digest may return fewer; cap naturally)
+    top_new = new_mcp_servers[:25]
+
+    # CSV: rank,name,category,agentic_score,url,mcp_verified
+    def csv_safe(s: str) -> str:
+        s = str(s or "")
+        # Strip commas/quotes/newlines for CSV simplicity (matches hiring snapshot pattern)
+        return s.replace(",", " ").replace('"', "").replace("\n", " ").replace("\r", " ").strip()
+
+    csv_lines = ["rank,name,category,agentic_score,url,mcp_verified"]
+    for i, s in enumerate(top_new, start=1):
+        domain = s.get("domain", "") or ""
+        # Take first segment of name before em-dash/pipe for cleaner cells
+        raw_name = (s.get("name") or domain or "").split("\u2014")[0].split("|")[0].strip()
+        name = csv_safe(raw_name)
+        cat = csv_safe(s.get("category", ""))
+        score = int(s.get("agentic_score", 0))
+        url = f"https://nothumansearch.ai/site/{domain}"
+        mcp_verified_flag = "true" if s.get("has_mcp_server") else "false"
+        csv_lines.append(f"{i},{name},{cat},{score},{url},{mcp_verified_flag}")
+    csv_text = "\n".join(csv_lines) + "\n"
+
+    # Markdown
+    visible_cats = [c for c in categories if c.get("name") != "other"]
+    top_cats = visible_cats[:15]
+
+    md_lines = [
+        "# MCP Ecosystem Health Dataset",
+        "",
+        f"**Last updated**: {today}",
+        "",
+        f"**Snapshot**: {today} \u00b7 **Sites indexed**: {total_sites:,} \u00b7 "
+        f"**Live-verified MCP servers**: {mcp_verified:,} \u00b7 "
+        f"**Verification rate**: {pct_mcp:.1f}%",
+        "",
+        f"**Other agent-discovery signals**: {llms_txt_count:,} sites publish `llms.txt` \u00b7 "
+        f"{openapi_count:,} publish OpenAPI \u00b7 {submissions_week:,} new candidate submissions this week.",
+        "",
+        "Live data from [nothumansearch.ai/digest.json](https://nothumansearch.ai/digest.json) \u2014 free public API, no auth, refreshed on every crawl cycle.",
+        "",
+        "## Verification rate",
+        "",
+        f"Of **{total_sites:,}** sites that advertise MCP / agent-ready signals, only "
+        f"**{mcp_verified:,} ({pct_mcp:.1f}%)** survive a real JSON-RPC handshake to their `/mcp` endpoint. "
+        "The rest either return HTML, time out, or never implemented the protocol correctly.",
+        "",
+        "## Top 15 categories",
+        "",
+        "| Rank | Category | Sites Indexed | Share of Index |",
+        "|---:|---|---:|---:|",
+    ]
+    for i, c in enumerate(top_cats, start=1):
+        name = str(c.get("name", "\u2014"))
+        count = int(c.get("count", 0))
+        share = (count / total_sites * 100) if total_sites else 0
+        md_lines.append(f"| {i} | {name} | {count:,} | {share:.1f}% |")
+
+    md_lines += [
+        "",
+        f"## Top {len(top_new)} newly-indexed MCP servers",
+        "",
+        "| Rank | Domain | Name | Category | Agentic Score | MCP Verified |",
+        "|---:|---|---|---|---:|:---:|",
+    ]
+    for i, s in enumerate(top_new, start=1):
+        domain = str(s.get("domain", "\u2014"))
+        raw_name = (s.get("name") or domain or "\u2014").split("\u2014")[0].split("|")[0].strip()
+        # Escape pipe chars for markdown table safety
+        name_cell = raw_name.replace("|", "\\|")
+        cat = str(s.get("category", "\u2014"))
+        score = int(s.get("agentic_score", 0))
+        verified_cell = "yes" if s.get("has_mcp_server") else "no"
+        site_url = f"https://nothumansearch.ai/site/{domain}"
+        md_lines.append(f"| {i} | [{domain}]({site_url}) | {name_cell} | {cat} | {score} | {verified_cell} |")
+
+    md_lines += [
+        "",
+        "## Methodology",
+        "",
+        "NothingHumanSearch crawls submitted URLs and auto-discovered candidates from public sources "
+        "(awesome-mcp-servers, PulseMCP, llmstxt.site, curated feeds), then scores each site against seven "
+        "weighted signals: `llms.txt` present and parseable; `ai-plugin.json` at `/.well-known/`; an OpenAPI "
+        "or AsyncAPI spec at a discoverable path; an MCP manifest; a live JSON-RPC MCP handshake; documented "
+        "rate-limit and auth headers; and an accessible structured API response. Sites are re-crawled weekly. "
+        "Scores range 0\u2013100; any score above 75 corresponds to a site an autonomous agent can realistically "
+        "integrate without human help.",
+        "",
+        "Verification means a TCP connection + HTTP POST to the declared `/mcp` endpoint with a JSON-RPC 2.0 "
+        "`initialize` request, followed by a valid `result` response containing a `protocolVersion`. Sites that "
+        "host a manifest but fail the handshake are counted in the index total but not in the MCP-verified total.",
+        "",
+        "## Source & License",
+        "",
+        f"- **Live API**: https://nothumansearch.ai/digest.json (JSON, public)",
+        f"- **NHS MCP server**: https://nothumansearch.ai/mcp (JSON-RPC, eight tools incl. `verify_mcp`)",
+        f"- **Methodology page**: https://nothumansearch.ai/methodology",
+        f"- **Research note**: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        f"- **Sibling dataset**: [Top AI Companies Hiring](https://gist.github.com/unitedideas/9c59d50a824a075410bd658c96e1f5de)",
+        f"- **Auto-regenerated**: weekly via `tools/regenerate-mcp-health.py`",
+        f"- **License**: CC BY 4.0 \u2014 attribution to 8bitconcepts + nothumansearch.ai",
+        "",
+    ]
+    md_text = "\n".join(md_lines)
+
+    return csv_text, md_text
+
+
+def update_gist(digest: dict[str, Any], today: str) -> bool:
+    """Write CSV + MD to /tmp/mcp-health-gist/ and push to the public gist via `gh gist edit`.
+    Never aborts the caller on failure; logs and returns False instead.
+    """
+    try:
+        csv_text, md_text = build_gist_content(digest, today)
+    except Exception as e:
+        print(f"   Gist content build failed (non-fatal): {e}", file=sys.stderr)
+        return False
+
+    tmpdir = Path(tempfile.gettempdir()) / "mcp-health-gist"
+    try:
+        tmpdir.mkdir(parents=True, exist_ok=True)
+        csv_path = tmpdir / GIST_CSV_FILENAME
+        md_path = tmpdir / GIST_MD_FILENAME
+        csv_path.write_text(csv_text, encoding="utf-8")
+        md_path.write_text(md_text, encoding="utf-8")
+        print(f"   Wrote gist files to {tmpdir}")
+    except Exception as e:
+        print(f"   Gist temp write failed (non-fatal): {e}", file=sys.stderr)
+        return False
+
+    ok = True
+    for filename, path in ((GIST_CSV_FILENAME, csv_path), (GIST_MD_FILENAME, md_path)):
+        # `gh gist edit <id> --filename NAME -- PATH` replaces that file in the gist with the contents at PATH.
+        cmd = ["gh", "gist", "edit", GIST_ID, "--filename", filename, "--", str(path)]
+        r = subprocess.run(cmd, capture_output=True, text=True)
+        if r.returncode != 0:
+            print(f"   gh gist edit {filename} failed (non-fatal): {r.stderr[:400]}", file=sys.stderr)
+            ok = False
+        else:
+            print(f"   Gist updated: {filename}")
+    if ok:
+        print(f"   Gist live: {GIST_URL}")
+    return ok
 
 
 def indexnow_ping(urls: list[str]) -> bool:
@@ -1073,6 +1256,13 @@ def main() -> int:
         print("   Overview regenerated.")
     else:
         print(f"   Overview failed (non-fatal): {r.stderr[:300]}", file=sys.stderr)
+
+    print("\n4b. Updating public gist (MCP ecosystem health CSV + MD)...")
+    try:
+        update_gist(digest, today)
+    except Exception as e:
+        # Never let a gist failure abort the run
+        print(f"   Gist update unhandled exception (non-fatal): {e}", file=sys.stderr)
 
     if args.once:
         print("\n=== --once: stopping before commit/push/pings ===")
