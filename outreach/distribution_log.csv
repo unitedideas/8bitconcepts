@@ -29,3 +29,28 @@ date,to,subject,send_id,status
 2026-04-16,github-pr,georgezouq/awesome-ai-in-finance,https://github.com/georgezouq/awesome-ai-in-finance/pull/116,open,8bc papers in finance (5.7k stars)
 2026-04-16,github-pr,neomatrix369/awesome-ai-ml-dl,https://github.com/neomatrix369/awesome-ai-ml-dl/pull/169,open,8bc in Learning Resources (1.7k stars)
 2026-04-16T09:26:00Z,github-pr,ai-boost/awesome-ai-for-science,https://github.com/ai-boost/awesome-ai-for-science/pull/29,open,8bitconcepts in Enterprise AI Research (1.5k stars)
+2026-04-17T14:31:03Z,indexnow,bulk-sitemap-resubmit,https://api.indexnow.org/,success,Full sitemap resubmitted to Bing/Yandex/Naver/Seznam
+2026-04-17T14:31:03Z,github-repo,readme-published,https://github.com/unitedideas/8bitconcepts,success,Marketing-grade README with cross-links and product summary
+2026-04-17T14:31:03Z,github-repo,topics-added,https://github.com/unitedideas/8bitconcepts,success,GitHub topics for discoverability via GitHub search
+2026-04-17T14:36:32Z,github-profile,unitedideas-profile-readme,https://github.com/unitedideas,success,Profile README published listing all 3 Foundry products prominently
+2026-04-17T14:39:34Z,github-pr,owainlewis/awesome-artificial-intelligence,https://github.com/owainlewis/awesome-artificial-intelligence/pull/213,pending,PR #213 — adds 2 papers to Guides + RSS to Newsletters (13k star list)
+2026-04-17T14:44:27Z,public-gist,how-to-find-mcp-servers-2026,https://gist.github.com/unitedideas/964955598b261ae5016a4d4883b430fc,success,Public field guide gist that references all 3 products — Google-indexable
+2026-04-17T14:46:43Z,public-gist,enterprise-ai-reading-list-2026,https://gist.github.com/unitedideas/aeb832c62825cdd8fbb384b88b7bd67d,success,Curated reading list for 8bc papers — Google-indexed, cross-promotes NHS and ADB at the bottom
+2026-04-17T14:49:11Z,github-badge,nhs-score-badge-on-readmes,https://github.com/unitedideas,success,NHS agentic readiness badges embedded on all 3 public READMEs + unitedideas profile — dogfood loop
+2026-04-17T14:52:38Z,on-site-badge,nhs-score-badge-footer,https://8bitconcepts.com,success,NHS 100/100 badge in site footer — trust signal + inbound NHS links from every page
+2026-04-17T15:01:01Z,github-pr,bh-rat/awesome-mcp-enterprise,https://github.com/bh-rat/awesome-mcp-enterprise/pull/63,pending,PR #63 fills empty Blog Posts & Articles section with 4 papers
+2026-04-17T15:04:39Z,mcp-index-cli,mcprepository.com,https://mcprepository.com/unitedideas/8bitconcepts,pending,Submitted 8bc GitHub repo to mcprepository via mcp-index CLI — queued for validation
+2026-04-17T15:07:45Z,github-pr,mahseema/awesome-ai-tools,https://github.com/mahseema/awesome-ai-tools/pull/1137,pending,PR #1137 — 8bc to Academia section
+2026-04-17T15:16:30Z,websub-publish,pubsubhubbub-superfeedr,https://pubsubhubbub.appspot.com/+superfeedr,success,WebSub hub pings to both appspot+superfeedr — notifies Feedly/NewsBlur/Flipboard subscribers of fresh content
+2026-04-17T15:23:14Z,breadcrumb-schema,all-10-research-papers,https://8bitconcepts.com/research/,success,Added BreadcrumbList JSON-LD to 10 papers for Google rich-results eligibility; IndexNow pinged
+2026-04-17T15:26:58Z,github-action-publish,nhs-score-check-action-v1,https://github.com/unitedideas/nhs-score-check-action,success,Public GitHub Action (v1 tag) — other repos adopt it to monitor agentic readiness; each adoption = inbound link to NHS. Topics: mcp, mcp-server, ai-agents, agentic-ai, agent-discovery, actions.
+2026-04-17T15:29:41Z,github-action-dogfood,nhs-score-check-action,https://github.com/unitedideas/nhs-score-check-action,success,Dogfood: nhs-score-check-action on 8BC repo CI (daily cron)
+2026-04-17T15:49:22Z,github-pr,foorilla/allainews_sources,https://github.com/foorilla/allainews_sources/pull/7,pending,PR #7 foorilla/allainews_sources — 8bc RSS in News section (434 star AI/ML news aggregator)
+2026-04-17T15:57:09Z,github-pr,csarigoz/best-ai-newsletters,https://github.com/csarigoz/best-ai-newsletters/pull/9,pending,PR #9 — 8bc Research in Business & Enterprise section
+2026-04-17T16:02:37Z,github-pr,armankhondker/awesome-ai-ml-resources,https://github.com/armankhondker/awesome-ai-ml-resources/pull/18,pending,PR #18 — 8bc in Applied Blogs + Newsletters (4.3k star AI/ML resources list)
+2026-04-17T16:21:18Z,github-pr,antoinebrl/awesome-ml-blogs,https://github.com/antoinebrl/awesome-ml-blogs/pull/5,pending,PR #5 — 8bc in Personal Blogs section (309 star ML blogs curated list)
+2026-04-17T16:27:17Z,github-pr,SecretiveShell/Awesome-llms-txt,https://github.com/SecretiveShell/Awesome-llms-txt/pull/33,pending,PR #33 SecretiveShell/Awesome-llms-txt — 8bc llms.txt
+2026-04-17T16:35:11Z,github-pr,sdras/awesome-actions,https://github.com/sdras/awesome-actions/pull/766,pending,PR #766 — nhs-score-check-action listed in Monitoring section (27.7k star awesome-actions list — biggest placement since modelcontextprotocol/servers)
+2026-04-17T16:39:04Z,github-pr,alternbits/awesome-ai-newsletters,https://github.com/alternbits/awesome-ai-newsletters/pull/36,pending,PR #36 — 8bc in For Professionals (already-open from prior session)
+2026-04-17T16:42:00Z,github-pr,brandonhimpfen/awesome-ai-ethics,https://github.com/brandonhimpfen/awesome-ai-ethics/pull/6,pending,PR #6 — 8bc added to Responsible AI and Governance section (9 star awesome-ai-ethics list)
+2026-04-17T16:45:24Z,public-gist,enterprise-ai-governance-checklist-12-questions,https://gist.github.com/unitedideas/9cf7017472e3f92db751a0f23d7a211d,success,Enterprise AI governance checklist gist — 12 pre-deployment questions drawn from 8bc papers; each question links to the source paper
