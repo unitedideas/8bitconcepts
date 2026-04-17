@@ -77,3 +77,5 @@ date,to,subject,send_id,status
 2026-04-17,email-pitch,gergely@pragmaticengineer.com,resend:c99cde4b-dcc8-4a04-9aed-02d95d02a6cb,sent-comp-data-hook
 2026-04-17,email-pitch,lenny@lennysnewsletter.com,resend:ca5b5e04-0c66-458e-ae31-fbf14eb35847,sent-agent-tag-crossover
 2026-04-17,email-pitch,editors@infoq.com,resend:1cbe5871-8a6e-42b5-92d9-86bf6faf516b,sent-infoq-ai-hiring-snapshot
+2026-04-17,email-pitch,benedict@ben-evans.com,resend:95f3a653-3f86-48eb-9c09-044bfe15623e,sent-ben-evans-agents-tag-crossover
+2026-04-17,email-pitch,kyle@venturebeat.com,resend:38d8238b-f319-48e2-b7fa-d43289cd908c,sent-venturebeat-hiring-snapshot
