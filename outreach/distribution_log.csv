@@ -59,3 +59,5 @@ date,to,subject,send_id,status
 2026-04-17T17:17:24Z,github-pr,RSS-Renaissance/awesome-AI-feeds,https://github.com/RSS-Renaissance/awesome-AI-feeds/pull/2,pending,PR #2 — 8BC RSS feed added to both README and OPML (85 star OPML-based AI RSS aggregator)
 2026-04-17T18:01:36Z,github-pr,dariubs/awesome-workflow-automation,https://github.com/dariubs/awesome-workflow-automation/pull/79,submitted,PR #79 — multi-resource add (NHS to Core MCP Resources + Resources & Directories, ADB to Resources & Directories, 8BC to Articles & Guides/AI Agents) to 902 star list
 2026-04-17T18:06:25Z,github-pr,superiorlu/AITreasureBox,https://github.com/superiorlu/AITreasureBox/pull/16,submitted,PR #16 — added NHS (Tools+Websites) ADB (Websites) 8BC (Reports&Papers) to 785 star AI resource list
+2026-04-17,content-asset,claude-skills-repo,https://github.com/unitedideas/claude-skills-foundry,public
+2026-04-17,org-readme-update,unitedideas/unitedideas,https://github.com/unitedideas,added-examples-and-skills-section
