@@ -66,3 +66,4 @@ date,to,subject,send_id,status
 2026-04-17,email-newsletter,ks@turingpost.com,8556e7ea-9124-4cdc-b6ff-b0b3eb4e2650,sent
 2026-04-17,email-pitch,ks@turingpost.com,resend:d3f57774-6db3-4ff3-bb34-057ca6df0847,sent-FOD-newsletter-recommendation
 2026-04-17,content-asset,research-overview-atlas,https://8bitconcepts.com/research/overview.html,shipped
+2026-04-17T18:44:10Z,indexnow,research-overview-atlas,https://api.indexnow.org/,success,Pinged Bing/Yandex for /research/overview.html + sitemap + homepage
