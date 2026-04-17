@@ -68,3 +68,4 @@ date,to,subject,send_id,status
 2026-04-17,content-asset,research-overview-atlas,https://8bitconcepts.com/research/overview.html,shipped
 2026-04-17T18:44:10Z,indexnow,research-overview-atlas,https://api.indexnow.org/,success,Pinged Bing/Yandex for /research/overview.html + sitemap + homepage
 2026-04-17,nhs-dogfood-submit,8bitconcepts.com,https://8bitconcepts.com/research/overview.html,submitted-nhs-201
+2026-04-17,public-gist,three-curl-oneliners,https://gist.github.com/unitedideas/20dd985ff6ee8d57edbd6a3a10907c55,live
