@@ -38,6 +38,18 @@ RESEARCH_DIR = REPO / "research"
 PAPER_PATH = RESEARCH_DIR / "q2-2026-ai-compensation-by-skill.html"
 OVERVIEW_SCRIPT = REPO / "tools" / "generate-overview.py"
 PAPER_URL = "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html"
+
+OG_SLUG = "q2-2026-ai-compensation-by-skill"
+OG_IMAGE_PATH = RESEARCH_DIR / "og" / f"{OG_SLUG}.png"
+OG_IMAGE_URL = f"https://8bitconcepts.com/research/og/{OG_SLUG}.png"
+
+# Make the shared OG helper importable (same dir as this script)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from generate_og_image import generate_og_image  # noqa: E402
+except Exception as _og_err:  # pragma: no cover
+    generate_og_image = None  # type: ignore[assignment]
+    print(f"  Warning: OG generator import failed: {_og_err}", file=sys.stderr)
 FEED_URL = "https://8bitconcepts.com/feed.xml"
 INDEXNOW_KEY = "e4e40fed94fa41b09613c20e7bac4484"
 HOST = "8bitconcepts.com"
@@ -475,11 +487,13 @@ def build_html(stats: dict[str, Any], today: str, generated_iso: str) -> str:
   <meta property="og:description" content="{attr_escape(og_description)}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html" />
-  <meta property="og:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta property="og:image" content="{OG_IMAGE_URL}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Q2 2026 AI Engineering Compensation by Skill" />
   <meta name="twitter:description" content="{attr_escape(twitter_description)}" />
-  <meta name="twitter:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta name="twitter:image" content="{OG_IMAGE_URL}" />
   <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -901,7 +915,7 @@ def build_html(stats: dict[str, Any], today: str, generated_iso: str) -> str:
     "dateModified": "{today}",
     "author": {{"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}},
     "publisher": {{"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}},
-    "image": "https://8bitconcepts.com/og-default.png",
+    "image": "{OG_IMAGE_URL}",
     "inLanguage": "en",
     "isAccessibleForFree": true,
     "about": "AI engineering compensation, salary by skill tag, top-paying AI skills, in-demand AI skills, experience-level distribution",
@@ -1324,6 +1338,44 @@ def main() -> int:
     PAPER_PATH.write_text(html, encoding="utf-8")
     print(f"   Wrote {len(html)} chars to {PAPER_PATH}")
 
+    print("3b. Regenerating OG image (paper-specific)...")
+    try:
+        tags_list = stats.get("tags", []) or []
+        tag_map_og = {t.get("tag"): t for t in tags_list}
+        research_sal = int((tag_map_og.get("research") or {}).get("avg_salary", 0) or 0)
+        genai_sal = int((tag_map_og.get("generative-ai") or {}).get("avg_salary", 0) or 0)
+        rl_sal = int((tag_map_og.get("reinforcement-learning") or {}).get("avg_salary", 0) or 0)
+        jobs_with_salary_v = int((stats.get("overview") or {}).get("jobs_with_salary", 0))
+        median_v = int((stats.get("salary") or {}).get("median", 0) or 0)
+
+        if research_sal and genai_sal:
+            premium_k = (research_sal - genai_sal) // 1000
+            headline = f"Research pays ${premium_k}k more than genAI"
+            subtext = (
+                f"Q2 2026 \u2022 research ${research_sal:,} vs gen-AI ${genai_sal:,} avg \u2022 "
+                f"{jobs_with_salary_v:,} salary-disclosed roles"
+            )
+        elif rl_sal and genai_sal:
+            premium_k = (rl_sal - genai_sal) // 1000
+            headline = f"Reinforcement learning pays ${premium_k}k more than genAI"
+            subtext = (
+                f"Q2 2026 \u2022 RL ${rl_sal:,} vs gen-AI ${genai_sal:,} avg \u2022 "
+                f"{jobs_with_salary_v:,} salary-disclosed roles"
+            )
+        else:
+            headline = f"${median_v:,} median AI engineer salary"
+            subtext = (
+                f"Q2 2026 \u2022 {jobs_with_salary_v:,} salary-disclosed AI/ML roles"
+            )
+
+        if generate_og_image is not None:
+            path = generate_og_image(headline, subtext, OG_IMAGE_PATH)
+            print(f"   OG image: {path}")
+        else:
+            print("   OG generator unavailable; skipping (paper still ships).")
+    except Exception as e:
+        print(f"   OG image generation failed (non-fatal): {e}", file=sys.stderr)
+
     print("4. Refreshing overview atlas...")
     r = subprocess.run(["python3", str(OVERVIEW_SCRIPT)], cwd=REPO, capture_output=True, text=True)
     if r.returncode == 0:
@@ -1352,7 +1404,8 @@ def main() -> int:
     print("\n5. Committing...")
     add = run_git(["git", "add",
                    "research/q2-2026-ai-compensation-by-skill.html",
-                   "research/overview.html"])
+                   "research/overview.html",
+                   f"research/og/{OG_SLUG}.png"])
     if add.returncode != 0:
         print(f"   git add failed: {add.stderr[:300]}", file=sys.stderr)
         return 3

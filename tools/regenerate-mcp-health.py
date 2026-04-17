@@ -38,6 +38,18 @@ RESEARCH_DIR = REPO / "research"
 PAPER_PATH = RESEARCH_DIR / "q2-2026-mcp-ecosystem-health.html"
 OVERVIEW_SCRIPT = REPO / "tools" / "generate-overview.py"
 PAPER_URL = "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
+
+OG_SLUG = "q2-2026-mcp-ecosystem-health"
+OG_IMAGE_PATH = RESEARCH_DIR / "og" / f"{OG_SLUG}.png"
+OG_IMAGE_URL = f"https://8bitconcepts.com/research/og/{OG_SLUG}.png"
+
+# Make the shared OG helper importable (same dir as this script)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from generate_og_image import generate_og_image  # noqa: E402
+except Exception as _og_err:  # pragma: no cover
+    generate_og_image = None  # type: ignore[assignment]
+    print(f"  Warning: OG generator import failed: {_og_err}", file=sys.stderr)
 FEED_URL = "https://8bitconcepts.com/feed.xml"
 INDEXNOW_KEY = "e4e40fed94fa41b09613c20e7bac4484"
 HOST = "8bitconcepts.com"
@@ -362,11 +374,13 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
   <meta property="og:description" content="{attr_escape(og_description)}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
-  <meta property="og:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta property="og:image" content="{OG_IMAGE_URL}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Q2 2026 MCP Ecosystem Health" />
   <meta name="twitter:description" content="{attr_escape(twitter_description)}" />
-  <meta name="twitter:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta name="twitter:image" content="{OG_IMAGE_URL}" />
   <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -788,7 +802,7 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
     "dateModified": "{today}",
     "author": {{"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}},
     "publisher": {{"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}},
-    "image": "https://8bitconcepts.com/og-default.png",
+    "image": "{OG_IMAGE_URL}",
     "inLanguage": "en",
     "isAccessibleForFree": true,
     "about": "MCP ecosystem health, agent-ready web services, JSON-RPC handshake verification, category distribution, MCP server gaps",
@@ -1250,6 +1264,31 @@ def main() -> int:
     PAPER_PATH.write_text(html, encoding="utf-8")
     print(f"   Wrote {len(html)} chars to {PAPER_PATH}")
 
+    print("3b. Regenerating OG image (paper-specific)...")
+    try:
+        total_sites_v = int(digest.get("total_sites", 0))
+        mcp_verified_v = int(digest.get("mcp_verified", 0))
+        llms_v = int(digest.get("llms_txt_count", 0))
+        # Pull claim count from NHS stats (best-effort, else fall back to total_sites)
+        claim_total = total_sites_v
+        try:
+            nhs_stats = http_get_json(NHS_STATS_URL, timeout=10)
+            claim_total = int(nhs_stats.get("mcp_claim_count", total_sites_v)) or total_sites_v
+        except Exception:
+            pass
+        headline = f"{mcp_verified_v:,} of {claim_total:,} MCP claims verified"
+        subtext = (
+            f"Q2 2026 \u2022 {total_sites_v:,} agent-ready sites indexed \u2022 "
+            f"{llms_v:,} publish llms.txt"
+        )
+        if generate_og_image is not None:
+            path = generate_og_image(headline, subtext, OG_IMAGE_PATH)
+            print(f"   OG image: {path}")
+        else:
+            print("   OG generator unavailable; skipping (paper still ships).")
+    except Exception as e:
+        print(f"   OG image generation failed (non-fatal): {e}", file=sys.stderr)
+
     print("4. Refreshing overview atlas...")
     r = subprocess.run(["python3", str(OVERVIEW_SCRIPT)], cwd=REPO, capture_output=True, text=True)
     if r.returncode == 0:
@@ -1279,7 +1318,8 @@ def main() -> int:
     print("\n5. Committing...")
     add = run_git(["git", "add",
                    "research/q2-2026-mcp-ecosystem-health.html",
-                   "research/overview.html"])
+                   "research/overview.html",
+                   f"research/og/{OG_SLUG}.png"])
     if add.returncode != 0:
         print(f"   git add failed: {add.stderr[:300]}", file=sys.stderr)
         return 3

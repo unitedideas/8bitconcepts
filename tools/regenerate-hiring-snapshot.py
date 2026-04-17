@@ -38,6 +38,18 @@ RESEARCH_DIR = REPO / "research"
 PAPER_PATH = RESEARCH_DIR / "q2-2026-ai-hiring-snapshot.html"
 OVERVIEW_SCRIPT = REPO / "tools" / "generate-overview.py"
 PAPER_URL = "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html"
+
+OG_SLUG = "q2-2026-ai-hiring-snapshot"
+OG_IMAGE_PATH = RESEARCH_DIR / "og" / f"{OG_SLUG}.png"
+OG_IMAGE_URL = f"https://8bitconcepts.com/research/og/{OG_SLUG}.png"
+
+# Make the shared OG helper importable (same dir as this script)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from generate_og_image import generate_og_image  # noqa: E402
+except Exception as _og_err:  # pragma: no cover
+    generate_og_image = None  # type: ignore[assignment]
+    print(f"  Warning: OG generator import failed: {_og_err}", file=sys.stderr)
 FEED_URL = "https://8bitconcepts.com/feed.xml"
 INDEXNOW_KEY = "e4e40fed94fa41b09613c20e7bac4484"
 HOST = "8bitconcepts.com"
@@ -458,11 +470,13 @@ def build_html(stats: dict[str, Any], digest: dict[str, Any], today: str, genera
   <meta property="og:description" content="{attr_escape(og_description)}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html" />
-  <meta property="og:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta property="og:image" content="{OG_IMAGE_URL}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Q2 2026 AI Engineering Hiring Snapshot" />
   <meta name="twitter:description" content="{attr_escape(twitter_description)}" />
-  <meta name="twitter:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta name="twitter:image" content="{OG_IMAGE_URL}" />
   <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -882,7 +896,7 @@ def build_html(stats: dict[str, Any], digest: dict[str, Any], today: str, genera
     "dateModified": "{today}",
     "author": {{"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}},
     "publisher": {{"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}},
-    "image": "https://8bitconcepts.com/og-default.png",
+    "image": "{OG_IMAGE_URL}",
     "inLanguage": "en",
     "isAccessibleForFree": true,
     "about": "AI engineering hiring, salary data, demanded skills, workplace distribution",
@@ -1318,6 +1332,35 @@ def main() -> int:
     PAPER_PATH.write_text(html, encoding="utf-8")
     print(f"   Wrote {len(html)} chars to {PAPER_PATH}")
 
+    print("3b. Regenerating OG image (paper-specific)...")
+    try:
+        companies = stats.get("companies", []) or []
+        salary_block = stats.get("salary", {}) or {}
+        total_jobs_v = int(ov.get("total_jobs", 0))
+        total_companies_v = int(ov.get("total_companies", 0))
+        median_v = int(salary_block.get("median", 0) or 0)
+        top_co = companies[0].get("company", "") if companies else ""
+        top_co_salary = int(companies[0].get("avg_salary", 0)) if companies else 0
+        headline = f"{total_jobs_v:,} AI/ML engineering roles open"
+        if top_co and top_co_salary:
+            subtext = (
+                f"Q2 2026 \u2022 {total_companies_v:,} companies \u2022 "
+                f"{top_co} leads at ${top_co_salary // 1000}k avg"
+            )
+        else:
+            subtext = (
+                f"Q2 2026 \u2022 {total_companies_v:,} companies \u2022 "
+                f"${median_v // 1000}k median salary"
+            )
+        if generate_og_image is not None:
+            path = generate_og_image(headline, subtext, OG_IMAGE_PATH)
+            print(f"   OG image: {path}")
+        else:
+            print("   OG generator unavailable; skipping (paper still ships).")
+    except Exception as e:
+        # Never let OG failure abort the run
+        print(f"   OG image generation failed (non-fatal): {e}", file=sys.stderr)
+
     print("4. Refreshing overview atlas...")
     r = subprocess.run(["python3", str(OVERVIEW_SCRIPT)], cwd=REPO, capture_output=True, text=True)
     if r.returncode == 0:
@@ -1347,7 +1390,8 @@ def main() -> int:
     print("\n5. Committing...")
     add = run_git(["git", "add",
                    "research/q2-2026-ai-hiring-snapshot.html",
-                   "research/overview.html"])
+                   "research/overview.html",
+                   f"research/og/{OG_SLUG}.png"])
     if add.returncode != 0:
         print(f"   git add failed: {add.stderr[:300]}", file=sys.stderr)
         return 3

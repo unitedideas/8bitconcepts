@@ -12,11 +12,13 @@
   <meta property="og:description" content="575 of 5,578 indexed agent-ready sites (10.3%) pass a live JSON-RPC handshake. Most MCP claims don't implement the protocol correctly. Category breakdown + newly-verified servers from NothingHumanSearch." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
-  <meta property="og:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta property="og:image" content="https://8bitconcepts.com/research/og/q2-2026-mcp-ecosystem-health.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Q2 2026 MCP Ecosystem Health" />
   <meta name="twitter:description" content="MCP reality check: 575/5,578 sites survive a real JSON-RPC handshake. Live data from nothumansearch.ai, 2026-04-17." />
-  <meta name="twitter:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta name="twitter:image" content="https://8bitconcepts.com/research/og/q2-2026-mcp-ecosystem-health.png" />
   <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -438,7 +440,7 @@
     "dateModified": "2026-04-17",
     "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
     "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
-    "image": "https://8bitconcepts.com/og-default.png",
+    "image": "https://8bitconcepts.com/research/og/q2-2026-mcp-ecosystem-health.png",
     "inLanguage": "en",
     "isAccessibleForFree": true,
     "about": "MCP ecosystem health, agent-ready web services, JSON-RPC handshake verification, category distribution, MCP server gaps",
@@ -631,7 +633,7 @@
     <div class="footnotes">
       <h4>Sources</h4>
       <ol>
-        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T22:47:25Z. Public unauthenticated endpoint. Backing index: 5,578 agent-ready sites / 575 MCP-verified via JSON-RPC handshake.</li>
+        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T23:03:34Z. Public unauthenticated endpoint. Backing index: 5,578 agent-ready sites / 575 MCP-verified via JSON-RPC handshake.</li>
         <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/mcp">/mcp</a>, live MCP server exposing <code>verify_mcp</code>, <code>search</code>, <code>get_site</code>, <code>list_categories</code>, <code>get_top_sites</code>, and four more tools over JSON-RPC 2.0.</li>
         <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/methodology">/methodology</a>, open-source scoring rubric with 7 weighted signals.</li>
         <li>Verification means a TCP connection + HTTP POST to the declared <code>/mcp</code> endpoint with a JSON-RPC 2.0 <code>initialize</code> request, followed by a valid <code>result</code> response containing a <code>protocolVersion</code>. Sites that host a manifest but fail the handshake are counted in the index total but not in the MCP-verified total.</li>
