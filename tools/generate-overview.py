@@ -49,6 +49,7 @@ CURATED_DESC: dict[str, str] = {
     "q2-2026-mcp-ecosystem-health": "5,578 agent-ready sites indexed, only 575 (10.3%) pass a live JSON-RPC handshake. Category breakdown, newly-verified servers, and the regulated verticals still waiting to be built.",
     "q2-2026-ai-compensation-by-skill": "Research roles pay a $42k premium over generative-AI roles ($274k vs $231k avg), even though generative-AI has 2.5x more openings. Top-paying skill tags, most in-demand tags, sweet-spot skills, and salary distribution across 3,402 salary-disclosed roles.",
     "q2-2026-remote-vs-onsite-ai-hiring": "Hybrid AI/ML roles pay a ~$35k premium over remote+onsite ($253k vs $218k). 55% of AI engineering roles still require full onsite attendance. Workplace mix, hybrid-premium analysis, onsite-heavy and remote-friendly companies.",
+    "q2-2026-entry-level-ai-gap": "Only ~7% of AI/ML engineering roles are open to juniors. For every entry-level opening there are ~10 senior-plus roles -- the tightest junior-to-senior ratio in tech. Experience-level mix, why the squeeze exists, companies still hiring juniors, and the career-switcher playbook.",
 }
 
 # Tag enrichment per slug (mirrors /research/index.html + research.json).
@@ -67,6 +68,7 @@ SLUG_TAGS: dict[str, list[str]] = {
     "q2-2026-mcp-ecosystem-health": ["mcp", "agents", "live-data", "ecosystem"],
     "q2-2026-ai-compensation-by-skill": ["compensation", "salary", "market-data", "live-data"],
     "q2-2026-remote-vs-onsite-ai-hiring": ["workplace", "remote", "hybrid", "market-data", "live-data"],
+    "q2-2026-entry-level-ai-gap": ["hiring", "entry-level", "career", "market-data", "live-data"],
 }
 
 # Topic index groupings. Each topic collects slugs that fit.
@@ -99,7 +101,7 @@ TOPIC_INDEX: list[tuple[str, str, list[str]]] = [
     (
         "Market & Hiring Data",
         "Live snapshots of where AI hiring, compensation, and agent infrastructure are moving.",
-        ["q2-2026-ai-hiring-snapshot", "q2-2026-ai-compensation-by-skill", "q2-2026-remote-vs-onsite-ai-hiring", "q2-2026-mcp-ecosystem-health"],
+        ["q2-2026-ai-hiring-snapshot", "q2-2026-ai-compensation-by-skill", "q2-2026-remote-vs-onsite-ai-hiring", "q2-2026-entry-level-ai-gap", "q2-2026-mcp-ecosystem-health"],
     ),
 ]
 

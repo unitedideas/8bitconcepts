@@ -8,8 +8,15 @@
   },
   "license": "https://8bitconcepts.com/about",
   "updated_at": "2026-04-17",
-  "total": 14,
+  "total": 15,
   "papers": [
+    {
+      "slug": "q2-2026-entry-level-ai-gap",
+      "title": "Q2 2026 The Junior AI Hiring Gap",
+      "summary": "Live experience-level data: only ~7% of AI/ML engineering roles are open to juniors. For every entry-level role, ~10 senior-plus roles -- the tightest junior-to-senior ratio in tech. Why the squeeze exists, companies still hiring juniors, and the career-switcher playbook.",
+      "url": "https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "tags": ["hiring", "entry-level", "career", "market-data", "live-data"]
+    },
     {
       "slug": "q2-2026-remote-vs-onsite-ai-hiring",
       "title": "Q2 2026 Remote vs Onsite AI Hiring",

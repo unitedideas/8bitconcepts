@@ -260,6 +260,11 @@ _MANUAL_TARGETS = [
         "headline": "Hybrid AI jobs pay $35k premium",
         "subtext": "Q2 2026 | 55% of AI engineering still requires onsite | hybrid $253k vs remote/onsite $218k avg",
     },
+    {
+        "slug": "q2-2026-entry-level-ai-gap",
+        "headline": "7% of AI jobs are entry-level",
+        "subtext": "Q2 2026 | 583 junior vs 5,707 senior-plus roles | ~10:1 senior-plus-to-junior ratio",
+    },
 ]
 
 

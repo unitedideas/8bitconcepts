@@ -24,6 +24,7 @@
 - [Q2 2026 MCP Ecosystem Health](https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html): Live audit — 5,578 agent-ready sites indexed, only 575 (10.3%) pass a live JSON-RPC handshake. Why the gap between claiming MCP and implementing it is widening, plus the regulated verticals still waiting to be built.
 - [Q2 2026 AI Engineering Compensation by Skill](https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html): Research roles pay a $42k premium over generative-AI roles ($274k vs $231k avg), even though generative-AI has 2.5x more openings. Top-paying skill tags, most in-demand tags, sweet-spot skills, salary distribution across 3,402 salary-disclosed roles.
 - [Q2 2026 Remote vs Onsite AI Hiring](https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html): Live workplace analysis — hybrid AI/ML roles pay a ~$35k premium over remote+onsite ($253k vs $218k). 55% of AI engineering still requires full onsite attendance. Onsite-heavy and remote-friendly companies, hybrid-premium analysis.
+- [Q2 2026 The Junior AI Hiring Gap](https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html): Live experience-level analysis — only ~7% of AI/ML engineering roles are open to juniors. For every entry-level role, ~10 senior-plus roles. Why the squeeze exists, companies still hiring juniors, and the career-switcher playbook.
 
 ## Research Topics
 
