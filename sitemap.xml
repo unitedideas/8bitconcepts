@@ -11,6 +11,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://8bitconcepts.com/research/overview.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://8bitconcepts.com/research/the-guardrails-gap.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

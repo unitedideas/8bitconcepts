@@ -4,6 +4,10 @@
 
 8bitconcepts publishes independent research papers on AI adoption, governance, and organizational strategy. Our research covers the practical challenges enterprises face when deploying AI systems — from agentic automation risks to measurement frameworks.
 
+## Research Atlas
+
+- [Research Atlas — master map](https://8bitconcepts.com/research/overview.html): all papers, topics, and three curated reading paths for practitioners. The best single starting point.
+
 ## Research Papers
 
 - [The Guardrails Gap](https://8bitconcepts.com/research/the-guardrails-gap.html): Why enterprise AI safety frameworks fail when agents act autonomously
