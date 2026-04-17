@@ -1,5 +1,7 @@
 # 8bitconcepts
 
+[![NHS Agentic Readiness](https://nothumansearch.ai/badge/8bitconcepts.com.svg)](https://nothumansearch.ai/site/8bitconcepts.com)
+
 **Independent research on enterprise AI adoption.** Papers on governance gaps, handoff patterns, and the maturity ladder most AI deployments skip.
 
 🌐 **Live site:** [8bitconcepts.com](https://8bitconcepts.com)
