@@ -45,6 +45,7 @@ CURATED_DESC: dict[str, str] = {
     "the-guardrails-gap": "Engineering teams spent 2023 and 2024 obsessing over what AI would say. In 2026, the threat has shifted - agentic systems are now taking action.",
     "the-hallucination-budget": "Most engineering teams ship LLM features with less testing rigor than they apply to a login form. Production hallucinations land on customer trust and legal risk.",
     "the-agentic-accountability-gap": "Enterprise teams spent three years learning how to stop AI from saying the wrong thing. Then they handed those same systems write-access to production.",
+    "q2-2026-ai-hiring-snapshot": "Live snapshot: 8,618 AI/ML engineering roles across 513 companies, $213k median, 599 new this week. OpenAI leads with 336 open roles. Full breakdown by skill, salary, workplace.",
 }
 
 # Tag enrichment per slug (mirrors /research/index.html + research.json).
@@ -59,6 +60,7 @@ SLUG_TAGS: dict[str, list[str]] = {
     "the-guardrails-gap": ["agents", "safety", "governance"],
     "the-hallucination-budget": ["llm", "reliability", "evaluation"],
     "the-agentic-accountability-gap": ["agents", "governance", "accountability"],
+    "q2-2026-ai-hiring-snapshot": ["hiring", "market-data", "live-data"],
 }
 
 # Topic index groupings. Each topic collects slugs that fit.
@@ -87,6 +89,11 @@ TOPIC_INDEX: list[tuple[str, str, list[str]]] = [
         "Reliability & Evaluation",
         "Measurement, eval, and detecting silent degradation.",
         ["the-measurement-problem", "the-hallucination-budget", "beyond-the-prompt"],
+    ),
+    (
+        "Market & Hiring Data",
+        "Live snapshots of where AI hiring and agent infrastructure are moving.",
+        ["q2-2026-ai-hiring-snapshot"],
     ),
 ]
 

@@ -7,9 +7,16 @@
     "url": "https://8bitconcepts.com"
   },
   "license": "https://8bitconcepts.com/about",
-  "updated_at": "2026-04-15",
-  "total": 10,
+  "updated_at": "2026-04-17",
+  "total": 11,
   "papers": [
+    {
+      "slug": "q2-2026-ai-hiring-snapshot",
+      "title": "Q2 2026 AI Engineering Hiring Snapshot",
+      "summary": "Live market data: 8,618 AI/ML engineering roles across 513 companies, $213k median, 599 new this week. OpenAI leads with 336 open roles.",
+      "url": "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
+      "tags": ["hiring", "market-data", "live-data", "enterprise"]
+    },
     {
       "slug": "the-guardrails-gap",
       "title": "The Guardrails Gap",

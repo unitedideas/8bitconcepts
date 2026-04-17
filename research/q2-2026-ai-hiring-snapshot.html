@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Q2 2026 AI Engineering Hiring Snapshot -- 8bitconcepts</title>
+  <meta name="description" content="Live data from aidevboard.com: 8,618 active AI/ML engineering roles, 513 companies hiring, $213k median salary, 599 new roles posted this week. OpenAI leads with 336 open roles. Analysis with full source data." />
+  <meta property="og:title" content="Q2 2026 AI Engineering Hiring Snapshot -- 8bitconcepts" />
+  <meta property="og:description" content="Live data: 8,618 active AI/ML engineering roles across 513 companies. Median $213k. 599 new this week. OpenAI leads with 336 open roles. Agents/LLM/generative-ai dominate tag counts." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Q2 2026 AI Engineering Hiring Snapshot" />
+  <meta name="twitter:description" content="8,618 AI/ML roles. 513 companies. $213k median. 599 posted this week. Live data from aidevboard.com, 2026-04-17." />
+  <meta name="twitter:image" content="https://8bitconcepts.com/og-default.png" />
+  <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate: #0d0d0e;
+      --slate-1: #111214;
+      --slate-2: #1a1c1f;
+      --slate-3: #242729;
+      --slate-4: #2e3135;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757;
+      --terra-dim: rgba(217,119,87,0.15);
+      --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9;
+      --text-dim: #8b8d91;
+      --text-dimmer: #5a5c61;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--slate);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--terra); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--terra);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 112px 32px 80px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .meta-date {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .meta-tag {
+      font-size: 12px;
+      color: var(--terra);
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-read {
+      font-size: 13px;
+      color: var(--text-dimmer);
+    }
+
+    .article-body p {
+      margin-bottom: 24px;
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-top: 52px;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .article-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-top: 36px;
+      margin-bottom: 14px;
+    }
+
+    .article-body a {
+      color: var(--terra);
+      text-decoration: underline;
+      text-decoration-color: rgba(217,119,87,0.35);
+      text-underline-offset: 3px;
+    }
+
+    .article-body a:hover { text-decoration-color: var(--terra); }
+
+    .callout {
+      background: var(--slate-2);
+      border-left: 3px solid var(--terra);
+      padding: 20px 24px;
+      margin: 36px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .callout p {
+      margin-bottom: 0 !important;
+      color: var(--text) !important;
+      font-size: 16px !important;
+      line-height: 1.65 !important;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--slate-3);
+      color: var(--text-dim);
+      font-weight: 500;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    .data-table td.num {
+      font-family: 'IBM Plex Mono', monospace;
+      text-align: right;
+      color: var(--text-dim);
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .data-table .td-label {
+      font-weight: 600;
+      color: var(--terra);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 36px 0;
+    }
+
+    .stat-box {
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .stat-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--terra);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .footnotes {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footnotes h4 {
+      font-size: 11px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 16px;
+    }
+
+    .footnotes ol { padding-left: 20px; }
+
+    .footnotes li {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .footnotes a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    .footnotes a:hover { color: var(--terra); }
+
+    .related {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .related-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .related-card {
+      background: var(--slate-1);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+
+    .related-card:hover { border-color: rgba(217,119,87,0.3); }
+
+    .related-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .related-card-sub {
+      font-size: 12px;
+      color: var(--text-dimmer);
+    }
+
+    .article-cta {
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 20px !important;
+    }
+
+    .article-cta a {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: opacity 0.15s;
+    }
+
+    .article-cta a:hover { opacity: 0.88; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--text-dimmer);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      .article-wrap { padding: 96px 20px 60px; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Q2 2026 AI Engineering Hiring Snapshot",
+    "description": "Live data from aidevboard.com: 8,618 active AI/ML engineering roles across 513 companies, $213k median salary, 599 new roles posted this week. Full breakdown by company, skill tag, salary band, and workplace type.",
+    "url": "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
+    "datePublished": "2026-04-17",
+    "dateModified": "2026-04-17",
+    "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "image": "https://8bitconcepts.com/og-default.png",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "about": "AI engineering hiring, salary data, demanded skills, workplace distribution",
+    "keywords": "AI hiring, ML engineering, LLM jobs, agent engineering, AI salary, 2026 hiring"
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Q2 2026 AI Engineering Hiring Snapshot"}
+  ]
+}
+</script>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://8bitconcepts.com">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="https://8bitconcepts.com/#research">Research</a>
+      <a href="https://8bitconcepts.com/#services">Services</a>
+      <a href="mailto:hello@8bitconcepts.com" class="nav-cta">Talk to us</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+
+    <div class="eyebrow">Research &mdash; Hiring Snapshot</div>
+
+    <h1>Q2 2026 AI Engineering Hiring Snapshot</h1>
+
+    <p class="subtitle">8,618 active AI/ML engineering roles are open across 513 companies as of 2026-04-17. Median advertised salary is $213,175. 599 new roles were posted this week. OpenAI leads with 336 open roles, followed by Anthropic at 261. Live data pulled from <a href="https://aidevboard.com/api/v1/stats">aidevboard.com/api/v1/stats</a>.</p>
+
+    <div class="meta">
+      <span class="meta-date">2026-04-17</span>
+      <span class="meta-tag">Live Data</span>
+      <span class="meta-read">~900 words</span>
+    </div>
+
+    <div class="article-body">
+
+      <p>This note captures the state of AI engineering hiring on 2026-04-17, pulled directly from the AI Dev Jobs public API. The numbers are not a survey. They are a live, daily-refreshed index of what companies are actually posting to their own applicant tracking systems right now -- scraped continuously from 538 source feeds, deduplicated, and canonicalized.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">8,618</div>
+          <div class="stat-label">active AI/ML engineering roles open across 513 companies (ADB, 2026-04-17)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">$213k</div>
+          <div class="stat-label">median advertised salary across the 3,402 roles that publish salary ranges</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">599</div>
+          <div class="stat-label">new roles posted in the last 7 days -- sustained pace of ~85 per day</div>
+        </div>
+      </div>
+
+      <h2>Top 10 hiring companies right now</h2>
+
+      <p>The concentration at the top is striking. OpenAI, Anthropic, and Anduril alone account for 758 open roles -- roughly 9% of the entire index. The top 10 companies account for 1,524 roles, or 17.7% of the market. This is a market with a long tail (503 companies below the top 10) but also with serious pockets of single-company acceleration.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th class="num" style="text-align:right;">Open roles</th>
+            <th class="num" style="text-align:right;">Avg salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>OpenAI</td><td class="num">336</td><td class="num">$360,000</td></tr>
+          <tr><td>Anthropic</td><td class="num">261</td><td class="num">$364,701</td></tr>
+          <tr><td>Anduril</td><td class="num">161</td><td class="num">$209,561</td></tr>
+          <tr><td>Nebius</td><td class="num">150</td><td class="num">$173,163</td></tr>
+          <tr><td>Applied Intuition</td><td class="num">148</td><td class="num">$196,078</td></tr>
+          <tr><td>Scale AI</td><td class="num">136</td><td class="num">$234,323</td></tr>
+          <tr><td>Waymo</td><td class="num">112</td><td class="num">$251,023</td></tr>
+          <tr><td>Graphcore</td><td class="num">110</td><td class="num">$246,594</td></tr>
+          <tr><td>LILT</td><td class="num">103</td><td class="num">&mdash;</td></tr>
+          <tr><td>xAI</td><td class="num">94</td><td class="num">$282,213</td></tr>
+        </tbody>
+      </table>
+
+      <p>The frontier labs (OpenAI, Anthropic, xAI) pay a premium of roughly $80-130k over the defense-tech, autonomy, and infrastructure players in the same leaderboard. That gap is the clearest signal in the data about where investor capital is being deployed most aggressively right now.</p>
+
+      <h2>Top demanded skills</h2>
+
+      <p>LLM work now dominates the index. 2,570 of 8,618 roles (29.8%) list <code>llm</code> as a tag. <code>agents</code> is close behind at 2,388 (27.7%), and <code>generative-ai</code> sits at 1,831 (21.2%). A year ago <code>pytorch</code> and <code>deep-learning</code> led by volume. The demand center of gravity has migrated up the stack -- from model training to model orchestration and agent design.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Tag</th><th class="num" style="text-align:right;">Role count</th><th class="num" style="text-align:right;">Avg salary</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>llm</td><td class="num">2,570</td><td class="num">$244,363</td></tr>
+          <tr><td>agents</td><td class="num">2,388</td><td class="num">$230,738</td></tr>
+          <tr><td>generative-ai</td><td class="num">1,831</td><td class="num">$230,966</td></tr>
+          <tr><td>distributed-systems</td><td class="num">1,398</td><td class="num">$253,698</td></tr>
+          <tr><td>pytorch</td><td class="num">1,040</td><td class="num">$245,142</td></tr>
+          <tr><td>fine-tuning</td><td class="num">799</td><td class="num">$246,807</td></tr>
+          <tr><td>research</td><td class="num">724</td><td class="num">$273,682</td></tr>
+          <tr><td>reinforcement-learning</td><td class="num">569</td><td class="num">$270,213</td></tr>
+          <tr><td>mlops</td><td class="num">597</td><td class="num">$224,485</td></tr>
+          <tr><td>gpu</td><td class="num">476</td><td class="num">$235,786</td></tr>
+        </tbody>
+      </table>
+
+      <p>Research roles command the highest average salary ($273,682) among tags with 500+ roles, followed by reinforcement learning and search. The premium for specialized, harder-to-hire skills is intact -- training infrastructure and eval/reliability work (distributed systems, MLOps, GPU) continues to outpay generic application work.</p>
+
+      <h2>Salary distribution</h2>
+
+      <p>Of the 3,402 roles that publish salary ranges, the shape is bimodal around the $200k line. The $200-250k band is the single largest bucket (1,044 roles, 30.7%), with $150-200k close behind (966 roles, 28.4%). Everything below $150k is a minority (367 roles combined, 10.8%), and roles above $300k are a meaningful but not overwhelming slice (457 roles, 13.4%).</p>
+
+      <table class="data-table">
+        <thead><tr><th>Range</th><th class="num" style="text-align:right;">Roles</th><th class="num" style="text-align:right;">Share</th></tr></thead>
+        <tbody>
+          <tr><td>Under $100k</td><td class="num">88</td><td class="num">2.6%</td></tr>
+          <tr><td>$100k-$150k</td><td class="num">279</td><td class="num">8.2%</td></tr>
+          <tr><td>$150k-$200k</td><td class="num">966</td><td class="num">28.4%</td></tr>
+          <tr><td>$200k-$250k</td><td class="num">1,044</td><td class="num">30.7%</td></tr>
+          <tr><td>$250k-$300k</td><td class="num">568</td><td class="num">16.7%</td></tr>
+          <tr><td>$300k-$400k</td><td class="num">350</td><td class="num">10.3%</td></tr>
+          <tr><td>$400k+</td><td class="num">107</td><td class="num">3.1%</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Workplace mix</h2>
+
+      <p>Onsite is still the largest category by volume (4,728 roles, 54.9%), but hybrid roles pay the highest on average: $253,384 versus $218,399 for onsite and $218,829 for remote. The $35k hybrid premium is real and worth pausing on -- it suggests the companies paying the most for senior talent right now want people in the building at least part of the week. Remote pay tracks onsite almost exactly.</p>
+
+      <table class="data-table">
+        <thead><tr><th>Workplace</th><th class="num" style="text-align:right;">Roles</th><th class="num" style="text-align:right;">Share</th><th class="num" style="text-align:right;">Avg salary</th></tr></thead>
+        <tbody>
+          <tr><td>Onsite</td><td class="num">4,728</td><td class="num">54.9%</td><td class="num">$218,399</td></tr>
+          <tr><td>Remote</td><td class="num">2,301</td><td class="num">26.7%</td><td class="num">$218,829</td></tr>
+          <tr><td>Hybrid</td><td class="num">1,589</td><td class="num">18.4%</td><td class="num">$253,384</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The ecosystem side</h2>
+
+      <p>Hiring demand is not the only signal. On the infrastructure side, <a href="https://nothumansearch.ai/digest">NothingHumanSearch</a> -- an independent index of agent-ready web services -- now tracks 8,400+ sites with agent discovery files (llms.txt, OpenAPI, ai-plugin), of which 575 have a live-verified MCP server over JSON-RPC, and 4,795 publish an llms.txt. Developer tools (1,249 sites) and AI-native tools (822 sites) are the two largest categories. Read alongside the hiring data, these two indexes describe the same market from opposite ends: 8,618 humans being hired to build AI products, into a world where 8,400+ services are already exposing themselves natively to AI agents.</p>
+
+      <div class="callout">
+        <p>The story the data tells: the stack is diversifying faster than headcount is. Agent frameworks, eval pipelines, MCP servers, vector infra, and MLOps tooling are all real sub-markets now. Companies that want to hire into this market need to be specific about which layer they are hiring for -- generic "ML engineer" listings are competing against a labor pool that self-identifies by framework and problem domain.</p>
+      </div>
+
+      <h2>Methodology</h2>
+
+      <p>Data in this note was pulled live at publication. The aidevboard.com index scrapes 538 applicant-tracking feeds (Ashby, Greenhouse, Lever, Workday, custom careers pages) on a daily cron, canonicalizes titles and tags with a rules-based classifier, and dedupes by (company, title, location). The <a href="https://aidevboard.com/api/v1/stats">/api/v1/stats</a> endpoint is public and unauthenticated. NHS data is from <a href="https://nothumansearch.ai/digest.json">/digest.json</a> -- an index that live-probes sites for agent-discovery signals and MCP endpoints. Both APIs are agent-readable.</p>
+
+      <h2>What's next</h2>
+
+      <p>For the organizational implications of this hiring mix -- specifically why the <code>agents</code> tag growing 27.7% of the index matters more than the raw salary numbers -- see <a href="/research/the-agentic-accountability-gap.html">The Agentic Accountability Gap</a> and <a href="/research/beyond-the-prompt.html">Beyond the Prompt</a>. For what those 6% of companies actually capturing returns are doing differently, see <a href="/research/the-six-percent.html">The Six Percent</a>. Full reading paths at the <a href="/research/overview.html">Research Atlas</a>.</p>
+
+    </div>
+
+    <div class="related">
+      <div class="related-label">Related Research</div>
+      <div class="related-grid">
+        <a class="related-card" href="/research/the-agentic-accountability-gap.html">
+          <div class="related-card-title">The Agentic Accountability Gap</div>
+          <div class="related-card-sub">Why governance frameworks break when agents act.</div>
+        </a>
+        <a class="related-card" href="/research/beyond-the-prompt.html">
+          <div class="related-card-title">Beyond the Prompt</div>
+          <div class="related-card-sub">The engineering maturity ladder for production agents.</div>
+        </a>
+        <a class="related-card" href="/research/the-six-percent.html">
+          <div class="related-card-title">The Six Percent</div>
+          <div class="related-card-sub">94% of orgs adopt AI. 6% capture returns. Why.</div>
+        </a>
+        <a class="related-card" href="/research/overview.html">
+          <div class="related-card-title">Research Atlas</div>
+          <div class="related-card-sub">Every paper, topic index, and three reading paths.</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="article-cta" style="margin-top:40px;">
+      <p style="margin-bottom:10px;"><strong>Get new research by email</strong></p>
+      <p style="margin-bottom:14px;font-size:15px;">Two papers a week on what's actually happening inside enterprise AI programs. No promo, no hype.</p>
+      <form onsubmit="return sub8bc(event)" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <input type="email" name="email" placeholder="you@company.com" required
+          style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #ccc;border-radius:6px;font-size:15px;" />
+        <button type="submit" style="padding:10px 18px;background:#d97757;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Subscribe</button>
+      </form>
+      <p id="sub-status" style="margin-top:10px;font-size:14px;min-height:1em;"></p>
+      <p style="margin-top:6px;font-size:13px;color:#888;">Prefer a reader? <a href="/feed.xml">RSS feed</a>.</p>
+    </div>
+    <script>
+    async function sub8bc(e){e.preventDefault();const f=e.target;const email=f.email.value.trim();const s=document.getElementById('sub-status');s.textContent='Subscribing…';try{const r=await fetch('https://aidevboard.com/api/v1/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tags:['8bitconcepts-research'],frequency:'weekly'})});if(r.ok){s.textContent='Subscribed. Check your inbox.';s.style.color='#0a0';f.reset();}else{s.textContent='Error subscribing. Email hello@8bitconcepts.com instead.';s.style.color='#c00';}}catch(err){s.textContent='Network error. Email hello@8bitconcepts.com.';s.style.color='#c00';}return false;}
+    </script>
+
+    <div class="footnotes">
+      <h4>Sources</h4>
+      <ol>
+        <li>AI Dev Jobs -- <a href="https://aidevboard.com/api/v1/stats">/api/v1/stats</a>, pulled 2026-04-17T22:17:25Z. Public unauthenticated endpoint. Backing index: 8,618 roles / 513 companies / 538 ATS source feeds, daily scrape.</li>
+        <li>AI Dev Jobs -- <a href="https://aidevboard.com/weekly-hiring">/weekly-hiring</a>, weekly roll-up of new postings and company movement.</li>
+        <li>NothingHumanSearch -- <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T22:17:25Z. Live-probed index of agent-ready web services with MCP / llms.txt / OpenAPI detection.</li>
+        <li>Salary ranges apply to the 3,402 of 8,618 roles that publish them. Roles without published ranges are excluded from median and distribution calculations but included in role counts.</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <div style="max-width:640px;margin:40px auto;padding:24px;background:#fafaf8;border:1px solid #e5e5e5;border-radius:8px;">
+    <p style="font-size:13px;color:#666;margin:0 0 12px;text-transform:uppercase;letter-spacing:1px;">Hiring for agentic AI?</p>
+    <div data-aidev-jobs data-tag="agents" data-limit="3" data-theme="light"></div>
+    <script src="https://aidevboard.com/static/widget.js" async></script>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 8bitconcepts &mdash; AI Enablement &amp; Integration Consulting &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
+    <p style="margin-top:6px;font-size:12px;"><a href="/research/overview.html" style="color:#d97757;">Research Atlas &rarr; all papers + reading paths</a></p>
+  </footer>
+
+</body>
+</html>
