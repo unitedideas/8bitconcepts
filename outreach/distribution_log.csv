@@ -80,3 +80,9 @@ date,to,subject,send_id,status
 2026-04-17,email-pitch,benedict@ben-evans.com,resend:95f3a653-3f86-48eb-9c09-044bfe15623e,sent-ben-evans-agents-tag-crossover
 2026-04-17,email-pitch,kyle@venturebeat.com,resend:38d8238b-f319-48e2-b7fa-d43289cd908c,sent-venturebeat-hiring-snapshot
 2026-04-17,email-pitch,tips@theinformation.com,resend:ebfa0148-ba98-4a0d-95db-61ac25ba5eb7,sent-ai-hiring-data-with-csv-link
+2026-04-17,content-asset,q2-2026-ai-compensation-by-skill,https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html,shipped-live-data-paper
+2026-04-17,public-gist,ai-compensation-by-skill-dataset,https://gist.github.com/unitedideas/b1b80d11f0f187f93fd6b1a599df418e,live-csv-md
+2026-04-17,indexnow-bing-yandex,Q2 2026 AI Compensation by Skill,indexnow-compensation-by-skill,accepted-200
+2026-04-17,websub-appspot-superfeedr,Q2 2026 AI Compensation by Skill feed.xml,websub-compensation-by-skill,accepted-204
+2026-04-17,nothumansearch.ai/api/v1/submit,Q2 2026 AI Compensation by Skill,nhs-submit-compensation-by-skill,rate-limited-429
+2026-04-17,launchd-install,com.foundry.8bitconcepts.compensation,mon-8-30am-weekly,loaded
