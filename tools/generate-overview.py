@@ -47,6 +47,7 @@ CURATED_DESC: dict[str, str] = {
     "the-agentic-accountability-gap": "Enterprise teams spent three years learning how to stop AI from saying the wrong thing. Then they handed those same systems write-access to production.",
     "q2-2026-ai-hiring-snapshot": "Live snapshot: 8,618 AI/ML engineering roles across 513 companies, $213k median, 599 new this week. OpenAI leads with 336 open roles. Full breakdown by skill, salary, workplace.",
     "q2-2026-mcp-ecosystem-health": "5,578 agent-ready sites indexed, only 575 (10.3%) pass a live JSON-RPC handshake. Category breakdown, newly-verified servers, and the regulated verticals still waiting to be built.",
+    "q2-2026-ai-compensation-by-skill": "Research roles pay a $42k premium over generative-AI roles ($274k vs $231k avg), even though generative-AI has 2.5x more openings. Top-paying skill tags, most in-demand tags, sweet-spot skills, and salary distribution across 3,402 salary-disclosed roles.",
 }
 
 # Tag enrichment per slug (mirrors /research/index.html + research.json).
@@ -63,6 +64,7 @@ SLUG_TAGS: dict[str, list[str]] = {
     "the-agentic-accountability-gap": ["agents", "governance", "accountability"],
     "q2-2026-ai-hiring-snapshot": ["hiring", "market-data", "live-data"],
     "q2-2026-mcp-ecosystem-health": ["mcp", "agents", "live-data", "ecosystem"],
+    "q2-2026-ai-compensation-by-skill": ["compensation", "salary", "market-data", "live-data"],
 }
 
 # Topic index groupings. Each topic collects slugs that fit.
@@ -94,8 +96,8 @@ TOPIC_INDEX: list[tuple[str, str, list[str]]] = [
     ),
     (
         "Market & Hiring Data",
-        "Live snapshots of where AI hiring and agent infrastructure are moving.",
-        ["q2-2026-ai-hiring-snapshot"],
+        "Live snapshots of where AI hiring, compensation, and agent infrastructure are moving.",
+        ["q2-2026-ai-hiring-snapshot", "q2-2026-ai-compensation-by-skill", "q2-2026-mcp-ecosystem-health"],
     ),
 ]
 

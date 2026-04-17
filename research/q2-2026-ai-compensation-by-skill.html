@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="last-updated" content="2026-04-17" />
+  <title>Q2 2026 AI Engineering Compensation by Skill -- 8bitconcepts</title>
+  <meta name="description" content="Live AI engineering compensation by skill: top-paying tags, most in-demand tags, sweet-spot skills, salary by experience level, distribution across 3,402 salary-disclosed roles. Median $213,175. Auto-regenerated weekly from aidevboard.com API." />
+  <meta property="og:title" content="Q2 2026 AI Engineering Compensation by Skill -- 8bitconcepts" />
+  <meta property="og:description" content="Top-paying AI skill: research at $273,682. Most in-demand: llm (2,570 roles). Median $213,175. Sweet-spot tags where high demand meets high pay. Live data, 2026-04-17." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Q2 2026 AI Engineering Compensation by Skill" />
+  <meta name="twitter:description" content="AI engineering compensation by skill: top-paying = $273,682 (research). Median $213,175 across 3,402 salary-disclosed roles. 2026-04-17." />
+  <meta name="twitter:image" content="https://8bitconcepts.com/og-default.png" />
+  <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate: #0d0d0e;
+      --slate-1: #111214;
+      --slate-2: #1a1c1f;
+      --slate-3: #242729;
+      --slate-4: #2e3135;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757;
+      --terra-dim: rgba(217,119,87,0.15);
+      --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9;
+      --text-dim: #8b8d91;
+      --text-dimmer: #5a5c61;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--slate);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--terra); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--terra);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 112px 32px 80px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .meta-date {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .meta-tag {
+      font-size: 12px;
+      color: var(--terra);
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-read {
+      font-size: 13px;
+      color: var(--text-dimmer);
+    }
+
+    .article-body p {
+      margin-bottom: 24px;
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-top: 52px;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .article-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-top: 36px;
+      margin-bottom: 14px;
+    }
+
+    .article-body a {
+      color: var(--terra);
+      text-decoration: underline;
+      text-decoration-color: rgba(217,119,87,0.35);
+      text-underline-offset: 3px;
+    }
+
+    .article-body a:hover { text-decoration-color: var(--terra); }
+
+    .article-body code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.92em;
+      background: var(--slate-3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text);
+    }
+
+    .callout {
+      background: var(--slate-2);
+      border-left: 3px solid var(--terra);
+      padding: 20px 24px;
+      margin: 36px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .callout p {
+      margin-bottom: 0 !important;
+      color: var(--text) !important;
+      font-size: 16px !important;
+      line-height: 1.65 !important;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--slate-3);
+      color: var(--text-dim);
+      font-weight: 500;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    .data-table td.num {
+      font-family: 'IBM Plex Mono', monospace;
+      text-align: right;
+      color: var(--text-dim);
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 36px 0;
+    }
+
+    .stat-box {
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .stat-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--terra);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .footnotes {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footnotes h4 {
+      font-size: 11px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 16px;
+    }
+
+    .footnotes ol { padding-left: 20px; }
+
+    .footnotes li {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .footnotes a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    .footnotes a:hover { color: var(--terra); }
+
+    .related {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .related-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .related-card {
+      background: var(--slate-1);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+
+    .related-card:hover { border-color: rgba(217,119,87,0.3); }
+
+    .related-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .related-card-sub {
+      font-size: 12px;
+      color: var(--text-dimmer);
+    }
+
+    .article-cta {
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 20px !important;
+    }
+
+    .article-cta a {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: opacity 0.15s;
+    }
+
+    .article-cta a:hover { opacity: 0.88; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--text-dimmer);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      .article-wrap { padding: 96px 20px 60px; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Q2 2026 AI Engineering Compensation by Skill",
+    "description": "Live AI engineering compensation analysis from aidevboard.com: top-paying skill tags, most in-demand tags, sweet-spot skills (high demand + high pay), salary distribution, and experience-level breakdown across 3,402 salary-disclosed roles.",
+    "url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+    "datePublished": "2026-04-17",
+    "dateModified": "2026-04-17",
+    "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "image": "https://8bitconcepts.com/og-default.png",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "about": "AI engineering compensation, salary by skill tag, top-paying AI skills, in-demand AI skills, experience-level distribution",
+    "keywords": "AI salary, AI engineering pay, ML salary, LLM compensation, agents salary, AI skill premium, 2026 hiring data"
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Q2 2026 AI Engineering Compensation by Skill"}
+  ]
+}
+</script>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://8bitconcepts.com">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="https://8bitconcepts.com/#research">Research</a>
+      <a href="https://8bitconcepts.com/#services">Services</a>
+      <a href="mailto:hello@8bitconcepts.com" class="nav-cta">Talk to us</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+
+    <div class="eyebrow">Research &mdash; Compensation</div>
+
+    <h1>Q2 2026 AI Engineering Compensation by Skill</h1>
+
+    <p class="subtitle">Live compensation data from 3,402 salary-disclosed AI/ML engineering roles across 513 companies, as of 2026-04-17. The top-paying skill tags out-earn the most in-demand tags by tens of thousands per year. Live data pulled from <a href="https://aidevboard.com/api/v1/stats">aidevboard.com/api/v1/stats</a>.</p>
+
+    <div class="meta">
+      <span class="meta-date">2026-04-17</span>
+      <span class="meta-tag">Live Data</span>
+      <span class="meta-read">~800 words</span>
+    </div>
+
+    <div class="article-body">
+
+      <h2>Executive summary</h2>
+
+      <p>Research roles pay a $42k premium over generative-AI roles ($273,682 vs $230,966 avg), even though generative-AI has roughly 2.5x more openings (1,831 vs 724). Here's what the 3,402-posting compensation dataset tells us about where AI engineering compensation is actually flowing &mdash; and where agents and LLMs sit in the middle.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">$273,682</div>
+          <div class="stat-label">avg salary for <code>research</code> &mdash; the top-paying skill tag with 100+ roles</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">2,570</div>
+          <div class="stat-label">roles tagged <code>llm</code> &mdash; the most in-demand skill in the index</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">$213,175</div>
+          <div class="stat-label">median advertised salary across 3,402 salary-disclosed roles</div>
+        </div>
+      </div>
+
+      <h2>Top-paying skill tags</h2>
+
+      <p>The top of the salary table is dominated by tags that take years to develop and don't show up in junior resumes. The 100-role minimum filters out small-sample noise so what's left is real, repeatable compensation signal.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th class="num" style="text-align:right;">Role count</th>
+            <th class="num" style="text-align:right;">Avg salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>research</code></td><td class="num">724</td><td class="num">$273,682</td></tr>
+          <tr><td><code>reinforcement-learning</code></td><td class="num">569</td><td class="num">$270,213</td></tr>
+          <tr><td><code>search</code></td><td class="num">696</td><td class="num">$268,128</td></tr>
+          <tr><td><code>infrastructure</code></td><td class="num">560</td><td class="num">$258,139</td></tr>
+          <tr><td><code>distributed-systems</code></td><td class="num">1,398</td><td class="num">$253,698</td></tr>
+          <tr><td><code>fine-tuning</code></td><td class="num">799</td><td class="num">$246,807</td></tr>
+          <tr><td><code>pytorch</code></td><td class="num">1,040</td><td class="num">$245,142</td></tr>
+          <tr><td><code>llm</code></td><td class="num">2,570</td><td class="num">$244,363</td></tr>
+          <tr><td><code>deep-learning</code></td><td class="num">804</td><td class="num">$241,761</td></tr>
+          <tr><td><code>machine-learning</code></td><td class="num">660</td><td class="num">$241,115</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Most in-demand skill tags</h2>
+
+      <p>Volume tells a different story than pay. The biggest tags are the ones every AI/ML team needs at least one of, not the ones the market pays the most for.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th class="num" style="text-align:right;">Role count</th>
+            <th class="num" style="text-align:right;">Avg salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>llm</code></td><td class="num">2,570</td><td class="num">$244,363</td></tr>
+          <tr><td><code>agents</code></td><td class="num">2,388</td><td class="num">$230,738</td></tr>
+          <tr><td><code>generative-ai</code></td><td class="num">1,831</td><td class="num">$230,966</td></tr>
+          <tr><td><code>cloud</code></td><td class="num">1,578</td><td class="num">$220,587</td></tr>
+          <tr><td><code>distributed-systems</code></td><td class="num">1,398</td><td class="num">$253,698</td></tr>
+          <tr><td><code>healthcare</code></td><td class="num">1,163</td><td class="num">$211,618</td></tr>
+          <tr><td><code>payments</code></td><td class="num">1,137</td><td class="num">$199,893</td></tr>
+          <tr><td><code>data-pipeline</code></td><td class="num">1,109</td><td class="num">$231,186</td></tr>
+          <tr><td><code>pytorch</code></td><td class="num">1,040</td><td class="num">$245,142</td></tr>
+          <tr><td><code>robotics</code></td><td class="num">1,028</td><td class="num">$208,329</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The gap: where demand meets pay</h2>
+
+      <p><strong>Sweet-spot tags &mdash; high demand <em>and</em> high pay.</strong> <code>llm</code> (2,570 roles, $244,363 avg), <code>distributed-systems</code> (1,398 roles, $253,698 avg), <code>pytorch</code> (1,040 roles, $245,142 avg), <code>deep-learning</code> (804 roles, $241,761 avg), <code>fine-tuning</code> (799 roles, $246,807 avg). These are the skills the market is willing to pay above-median for <em>and</em> hire above-median volumes of. If you're choosing what to learn next, this is where leverage compounds.</p>
+
+      <p><strong>High demand, lower pay.</strong> <code>agents</code> (2,388 roles, $230,738 avg), <code>generative-ai</code> (1,831 roles, $230,966 avg), <code>cloud</code> (1,578 roles, $220,587 avg), <code>healthcare</code> (1,163 roles, $211,618 avg), <code>payments</code> (1,137 roles, $199,893 avg). These tags are popular in job postings but compensation has not kept pace &mdash; usually because the labor pool is large or the work is more easily commoditized. Volume here doesn't translate to negotiating leverage.</p>
+
+      <div class="callout">
+        <p>The most useful frame for a job seeker isn't "highest paying" or "most posted." It's the intersection &mdash; tags where both axes are above the median. That's where you have negotiating leverage <em>and</em> a healthy supply of openings to negotiate against.</p>
+      </div>
+
+      <h2>By experience level</h2>
+
+      <p>The ladder skews heavily senior. Senior, lead, and principal roles account for 5,707 of 8,618 classified roles &mdash; 66.2% of the index. Junior makes up just 583 (6.8%). The salary endpoint reports a single weighted median of $213,175 (p25 $180,000, p75 $260,050, average $224,911); the heavy senior weighting is the main reason that median sits well above $200k. <em>Note: the public <code>/api/v1/stats</code> endpoint exposes counts by level but not salary by level &mdash; to derive average salary per band, query the <a href="https://aidevboard.com/api/v1/jobs">/api/v1/jobs</a> endpoint with <code>level=</code> filters and aggregate locally.</em></p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th class="num" style="text-align:right;">Roles</th>
+            <th class="num" style="text-align:right;">Share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Junior</td><td class="num">583</td><td class="num">6.8%</td></tr>
+          <tr><td>Mid</td><td class="num">2,328</td><td class="num">27.0%</td></tr>
+          <tr><td>Senior</td><td class="num">2,916</td><td class="num">33.8%</td></tr>
+          <tr><td>Lead</td><td class="num">2,270</td><td class="num">26.3%</td></tr>
+          <tr><td>Principal</td><td class="num">521</td><td class="num">6.0%</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Salary distribution</h2>
+
+      <p>Of the 3,402 roles publishing salary, 2,578 (75.8%) fall inside the $150k-$300k core band &mdash; that's where the bulk of AI engineering compensation lives. 457 roles (13.4%) clear $300k, and 367 (10.8%) sit below $150k. The distribution is right-skewed: a meaningful tail above $400k (107 roles) pulls the average $224,911 above the median $213,175.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Range</th>
+            <th class="num" style="text-align:right;">Roles</th>
+            <th class="num" style="text-align:right;">Share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Under $100k</td><td class="num">88</td><td class="num">2.6%</td></tr>
+          <tr><td>$100k-$150k</td><td class="num">279</td><td class="num">8.2%</td></tr>
+          <tr><td>$150k-$200k</td><td class="num">966</td><td class="num">28.4%</td></tr>
+          <tr><td>$200k-$250k</td><td class="num">1,044</td><td class="num">30.7%</td></tr>
+          <tr><td>$250k-$300k</td><td class="num">568</td><td class="num">16.7%</td></tr>
+          <tr><td>$300k-$400k</td><td class="num">350</td><td class="num">10.3%</td></tr>
+          <tr><td>$400k+</td><td class="num">107</td><td class="num">3.1%</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Practical takeaway</h2>
+
+      <p><strong>If you are choosing what to learn next.</strong> The pure-pay leaderboard (<code>research</code>, <code>reinforcement-learning</code>, <code>search</code>) clusters around research and infrastructure work that takes years to develop. The high-leverage practical picks are the sweet-spot tags &mdash; <code>llm</code>, <code>distributed-systems</code>, <code>pytorch</code> &mdash; where demand and pay both sit above the index median. Generic <code>machine-learning</code> and <code>data-science</code> are not on that list, even though they remain common job titles. The market is rewarding specificity.</p>
+
+      <h2>Methodology</h2>
+
+      <p>This note is generated from the live <a href="https://aidevboard.com/api/v1/stats">aidevboard.com/api/v1/stats</a> endpoint &mdash; a public, unauthenticated JSON API. The underlying index scrapes 560+ ATS sources (Ashby, Greenhouse, Lever, Workday, custom careers pages) on a daily cron, deduplicates by (company, title, location), classifies each role into a normalized skill-tag set with a rules-based parser, and stores employer-advertised salary ranges where present. Of 8,618 roles in the index, 3,402 disclose a salary range &mdash; the rest are silently excluded from the salary tables. <strong>Caveats</strong>: (1) salaries are advertised midpoints, not actual offers; (2) US-disclosure laws drive the highest disclosure rates so the dataset over-represents California, New York, Washington, and Colorado; (3) tag averages assume a role with multiple tags contributes its full salary to each tag's average; (4) the 100-role minimum on the top-paying table filters out small-n noise. This page auto-regenerates weekly.</p>
+
+      <p><strong>Download raw data:</strong> The compensation-by-skill dataset is mirrored as a public gist &mdash; <a href="https://gist.githubusercontent.com/unitedideas/b1b80d11f0f187f93fd6b1a599df418e/raw/ai-compensation-by-skill.csv">CSV</a> &middot; <a href="https://gist.githubusercontent.com/unitedideas/b1b80d11f0f187f93fd6b1a599df418e/raw/ai-compensation-by-skill.md">Markdown</a> &middot; <a href="https://gist.github.com/unitedideas/b1b80d11f0f187f93fd6b1a599df418e">view on GitHub</a>. Auto-updated every weekly regeneration; canonical raw URLs are stable across revisions.</p>
+
+      <h2>What's next</h2>
+
+      <p>For the company-side view of this same dataset &mdash; who is doing the hiring, where the roles are concentrated, and how the workplace mix shakes out &mdash; see <a href="/research/q2-2026-ai-hiring-snapshot.html">Q2 2026 AI Engineering Hiring Snapshot</a>. For the infrastructure side &mdash; how many of the agents these engineers are building actually have a working MCP endpoint to talk to &mdash; see <a href="/research/q2-2026-mcp-ecosystem-health.html">Q2 2026 MCP Ecosystem Health</a>. For the engineering maturity ladder that separates the teams paying these premiums from the teams stuck in pilot, see <a href="/research/beyond-the-prompt.html">Beyond the Prompt</a>. Full reading paths at the <a href="/research/overview.html">Research Atlas</a>.</p>
+
+    </div>
+
+    <div class="related">
+      <div class="related-label">Related Research</div>
+      <div class="related-grid">
+        <a class="related-card" href="/research/q2-2026-ai-hiring-snapshot.html">
+          <div class="related-card-title">Q2 2026 AI Hiring Snapshot</div>
+          <div class="related-card-sub">Live market data: roles, top companies, workplace mix.</div>
+        </a>
+        <a class="related-card" href="/research/q2-2026-mcp-ecosystem-health.html">
+          <div class="related-card-title">Q2 2026 MCP Ecosystem Health</div>
+          <div class="related-card-sub">Live JSON-RPC handshake audit of MCP servers.</div>
+        </a>
+        <a class="related-card" href="/research/beyond-the-prompt.html">
+          <div class="related-card-title">Beyond the Prompt</div>
+          <div class="related-card-sub">The engineering maturity ladder for production agents.</div>
+        </a>
+        <a class="related-card" href="/research/overview.html">
+          <div class="related-card-title">Research Atlas</div>
+          <div class="related-card-sub">Every paper, topic index, and three reading paths.</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="article-cta" style="margin-top:40px;">
+      <p style="margin-bottom:10px;"><strong>Get new research by email</strong></p>
+      <p style="margin-bottom:14px;font-size:15px;">Two papers a week on what's actually happening inside enterprise AI programs. No promo, no hype.</p>
+      <form onsubmit="return sub8bc(event)" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <input type="email" name="email" placeholder="you@company.com" required
+          style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #ccc;border-radius:6px;font-size:15px;" />
+        <button type="submit" style="padding:10px 18px;background:#d97757;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Subscribe</button>
+      </form>
+      <p id="sub-status" style="margin-top:10px;font-size:14px;min-height:1em;"></p>
+      <p style="margin-top:6px;font-size:13px;color:#888;">Prefer a reader? <a href="/feed.xml">RSS feed</a>.</p>
+    </div>
+    <script>
+    async function sub8bc(e){e.preventDefault();const f=e.target;const email=f.email.value.trim();const s=document.getElementById('sub-status');s.textContent='Subscribing…';try{const r=await fetch('https://aidevboard.com/api/v1/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tags:['8bitconcepts-research'],frequency:'weekly'})});if(r.ok){s.textContent='Subscribed. Check your inbox.';s.style.color='#0a0';f.reset();}else{s.textContent='Error subscribing. Email hello@8bitconcepts.com instead.';s.style.color='#c00';}}catch(err){s.textContent='Network error. Email hello@8bitconcepts.com.';s.style.color='#c00';}return false;}
+    </script>
+
+    <div class="footnotes">
+      <h4>Sources</h4>
+      <ol>
+        <li>AI Dev Jobs &mdash; <a href="https://aidevboard.com/api/v1/stats">/api/v1/stats</a>, pulled 2026-04-17T22:53:43Z. Public unauthenticated endpoint. Backing index: 8,618 roles / 513 companies / 3,402 salary-disclosed.</li>
+        <li>AI Dev Jobs &mdash; <a href="https://aidevboard.com/api/v1/jobs">/api/v1/jobs</a>, paginated job-level endpoint with <code>level=</code> and <code>tag=</code> filters for deeper aggregation.</li>
+        <li>Salary figures are employer-advertised midpoints from public ATS feeds. Of 8,618 indexed roles, 3,402 disclose a salary range (driven heavily by US pay-transparency laws).</li>
+        <li>Tag averages: a role with multiple tags contributes its full salary to each tag's average (no fractional weighting). The 100-role minimum on the top-paying table filters out small-sample noise; the most-in-demand table has no minimum.</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <div style="max-width:640px;margin:40px auto;padding:24px;background:#fafaf8;border:1px solid #e5e5e5;border-radius:8px;">
+    <p style="font-size:13px;color:#666;margin:0 0 12px;text-transform:uppercase;letter-spacing:1px;">Hiring for top-paying AI skills?</p>
+    <div data-aidev-jobs data-tag="research" data-limit="3" data-theme="light"></div>
+    <script src="https://aidevboard.com/static/widget.js" async></script>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 8bitconcepts &mdash; AI Enablement &amp; Integration Consulting &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
+    <p style="margin-top:6px;font-size:12px;"><a href="/research/overview.html" style="color:#d97757;">Research Atlas &rarr; all papers + reading paths</a></p>
+  </footer>
+
+</body>
+</html>
