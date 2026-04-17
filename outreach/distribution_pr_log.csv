@@ -1,2 +1,4 @@
 date,channel,target,ref,notes,status
 2026-04-17,github-pr,eferrares/awesome-startup-resources,#17,Shared PR with NHS+ADB - 202 stars - Tools/Market Research section,open
+2026-04-17,github-pr-update,foorilla/allainews_sources,#7,Added 8bc research-specific feed (research/feed.xml) alongside main 8bc feed,updated
+2026-04-17,github-pr-update,RSS-Renaissance/awesome-AI-feeds,#2,Added 8bc research-specific feed to README + OPML,updated
