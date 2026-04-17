@@ -49,6 +49,7 @@ except Exception as _og_err:  # pragma: no cover
     print(f"  Warning: OG generator import failed: {_og_err}", file=sys.stderr)
 
 FEED_URL = "https://8bitconcepts.com/feed.xml"
+RESEARCH_FEED_URL = "https://8bitconcepts.com/research/feed.xml"
 INDEXNOW_KEY = "e4e40fed94fa41b09613c20e7bac4484"
 HOST = "8bitconcepts.com"
 USER_AGENT = "curl/8.7.1"
@@ -1474,6 +1475,7 @@ def main() -> int:
 
     print("\n8. WebSub ping...")
     websub_ping(FEED_URL)
+    websub_ping(RESEARCH_FEED_URL)
 
     print("\n=== Done. ===")
     return 0

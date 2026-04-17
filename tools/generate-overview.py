@@ -20,6 +20,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,6 +29,7 @@ from typing import Any
 REPO = Path(__file__).resolve().parent.parent
 RESEARCH_DIR = REPO / "research"
 OUT_PATH = RESEARCH_DIR / "overview.html"
+FEED_SCRIPT = REPO / "tools" / "generate-research-feed.py"
 OG_IMAGE = "https://8bitconcepts.com/og-default.png"
 
 SKIP = {"index.html", "overview.html"}
@@ -331,7 +333,8 @@ def build_html(papers: list[dict[str, Any]]) -> str:
 <meta name="twitter:image" content="{OG_IMAGE}" />
 
 <!-- Agent / API discovery -->
-<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="8bitconcepts Research" />
+<link rel="alternate" type="application/rss+xml" href="/research/feed.xml" title="8bitconcepts Research (papers only)" />
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="8bitconcepts (site-wide)" />
 <link rel="alternate" type="application/json" href="/research.json" title="8bitconcepts Research Index (JSON)" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -428,7 +431,7 @@ footer a{{color:var(--terra);text-decoration:none}}
   <div class="nav-links">
     <a href="/research/">Research</a>
     <a href="/research/overview.html">Atlas</a>
-    <a href="/feed.xml">RSS</a>
+    <a href="/research/feed.xml">RSS</a>
   </div>
 </nav>
 
@@ -481,13 +484,13 @@ footer a{{color:var(--terra);text-decoration:none}}
     <h2 class="section-title">Subscribe</h2>
     <div class="subscribe-box">
       <h3>Two papers a week. Unsubscribe in one click.</h3>
-      <p>Practitioner research on enterprise AI delivered to your inbox. No fluff, no vendor pitches, no "how AI will change everything" framing.</p>
+      <p>Practitioner research on enterprise AI delivered to your inbox. No fluff, no vendor pitches, no "how AI will change everything" framing. Prefer a reader? <a href="/research/feed.xml" style="color:var(--terra);text-decoration:none;border-bottom:1px solid var(--terra-edge);">Subscribe via RSS</a>.</p>
       <form class="subscribe-form" onsubmit="return sub8bc(event)">
         <input type="email" name="email" placeholder="you@company.com" required />
         <button type="submit">Subscribe</button>
       </form>
       <p class="sub-status" id="sub-status"></p>
-      <p class="small">Prefer a reader? <a href="/feed.xml">RSS feed</a>. Programmatic access? <a href="/research.json">research.json</a>, <a href="/openapi.yaml">OpenAPI spec</a>, <a href="/llms.txt">llms.txt</a>.</p>
+      <p class="small">Prefer a reader? <a href="/research/feed.xml">Research RSS feed</a> (papers only) or <a href="/feed.xml">site-wide feed</a>. Programmatic access? <a href="/research.json">research.json</a>, <a href="/openapi.yaml">OpenAPI spec</a>, <a href="/llms.txt">llms.txt</a>.</p>
     </div>
   </div>
 
@@ -550,6 +553,20 @@ def main() -> int:
     html_out = build_html(papers)
     OUT_PATH.write_text(html_out, encoding="utf-8")
     print(f"wrote {OUT_PATH} ({len(papers)} papers, {len(html_out):,} bytes)")
+
+    # Also regenerate the dedicated research RSS feed (research/feed.xml).
+    if FEED_SCRIPT.is_file():
+        try:
+            r = subprocess.run(
+                ["python3", str(FEED_SCRIPT)],
+                cwd=REPO, capture_output=True, text=True, timeout=30,
+            )
+            if r.returncode == 0:
+                print(r.stdout.strip() or f"regenerated {FEED_SCRIPT.name}")
+            else:
+                print(f"research-feed regen failed (non-fatal): {r.stderr[:300]}", file=sys.stderr)
+        except Exception as e:
+            print(f"research-feed regen error (non-fatal): {e}", file=sys.stderr)
     return 0
 
 

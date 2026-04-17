@@ -4,6 +4,7 @@
 <title>8bitconcepts Research</title>
 <link>https://8bitconcepts.com/</link>
 <atom:link href="https://8bitconcepts.com/feed.xml" rel="self" type="application/rss+xml" />
+<atom:link href="https://8bitconcepts.com/research/feed.xml" rel="alternate" type="application/rss+xml" title="8bitconcepts Research (papers only)" />
 <description>Independent research on enterprise AI strategy, governance, and operational risk. Practical papers for executives, engineering leaders, and researchers navigating the gap between AI hype and operational reality.</description>
 <language>en-us</language>
 <lastBuildDate>Wed, 15 Apr 2026 18:51:49 GMT</lastBuildDate>
