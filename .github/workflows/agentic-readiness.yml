@@ -1,0 +1,21 @@
+name: Agentic Readiness
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'llms.txt'
+      - 'openapi.yaml'
+      - '.well-known/ai-plugin.json'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: unitedideas/nhs-score-check-action@v1
+        with:
+          domain: 8bitconcepts.com
+          min-score: 95
