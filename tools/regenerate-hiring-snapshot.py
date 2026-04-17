@@ -26,6 +26,7 @@ import argparse
 import json
 import subprocess
 import sys
+import tempfile
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -44,6 +45,15 @@ USER_AGENT = "curl/8.7.1"
 
 ADB_STATS_URL = "https://aidevboard.com/api/v1/stats"
 NHS_DIGEST_URL = "https://nothumansearch.ai/digest.json"
+
+# Public gist: https://gist.github.com/unitedideas/9c59d50a824a075410bd658c96e1f5de
+GIST_ID = "9c59d50a824a075410bd658c96e1f5de"
+GIST_CSV_FILENAME = "top-50-ai-companies.csv"
+GIST_MD_FILENAME = "top-50-ai-companies.md"
+# Canonical raw URL (always latest revision — no commit hash in path)
+GIST_CSV_RAW_URL = f"https://gist.githubusercontent.com/unitedideas/{GIST_ID}/raw/{GIST_CSV_FILENAME}"
+GIST_MD_RAW_URL = f"https://gist.githubusercontent.com/unitedideas/{GIST_ID}/raw/{GIST_MD_FILENAME}"
+GIST_URL = f"https://gist.github.com/unitedideas/{GIST_ID}"
 
 
 def http_get_json(url: str, timeout: int = 30) -> dict[str, Any]:
@@ -406,6 +416,15 @@ def build_html(stats: dict[str, Any], digest: dict[str, Any], today: str, genera
         f'NHS data is from <a href="https://nothumansearch.ai/digest.json">/digest.json</a> &mdash; an index that '
         f"live-probes sites for agent-discovery signals and MCP endpoints. Both APIs are agent-readable. This "
         f"page auto-regenerates weekly."
+    )
+
+    # Download raw data callout (CSV + MD gist)
+    download_para = (
+        f'<strong>Download raw data:</strong> The top-hiring-companies leaderboard is mirrored as a public gist '
+        f'&mdash; <a href="{GIST_CSV_RAW_URL}">CSV</a> &middot; '
+        f'<a href="{GIST_MD_RAW_URL}">Markdown</a> &middot; '
+        f'<a href="{GIST_URL}">view on GitHub</a>. '
+        f"Auto-updated every weekly regeneration, canonical raw URLs are stable across revisions."
     )
 
     # Stat cards
@@ -982,6 +1001,8 @@ def build_html(stats: dict[str, Any], digest: dict[str, Any], today: str, genera
 
       <p>{methodology_para}</p>
 
+      <p>{download_para}</p>
+
       <h2>What's next</h2>
 
       <p>For the organizational implications of this hiring mix &mdash; specifically why the <code>agents</code> tag growing {agents_pct:.1f}% of the index matters more than the raw salary numbers &mdash; see <a href="/research/the-agentic-accountability-gap.html">The Agentic Accountability Gap</a> and <a href="/research/beyond-the-prompt.html">Beyond the Prompt</a>. For what those 6% of companies actually capturing returns are doing differently, see <a href="/research/the-six-percent.html">The Six Percent</a>. Full reading paths at the <a href="/research/overview.html">Research Atlas</a>.</p>
@@ -1077,6 +1098,115 @@ def attr_escape(s: str) -> str:
         .replace("<", "&lt;")
         .replace(">", "&gt;")
     )
+
+
+def build_gist_content(stats: dict[str, Any], today: str) -> tuple[str, str]:
+    """Build the CSV + Markdown content that mirrors the top-hiring-companies snapshot
+    into the public gist. Returns (csv_text, md_text). Top 20 companies by open roles.
+    """
+    ov = stats.get("overview", {}) or {}
+    companies = stats.get("companies", []) or []
+    total_jobs = int(ov.get("total_jobs", 0))
+    total_companies = int(ov.get("total_companies", 0))
+    jobs_with_salary = int(ov.get("jobs_with_salary", 0))
+
+    top = companies[:20]
+
+    # CSV
+    csv_lines = ["rank,company,roles,avg_salary_usd,url"]
+    for i, c in enumerate(top, start=1):
+        name = str(c.get("company", "")).replace(",", "")
+        roles = int(c.get("roles", 0))
+        avg_salary = c.get("avg_salary", 0)
+        try:
+            avg_salary_cell = str(int(avg_salary)) if int(avg_salary) > 0 else ""
+        except (TypeError, ValueError):
+            avg_salary_cell = ""
+        slug = c.get("slug") or name.lower().replace(" ", "-")
+        url = f"https://aidevboard.com/company/{slug}"
+        csv_lines.append(f"{i},{name},{roles},{avg_salary_cell},{url}")
+    csv_text = "\n".join(csv_lines) + "\n"
+
+    # Markdown
+    md_lines = [
+        "# Top AI Companies Hiring",
+        "",
+        f"**Last updated**: {today}",
+        "",
+        f"**Snapshot**: {today} \u00b7 **Total jobs across all sources**: {total_jobs:,} \u00b7 **Companies indexed**: {total_companies:,}",
+        "",
+        "Live data from [aidevboard.com/api/v1/stats](https://aidevboard.com/api/v1/stats) \u2014 free public API, no auth, updated daily.",
+        "",
+        "| Rank | Company | Open AI/ML Roles | Avg Salary |",
+        "|---:|---|---:|---:|",
+    ]
+    for i, c in enumerate(top, start=1):
+        name = str(c.get("company", "\u2014"))
+        roles = int(c.get("roles", 0))
+        avg_salary = c.get("avg_salary", 0)
+        try:
+            salary_cell = f"${int(avg_salary):,}" if int(avg_salary) > 0 else "\u2014"
+        except (TypeError, ValueError):
+            salary_cell = "\u2014"
+        slug = c.get("slug") or name.lower().replace(" ", "-")
+        md_lines.append(f"| {i} | [{name}](https://aidevboard.com/search?company={slug}) | {roles} | {salary_cell} |")
+
+    md_lines += [
+        "",
+        "## Methodology",
+        "",
+        f"Data scraped daily from AI/ML ATS sources (Ashby, Greenhouse, Lever, Workday). Roles filtered to AI/ML relevance "
+        f"by keyword match across title + description. Salaries are employer-advertised averages where disclosed "
+        f"(n={jobs_with_salary:,} of {total_jobs:,}).",
+        "",
+        "## Source & License",
+        "",
+        f"- **Live API**: https://aidevboard.com/api/v1/stats (JSON, public)",
+        f"- **Research note**: https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
+        f"- **Auto-regenerated**: weekly via `tools/regenerate-hiring-snapshot.py`",
+        f"- **License**: CC BY 4.0 \u2014 attribution to 8bitconcepts + aidevboard.com",
+        "",
+    ]
+    md_text = "\n".join(md_lines)
+
+    return csv_text, md_text
+
+
+def update_gist(stats: dict[str, Any], today: str) -> bool:
+    """Write CSV + MD to /tmp/hiring-gist/ and push to the public gist via `gh gist edit`.
+    Never aborts the caller on failure; logs and returns False instead.
+    """
+    try:
+        csv_text, md_text = build_gist_content(stats, today)
+    except Exception as e:
+        print(f"   Gist content build failed (non-fatal): {e}", file=sys.stderr)
+        return False
+
+    tmpdir = Path(tempfile.gettempdir()) / "hiring-gist"
+    try:
+        tmpdir.mkdir(parents=True, exist_ok=True)
+        csv_path = tmpdir / GIST_CSV_FILENAME
+        md_path = tmpdir / GIST_MD_FILENAME
+        csv_path.write_text(csv_text, encoding="utf-8")
+        md_path.write_text(md_text, encoding="utf-8")
+        print(f"   Wrote gist files to {tmpdir}")
+    except Exception as e:
+        print(f"   Gist temp write failed (non-fatal): {e}", file=sys.stderr)
+        return False
+
+    ok = True
+    for filename, path in ((GIST_CSV_FILENAME, csv_path), (GIST_MD_FILENAME, md_path)):
+        # `gh gist edit <id> --filename NAME -- PATH` replaces that file in the gist with the contents at PATH.
+        cmd = ["gh", "gist", "edit", GIST_ID, "--filename", filename, "--", str(path)]
+        r = subprocess.run(cmd, capture_output=True, text=True)
+        if r.returncode != 0:
+            print(f"   gh gist edit {filename} failed (non-fatal): {r.stderr[:400]}", file=sys.stderr)
+            ok = False
+        else:
+            print(f"   Gist updated: {filename}")
+    if ok:
+        print(f"   Gist live: {GIST_URL}")
+    return ok
 
 
 def indexnow_ping(urls: list[str]) -> bool:
@@ -1194,6 +1324,13 @@ def main() -> int:
         print("   Overview regenerated.")
     else:
         print(f"   Overview failed (non-fatal): {r.stderr[:300]}", file=sys.stderr)
+
+    print("\n4b. Updating public gist (top AI companies CSV + MD)...")
+    try:
+        update_gist(stats, today)
+    except Exception as e:
+        # Never let a gist failure abort the run
+        print(f"   Gist update unhandled exception (non-fatal): {e}", file=sys.stderr)
 
     if args.once:
         print("\n=== --once: stopping before commit/push/pings ===")

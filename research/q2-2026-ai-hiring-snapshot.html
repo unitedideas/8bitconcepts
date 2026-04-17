@@ -594,6 +594,8 @@
 
       <p>Data in this note was pulled live at publication. The aidevboard.com index scrapes applicant-tracking feeds (Ashby, Greenhouse, Lever, Workday, custom careers pages) on a daily cron, canonicalizes titles and tags with a rules-based classifier, and dedupes by (company, title, location). The <a href="https://aidevboard.com/api/v1/stats">/api/v1/stats</a> endpoint is public and unauthenticated. NHS data is from <a href="https://nothumansearch.ai/digest.json">/digest.json</a> &mdash; an index that live-probes sites for agent-discovery signals and MCP endpoints. Both APIs are agent-readable. This page auto-regenerates weekly.</p>
 
+      <p><strong>Download raw data:</strong> The top-hiring-companies leaderboard is mirrored as a public gist &mdash; <a href="https://gist.githubusercontent.com/unitedideas/9c59d50a824a075410bd658c96e1f5de/raw/top-50-ai-companies.csv">CSV</a> &middot; <a href="https://gist.githubusercontent.com/unitedideas/9c59d50a824a075410bd658c96e1f5de/raw/top-50-ai-companies.md">Markdown</a> &middot; <a href="https://gist.github.com/unitedideas/9c59d50a824a075410bd658c96e1f5de">view on GitHub</a>. Auto-updated every weekly regeneration, canonical raw URLs are stable across revisions.</p>
+
       <h2>What's next</h2>
 
       <p>For the organizational implications of this hiring mix &mdash; specifically why the <code>agents</code> tag growing 27.7% of the index matters more than the raw salary numbers &mdash; see <a href="/research/the-agentic-accountability-gap.html">The Agentic Accountability Gap</a> and <a href="/research/beyond-the-prompt.html">Beyond the Prompt</a>. For what those 6% of companies actually capturing returns are doing differently, see <a href="/research/the-six-percent.html">The Six Percent</a>. Full reading paths at the <a href="/research/overview.html">Research Atlas</a>.</p>
@@ -640,9 +642,9 @@
     <div class="footnotes">
       <h4>Sources</h4>
       <ol>
-        <li>AI Dev Jobs &mdash; <a href="https://aidevboard.com/api/v1/stats">/api/v1/stats</a>, pulled 2026-04-17T22:29:02Z. Public unauthenticated endpoint. Backing index: 8,618 roles / 513 companies, daily scrape across ATS source feed network.</li>
+        <li>AI Dev Jobs &mdash; <a href="https://aidevboard.com/api/v1/stats">/api/v1/stats</a>, pulled 2026-04-17T22:35:13Z. Public unauthenticated endpoint. Backing index: 8,618 roles / 513 companies, daily scrape across ATS source feed network.</li>
         <li>AI Dev Jobs &mdash; <a href="https://aidevboard.com/weekly-hiring">/weekly-hiring</a>, weekly roll-up of new postings and company movement.</li>
-        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T22:29:02Z. Live-probed index of agent-ready web services with MCP / llms.txt / OpenAPI detection.</li>
+        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T22:35:13Z. Live-probed index of agent-ready web services with MCP / llms.txt / OpenAPI detection.</li>
         <li>Salary ranges apply to the 3,402 of 8,618 roles that publish them. Roles without published ranges are excluded from median and distribution calculations but included in role counts.</li>
       </ol>
     </div>
