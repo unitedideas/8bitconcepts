@@ -8,8 +8,15 @@
   },
   "license": "https://8bitconcepts.com/about",
   "updated_at": "2026-04-17",
-  "total": 11,
+  "total": 12,
   "papers": [
+    {
+      "slug": "q2-2026-mcp-ecosystem-health",
+      "title": "Q2 2026 MCP Ecosystem Health",
+      "summary": "Live audit: 5,578 agent-ready sites indexed, only 575 (10.3%) pass a live JSON-RPC handshake. Category breakdown, newly-verified servers, and the regulated verticals still waiting to be built.",
+      "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "tags": ["mcp", "agents", "live-data", "ecosystem"]
+    },
     {
       "slug": "q2-2026-ai-hiring-snapshot",
       "title": "Q2 2026 AI Engineering Hiring Snapshot",

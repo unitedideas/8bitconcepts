@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="last-updated" content="2026-04-17" />
+  <title>Q2 2026 MCP Ecosystem Health -- 8bitconcepts</title>
+  <meta name="description" content="Live MCP ecosystem health: 5,578 agent-ready sites indexed, 575 (10.3%) MCP-verified via JSON-RPC handshake. 4,795 publish llms.txt, 434 publish OpenAPI. Category breakdown, newly-indexed servers, gaps." />
+  <meta property="og:title" content="Q2 2026 MCP Ecosystem Health -- 8bitconcepts" />
+  <meta property="og:description" content="575 of 5,578 indexed agent-ready sites (10.3%) pass a live JSON-RPC handshake. Most MCP claims don't implement the protocol correctly. Category breakdown + newly-verified servers from NothingHumanSearch." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Q2 2026 MCP Ecosystem Health" />
+  <meta name="twitter:description" content="MCP reality check: 575/5,578 sites survive a real JSON-RPC handshake. Live data from nothumansearch.ai, 2026-04-17." />
+  <meta name="twitter:image" content="https://8bitconcepts.com/og-default.png" />
+  <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate: #0d0d0e;
+      --slate-1: #111214;
+      --slate-2: #1a1c1f;
+      --slate-3: #242729;
+      --slate-4: #2e3135;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757;
+      --terra-dim: rgba(217,119,87,0.15);
+      --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9;
+      --text-dim: #8b8d91;
+      --text-dimmer: #5a5c61;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--slate);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--terra); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--terra);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 112px 32px 80px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .meta-date {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .meta-tag {
+      font-size: 12px;
+      color: var(--terra);
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-read {
+      font-size: 13px;
+      color: var(--text-dimmer);
+    }
+
+    .article-body p {
+      margin-bottom: 24px;
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-top: 52px;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .article-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-top: 36px;
+      margin-bottom: 14px;
+    }
+
+    .article-body a {
+      color: var(--terra);
+      text-decoration: underline;
+      text-decoration-color: rgba(217,119,87,0.35);
+      text-underline-offset: 3px;
+    }
+
+    .article-body a:hover { text-decoration-color: var(--terra); }
+
+    .article-body code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.92em;
+      background: var(--slate-3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text);
+    }
+
+    .callout {
+      background: var(--slate-2);
+      border-left: 3px solid var(--terra);
+      padding: 20px 24px;
+      margin: 36px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .callout p {
+      margin-bottom: 0 !important;
+      color: var(--text) !important;
+      font-size: 16px !important;
+      line-height: 1.65 !important;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--slate-3);
+      color: var(--text-dim);
+      font-weight: 500;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    .data-table td.num {
+      font-family: 'IBM Plex Mono', monospace;
+      text-align: right;
+      color: var(--text-dim);
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 36px 0;
+    }
+
+    .stat-box {
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .stat-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--terra);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .footnotes {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footnotes h4 {
+      font-size: 11px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 16px;
+    }
+
+    .footnotes ol { padding-left: 20px; }
+
+    .footnotes li {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .footnotes a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    .footnotes a:hover { color: var(--terra); }
+
+    .related {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .related-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .related-card {
+      background: var(--slate-1);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+
+    .related-card:hover { border-color: rgba(217,119,87,0.3); }
+
+    .related-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .related-card-sub {
+      font-size: 12px;
+      color: var(--text-dimmer);
+    }
+
+    .article-cta {
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 20px !important;
+    }
+
+    .article-cta a {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: opacity 0.15s;
+    }
+
+    .article-cta a:hover { opacity: 0.88; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--text-dimmer);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      .article-wrap { padding: 96px 20px 60px; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Q2 2026 MCP Ecosystem Health",
+    "description": "Live MCP ecosystem audit from NothingHumanSearch: 5,578 agent-ready sites indexed, only 575 (10.3%) MCP-verified via live JSON-RPC handshake. Category breakdown, top MCP servers, newly-indexed this week, and gaps in regulated verticals.",
+    "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+    "datePublished": "2026-04-17",
+    "dateModified": "2026-04-17",
+    "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "image": "https://8bitconcepts.com/og-default.png",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "about": "MCP ecosystem health, agent-ready web services, JSON-RPC handshake verification, category distribution, MCP server gaps",
+    "keywords": "MCP, Model Context Protocol, agent-ready, NothingHumanSearch, llms.txt, MCP servers, agent infrastructure, JSON-RPC"
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Q2 2026 MCP Ecosystem Health"}
+  ]
+}
+</script>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://8bitconcepts.com">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="https://8bitconcepts.com/#research">Research</a>
+      <a href="https://8bitconcepts.com/#services">Services</a>
+      <a href="mailto:hello@8bitconcepts.com" class="nav-cta">Talk to us</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+
+    <div class="eyebrow">Research &mdash; MCP Ecosystem</div>
+
+    <h1>Q2 2026 MCP Ecosystem Health</h1>
+
+    <p class="subtitle">As of 2026-04-17, 5,578 agent-ready sites are indexed on NothingHumanSearch, but only 575 (10.3%) survive a real JSON-RPC handshake to their /mcp endpoint. The rest claim MCP in their docs but don't implement it correctly. Live data pulled from <a href="https://nothumansearch.ai/digest.json">nothumansearch.ai/digest.json</a>.</p>
+
+    <div class="meta">
+      <span class="meta-date">2026-04-17</span>
+      <span class="meta-tag">Live Data</span>
+      <span class="meta-read">~850 words</span>
+    </div>
+
+    <div class="article-body">
+
+      <h2>Executive summary</h2>
+
+      <p>NothingHumanSearch has been crawling the web for agent-readiness signals since launch, and the numbers tell a consistent story about the gap between claiming MCP support and shipping it. As of 2026-04-17 the index holds 5,578 sites with at least one agent-discovery signal (llms.txt, ai-plugin.json, OpenAPI, or an MCP manifest). Of those, 575 &mdash; 10.3% &mdash; pass a live JSON-RPC probe against their declared /mcp endpoint. The remaining 5,003 sites (89.7%) either mention MCP in their documentation without implementing it, or host a manifest that fails the handshake (404, 500, wrong Content-Type, or a server that answers HTTP but never completes the <code>initialize</code> round-trip).</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">5,578</div>
+          <div class="stat-label">agent-ready sites indexed on NothingHumanSearch (2026-04-17)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">575</div>
+          <div class="stat-label">pass a live JSON-RPC MCP handshake &mdash; 10.3% of the index</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">4,795</div>
+          <div class="stat-label">publish <code>llms.txt</code> &mdash; 86.0% of the index</div>
+        </div>
+      </div>
+
+      <h2>What verification actually means</h2>
+
+      <p>Static scanners &mdash; the ones that produce most of the MCP directory listings you see today &mdash; treat a string match for <code>mcp</code> in <code>llms.txt</code> or a link to <code>/.well-known/mcp.json</code> as a positive signal. That's how you end up with directories claiming 10,000+ MCP servers when the actual live count is smaller by an order of magnitude. A real check has to open a connection, send <code>{"method": "initialize"}</code>, wait for a protocol handshake, and confirm the server responds with a valid <code>result</code> block citing a <code>protocolVersion</code>. Anything short of that is a citation, not an implementation.</p>
+
+      <p>NHS's <code>verify_mcp</code> tool (published as part of the NHS MCP server at <a href="https://nothumansearch.ai/mcp">nothumansearch.ai/mcp</a>) does exactly this live-probe for any URL you hand it. When we recrawled the full index in April 2026 with the probe turned on, the verified-MCP count stayed stable around 575 even as the total indexed population kept climbing. The gap between &quot;sites that mention MCP&quot; and &quot;sites that implement MCP&quot; is widening, not narrowing &mdash; which is the opposite of what the marketing cycle would have you believe.</p>
+
+      <p>This matters for anyone building an agent. If you rely on a static MCP directory to decide which tools your agent should discover at runtime, you will waste connections and context tokens on dead endpoints. The 90% unverified cohort isn't malicious &mdash; it's mostly stale docs, misconfigured reverse proxies, and manifests that reference endpoints the author never actually wired up. But for an autonomous agent, the failure mode is the same: a call that eats latency, fails, and doesn't advance the task.</p>
+
+      <h2>Top categories by indexed count</h2>
+
+      <p>Across verified MCP servers and the broader agent-ready population, the category distribution is heavily concentrated. <strong>Developer tools</strong> alone accounts for 1,249 sites (22.4% of the index). AI-native tools follow closely &mdash; unsurprising given that MCP emerged from the AI-tools ecosystem. After that, category density drops off a cliff.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th class="num" style="text-align:right;">Sites</th>
+            <th class="num" style="text-align:right;">Share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Developer tools</td><td class="num">1,249</td><td class="num">22.4%</td></tr>
+          <tr><td>AI-native tools</td><td class="num">822</td><td class="num">14.7%</td></tr>
+          <tr><td>Data / analytics</td><td class="num">324</td><td class="num">5.8%</td></tr>
+          <tr><td>Finance / fintech</td><td class="num">203</td><td class="num">3.6%</td></tr>
+          <tr><td>Productivity</td><td class="num">144</td><td class="num">2.6%</td></tr>
+          <tr><td>Security</td><td class="num">134</td><td class="num">2.4%</td></tr>
+          <tr><td>E-commerce</td><td class="num">121</td><td class="num">2.2%</td></tr>
+          <tr><td>Health / medical</td><td class="num">69</td><td class="num">1.2%</td></tr>
+          <tr><td>Communication</td><td class="num">55</td><td class="num">1.0%</td></tr>
+          <tr><td>Education</td><td class="num">26</td><td class="num">0.5%</td></tr>
+        </tbody>
+      </table>
+
+      <h2>New this week</h2>
+
+      <p>Ten MCP servers were newly verified in the last seven days. Every one of them scored 100 on the NHS agentic-readiness rubric &mdash; meaning they publish llms.txt, ai-plugin.json, an OpenAPI spec, <em>and</em> pass the live JSON-RPC MCP handshake. The pattern is consistent: teams that ship one discovery file tend to ship all of them, and teams that ship none ship none. There is no middle.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th class="num" style="text-align:right;">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://nothumansearch.ai/site/voidly.ai">voidly.ai</a></td><td>voidly</td><td>AI-native tools</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/savordish.com">savordish.com</a></td><td>Savor Dish</td><td>AI-native tools</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/mail.misar.io">mail.misar.io</a></td><td>MisarMail</td><td>Communication</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/claudereviews.com">claudereviews.com</a></td><td>Claude Wilder</td><td>AI-native tools</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/agentndx.ai">agentndx.ai</a></td><td>AgentNDX</td><td>Developer tools</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/passdown.arflow.io">passdown.arflow.io</a></td><td>PassDown</td><td>Productivity</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/prereason.com">prereason.com</a></td><td>PreReason - Market Context API</td><td>Finance / fintech</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/feedoracle.io">feedoracle.io</a></td><td>FeedOracle</td><td>Security</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/deadends.dev">deadends.dev</a></td><td>deadends.dev</td><td>Developer tools</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/borealhost.ai">borealhost.ai</a></td><td>BorealHost.ai</td><td>AI-native tools</td><td class="num">100</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Gaps in the ecosystem</h2>
+
+      <p>The gap that matters for builders: regulated high-value verticals are still thinly represented. Finance has 203 sites, health has 69, and education has 26. These are the same verticals where agents would deliver the most leverage per call &mdash; underwriting assistance, clinical documentation, degree-audit lookups &mdash; and they are the verticals where the MCP ecosystem is the least mature. Jobs (20) and news (6) round out the long tail. If you are deciding where to ship an MCP server and you want reach-per-server rather than defensibility through a crowd, the signal is clear: any vertical below 134 indexed sites is green field.</p>
+
+      <div class="callout">
+        <p>The pattern is consistent across every index we maintain: the teams that ship real MCP endpoints are a small fraction of the teams that claim MCP support. For builders, that gap is an opportunity &mdash; the verticals that are thin today will not stay thin for long.</p>
+      </div>
+
+      <h2>Methodology</h2>
+
+      <p>NHS crawls submitted URLs and auto-discovered candidates from public sources (awesome-mcp-servers, PulseMCP, llmstxt.site, and a handful of curated feeds), then scores each site against seven weighted signals: <code>llms.txt</code> present and parseable; <code>ai-plugin.json</code> at <code>/.well-known/</code>; an OpenAPI or AsyncAPI spec at a discoverable path; an MCP manifest; a live JSON-RPC MCP handshake; documented rate-limit and auth headers; and an accessible structured API response. Sites are re-crawled weekly. Scores range 0-100; any score above 75 corresponds to a site that an autonomous agent can realistically integrate without human help. The full probe methodology is open-source at <a href="https://nothumansearch.ai/methodology">nothumansearch.ai/methodology</a>.</p>
+
+      <p>Weekly submission volume is running at 7,631 candidates for the week starting 2026-04-10, most from autonomous discovery agents rather than human submissions.</p>
+
+      <h2>Implications for builders</h2>
+
+      <p><strong>Implications for builders.</strong> If you are shipping an MCP server: the live-probe bar is low but not everyone clears it &mdash; make sure your deployment actually answers <code>initialize</code>, not just serves a manifest. If you are building an agent that consumes MCP servers at runtime: discover against a live-verified index, not a static list. And if you are choosing a vertical: the crowded categories (developer tools, AI-native tools) are fighting over the same agent integrations, while finance, health, and education are asking to be built.</p>
+
+      <h2>What's next</h2>
+
+      <p>For the human side of this market &mdash; who is hiring the engineers to build against this infrastructure &mdash; see <a href="/research/q2-2026-ai-hiring-snapshot.html">Q2 2026 AI Engineering Hiring Snapshot</a>. For the engineering maturity ladder that separates teams shipping real MCP servers from teams publishing manifests that don't work, see <a href="/research/beyond-the-prompt.html">Beyond the Prompt</a>. For the governance dimension &mdash; what happens when agents start <em>acting</em> against these endpoints rather than just reading from them &mdash; see <a href="/research/the-agentic-accountability-gap.html">The Agentic Accountability Gap</a>. Full reading paths at the <a href="/research/overview.html">Research Atlas</a>.</p>
+
+    </div>
+
+    <div class="related">
+      <div class="related-label">Related Research</div>
+      <div class="related-grid">
+        <a class="related-card" href="/research/q2-2026-ai-hiring-snapshot.html">
+          <div class="related-card-title">Q2 2026 AI Hiring Snapshot</div>
+          <div class="related-card-sub">Live market data: roles, salaries, companies hiring.</div>
+        </a>
+        <a class="related-card" href="/research/beyond-the-prompt.html">
+          <div class="related-card-title">Beyond the Prompt</div>
+          <div class="related-card-sub">The engineering maturity ladder for production agents.</div>
+        </a>
+        <a class="related-card" href="/research/the-agentic-accountability-gap.html">
+          <div class="related-card-title">The Agentic Accountability Gap</div>
+          <div class="related-card-sub">Why governance frameworks break when agents act.</div>
+        </a>
+        <a class="related-card" href="/research/overview.html">
+          <div class="related-card-title">Research Atlas</div>
+          <div class="related-card-sub">Every paper, topic index, and three reading paths.</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="article-cta" style="margin-top:40px;">
+      <p style="margin-bottom:10px;"><strong>Get new research by email</strong></p>
+      <p style="margin-bottom:14px;font-size:15px;">Two papers a week on what's actually happening inside enterprise AI programs. No promo, no hype.</p>
+      <form onsubmit="return sub8bc(event)" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <input type="email" name="email" placeholder="you@company.com" required
+          style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #ccc;border-radius:6px;font-size:15px;" />
+        <button type="submit" style="padding:10px 18px;background:#d97757;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Subscribe</button>
+      </form>
+      <p id="sub-status" style="margin-top:10px;font-size:14px;min-height:1em;"></p>
+      <p style="margin-top:6px;font-size:13px;color:#888;">Prefer a reader? <a href="/feed.xml">RSS feed</a>.</p>
+    </div>
+    <script>
+    async function sub8bc(e){e.preventDefault();const f=e.target;const email=f.email.value.trim();const s=document.getElementById('sub-status');s.textContent='Subscribing…';try{const r=await fetch('https://aidevboard.com/api/v1/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tags:['8bitconcepts-research'],frequency:'weekly'})});if(r.ok){s.textContent='Subscribed. Check your inbox.';s.style.color='#0a0';f.reset();}else{s.textContent='Error subscribing. Email hello@8bitconcepts.com instead.';s.style.color='#c00';}}catch(err){s.textContent='Network error. Email hello@8bitconcepts.com.';s.style.color='#c00';}return false;}
+    </script>
+
+    <div class="footnotes">
+      <h4>Sources</h4>
+      <ol>
+        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T22:40:57Z. Public unauthenticated endpoint. Backing index: 5,578 agent-ready sites / 575 MCP-verified via JSON-RPC handshake.</li>
+        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/mcp">/mcp</a>, live MCP server exposing <code>verify_mcp</code>, <code>search</code>, <code>get_site</code>, <code>list_categories</code>, <code>get_top_sites</code>, and four more tools over JSON-RPC 2.0.</li>
+        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/methodology">/methodology</a>, open-source scoring rubric with 7 weighted signals.</li>
+        <li>Verification means a TCP connection + HTTP POST to the declared <code>/mcp</code> endpoint with a JSON-RPC 2.0 <code>initialize</code> request, followed by a valid <code>result</code> response containing a <code>protocolVersion</code>. Sites that host a manifest but fail the handshake are counted in the index total but not in the MCP-verified total.</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 8bitconcepts &mdash; AI Enablement &amp; Integration Consulting &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
+    <p style="margin-top:6px;font-size:12px;"><a href="/research/overview.html" style="color:#d97757;">Research Atlas &rarr; all papers + reading paths</a></p>
+  </footer>
+
+</body>
+</html>

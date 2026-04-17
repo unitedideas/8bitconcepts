@@ -46,6 +46,7 @@ CURATED_DESC: dict[str, str] = {
     "the-hallucination-budget": "Most engineering teams ship LLM features with less testing rigor than they apply to a login form. Production hallucinations land on customer trust and legal risk.",
     "the-agentic-accountability-gap": "Enterprise teams spent three years learning how to stop AI from saying the wrong thing. Then they handed those same systems write-access to production.",
     "q2-2026-ai-hiring-snapshot": "Live snapshot: 8,618 AI/ML engineering roles across 513 companies, $213k median, 599 new this week. OpenAI leads with 336 open roles. Full breakdown by skill, salary, workplace.",
+    "q2-2026-mcp-ecosystem-health": "5,578 agent-ready sites indexed, only 575 (10.3%) pass a live JSON-RPC handshake. Category breakdown, newly-verified servers, and the regulated verticals still waiting to be built.",
 }
 
 # Tag enrichment per slug (mirrors /research/index.html + research.json).
@@ -61,6 +62,7 @@ SLUG_TAGS: dict[str, list[str]] = {
     "the-hallucination-budget": ["llm", "reliability", "evaluation"],
     "the-agentic-accountability-gap": ["agents", "governance", "accountability"],
     "q2-2026-ai-hiring-snapshot": ["hiring", "market-data", "live-data"],
+    "q2-2026-mcp-ecosystem-health": ["mcp", "agents", "live-data", "ecosystem"],
 }
 
 # Topic index groupings. Each topic collects slugs that fit.
