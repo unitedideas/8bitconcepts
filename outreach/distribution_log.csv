@@ -90,3 +90,6 @@ date,to,subject,send_id,status
 2026-04-17,email-pitch,editor@hackernoon.com,resend:13dc869d-2c35-4f93-a2ce-d5254cafa103,sent-hackernoon-research-premium-angle
 2026-04-17,email-pitch,hello@dev.to,resend:9f414950-af9c-4be7-8a37-dad7033ed183,sent-devto-comp-editorial
 2026-04-17,public-gist,state-of-ai-engineering-master-reference,https://gist.github.com/unitedideas/4050cc4da4f874ff711fec1730940ddc,combined-ADB-NHS-data
+2026-04-17,research-paper,4th-auto-regenerating,https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html,shipped-hybrid-premium-analysis
+2026-04-17,public-gist,ai-workplace-data,https://gist.github.com/unitedideas/680cc4c1d11e090814bdf132e155d6d1,workplace-remote-onsite-hybrid-CSV
+2026-04-17,launchd-install,com.foundry.8bitconcepts.workplace,mon-9am-weekly,loaded
