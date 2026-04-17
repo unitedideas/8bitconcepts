@@ -479,6 +479,11 @@ footer a{{color:var(--terra);text-decoration:none}}
   <footer>
     <p>&copy; 2026 8bitconcepts &mdash; AI Enablement &amp; Integration Consulting &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
     <p style="margin-top:6px;">Atlas generated {generated_at} &middot; <a href="/research/">Plain research index</a> &middot; <a href="/">Home</a></p>
+    <p style="margin-top:12px;">
+        <strong>Weekly across the Foundry:</strong>
+        <a href="https://nothumansearch.ai/digest" target="_blank" rel="noopener">MCP ecosystem digest</a> &middot;
+        <a href="https://aidevboard.com/weekly-hiring" target="_blank" rel="noopener">AI hiring snapshot</a>
+    </p>
   </footer>
 </div>
 
