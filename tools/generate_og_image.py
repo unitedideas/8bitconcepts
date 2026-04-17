@@ -255,6 +255,11 @@ _MANUAL_TARGETS = [
         "headline": "Research pays $42k more than genAI",
         "subtext": "Q2 2026 | Top-paying tags vs in-demand tags across AI Dev Jobs",
     },
+    {
+        "slug": "q2-2026-remote-vs-onsite-ai-hiring",
+        "headline": "Hybrid AI jobs pay $35k premium",
+        "subtext": "Q2 2026 | 55% of AI engineering still requires onsite | hybrid $253k vs remote/onsite $218k avg",
+    },
 ]
 
 

@@ -8,8 +8,15 @@
   },
   "license": "https://8bitconcepts.com/about",
   "updated_at": "2026-04-17",
-  "total": 13,
+  "total": 14,
   "papers": [
+    {
+      "slug": "q2-2026-remote-vs-onsite-ai-hiring",
+      "title": "Q2 2026 Remote vs Onsite AI Hiring",
+      "summary": "Live workplace data: hybrid AI/ML roles pay a ~$35k premium over remote+onsite ($253k vs $218k). 55% of AI engineering still requires full onsite attendance. Onsite-heavy and remote-friendly companies, hybrid-premium analysis.",
+      "url": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
+      "tags": ["workplace", "remote", "hybrid", "market-data", "live-data"]
+    },
     {
       "slug": "q2-2026-ai-compensation-by-skill",
       "title": "Q2 2026 AI Engineering Compensation by Skill",

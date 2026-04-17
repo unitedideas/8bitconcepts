@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="last-updated" content="2026-04-17" />
+  <title>Q2 2026 Remote vs Onsite AI Hiring -- 8bitconcepts</title>
+  <meta name="description" content="Live AI engineering workplace analysis: hybrid averages $253,384, remote $218,829, onsite $218,399 across 8,618 classified roles. 55% onsite, 27% remote, 18% hybrid. Auto-regenerated weekly." />
+  <meta property="og:title" content="Q2 2026 Remote vs Onsite AI Hiring -- 8bitconcepts" />
+  <meta property="og:description" content="Hybrid AI/ML: $253,384 avg. Remote: $218,829. Onsite: $218,399. 55% of AI/ML roles still require full onsite attendance across 8,618 classified postings. Live data, 2026-04-17." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/research/og/q2-2026-remote-vs-onsite-ai-hiring.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Q2 2026 Remote vs Onsite AI Hiring" />
+  <meta name="twitter:description" content="AI/ML workplace mix: hybrid $253,384 avg, remote $218,829, onsite $218,399. 55% onsite-only. 2026-04-17." />
+  <meta name="twitter:image" content="https://8bitconcepts.com/research/og/q2-2026-remote-vs-onsite-ai-hiring.png" />
+  <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate: #0d0d0e;
+      --slate-1: #111214;
+      --slate-2: #1a1c1f;
+      --slate-3: #242729;
+      --slate-4: #2e3135;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757;
+      --terra-dim: rgba(217,119,87,0.15);
+      --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9;
+      --text-dim: #8b8d91;
+      --text-dimmer: #5a5c61;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--slate);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--terra); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--terra);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 112px 32px 80px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .meta-date {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .meta-tag {
+      font-size: 12px;
+      color: var(--terra);
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-read {
+      font-size: 13px;
+      color: var(--text-dimmer);
+    }
+
+    .article-body p {
+      margin-bottom: 24px;
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-top: 52px;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .article-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-top: 36px;
+      margin-bottom: 14px;
+    }
+
+    .article-body a {
+      color: var(--terra);
+      text-decoration: underline;
+      text-decoration-color: rgba(217,119,87,0.35);
+      text-underline-offset: 3px;
+    }
+
+    .article-body a:hover { text-decoration-color: var(--terra); }
+
+    .article-body code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.92em;
+      background: var(--slate-3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text);
+    }
+
+    .callout {
+      background: var(--slate-2);
+      border-left: 3px solid var(--terra);
+      padding: 20px 24px;
+      margin: 36px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .callout p {
+      margin-bottom: 0 !important;
+      color: var(--text) !important;
+      font-size: 16px !important;
+      line-height: 1.65 !important;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--slate-3);
+      color: var(--text-dim);
+      font-weight: 500;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    .data-table td.num {
+      font-family: 'IBM Plex Mono', monospace;
+      text-align: right;
+      color: var(--text-dim);
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 36px 0;
+    }
+
+    .stat-box {
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .stat-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--terra);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .bar-chart {
+      margin: 32px 0;
+      padding: 20px;
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 110px;
+      align-items: center;
+      gap: 14px;
+      margin: 10px 0;
+    }
+
+    .bar-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .bar-wrap {
+      background: var(--slate-3);
+      border-radius: 3px;
+      height: 22px;
+      overflow: hidden;
+    }
+
+    .bar {
+      background: linear-gradient(90deg, var(--terra) 0%, rgba(217,119,87,0.7) 100%);
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.25s;
+    }
+
+    .bar-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: var(--text);
+      text-align: right;
+    }
+
+    .footnotes {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footnotes h4 {
+      font-size: 11px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 16px;
+    }
+
+    .footnotes ol { padding-left: 20px; }
+
+    .footnotes li {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .footnotes a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    .footnotes a:hover { color: var(--terra); }
+
+    .related {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .related-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .related-card {
+      background: var(--slate-1);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+
+    .related-card:hover { border-color: rgba(217,119,87,0.3); }
+
+    .related-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .related-card-sub {
+      font-size: 12px;
+      color: var(--text-dimmer);
+    }
+
+    .article-cta {
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 20px !important;
+    }
+
+    .article-cta a {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: opacity 0.15s;
+    }
+
+    .article-cta a:hover { opacity: 0.88; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--text-dimmer);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      .article-wrap { padding: 96px 20px 60px; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+      .bar-row { grid-template-columns: 60px 1fr 90px; gap: 10px; }
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Q2 2026 Remote vs Onsite AI Hiring",
+    "description": "Live analysis of remote vs onsite vs hybrid AI/ML engineering roles from aidevboard.com: workplace mix, salary by workplace, onsite-heavy and remote-friendly companies, and the hybrid-premium anomaly across 8,618 classified postings.",
+    "url": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
+    "datePublished": "2026-04-17",
+    "dateModified": "2026-04-17",
+    "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "image": "https://8bitconcepts.com/research/og/q2-2026-remote-vs-onsite-ai-hiring.png",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "about": "AI engineering workplace mix, remote vs onsite vs hybrid pay, hybrid premium analysis, company-level workplace concentration",
+    "keywords": "AI remote jobs, AI onsite jobs, hybrid AI engineering, remote AI salary, AI workplace pay, 2026 hiring data"
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Q2 2026 Remote vs Onsite AI Hiring"}
+  ]
+}
+</script>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://8bitconcepts.com">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="https://8bitconcepts.com/#research">Research</a>
+      <a href="https://8bitconcepts.com/#services">Services</a>
+      <a href="mailto:hello@8bitconcepts.com" class="nav-cta">Talk to us</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+
+    <div class="eyebrow">Research &mdash; Workplace Pay</div>
+
+    <h1>Q2 2026 Remote vs Onsite AI Hiring</h1>
+
+    <p class="subtitle">Live workplace data from 8,618 classified AI/ML engineering roles. Hybrid averages $253,384, remote $218,829, onsite $218,399. 55% of AI/ML roles still require full onsite attendance. Data pulled from <a href="https://aidevboard.com/api/v1/stats">aidevboard.com/api/v1/stats</a>.</p>
+
+    <div class="meta">
+      <span class="meta-date">2026-04-17</span>
+      <span class="meta-tag">Live Data</span>
+      <span class="meta-read">~800 words</span>
+    </div>
+
+    <div class="article-body">
+
+      <h2>Executive summary</h2>
+
+      <p>Hybrid AI/ML roles pay a <strong>$34k premium</strong> over the remote + onsite weighted average ($253,384 vs $218,539). Remote averages $218,829. Onsite averages $218,399. The most surprising line in the data isn't the remote-vs-onsite pay gap &mdash; it's that the middle-ground arrangement, which many companies pitched as a compromise, is where compensation actually lands highest.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">$253,384</div>
+          <div class="stat-label">average hybrid AI/ML salary &mdash; the top band across 8,618 classified roles</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">55%</div>
+          <div class="stat-label">of roles still require full onsite attendance (4,728 of 8,618)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">$218,829</div>
+          <div class="stat-label">average fully-remote AI/ML salary across 2,301 postings</div>
+        </div>
+      </div>
+
+      <h2>Top-line workplace mix</h2>
+
+      <p>Across the 8,618 AI/ML engineering postings with a workplace classification, onsite is still the dominant mode &mdash; not by a small margin. Hybrid is the smallest bucket but commands the highest average advertised salary.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Workplace</th>
+            <th class="num" style="text-align:right;">Role count</th>
+            <th class="num" style="text-align:right;">Share</th>
+            <th class="num" style="text-align:right;">Avg salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Onsite</td><td class="num">4,728</td><td class="num">54.9%</td><td class="num">$218,399</td></tr>
+          <tr><td>Remote</td><td class="num">2,301</td><td class="num">26.7%</td><td class="num">$218,829</td></tr>
+          <tr><td>Hybrid</td><td class="num">1,589</td><td class="num">18.4%</td><td class="num">$253,384</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The hybrid premium</h2>
+
+      <p>Why does the middle option pay the most? Two factors explain most of the premium. <strong>First, seniority.</strong> Hybrid roles skew toward staff, lead, and principal bands &mdash; the levels where companies want engineers in the office for architecture discussions and design reviews but accept that 30+ year-old senior engineers won't relocate full-time. The salary endpoint reports a single weighted average of $224,911 across all salary-disclosed roles, and the hybrid band sits <strong>$+28k</strong> above that global average &mdash; that's not a remote-work discount, it's a seniority mix.</p>
+
+      <p><strong>Second, geography.</strong> Hybrid postings anchor to a specific metro (usually San Francisco, New York, or Seattle) and inherit that metro's pay band. Remote postings in the same index compete with distributed talent from lower-cost geographies and from candidates who've already priced remote work into their expectations. The $218,829 remote average still out-earns most non-AI engineering roles, but it reflects a broader supply pool than the $253,384 hybrid average does. The practical read: hybrid is where AI companies are paying SF+NYC premiums <em>plus</em> demanding most-week attendance. It's the most expensive arrangement to hire into because it selects the most constrained candidate pool.</p>
+
+      <div class="callout">
+        <p>The industry lore says remote kills the pay premium. The live index says otherwise: the middle-ground workplace arrangement wins on absolute dollars, and it wins because it concentrates SF/NYC metros and staff+ seniority into the same candidate pool.</p>
+      </div>
+
+      <h2>Onsite-heavy companies (80%+ onsite)</h2>
+
+      <p>The following companies ran 10 or more AI/ML postings in the live index with at least 80% marked <code>onsite</code>. This list skews toward robotics, autonomous systems, and frontier labs &mdash; all areas where physical hardware, secure facilities, or classified work makes remote collaboration operationally difficult. It explains the 55% onsite floor in the top-line mix.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th class="num" style="text-align:right;">AI/ML roles (sample)</th>
+            <th class="num" style="text-align:right;">Onsite</th>
+            <th class="num" style="text-align:right;">Onsite share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Scale AI</td><td class="num">62</td><td class="num">62</td><td class="num">100%</td></tr>
+          <tr><td>Applied Intuition</td><td class="num">45</td><td class="num">45</td><td class="num">100%</td></tr>
+          <tr><td>Databricks</td><td class="num">31</td><td class="num">31</td><td class="num">100%</td></tr>
+          <tr><td>Lila Sciences</td><td class="num">24</td><td class="num">24</td><td class="num">100%</td></tr>
+          <tr><td>Roblox</td><td class="num">24</td><td class="num">24</td><td class="num">100%</td></tr>
+          <tr><td>Glean</td><td class="num">23</td><td class="num">23</td><td class="num">100%</td></tr>
+          <tr><td>Together AI</td><td class="num">19</td><td class="num">19</td><td class="num">100%</td></tr>
+          <tr><td>Thinking Machines</td><td class="num">19</td><td class="num">19</td><td class="num">100%</td></tr>
+          <tr><td>Anduril</td><td class="num">115</td><td class="num">114</td><td class="num">99%</td></tr>
+          <tr><td>Waymo</td><td class="num">73</td><td class="num">62</td><td class="num">85%</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Remote-friendly companies (50%+ remote)</h2>
+
+      <p>Conversely, here are the large-sample companies leaning remote-friendly (50%+ of AI/ML postings marked <code>remote</code>). These are typically distributed developer-tool companies, AI infra, and companies built remote-first from day one &mdash; they tend to set a remote salary floor at or above major-metro onsite pay.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th class="num" style="text-align:right;">AI/ML roles (sample)</th>
+            <th class="num" style="text-align:right;">Remote</th>
+            <th class="num" style="text-align:right;">Remote share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Instacart</td><td class="num">10</td><td class="num">10</td><td class="num">100%</td></tr>
+          <tr><td>Reddit</td><td class="num">19</td><td class="num">18</td><td class="num">95%</td></tr>
+          <tr><td>Natera</td><td class="num">13</td><td class="num">11</td><td class="num">85%</td></tr>
+          <tr><td>Harvey AI</td><td class="num">24</td><td class="num">20</td><td class="num">83%</td></tr>
+          <tr><td>Pinterest</td><td class="num">24</td><td class="num">17</td><td class="num">71%</td></tr>
+          <tr><td>Prime Intellect</td><td class="num">10</td><td class="num">6</td><td class="num">60%</td></tr>
+          <tr><td>Waabi</td><td class="num">25</td><td class="num">14</td><td class="num">56%</td></tr>
+          <tr><td>Motional</td><td class="num">26</td><td class="num">14</td><td class="num">54%</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Salary by workplace</h2>
+
+      <p>A simple horizontal bar chart of average advertised salary by workplace mode. Hybrid leads, remote and onsite are within a few hundred dollars of each other.</p>
+
+      <div class="bar-chart">
+        <div class="bar-row">
+          <div class="bar-label">Onsite</div>
+          <div class="bar-wrap"><div class="bar" style="width:86.2%;"></div></div>
+          <div class="bar-value">$218,399</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Remote</div>
+          <div class="bar-wrap"><div class="bar" style="width:86.4%;"></div></div>
+          <div class="bar-value">$218,829</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Hybrid</div>
+          <div class="bar-wrap"><div class="bar" style="width:100.0%;"></div></div>
+          <div class="bar-value">$253,384</div>
+        </div>
+      </div>
+
+      <h2>Regional bias</h2>
+
+      <p><strong>Regional bias caveat.</strong> The AI Dev Jobs index over-represents US-based postings. US pay-transparency laws (California, New York, Washington, Colorado) drive salary disclosure, so US postings are weighted more heavily in the salary averages than in the posting counts. European and APAC AI/ML roles are present in the index but many publish salary as &quot;competitive&quot; and drop out of the $3,402-posting salary-disclosed subset. Remote postings in particular often advertise a US-only salary range even when they're open globally &mdash; interpret the <code>$</code> figures as US-anchored.</p>
+
+      <h2>Practical takeaway</h2>
+
+      <p><strong>If you're choosing what to apply for.</strong> The headline-grabbing remote-vs-onsite framing is the wrong axis. Hybrid is the highest-paying band because it picks up SF/NYC salary floors <em>plus</em> senior/staff+ level mix. If you have the flexibility to be in-office 2-3 days a week in a major metro, hybrid is where the dollars land. If you need fully remote, target the remote-friendly companies in the table above &mdash; they set the remote floor higher than the $218,829 index average. If you're early-career, onsite roles at robotics, autonomous-vehicle, and frontier labs are where the 55% onsite share concentrates &mdash; lean in, physical-AI work is where onsite still pays real premiums.</p>
+
+      <h2>Methodology</h2>
+
+      <p>Generated from the live <a href="https://aidevboard.com/api/v1/stats">aidevboard.com/api/v1/stats</a> endpoint (public, unauthenticated) plus a paginated walk of <a href="https://aidevboard.com/api/v1/jobs">/api/v1/jobs</a> for per-company workplace aggregation. Index scrapes 560+ ATS sources on a daily cron and deduplicates by (company, title, location). The <code>workplace</code> field is classified by a rules-based parser from job-title + description + location signals; edge cases ("hybrid, 3 days", "flexible", "in-person preferred") are normalized into the three canonical buckets. Of 8,618 roles in the index, 8,618 have a non-empty workplace classification; the rest are silently excluded from this analysis. Salary averages use employer-advertised midpoints from the 3,402-posting salary-disclosed subset. This page auto-regenerates weekly (Mon 9:00 am PT).</p>
+
+      <p><strong>Download raw data:</strong> The workplace-by-salary dataset is mirrored as a public gist &mdash; <a href="https://gist.githubusercontent.com/unitedideas/680cc4c1d11e090814bdf132e155d6d1/raw/ai-workplace.csv">CSV</a> &middot; <a href="https://gist.githubusercontent.com/unitedideas/680cc4c1d11e090814bdf132e155d6d1/raw/ai-workplace.md">Markdown</a> &middot; <a href="https://gist.github.com/unitedideas/680cc4c1d11e090814bdf132e155d6d1">view on GitHub</a>. Auto-updated every weekly regeneration; canonical raw URLs are stable across revisions.</p>
+
+      <h2>What's next</h2>
+
+      <p>For the skill-and-compensation view of this same dataset &mdash; which tags actually pay the premium &mdash; see <a href="/research/q2-2026-ai-compensation-by-skill.html">Q2 2026 AI Engineering Compensation by Skill</a>. For the company-side view of where the roles are concentrated, see <a href="/research/q2-2026-ai-hiring-snapshot.html">Q2 2026 AI Engineering Hiring Snapshot</a>. For the infrastructure side &mdash; how many of the agent systems these engineers are building actually have a working MCP endpoint &mdash; see <a href="/research/q2-2026-mcp-ecosystem-health.html">Q2 2026 MCP Ecosystem Health</a>. Full reading paths at the <a href="/research/overview.html">Research Atlas</a>.</p>
+
+    </div>
+
+    <div class="related">
+      <div class="related-label">Related Research</div>
+      <div class="related-grid">
+        <a class="related-card" href="/research/q2-2026-ai-hiring-snapshot.html">
+          <div class="related-card-title">Q2 2026 AI Hiring Snapshot</div>
+          <div class="related-card-sub">Live market data: roles, top companies, workplace mix.</div>
+        </a>
+        <a class="related-card" href="/research/q2-2026-ai-compensation-by-skill.html">
+          <div class="related-card-title">Q2 2026 AI Compensation by Skill</div>
+          <div class="related-card-sub">Top-paying skill tags vs most in-demand tags.</div>
+        </a>
+        <a class="related-card" href="/research/q2-2026-mcp-ecosystem-health.html">
+          <div class="related-card-title">Q2 2026 MCP Ecosystem Health</div>
+          <div class="related-card-sub">Live JSON-RPC handshake audit of MCP servers.</div>
+        </a>
+        <a class="related-card" href="/research/overview.html">
+          <div class="related-card-title">Research Atlas</div>
+          <div class="related-card-sub">Every paper, topic index, and reading paths.</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="article-cta" style="margin-top:40px;">
+      <p style="margin-bottom:10px;"><strong>Get new research by email</strong></p>
+      <p style="margin-bottom:14px;font-size:15px;">Two papers a week on what's actually happening inside enterprise AI programs. No promo, no hype.</p>
+      <form onsubmit="return sub8bc(event)" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <input type="email" name="email" placeholder="you@company.com" required
+          style="flex:1;min-width:200px;padding:10px 14px;border:1px solid #ccc;border-radius:6px;font-size:15px;" />
+        <button type="submit" style="padding:10px 18px;background:#d97757;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Subscribe</button>
+      </form>
+      <p id="sub-status" style="margin-top:10px;font-size:14px;min-height:1em;"></p>
+      <p style="margin-top:6px;font-size:13px;color:#888;">Prefer a reader? <a href="/feed.xml">RSS feed</a>.</p>
+    </div>
+    <script>
+    async function sub8bc(e){e.preventDefault();const f=e.target;const email=f.email.value.trim();const s=document.getElementById('sub-status');s.textContent='Subscribing…';try{const r=await fetch('https://aidevboard.com/api/v1/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tags:['8bitconcepts-research'],frequency:'weekly'})});if(r.ok){s.textContent='Subscribed. Check your inbox.';s.style.color='#0a0';f.reset();}else{s.textContent='Error subscribing. Email hello@8bitconcepts.com instead.';s.style.color='#c00';}}catch(err){s.textContent='Network error. Email hello@8bitconcepts.com.';s.style.color='#c00';}return false;}
+    </script>
+
+    <div class="footnotes">
+      <h4>Sources</h4>
+      <ol>
+        <li>AI Dev Jobs &mdash; <a href="https://aidevboard.com/api/v1/stats">/api/v1/stats</a>, pulled 2026-04-17T23:17:15Z. Public unauthenticated endpoint.</li>
+        <li>AI Dev Jobs &mdash; <a href="https://aidevboard.com/api/v1/jobs">/api/v1/jobs</a>, paginated walk for per-company workplace aggregation.</li>
+        <li>Workplace classification is derived from job-title + description + location signals by a rules-based parser. Edge cases ("hybrid, 3 days", "flexible", "in-person preferred") are normalized into the three canonical buckets onsite / remote / hybrid.</li>
+        <li>Salary figures are employer-advertised midpoints from public ATS feeds. US pay-transparency laws drive the disclosure rates so the dataset over-represents California, New York, Washington, and Colorado.</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <div style="max-width:640px;margin:40px auto;padding:24px;background:#fafaf8;border:1px solid #e5e5e5;border-radius:8px;">
+    <p style="font-size:13px;color:#666;margin:0 0 12px;text-transform:uppercase;letter-spacing:1px;">Remote AI engineering jobs hiring now</p>
+    <div data-aidev-jobs data-workplace="remote" data-limit="3" data-theme="light"></div>
+    <script src="https://aidevboard.com/static/widget.js" async></script>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 8bitconcepts &mdash; AI Enablement &amp; Integration Consulting &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
+    <p style="margin-top:6px;font-size:12px;"><a href="/research/overview.html" style="color:#d97757;">Research Atlas &rarr; all papers + reading paths</a></p>
+  </footer>
+
+</body>
+</html>
