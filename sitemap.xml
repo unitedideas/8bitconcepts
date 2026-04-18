@@ -81,6 +81,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://8bitconcepts.com/research/the-expansion-tax.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://8bitconcepts.com/research/the-foundation-trap.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
