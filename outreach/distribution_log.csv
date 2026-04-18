@@ -103,3 +103,7 @@ date,to,subject,send_id,status
 2026-04-17,email-pitch,tips@sfstandard.com,resend:46e0ed7b-4008-45bb-b3a1-a9175704adae,sent-sf-standard-45pct-concentration
 2026-04-17,email-pitch,restofworld@restofworld.org,resend:921d1c48-5a43-495f-89fc-1b5d9d33b72e,sent-rest-of-world-international-cuts
 2026-04-17,email-pitch,techdesk@wsj.com,resend:0ab6f747-448d-4dbc-935a-5018ebc65d8d,sent-wsj-capital-concentration-angle
+2026-04-17,email-pitch-retry,newstips@wsj.com,resend:8570a560-9d05-480e-9165-73408a3f72fb,retry-wsj-sf-concentration
+2026-04-17,email-pitch-retry,press@venturebeat.com,resend:eaf46d63-0b39-4511-a3d3-3a2ef2871fa3,retry-venturebeat-hiring-snapshot
+2026-04-17,email-pitch-retry,editorial@builtin.com,resend:e62b0c50-d17d-4b19-9a05-da5354950d38,retry-builtin-hybrid-premium
+2026-04-17,email-pitch-retry,pitches@restofworld.org,resend:58c0f1b9-5129-414d-9289-bdf32195345a,retry-rest-of-world-geography
