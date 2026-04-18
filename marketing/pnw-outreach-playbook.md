@@ -8,6 +8,10 @@
 
 ## What's Live (Owl-shipped)
 
+**Target list:** `pnw-smb-targets.csv` (31 named SMB owners across the 4 cities; ~13 with public email; details in `pnw-smb-targets-README.md`)
+**Email templates:** `pnw-cold-email-templates.md` (6 industry-specific + 2 follow-ups + subject line bank, voice-rule compliant)
+**Case studies:** `https://8bitconcepts.com/case-studies.html` (3 real shipped Foundry products as proof)
+
 Geo-targeted landing pages with LocalBusiness schema for organic Google "near me" capture:
 
 - **Hub:** [8bitconcepts.com/local/](https://8bitconcepts.com/local/)

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Case Studies | 8bitconcepts</title>
+  <meta name="description" content="Real AI products we shipped in 4-6 weeks: aidevboard.com (8,400 jobs + monetized API), nothumansearch.ai (8,600-site index + MCP server), 8bitconcepts.com research pipeline (16 papers, auto-refreshed). Same playbook we run for clients." />
+  <link rel="canonical" href="https://8bitconcepts.com/case-studies.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Case Studies | 8bitconcepts" />
+  <meta property="og:description" content="Real AI products we shipped in 4-6 weeks. Same playbook we run for clients." />
+  <meta property="og:url" content="https://8bitconcepts.com/case-studies.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/og-work-with-us.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Case Studies | 8bitconcepts" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "8bitconcepts Case Studies",
+    "url": "https://8bitconcepts.com/case-studies.html",
+    "description": "Real shipped AI products demonstrating the engagement model 8bitconcepts runs for clients.",
+    "isPartOf": {"@type": "WebSite", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --slate: #0d0d0e; --slate-1: #111214; --slate-2: #1a1c1f; --slate-3: #242729;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757; --terra-dim: rgba(217,119,87,0.15); --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9; --text-dim: #8b8d91; --text-dimmer: #5a5c61;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--slate); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,13,14,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 15px; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .nav-logo span { color: var(--terra); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.nav-cta { background: var(--terra); color: #ffffff; padding: 7px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; transition: opacity 0.15s; }
+    .nav-links a.nav-cta:hover { color: #ffffff; opacity: 0.88; }
+
+    .hero { padding: 128px 32px 48px; max-width: 880px; margin: 0 auto; }
+    .hero-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; color: var(--text); margin-bottom: 22px; }
+    .hero-sub { font-size: 17px; line-height: 1.6; color: var(--text-dim); max-width: 660px; }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+
+    .case { max-width: 1020px; margin: 0 auto; padding: 32px; border-top: 1px solid var(--border); }
+    .case-inner { display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
+    .case-meta { padding-top: 6px; }
+    .case-meta .label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+    .case-meta h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.025em; color: var(--text); margin-bottom: 10px; line-height: 1.2; }
+    .case-meta .url { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--text-dim); margin-bottom: 18px; word-break: break-all; }
+    .case-meta .url a { color: var(--terra); text-decoration: none; }
+    .case-meta .url a:hover { text-decoration: underline; }
+
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+    .stat { background: var(--slate-1); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+    .stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: var(--terra); font-weight: 500; line-height: 1; margin-bottom: 4px; }
+    .stat-label { font-size: 11px; color: var(--text-dim); line-height: 1.4; }
+    .case-tag { display: inline-block; background: var(--terra-dim2); border: 1px solid rgba(217,119,87,0.2); padding: 3px 10px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--terra); margin-bottom: 14px; }
+
+    .case-body { font-size: 15.5px; line-height: 1.7; color: var(--text); }
+    .case-body p { margin-bottom: 18px; }
+    .case-body p:last-child { margin-bottom: 0; }
+    .case-body strong { color: var(--text); font-weight: 600; }
+    .case-body em { font-style: normal; color: var(--terra); }
+    .case-body h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-top: 28px; margin-bottom: 12px; letter-spacing: -0.01em; }
+    .case-body ul { padding-left: 22px; margin-bottom: 18px; }
+    .case-body ul li { margin-bottom: 8px; font-size: 15px; color: var(--text); }
+
+    .applies { margin-top: 24px; padding: 16px 18px; background: var(--slate-1); border-left: 3px solid var(--terra); border-radius: 0 6px 6px 0; }
+    .applies-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; }
+    .applies-text { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+    .cta-block { max-width: 720px; margin: 80px auto 40px; padding: 36px 32px; background: linear-gradient(135deg, rgba(217,119,87,0.10) 0%, rgba(217,119,87,0.03) 100%); border: 1px solid rgba(217,119,87,0.30); border-radius: 10px; text-align: center; }
+    .cta-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+    .cta-block h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1.3; }
+    .cta-block p { font-size: 15px; color: var(--text-dim); margin-bottom: 20px; line-height: 1.6; }
+    .cta-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .cta-buttons a.primary { background: var(--terra); color: #ffffff; padding: 12px 22px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: opacity 0.15s; }
+    .cta-buttons a.primary:hover { opacity: 0.88; }
+    .cta-buttons a.secondary { background: transparent; color: var(--text); padding: 12px 22px; border-radius: 6px; font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid var(--border); transition: border-color 0.15s; }
+    .cta-buttons a.secondary:hover { border-color: var(--terra); }
+
+    footer { padding: 40px 32px; text-align: center; color: var(--text-dimmer); font-size: 13px; border-top: 1px solid var(--border); }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--terra); }
+    .footer-row { margin-bottom: 12px; }
+    .footer-sep { color: var(--text-dimmer); margin: 0 8px; }
+
+    @media (max-width: 760px) {
+      nav { padding: 0 20px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding: 104px 20px 32px; }
+      .case { padding: 24px 20px; }
+      .case-inner { grid-template-columns: 1fr; gap: 24px; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .cta-block { padding: 28px 22px; margin: 56px 16px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">8bit<span>concepts</span></a>
+  <div class="nav-links">
+    <a href="/work-with-us.html">Work with us</a>
+    <a href="/research/overview.html">Research</a>
+    <a href="/case-studies.html">Case studies</a>
+    <a href="/work-with-us.html#lead-form" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Case studies &middot; first-party</div>
+  <h1>Three AI products we shipped in 4&ndash;6 weeks each.</h1>
+  <p class="hero-sub">Most consultancies show you decks. We show you running products. <strong>Every system below was built and is operated by the same team that would embed in your business.</strong> Same playbook, same engagement model, same code-shipping discipline.</p>
+</div>
+
+<!-- CASE 1: AI Dev Jobs / aidevboard.com -->
+<div class="case">
+  <div class="case-inner">
+    <div class="case-meta">
+      <div class="label">Case 01 &middot; B2B SaaS</div>
+      <h2>aidevboard.com</h2>
+      <div class="url"><a href="https://aidevboard.com" target="_blank" rel="noopener">aidevboard.com &rarr;</a></div>
+      <span class="case-tag">Job board + agentic API</span>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">8,400+</div><div class="stat-label">live AI/ML jobs indexed</div></div>
+        <div class="stat"><div class="stat-num">489</div><div class="stat-label">companies tracked</div></div>
+        <div class="stat"><div class="stat-num">6 wks</div><div class="stat-label">build to first paid customer</div></div>
+        <div class="stat"><div class="stat-num">$49/mo</div><div class="stat-label">monetized API tier (Stripe)</div></div>
+      </div>
+    </div>
+    <div class="case-body">
+      <p><strong>The problem.</strong> Existing AI/ML job boards were either curated lists with no API or generic boards with no AI focus. Hiring agents and AI-tool builders had no programmatic way to query the market. Job boards as a category have been dominated by a few incumbents for fifteen years.</p>
+      <p><strong>What we shipped.</strong> A full job board with a real REST API that agents wire into directly. Daily scraper across 538 sources (Ashby, Greenhouse, Lever, custom ATS endpoints). Stripe-powered API tier (free 100/hr, Pro $49/mo at 5,000/hr). MCP server registered in the official MCP registry &mdash; agents wire it in once and search the index forever.</p>
+      <p><strong>How we built it.</strong> Single Go binary. Postgres on Fly.io. No platform lock-in. Scraper runs on Mac Studio (zero infra cost on the heaviest workload). The first paying customer signed within six weeks of the first commit. <em>The point isn't that we built a job board. The point is that the same operating discipline ships your AI workflow.</em></p>
+      <h3>What this engagement would look like for you</h3>
+      <p>Two weeks of mapping (interviews, current systems, target workflows). Four weeks of building (production system, paid loop, monitoring). Two weeks of handoff (runbooks, training, evaluation harness). Your team operates the system after week eight.</p>
+      <div class="applies">
+        <div class="applies-label">Most relevant if you run</div>
+        <div class="applies-text">A specialty marketplace, recruiting firm, lead-gen business, distributor with a public catalog, or any operation where structured data + a programmatic interface unlocks value your competitors don't have.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE 2: Not Human Search / nothumansearch.ai -->
+<div class="case">
+  <div class="case-inner">
+    <div class="case-meta">
+      <div class="label">Case 02 &middot; Agent infrastructure</div>
+      <h2>nothumansearch.ai</h2>
+      <div class="url"><a href="https://nothumansearch.ai" target="_blank" rel="noopener">nothumansearch.ai &rarr;</a></div>
+      <span class="case-tag">Agent-first search index + MCP</span>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">8,600+</div><div class="stat-label">agent-ready sites indexed</div></div>
+        <div class="stat"><div class="stat-num">494</div><div class="stat-label">live MCP-verified servers</div></div>
+        <div class="stat"><div class="stat-num">4 wks</div><div class="stat-label">scraper + index + public UI</div></div>
+        <div class="stat"><div class="stat-num">8 tools</div><div class="stat-label">MCP server (in official registry)</div></div>
+      </div>
+    </div>
+    <div class="case-body">
+      <p><strong>The problem.</strong> Agents need to discover services that have proper integration surfaces (APIs, MCP servers, llms.txt). Google ranks for humans; nothing ranked for agents. The market needed a search index built specifically for what agents look for &mdash; with verification that the claims are real, not just marketing copy on a website.</p>
+      <p><strong>What we shipped.</strong> A live JSON-RPC verifier that probes every claim, a 100-point agentic-readiness rubric, an embeddable score badge for sites that pass, a live MCP server (agents wire it in, never have to re-index), and a public UI at <code style="background:rgba(217,119,87,0.08);padding:2px 6px;border-radius:3px;font-size:13px;color:#d97757;">/score</code> for any site to check itself.</p>
+      <p><strong>How we built it.</strong> Same single-Go-binary pattern, separate database, separate Fly app. Daily recrawl auto-updates scores. Listed in the official Anthropic MCP registry (cryptographically signed publish flow) within four weeks of first commit. <em>The interesting part isn't that we built a search engine. It's the eval harness &mdash; the JSON-RPC verifier that catches false claims &mdash; which is the same shape of evaluation infrastructure your AI workflow needs.</em></p>
+      <h3>What this engagement would look like for you</h3>
+      <p>One week mapping (what does "good output" look like for the workflow). Four to eight weeks building (the system + the eval harness that proves it's working). Two weeks handoff (runbooks, eval suite, the playbook for adding the next workflow on the same infrastructure).</p>
+      <div class="applies">
+        <div class="applies-label">Most relevant if you run</div>
+        <div class="applies-text">Any operation where AI needs to be trusted with output that goes to customers, vendors, or systems-of-record &mdash; healthcare intake, claims processing, contract review, customer service triage, anything where wrong answers are visible and costly.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE 3: 8bitconcepts research pipeline -->
+<div class="case">
+  <div class="case-inner">
+    <div class="case-meta">
+      <div class="label">Case 03 &middot; Content + lead-gen</div>
+      <h2>8bitconcepts research pipeline</h2>
+      <div class="url"><a href="https://8bitconcepts.com/research/overview.html" target="_blank" rel="noopener">8bitconcepts.com/research &rarr;</a></div>
+      <span class="case-tag">Auto-refreshed analysis pipeline</span>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">17</div><div class="stat-label">research papers published</div></div>
+        <div class="stat"><div class="stat-num">5</div><div class="stat-label">auto-refresh weekly from live data</div></div>
+        <div class="stat"><div class="stat-num">2 wks</div><div class="stat-label">pipeline stand-up to first paper</div></div>
+        <div class="stat"><div class="stat-num">100/100</div><div class="stat-label">agentic-readiness score (per NHS rubric)</div></div>
+      </div>
+    </div>
+    <div class="case-body">
+      <p><strong>The problem.</strong> Most "thought leadership" pipelines are humans typing in Google Docs. The cost is high, the cadence is unreliable, and the content drifts from what the data actually says because no one re-runs the queries. Operating businesses that want a credibility surface can't justify a full-time content team.</p>
+      <p><strong>What we shipped.</strong> A pipeline that auto-regenerates five data-grounded research papers every week from live API data (aidevboard hiring data, nothumansearch ecosystem data). Includes OG-image generation, JSON-LD schema, sitemap + IndexNow auto-submission, RSS feed, and an unsubscribe-compliant newsletter delivery via Resend. Eleven additional qualitative papers run as one-time human-written pieces using the same template + publishing infrastructure.</p>
+      <p><strong>How we built it.</strong> Python pipeline, runs on launchd cron. ~400 lines of orchestration, ~150 lines per paper-type generator, hardcoded brand template. <em>The interesting part isn't the content. It's that the same infrastructure compounds &mdash; every new paper added drops into the index, sitemap, llms.txt, RSS, Resend digest with zero hand-wiring.</em></p>
+      <h3>What this engagement would look like for you</h3>
+      <p>Two weeks mapping (what content compounds for your business — case studies, market reports, weekly digests, customer-facing guides). Four to six weeks building the pipeline (templates, distribution, eval). Two weeks handoff (your team adds new content types without our help).</p>
+      <div class="applies">
+        <div class="applies-label">Most relevant if you run</div>
+        <div class="applies-text">A B2B services firm that needs ongoing credibility content, a SaaS company that needs to publish weekly product/data updates, an industry-specific media operation, or any business where content velocity matters more than content depth.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA block -->
+<div class="cta-block">
+  <div class="cta-eyebrow">Want this for your business?</div>
+  <h2>Same playbook. Your operation.</h2>
+  <p>Each case above is a real shipped product running today. The engagement model is the same one we use with clients: 4&ndash;12 weeks, embedded in your team, built on your stack, handed off with runbooks. Costs less than a senior hire. Compounds forever.</p>
+  <div class="cta-buttons">
+    <a class="primary" href="/work-with-us.html#lead-form">Book a 30-min intro call &rarr;</a>
+    <a class="secondary" href="/work-with-us.html#offers">See engagements</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-row" style="margin-bottom:14px;font-size:13px;">
+    <strong style="color:var(--text-dim);">Pacific Northwest:</strong>
+    <a href="/local/vancouver-wa.html">Vancouver WA</a>
+    <span class="footer-sep">·</span>
+    <a href="/local/camas-wa.html">Camas WA</a>
+    <span class="footer-sep">·</span>
+    <a href="/local/portland-or.html">Portland OR</a>
+    <span class="footer-sep">·</span>
+    <a href="/local/tigard-or.html">Tigard OR</a>
+    <span class="footer-sep">·</span>
+    <a href="/local/">All PNW</a>
+  </div>
+  <div class="footer-row">
+    <a href="/">Home</a>
+    <span class="footer-sep">·</span>
+    <a href="/work-with-us.html">Work with us</a>
+    <span class="footer-sep">·</span>
+    <a href="/research/overview.html">Research</a>
+    <span class="footer-sep">·</span>
+    <a href="mailto:hello@8bitconcepts.com">Email</a>
+  </div>
+  <p>&copy; 2026 8bitconcepts &mdash; Embedded AI consulting</p>
+</footer>
+
+</body>
+</html>
