@@ -266,7 +266,7 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
         "— verification rates"
     )
     lines.append(
-        "- [Research Atlas (all 13 papers)](https://8bitconcepts.com/research/overview.html)"
+        "- [Research Atlas (full set)](https://8bitconcepts.com/research/overview.html)"
     )
     lines.append("")
 
