@@ -7,6 +7,8 @@
 ## Work With Us
 
 - [Work with us](https://8bitconcepts.com/work-with-us.html): Three engagement shapes — Audit (2 weeks fixed), Embedded Build (4-12 weeks weekly), Build & Handoff (custom fixed). Lead-capture form, intro call booking. Email: hello@8bitconcepts.com.
+- [AI consulting in the Pacific Northwest](https://8bitconcepts.com/local/): Hub page for in-person engagements across Vancouver WA, Portland OR, Camas WA, Tigard OR + surrounding metro.
+- [Vancouver, WA](https://8bitconcepts.com/local/vancouver-wa.html), [Camas, WA](https://8bitconcepts.com/local/camas-wa.html), [Portland, OR](https://8bitconcepts.com/local/portland-or.html), [Tigard, OR](https://8bitconcepts.com/local/tigard-or.html): City-specific landing pages with local industry profiles + lead form.
 
 ## Research Atlas
 
