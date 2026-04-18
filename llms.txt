@@ -14,6 +14,7 @@
 
 ## Research Papers
 
+- [The Compounding Gap](https://8bitconcepts.com/research/the-compounding-gap.html): The lead fast-moving companies build over slow movers in 2026 compounds — by the time slow movers notice, the lead is structural and unrecoverable. Why velocity must be imported, not built.
 - [The Guardrails Gap](https://8bitconcepts.com/research/the-guardrails-gap.html): Why enterprise AI safety frameworks fail when agents act autonomously
 - [The Hallucination Budget](https://8bitconcepts.com/research/the-hallucination-budget.html): Quantifying the cost of AI hallucinations and mitigation strategies
 - [The Measurement Problem](https://8bitconcepts.com/research/the-measurement-problem.html): How enterprises measure AI ROI and where the metrics fail
