@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <title>The PNW AI Desert -- 8bitconcepts</title>
+  <meta name="description" content="There are 8,400+ AI/ML jobs open across the major hubs. Almost none are in Vancouver WA, Portland OR, Camas WA, or Tigard OR. The AI hiring market does not extend to PNW SMB territory -- which has a specific, immediate implication for operating businesses here." />
+  <meta property="og:title" content="The PNW AI Desert -- 8bitconcepts" />
+  <meta property="og:description" content="The AI hiring market doesn't extend to PNW SMB territory outside Seattle. Operators here can't hire AI engineers locally — but they don't need to." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://8bitconcepts.com/research/the-pnw-ai-desert.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/research/og/the-pnw-ai-desert.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The PNW AI Desert" />
+  <meta name="twitter:description" content="The AI hiring market doesn't extend to PNW SMB territory outside Seattle." />
+  <meta name="twitter:image" content="https://8bitconcepts.com/research/og/the-pnw-ai-desert.png" />
+  <link rel="canonical" href="https://8bitconcepts.com/research/the-pnw-ai-desert.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --slate: #0d0d0e; --slate-1: #111214; --slate-2: #1a1c1f; --slate-3: #242729; --border: rgba(255,255,255,0.07); --terra: #d97757; --terra-dim: rgba(217,119,87,0.15); --terra-dim2: rgba(217,119,87,0.08); --text: #e8e8e9; --text-dim: #8b8d91; --text-dimmer: #5a5c61; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--slate); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,13,14,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 15px; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .nav-logo span { color: var(--terra); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.nav-cta { background: var(--terra); color: #ffffff; padding: 8px 18px; border-radius: 6px; font-size: 14px; font-weight: 600; transition: opacity 0.15s; }
+    .nav-links a.nav-cta:hover { color: #ffffff; opacity: 0.88; }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 112px 32px 80px; }
+    .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); margin-bottom: 24px; }
+    h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; color: var(--text); margin-bottom: 20px; }
+    .subtitle { font-size: 18px; line-height: 1.6; color: var(--text-dim); margin-bottom: 40px; font-weight: 400; }
+    .meta { display: flex; align-items: center; gap: 20px; padding-bottom: 32px; border-bottom: 1px solid var(--border); margin-bottom: 48px; flex-wrap: wrap; }
+    .meta-date { font-size: 13px; color: var(--text-dimmer); font-family: 'IBM Plex Mono', monospace; }
+    .meta-tag { font-size: 12px; color: var(--terra); background: var(--terra-dim2); border: 1px solid rgba(217,119,87,0.2); padding: 3px 10px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 0.04em; }
+    .meta-read { font-size: 13px; color: var(--text-dimmer); }
+    .article-body p { margin-bottom: 24px; font-size: 16.5px; line-height: 1.75; color: var(--text); }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin-top: 52px; margin-bottom: 18px; line-height: 1.3; }
+    .article-body strong { color: var(--text); font-weight: 600; }
+    .article-body em { font-style: normal; color: var(--terra); }
+    .article-body ul { padding-left: 24px; margin-bottom: 24px; color: var(--text); font-size: 16.5px; line-height: 1.75; }
+    .article-body ul li { margin-bottom: 10px; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 36px 0; }
+    .stat-box { background: var(--slate-2); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
+    .stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 28px; font-weight: 500; color: var(--terra); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 13px; color: var(--text-dim); line-height: 1.4; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 14px; }
+    .data-table th { text-align: left; padding: 10px 14px; background: var(--slate-3); color: var(--text-dim); font-weight: 500; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+    .data-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table .td-em { color: var(--terra); font-weight: 600; }
+    .footnotes { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .footnotes h4 { font-size: 11px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dimmer); margin-bottom: 16px; }
+    .footnotes ol { padding-left: 20px; }
+    .footnotes li { font-size: 13px; color: var(--text-dimmer); margin-bottom: 8px; line-height: 1.5; }
+    .footnotes a { color: var(--text-dim); text-decoration: none; }
+    .footnotes a:hover { color: var(--terra); }
+    .related { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .related-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dimmer); margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .related-card { background: var(--slate-1); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-decoration: none; transition: border-color 0.15s; display: block; }
+    .related-card:hover { border-color: rgba(217,119,87,0.3); }
+    .related-card-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+    .related-card-sub { font-size: 12px; color: var(--text-dimmer); }
+    .article-cta { background: var(--terra-dim2); border: 1px solid rgba(217,119,87,0.25); border-radius: 8px; padding: 32px; margin-top: 48px; text-align: center; }
+    .article-cta-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+    .article-cta h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin-bottom: 10px; line-height: 1.3; }
+    .article-cta p { color: var(--text-dim); font-size: 15px; margin-bottom: 22px !important; line-height: 1.6; }
+    .article-cta-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .article-cta-buttons a.primary { display: inline-block; background: var(--terra); color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 14px; transition: opacity 0.15s; }
+    .article-cta-buttons a.primary:hover { opacity: 0.88; color: #ffffff; }
+    .article-cta-buttons a.secondary { display: inline-block; background: transparent; color: var(--text); text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; font-size: 14px; border: 1px solid var(--border); transition: border-color 0.15s; }
+    .article-cta-buttons a.secondary:hover { border-color: var(--terra); }
+    footer { border-top: 1px solid var(--border); padding: 40px 32px; text-align: center; color: var(--text-dimmer); font-size: 13px; }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--terra); }
+    @media (max-width: 640px) { .article-wrap { padding: 96px 20px 60px; } nav { padding: 0 20px; } .nav-links a:not(.nav-cta) { display: none; } .stat-row { grid-template-columns: 1fr 1fr; } }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The PNW AI Desert","url":"https://8bitconcepts.com/research/the-pnw-ai-desert.html","datePublished":"2026-04-17","author":{"@type":"Organization","name":"8bitconcepts","url":"https://8bitconcepts.com"},"publisher":{"@type":"Organization","name":"8bitconcepts","url":"https://8bitconcepts.com"},"inLanguage":"en","isAccessibleForFree":true,"about":"Pacific Northwest AI hiring market, embedded AI consulting, small business AI"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"8bitconcepts","item":"https://8bitconcepts.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://8bitconcepts.com/research/"},{"@type":"ListItem","position":3,"name":"The PNW AI Desert"}]}</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://8bitconcepts.com">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="https://8bitconcepts.com/work-with-us.html">Work with us</a>
+      <a href="https://8bitconcepts.com/case-studies.html">Case studies</a>
+      <a href="https://8bitconcepts.com/local/">Pacific NW</a>
+      <a href="https://8bitconcepts.com/work-with-us.html#lead-form" class="nav-cta">Book a call</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+
+    <div class="eyebrow">Research &mdash; PNW Local Market</div>
+
+    <h1>The PNW AI Desert</h1>
+
+    <p class="subtitle">There are 8,400+ AI/ML engineering jobs open across the major hubs. Almost none of them are in Vancouver WA, Portland OR, Camas WA, or Tigard OR. The AI hiring market does not extend to Pacific Northwest SMB territory &mdash; which has a specific, immediate implication for operating businesses here.</p>
+
+    <div class="meta">
+      <span class="meta-date">April 2026</span>
+      <span class="meta-tag">PNW Local</span>
+      <span class="meta-read">~4 min read</span>
+    </div>
+
+    <div class="article-body">
+
+      <p>If you're an operator in the Vancouver-Camas-Portland-Tigard corridor and you've thought about hiring an AI engineer, the data tells you something the local conversation hasn't yet caught up to: <em>the AI engineer market does not exist here at the size you'd need to run a normal hiring search.</em></p>
+
+      <h2>The data</h2>
+
+      <p>aidevboard.com indexes AI/ML engineering roles across 489 companies. As of April 2026, the index lists 8,400+ open positions and surfaces 25 cities as named hiring hubs &mdash; the cities with enough role density to justify a dedicated landing page. The full list:</p>
+
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:var(--text-dim);background:var(--slate-2);padding:14px 18px;border-radius:6px;line-height:1.7;">San Francisco &middot; New York &middot; London &middot; Mountain View &middot; Sunnyvale &middot; Bangalore &middot; Palo Alto &middot; Boston &middot; Paris &middot; Toronto &middot; San Jose &middot; Austin &middot; <strong style="color:var(--terra);">Seattle</strong> &middot; Singapore &middot; Amsterdam &middot; Costa Mesa &middot; San Mateo &middot; Foster City &middot; Munich &middot; Redwood City &middot; Irvine &middot; Stockholm &middot; Menlo Park &middot; Berlin &middot; Tokyo</p>
+
+      <p>One Pacific Northwest city. <em>Seattle.</em> No Portland. No Vancouver WA. No Camas. No Tigard. No Beaverton. No Hillsboro. No Lake Oswego.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">8,400+</div>
+          <div class="stat-label">AI/ML engineering jobs in the index, April 2026</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">1 of 25</div>
+          <div class="stat-label">named PNW hiring hubs (Seattle only)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">0</div>
+          <div class="stat-label">jobs surfaced across Vancouver WA, Camas, Portland OR, or Tigard in a representative 200-row pull</div>
+        </div>
+      </div>
+
+      <h2>What this means for SMB operators</h2>
+
+      <p>If you run a small business in Vancouver WA, Camas, Portland OR, or Tigard, and you've been quietly assuming you can solve "we should be using AI" by hiring someone &mdash; <strong>the labor market you're imagining doesn't exist here at the size you'd need.</strong></p>
+
+      <p>The numbers underneath this:</p>
+
+      <ul>
+        <li>The average AI/ML engineering salary across the index is in the $200k&ndash;$280k range. SMBs in operating-business categories (logistics, manufacturing, healthcare practices, professional services) cannot competitively bid against San Francisco and Seattle for the small pool of qualified candidates who would relocate.</li>
+        <li>The candidates who already live in the Vancouver-Camas-Portland-Tigard corridor and have AI engineering skills are, in most cases, already employed remotely by SF or Seattle companies who pay above-market for the privilege of keeping them out of the local recruiting pool.</li>
+        <li>Even when you do find a candidate, the cost of one senior AI hire is roughly the same as a full embedded engagement that ships three to five working AI workflows alongside your existing team and leaves the runbooks behind.</li>
+      </ul>
+
+      <p>The hiring path is structurally closed. The build-it-yourself path requires an AI engineer you can't hire. <em>Which leaves a third path</em> &mdash; one that the operating businesses doing this well in the PNW are already running.</p>
+
+      <h2>The third path</h2>
+
+      <p>Install AI workflows on top of the team you already have. Not by hiring. Not by sending your operations manager to a four-week course. By bringing in a small embedded team for four to twelve weeks &mdash; the people who have shipped AI deployments before and have the systems-design judgment that doesn't transfer through documentation &mdash; and having them build the workflow alongside the operators who actually run the business.</p>
+
+      <p>This works in the PNW for a specific reason that doesn't apply in Bay Area: <strong>your operators have institutional knowledge that no AI hire could acquire</strong>, and the hiring market for AI engineers locally is so thin that the alternative isn't competitive even on cost. The math that recommends "hire" in San Francisco recommends "embed" in Vancouver WA, and the difference is not subtle.</p>
+
+      <h2>The pattern across the four cities</h2>
+
+      <p>The shape of this opportunity differs slightly by city:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Highest-density SMB sectors</th>
+            <th>Local AI hire viability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="td-em">Vancouver, WA</span></td>
+            <td>Logistics &amp; 3PL, manufacturing, healthcare practices, professional services</td>
+            <td>Effectively zero local candidate pool; embed is the only viable path</td>
+          </tr>
+          <tr>
+            <td><span class="td-em">Camas, WA</span></td>
+            <td>Specialty manufacturing, family-owned trades, niche professional services</td>
+            <td>Effectively zero local; embed is the only viable path</td>
+          </tr>
+          <tr>
+            <td><span class="td-em">Portland, OR</span></td>
+            <td>F&amp;B production, creative agencies, healthcare practices, specialty retail</td>
+            <td>Thin local pool; mostly remote-employed by Bay Area companies</td>
+          </tr>
+          <tr>
+            <td><span class="td-em">Tigard, OR</span></td>
+            <td>Wholesale distribution, professional services, specialty retail, healthcare</td>
+            <td>Effectively zero local; embed is the only viable path</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The implication is the same in all four: <em>operating businesses that wait to "hire someone good" before moving on AI will be waiting indefinitely</em>. The market doesn't reward patience here. It rewards finding the alternate path and running it.</p>
+
+      <div class="article-cta">
+        <div class="article-cta-eyebrow">For PNW operators</div>
+        <h3>You can't hire it here. You don't need to.</h3>
+        <p>We're based in the Pacific Northwest and built specifically for the operating businesses in this corridor. We embed for 4&ndash;12 weeks, ship the AI workflows alongside your existing team, and leave the runbooks. Costs less than a senior hire. Compounds forever.</p>
+        <div class="article-cta-buttons">
+          <a class="primary" href="https://8bitconcepts.com/work-with-us.html#lead-form">Book a 30-min intro call &rarr;</a>
+          <a class="secondary" href="https://8bitconcepts.com/local/">See PNW pages</a>
+        </div>
+      </div>
+
+      <div class="footnotes">
+        <h4>Sources &amp; Methodology</h4>
+        <ol>
+          <li>aidevboard.com index, April 2026. <a href="https://aidevboard.com/locations" target="_blank" rel="noopener">Locations index page</a> enumerates the 25 named hubs. Total job count and company count from <a href="https://aidevboard.com/api/v1/stats" target="_blank" rel="noopener">/api/v1/stats</a>. PNW absence verified via free-text search and representative job pulls (`?per_page=200`); zero matches for "Vancouver WA", "Portland OR", "Camas", "Tigard", "Beaverton", "Hillsboro", or "Lake Oswego".</li>
+          <li>Salary baseline: aidevboard.com Q2 2026 Compensation by Skill report (<a href="/research/q2-2026-ai-compensation-by-skill.html">link</a>) &mdash; AI/ML role average $231k generative-AI to $274k research, $213k median across the full 8,400+ index.</li>
+          <li>8bitconcepts engagement-cost data, n=11 active embedded engagements (2025&ndash;2026). Reference cost-per-engagement is comparable to or lower than first-year fully-loaded cost of a single AI engineer hire at PNW market rates.</li>
+        </ol>
+      </div>
+
+      <div class="related">
+        <div class="related-label">Related Research</div>
+        <div class="related-grid">
+          <a class="related-card" href="/research/the-domain-advantage.html">
+            <div class="related-card-title">The Domain Advantage</div>
+            <div class="related-card-sub">Operators bring the harder ingredient. Embed brings the install.</div>
+          </a>
+          <a class="related-card" href="/research/the-compounding-gap.html">
+            <div class="related-card-title">The Compounding Gap</div>
+            <div class="related-card-sub">Why fast-mover lead compounds geometrically.</div>
+          </a>
+          <a class="related-card" href="/research/q2-2026-ai-compensation-by-skill.html">
+            <div class="related-card-title">AI Compensation by Skill</div>
+            <div class="related-card-sub">$231k&ndash;$274k average; the salary you'd be bidding against.</div>
+          </a>
+          <a class="related-card" href="/local/">
+            <div class="related-card-title">PNW Local pages</div>
+            <div class="related-card-sub">Per-city: Vancouver WA, Camas WA, Portland OR, Tigard OR.</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 8bitconcepts &mdash; Embedded AI consulting in the Pacific Northwest &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a>
+    <p style="margin-top:6px;font-size:12px;"><a href="/local/" style="color:#d97757;">All PNW pages &rarr;</a></p>
+  </footer>
+
+</body>
+</html>

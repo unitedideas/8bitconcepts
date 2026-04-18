@@ -22,6 +22,7 @@
 - [The Foundation Trap](https://8bitconcepts.com/research/the-foundation-trap.html): Every AI architecture decision in 2026 is a bet on which infrastructure layer survives 2027. The five upstream load-bearing decisions most operators make implicitly without naming.
 - [The Expansion Tax](https://8bitconcepts.com/research/the-expansion-tax.html): If you're using AI to cut costs, you're paying a tax on the real opportunity. When execution costs drop 10x, the market expands — companies cutting headcount are ceding that territory to expanders.
 - [The Domain Advantage](https://8bitconcepts.com/research/the-domain-advantage.html): The 20 years of operating expertise you've built is exactly what AI cannot replicate. The two ingredients of a working AI workflow — and why operators already have the harder one.
+- [The PNW AI Desert](https://8bitconcepts.com/research/the-pnw-ai-desert.html): 1 of 25 named AI hiring hubs is in the Pacific Northwest. Operating businesses in Vancouver WA, Camas, Portland OR, Tigard OR cannot hire local AI engineers — and don't need to.
 - [The Guardrails Gap](https://8bitconcepts.com/research/the-guardrails-gap.html): Why enterprise AI safety frameworks fail when agents act autonomously
 - [The Hallucination Budget](https://8bitconcepts.com/research/the-hallucination-budget.html): Quantifying the cost of AI hallucinations and mitigation strategies
 - [The Measurement Problem](https://8bitconcepts.com/research/the-measurement-problem.html): How enterprises measure AI ROI and where the metrics fail
