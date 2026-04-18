@@ -16,7 +16,7 @@ import sys
 import os
 import subprocess
 from datetime import datetime
-from typing import list
+from typing import List
 
 BASE_URL = "https://8bitconcepts.com"
 
@@ -47,7 +47,7 @@ def get_indexnow_key() -> str:
             "  security add-generic-password -a foundry -s indexnow-8bc-key -w '<key>' 2>/dev/null"
         )
 
-def submit_to_indexnow(urls: list[str], key: str, dry_run: bool = False) -> bool:
+def submit_to_indexnow(urls: List[str], key: str, dry_run: bool = False) -> bool:
     """
     Submit URLs to IndexNow.
     Returns True if all succeeded, False otherwise.
