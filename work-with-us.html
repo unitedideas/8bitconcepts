@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Work with us — 8bitconcepts</title>
+  <meta name="description" content="Embedded AI consulting for operating businesses. We sit inside your team, map where AI fits, and ship the systems your people actually use." />
+  <link rel="canonical" href="https://8bitconcepts.com/work-with-us.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="8bitconcepts" />
+  <meta property="og:title" content="Work with us — 8bitconcepts" />
+  <meta property="og:description" content="Embedded AI consulting for operating businesses. We ship the systems your team will actually use." />
+  <meta property="og:url" content="https://8bitconcepts.com/work-with-us.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Work with us — 8bitconcepts" />
+  <meta name="twitter:description" content="Embedded AI consulting for operating businesses." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "8bitconcepts",
+    "url": "https://8bitconcepts.com",
+    "email": "hello@8bitconcepts.com",
+    "description": "Embedded AI consulting. We map AI opportunities inside operating businesses and ship the workforce + process systems alongside your team.",
+    "areaServed": "Worldwide",
+    "serviceType": ["AI consulting", "AI workforce enablement", "AI process automation", "Embedded engineering", "AI roadmap", "AI integration"],
+    "offers": [
+      {"@type": "Offer", "name": "AI Workflow Audit", "description": "Two-week mapping engagement. We audit your operations, identify the highest-ROI AI insertions, deliver a prioritized roadmap.", "priceCurrency": "USD"},
+      {"@type": "Offer", "name": "Embedded Build", "description": "4-12 week embedded engagement. We work alongside your team, ship one to three production AI systems, leave behind operating documentation.", "priceCurrency": "USD"},
+      {"@type": "Offer", "name": "Build & Handoff", "description": "Scoped fixed-price build of a single AI system to production, with training so your team operates it after we leave.", "priceCurrency": "USD"}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --slate: #0d0d0e;
+      --slate-1: #111214;
+      --slate-2: #1a1c1f;
+      --slate-3: #242729;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757;
+      --terra-dim: rgba(217,119,87,0.15);
+      --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9;
+      --text-dim: #8b8d91;
+      --text-dimmer: #5a5c61;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--slate);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,13,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500; font-size: 15px;
+      color: var(--text); letter-spacing: -0.02em; text-decoration: none;
+    }
+    .nav-logo span { color: var(--terra); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      color: var(--text-dim); text-decoration: none;
+      font-size: 14px; font-weight: 500; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--terra); color: white;
+      padding: 7px 16px; border-radius: 6px;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: opacity 0.15s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    .hero {
+      padding: 128px 32px 32px;
+      max-width: 880px; margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.03em; color: var(--text);
+      margin-bottom: 22px; max-width: 760px;
+    }
+    .hero-sub {
+      font-size: 17px; line-height: 1.6;
+      color: var(--text-dim); max-width: 660px; margin-bottom: 28px;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--terra); color: white;
+      padding: 13px 24px; border-radius: 6px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: opacity 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-secondary {
+      display: inline-block;
+      background: transparent; color: var(--text);
+      padding: 13px 22px; border-radius: 6px;
+      font-size: 15px; font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--terra); }
+
+    .section {
+      max-width: 1020px; margin: 0 auto;
+      padding: 64px 32px;
+    }
+    .section-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: 28px; font-weight: 700;
+      letter-spacing: -0.025em; color: var(--text);
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 16px; color: var(--text-dim);
+      max-width: 680px; margin-bottom: 36px;
+    }
+
+    .pitch-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .pitch-item {
+      background: var(--slate-1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 24px;
+    }
+    .pitch-item h3 {
+      font-size: 15px; color: var(--text);
+      letter-spacing: -0.01em; margin-bottom: 8px;
+    }
+    .pitch-item p {
+      font-size: 14px; color: var(--text-dim); line-height: 1.6;
+    }
+
+    .offers {
+      background: var(--slate-1);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .offer {
+      background: var(--slate);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 26px;
+      display: flex; flex-direction: column;
+    }
+    .offer.featured {
+      border-color: rgba(217,119,87,0.35);
+      background: linear-gradient(180deg, rgba(217,119,87,0.04) 0%, var(--slate) 100%);
+    }
+    .offer-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 14px;
+    }
+    .offer-name {
+      font-size: 19px; font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 6px;
+    }
+    .offer-tagline {
+      font-size: 14px; color: var(--text-dim);
+      margin-bottom: 18px; line-height: 1.55;
+    }
+    .offer-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; color: var(--text-dimmer);
+      letter-spacing: 0.02em;
+      padding-top: 14px; border-top: 1px solid var(--border);
+      margin-top: 14px;
+    }
+    .offer-meta strong { color: var(--text); font-weight: 500; }
+    .offer ul {
+      list-style: none; padding: 0; margin: 0;
+      font-size: 14px; color: var(--text-dim); line-height: 1.7;
+    }
+    .offer ul li { padding-left: 18px; position: relative; }
+    .offer ul li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--terra); font-weight: 600;
+    }
+
+    .proof {
+      max-width: 1020px; margin: 0 auto;
+      padding: 64px 32px;
+    }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .proof-card {
+      background: var(--slate-1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 24px;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.15s;
+      display: block;
+    }
+    .proof-card:hover {
+      border-color: rgba(217,119,87,0.35);
+      transform: translateY(-1px);
+    }
+    .proof-card .ptag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 10px;
+    }
+    .proof-card h3 {
+      font-size: 16px; color: var(--text);
+      letter-spacing: -0.01em; margin-bottom: 6px;
+    }
+    .proof-card p {
+      font-size: 13.5px; color: var(--text-dim); line-height: 1.55;
+    }
+
+    .form-section {
+      background: var(--slate-1);
+      border-top: 1px solid var(--border);
+      padding: 80px 32px;
+    }
+    .form-inner {
+      max-width: 640px; margin: 0 auto;
+    }
+    .form-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 14px;
+    }
+    .form-title {
+      font-size: 28px; font-weight: 700;
+      letter-spacing: -0.025em; margin-bottom: 12px;
+    }
+    .form-sub {
+      font-size: 15px; color: var(--text-dim); margin-bottom: 32px;
+    }
+    form { display: flex; flex-direction: column; gap: 16px; }
+    .row {
+      display: grid; gap: 16px;
+      grid-template-columns: 1fr 1fr;
+    }
+    label {
+      display: flex; flex-direction: column; gap: 6px;
+      font-size: 13px; color: var(--text-dim); font-weight: 500;
+    }
+    label.required::after { content: ' *'; color: var(--terra); }
+    input, textarea, select {
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 15px;
+      background: var(--slate-2);
+      color: var(--text);
+      font-family: inherit;
+    }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--terra); }
+    textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
+    button[type=submit] {
+      background: var(--terra); color: white;
+      padding: 14px 22px; border-radius: 6px;
+      font-size: 15px; font-weight: 600;
+      border: none; cursor: pointer; font-family: inherit;
+      transition: opacity 0.15s; margin-top: 8px;
+    }
+    button[type=submit]:hover { opacity: 0.88; }
+    button[type=submit]:disabled { opacity: 0.5; cursor: not-allowed; }
+    #lead-status {
+      margin-top: 14px; font-size: 14px; min-height: 1em;
+      color: var(--text-dim);
+    }
+    .form-fallback {
+      margin-top: 24px;
+      font-size: 13px; color: var(--text-dimmer);
+      text-align: center;
+    }
+    .form-fallback a { color: var(--terra); }
+
+    footer {
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--text-dimmer);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--terra); }
+    .footer-row { margin-bottom: 12px; }
+    .footer-sep { color: var(--text-dimmer); margin: 0 8px; }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 14px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding: 104px 20px 24px; }
+      .section { padding: 48px 20px; }
+      .form-section { padding: 56px 20px; }
+      .proof { padding: 48px 20px; }
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">8bit<span>concepts</span></a>
+  <div class="nav-links">
+    <a href="/research/overview.html">Research</a>
+    <a href="/work-with-us.html">Work with us</a>
+    <a href="#lead-form" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Embedded AI consulting</div>
+  <h1>We sit inside your business and ship the AI your team actually uses.</h1>
+  <p class="hero-sub">
+    Most AI projects die at the integration. <strong>We don't deliver a deck — we ship working systems alongside your team</strong>, then leave behind the documentation and training so your people operate it after we go.
+  </p>
+  <div class="hero-ctas">
+    <a href="#lead-form" class="btn-primary">Book a 30-min intro call →</a>
+    <a href="#offers" class="btn-secondary">See our engagements</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-eyebrow">Who this is for</div>
+  <h2 class="section-title">Operating businesses with real workflows.</h2>
+  <p class="section-sub">If you have a team doing repetitive cognitive work — support, ops, sales prep, content review, internal data wrangling — there's almost certainly a $50k–$500k/year line item we can compress with the right AI workflow. We come in, find it, and build it.</p>
+  <div class="pitch-list">
+    <div class="pitch-item">
+      <h3>Built for your stack, not ours</h3>
+      <p>Whatever you already run on — Salesforce, Notion, Postgres, Airtable, Slack, your homegrown app — we wire AI into that. No platform lock-in.</p>
+    </div>
+    <div class="pitch-item">
+      <h3>Practitioner, not strategy deck</h3>
+      <p>Same people who write the research papers above are the ones in your codebase shipping. No handoff to "implementation partners."</p>
+    </div>
+    <div class="pitch-item">
+      <h3>Your team owns it after</h3>
+      <p>Every engagement ends with documentation, runbooks, and training so your existing people run the system without us.</p>
+    </div>
+  </div>
+</div>
+
+<div class="offers">
+  <div class="section" id="offers">
+    <div class="section-eyebrow">Engagements</div>
+    <h2 class="section-title">Three ways to work together.</h2>
+    <p class="section-sub">Pick the shape that fits where you are. Not sure? Book the intro call and we'll tell you.</p>
+    <div class="offers-grid">
+      <div class="offer">
+        <div class="offer-tag">Engagement 01</div>
+        <div class="offer-name">AI Workflow Audit</div>
+        <div class="offer-tagline">Two weeks. We map your operation, find the AI insertions with the highest ROI, deliver a prioritized roadmap your team can execute.</div>
+        <ul>
+          <li>Stakeholder + workflow interviews</li>
+          <li>Tooling and data inventory</li>
+          <li>Ranked opportunity list (effort × impact)</li>
+          <li>Implementation roadmap with vendor / build calls</li>
+        </ul>
+        <div class="offer-meta"><strong>Length:</strong> 2 weeks &nbsp;·&nbsp; <strong>Pricing:</strong> Fixed</div>
+      </div>
+
+      <div class="offer featured">
+        <div class="offer-tag">Engagement 02 · Most chosen</div>
+        <div class="offer-name">Embedded Build</div>
+        <div class="offer-tagline">4–12 weeks embedded with your team. We ship one to three production AI systems alongside your people and leave operating documentation behind.</div>
+        <ul>
+          <li>On-site or remote-embedded with your team</li>
+          <li>Production code, deployed, monitored</li>
+          <li>Workflow rewrites + change management</li>
+          <li>Runbooks, tests, training for your operators</li>
+        </ul>
+        <div class="offer-meta"><strong>Length:</strong> 4–12 weeks &nbsp;·&nbsp; <strong>Pricing:</strong> Weekly</div>
+      </div>
+
+      <div class="offer">
+        <div class="offer-tag">Engagement 03</div>
+        <div class="offer-name">Build &amp; Handoff</div>
+        <div class="offer-tagline">You know exactly what you want. We scope it, build it to production, hand it off with training. Fixed price, fixed scope.</div>
+        <ul>
+          <li>Scoped statement of work up front</li>
+          <li>Production system shipped + monitored</li>
+          <li>Source code + infra you own</li>
+          <li>Training session + 30-day support</li>
+        </ul>
+        <div class="offer-meta"><strong>Length:</strong> Custom &nbsp;·&nbsp; <strong>Pricing:</strong> Fixed</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="proof">
+  <div class="section-eyebrow">Why us</div>
+  <h2 class="section-title">We ship our own AI systems too.</h2>
+  <p class="section-sub">The research below is written by the same people who'll be in your codebase. The live products are systems we built and run — proof we can do this for you.</p>
+  <div class="proof-grid">
+    <a class="proof-card" href="https://aidevboard.com" target="_blank" rel="noopener">
+      <div class="ptag">Live product</div>
+      <h3>aidevboard.com</h3>
+      <p>AI/ML job board with a real REST API for agents. 8,400+ jobs, 489 companies, paid API tier. Built and run end-to-end.</p>
+    </a>
+    <a class="proof-card" href="https://nothumansearch.ai" target="_blank" rel="noopener">
+      <div class="ptag">Live product</div>
+      <h3>nothumansearch.ai</h3>
+      <p>Agent-first search index, MCP server, scoring rubric. 8,600+ sites indexed. Listed in the official MCP registry.</p>
+    </a>
+    <a class="proof-card" href="/research/overview.html">
+      <div class="ptag">Research</div>
+      <h3>15 practitioner papers</h3>
+      <p>Auto-refreshing data on the AI hiring market, MCP ecosystem health, governance, measurement, and the engineering maturity ladder.</p>
+    </a>
+  </div>
+</div>
+
+<div class="form-section" id="lead-form">
+  <div class="form-inner">
+    <div class="form-eyebrow">Book a call</div>
+    <h2 class="form-title">Tell us what you're trying to do.</h2>
+    <p class="form-sub">30 minutes, free, no slides. We'll tell you straight whether we can help, what shape the engagement should take, or who else you should talk to.</p>
+    <form id="lead-form-el" onsubmit="return submitLead(event)">
+      <div class="row">
+        <label class="required">Your name
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label class="required">Work email
+          <input type="email" name="email" required autocomplete="email" placeholder="you@company.com" />
+        </label>
+      </div>
+      <div class="row">
+        <label>Company
+          <input type="text" name="company" autocomplete="organization" />
+        </label>
+        <label>Company size
+          <select name="company_size">
+            <option value="">—</option>
+            <option>1–10</option>
+            <option>11–50</option>
+            <option>51–200</option>
+            <option>201–1000</option>
+            <option>1000+</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>Timeline
+          <select name="timeline">
+            <option value="">—</option>
+            <option>Exploring (next 90 days)</option>
+            <option>Want to start in &lt;30 days</option>
+            <option>Already overdue</option>
+          </select>
+        </label>
+        <label>Budget (optional)
+          <select name="budget">
+            <option value="">—</option>
+            <option>Under $25k</option>
+            <option>$25k–$75k</option>
+            <option>$75k–$200k</option>
+            <option>$200k+</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+      </div>
+      <label class="required">What are you trying to do?
+        <textarea name="message" required placeholder="The workflow you want to compress, the problem you keep hitting, or the system you'd like built. A paragraph is plenty."></textarea>
+      </label>
+      <button type="submit">Send — we'll reply within 24h</button>
+      <p id="lead-status"></p>
+    </form>
+    <p class="form-fallback">Prefer email? <a href="mailto:hello@8bitconcepts.com?subject=Consulting%20inquiry">hello@8bitconcepts.com</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-row">
+    <a href="/">Home</a>
+    <span class="footer-sep">·</span>
+    <a href="/research/overview.html">Research</a>
+    <span class="footer-sep">·</span>
+    <a href="/work-with-us.html">Work with us</a>
+    <span class="footer-sep">·</span>
+    <a href="mailto:hello@8bitconcepts.com">Email</a>
+  </div>
+  <p>&copy; 2026 8bitconcepts &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
+</footer>
+
+<script>
+async function submitLead(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+  const status = document.getElementById('lead-status');
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.source = '8bitconcepts-work-with-us';
+  status.style.color = '';
+  status.textContent = 'Sending…';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://aidevboard.com/api/v1/lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      status.style.color = '#8ecf8e';
+      status.textContent = 'Got it. We\'ll reply within 24h from hello@8bitconcepts.com.';
+      form.reset();
+    } else {
+      const body = await res.text();
+      status.style.color = '#d97757';
+      status.textContent = 'Error: ' + (body || res.statusText) + ' — please email hello@8bitconcepts.com instead.';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    status.style.color = '#d97757';
+    status.textContent = 'Network error. Please email hello@8bitconcepts.com instead.';
+    btn.disabled = false;
+  }
+  return false;
+}
+</script>
+
+</body>
+</html>

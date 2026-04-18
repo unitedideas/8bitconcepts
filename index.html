@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="color-scheme" content="dark light" />
-  <title>8bitconcepts — Practitioner research on AI engineering</title>
-  <meta name="description" content="No vendor sponsorship. No paywall. Data-backed analysis on enterprise AI, auto-refreshed weekly from live APIs. 15 research papers, 5 refreshed from production data." />
+  <title>8bitconcepts — Embedded AI consulting for operating businesses</title>
+  <meta name="description" content="We sit inside your business and ship the AI workforce + process systems your team will actually use. Practitioners — same people who run our live products and write our research." />
   <link rel="canonical" href="https://8bitconcepts.com" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,15 +16,15 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="8bitconcepts" />
-  <meta property="og:title" content="8bitconcepts — Practitioner research on AI engineering" />
-  <meta property="og:description" content="No vendor sponsorship. No paywall. Data-backed analysis auto-refreshed weekly from live APIs." />
+  <meta property="og:title" content="8bitconcepts — Embedded AI consulting for operating businesses" />
+  <meta property="og:description" content="Practitioners who ship live AI products. We sit inside your business and ship the systems your team will actually use." />
   <meta property="og:url" content="https://8bitconcepts.com/" />
   <meta property="og:image" content="https://8bitconcepts.com/research/og/q2-2026-ai-hiring-snapshot.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="8bitconcepts — Practitioner research on AI engineering" />
-  <meta name="twitter:description" content="No vendor sponsorship. No paywall. Data-backed analysis auto-refreshed weekly." />
+  <meta name="twitter:title" content="8bitconcepts — Embedded AI consulting for operating businesses" />
+  <meta name="twitter:description" content="Practitioners who ship live AI products. We sit inside your business and ship the systems your team will actually use." />
   <meta name="twitter:image" content="https://8bitconcepts.com/research/og/q2-2026-ai-hiring-snapshot.png" />
 
   <!-- Agent / API discovery -->
@@ -61,6 +61,25 @@
         {"@type": "ListItem", "position": 5, "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html", "name": "Q2 2026 MCP Ecosystem Health"}
       ]
     }
+  }
+  </script>
+
+  <!-- Schema.org: ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "8bitconcepts",
+    "url": "https://8bitconcepts.com",
+    "email": "hello@8bitconcepts.com",
+    "description": "Embedded AI consulting. We map AI opportunities inside operating businesses and ship the workforce + process systems alongside your team.",
+    "areaServed": "Worldwide",
+    "serviceType": ["AI consulting", "AI workforce enablement", "AI process automation", "Embedded engineering", "AI roadmap"],
+    "offers": [
+      {"@type": "Offer", "name": "AI Workflow Audit", "description": "Two-week mapping engagement: workflow audit, ranked opportunities, prioritized roadmap.", "priceCurrency": "USD"},
+      {"@type": "Offer", "name": "Embedded Build", "description": "4-12 weeks embedded with your team, shipping production AI systems alongside your people.", "priceCurrency": "USD"},
+      {"@type": "Offer", "name": "Build & Handoff", "description": "Scoped fixed-price build of a single AI system to production with team training.", "priceCurrency": "USD"}
+    ]
   }
   </script>
 
@@ -162,18 +181,18 @@
     .nav-links a:hover { color: var(--text); }
 
     .nav-cta {
-      background: transparent;
-      color: var(--text);
+      background: var(--terra);
+      color: white;
       padding: 7px 16px;
       border-radius: 6px;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
-      border: 1px solid var(--border);
-      transition: border-color 0.15s;
+      border: 1px solid var(--terra);
+      transition: opacity 0.15s;
     }
 
-    .nav-cta:hover { border-color: var(--terra); }
+    .nav-cta:hover { opacity: 0.88; }
 
     /* HERO */
     .hero {
@@ -566,29 +585,55 @@
   <nav>
     <a class="nav-logo" href="/">8bit<span>concepts</span></a>
     <div class="nav-links">
+      <a href="/work-with-us.html">Work with us</a>
       <a href="/research/overview.html">Research</a>
       <a href="#subscribe">Subscribe</a>
-      <a href="/research/feed.xml" class="nav-cta">RSS</a>
+      <a href="/work-with-us.html#lead-form" class="nav-cta">Book a call</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-eyebrow">8bitconcepts research</div>
-    <h1>Practitioner research on AI engineering.</h1>
-    <p class="hero-sub">No vendor sponsorship. No paywall. <strong>Data-backed analysis auto-refreshed weekly</strong> from live hiring, compensation, and MCP-ecosystem APIs.</p>
+    <div class="hero-eyebrow">Embedded AI consulting</div>
+    <h1>We sit inside your business and ship the AI your team actually uses.</h1>
+    <p class="hero-sub">Most AI projects die at the integration. <strong>We don't deliver a deck — we ship working systems alongside your team</strong>, then leave behind the documentation and training so your people operate it after we go.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;">
+      <a href="/work-with-us.html#lead-form" style="display:inline-block;background:var(--terra);color:white;padding:13px 24px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;transition:opacity 0.15s;" onmouseover="this.style.opacity=0.88" onmouseout="this.style.opacity=1">Book a 30-min intro call →</a>
+      <a href="/work-with-us.html#offers" style="display:inline-block;background:transparent;color:var(--text);padding:13px 22px;border-radius:6px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid var(--border);transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--terra)'" onmouseout="this.style.borderColor='var(--border)'">See engagements</a>
+    </div>
   </div>
 
-  <!-- AGENT INSTALL CTA (hero-adjacent) -->
-  <div style="max-width:680px;margin:-12px auto 28px;padding:14px 18px;background:linear-gradient(135deg,rgba(217,119,87,0.08) 0%,rgba(217,119,87,0.02) 100%);border:1px solid rgba(217,119,87,0.30);border-radius:8px;font-family:'Inter',system-ui,sans-serif;">
-    <div style="color:var(--text-dim);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;">Wire the underlying data into your agent</div>
-    <code style="display:block;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#d97757;word-break:break-all;margin-bottom:4px;">curl -fsSL https://nothumansearch.ai/install | sh</code>
-    <code style="display:block;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#d97757;word-break:break-all;">curl -fsSL https://aidevboard.com/install | sh</code>
-    <div style="color:var(--text-dim);font-size:10.5px;margin-top:8px;">Runs <code style="background:transparent;padding:0;">claude mcp add</code> if Claude Code is installed. Prints Cursor, Cline, and Continue snippets otherwise.</div>
+  <!-- WHAT WE DO (3 quick cards) -->
+  <div style="max-width:1020px;margin:0 auto;padding:24px 32px 56px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="background:var(--slate-1);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;">01 · Audit</div>
+        <h3 style="font-size:16px;letter-spacing:-0.01em;margin-bottom:6px;">AI workflow audit</h3>
+        <p style="font-size:14px;color:var(--text-dim);line-height:1.6;">Two weeks. We map your operation, find the AI insertions with the highest ROI, and deliver a roadmap your team can execute.</p>
+      </div>
+      <div style="background:var(--slate-1);border:1px solid rgba(217,119,87,0.35);border-radius:10px;padding:22px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;">02 · Embed</div>
+        <h3 style="font-size:16px;letter-spacing:-0.01em;margin-bottom:6px;">Embedded build</h3>
+        <p style="font-size:14px;color:var(--text-dim);line-height:1.6;">4–12 weeks alongside your team. We ship one to three production AI systems and leave runbooks behind.</p>
+      </div>
+      <div style="background:var(--slate-1);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;">03 · Build</div>
+        <h3 style="font-size:16px;letter-spacing:-0.01em;margin-bottom:6px;">Build &amp; handoff</h3>
+        <p style="font-size:14px;color:var(--text-dim);line-height:1.6;">Scoped fixed-price build of a single system to production, with training so your team operates it after we leave.</p>
+      </div>
+    </div>
+    <div style="margin-top:18px;text-align:center;">
+      <a href="/work-with-us.html" style="color:var(--terra);font-size:14px;text-decoration:none;border-bottom:1px solid rgba(217,119,87,0.3);">See full engagement details →</a>
+    </div>
   </div>
 
-  <!-- LIVE DATA PAPERS (HERO) -->
+  <!-- LIVE DATA PAPERS (proof of practitioner work) -->
   <div class="live-wrap">
+    <div style="margin-bottom:24px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;">Proof of work</div>
+      <h2 style="font-size:24px;font-weight:700;letter-spacing:-0.025em;color:var(--text);margin-bottom:8px;">Same hands that will be in your codebase wrote these.</h2>
+      <p style="font-size:15px;color:var(--text-dim);max-width:680px;">Live papers below auto-refresh weekly from production APIs we built and run. Free to read, free to cite — they're the public version of the analysis we run inside engagements.</p>
+    </div>
     <div class="live-label-row">
       <span class="live-label"><span class="live-dot"></span>Live data &mdash; auto-refreshed weekly</span>
       <span class="live-last" id="live-last-updated">Last updated 2026-04-18</span>
@@ -669,7 +714,7 @@
       <div class="about-eyebrow">About</div>
       <h2 class="about-title">Who writes this</h2>
       <p class="about-body">
-        8bitconcepts publishes practitioner research on AI engineering &mdash; written by people actually shipping the systems, not analysts selling reports. The five live-data papers pull from public APIs on <a href="https://aidevboard.com">aidevboard.com</a> (AI hiring) and <a href="https://nothumansearch.ai">nothumansearch.ai</a> (MCP ecosystem) and regenerate weekly. The rest are qualitative deep-dives grounded in real deployments. Free to cite, free to share. Questions or data-cut requests: <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a>.
+        8bitconcepts is an embedded AI consultancy. We sit inside operating businesses and ship the workforce + process automation their teams will actually use &mdash; then leave the runbooks behind. We also build and run our own production AI products: <a href="https://aidevboard.com">aidevboard.com</a> (AI/ML jobs + agent API) and <a href="https://nothumansearch.ai">nothumansearch.ai</a> (agent-first search index, MCP server). The research above is the public version of analysis we run inside engagements &mdash; free to read, free to cite. <strong>Want to talk?</strong> <a href="/work-with-us.html#lead-form">Book an intro call</a> or email <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a>.
       </p>
     </div>
   </div>
@@ -680,6 +725,13 @@
       <code style="background: rgba(217,119,87,0.08); padding: 2px 8px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; color: #d97757; margin-left: 6px;">curl -fsSL https://nothumansearch.ai/install | sh</code>
       &nbsp;or&nbsp;
       <code style="background: rgba(217,119,87,0.08); padding: 2px 8px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; color: #d97757;">curl -fsSL https://aidevboard.com/install | sh</code>
+    </div>
+    <div class="footer-row">
+      <a href="/work-with-us.html">Work with us</a>
+      <span class="footer-sep">&middot;</span>
+      <a href="/research/overview.html">Research</a>
+      <span class="footer-sep">&middot;</span>
+      <a href="mailto:hello@8bitconcepts.com">Contact</a>
     </div>
     <div class="footer-row">
       <strong style="color: var(--text-dim);">Also from the Foundry:</strong>

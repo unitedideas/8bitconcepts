@@ -1,8 +1,12 @@
 # 8bitconcepts
 
-> AI strategy research for enterprise leaders navigating the gap between AI hype and operational reality.
+> Embedded AI consulting for operating businesses. We sit inside your team and ship the AI workforce + process systems your people will actually use.
 
-8bitconcepts publishes independent research papers on AI adoption, governance, and organizational strategy. Our research covers the practical challenges enterprises face when deploying AI systems — from agentic automation risks to measurement frameworks.
+8bitconcepts is an embedded AI consultancy. We help operating businesses identify where AI fits in their workflows, then build and ship the systems alongside their teams — leaving runbooks and training behind so the work continues without us. We also publish independent research papers on AI adoption, governance, and organizational strategy, written by the same practitioners who run client engagements and our own production AI products (aidevboard.com, nothumansearch.ai).
+
+## Work With Us
+
+- [Work with us](https://8bitconcepts.com/work-with-us.html): Three engagement shapes — Audit (2 weeks fixed), Embedded Build (4-12 weeks weekly), Build & Handoff (custom fixed). Lead-capture form, intro call booking. Email: hello@8bitconcepts.com.
 
 ## Research Atlas
 
