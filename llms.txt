@@ -43,6 +43,19 @@
 - [AI Plugin Manifest](https://8bitconcepts.com/.well-known/ai-plugin.json): plugin manifest pointing at the OpenAPI spec
 - [MCP Manifest](https://8bitconcepts.com/.well-known/mcp.json): preview-stage Model Context Protocol descriptor (endpoint not yet hosted — use `research.json` + per-paper HTML directly)
 
+## Open Datasets (public gists)
+
+- [MCP Ecosystem Health Dataset](https://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b): CSV + markdown snapshot of MCP verification results across 5,578 sites. Updated weekly. Free to cite and republish.
+- [AI Hiring Snapshot Dataset](https://gist.github.com/unitedideas/9c59d50a824a075410bd658c96e1f5de): CSV + markdown of 8,405 AI/ML roles across 489 companies, with salary medians and top companies. Updated weekly.
+- [AI Compensation by Skill Dataset](https://gist.github.com/unitedideas/b1b80d11f0f187f93fd6b1a599df418e): CSV + markdown of research vs generative-AI compensation split, top-paying skill tags, and salary distribution.
+- [State of AI Engineering (combined)](https://gist.github.com/unitedideas/4050cc4da4f874ff711fec1730940ddc): master reference combining ADB hiring data and NHS MCP ecosystem data in one file.
+
+## Developer Tools (for agents integrating with the agentic web)
+
+- [Verify any MCP server in 3 curls](https://gist.github.com/unitedideas/ce709323717b95eb56f7be7392a0a557): one-line shell probes to check whether a site advertising MCP support actually responds to `tools/list`. Pairs with the Q2 2026 MCP Ecosystem Health report.
+- [NHS Score Check GitHub Action](https://github.com/unitedideas/nhs-score-check-action): CI step that fails a build if a site's agentic readiness score drops below a threshold.
+- [Three curl one-liners for the agentic web](https://gist.github.com/unitedideas/20dd985ff6ee8d57edbd6a3a10907c55): common probes (NHS search, ADB MCP tool list, NHS verify) as copy-paste shell.
+
 ## Contact
 
 Website: https://8bitconcepts.com
