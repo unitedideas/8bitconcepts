@@ -1,0 +1,19 @@
+Contact: mailto:security@8bitconcepts.com
+Contact: https://github.com/unitedideas/8bitconcepts/issues
+Expires: 2027-04-18T00:00:00Z
+Preferred-Languages: en
+Canonical: https://8bitconcepts.com/.well-known/security.txt
+Policy: https://github.com/unitedideas/8bitconcepts/blob/main/SECURITY.md
+
+# 8bitconcepts — security contact
+# Report vulnerabilities privately via the Contact addresses above.
+# This is a static GitHub Pages site; most classes of server-side
+# vulnerability don't apply. For anything that relies on JavaScript
+# (newsletter form, lead capture, CTAs), the backend lives on
+# aidevboard.com — report there instead.
+# Responsible-disclosure window: 30 days before public write-up.
+#
+# NOTE: This file is static (GitHub Pages) — Expires is bumped
+# manually on a yearly cadence, not auto-renewed. If you're reading
+# this past the Expires date, email the contact address anyway; we
+# forgot to rotate.

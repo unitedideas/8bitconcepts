@@ -52,3 +52,10 @@ User-agent: FirecrawlAgent
 Allow: /
 
 Sitemap: https://8bitconcepts.com/sitemap.xml
+
+# AI agent discovery
+# llms.txt: https://8bitconcepts.com/llms.txt
+# AI plugin manifest: https://8bitconcepts.com/.well-known/ai-plugin.json
+# MCP manifest (preview): https://8bitconcepts.com/.well-known/mcp.json
+# RSS feed (weekly research): https://8bitconcepts.com/feed.xml
+# Security contact: https://8bitconcepts.com/.well-known/security.txt
