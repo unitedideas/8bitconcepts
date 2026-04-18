@@ -99,6 +99,11 @@ LANDINGS = [
     ("og-case-studies.png",   "CASE STUDIES", "First-Party Builds",          "Three products we run — NHS, ADB, 8bc. Live traffic, real data, shipping daily.", "/case-studies"),
     ("og-faq.png",            "FAQ",         "Embedded AI Consulting FAQ",   "14 skeptical-operator questions about working with us.",                        "/faq"),
     ("og-local.png",          "PNW",         "AI Consulting, Pacific NW",    "Vancouver WA · Camas WA · Portland OR · Tigard OR. Practitioners, local.",      "/local"),
+    # City pages — LocalBusiness schema already targets each city; OGs should match.
+    ("og-local-vancouver-wa.png", "VANCOUVER WA", "AI Consulting — Vancouver, WA", "Embedded AI practitioners working with Vancouver WA small businesses.",       "/local/vancouver-wa.html"),
+    ("og-local-camas-wa.png",     "CAMAS WA",     "AI Consulting — Camas, WA",     "Embedded AI practitioners working with Camas WA small businesses.",           "/local/camas-wa.html"),
+    ("og-local-portland-or.png",  "PORTLAND OR",  "AI Consulting — Portland, OR",  "Embedded AI practitioners working with Portland OR small businesses.",        "/local/portland-or.html"),
+    ("og-local-tigard-or.png",    "TIGARD OR",    "AI Consulting — Tigard, OR",    "Embedded AI practitioners working with Tigard OR small businesses.",          "/local/tigard-or.html"),
 ]
 
 
