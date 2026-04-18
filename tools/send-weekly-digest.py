@@ -372,10 +372,20 @@ def build_html(adb: dict, nhs: dict, subscriber: dict | None) -> str:
 </td></tr>
 
 <!-- CTA -->
-<tr><td style="padding:28px 0;text-align:center;">
+<tr><td style="padding:28px 0 12px;text-align:center;">
   <a href="{utm(SITE_URL + '/research/')}" style="display:inline-block;background-color:#d97757;color:#0d0d0e;padding:14px 32px;border-radius:6px;font-size:15px;font-weight:700;text-decoration:none;">
     Read the latest research
   </a>
+</td></tr>
+
+<!-- Consulting CTA -->
+<tr><td style="padding:8px 0 24px;">
+  <div style="padding:18px 22px;background:linear-gradient(135deg,rgba(217,119,87,0.10) 0%,rgba(217,119,87,0.03) 100%);border:1px solid rgba(217,119,87,0.30);border-radius:8px;">
+    <div style="color:#d97757;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;">Work with us</div>
+    <div style="color:#e0e0e0;font-size:15px;font-weight:600;margin-bottom:4px;">Need this work inside your business?</div>
+    <div style="color:#a0a0a0;font-size:13px;margin-bottom:12px;">We embed in operating teams and ship the AI workforce + process systems your people actually use. Same hands that write the research above.</div>
+    <a href="{utm(SITE_URL + '/work-with-us.html', 'weekly-digest-consulting')}" style="display:inline-block;background:#d97757;color:#0d0d0e;padding:10px 18px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;">Book a 30-min call &rarr;</a>
+  </div>
 </td></tr>
 
 <!-- Footer -->
