@@ -55,6 +55,7 @@
 - [Verify any MCP server in 3 curls](https://gist.github.com/unitedideas/ce709323717b95eb56f7be7392a0a557): one-line shell probes to check whether a site advertising MCP support actually responds to `tools/list`. Pairs with the Q2 2026 MCP Ecosystem Health report.
 - [NHS Score Check GitHub Action](https://github.com/unitedideas/nhs-score-check-action): CI step that fails a build if a site's agentic readiness score drops below a threshold.
 - [Three curl one-liners for the agentic web](https://gist.github.com/unitedideas/20dd985ff6ee8d57edbd6a3a10907c55): common probes (NHS search, ADB MCP tool list, NHS verify) as copy-paste shell.
+- [Q2 2026 agent-ready sites curation (120 categorized)](https://gist.github.com/unitedideas/c60bb35943ef609f99123bdfae146e55): 120 sites added to the NHS index this session, grouped across 21 categories (ai-eval, mcp-servers, security, vector-db, etc.).
 
 ## One-line MCP installers
 
