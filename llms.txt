@@ -56,6 +56,13 @@
 - [NHS Score Check GitHub Action](https://github.com/unitedideas/nhs-score-check-action): CI step that fails a build if a site's agentic readiness score drops below a threshold.
 - [Three curl one-liners for the agentic web](https://gist.github.com/unitedideas/20dd985ff6ee8d57edbd6a3a10907c55): common probes (NHS search, ADB MCP tool list, NHS verify) as copy-paste shell.
 
+## One-line MCP installers
+
+- NHS (agentic web search):  `curl -fsSL https://nothumansearch.ai/install | sh`
+- ADB (AI/ML job search):     `curl -fsSL https://aidevboard.com/install | sh`
+
+Both scripts run `claude mcp add` automatically if Claude Code is installed, otherwise print copy-paste snippets for Cursor, Cline, and Continue.
+
 ## Contact
 
 Website: https://8bitconcepts.com
