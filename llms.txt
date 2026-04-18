@@ -19,6 +19,7 @@
 
 - [The Compounding Gap](https://8bitconcepts.com/research/the-compounding-gap.html): The lead fast-moving companies build over slow movers in 2026 compounds — by the time slow movers notice, the lead is structural and unrecoverable. Why velocity must be imported, not built.
 - [The Context Wall](https://8bitconcepts.com/research/the-context-wall.html): AI agents fail 97.5% of real work — not because of model quality but because organizations lack the four pieces of context infrastructure that make agents reliable. Why solo deployments fail.
+- [The Foundation Trap](https://8bitconcepts.com/research/the-foundation-trap.html): Every AI architecture decision in 2026 is a bet on which infrastructure layer survives 2027. The five upstream load-bearing decisions most operators make implicitly without naming.
 - [The Guardrails Gap](https://8bitconcepts.com/research/the-guardrails-gap.html): Why enterprise AI safety frameworks fail when agents act autonomously
 - [The Hallucination Budget](https://8bitconcepts.com/research/the-hallucination-budget.html): Quantifying the cost of AI hallucinations and mitigation strategies
 - [The Measurement Problem](https://8bitconcepts.com/research/the-measurement-problem.html): How enterprises measure AI ROI and where the metrics fail
