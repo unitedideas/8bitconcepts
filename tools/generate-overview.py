@@ -30,6 +30,7 @@ REPO = Path(__file__).resolve().parent.parent
 RESEARCH_DIR = REPO / "research"
 OUT_PATH = RESEARCH_DIR / "overview.html"
 FEED_SCRIPT = REPO / "tools" / "generate-research-feed.py"
+HOMEPAGE_STATS_SCRIPT = REPO / "tools" / "update-homepage-stats.py"
 OG_IMAGE = "https://8bitconcepts.com/og-default.png"
 
 SKIP = {"index.html", "overview.html"}
@@ -567,6 +568,23 @@ def main() -> int:
                 print(f"research-feed regen failed (non-fatal): {r.stderr[:300]}", file=sys.stderr)
         except Exception as e:
             print(f"research-feed regen error (non-fatal): {e}", file=sys.stderr)
+
+    # Refresh homepage headline stats. Safe to run on every overview regen -
+    # the updater is idempotent (no writes if values unchanged), so the outer
+    # regenerator only sees a diff (and therefore only commits) when live data
+    # moved. This makes the homepage part of the weekly auto-refresh surface.
+    if HOMEPAGE_STATS_SCRIPT.is_file():
+        try:
+            r = subprocess.run(
+                ["python3", str(HOMEPAGE_STATS_SCRIPT)],
+                cwd=REPO, capture_output=True, text=True, timeout=60,
+            )
+            if r.returncode == 0:
+                print(r.stdout.strip() or f"refreshed homepage stats via {HOMEPAGE_STATS_SCRIPT.name}")
+            else:
+                print(f"homepage-stats refresh failed (non-fatal): {r.stderr[:300]}", file=sys.stderr)
+        except Exception as e:
+            print(f"homepage-stats refresh error (non-fatal): {e}", file=sys.stderr)
     return 0
 
 

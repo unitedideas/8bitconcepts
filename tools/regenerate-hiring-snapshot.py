@@ -1392,6 +1392,7 @@ def main() -> int:
     add = run_git(["git", "add",
                    "research/q2-2026-ai-hiring-snapshot.html",
                    "research/overview.html",
+                   "index.html",
                    f"research/og/{OG_SLUG}.png"])
     if add.returncode != 0:
         print(f"   git add failed: {add.stderr[:300]}", file=sys.stderr)
