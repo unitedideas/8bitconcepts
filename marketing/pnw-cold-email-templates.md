@@ -7,6 +7,10 @@
 
 ---
 
+## Hook hierarchy (which research link to use)
+
+The PNW Desert paper (`/research/the-pnw-ai-desert.html`) is now the **primary hook for first-touch PNW outreach** — it's hyper-local, uses real ADB data, and frames the "you can't hire your way out of this" problem in one sentence. Use it on first send. Reserve the Compounding Gap for follow-up B (broader urgency). Use the Context Wall only for prospects who explicitly say "we tried AI and it didn't work" — that paper is a failure-analysis, not a first-touch hook.
+
 ## Voice + Format Rules (apply to every send)
 
 - 110–160 words max. SMB owners read on phone; longer = unread.
@@ -27,7 +31,7 @@ Hi {first_name},
 
 I run 8bitconcepts — embedded AI consulting based in the PNW. I work with operating businesses like {company} on the workflows that quietly eat the most time: dispatch routing, customer email triage, invoice prep, exception handling on returns and damage claims.
 
-I just published a piece on why most AI deployments at companies your size fail (it's not the model, it's missing context infrastructure): https://8bitconcepts.com/research/the-context-wall.html
+I just published a piece on why most AI deployments at companies your size fail (it's not the model, it's missing context infrastructure): https://8bitconcepts.com/research/the-pnw-ai-desert.html
 
 If you've ever priced out an AI project and felt like the path between "this is interesting" and "running in our ops" had no clear bridge — that's the problem we're built to solve. We embed for 4–12 weeks, ship the system, and leave.
 
@@ -48,7 +52,7 @@ Saw {company} on the {chamber/journal/source}. I lead 8bitconcepts — we instal
 
 The workflow we hear about most often from specialty manufacturers your size: someone (often the owner) is still touching every quote, every BOM revision, every "where's my order" email from a customer. That work is the textbook AI insertion point — but most off-the-shelf tools won't fit a shop with your specific product mix.
 
-Quick read on why this stalls inside operating businesses: https://8bitconcepts.com/research/the-context-wall.html
+Quick read on why this stalls inside operating businesses: https://8bitconcepts.com/research/the-pnw-ai-desert.html
 
 We embed for 4–12 weeks, ship a working system on top of whatever you already use, and hand it off to your team. Costs less than a senior hire.
 
@@ -69,7 +73,7 @@ I run 8bitconcepts, an embedded AI consulting practice based in the PNW. We work
 
 If you've evaluated an AI tool and bounced off because it required ripping out your current EHR / PMS — same. We work on top of what you have. Salesforce, Athena, Kareo, eClinicalWorks, custom — doesn't matter.
 
-Short read on why the off-the-shelf attempts fail: https://8bitconcepts.com/research/the-context-wall.html
+Short read on why the off-the-shelf attempts fail: https://8bitconcepts.com/research/the-pnw-ai-desert.html
 
 If you have 30 minutes, I can walk you through what the first two workflows usually look like for a practice your size and whether it makes sense for {company}.
 
@@ -88,7 +92,7 @@ I run 8bitconcepts — embedded AI consulting for operating businesses in the PN
 
 The reason most firms your size haven't moved: the off-the-shelf "AI for {profession}" tools either (a) require sending client data to a vendor your engagement letter doesn't allow, or (b) replace 15% of the work and create 30% more compliance overhead. We work around both.
 
-Worth reading before we talk: https://8bitconcepts.com/research/the-context-wall.html — explains why the failed attempts you've heard about failed.
+Worth reading before we talk: https://8bitconcepts.com/research/the-pnw-ai-desert.html — explains why the failed attempts you've heard about failed.
 
 Open to a 30-min intro call to see if there's a fit?
 
@@ -107,7 +111,7 @@ I lead 8bitconcepts, an embedded AI consulting practice based in the PNW. We wor
 
 The pattern we see at most wholesale operations: 3–5 hours per operator per day on work that's mostly pattern-matching with edge cases. Off-the-shelf RPA breaks on the edge cases; ChatGPT freelancing breaks on the patterns. Building it in-house breaks on the timeline.
 
-Short read on why this fails for businesses your size: https://8bitconcepts.com/research/the-context-wall.html
+Short read on why this fails for businesses your size: https://8bitconcepts.com/research/the-pnw-ai-desert.html
 
 We embed for 4–12 weeks, ship working systems on your existing stack (NetSuite, SPS, EDI, custom, whatever), and leave the playbook behind. Worth a 30-min call?
 
