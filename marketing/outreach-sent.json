@@ -448,5 +448,76 @@
     "sent_at": "2026-04-15T00:00:00+00:00",
     "resend_id": "11a2d2b4-8184-4a13-ac81-3929b4f85917",
     "error": null
+  },
+  {
+    "to": "seang@apfreight.com",
+    "resend_id": "643ef2f4-2b94-4291-b751-cb0906462d9d",
+    "status": "sent"
+  },
+  {
+    "to": "info@gulicklogistics.com",
+    "resend_id": "63a37262-13fc-41d9-ba6a-2f3870a177c2",
+    "status": "sent"
+  },
+  {
+    "to": "info@gkm.cpa",
+    "resend_id": "0a6b3c32-a66f-4029-adee-0fbf516f48c1",
+    "status": "sent"
+  },
+  {
+    "to": "ask@harlowwealth.com",
+    "contact": "Chris Harlow",
+    "company": "Harlow Wealth Management",
+    "resend_id": "32da2831-1728-443d-a479-700505932b15",
+    "status": "sent",
+    "timestamp": "2026-04-18"
+  },
+  {
+    "to": "guy@pacnwtax.com",
+    "contact": "Guy Schoenborn Jr.",
+    "company": "Pacific Northwest Tax and Accounting Services",
+    "resend_id": "bf29c3b7-b590-4623-8cc5-e7c61582b86c",
+    "status": "sent",
+    "timestamp": "2026-04-18"
+  },
+  {
+    "to": "info@htmfg.com",
+    "contact": "Steve Smith",
+    "company": "High Tech Manufacturing",
+    "resend_id": "fe38ce18-02d7-4b1f-bc4a-d8af172950b6",
+    "status": "sent",
+    "timestamp": "2026-04-18"
+  },
+  {
+    "to": "siany@jjh-law.com",
+    "contact": "Joseph J. Haddad",
+    "company": "JJH Law",
+    "resend_id": "c280eabf-f206-4e4e-b50d-5f71c58670ff",
+    "status": "sent",
+    "timestamp": "2026-04-18"
+  },
+  {
+    "to": "hello@gradybritton.com",
+    "contact": "Paige Campbell",
+    "company": "Grady Britton",
+    "resend_id": "3b9852a4-9374-4079-984e-385e5552e69b",
+    "status": "sent",
+    "timestamp": "2026-04-18"
+  },
+  {
+    "to": "info@freelandspirits.com",
+    "contact": "Jill Kuehler",
+    "company": "Freeland Spirits",
+    "resend_id": "81385247-5d9a-431f-9626-a64c1103d5f0",
+    "status": "sent",
+    "timestamp": "2026-04-18"
+  },
+  {
+    "to": "info@portlandpetfoodcompany.com",
+    "contact": "Katie McCarron",
+    "company": "Portland Pet Food Company",
+    "resend_id": "f6572094-6b55-4c00-9a5e-50c0291cfa28",
+    "status": "sent",
+    "timestamp": "2026-04-18"
   }
 ]
