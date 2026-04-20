@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="color-scheme" content="dark light" />
-  <meta name="last-updated" content="2026-04-17" />
+  <meta name="last-updated" content="2026-04-20" />
   <title>Q2 2026 MCP Ecosystem Health -- 8bitconcepts</title>
-  <meta name="description" content="Live MCP ecosystem health: 5,578 agent-ready sites indexed, 575 (10.3%) MCP-verified via JSON-RPC handshake. 4,795 publish llms.txt, 434 publish OpenAPI. Category breakdown, newly-indexed servers, gaps." />
+  <meta name="description" content="Live MCP ecosystem health: 7,033 agent-ready sites indexed, 402 (5.7%) MCP-verified via JSON-RPC handshake. 5,009 publish llms.txt, 495 publish OpenAPI. Category breakdown, newly-indexed servers, gaps." />
   <meta property="og:title" content="Q2 2026 MCP Ecosystem Health -- 8bitconcepts" />
-  <meta property="og:description" content="575 of 5,578 indexed agent-ready sites (10.3%) pass a live JSON-RPC handshake. Most MCP claims don't implement the protocol correctly. Category breakdown + newly-verified servers from NothingHumanSearch." />
+  <meta property="og:description" content="402 of 7,033 indexed agent-ready sites (5.7%) pass a live JSON-RPC handshake. Most MCP claims don't implement the protocol correctly. Category breakdown + newly-verified servers from NothingHumanSearch." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
   <meta property="og:image" content="https://8bitconcepts.com/research/og/q2-2026-mcp-ecosystem-health.png" />
@@ -17,7 +17,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Q2 2026 MCP Ecosystem Health" />
-  <meta name="twitter:description" content="MCP reality check: 575/5,578 sites survive a real JSON-RPC handshake. Live data from nothumansearch.ai, 2026-04-17." />
+  <meta name="twitter:description" content="MCP reality check: 402/7,033 sites survive a real JSON-RPC handshake. Live data from nothumansearch.ai, 2026-04-20." />
   <meta name="twitter:image" content="https://8bitconcepts.com/research/og/q2-2026-mcp-ecosystem-health.png" />
   <link rel="canonical" href="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -434,10 +434,10 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Q2 2026 MCP Ecosystem Health",
-    "description": "Live MCP ecosystem audit from NothingHumanSearch: 5,578 agent-ready sites indexed, only 575 (10.3%) MCP-verified via live JSON-RPC handshake. Category breakdown, top MCP servers, newly-indexed this week, and gaps in regulated verticals.",
+    "description": "Live MCP ecosystem audit from NothingHumanSearch: 7,033 agent-ready sites indexed, only 402 (5.7%) MCP-verified via live JSON-RPC handshake. Category breakdown, top MCP servers, newly-indexed this week, and gaps in regulated verticals.",
     "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
     "datePublished": "2026-04-17",
-    "dateModified": "2026-04-17",
+    "dateModified": "2026-04-20",
     "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
     "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
     "image": "https://8bitconcepts.com/research/og/q2-2026-mcp-ecosystem-health.png",
@@ -466,7 +466,7 @@
     <a class="nav-logo" href="https://8bitconcepts.com">8bit<span>concepts</span></a>
     <div class="nav-links">
       <a href="https://8bitconcepts.com/#research">Research</a>
-      <a href="https://8bitconcepts.com/work-with-us.html">Services</a>
+      <a href="https://8bitconcepts.com/#services">Services</a>
       <a href="mailto:hello@8bitconcepts.com" class="nav-cta">Talk to us</a>
     </div>
   </nav>
@@ -477,10 +477,10 @@
 
     <h1>Q2 2026 MCP Ecosystem Health</h1>
 
-    <p class="subtitle">As of 2026-04-17, 5,578 agent-ready sites are indexed on NothingHumanSearch, but only 575 (10.3%) survive a real JSON-RPC handshake to their /mcp endpoint. The rest claim MCP in their docs but don't implement it correctly. Live data pulled from <a href="https://nothumansearch.ai/digest.json">nothumansearch.ai/digest.json</a>.</p>
+    <p class="subtitle">As of 2026-04-20, 7,033 agent-ready sites are indexed on NothingHumanSearch, but only 402 (5.7%) survive a real JSON-RPC handshake to their /mcp endpoint. The rest claim MCP in their docs but don't implement it correctly. Live data pulled from <a href="https://nothumansearch.ai/digest.json">nothumansearch.ai/digest.json</a>.</p>
 
     <div class="meta">
-      <span class="meta-date">2026-04-17</span>
+      <span class="meta-date">2026-04-20</span>
       <span class="meta-tag">Live Data</span>
       <span class="meta-read">~850 words</span>
     </div>
@@ -489,20 +489,20 @@
 
       <h2>Executive summary</h2>
 
-      <p>NothingHumanSearch has been crawling the web for agent-readiness signals since launch, and the numbers tell a consistent story about the gap between claiming MCP support and shipping it. As of 2026-04-17 the index holds 5,578 sites with at least one agent-discovery signal (llms.txt, ai-plugin.json, OpenAPI, or an MCP manifest). Of those, 575 &mdash; 10.3% &mdash; pass a live JSON-RPC probe against their declared /mcp endpoint. The remaining 5,003 sites (89.7%) either mention MCP in their documentation without implementing it, or host a manifest that fails the handshake (404, 500, wrong Content-Type, or a server that answers HTTP but never completes the <code>initialize</code> round-trip).</p>
+      <p>NothingHumanSearch has been crawling the web for agent-readiness signals since launch, and the numbers tell a consistent story about the gap between claiming MCP support and shipping it. As of 2026-04-20 the index holds 7,033 sites with at least one agent-discovery signal (llms.txt, ai-plugin.json, OpenAPI, or an MCP manifest). Of those, 402 &mdash; 5.7% &mdash; pass a live JSON-RPC probe against their declared /mcp endpoint. The remaining 6,631 sites (94.3%) either mention MCP in their documentation without implementing it, or host a manifest that fails the handshake (404, 500, wrong Content-Type, or a server that answers HTTP but never completes the <code>initialize</code> round-trip).</p>
 
       <div class="stat-row">
         <div class="stat-box">
-          <div class="stat-num">5,578</div>
-          <div class="stat-label">agent-ready sites indexed on NothingHumanSearch (2026-04-17)</div>
+          <div class="stat-num">7,033</div>
+          <div class="stat-label">agent-ready sites indexed on NothingHumanSearch (2026-04-20)</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">575</div>
-          <div class="stat-label">pass a live JSON-RPC MCP handshake &mdash; 10.3% of the index</div>
+          <div class="stat-num">402</div>
+          <div class="stat-label">pass a live JSON-RPC MCP handshake &mdash; 5.7% of the index</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">4,795</div>
-          <div class="stat-label">publish <code>llms.txt</code> &mdash; 86.0% of the index</div>
+          <div class="stat-num">5,009</div>
+          <div class="stat-label">publish <code>llms.txt</code> &mdash; 71.2% of the index</div>
         </div>
       </div>
 
@@ -510,13 +510,13 @@
 
       <p>Static scanners &mdash; the ones that produce most of the MCP directory listings you see today &mdash; treat a string match for <code>mcp</code> in <code>llms.txt</code> or a link to <code>/.well-known/mcp.json</code> as a positive signal. That's how you end up with directories claiming 10,000+ MCP servers when the actual live count is smaller by an order of magnitude. A real check has to open a connection, send <code>{"method": "initialize"}</code>, wait for a protocol handshake, and confirm the server responds with a valid <code>result</code> block citing a <code>protocolVersion</code>. Anything short of that is a citation, not an implementation.</p>
 
-      <p>NHS's <code>verify_mcp</code> tool (published as part of the NHS MCP server at <a href="https://nothumansearch.ai/mcp">nothumansearch.ai/mcp</a>) does exactly this live-probe for any URL you hand it. When we recrawled the full index in April 2026 with the probe turned on, the verified-MCP count stayed stable around 575 even as the total indexed population kept climbing. The gap between &quot;sites that mention MCP&quot; and &quot;sites that implement MCP&quot; is widening, not narrowing &mdash; which is the opposite of what the marketing cycle would have you believe.</p>
+      <p>NHS's <code>verify_mcp</code> tool (published as part of the NHS MCP server at <a href="https://nothumansearch.ai/mcp">nothumansearch.ai/mcp</a>) does exactly this live-probe for any URL you hand it. When we recrawled the full index in April 2026 with the probe turned on, the verified-MCP count stayed stable around 402 even as the total indexed population kept climbing. The gap between &quot;sites that mention MCP&quot; and &quot;sites that implement MCP&quot; is widening, not narrowing &mdash; which is the opposite of what the marketing cycle would have you believe.</p>
 
       <p>This matters for anyone building an agent. If you rely on a static MCP directory to decide which tools your agent should discover at runtime, you will waste connections and context tokens on dead endpoints. The 90% unverified cohort isn't malicious &mdash; it's mostly stale docs, misconfigured reverse proxies, and manifests that reference endpoints the author never actually wired up. But for an autonomous agent, the failure mode is the same: a call that eats latency, fails, and doesn't advance the task.</p>
 
       <h2>Top categories by indexed count</h2>
 
-      <p>Across verified MCP servers and the broader agent-ready population, the category distribution is heavily concentrated. <strong>Developer tools</strong> alone accounts for 1,249 sites (22.4% of the index). AI-native tools follow closely &mdash; unsurprising given that MCP emerged from the AI-tools ecosystem. After that, category density drops off a cliff.</p>
+      <p>Across verified MCP servers and the broader agent-ready population, the category distribution is heavily concentrated. <strong>Developer tools</strong> alone accounts for 1,669 sites (23.7% of the index). AI-native tools follow closely &mdash; unsurprising given that MCP emerged from the AI-tools ecosystem. After that, category density drops off a cliff.</p>
 
       <table class="data-table">
         <thead>
@@ -527,16 +527,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Developer tools</td><td class="num">1,249</td><td class="num">22.4%</td></tr>
-          <tr><td>AI-native tools</td><td class="num">822</td><td class="num">14.7%</td></tr>
-          <tr><td>Data / analytics</td><td class="num">324</td><td class="num">5.8%</td></tr>
-          <tr><td>Finance / fintech</td><td class="num">203</td><td class="num">3.6%</td></tr>
-          <tr><td>Productivity</td><td class="num">144</td><td class="num">2.6%</td></tr>
-          <tr><td>Security</td><td class="num">134</td><td class="num">2.4%</td></tr>
-          <tr><td>E-commerce</td><td class="num">121</td><td class="num">2.2%</td></tr>
-          <tr><td>Health / medical</td><td class="num">69</td><td class="num">1.2%</td></tr>
-          <tr><td>Communication</td><td class="num">55</td><td class="num">1.0%</td></tr>
-          <tr><td>Education</td><td class="num">26</td><td class="num">0.5%</td></tr>
+          <tr><td>Developer tools</td><td class="num">1,669</td><td class="num">23.7%</td></tr>
+          <tr><td>AI-native tools</td><td class="num">1,019</td><td class="num">14.5%</td></tr>
+          <tr><td>Data / analytics</td><td class="num">443</td><td class="num">6.3%</td></tr>
+          <tr><td>Finance / fintech</td><td class="num">256</td><td class="num">3.6%</td></tr>
+          <tr><td>Productivity</td><td class="num">169</td><td class="num">2.4%</td></tr>
+          <tr><td>Security</td><td class="num">152</td><td class="num">2.2%</td></tr>
+          <tr><td>E-commerce</td><td class="num">134</td><td class="num">1.9%</td></tr>
+          <tr><td>Health / medical</td><td class="num">71</td><td class="num">1.0%</td></tr>
+          <tr><td>Communication</td><td class="num">63</td><td class="num">0.9%</td></tr>
+          <tr><td>Education</td><td class="num">28</td><td class="num">0.4%</td></tr>
         </tbody>
       </table>
 
@@ -554,22 +554,22 @@
           </tr>
         </thead>
         <tbody>
+          <tr><td><a href="https://nothumansearch.ai/site/skillboss.co">skillboss.co</a></td><td>SkillBoss</td><td>E-commerce</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/bringyour.ai">bringyour.ai</a></td><td>Bring Your</td><td>Developer tools</td><td class="num">100</td></tr>
           <tr><td><a href="https://nothumansearch.ai/site/voidly.ai">voidly.ai</a></td><td>voidly</td><td>AI-native tools</td><td class="num">100</td></tr>
           <tr><td><a href="https://nothumansearch.ai/site/savordish.com">savordish.com</a></td><td>Savor Dish</td><td>AI-native tools</td><td class="num">100</td></tr>
           <tr><td><a href="https://nothumansearch.ai/site/mail.misar.io">mail.misar.io</a></td><td>MisarMail</td><td>Communication</td><td class="num">100</td></tr>
           <tr><td><a href="https://nothumansearch.ai/site/claudereviews.com">claudereviews.com</a></td><td>Claude Wilder</td><td>AI-native tools</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/blackveilsecurity.com">blackveilsecurity.com</a></td><td>Free DNS &amp; Email Security Scanner</td><td>Developer tools</td><td class="num">100</td></tr>
           <tr><td><a href="https://nothumansearch.ai/site/agentndx.ai">agentndx.ai</a></td><td>AgentNDX</td><td>Developer tools</td><td class="num">100</td></tr>
-          <tr><td><a href="https://nothumansearch.ai/site/passdown.arflow.io">passdown.arflow.io</a></td><td>PassDown</td><td>Productivity</td><td class="num">100</td></tr>
-          <tr><td><a href="https://nothumansearch.ai/site/prereason.com">prereason.com</a></td><td>PreReason - Market Context API</td><td>Finance / fintech</td><td class="num">100</td></tr>
-          <tr><td><a href="https://nothumansearch.ai/site/feedoracle.io">feedoracle.io</a></td><td>FeedOracle</td><td>Security</td><td class="num">100</td></tr>
-          <tr><td><a href="https://nothumansearch.ai/site/deadends.dev">deadends.dev</a></td><td>deadends.dev</td><td>Developer tools</td><td class="num">100</td></tr>
-          <tr><td><a href="https://nothumansearch.ai/site/borealhost.ai">borealhost.ai</a></td><td>BorealHost.ai</td><td>AI-native tools</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/barevalue.com">barevalue.com</a></td><td>Post Production for Audio</td><td>Productivity</td><td class="num">100</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/clicksprotocol.xyz">clicksprotocol.xyz</a></td><td>Clicks Protocol</td><td>AI-native tools</td><td class="num">100</td></tr>
         </tbody>
       </table>
 
       <h2>Gaps in the ecosystem</h2>
 
-      <p>The gap that matters for builders: regulated high-value verticals are still thinly represented. Finance has 203 sites, health has 69, and education has 26. These are the same verticals where agents would deliver the most leverage per call &mdash; underwriting assistance, clinical documentation, degree-audit lookups &mdash; and they are the verticals where the MCP ecosystem is the least mature. Jobs (20) and news (6) round out the long tail. If you are deciding where to ship an MCP server and you want reach-per-server rather than defensibility through a crowd, the signal is clear: any vertical below 134 indexed sites is green field.</p>
+      <p>The gap that matters for builders: regulated high-value verticals are still thinly represented. Finance has 256 sites, health has 71, and education has 28. These are the same verticals where agents would deliver the most leverage per call &mdash; underwriting assistance, clinical documentation, degree-audit lookups &mdash; and they are the verticals where the MCP ecosystem is the least mature. Jobs (24) and news (6) round out the long tail. If you are deciding where to ship an MCP server and you want reach-per-server rather than defensibility through a crowd, the signal is clear: any vertical below 152 indexed sites is green field.</p>
 
       <div class="callout">
         <p>The pattern is consistent across every index we maintain: the teams that ship real MCP endpoints are a small fraction of the teams that claim MCP support. For builders, that gap is an opportunity &mdash; the verticals that are thin today will not stay thin for long.</p>
@@ -579,7 +579,7 @@
 
       <p>NHS crawls submitted URLs and auto-discovered candidates from public sources (awesome-mcp-servers, PulseMCP, llmstxt.site, and a handful of curated feeds), then scores each site against seven weighted signals: <code>llms.txt</code> present and parseable; <code>ai-plugin.json</code> at <code>/.well-known/</code>; an OpenAPI or AsyncAPI spec at a discoverable path; an MCP manifest; a live JSON-RPC MCP handshake; documented rate-limit and auth headers; and an accessible structured API response. Sites are re-crawled weekly. Scores range 0-100; any score above 75 corresponds to a site that an autonomous agent can realistically integrate without human help. The full probe methodology is open-source at <a href="https://nothumansearch.ai/methodology">nothumansearch.ai/methodology</a>.</p>
 
-      <p>Weekly submission volume is running at 7,631 candidates for the week starting 2026-04-10, most from autonomous discovery agents rather than human submissions.</p>
+      <p>Weekly submission volume is running at 7,796 candidates for the week starting 2026-04-13, most from autonomous discovery agents rather than human submissions.</p>
 
       <p><strong>Download raw data:</strong> The MCP ecosystem health dataset is mirrored as a public gist &mdash; <a href="https://gist.githubusercontent.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b/raw/mcp-ecosystem-health.csv">CSV</a> &middot; <a href="https://gist.githubusercontent.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b/raw/mcp-ecosystem-health.md">Markdown</a> &middot; <a href="https://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b">view on GitHub</a>. Auto-updated every weekly regeneration, canonical raw URLs are stable across revisions.</p>
 
@@ -615,16 +615,6 @@
       </div>
     </div>
 
-    <div style="margin-top:40px;padding:24px 28px;background:linear-gradient(135deg,rgba(217,119,87,0.10) 0%,rgba(217,119,87,0.03) 100%);border:1px solid rgba(217,119,87,0.35);border-radius:10px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#d97757;margin-bottom:8px;">Work with us</div>
-      <p style="font-size:17px;color:#e8e8e9;font-weight:600;margin-bottom:6px;">Need this kind of work inside your business?</p>
-      <p style="font-size:15px;color:#8b8d91;margin-bottom:16px;line-height:1.55;">We embed in operating teams and ship the AI workforce + process systems your people actually use. The same hands that wrote this paper.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a href="https://8bitconcepts.com/work-with-us.html#lead-form" style="display:inline-block;background:#d97757;color:white;padding:11px 20px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;">Book a 30-min intro call &rarr;</a>
-        <a href="https://8bitconcepts.com/work-with-us.html#offers" style="display:inline-block;background:transparent;color:#e8e8e9;padding:11px 20px;border-radius:6px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">See engagements</a>
-      </div>
-    </div>
-
     <div class="article-cta" style="margin-top:40px;">
       <p style="margin-bottom:10px;"><strong>Get new research by email</strong></p>
       <p style="margin-bottom:14px;font-size:15px;">Two papers a week on what's actually happening inside enterprise AI programs. No promo, no hype.</p>
@@ -643,7 +633,7 @@
     <div class="footnotes">
       <h4>Sources</h4>
       <ol>
-        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-17T23:03:34Z. Public unauthenticated endpoint. Backing index: 5,578 agent-ready sites / 575 MCP-verified via JSON-RPC handshake.</li>
+        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-20T15:15:04Z. Public unauthenticated endpoint. Backing index: 7,033 agent-ready sites / 402 MCP-verified via JSON-RPC handshake.</li>
         <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/mcp">/mcp</a>, live MCP server exposing <code>verify_mcp</code>, <code>search</code>, <code>get_site</code>, <code>list_categories</code>, <code>get_top_sites</code>, and four more tools over JSON-RPC 2.0.</li>
         <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/methodology">/methodology</a>, open-source scoring rubric with 7 weighted signals.</li>
         <li>Verification means a TCP connection + HTTP POST to the declared <code>/mcp</code> endpoint with a JSON-RPC 2.0 <code>initialize</code> request, followed by a valid <code>result</code> response containing a <code>protocolVersion</code>. Sites that host a manifest but fail the handshake are counted in the index total but not in the MCP-verified total.</li>
