@@ -78,6 +78,8 @@
 
 Both scripts run `claude mcp add` automatically if Claude Code is installed, otherwise print copy-paste snippets for Cursor, Cline, and Continue.
 
+- [The Rate Limit Ceiling](https://8bitconcepts.com/research/the-rate-limit-ceiling.html): Engineering teams obsess over model quality, but the thing quietly killing AI products in production
+
 ## Contact
 
 Website: https://8bitconcepts.com
