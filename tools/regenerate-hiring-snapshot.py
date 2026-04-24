@@ -920,7 +920,7 @@ def build_html(stats: dict[str, Any], digest: dict[str, Any], today: str, genera
 <body>
 
   <nav>
-    <a class="nav-logo" href="https://8bitconcepts.com">8bit<span>concepts</span></a>
+    <a class="nav-logo" href="https://8bitconcepts.com"><img src="/favicon.svg" width="22" height="22" alt="" aria-hidden="true" style="vertical-align:middle;margin-right:8px">8bit<span>concepts</span></a>
     <div class="nav-links">
       <a href="https://8bitconcepts.com/#research">Research</a>
       <a href="https://8bitconcepts.com/#services">Services</a>
