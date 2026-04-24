@@ -6,7 +6,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="color-scheme" content="dark light" />
   <title>Case Studies | 8bitconcepts</title>
-  <meta name="description" content="Real AI products we shipped in 4-6 weeks: aidevboard.com (8,600+ jobs + monetized API), nothumansearch.ai (1,900+ site index + 11-tool MCP server), 8bitconcepts.com research pipeline (22 papers, auto-refreshed). Same playbook we run for clients." />
+  <meta name="description" content="Real AI products we shipped: aidevboard.com, nothumansearch.ai, Bring Your AI, and the 8bitconcepts research pipeline. Same playbook we run for clients." />
   <link rel="canonical" href="https://8bitconcepts.com/case-studies.html" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -131,7 +131,7 @@
 
 <div class="hero">
   <div class="hero-eyebrow">Case studies &middot; first-party</div>
-  <h1>Three AI products we shipped in 4&ndash;6 weeks each.</h1>
+  <h1>Four AI products we shipped in weeks, not quarters.</h1>
   <p class="hero-sub">Most consultancies show you decks. We show you running products. <strong>Every system below was built and is operated by the same team that would embed in your business.</strong> Same playbook, same engagement model, same code-shipping discipline.</p>
 </div>
 
@@ -193,11 +193,40 @@
   </div>
 </div>
 
-<!-- CASE 3: 8bitconcepts research pipeline -->
+<!-- CASE 3: Bring Your AI / bringyour.ai -->
+<div class="case" id="bringyour">
+  <div class="case-inner">
+    <div class="case-meta">
+      <div class="label">Case 03 &middot; Developer tooling</div>
+      <h2>bringyour.ai</h2>
+      <div class="url"><a href="https://bringyour.ai" target="_blank" rel="noopener">bringyour.ai &rarr;</a></div>
+      <span class="case-tag">Local-first agent harness migration</span>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">100/100</div><div class="stat-label">agentic-readiness score</div></div>
+        <div class="stat"><div class="stat-num">4 tools</div><div class="stat-label">no-data remote MCP surface</div></div>
+        <div class="stat"><div class="stat-num">1 wk</div><div class="stat-label">from scaffold to paid flow</div></div>
+        <div class="stat"><div class="stat-num">$19+</div><div class="stat-label">Stripe-backed lifetime access</div></div>
+      </div>
+    </div>
+    <div class="case-body">
+      <p><strong>The problem.</strong> AI coding users invest real time into their agent setup: rules, memories, skills, MCP servers, and tool-specific operating habits. When they switch from Claude Code to Codex, or want Codex as a fallback when Claude limits interrupt work, that setup is trapped in the old harness.</p>
+      <p><strong>What we shipped.</strong> A paid local CLI, a local MCP server, a no-data remote MCP discovery surface, Stripe checkout, signed license issuance, public install script, OpenAPI, llms.txt, FAQ, and a Claude Code &rarr; Codex migration guide. The remote MCP does not accept harness files, GitHub handles, generated memories, API keys, or file contents. Actual moves run on the user's machine.</p>
+      <p><strong>How we built it.</strong> Single Go codebase: CLI, web app, billing webhook, download server, and MCP surfaces. The same binary family handles preview, migration, validation, license checks, and local MCP. <em>The interesting part is the product boundary: acquisition can happen inside an agent window, but private customer data never needs to leave the machine.</em></p>
+      <h3>What this engagement would look like for you</h3>
+      <p>One week mapping the buyer's actual workflow. Two to four weeks building the local tool, paid loop, docs, and agent-accessible surfaces. One week hardening privacy, install, verification, and support paths.</p>
+      <div class="applies">
+        <div class="applies-label">Most relevant if you run</div>
+        <div class="applies-text">A developer tool, privacy-sensitive workflow product, internal platform, or paid automation surface where buyers need self-serve access but cannot send their working context to your servers.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE 4: 8bitconcepts research pipeline -->
 <div class="case" id="research-pipeline">
   <div class="case-inner">
     <div class="case-meta">
-      <div class="label">Case 03 &middot; Content + lead-gen</div>
+      <div class="label">Case 04 &middot; Content + lead-gen</div>
       <h2>8bitconcepts research pipeline</h2>
       <div class="url"><a href="https://8bitconcepts.com/research/overview.html" target="_blank" rel="noopener">8bitconcepts.com/research &rarr;</a></div>
       <span class="case-tag">Auto-refreshed analysis pipeline</span>
