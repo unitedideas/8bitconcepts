@@ -430,7 +430,7 @@ footer a{{color:var(--terra);text-decoration:none}}
 <body>
 
 <nav>
-  <a class="nav-logo" href="/"><img src="/favicon.svg" width="22" height="22" alt="" aria-hidden="true" style="vertical-align:middle;margin-right:8px">8bit<span>concepts</span></a>
+  <a class="nav-logo" href="/"><img src="/favicon.svg" width="26" height="26" alt="" aria-hidden="true" style="vertical-align:middle;margin-right:8px">8bit<span>concepts</span></a>
   <div class="nav-links">
     <a href="/research/">Research</a>
     <a href="/research/overview.html">Atlas</a>
