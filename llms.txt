@@ -80,6 +80,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Rate Limit Ceiling](https://8bitconcepts.com/research/the-rate-limit-ceiling.html): Engineering teams obsess over model quality, but the thing quietly killing AI products in production
 
+- [The Observability Blind Spot](https://8bitconcepts.com/research/the-observability-blind-spot.html): Engineering teams spent years building world-class observability for their APIs — latency dashboards
+
 ## Contact
 
 Website: https://8bitconcepts.com
