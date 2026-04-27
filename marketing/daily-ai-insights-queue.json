@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-04-27T22:58:37.217029+00:00",
+  "account_policy": {
+    "x": "@TheShaneCheek",
+    "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+    "hacker_news": "8bitconcepts; only for technical systems artifacts"
+  },
+  "cadence": "two AI insight posts per day",
+  "items": [
+    {
+      "id": "daily-ai-insight-2026-04-27-morning",
+      "date": "2026-04-27",
+      "slot": "morning",
+      "post_time_local": "08:30",
+      "timezone": "America/Los_Angeles",
+      "theme": "AI ROI hides in integration, not inference.",
+      "format": "meme",
+      "asset_brief": "Two-panel meme: 'we budgeted for tokens' vs. 'permissions, evals, workflow, observability'.",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "funnel": "AI integration audits",
+      "channels": {
+        "x": {
+          "account": "@TheShaneCheek",
+          "copy": "Model cost is the easy line item. The real AI budget goes to data plumbing, permissions, evals, observability, workflow redesign, and the last mile into the system people already use.\n\nMore field notes: https://8bitconcepts.com/research/the-integration-tax.html",
+          "fingerprint": "c4a69f83243004fc",
+          "duplicate": false
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "Model cost is the easy line item. The real AI budget goes to data plumbing, permissions, evals, observability, workflow redesign, and the last mile into the system people already use.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+          "fingerprint": "6131fc773bb2189d",
+          "duplicate": false
+        }
+      },
+      "quality_gate": [
+        "AI topic",
+        "teaches one specific thing",
+        "routes to a proof point",
+        "not sales-first",
+        "has a click/comment trigger"
+      ]
+    },
+    {
+      "id": "daily-ai-insight-2026-04-27-afternoon",
+      "date": "2026-04-27",
+      "slot": "afternoon",
+      "post_time_local": "14:30",
+      "timezone": "America/Los_Angeles",
+      "theme": "Prompt quality stops compounding without memory.",
+      "format": "think piece",
+      "asset_brief": "Simple diagram: prompt -> run -> lesson -> expertise file -> next run.",
+      "route": "https://8bitconcepts.com/research/",
+      "funnel": "embedded AI operating systems",
+      "channels": {
+        "x": {
+          "account": "@TheShaneCheek",
+          "copy": "The mistake is treating agent instructions like a constitution. Most of them are lab notes. They need revision, pruning, and evidence from real runs.\n\nMore field notes: https://8bitconcepts.com/research/",
+          "fingerprint": "db46bab707a1575a",
+          "duplicate": false
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "The mistake is treating agent instructions like a constitution. Most of them are lab notes. They need revision, pruning, and evidence from real runs.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/",
+          "fingerprint": "e75825e1f3d3cf92",
+          "duplicate": false
+        }
+      },
+      "quality_gate": [
+        "AI topic",
+        "teaches one specific thing",
+        "routes to a proof point",
+        "not sales-first",
+        "has a click/comment trigger"
+      ]
+    }
+  ]
+}
