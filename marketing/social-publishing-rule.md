@@ -8,6 +8,7 @@ Every 8bitconcepts research paper and every daily AI insight should teach first,
 - LinkedIn login: `hello@8bitconcepts.com`
 - LinkedIn profile: `https://www.linkedin.com/in/shane-cheek-9173473b6/`
 - Hacker News: submit only technical systems pieces.
+- Reddit: `u/EngineerAdditional30` is the approved default unless a dedicated `u/8bitconcepts` account exists later. API app is not configured yet. See `marketing/reddit-posting-process.md`.
 
 `@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
 
@@ -22,9 +23,10 @@ For every new paper:
 5. Publish an X native post with the strongest falsifiable claim first. Put the link in the first reply unless the card itself is the visual asset.
 6. Publish a LinkedIn native post with the claim, the evidence, and one real discussion question. Put the link in the post only if the piece is already proven to render a good card; otherwise put it in the first comment.
 7. Submit to Hacker News only when the piece has a technical systems angle. Use a neutral title and a factual first comment.
-8. Update `marketing/social-post-ledger.json` with channel, account, URL, status, date, and fingerprint immediately after each post.
-9. Update `marketing/latest-research-social.md` with exact account, URL, post copy, and any first-comment copy.
-10. If a live post starts with "New paper," "New post," or a title instead of the claim, edit it before moving to the next channel.
+8. Submit to Reddit only when the subreddit gets a native technical/operator angle. Verify the active Reddit account before composing and follow `marketing/reddit-posting-process.md`.
+9. Update `marketing/social-post-ledger.json` with channel, account, URL, status, date, and fingerprint immediately after each post.
+10. Update `marketing/latest-research-social.md` with exact account, URL, post copy, and any first-comment copy.
+11. If a live post starts with "New paper," "New post," or a title instead of the claim, edit it before moving to the next channel.
 
 Bad frame:
 
@@ -89,6 +91,14 @@ The default CTA is: data, methodology, or artifact. The consulting CTA is second
 HN is not a generic announcement channel. Submit only technical systems pieces
 with a neutral title from the `8bitconcepts` account. Log every HN submission
 in `marketing/social-post-ledger.json` with the item URL.
+
+## Reddit Guard
+
+Reddit is not a generic announcement channel. Use it for subreddit-native artifacts: methodology, benchmarks, production failure modes, technical tradeoffs, and operator lessons with evidence.
+
+Before posting, check the subreddit rules, verify the active browser account, claim the sync-state social lock, and log the post URL immediately after it exists. Do not cross-post the same URL to multiple subreddits on the same day.
+
+API posting is not configured yet. Reddit requires OAuth, a registered app, and a descriptive User-Agent. Store the app credentials before wiring automation; current free Data API usage is rate-limited at 100 QPM per OAuth client ID.
 
 ## Anti-Duplicate Guard
 

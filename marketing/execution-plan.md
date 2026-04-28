@@ -10,7 +10,7 @@ Generated: 2026-03-08
 
 **LinkedIn**: Full posting API exists (`POST https://api.linkedin.com/rest/posts`). Requires one-time OAuth app setup (free). After setup, fully automatable. **This is the highest-leverage unlock.**
 
-**Reddit**: Full posting API via PRAW or direct `/api/submit` endpoint. Free for personal/bot use. Requires Reddit account + app credentials. **Fully automatable after one-time setup.**
+**Reddit**: Posting is available through browser flow now and through OAuth `/api/submit` after a Reddit app and credentials exist. Requires subreddit-rule checks, a descriptive User-Agent, OAuth, and ledger/lock updates. See `reddit-posting-process.md`.
 
 **Twitter/X**: API posting requires paid tier ($100/mo minimum). Skip.
 
@@ -362,43 +362,49 @@ After this, posting is a single API call. Wire into Foundry when ready.
 
 ## ONE-TIME SETUP: Reddit Programmatic Posting
 
-**Why**: Once done, r/startups, r/MachineLearning, and any subreddit can be posted to via API.
+**Why**: Once done, eligible subreddit posts can be submitted through Reddit's OAuth API instead of the browser.
 **Time**: ~15 min
 **Effort level**: Light
 
 **Steps**:
-1. Go to https://www.reddit.com/prefs/apps (logged into the 8bitconcepts or personal Reddit account)
+1. Go to https://www.reddit.com/prefs/apps logged into the Reddit account that should own the posts.
 2. Click "Create another app" at the bottom
 3. Fill in:
    - Name: `8bitconcepts-publisher`
-   - Type: select **"script"** (for personal use, no OAuth dance required)
+   - Type: select **"script"** for first-party posting from this machine.
    - Redirect URI: `http://localhost:8080` (placeholder, not used for script apps)
 4. Click "Create app"
-5. Copy the **client ID** (shown under the app name) and **client secret** into 1Password
-6. Add to `/foundry/.env`:
+5. Copy the **client ID** (shown under the app name) and **client secret** into the Foundry vault and Keychain.
+6. Store:
    - `REDDIT_CLIENT_ID`
    - `REDDIT_CLIENT_SECRET`
    - `REDDIT_USERNAME`
    - `REDDIT_PASSWORD`
-7. Test with Python (PRAW) or direct HTTP:
+7. Use a descriptive User-Agent:
+
+```text
+script:8bitconcepts-publisher:v1.0.0 (by /u/<reddit username>)
+```
+
+8. Test with direct HTTP:
 
 ```bash
 # Get access token
 curl -X POST https://www.reddit.com/api/v1/access_token \
   -u "CLIENT_ID:CLIENT_SECRET" \
   -d "grant_type=password&username=USERNAME&password=PASSWORD" \
-  -H "User-Agent: 8bitconcepts-publisher/1.0"
+  -H "User-Agent: script:8bitconcepts-publisher:v1.0.0 (by /u/USERNAME)"
 
 # Submit a link post
 curl -X POST https://oauth.reddit.com/api/submit \
   -H "Authorization: Bearer ACCESS_TOKEN" \
-  -H "User-Agent: 8bitconcepts-publisher/1.0" \
-  -d "kind=link&sr=startups&title=Test+post&url=https://8bitconcepts.com&resubmit=true&nsfw=false&spoiler=false"
+  -H "User-Agent: script:8bitconcepts-publisher:v1.0.0 (by /u/USERNAME)" \
+  -d "api_type=json&kind=link&sr=startups&title=Test+post&url=https://8bitconcepts.com&resubmit=true&nsfw=false&spoiler=false"
 ```
 
-8. Wire into Foundry when ready.
+9. Wire into Foundry when ready.
 
-**Note**: Reddit script apps are free with no rate limit beyond 60 req/min. Subreddit karma requirements still apply — if the account is new, posts may be auto-removed. Use an aged account with some history in those subreddits.
+**Note**: Reddit's current free Data API limit is 100 QPM per OAuth client ID. Subreddit karma/rule requirements still apply; if the account is new, posts may be auto-removed. If Reddit returns a captcha or administrative block, use the browser flow.
 
 ---
 

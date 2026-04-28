@@ -26,6 +26,8 @@ Tools for outbound marketing. Everything uses Resend from the verified
   new-paper distribution and twice-daily AI insight posts.
 - `social-posting-process.md` — step-by-step posting workflow, including the
   exact Q2 2026 MCP paper process that worked.
+- `reddit-posting-process.md` — Reddit-specific browser/API process, account
+  state, subreddit fit rules, OAuth setup, and submit examples.
 - `social-post-ledger.json` — status ledger for posted, pending, queued, and
   stale-backlog content. Check this before any post to avoid duplicates and to
   reuse unposted drafts before creating new ones.
@@ -38,7 +40,7 @@ Tools for outbound marketing. Everything uses Resend from the verified
   list + success/fail counts).
 - `outreach-emails.txt`, `distribution-posts.md`, `execution-plan.md` —
   historical drafts from 2026-03 session. Manual posting plan for
-  HN/LinkedIn/Reddit which is blocked on Shane-identity accounts.
+  HN/LinkedIn/Reddit; check current account/API state before using.
 - `cto-outreach-targets.md` — 2026-03 target list with no email
   addresses. Superseded by `outreach-targets.json` for anyone who got
   enriched via market-researcher agents.
@@ -77,6 +79,7 @@ Never post a candidate whose fingerprint already exists as `posted`,
 - LinkedIn login: `hello@8bitconcepts.com`
 - LinkedIn profile: `https://www.linkedin.com/in/shane-cheek-9173473b6/`
 - Hacker News: use `8bitconcepts`; submit only technical systems pieces, not generic consulting pages.
+- Reddit: use `u/EngineerAdditional30` by default unless a dedicated `u/8bitconcepts` account exists later. API app is not configured yet. Follow `reddit-posting-process.md`.
 
 `@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
 

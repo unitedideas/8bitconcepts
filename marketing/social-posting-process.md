@@ -7,6 +7,7 @@ This is the reusable process from the Q2 2026 MCP Ecosystem Health launch. It ex
 - X: `@8bitconcepts`
 - LinkedIn: Shane profile, login `hello@8bitconcepts.com`
 - Hacker News: `8bitconcepts`
+- Reddit: `u/EngineerAdditional30` is the approved default unless a dedicated `u/8bitconcepts` account exists later.
 
 `@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
 
@@ -21,9 +22,25 @@ Every post must teach first, route second, and never read like a pitch. The rout
 3. Rewrite the hook so the first line is the strongest falsifiable claim, not the paper title.
 4. Check `marketing/social-post-ledger.json` for duplicate fingerprints.
 5. Before posting to X, verify the active account is `@8bitconcepts`. If the browser is logged into another account, switch accounts or log in before composing.
-6. Post X, LinkedIn, and HN only if each channel has a native angle.
+6. Post X, LinkedIn, HN, and Reddit only if each channel has a native angle.
 7. Log the live URL and fingerprint in `marketing/social-post-ledger.json` immediately after posting.
 8. Leave any unused good drafts as `pending` or `backlog_refresh_before_posting`; do not discard them.
+
+## Reddit Flow
+
+Use `marketing/reddit-posting-process.md` as the channel playbook.
+
+Fast path:
+
+1. Verify URL, duplicate ledger, and sync-state social lock.
+2. Open the target subreddit submit page.
+3. Verify the visible Reddit account is `u/EngineerAdditional30`, unless a stored `u/8bitconcepts` account has replaced it.
+4. Check subreddit rules before choosing link vs. text post.
+5. Lead with the finding, not the paper title.
+6. Post once; do not cross-post the same URL to multiple subreddits on the same day.
+7. Ledger the final Reddit URL immediately.
+
+API path is blocked until a Reddit app exists and credentials are stored. The required shape is a first-party script app named `8bitconcepts-publisher`, OAuth token request to `https://www.reddit.com/api/v1/access_token`, and submit calls to `https://oauth.reddit.com/api/submit` with User-Agent `script:8bitconcepts-publisher:v1.0.0 (by /u/<reddit username>)`.
 
 ## Twice-Daily AI Insight Flow
 
