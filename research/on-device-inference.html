@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your AI Is Moving Back Onto the Machine - 8bitConcepts</title>
+<meta name="description" content="The future of AI inference is not cloud versus device. The shift is hierarchy: cloud for frontier work, devices for the everyday intelligence layer close to private context.">
+<meta name="keywords" content="on-device AI, AI inference, local AI, edge AI, AI PCs, Gemini Nano, Apple Foundation Models, Copilot+ PCs, AI strategy, 8bitConcepts">
+<meta name="author" content="Shane Cheek">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://8bitconcepts.com/research/on-device-inference.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0d0d0e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Your AI Is Moving Back Onto the Machine">
+<meta property="og:description" content="The future of AI inference is not cloud versus device. The shift is hierarchy: cloud for frontier work, devices for the everyday intelligence layer close to private context.">
+<meta property="og:url" content="https://8bitconcepts.com/research/on-device-inference.html">
+<meta property="og:site_name" content="8bitConcepts">
+<meta property="article:author" content="Shane Cheek">
+<meta property="article:published_time" content="2026-04-28">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your AI Is Moving Back Onto the Machine">
+<meta name="twitter:description" content="The future of AI inference is not cloud versus device. The shift is hierarchy: cloud for frontier work, devices for the everyday intelligence layer close to private context.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Your AI Is Moving Back Onto the Machine",
+  "description": "The future of AI inference is not cloud versus device. The shift is hierarchy: cloud for frontier work, devices for the everyday intelligence layer close to private context.",
+  "author": {"@type": "Person", "name": "Shane Cheek"},
+  "publisher": {"@type": "Organization", "name": "8bitConcepts", "url": "https://8bitconcepts.com"},
+  "datePublished": "2026-04-28",
+  "dateModified": "2026-04-28",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://8bitconcepts.com/research/on-device-inference.html"},
+  "articleSection": "AI Strategy",
+  "wordCount": 2790,
+  "url": "https://8bitconcepts.com/research/on-device-inference.html"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --bg:#0d0d0e; --text:#e8e6e3; --muted:#777; --body:#aaa; --accent:#d97757; --border:rgba(255,255,255,.08); --panel:rgba(255,255,255,.035); --grid:rgba(255,255,255,.025); }
+body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; font-weight:300; background:var(--bg); color:var(--body); line-height:1.7; -webkit-font-smoothing:antialiased; background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px); background-size:60px 60px; }
+.container { max-width:760px; margin:0 auto; padding:0 24px; }
+.header { padding:32px 0; border-bottom:1px solid var(--border); margin-bottom:64px; }
+.header-content { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.logo { text-decoration:none; color:var(--text); font-size:1.1rem; font-weight:400; letter-spacing:-.02em; }
+.logo span { font-weight:300; color:var(--muted); }
+nav { display:flex; gap:28px; }
+nav a { text-decoration:none; color:var(--muted); font-size:.85rem; transition:color .2s ease; }
+nav a:hover { color:var(--text); }
+.article-meta { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+.meta-item { font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); font-weight:400; }
+.meta-item.category { color:var(--accent); }
+h1 { font-size:2.55rem; font-weight:300; color:var(--text); line-height:1.15; letter-spacing:-.035em; margin-bottom:28px; }
+.lede { font-size:1.06rem; line-height:1.85; border-left:2px solid var(--accent); padding-left:24px; margin-bottom:56px; }
+.article-body { margin-bottom:64px; }
+.article-body p { margin-bottom:1.45em; font-size:1rem; line-height:1.72; }
+.article-body h2 { font-size:.82rem; font-weight:400; letter-spacing:.15em; text-transform:uppercase; color:var(--text); margin-top:3.2em; margin-bottom:1.5em; }
+.article-body h3 { font-size:1.05rem; font-weight:400; color:var(--text); margin-top:2.4em; margin-bottom:1em; }
+.article-body ul { margin:0 0 1.8em 1.2em; padding-left:1em; }
+.article-body li { margin-bottom:.65em; }
+.product-cta { border:1px solid var(--border); background:var(--panel); padding:28px; margin:56px 0; border-radius:8px; }
+.product-cta h2 { margin-top:0; }
+.product-links { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
+.product-links a { border:1px solid var(--border); padding:14px 16px; border-radius:6px; color:var(--text); text-decoration:none; background:rgba(255,255,255,.025); }
+.product-links span { display:block; color:var(--muted); font-size:.78rem; margin-top:4px; }
+.source-notes { border-top:1px solid var(--border); padding-top:36px; margin-top:56px; }
+.source-notes ol { margin-left:1.2em; padding-left:1em; }
+.source-notes li { margin-bottom:.9em; font-size:.82rem; line-height:1.55; color:var(--muted); }
+a { color:var(--accent); }
+.article-footer { display:flex; justify-content:space-between; gap:24px; padding:48px 0; border-top:1px solid var(--border); margin-bottom:64px; }
+.back-link { color:var(--muted); text-decoration:none; font-size:.85rem; }
+.contact-cta { color:var(--bg); background:var(--accent); text-decoration:none; padding:10px 20px; border-radius:6px; font-size:.85rem; font-weight:400; }
+footer { padding:32px 0; border-top:1px solid var(--border); text-align:center; margin-bottom:32px; }
+footer p { font-size:.75rem; color:var(--muted); }
+@media (max-width:640px) { h1 { font-size:1.95rem; } .header-content,.article-footer { flex-direction:column; align-items:flex-start; } nav { gap:18px; } .product-links { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header"><div class="header-content"><a href="/" class="logo">8bit<span>concepts</span></a><nav><a href="/">Home</a><a href="/research/">Research</a><a href="/#contact">Contact</a></nav></div></header>
+  <main>
+    <div class="article-meta"><span class="meta-item category">AI Strategy</span><span class="meta-item">April 2026</span><span class="meta-item">13 Min Read</span></div>
+    <h1>Your AI Is Moving Back Onto the Machine</h1>
+    <p class="lede">The future of AI inference is not cloud versus device. The shift is hierarchy: cloud for frontier work, devices for the everyday intelligence layer close to private context.</p>
+    <div class="article-body">
+<p>The common story is that AI is becoming a cloud utility.</p>
+
+<p>You rent intelligence from OpenAI, Anthropic, Google, Microsoft, or whoever owns the biggest cluster this quarter. Every prompt crosses the network. Every useful feature becomes a metered call. Every company strategy quietly assumes that the future of software is remote inference wrapped in nicer interfaces.</p>
+
+<p>That story is only half right.</p>
+
+<p>The frontier stays in the cloud. Training stays in the cloud. Expensive reasoning, large simulations, huge retrieval jobs, scientific search, and codebase-scale planning stay in the cloud.</p>
+
+<p>But the default layer is starting to move.</p>
+
+<p>The everyday inference layer is headed onto the device. Not because the device will beat the data center. It does not need to. The PC did not beat the mainframe by being faster. The phone did not beat the desktop by being more powerful. They won the work that changed because they were closer to the user, closer to the context, and cheap enough to run constantly.</p>
+
+<p>That is the shift most people are underpricing.</p>
+
+<p>AI is not only getting smarter. It is getting placed.</p>
+
+<h2>The Mainframe Analogy Is Useful, But Only If We Use It Correctly</h2>
+
+<p>The lazy version of the analogy is that yesterday's supercomputer becomes tomorrow's phone.</p>
+
+<p>That is true in a broad direction, but it misses the part that matters.</p>
+
+<p>The PC was not a smaller mainframe. It changed who got to touch computing, when they got to touch it, and what counted as a useful job for a computer.</p>
+
+<p>Before the PC, computing was institutional. After the PC, it became personal. Before the smartphone, computing was something you sat down to use. After the smartphone, it became bodily. It had location, camera, motion, payment, identity, contact graph, and a permanent network connection.</p>
+
+<p>Each transition created new software because the machine moved closer to the work.</p>
+
+<p>AI inference has the same pattern.</p>
+
+<p>Today, using AI still feels like time-sharing. You open a remote service, send context away, wait for an answer, and pay directly or indirectly for the round trip. The UI is modern. The shape is old.</p>
+
+<p>The next phase is not &ldquo;cloud AI disappears.&rdquo;</p>
+
+<p>It is that the first inference pass happens where the data already is.</p>
+
+<p>On the phone. On the laptop. In the car. In the glasses. In the factory sensor. In the clinic tablet. Inside the software before the user even thinks to open a chatbot.</p>
+
+<p>That changes the product surface.</p>
+
+<h2>The Hardware Signal Is No Longer Subtle</h2>
+
+<p>The device layer is being built in public.</p>
+
+<p>Microsoft defines Copilot+ PCs around NPUs capable of more than 40 trillion operations per second. Qualcomm says its Snapdragon X Series ships with 45 TOPS NPUs. Apple says the M4 Neural Engine reaches 38 trillion operations per second and supports efficient, private inference on device. Apple also markets the A19 Pro in iPhone 17 Pro around running large local language models.</p>
+
+<p>That phrase matters: large local language models.</p>
+
+<p>This is no longer hobbyist language from local-LLM forums. It is phone marketing copy.</p>
+
+<p>Gartner projected 77.8 million AI PCs in 2025 and 143.1 million in 2026. It also expected multiple small language models to run locally on PCs by the end of 2026.</p>
+
+<p>The question is not whether every one of those machines runs a brilliant model on day one. They will not.</p>
+
+<p>The question is what software starts assuming once the hardware is normal.</p>
+
+<p>That is how platform shifts happen. GPS was a spec before it was Uber, Strava, food delivery, field service, Find My, and location-based dating. The camera was a spec before it became QR payments, remote inspection, mobile deposits, visual search, and social media infrastructure. Secure enclaves were a spec before the phone became a wallet and identity device.</p>
+
+<p>NPUs are going through the same quiet conversion.</p>
+
+<p>The first wave is obvious: summarize, rewrite, caption, translate, clean up photos, find screenshots.</p>
+
+<p>The important wave is not obvious: software that can reason over local context all day without asking permission for every small step.</p>
+
+<h2>The Model Signal Is Moving In The Same Direction</h2>
+
+<p>The common story is that small models are disappointing because they are not frontier models.</p>
+
+<p>The reality is that most local jobs do not need frontier intelligence.</p>
+
+<p>Apple's 2025 foundation model report describes a roughly 3B-parameter on-device model using techniques like KV-cache sharing and 2-bit quantization-aware training. Google's Gemini Nano runs through Android's AICore and is built for on-device tasks. Google says local inference keeps input, inference, and output on the device, works without reliable internet, and adds no per-call cost. ML Kit exposes Gemini Nano features like summarization, proofreading, rewriting, and image description. Meta's Llama 3.2 1B and 3B models point the same way: smaller models aimed at local apps, RAG, summarization, and agentic workflows.</p>
+
+<p>None of that means a 3B model beats a frontier model.</p>
+
+<p>It means the useful question changed.</p>
+
+<p>The question is not &ldquo;can this model win a benchmark?&rdquo;</p>
+
+<p>The question is &ldquo;can this model do a narrow job against private context with low latency and no cloud bill?&rdquo;</p>
+
+<p>For a lot of work, the answer is yes.</p>
+
+<p>Rewrite this in my tone. Summarize this school notice. Explain this insurance letter. Find the receipt in my photos. Flag whether this call sounds like a scam. Turn this meeting into follow-ups. Translate this conversation in real time. Pull the checklist out of this permit PDF while I am standing on-site.</p>
+
+<p>Those jobs are not clean-room intelligence tests.</p>
+
+<p>They are context tests.</p>
+
+<p>The best model in the world without my local context can be worse than a smaller model sitting next to the data.</p>
+
+<p>That is where smaller starts to beat larger.</p>
+
+<h2>The Cloud Is Becoming Scarce Infrastructure</h2>
+
+<p>Cloud AI will get more efficient.</p>
+
+<p>It still has a physical problem.</p>
+
+<p>The IEA reported that data-center electricity demand rose 17% in 2025 and expects total data-center electricity consumption to double by 2030, with AI-focused data-center power use tripling. Goldman Sachs Research forecasts global data-center power demand could rise 165% by 2030 versus 2023. McKinsey estimates global data-center demand could reach 171 to 219 GW by 2030, with advanced-AI workloads around 70% of demand in a midrange scenario.</p>
+
+<p>This is not a vibes problem.</p>
+
+<p>It is power, cooling, transformers, grid interconnects, gas turbines, permitting, water, networking, HBM, land, capital expenditure, and time.</p>
+
+<p>Cloud scales, but it does not scale like software.</p>
+
+<p>It scales like infrastructure.</p>
+
+<p>That changes inference economics.</p>
+
+<p>If every small AI feature is a remote call, every software feature competes with the same physical buildout. Autocomplete, notification summaries, document parsing, app search, customer support triage, calendar cleanup, image description, call screening, and every &ldquo;smart&rdquo; sidebar all become tenants in the same metered system.</p>
+
+<p>On-device inference changes the meter.</p>
+
+<p>A cloud call is a bill.</p>
+
+<p>A local call is a battery, thermal, and memory decision.</p>
+
+<p>That sounds technical. It is actually a product strategy shift.</p>
+
+<p>When intelligence has a per-call cost, developers ration it. They hide it behind buttons. They wait for explicit intent. They summarize after the user asks. They avoid background loops. They charge for usage.</p>
+
+<p>When intelligence is part of the device purchase, developers spend it differently. They can run quiet checks in the background. They can personalize against local data. They can make cheap software feel expensive. They can serve schools, clinics, small businesses, and offline users without building every workflow around a token bill.</p>
+
+<p>The shift is from rented intelligence to owned compute.</p>
+
+<p>That does not mean cloud revenue goes away.</p>
+
+<p>It means the cloud stops being the automatic first hop for every small act of cognition.</p>
+
+<h2>The Memory Bottleneck Is The Tell</h2>
+
+<p>The least obvious constraint is memory.</p>
+
+<p>TOPS are easy to market. Memory is where the real product tiers will show up.</p>
+
+<p>Local inference is not only compute-bound. Models need RAM. Long context needs KV cache. Multimodal features need room. Background agents need memory budgets that do not make the phone or laptop feel broken.</p>
+
+<p>The Pixel 9a is a useful warning. Its 8GB of RAM forced Google to use a smaller Gemini Nano variant, and some flagship local-AI features did not make the cut.</p>
+
+<p>That is the future in miniature.</p>
+
+<p>Local AI quality will depend on memory tiers, not just AI branding.</p>
+
+<p>At the same time, IDC argues the memory shortage is partly a strategic reallocation away from consumer DRAM and NAND toward HBM and high-capacity server memory for AI infrastructure.</p>
+
+<p>That is the non-obvious connection.</p>
+
+<p>Cloud AI needs memory. Local AI needs memory. The cloud buildout is pulling supply toward HBM and server memory just as consumer devices need more RAM to run local models well.</p>
+
+<p>So the next platform fight may not be model quality first.</p>
+
+<p>It may be memory allocation.</p>
+
+<p>Who gets the RAM? Which apps get background inference? Which model gets reserved space? Which developer can call the OS model? Which device tier gets the good local assistant and which one gets the cheap one?</p>
+
+<p>This is where on-device AI gets politically interesting.</p>
+
+<p>Local inference decentralizes compute.</p>
+
+<p>It may centralize platform control.</p>
+
+<p>Apple controls silicon, OS, model APIs, app review, memory policy, and background execution. Google has Android scale, Gemini Nano, AICore, Tensor, and OEM relationships. Microsoft has Windows distribution, but less control over the full hardware stack. Qualcomm and MediaTek want NPUs to be the reason OEMs buy their chips. Developers want local inference, but not necessarily a world where the platform owner decides which model, context, and memory budget they can touch.</p>
+
+<p>The model may run on your device.</p>
+
+<p>That does not make it yours.</p>
+
+<h2>What Smaller, Faster, Cheaper Actually Enables</h2>
+
+<p>The common story is &ldquo;a chatbot in every app.&rdquo;</p>
+
+<p>That is the least interesting version.</p>
+
+<p>Smaller, faster, cheaper local inference turns AI into an app primitive.</p>
+
+<p>Like storage. Like location. Like camera. Like notifications. Like identity.</p>
+
+<p>The user may never see a chat box. The app asks the local model to classify, summarize, transform, route, compare, extract, explain, or decide whether escalation is needed.</p>
+
+<p>That unlocks four categories of software.</p>
+
+<p>First, private-context software.</p>
+
+<p>The device can reason over journals, health records, photos, family logistics, kids' messages, passwords, small-business receipts, local files, and work notes that should not be shipped to a random cloud model by default.</p>
+
+<p>Second, live-context software.</p>
+
+<p>Translation during conversation. Scam detection during a call. Accessibility for blind users. Hearing assistance. AR overlays. Driver safety. Factory anomaly detection. Bedside triage. Anything where latency changes the usefulness of the feature.</p>
+
+<p>Third, abundance software.</p>
+
+<p>A school can add tutoring without a usage bill. A small developer can add summarization without reserving GPU capacity. A rural clinic can keep working during network failure. A toy can respond without recording a child to the cloud. A contractor can turn a permit PDF into a checklist while standing at the job site.</p>
+
+<p>Fourth, software that acts before the user asks.</p>
+
+<p>This is the big one.</p>
+
+<p>Most software today waits. It waits for input, clicks, fields, prompts, commands, uploads, searches, and explicit intent.</p>
+
+<p>Local inference lets software watch the local context, classify the situation, and tee up the next step without sending the whole life pattern to a server.</p>
+
+<p>That is also where the risk starts.</p>
+
+<h2>Future One: Owned Intelligence</h2>
+
+<p>It is 2032, and nobody in the house says &ldquo;AI.&rdquo;</p>
+
+<p>The word mostly disappeared into the OS.</p>
+
+<p>Mara's phone moves her grocery delivery before she wakes up. It saw the bus route change, her sleep debt, the blank space before her first call, and the school notice that came in after midnight. It did not send that chain to a server. It made a small local decision and left a note.</p>
+
+<p>Her assistant is not one model.</p>
+
+<p>It is a mesh.</p>
+
+<p>The phone knows messages, calendar, photos, and location. The watch knows sleep and heart rate. The laptop knows work context. The car knows route and timing. The glasses know what she is looking at. Most of the intelligence is boring, local, and constant.</p>
+
+<p>Her glasses translate a neighbor's Mandarin at the curb. Her laptop drafts a client response using only local project files because the contract forbids cloud processing. Her son's old tablet turns missed fractions into practice problems. Her father's phone explains a medical bill in plain English and flags the two lines worth disputing.</p>
+
+<p>When the local model hits its limit, the device escalates.</p>
+
+<p>It shows what would leave the device, strips private context, sends the smallest useful request to a remote model, and records the response.</p>
+
+<p>The cloud is still there.</p>
+
+<p>It is a specialist, not a reflex.</p>
+
+<p>The upside is not cinematic. It is practical:</p>
+
+<ul>
+
+<li>fewer unread forms</li>
+
+<li>fewer scam victims</li>
+
+<li>fewer missed appointments</li>
+
+<li>better translation</li>
+
+<li>better accessibility</li>
+
+<li>better small-business operations</li>
+
+<li>better software for people with bad connectivity</li>
+
+<li>less dependence on per-token economics</li>
+
+</ul>
+
+<p>This is the optimistic version because intelligence becomes durable local capacity.</p>
+
+<p>People own more of the compute that helps them navigate life.</p>
+
+<h2>Future Two: Managed Intelligence</h2>
+
+<p>It is also 2032.</p>
+
+<p>The AI runs locally.</p>
+
+<p>The privacy label is technically correct.</p>
+
+<p>That is the problem.</p>
+
+<p>Your employer's laptop has a compliance model. It reviews documents before you send them. It flags tone, policy, legal risk, and &ldquo;culture alignment.&rdquo; It does not upload the draft. It does not need to. It blocks the send button locally and writes a management event.</p>
+
+<p>Your child's school tablet has a safety model. Some questions open a lesson. Some questions open a counselor ticket. Parents cannot inspect the classifier because the vendor says disclosure would increase abuse.</p>
+
+<p>Your phone has an advertising model that watches what you almost do. Which messages you rewrite. Which symptoms you type and delete. Which products you photograph but do not buy. Which images you linger on. The raw data stays local. The segment leaves.</p>
+
+<p>The car detects stress and adjusts insurance risk. The bank app decides a transaction &ldquo;looks coerced.&rdquo; The dating app rewrites people toward higher engagement. The smart home reads household mood and sells optimization.</p>
+
+<p>Cloud AI created surveillance risk because data moved away from the user.</p>
+
+<p>On-device AI creates governance risk because interpretation moves closer to the user.</p>
+
+<p>A remote model sees what you send it.</p>
+
+<p>A local model can see what you almost did.</p>
+
+<p>That is a different kind of power.</p>
+
+<p>The dystopian version of on-device AI is not one giant machine in the desert. It is millions of small models embedded in the surfaces of life, each making tiny decisions before the person reaches the button.</p>
+
+<p>Local does not automatically mean free.</p>
+
+<p>Local can mean intimate control.</p>
+
+<h2>What To Watch</h2>
+
+<p>Watch base memory.</p>
+
+<p>When normal phones move from 8GB to 12GB to 16GB because local models need room, the market has turned.</p>
+
+<p>Watch OS-managed models.</p>
+
+<p>If developers stop shipping model weights and start calling Apple, Google, and Microsoft local inference APIs, the platform layer wins.</p>
+
+<p>Watch background inference permissions.</p>
+
+<p>The key question is which apps can run local models when the user is not actively asking.</p>
+
+<p>Watch enterprise device management.</p>
+
+<p>If companies can mandate local compliance models, &ldquo;on-device&rdquo; becomes a workplace control surface.</p>
+
+<p>Watch privacy law.</p>
+
+<p>Most privacy rules are built around moving, storing, and sharing data. Local inference raises a harder question: if the model infers something sensitive on device and changes what the user can do, who processed the data?</p>
+
+<p>Watch the first apps that stop looking like AI apps.</p>
+
+<p>That is the real signal.</p>
+
+<h2>The Bet</h2>
+
+<p>The future of inference is hierarchy.</p>
+
+<p>The cloud trains. The cloud reasons deeply. The cloud handles the expensive, global, and rare.</p>
+
+<p>The device senses, filters, personalizes, protects, and acts.</p>
+
+<p>The local model knows you. The remote model knows more of the world. The useful system knows when to use which.</p>
+
+<p>That is why the PC analogy still works.</p>
+
+<p>The winning machine is not always the biggest machine.</p>
+
+<p>It is the machine at the right distance from the work.</p>
+
+<p>Mainframes made computing valuable to institutions. PCs made it useful to individuals. Smartphones made it bodily. On-device inference makes AI situational: close to private context, cheap enough to run often, fast enough to work in the moment, and small enough to disappear into the workflow.</p>
+
+<p>The next AI platform war is not just about who has the smartest model.</p>
+
+<p>It is about who owns the default intelligence layer between the user and the world.</p>
+
+<p>That is the question under the hardware specs, model benchmarks, and data-center forecasts.</p>
+
+<p>Not &ldquo;cloud or device?&rdquo;</p>
+
+<p>Whose intelligence is acting before the user does?</p>
+      <div class="product-cta">
+        <h2>What 8bitConcepts Builds</h2>
+        <p>8bitConcepts builds agent-readable AI products and strategy memos for teams trying to turn AI from demo into operating leverage. This research is not separate from the work. It is how we decide what to build.</p>
+        <div class="product-links">
+          <a href="https://8bitconcepts.com/#contact">8bitConcepts<span>Custom AI systems and strategy diagnostics.</span></a>
+          <a href="https://aidevboard.com">AI Dev Board<span>AI hiring data and agent-readable job search.</span></a>
+          <a href="https://nothumansearch.ai">Not Human Search<span>Agentic-readiness scoring for websites and tools.</span></a>
+          <a href="https://bringyour.ai">Bring Your AI<span>Portable AI harness context across coding tools.</span></a>
+        </div>
+      </div>
+      <div class="source-notes">
+        <h2>Source Notes</h2>
+        <ol>
+<li>Microsoft describes Copilot+ PCs as Windows PCs with NPUs capable of 40+ TOPS for local AI workloads: <a href="https://www.microsoft.com/en-us/windows/copilot-plus-pcs">https://www.microsoft.com/en-us/windows/copilot-plus-pcs</a></li>
+<li>Qualcomm says Snapdragon X Series PCs shipped with 45 TOPS NPUs for Copilot+ and on-device AI workloads: <a href="https://www.qualcomm.com/news/releases/2024/05/snapdragon-x-series-is-the-exclusive-platform-to-power-the-next-">https://www.qualcomm.com/news/releases/2024/05/snapdragon-x-series-is-the-exclusive-platform-to-power-the-next-</a></li>
+<li>Apple says M4's Neural Engine reaches 38 trillion operations per second and supports efficient, private inference on device: <a href="https://www.apple.com/ne/newsroom/2024/05/apple-introduces-m4-chip/">https://www.apple.com/ne/newsroom/2024/05/apple-introduces-m4-chip/</a></li>
+<li>Apple says iPhone 17 Pro's A19 Pro is designed for sustained performance including running large local language models: <a href="https://www.apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/">https://www.apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/</a></li>
+<li>Apple opened Foundation Models framework access to its 3B-parameter on-device model, with offline and no per-request-cost positioning: <a href="https://www.apple.com/newsroom/2025/09/apples-foundation-models-framework-unlocks-new-intelligent-app-experiences/">https://www.apple.com/newsroom/2025/09/apples-foundation-models-framework-unlocks-new-intelligent-app-experiences/</a></li>
+<li>Apple ML Research describes the 2025 on-device model as roughly 3B parameters with KV-cache sharing and 2-bit quantization-aware training: <a href="https://machinelearning.apple.com/research/apple-foundation-models-tech-report-2025">https://machinelearning.apple.com/research/apple-foundation-models-tech-report-2025</a></li>
+<li>Google Android docs describe Gemini Nano/AICore as on-device, low-latency, privacy-preserving, and lower cost by avoiding server calls: <a href="https://developer.android.com/ai/gemini-nano">https://developer.android.com/ai/gemini-nano</a></li>
+<li>Google says Gemini Nano powers offline Pixel features including Call Notes, Pixel Screenshots, Recorder summaries, Magic Compose, TalkBack image descriptions, and scam detection: <a href="https://store.google.com/us/magazine/gemini-nano-offline">https://store.google.com/us/magazine/gemini-nano-offline</a></li>
+<li>Google announced ML Kit GenAI APIs for Gemini Nano with summarization, proofreading, rewriting, and image description, including no added cost per API call: <a href="https://android-developers.googleblog.com/2025/05/on-device-gen-ai-apis-ml-kit-gemini-nano.html">https://android-developers.googleblog.com/2025/05/on-device-gen-ai-apis-ml-kit-gemini-nano.html</a></li>
+<li>IBM's coverage of Meta Llama 3.2 notes the 1B and 3B models' fit for local applications, RAG, summarization, and agentic AI: <a href="https://www.ibm.com/think/news/meta-llama-3-2-models">https://www.ibm.com/think/news/meta-llama-3-2-models</a></li>
+<li>Gartner projected AI PCs at 77.8M units in 2025 and 143.1M in 2026, and expected multiple SLMs to run locally on PCs by the end of 2026: <a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025">https://www.gartner.com/en/newsroom/press-releases/2025-08-28-gartner-says-artificial-intelligence-pcs-will-represent-31-percent-of-worldwide-pc-market-by-the-end-of-2025</a></li>
+<li>IEA reported data-center electricity demand rose 17% in 2025 and expects data-center electricity consumption to double by 2030, with AI-focused data centers tripling: <a href="https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions">https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions</a></li>
+<li>Goldman Sachs Research forecasts global data-center power demand increasing up to 165% by 2030 versus 2023: <a href="https://www.goldmansachs.com/insights/articles/ai-to-drive-165-increase-in-data-center-power-demand-by-2030">https://www.goldmansachs.com/insights/articles/ai-to-drive-165-increase-in-data-center-power-demand-by-2030</a></li>
+<li>McKinsey estimates global data-center demand could rise to 171-219 GW by 2030 and that advanced-AI data centers could represent around 70% of total capacity demand: <a href="https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/ai-power-expanding-data-center-capacity-to-meet-growing-demand">https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/ai-power-expanding-data-center-capacity-to-meet-growing-demand</a></li>
+<li>IDC argues the memory shortage is partly a strategic reallocation away from consumer DRAM/NAND toward HBM and high-capacity server memory for AI infrastructure: <a href="https://www.idc.com/resource-center/blog/global-memory-shortage-crisis-market-analysis-and-the-potential-impact-on-the-smartphone-and-pc-markets-in-2026/">https://www.idc.com/resource-center/blog/global-memory-shortage-crisis-market-analysis-and-the-potential-impact-on-the-smartphone-and-pc-markets-in-2026/</a></li>
+<li>Ars Technica reported that Pixel 9a's 8GB RAM forced a smaller Gemini Nano variant, illustrating memory as a local-inference constraint: <a href="https://arstechnica.com/ai/2025/03/meager-8gb-of-ram-forces-pixel-9a-to-run-extra-extra-small-gemini-ai/">https://arstechnica.com/ai/2025/03/meager-8gb-of-ram-forces-pixel-9a-to-run-extra-extra-small-gemini-ai/</a></li>
+<li>NASA/AGC background: the Apollo Guidance Computer had tiny memory by modern standards, making it a useful historical contrast for personal-compute progress: <a href="https://ntrs.nasa.gov/api/citations/20170009900/downloads/20170009900.pdf">https://ntrs.nasa.gov/api/citations/20170009900/downloads/20170009900.pdf</a></li>
+<li>Historical Cray-2 comparison: a 1985 Cray-2 was a 5,500-pound NASA-used supercomputer and one of the fastest machines of its era: <a href="https://mimmsmuseum.org/news/computer-museum-of-america-obtains-a-1985-cray-2-supercomputer/">https://mimmsmuseum.org/news/computer-museum-of-america-obtains-a-1985-cray-2-supercomputer/</a></li>
+<li>Nate Jones site positioning: <a href="https://www.natebjones.com/">https://www.natebjones.com/</a></li>
+<li>Apple Podcasts show and episode framing: <a href="https://podcasts.apple.com/us/podcast/ai-news-strategy-daily-with-nate-b-jones/id1877109372">https://podcasts.apple.com/us/podcast/ai-news-strategy-daily-with-nate-b-jones/id1877109372</a></li>
+<li>Acast episode framing examples: <a href="https://shows.acast.com/ai-news-strategy-daily-with-nate-b-jones">https://shows.acast.com/ai-news-strategy-daily-with-nate-b-jones</a></li>
+        </ol>
+      </div>
+    </div>
+  </main>
+  <div class="article-footer"><a href="/research/" class="back-link">&larr; All research</a><a href="mailto:hello@8bitconcepts.com?subject=On-device%20AI%20inference" class="contact-cta">Discuss this with us</a></div>
+  <footer><p>&copy; 2026 8bitConcepts. All rights reserved.</p></footer>
+</div>
+</body>
+</html>
