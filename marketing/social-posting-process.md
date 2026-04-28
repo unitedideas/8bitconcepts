@@ -8,6 +8,7 @@ This is the reusable process from the Q2 2026 MCP Ecosystem Health launch. It ex
 - LinkedIn: Shane profile, login `hello@8bitconcepts.com`
 - Hacker News: `8bitconcepts`
 - Reddit: `u/EngineerAdditional30` is the approved default unless a dedicated `u/8bitconcepts` account exists later.
+- Dev.to / Hashnode: use the 8bit/research publishing account when available; otherwise queue with the exact missing credential.
 
 `@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
 
@@ -22,9 +23,16 @@ Every post must teach first, route second, and never read like a pitch. The rout
 3. Rewrite the hook so the first line is the strongest falsifiable claim, not the paper title.
 4. Check `marketing/social-post-ledger.json` for duplicate fingerprints.
 5. Before posting to X, verify the active account is `@8bitconcepts`. If the browser is logged into another account, switch accounts or log in before composing.
-6. Post X, LinkedIn, HN, and Reddit only if each channel has a native angle.
-7. Log the live URL and fingerprint in `marketing/social-post-ledger.json` immediately after posting.
-8. Leave any unused good drafts as `pending` or `backlog_refresh_before_posting`; do not discard them.
+6. Publish every paper to every active channel: X, LinkedIn, Hacker News, Reddit, Dev.to/Hashnode, newsletter, direct outreach, IndexNow, and any relevant directory/list surface.
+7. Use channel-native framing rather than skipping a channel. If a channel cannot be posted because credentials/account access are missing, create a queued ledger item with the exact blocker and keep shipping every other channel.
+8. Log the live URL and fingerprint in `marketing/social-post-ledger.json` immediately after posting.
+9. Leave any unused good drafts as `pending` or `backlog_refresh_before_posting`; do not discard them.
+
+## Paper Rotation Cadence
+
+Research-paper distribution runs every other day. Each run picks the next paper that is not fully distributed across the channel set, refreshes any stale claims, then ships every channel that is available.
+
+The automation is `8bit-paper-distribution-every-other-day`. It runs from `/Users/owlassist/foundry-businesses/8bitconcepts` and must update the ledger with one row per paper/channel. "Fully distributed" means X, LinkedIn, HN, Reddit, Dev.to/Hashnode, newsletter/outreach, and indexing surfaces are either `posted` with URLs or explicitly `blocked` with the blocker named.
 
 ## Reddit Flow
 
@@ -89,4 +97,4 @@ This worked because it led with a falsifiable finding, not an announcement, and 
 
 ## Automation Boundary
 
-The automated system owns research selection, draft generation, queue creation, duplicate checks, and ledger updates. Public posting uses the configured channel accounts and must always pass the anti-duplicate gate before anything goes live.
+The automated system owns research selection, draft generation, queue creation, duplicate checks, posting on configured first-party accounts, and ledger updates. Public posting uses the configured channel accounts and must always pass the anti-duplicate gate before anything goes live.

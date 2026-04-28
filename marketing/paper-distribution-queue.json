@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "cadence": "every_other_day",
+  "automation": "8bit-paper-distribution-every-other-day",
+  "rule": "Every research paper goes to every active channel. Do not skip a channel silently; post it, queue it, or mark it blocked with the exact missing account or credential.",
+  "channels": [
+    {
+      "id": "x",
+      "account": "@8bitconcepts",
+      "required_status": "posted"
+    },
+    {
+      "id": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "required_status": "posted"
+    },
+    {
+      "id": "hacker_news",
+      "account": "8bitconcepts",
+      "required_status": "posted"
+    },
+    {
+      "id": "reddit",
+      "account": "8bit/research account",
+      "required_status": "posted_or_blocked_with_account_gap"
+    },
+    {
+      "id": "devto_hashnode",
+      "account": "8bit/research publishing account",
+      "required_status": "posted_or_blocked_with_account_gap"
+    },
+    {
+      "id": "newsletter_outreach",
+      "account": "hello@8bitconcepts.com",
+      "required_status": "sent_or_queued"
+    },
+    {
+      "id": "indexing_discovery",
+      "account": "site tooling",
+      "required_status": "submitted"
+    }
+  ],
+  "selection_order": [
+    "newest_unshipped_paper",
+    "data_heavy_paper_with_fresh_stats",
+    "evergreen_paper_not_fully_distributed",
+    "paper_with_new_external_hook"
+  ],
+  "active_backlog": [
+    {
+      "paper": "on-device-inference",
+      "url": "https://8bitconcepts.com/research/on-device-inference.html",
+      "status": "in_progress"
+    },
+    {
+      "paper": "q2-2026-mcp-ecosystem-health",
+      "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "status": "in_progress"
+    }
+  ]
+}

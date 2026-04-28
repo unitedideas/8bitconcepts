@@ -7,8 +7,9 @@ Every 8bitconcepts research paper and every daily AI insight should teach first,
 - X: `@8bitconcepts`
 - LinkedIn login: `hello@8bitconcepts.com`
 - LinkedIn profile: `https://www.linkedin.com/in/shane-cheek-9173473b6/`
-- Hacker News: submit only technical systems pieces.
+- Hacker News: `8bitconcepts`
 - Reddit: `u/EngineerAdditional30` is the approved default unless a dedicated `u/8bitconcepts` account exists later. API app is not configured yet. See `marketing/reddit-posting-process.md`.
+- Dev.to / Hashnode: 8bit/research account when available; otherwise ledger the missing account/API credential.
 
 `@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
 
@@ -22,11 +23,14 @@ For every new paper:
 4. Verify the active X account is `@8bitconcepts` before composing. If the browser is logged into another account, switch accounts or log in first.
 5. Publish an X native post with the strongest falsifiable claim first. Put the link in the first reply unless the card itself is the visual asset.
 6. Publish a LinkedIn native post with the claim, the evidence, and one real discussion question. Put the link in the post only if the piece is already proven to render a good card; otherwise put it in the first comment.
-7. Submit to Hacker News only when the piece has a technical systems angle. Use a neutral title and a factual first comment.
-8. Submit to Reddit only when the subreddit gets a native technical/operator angle. Verify the active Reddit account before composing and follow `marketing/reddit-posting-process.md`.
-9. Update `marketing/social-post-ledger.json` with channel, account, URL, status, date, and fingerprint immediately after each post.
-10. Update `marketing/latest-research-social.md` with exact account, URL, post copy, and any first-comment copy.
-11. If a live post starts with "New paper," "New post," or a title instead of the claim, edit it before moving to the next channel.
+7. Submit to Hacker News with the most technical neutral title available. If the paper is operational rather than code-heavy, frame the methodology, data, or failure mode rather than skipping HN.
+8. Submit to Reddit using channel-specific subreddit fit. Default pools: `r/MachineLearning`, `r/ArtificialInteligence`, `r/artificial`, `r/startups`, `r/ExperiencedDevs`, `r/devops`, and `r/EngineeringManagement`; pick the best 1-3, not every subreddit. Verify the active Reddit account before composing and follow `marketing/reddit-posting-process.md`.
+9. Republish/adapt the paper to Dev.to or Hashnode when the angle can stand as a technical article. Canonical link back to the original paper.
+10. Add the paper to newsletter/outreach motion: weekly digest, relevant newsletter/editorial contacts, and any public lists/directories that match the topic.
+11. Submit/index the URL through IndexNow and any existing search/discovery submitters.
+12. Update `marketing/social-post-ledger.json` with channel, account, URL, status, date, and fingerprint immediately after each post.
+13. Update `marketing/latest-research-social.md` with exact account, URL, post copy, and any first-comment copy.
+14. If a live post starts with "New paper," "New post," or a title instead of the claim, edit it before moving to the next channel.
 
 Bad frame:
 
@@ -39,6 +43,22 @@ Good frame:
 ```text
 Most MCP adoption claims are not real endpoints.
 ```
+
+## Paper Cadence
+
+Every other day, promote one research paper across all channels. Do not treat LinkedIn, HN, Reddit, Dev.to/Hashnode, newsletter, or outreach as optional. If a channel cannot be posted because access is missing, log it as `blocked` with the exact credential/account gap and keep shipping the remaining channels.
+
+Automation: `8bit-paper-distribution-every-other-day`.
+
+Fully distributed means the paper has a ledger row for each of:
+
+1. X
+2. LinkedIn
+3. Hacker News
+4. Reddit
+5. Dev.to or Hashnode
+6. Newsletter or direct editorial outreach
+7. Indexing/discovery submission
 
 ## Twice-Daily AI Insight Cadence
 
@@ -73,7 +93,7 @@ Rotate formats so the feed does not become one-note:
 - Meme: only if it teaches a real pattern.
 - Poll: use when the answers reveal market signal.
 - Thread: use for multi-step methodology or before/after stories.
-- HN submission: use sparingly for technical artifacts and research pages.
+- HN submission: use a technical/data/methodology frame for every paper.
 
 ## Funnel Rule
 
@@ -88,9 +108,7 @@ The default CTA is: data, methodology, or artifact. The consulting CTA is second
 
 ## Hacker News Guard
 
-HN is not a generic announcement channel. Submit only technical systems pieces
-with a neutral title from the `8bitconcepts` account. Log every HN submission
-in `marketing/social-post-ledger.json` with the item URL.
+HN is not a generic announcement channel, but research papers still go out there. Use the most technical neutral framing available: method, dataset, failure mode, benchmark, or implementation lesson. Log every HN submission in `marketing/social-post-ledger.json` with the item URL.
 
 ## Reddit Guard
 

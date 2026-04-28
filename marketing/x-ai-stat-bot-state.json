@@ -1,13 +1,18 @@
 {
   "schema": 1,
-  "updated_at": "2026-04-28T06:14:24+00:00",
-  "status": "quiet_hours",
-  "mode": "draft",
+  "updated_at": "2026-04-28T22:01:52+00:00",
+  "status": "sleeping",
+  "mode": "live",
   "account": "@8bitconcepts",
   "min_minutes": 29,
   "max_minutes": 114,
+  "random_minutes": 54,
+  "sleep_seconds": 3240,
+  "next_run_at": "2026-04-28T22:51:19+00:00",
   "quiet_hours_local": "23:00-05:00",
   "timezone": "America/Los_Angeles",
-  "sleep_seconds": 20735,
-  "next_run_at": "2026-04-28T12:00:00+00:00"
+  "last_posted_id": "x-ai-stat-2026-04-28T21:57:19+00:00-e3ae40e6",
+  "last_posted_at": "2026-04-28T22:01:52+00:00",
+  "last_posted_url": "https://x.com/8BitConcepts/status/2049247604115206476",
+  "next_action": "manual_live_posting_until_api_poster_is_configured"
 }
