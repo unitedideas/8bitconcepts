@@ -9,7 +9,7 @@
   <title>Q2 2026 MCP Ecosystem Health -- 8bitconcepts</title>
   <meta name="description" content="Live MCP ecosystem health: 7,118 agent-ready sites indexed, 417 (5.9%) MCP-verified via JSON-RPC handshake. 5,087 publish llms.txt, 511 publish OpenAPI. Category breakdown, newly-indexed servers, gaps." />
   <meta property="og:title" content="Q2 2026 MCP Ecosystem Health -- 8bitconcepts" />
-  <meta property="og:description" content="417 of 7,118 indexed agent-ready sites (5.9%) pass a live JSON-RPC handshake. Most MCP claims don't implement the protocol correctly. Category breakdown + newly-verified servers from NothingHumanSearch." />
+  <meta property="og:description" content="417 of 7,118 indexed agent-ready sites (5.9%) pass a live JSON-RPC handshake. Most MCP-positive candidates do not verify as working endpoints. Category breakdown + newly-verified servers from NothingHumanSearch." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html" />
   <meta property="og:image" content="https://8bitconcepts.com/research/og/q2-2026-mcp-ecosystem-health.png" />
@@ -477,7 +477,7 @@
 
     <h1>Q2 2026 MCP Ecosystem Health</h1>
 
-    <p class="subtitle">As of 2026-04-28, 7,118 agent-ready sites are indexed on NothingHumanSearch, but only 417 (5.9%) survive a real JSON-RPC handshake to their /mcp endpoint. The rest claim MCP in their docs but don't implement it correctly. Live data pulled from <a href="https://nothumansearch.ai/digest.json">nothumansearch.ai/digest.json</a>.</p>
+    <p class="subtitle">As of 2026-04-28, 7,118 agent-ready sites are indexed on NothingHumanSearch, but only 417 (5.9%) survive a real JSON-RPC handshake to their /mcp endpoint. The rest did not verify as working MCP endpoints in this crawl. Live data pulled from <a href="https://nothumansearch.ai/digest.json">nothumansearch.ai/digest.json</a>.</p>
 
     <div class="meta">
       <span class="meta-date">2026-04-28</span>
@@ -489,7 +489,7 @@
 
       <h2>Executive summary</h2>
 
-      <p>NothingHumanSearch has been crawling the web for agent-readiness signals since launch, and the numbers tell a consistent story about the gap between claiming MCP support and shipping it. As of 2026-04-28 the index holds 7,118 sites with at least one agent-discovery signal (llms.txt, ai-plugin.json, OpenAPI, or an MCP manifest). Of those, 417 &mdash; 5.9% &mdash; pass a live JSON-RPC probe against their declared /mcp endpoint. The remaining 6,701 sites (94.1%) either mention MCP in their documentation without implementing it, or host a manifest that fails the handshake (404, 500, wrong Content-Type, or a server that answers HTTP but never completes the <code>initialize</code> round-trip).</p>
+      <p>NothingHumanSearch has been crawling the web for agent-readiness signals since launch, and the numbers tell a consistent story about the gap between claiming MCP support and shipping it. As of 2026-04-28 the index holds 7,118 sites with at least one agent-discovery signal (llms.txt, ai-plugin.json, OpenAPI, or an MCP manifest). Of those, 417 &mdash; 5.9% &mdash; pass a live JSON-RPC probe against their declared /mcp endpoint. The remaining 6,701 sites (94.1%) did not verify as working MCP endpoints in this crawl. That is not evidence of intent. It means the crawler found an MCP-positive or agent-discovery signal, then the live probe could not complete the <code>initialize</code> round-trip.</p>
 
       <div class="stat-row">
         <div class="stat-box">
@@ -510,9 +510,59 @@
 
       <p>Static scanners &mdash; the ones that produce most of the MCP directory listings you see today &mdash; treat a string match for <code>mcp</code> in <code>llms.txt</code> or a link to <code>/.well-known/mcp.json</code> as a positive signal. That's how you end up with directories claiming 10,000+ MCP servers when the actual live count is smaller by an order of magnitude. A real check has to open a connection, send <code>{"method": "initialize"}</code>, wait for a protocol handshake, and confirm the server responds with a valid <code>result</code> block citing a <code>protocolVersion</code>. Anything short of that is a citation, not an implementation.</p>
 
-      <p>NHS's <code>verify_mcp</code> tool (published as part of the NHS MCP server at <a href="https://nothumansearch.ai/mcp">nothumansearch.ai/mcp</a>) does exactly this live-probe for any URL you hand it. When we recrawled the full index in April 2026 with the probe turned on, the verified-MCP count stayed stable around 417 even as the total indexed population kept climbing. The gap between &quot;sites that mention MCP&quot; and &quot;sites that implement MCP&quot; is widening, not narrowing &mdash; which is the opposite of what the marketing cycle would have you believe.</p>
+      <p>NHS's <code>verify_mcp</code> tool (published as part of the NHS MCP server at <a href="https://nothumansearch.ai/mcp">nothumansearch.ai/mcp</a>) does exactly this live-probe for any URL you hand it. When we recrawled the full index in April 2026 with the probe turned on, the verified-MCP count stayed stable around 417 even as the total indexed population kept climbing. The gap between MCP-positive discovery surfaces and endpoints that complete a live handshake is widening, not narrowing &mdash; which is the opposite of what the marketing cycle would have you believe.</p>
 
-      <p>This matters for anyone building an agent. If you rely on a static MCP directory to decide which tools your agent should discover at runtime, you will waste connections and context tokens on dead endpoints. The 90% unverified cohort isn't malicious &mdash; it's mostly stale docs, misconfigured reverse proxies, and manifests that reference endpoints the author never actually wired up. But for an autonomous agent, the failure mode is the same: a call that eats latency, fails, and doesn't advance the task.</p>
+      <p>This matters for anyone building an agent. If you rely on a static MCP directory to decide which tools your agent should discover at runtime, you will waste connections and context tokens on dead endpoints. The 90%+ unverified cohort is not proof of bad faith &mdash; it can include stale docs, misconfigured reverse proxies, auth walls, wrong endpoint paths, scanner false positives, and manifests that reference endpoints the author has not wired up. But for an autonomous agent, the failure mode is the same: a call that eats latency, fails, and doesn't advance the task.</p>
+
+      <h2>Top performers</h2>
+
+      <p>The best performers are boring in the right way: they expose the full discovery stack, not just one badge. In the current top set, the 100-point sites publish <code>llms.txt</code>, <code>/.well-known/ai-plugin.json</code>, a discoverable OpenAPI spec, a structured API response, AI-friendly robots rules, Schema.org metadata, and a live MCP endpoint that answers <code>initialize</code>. That is what makes them agent-usable rather than merely agent-visible.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Name</th>
+            <th class="num" style="text-align:right;">Score</th>
+            <th>Verified signals</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://nothumansearch.ai/site/zgts.in">zgts.in</a></td><td>ZGTS Derma Roller India</td><td class="num">100</td><td>llms.txt, ai-plugin.json, OpenAPI, structured API, MCP handshake, AI-friendly robots.txt, Schema.org</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/mcp.depscope.dev">mcp.depscope.dev</a></td><td>DepScope</td><td class="num">100</td><td>llms.txt, ai-plugin.json, OpenAPI, structured API, MCP handshake, AI-friendly robots.txt, Schema.org</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/budgetfitter.uk">budgetfitter.uk</a></td><td>BudgetFitter: Verified Discount Codes &amp; The Urban Survival Ecosystem</td><td class="num">100</td><td>llms.txt, ai-plugin.json, OpenAPI, structured API, MCP handshake, AI-friendly robots.txt, Schema.org</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/claudereviews.com">claudereviews.com</a></td><td>Claude Wilder</td><td class="num">100</td><td>llms.txt, ai-plugin.json, OpenAPI, structured API, MCP handshake, AI-friendly robots.txt, Schema.org</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/rettfrabonden.com">rettfrabonden.com</a></td><td>Rett fra Bonden</td><td class="num">100</td><td>llms.txt, ai-plugin.json, OpenAPI, structured API, MCP handshake, AI-friendly robots.txt, Schema.org</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/skillboss.co">skillboss.co</a></td><td>SkillBoss</td><td class="num">100</td><td>llms.txt, ai-plugin.json, OpenAPI, structured API, MCP handshake, AI-friendly robots.txt, Schema.org</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/deadends.dev">deadends.dev</a></td><td>deadends.dev</td><td class="num">100</td><td>llms.txt, ai-plugin.json, OpenAPI, structured API, MCP handshake, AI-friendly robots.txt, Schema.org</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/borealhost.ai">borealhost.ai</a></td><td>BorealHost.ai</td><td class="num">100</td><td>llms.txt, ai-plugin.json, OpenAPI, structured API, MCP handshake, AI-friendly robots.txt, Schema.org</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Weak MCP-positive examples</h2>
+
+      <p>The weak examples below are not labeled as liars. They are sites returned by an MCP query whose current crawl record does not show a working MCP handshake. Several still have useful signals &mdash; usually <code>llms.txt</code> or a JSON API &mdash; but they stop short of being callable MCP servers. That distinction is the report's core fact.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Name</th>
+            <th class="num" style="text-align:right;">Score</th>
+            <th>Observed gap</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://nothumansearch.ai/site/mcp360.ai">mcp360.ai</a></td><td>MCP360 - Unified MCP Gateway with Custom MCP Builder</td><td class="num">40</td><td>MCP search hit; missing MCP handshake, ai-plugin.json, OpenAPI, AI-friendly robots.txt</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/mcpmux.com">mcpmux.com</a></td><td>MCP Server Registry &amp; Marketplace - Browse &amp; Install 100+ MCP Servers</td><td class="num">50</td><td>MCP search hit; missing MCP handshake, ai-plugin.json, OpenAPI</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/mcpcat.io">mcpcat.io</a></td><td>MCPcat - User analytics and live debugging for MCPs</td><td class="num">45</td><td>MCP search hit; missing MCP handshake, ai-plugin.json, OpenAPI, AI-friendly robots.txt</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/mcp-crypto-price.codemonkeyinnovations.com">mcp-crypto-price.codemonkeyinnovations.com</a></td><td>mcp-crypto-price</td><td class="num">15</td><td>MCP search hit; missing MCP handshake, ai-plugin.json, OpenAPI, llms.txt</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/mcp-anything.com">mcp-anything.com</a></td><td>MCP-Anything Cloud</td><td class="num">15</td><td>MCP search hit; missing MCP handshake, ai-plugin.json, OpenAPI, llms.txt</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/mcpshim.dev">mcpshim.dev</a></td><td>MCPShim - MCP Tools as CLI Commands</td><td class="num">20</td><td>MCP search hit; missing MCP handshake, ai-plugin.json, OpenAPI, llms.txt</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/mcp.aurafriday.com">mcp.aurafriday.com</a></td><td>Aura Friday · MCP-Link</td><td class="num">15</td><td>MCP search hit; missing MCP handshake, ai-plugin.json, OpenAPI, llms.txt</td></tr>
+          <tr><td><a href="https://nothumansearch.ai/site/feenlace.ru">feenlace.ru</a></td><td>MCP-1C - AI-ассистент для разработчиков 1С</td><td class="num">45</td><td>MCP search hit; missing MCP handshake, ai-plugin.json, OpenAPI, AI-friendly robots.txt</td></tr>
+        </tbody>
+      </table>
 
       <h2>Top categories by indexed count</h2>
 
@@ -542,7 +592,7 @@
 
       <h2>New this week</h2>
 
-      <p>Ten MCP servers were newly verified in the last seven days. Every one of them scored 100 on the NHS agentic-readiness rubric &mdash; meaning they publish llms.txt, ai-plugin.json, an OpenAPI spec, <em>and</em> pass the live JSON-RPC MCP handshake. The pattern is consistent: teams that ship one discovery file tend to ship all of them, and teams that ship none ship none. There is no middle.</p>
+      <p>The newly verified list shows the same split at a smaller scale. The strongest new entries scored 100 because they paired the live MCP handshake with the rest of the machine-readable stack: llms.txt, ai-plugin.json, OpenAPI, a structured API, robots rules, and Schema.org. Lower-scoring verified entries passed MCP but still missed adjacent discovery surfaces, most often OpenAPI or ai-plugin.json.</p>
 
       <table class="data-table">
         <thead>
@@ -579,7 +629,7 @@
 
       <p>NHS crawls submitted URLs and auto-discovered candidates from public sources (awesome-mcp-servers, PulseMCP, llmstxt.site, and a handful of curated feeds), then scores each site against seven weighted signals: <code>llms.txt</code> present and parseable; <code>ai-plugin.json</code> at <code>/.well-known/</code>; an OpenAPI or AsyncAPI spec at a discoverable path; an MCP manifest; a live JSON-RPC MCP handshake; documented rate-limit and auth headers; and an accessible structured API response. Sites are re-crawled weekly. Scores range 0-100; any score above 75 corresponds to a site that an autonomous agent can realistically integrate without human help. The full probe methodology is open-source at <a href="https://nothumansearch.ai/methodology">nothumansearch.ai/methodology</a>.</p>
 
-      <p>Weekly submission volume is running at 114 candidates for the week starting 2026-04-21, most from autonomous discovery agents rather than human submissions.</p>
+      <p>Weekly submission volume is running at 116 candidates for the week starting 2026-04-21, most from autonomous discovery agents rather than human submissions.</p>
 
       <p><strong>Download raw data:</strong> The MCP ecosystem health dataset is mirrored as a public gist &mdash; <a href="https://gist.githubusercontent.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b/raw/mcp-ecosystem-health.csv">CSV</a> &middot; <a href="https://gist.githubusercontent.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b/raw/mcp-ecosystem-health.md">Markdown</a> &middot; <a href="https://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b">view on GitHub</a>. Auto-updated every weekly regeneration, canonical raw URLs are stable across revisions.</p>
 
@@ -633,7 +683,7 @@
     <div class="footnotes">
       <h4>Sources</h4>
       <ol>
-        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-28T01:13:56Z. Public unauthenticated endpoint. Backing index: 7,118 agent-ready sites / 417 MCP-verified via JSON-RPC handshake.</li>
+        <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/digest.json">/digest.json</a>, pulled 2026-04-28T05:41:06Z. Public unauthenticated endpoint. Backing index: 7,118 agent-ready sites / 417 MCP-verified via JSON-RPC handshake.</li>
         <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/mcp">/mcp</a>, live MCP server exposing <code>verify_mcp</code>, <code>search</code>, <code>get_site</code>, <code>list_categories</code>, <code>get_top_sites</code>, and four more tools over JSON-RPC 2.0.</li>
         <li>NothingHumanSearch &mdash; <a href="https://nothumansearch.ai/methodology">/methodology</a>, open-source scoring rubric with 7 weighted signals.</li>
         <li>Verification means a TCP connection + HTTP POST to the declared <code>/mcp</code> endpoint with a JSON-RPC 2.0 <code>initialize</code> request, followed by a valid <code>result</code> response containing a <code>protocolVersion</code>. Sites that host a manifest but fail the handshake are counted in the index total but not in the MCP-verified total.</li>

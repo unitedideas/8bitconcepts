@@ -58,6 +58,8 @@ USER_AGENT = "curl/8.7.1"
 
 NHS_DIGEST_URL = "https://nothumansearch.ai/digest.json"
 NHS_STATS_URL = "https://nothumansearch.ai/api/v1/stats"
+NHS_TOP_URL = "https://nothumansearch.ai/api/v1/top?limit=20"
+NHS_MCP_SEARCH_URL = "https://nothumansearch.ai/api/v1/search?q=mcp&limit=20"
 NHS_SUBMIT_URL = "https://nothumansearch.ai/api/v1/submit"
 
 # Public gist: https://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b
@@ -204,12 +206,70 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
         )
     new_rows = "\n".join(new_rows_list) if new_rows_list else "<tr><td colspan=\"4\">No new MCP servers this week.</td></tr>"
 
+    def signal_names(site: dict[str, Any]) -> list[str]:
+        labels = [
+            ("has_llms_txt", "llms.txt"),
+            ("has_ai_plugin", "ai-plugin.json"),
+            ("has_openapi", "OpenAPI"),
+            ("has_structured_api", "structured API"),
+            ("has_mcp_server", "MCP handshake"),
+            ("has_robots_ai", "AI-friendly robots.txt"),
+            ("has_schema_org", "Schema.org"),
+        ]
+        return [label for key, label in labels if site.get(key)]
+
+    def missing_signal_names(site: dict[str, Any]) -> list[str]:
+        labels = [
+            ("has_mcp_server", "MCP handshake"),
+            ("has_ai_plugin", "ai-plugin.json"),
+            ("has_openapi", "OpenAPI"),
+            ("has_structured_api", "structured API"),
+            ("has_llms_txt", "llms.txt"),
+            ("has_robots_ai", "AI-friendly robots.txt"),
+            ("has_schema_org", "Schema.org"),
+        ]
+        return [label for key, label in labels if not site.get(key)]
+
+    owned_domains = ("8bitconcepts.com", "aidevboard.com", "bringyour.ai", "nothumansearch.ai", "nothumansearch.com")
+    top_examples_raw = digest.get("top_examples", {}).get("results", []) or top_mcp_servers
+    top_examples = [s for s in top_examples_raw if s.get("domain") not in owned_domains] or top_examples_raw
+    top_performer_rows_list = []
+    for s in top_examples[:8]:
+        domain = html_escape(s.get("domain", "—"))
+        name = html_escape((s.get("name") or "").split("—")[0].split("|")[0].strip() or "—")
+        score = int(s.get("agentic_score", 0))
+        signals = ", ".join(signal_names(s)) or "MCP handshake"
+        top_performer_rows_list.append(
+            f"          <tr><td><a href=\"https://nothumansearch.ai/site/{domain}\">{domain}</a></td>"
+            f"<td>{name}</td>"
+            f"<td class=\"num\">{score}</td>"
+            f"<td>{html_escape(signals)}</td></tr>"
+        )
+    top_performer_rows = "\n".join(top_performer_rows_list) if top_performer_rows_list else "<tr><td colspan=\"4\">No verified MCP performers in digest.</td></tr>"
+
+    mcp_search_examples = digest.get("mcp_search_examples", {}).get("results", []) or []
+    weak_examples = [s for s in mcp_search_examples if not s.get("has_mcp_server")]
+    weak_rows_list = []
+    for s in weak_examples[:8]:
+        domain = html_escape(s.get("domain", "—"))
+        name = html_escape((s.get("name") or "").split("—")[0].split("|")[0].strip() or "—")
+        score = int(s.get("agentic_score", 0))
+        missing = ", ".join(missing_signal_names(s)[:4])
+        observed = f"MCP search hit; missing {missing}" if missing else "MCP search hit; failed live MCP verification"
+        weak_rows_list.append(
+            f"          <tr><td><a href=\"https://nothumansearch.ai/site/{domain}\">{domain}</a></td>"
+            f"<td>{name}</td>"
+            f"<td class=\"num\">{score}</td>"
+            f"<td>{html_escape(observed)}</td></tr>"
+        )
+    weak_rows = "\n".join(weak_rows_list) if weak_rows_list else "<tr><td colspan=\"4\">No weak MCP-search examples returned by the API.</td></tr>"
+
     # Meta / schema strings
     mcp_pct_round = f"{pct_mcp:.1f}"
     subtitle_text = (
         f"As of {today}, {fmt_thousands(total_sites)} agent-ready sites are indexed on "
         f"NothingHumanSearch, but only {fmt_thousands(mcp_verified)} ({mcp_pct_round}%) survive a real JSON-RPC "
-        f"handshake to their /mcp endpoint. The rest claim MCP in their docs but don't implement it correctly. "
+        f"handshake to their /mcp endpoint. The rest did not verify as working MCP endpoints in this crawl. "
         f"Live data pulled from <a href=\"https://nothumansearch.ai/digest.json\">nothumansearch.ai/digest.json</a>."
     )
 
@@ -220,7 +280,7 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
     )
     og_description = (
         f"{fmt_thousands(mcp_verified)} of {fmt_thousands(total_sites)} indexed agent-ready sites ({mcp_pct_round}%) "
-        f"pass a live JSON-RPC handshake. Most MCP claims don't implement the protocol correctly. "
+        f"pass a live JSON-RPC handshake. Most MCP-positive candidates do not verify as working endpoints. "
         f"Category breakdown + newly-verified servers from NothingHumanSearch."
     )
     twitter_description = (
@@ -242,9 +302,9 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
         f"signal (llms.txt, ai-plugin.json, OpenAPI, or an MCP manifest). Of those, "
         f"{fmt_thousands(mcp_verified)} &mdash; {mcp_pct_round}% &mdash; pass a live JSON-RPC probe against "
         f"their declared /mcp endpoint. The remaining {fmt_thousands(unverified)} sites ({unverified_pct:.1f}%) "
-        f"either mention MCP in their documentation without implementing it, or host a manifest that fails "
-        f"the handshake (404, 500, wrong Content-Type, or a server that answers HTTP but never completes "
-        f"the <code>initialize</code> round-trip)."
+        f"did not verify as working MCP endpoints in this crawl. That is not evidence of intent. It means "
+        f"the crawler found an MCP-positive or agent-discovery signal, then the live probe could not complete "
+        f"the <code>initialize</code> round-trip."
     )
 
     # Verification meaning
@@ -263,18 +323,34 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
         f"<a href=\"https://nothumansearch.ai/mcp\">nothumansearch.ai/mcp</a>) does exactly this live-probe for any "
         f"URL you hand it. When we recrawled the full index in April 2026 with the probe turned on, the "
         f"verified-MCP count stayed stable around {fmt_thousands(mcp_verified)} even as the total indexed "
-        f"population kept climbing. The gap between &quot;sites that mention MCP&quot; and &quot;sites that "
-        f"implement MCP&quot; is widening, not narrowing &mdash; which is the opposite of what the marketing "
-        f"cycle would have you believe."
+        f"population kept climbing. The gap between MCP-positive discovery surfaces and endpoints that "
+        f"complete a live handshake is widening, not narrowing &mdash; which is the opposite of what the "
+        f"marketing cycle would have you believe."
     )
 
     verify_meaning_para_3 = (
         f"This matters for anyone building an agent. If you rely on a static MCP directory to decide which "
         f"tools your agent should discover at runtime, you will waste connections and context tokens on dead "
-        f"endpoints. The 90% unverified cohort isn't malicious &mdash; it's mostly stale docs, misconfigured "
-        f"reverse proxies, and manifests that reference endpoints the author never actually wired up. But for "
+        f"endpoints. The 90%+ unverified cohort is not proof of bad faith &mdash; it can include stale docs, "
+        f"misconfigured reverse proxies, auth walls, wrong endpoint paths, scanner false positives, and manifests "
+        f"that reference endpoints the author has not wired up. But for "
         f"an autonomous agent, the failure mode is the same: a call that eats latency, fails, and doesn't "
         f"advance the task."
+    )
+
+    top_performers_para = (
+        f"The best performers are boring in the right way: they expose the full discovery stack, not just one "
+        f"badge. In the current top set, the 100-point sites publish <code>llms.txt</code>, "
+        f"<code>/.well-known/ai-plugin.json</code>, a discoverable OpenAPI spec, a structured API response, "
+        f"AI-friendly robots rules, Schema.org metadata, and a live MCP endpoint that answers "
+        f"<code>initialize</code>. That is what makes them agent-usable rather than merely agent-visible."
+    )
+
+    weak_performers_para = (
+        f"The weak examples below are not labeled as liars. They are sites returned by an MCP query whose "
+        f"current crawl record does not show a working MCP handshake. Several still have useful signals "
+        f"&mdash; usually <code>llms.txt</code> or a JSON API &mdash; but they stop short of being callable "
+        f"MCP servers. That distinction is the report's core fact."
     )
 
     # Categories
@@ -301,10 +377,11 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
 
     # New this week
     new_this_week_para = (
-        f"Ten MCP servers were newly verified in the last seven days. Every one of them scored 100 on the "
-        f"NHS agentic-readiness rubric &mdash; meaning they publish llms.txt, ai-plugin.json, an OpenAPI spec, "
-        f"<em>and</em> pass the live JSON-RPC MCP handshake. The pattern is consistent: teams that ship one "
-        f"discovery file tend to ship all of them, and teams that ship none ship none. There is no middle."
+        f"The newly verified list shows the same split at a smaller scale. The strongest new entries scored "
+        f"100 because they paired the live MCP handshake with the rest of the machine-readable stack: "
+        f"llms.txt, ai-plugin.json, OpenAPI, a structured API, robots rules, and Schema.org. Lower-scoring "
+        f"verified entries passed MCP but still missed adjacent discovery surfaces, most often OpenAPI or "
+        f"ai-plugin.json."
     )
 
     # Methodology paragraph
@@ -865,6 +942,42 @@ def build_html(digest: dict[str, Any], today: str, generated_iso: str) -> str:
 
       <p>{verify_meaning_para_3}</p>
 
+      <h2>Top performers</h2>
+
+      <p>{top_performers_para}</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Name</th>
+            <th class="num" style="text-align:right;">Score</th>
+            <th>Verified signals</th>
+          </tr>
+        </thead>
+        <tbody>
+{top_performer_rows}
+        </tbody>
+      </table>
+
+      <h2>Weak MCP-positive examples</h2>
+
+      <p>{weak_performers_para}</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Name</th>
+            <th class="num" style="text-align:right;">Score</th>
+            <th>Observed gap</th>
+          </tr>
+        </thead>
+        <tbody>
+{weak_rows}
+        </tbody>
+      </table>
+
       <h2>Top categories by indexed count</h2>
 
       <p>{categories_intro_para}</p>
@@ -1316,6 +1429,16 @@ def main() -> int:
         print(f"  NHS digest fetch failed: {e}", file=sys.stderr)
         return 2
     print(f"   NHS: {digest.get('total_sites')} sites / {digest.get('mcp_verified')} mcp-verified / {digest.get('llms_txt_count')} llms.txt / {digest.get('openapi_count')} openapi")
+    try:
+        digest["top_examples"] = http_get_json(NHS_TOP_URL, timeout=20)
+    except Exception as e:
+        digest["top_examples"] = {"results": []}
+        print(f"   Top examples unavailable (non-fatal): {e}", file=sys.stderr)
+    try:
+        digest["mcp_search_examples"] = http_get_json(NHS_MCP_SEARCH_URL, timeout=20)
+    except Exception as e:
+        digest["mcp_search_examples"] = {"results": []}
+        print(f"   MCP search examples unavailable (non-fatal): {e}", file=sys.stderr)
 
     print("2. Rendering HTML...")
     html = build_html(digest, today, generated_iso)
