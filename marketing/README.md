@@ -76,7 +76,8 @@ Existing pending drafts should be used or refreshed before creating new copy.
 Never post a candidate whose fingerprint already exists as `posted`,
 `scheduled`, or `queued`.
 
-Research-paper distribution runs every other day through the Codex automation
+Research-paper distribution runs every other day through launchd job
+`com.foundry.8bitconcepts.paper-distribution`, backed by sync-state automation
 `8bit-paper-distribution-every-other-day`. Each paper goes to every active
 channel: X, LinkedIn, Hacker News, Reddit, Dev.to/Hashnode, newsletter or
 direct editorial outreach, and indexing/discovery submission. A missing

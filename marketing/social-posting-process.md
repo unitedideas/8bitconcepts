@@ -32,7 +32,7 @@ Every post must teach first, route second, and never read like a pitch. The rout
 
 Research-paper distribution runs every other day. Each run picks the next paper that is not fully distributed across the channel set, refreshes any stale claims, then ships every channel that is available.
 
-The automation is `8bit-paper-distribution-every-other-day`. It runs from `/Users/owlassist/foundry-businesses/8bitconcepts` and must update the ledger with one row per paper/channel. "Fully distributed" means X, LinkedIn, HN, Reddit, Dev.to/Hashnode, newsletter/outreach, and indexing surfaces are either `posted` with URLs or explicitly `blocked` with the blocker named.
+The launchd job is `com.foundry.8bitconcepts.paper-distribution`, backed by sync-state automation `8bit-paper-distribution-every-other-day`. It runs from `/Users/owlassist/foundry-businesses/8bitconcepts` and must update the ledger with one row per paper/channel. "Fully distributed" means X, LinkedIn, HN, Reddit, Dev.to/Hashnode, newsletter/outreach, and indexing surfaces are either `posted` with URLs or explicitly `blocked` with the blocker named.
 
 ## Reddit Flow
 
@@ -59,7 +59,7 @@ API path is blocked until a Reddit app exists and credentials are stored. The re
 5. Reuse pending backlog before creating new content.
 6. Refresh stale claims before posting old drafts from `marketing/social-drafts.md`.
 
-Codex automation `8bit-daily-ai-social-queue` refreshes this queue every day at 08:20 and 14:20 PT. It preserves pending backlog, checks duplicate fingerprints, and keeps the queue ready for channel posting.
+Launchd jobs `com.foundry.8bitconcepts.ai-social-queue-morning` and `com.foundry.8bitconcepts.ai-social-queue-afternoon` refresh this queue every day at 08:20 and 14:20 PT through sync-state leases. They preserve pending backlog, check duplicate fingerprints, and keep the queue ready for channel posting.
 
 ## X AI Stat Bot Flow
 

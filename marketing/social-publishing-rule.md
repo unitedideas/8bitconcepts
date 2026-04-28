@@ -50,7 +50,7 @@ Most MCP adoption claims are not real endpoints.
 
 Every other day, promote one research paper across all channels. Do not treat LinkedIn, HN, Reddit, Dev.to/Hashnode, newsletter, or outreach as optional. If a channel cannot be posted because access is missing, log it as `blocked` with the exact credential/account gap and keep shipping the remaining channels.
 
-Automation: `8bit-paper-distribution-every-other-day`.
+Automation: launchd job `com.foundry.8bitconcepts.paper-distribution`, backed by sync-state automation `8bit-paper-distribution-every-other-day`.
 
 Fully distributed means the paper has a ledger row for each of:
 

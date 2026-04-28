@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "cadence": "every_other_day",
-  "automation": "8bit-paper-distribution-every-other-day",
+  "automation": "launchd:com.foundry.8bitconcepts.paper-distribution",
   "rule": "Every research paper goes to every active channel. Do not skip a channel silently; post it, queue it, or mark it blocked with the exact missing account or credential.",
   "channels": [
     {
