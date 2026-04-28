@@ -68,6 +68,7 @@ GIST_MD_FILENAME = "mcp-ecosystem-health.md"
 GIST_CSV_RAW_URL = f"https://gist.githubusercontent.com/unitedideas/{GIST_ID}/raw/{GIST_CSV_FILENAME}"
 GIST_MD_RAW_URL = f"https://gist.githubusercontent.com/unitedideas/{GIST_ID}/raw/{GIST_MD_FILENAME}"
 GIST_URL = f"https://gist.github.com/unitedideas/{GIST_ID}"
+MILESTONE_POSTS_PATH = REPO / "marketing" / "mcp-milestone-posts.md"
 
 
 def http_get_json(url: str, timeout: int = 30) -> dict[str, Any]:
@@ -1146,6 +1147,88 @@ def update_gist(digest: dict[str, Any], today: str) -> bool:
     return ok
 
 
+def build_milestone_posts(digest: dict[str, Any], today: str) -> str:
+    total_sites = int(digest.get("total_sites", 0))
+    mcp_verified = int(digest.get("mcp_verified", 0))
+    llms_txt_count = int(digest.get("llms_txt_count", 0))
+    openapi_count = int(digest.get("openapi_count", 0))
+    pct_mcp = (mcp_verified / total_sites * 100) if total_sites else 0.0
+
+    def threshold_count(percent: int) -> int:
+        if total_sites == 0:
+            return 0
+        return (total_sites * percent + 99) // 100
+
+    def status(percent: int) -> str:
+        need = threshold_count(percent)
+        if mcp_verified >= need:
+            return "READY"
+        return f"waiting: {fmt_thousands(need - mcp_verified)} more verified MCP servers needed"
+
+    def post(percent: int) -> str:
+        need = threshold_count(percent)
+        remaining = max(need - mcp_verified, 0)
+        if percent == 100:
+            first_line = "100% of indexed MCP claims now pass a live JSON-RPC handshake."
+        else:
+            first_line = f"{percent}% of indexed MCP claims now pass a live JSON-RPC handshake."
+        return f"""### {percent}% milestone
+
+Status: {status(percent)}
+Trigger: {fmt_thousands(need)} verified MCP servers out of {fmt_thousands(total_sites)} current indexed claims.
+Current gap: {fmt_thousands(remaining)}.
+
+Long post:
+
+{first_line}
+
+NothingHumanSearch is now at {fmt_thousands(mcp_verified)} verified MCP servers out of {fmt_thousands(total_sites)} indexed claims ({pct_mcp:.1f}%).
+
+Verification here means a real HTTP JSON-RPC probe, not a string match:
+
+1. Connect to the declared MCP endpoint.
+2. Send an initialize request.
+3. Confirm a valid protocolVersion response.
+
+The same crawl sees {fmt_thousands(llms_txt_count)} sites publishing llms.txt and {fmt_thousands(openapi_count)} publishing OpenAPI, which is the shape of the current agentic web: lots of context files, fewer programmatic surfaces, and fewer still that complete the MCP handshake.
+
+Live dataset: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html
+Raw data: {GIST_URL}
+
+Short post:
+
+{percent}% milestone: {fmt_thousands(mcp_verified)} of {fmt_thousands(total_sites)} indexed MCP claims now pass a live JSON-RPC handshake.
+
+llms.txt: {fmt_thousands(llms_txt_count)}
+OpenAPI: {fmt_thousands(openapi_count)}
+Methodology + raw data: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html
+"""
+
+    body = "\n".join(post(p) for p in (20, 50, 75, 100))
+    return f"""# MCP Verification Milestone Posts
+
+Generated from live NothingHumanSearch digest on {today}.
+
+Current verified share: {fmt_thousands(mcp_verified)} / {fmt_thousands(total_sites)} ({pct_mcp:.1f}%).
+Next milestone: {"20%" if pct_mcp < 20 else "50%" if pct_mcp < 50 else "75%" if pct_mcp < 75 else "100%" if pct_mcp < 100 else "complete"}.
+
+Use these when the live digest crosses 20%, 50%, 75%, and 100% verified MCP handshakes. Do not post until the status line says READY.
+
+{body}
+"""
+
+
+def update_milestone_posts(digest: dict[str, Any], today: str) -> bool:
+    text = build_milestone_posts(digest, today)
+    prior = MILESTONE_POSTS_PATH.read_text(encoding="utf-8") if MILESTONE_POSTS_PATH.exists() else ""
+    if prior == text:
+        print("   Milestone posts unchanged.")
+        return False
+    MILESTONE_POSTS_PATH.write_text(text, encoding="utf-8")
+    print(f"   Milestone posts: {MILESTONE_POSTS_PATH}")
+    return True
+
+
 def indexnow_ping(urls: list[str]) -> bool:
     payload = {
         "host": HOST,
@@ -1304,15 +1387,22 @@ def main() -> int:
         # Never let a gist failure abort the run
         print(f"   Gist update unhandled exception (non-fatal): {e}", file=sys.stderr)
 
+    print("\n4c. Updating milestone follow-up posts...")
+    try:
+        milestone_posts_changed = update_milestone_posts(digest, today)
+    except Exception as e:
+        milestone_posts_changed = False
+        print(f"   Milestone post update failed (non-fatal): {e}", file=sys.stderr)
+
     if args.once:
         print("\n=== --once: stopping before commit/push/pings ===")
-        if data_changed:
+        if data_changed or milestone_posts_changed:
             print("   (data had changed; running without --once will commit)")
         else:
             print("   (data unchanged vs prior content)")
         return 0
 
-    if not data_changed:
+    if not data_changed and not milestone_posts_changed:
         print("\n5. Data unchanged vs prior; skipping commit/push/pings.")
         return 0
 
@@ -1321,7 +1411,8 @@ def main() -> int:
                    "research/q2-2026-mcp-ecosystem-health.html",
                    "research/overview.html",
                    "index.html",
-                   f"research/og/{OG_SLUG}.png"])
+                   f"research/og/{OG_SLUG}.png",
+                   "marketing/mcp-milestone-posts.md"])
     if add.returncode != 0:
         print(f"   git add failed: {add.stderr[:300]}", file=sys.stderr)
         return 3
