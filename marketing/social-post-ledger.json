@@ -14,6 +14,28 @@
       "note": "Posted by Codex from the agent-owned 8bitconcepts X account."
     },
     {
+      "id": "on-device-inference-reddit-profile",
+      "source": "on-device-inference-launch",
+      "channel": "reddit_profile",
+      "account": "u/EngineerAdditional30",
+      "status": "posted",
+      "posted_at": "2026-04-28",
+      "url": "https://www.reddit.com/r/u_EngineerAdditional30/comments/1sy4cvg/ondevice_inference_is_becoming_the_everyday_llm/",
+      "fingerprint": "f1b1a9d5db7c12f6",
+      "note": "Live Reddit profile post after r/LocalLLaMA removed the subreddit submission."
+    },
+    {
+      "id": "on-device-inference-reddit-localllama",
+      "source": "on-device-inference-launch",
+      "channel": "reddit",
+      "account": "u/EngineerAdditional30",
+      "status": "removed",
+      "posted_at": "2026-04-28",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sy4bbx/ondevice_inference_is_becoming_the_everyday_llm/",
+      "fingerprint": "347795ad04a6269f",
+      "note": "Submitted to r/LocalLLaMA with Resources flair and Brand Affiliate tag; removed by moderators immediately."
+    },
+    {
       "id": "q2-2026-mcp-ecosystem-health-x-main",
       "source": "marketing/latest-research-social.md",
       "channel": "x",
