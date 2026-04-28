@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T22:58:37.217029+00:00",
+  "generated_at": "2026-04-28T05:48:08.777519+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -23,13 +23,13 @@
           "account": "@8bitconcepts",
           "copy": "Model cost is the easy line item. The real AI budget goes to data plumbing, permissions, evals, observability, workflow redesign, and the last mile into the system people already use.\n\nMore field notes: https://8bitconcepts.com/research/the-integration-tax.html",
           "fingerprint": "c4a69f83243004fc",
-          "duplicate": false
+          "duplicate": true
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Model cost is the easy line item. The real AI budget goes to data plumbing, permissions, evals, observability, workflow redesign, and the last mile into the system people already use.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
           "fingerprint": "6131fc773bb2189d",
-          "duplicate": false
+          "duplicate": true
         }
       },
       "quality_gate": [
@@ -56,13 +56,13 @@
           "account": "@8bitconcepts",
           "copy": "The mistake is treating agent instructions like a constitution. Most of them are lab notes. They need revision, pruning, and evidence from real runs.\n\nMore field notes: https://8bitconcepts.com/research/",
           "fingerprint": "db46bab707a1575a",
-          "duplicate": false
+          "duplicate": true
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "The mistake is treating agent instructions like a constitution. Most of them are lab notes. They need revision, pruning, and evidence from real runs.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/",
           "fingerprint": "e75825e1f3d3cf92",
-          "duplicate": false
+          "duplicate": true
         }
       },
       "quality_gate": [

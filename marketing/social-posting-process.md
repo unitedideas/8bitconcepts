@@ -18,9 +18,10 @@ Every post must teach first, route second, and never read like a pitch. The rout
 2. Generate drafts with `python3 tools/generate-social-posts.py --paper <slug>`.
 3. Rewrite the hook so the first line is the strongest falsifiable claim, not the paper title.
 4. Check `marketing/social-post-ledger.json` for duplicate fingerprints.
-5. Post X, LinkedIn, and HN only if each channel has a native angle.
-6. Log the live URL and fingerprint in `marketing/social-post-ledger.json` immediately after posting.
-7. Leave any unused good drafts as `pending` or `backlog_refresh_before_posting`; do not discard them.
+5. Before posting to X, verify the active account is `@8bitconcepts`. If the browser is logged into another account, switch accounts or log in before composing.
+6. Post X, LinkedIn, and HN only if each channel has a native angle.
+7. Log the live URL and fingerprint in `marketing/social-post-ledger.json` immediately after posting.
+8. Leave any unused good drafts as `pending` or `backlog_refresh_before_posting`; do not discard them.
 
 ## Twice-Daily AI Insight Flow
 

@@ -16,12 +16,13 @@ For every new paper:
 1. Verify the paper URL returns 200 before drafting or posting.
 2. Generate channel-native copy with `python3 tools/generate-social-posts.py --paper <slug>`.
 3. Check `marketing/social-post-ledger.json` before posting. If the normalized fingerprint already exists as `posted`, `scheduled`, or `queued`, do not post it again.
-4. Publish an X native post with the strongest falsifiable claim first. Put the link in the first reply unless the card itself is the visual asset.
-5. Publish a LinkedIn native post with the claim, the evidence, and one real discussion question. Put the link in the post only if the piece is already proven to render a good card; otherwise put it in the first comment.
-6. Submit to Hacker News only when the piece has a technical systems angle. Use a neutral title and a factual first comment.
-7. Update `marketing/social-post-ledger.json` with channel, account, URL, status, date, and fingerprint immediately after each post.
-8. Update `marketing/latest-research-social.md` with exact account, URL, post copy, and any first-comment copy.
-9. If a live post starts with "New paper," "New post," or a title instead of the claim, edit it before moving to the next channel.
+4. Verify the active X account is `@8bitconcepts` before composing. If the browser is logged into another account, switch accounts or log in first.
+5. Publish an X native post with the strongest falsifiable claim first. Put the link in the first reply unless the card itself is the visual asset.
+6. Publish a LinkedIn native post with the claim, the evidence, and one real discussion question. Put the link in the post only if the piece is already proven to render a good card; otherwise put it in the first comment.
+7. Submit to Hacker News only when the piece has a technical systems angle. Use a neutral title and a factual first comment.
+8. Update `marketing/social-post-ledger.json` with channel, account, URL, status, date, and fingerprint immediately after each post.
+9. Update `marketing/latest-research-social.md` with exact account, URL, post copy, and any first-comment copy.
+10. If a live post starts with "New paper," "New post," or a title instead of the claim, edit it before moving to the next channel.
 
 Bad frame:
 
