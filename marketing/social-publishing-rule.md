@@ -13,6 +13,8 @@ Every 8bitconcepts research paper and every daily AI insight should teach first,
 
 `@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
 
+Marketing posts are pre-approved on Foundry-owned or logged-in marketing accounts. When executing 8bit paper or insight distribution, publish without asking Shane for per-post approval after verifying account identity, duplicate locks, and channel fit. This applies to X, LinkedIn, Hacker News, Reddit, Dev.to/Hashnode, newsletters, directories, gists, and product/community surfaces.
+
 ## New Paper Distribution
 
 For every new paper:

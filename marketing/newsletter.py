@@ -17,6 +17,7 @@ Requires:
 """
 
 import argparse
+import html
 import json
 import os
 import subprocess
@@ -106,6 +107,34 @@ def compose_digest(papers, limit=3):
         "</div>",
     ])
     return ("\n".join(lines_text), "\n".join(lines_html))
+
+
+def compose_paper_digest(paper):
+    title = paper["title"]
+    summary = paper["summary"]
+    url = paper["url"]
+    text_body = "\n".join([
+        summary,
+        "",
+        f"Read: {url}",
+        "",
+        "--",
+        "Shane",
+        "8bitconcepts.com | hello@8bitconcepts.com",
+        "",
+        "Unsubscribe: {unsub_url}",
+    ])
+    html_body = "\n".join([
+        "<div style='font-family:system-ui,-apple-system,sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#111;'>",
+        f"<h2 style='font-size:22px;margin:0 0 14px 0;'>{html.escape(title)}</h2>",
+        f"<p style='font-size:15px;line-height:1.6;color:#333;'>{html.escape(summary)}</p>",
+        f"<p><a href='{html.escape(url)}' style='color:#d97757;text-decoration:none;font-weight:600;'>Read the paper -></a></p>",
+        "<hr style='border:none;border-top:1px solid #eee;margin:32px 0;' />",
+        "<p style='font-size:13px;color:#666;'>Shane — 8bitconcepts.com</p>",
+        "<p style='font-size:12px;color:#999;'>Not interested? <a href='{unsub_url}' style='color:#999;'>Unsubscribe</a>.</p>",
+        "</div>",
+    ])
+    return text_body, html_body
 
 
 def send_via_resend(api_key, to_email, subject, text_body, html_body):
@@ -200,17 +229,79 @@ def cmd_send(dry_run=False):
     save_sent(sent_log)
 
 
+def cmd_send_paper(slug, dry_run=False):
+    papers = load_research()
+    paper = next((p for p in papers if p.get("slug") == slug), None)
+    if not paper:
+        print(f"No paper found for slug: {slug}", file=sys.stderr)
+        sys.exit(1)
+
+    subs = fetch_subscribers()
+    print(f"{len(subs)} subscribers tagged '{TAG}'")
+    if not subs:
+        print("Nothing to send.")
+        return
+
+    text_tmpl, html_tmpl = compose_paper_digest(paper)
+    subject = paper["title"]
+
+    if dry_run:
+        for s in subs[:3]:
+            print(f"\n--- WOULD SEND to {s['email']} ---")
+            print("Subject:", subject)
+            print(text_tmpl.format(unsub_url=f"https://aidevboard.com/unsubscribe/{s['id']}"))
+        return
+
+    api_key = os.environ.get("RESEND_API_KEY") or keychain("resend-api-key")
+    if not api_key:
+        print("ERROR: Resend API key not available", file=sys.stderr)
+        sys.exit(1)
+
+    sent_log = load_sent()
+    broadcast_id = f"{slug}-" + datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
+    broadcast_recipients = []
+    for s in subs:
+        unsub = f"https://aidevboard.com/unsubscribe/{s['id']}"
+        text_body = text_tmpl.format(unsub_url=unsub)
+        html_body = html_tmpl.format(unsub_url=unsub)
+        ok, info = send_via_resend(api_key, s["email"], subject, text_body, html_body)
+        broadcast_recipients.append({
+            "email": s["email"],
+            "resend_id": info if ok else None,
+            "error": None if ok else info,
+        })
+        status = "SENT" if ok else "FAILED"
+        print(f"  {status} {s['email']}: {info}")
+
+    sent_log.append({
+        "broadcast_id": broadcast_id,
+        "paper_slug": slug,
+        "subject": subject,
+        "sent_at": datetime.now(timezone.utc).isoformat(),
+        "recipient_count": len(subs),
+        "success": sum(1 for r in broadcast_recipients if r["resend_id"]),
+        "failed": sum(1 for r in broadcast_recipients if r["error"]),
+        "recipients": broadcast_recipients,
+    })
+    save_sent(sent_log)
+
+
 def main():
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("send")
     sub.add_parser("dry-run")
+    paper = sub.add_parser("paper")
+    paper.add_argument("slug")
+    paper.add_argument("--dry-run", action="store_true")
     args = p.parse_args()
 
     if args.cmd == "send":
         cmd_send(dry_run=False)
     elif args.cmd == "dry-run":
         cmd_send(dry_run=True)
+    elif args.cmd == "paper":
+        cmd_send_paper(args.slug, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":

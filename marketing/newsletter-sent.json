@@ -1,0 +1,48 @@
+[
+  {
+    "broadcast_id": "on-device-inference-20260428-2315",
+    "paper_slug": "on-device-inference",
+    "subject": "Your AI Is Moving Back Onto the Machine",
+    "sent_at": "2026-04-28T23:15:20.200720+00:00",
+    "recipient_count": 7,
+    "success": 7,
+    "failed": 0,
+    "recipients": [
+      {
+        "email": "benjifisher@gmail.com",
+        "resend_id": "776df129-9458-42a6-ae8b-08ecce088f93",
+        "error": null
+      },
+      {
+        "email": "sfayas@comcast.net",
+        "resend_id": "42a82f66-133f-4ddb-8bb7-569bc8090641",
+        "error": null
+      },
+      {
+        "email": "ritchiebass@ymail.com",
+        "resend_id": "3c9652fc-c200-48ce-a81e-7f2dacfce790",
+        "error": null
+      },
+      {
+        "email": "ib.i.y.o.pes.a5.96@gmail.com",
+        "resend_id": "4945ce1a-c378-40cc-bc29-ad422dfa1ea5",
+        "error": null
+      },
+      {
+        "email": "a.get.r.o.1999@gmail.com",
+        "resend_id": "683912b5-4749-4ae7-935b-857a151dce6f",
+        "error": null
+      },
+      {
+        "email": "b.spi.t.ulsk.i.2@gmail.com",
+        "resend_id": "78b46dbf-3490-4c16-9d81-b02730c4e18a",
+        "error": null
+      },
+      {
+        "email": "tinor.e.fa.p44@gmail.com",
+        "resend_id": "f7a19cec-7f58-4e86-9467-ce13b81224bd",
+        "error": null
+      }
+    ]
+  }
+]

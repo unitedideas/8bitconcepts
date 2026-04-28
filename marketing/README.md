@@ -94,6 +94,8 @@ the exact account/API gap and continue with the rest.
 
 `@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
 
+Marketing distribution is pre-approved on Foundry-owned or logged-in marketing accounts. Verify account identity, duplicate locks, and Shane voice rules, then publish and ledger without asking Shane for per-post approval.
+
 ## Hooks
 
 Each outreach target has a `hook` field selecting the email template.
