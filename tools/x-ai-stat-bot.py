@@ -22,19 +22,25 @@ import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 REPO = Path(__file__).resolve().parent.parent
 LEDGER_PATH = REPO / "marketing" / "x-ai-stat-bot-ledger.json"
 OUTBOX_PATH = REPO / "marketing" / "x-ai-stat-bot-outbox.json"
 LOG_PATH = REPO / "marketing" / "x-ai-stat-bot.log"
+STATE_PATH = REPO / "marketing" / "x-ai-stat-bot-state.json"
 SOCIAL_LEDGER_PATH = REPO / "marketing" / "social-post-ledger.json"
 
 DEFAULT_ACCOUNT = "@8bitconcepts"
-MIN_MINUTES = 28
-MAX_MINUTES = 113
+MIN_MINUTES = 29
+MAX_MINUTES = 114
+MAX_POST_CHARS = 240
+LOCAL_TZ = ZoneInfo("America/Los_Angeles")
+QUIET_START_HOUR = 23
+QUIET_END_HOUR = 5
 POSTABLE_STATUSES = {"reserved", "drafted", "queued", "scheduled", "posted"}
 
 UA = "8bitconcepts-x-ai-stat-bot/1.0 (+https://8bitconcepts.com)"
@@ -180,6 +186,13 @@ def canonical_fact(value: str) -> str:
 
 def copy_fingerprint(value: str) -> str:
     return digest(normalize_text(value), 16)
+
+
+def x_weighted_length(value: str) -> int:
+    # X currently counts each URL as a fixed-length t.co link. Generated posts
+    # are linkless by default, but keep this correct for manually routed copy.
+    collapsed = re.sub(r"https?://\S+", "x" * 23, value)
+    return len(collapsed)
 
 
 def http_json(url: str, timeout: float = 10) -> Any:
@@ -345,10 +358,10 @@ def render_copy(candidate: Candidate) -> str:
     if candidate.kind == "meme":
         body = candidate.text
     elif candidate.kind == "news":
-        body = f"{candidate.text}\n\nThe pattern to watch: which part becomes a real workflow, and which part is just demo theater."
+        body = f"{candidate.text}. The useful question is what becomes a real workflow."
     else:
-        body = f"{candidate.text}\n\nThe useful split is claim vs. live behavior."
-    return f"{body}\n\n{candidate.route}"
+        body = candidate.text
+    return body
 
 
 def choose_candidate(candidates: list[Candidate], ledger: dict[str, Any]) -> tuple[Candidate, str]:
@@ -358,6 +371,8 @@ def choose_candidate(candidates: list[Candidate], ledger: dict[str, Any]) -> tup
     for candidate in candidates:
         copy = render_copy(candidate)
         fp = copy_fingerprint(copy)
+        if x_weighted_length(copy) > MAX_POST_CHARS:
+            continue
         if candidate.fact_key in fact_keys or fp in fingerprints:
             continue
         available.extend([(candidate, copy)] * max(1, candidate.weight))
@@ -477,16 +492,76 @@ def log(message: str) -> None:
         fh.write(f"{now_iso()} {message}\n")
 
 
+def write_state(**fields: Any) -> None:
+    state = {
+        "schema": 1,
+        "updated_at": now_iso(),
+        **fields,
+    }
+    STATE_PATH.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
+
+
+def quiet_until(now: datetime) -> datetime | None:
+    local = now.astimezone(LOCAL_TZ)
+    if local.hour >= QUIET_START_HOUR:
+        wake_local = (local + timedelta(days=1)).replace(hour=QUIET_END_HOUR, minute=0, second=0, microsecond=0)
+        return wake_local.astimezone(timezone.utc)
+    if local.hour < QUIET_END_HOUR:
+        wake_local = local.replace(hour=QUIET_END_HOUR, minute=0, second=0, microsecond=0)
+        return wake_local.astimezone(timezone.utc)
+    return None
+
+
+def next_run_after_random_delay(now: datetime, minutes: int) -> datetime:
+    candidate = now + timedelta(minutes=minutes)
+    quiet_end = quiet_until(candidate)
+    return quiet_end or candidate
+
+
 def daemon(args: argparse.Namespace) -> int:
     while True:
+        now = datetime.now(timezone.utc)
+        quiet_end = quiet_until(now)
+        if quiet_end:
+            sleep_seconds = max(1, int((quiet_end - now).total_seconds()))
+            write_state(
+                status="quiet_hours",
+                mode=args.mode,
+                account=args.expected_handle,
+                min_minutes=args.min_minutes,
+                max_minutes=args.max_minutes,
+                quiet_hours_local=f"{QUIET_START_HOUR:02d}:00-{QUIET_END_HOUR:02d}:00",
+                timezone=str(LOCAL_TZ),
+                sleep_seconds=sleep_seconds,
+                next_run_at=quiet_end.isoformat(timespec="seconds"),
+            )
+            log(f"quiet_hours next_run_at={quiet_end.isoformat(timespec='seconds')}")
+            time.sleep(sleep_seconds)
+            continue
+
         try:
             item = run_once(args)
             log(f"{args.mode} {item['id']} {item['fingerprint']} {item['source']}")
         except Exception as exc:  # noqa: BLE001
             log(f"ERROR {exc}")
         minutes = random.randint(args.min_minutes, args.max_minutes)
-        log(f"sleep_minutes={minutes}")
-        time.sleep(minutes * 60)
+        now = datetime.now(timezone.utc)
+        next_run = next_run_after_random_delay(now, minutes)
+        sleep_seconds = max(1, int((next_run - now).total_seconds()))
+        write_state(
+            status="sleeping",
+            mode=args.mode,
+            account=args.expected_handle,
+            min_minutes=args.min_minutes,
+            max_minutes=args.max_minutes,
+            random_minutes=minutes,
+            sleep_seconds=sleep_seconds,
+            next_run_at=next_run.isoformat(timespec="seconds"),
+            quiet_hours_local=f"{QUIET_START_HOUR:02d}:00-{QUIET_END_HOUR:02d}:00",
+            timezone=str(LOCAL_TZ),
+        )
+        log(f"random_minutes={minutes} next_run_at={next_run.isoformat(timespec='seconds')} sleep_seconds={sleep_seconds}")
+        time.sleep(sleep_seconds)
 
 
 def main() -> int:

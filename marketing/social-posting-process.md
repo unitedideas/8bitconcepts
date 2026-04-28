@@ -36,6 +36,12 @@ Every post must teach first, route second, and never read like a pitch. The rout
 
 Codex automation `8bit-daily-ai-social-queue` refreshes this queue every day at 08:20 and 14:20 PT. It preserves pending backlog, checks duplicate fingerprints, and keeps the queue ready for channel posting.
 
+## X AI Stat Bot Flow
+
+Launchd job `com.foundry.8bitconcepts.x-ai-stat-bot` runs `tools/x-ai-stat-bot.py` in draft mode with a random sleep between 29 and 114 minutes. After every run, the daemon chooses the next interval with `random.randint(29, 114)`, applies the 23:00-05:00 America/Los_Angeles quiet-hours gate, writes `marketing/x-ai-stat-bot-state.json`, then sleeps internally. It writes drafts to `marketing/x-ai-stat-bot-outbox.json` and blocks repeats through `marketing/x-ai-stat-bot-ledger.json`.
+
+The bot uses Shane's public voice rules: short, evidence-first, no ceremony, no hard sell, and no generic thought-leadership filler. X bot copy is linkless by default, capped below the normal X composer limit, and stores the route URL as metadata for a reply/comment or manual follow-up. Live X posting stays gated on the active account being `@8bitconcepts` and the public posting confirmation boundary.
+
 ## Anti-Duplicate Gate
 
 Before any public post, normalize the candidate copy by lowercasing and collapsing whitespace, hash it with SHA-256, and keep the first 16 hex chars. If that fingerprint exists in `marketing/social-post-ledger.json` with status `posted`, `scheduled`, or `queued`, skip it.

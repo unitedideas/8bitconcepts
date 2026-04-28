@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "items": [
+    {
+      "id": "x-ai-stat-2026-04-28T05:54:57+00:00-8e17d7bb",
+      "status": "posted",
+      "created_at": "2026-04-28T05:54:57+00:00",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "field_note",
+      "source": "8bitconcepts Context Wall",
+      "source_url": "https://8bitconcepts.com/research/the-context-wall.html",
+      "route": "https://8bitconcepts.com/research/the-context-wall.html",
+      "fact_id": "context-infra",
+      "fact_key": "8e17d7bb8c434fe506aa5478",
+      "fingerprint": "b3d1b468613ccba6",
+      "copy": "Agents need operating context, not just prompts. The hard part is moving what a senior teammate knows into the system.",
+      "posted_at": "2026-04-28T06:05:00+00:00",
+      "url": "https://x.com/8BitConcepts/status/2049006357203005834",
+      "note": "Shortened for 8bitconcepts account limit on first post."
+    },
+    {
+      "id": "x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef",
+      "status": "drafted",
+      "created_at": "2026-04-28T05:57:10+00:00",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "stat",
+      "source": "AI Dev Board Hiring Snapshot",
+      "source_url": "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
+      "fact_id": "ai-jobs-total-2026-04-27",
+      "fact_key": "c6e848ef61cd7a3258d235ee",
+      "fingerprint": "399b097978684dc0",
+      "copy": "The AI Dev Board index had 9,161 AI/ML roles across 524 companies on 2026-04-27."
+    },
+    {
+      "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "status": "drafted",
+      "created_at": "2026-04-28T05:58:51+00:00",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "field_note",
+      "source": "8bitconcepts Integration Tax",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_id": "model-api-cost-share",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "fingerprint": "d98634ae51b8b3ec",
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+    }
+  ]
+}

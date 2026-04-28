@@ -51,6 +51,8 @@ Post two AI insights per day:
 
 The topic area can be broad: AI hiring, agent infrastructure, MCP, evals, production failures, workflow automation, org design, prompt decay, governance, AI ROI, agentic search, or operating-system patterns for agents.
 
+`tools/x-ai-stat-bot.py` also runs under launchd as `com.foundry.8bitconcepts.x-ai-stat-bot` in draft mode every random 29-114 minutes. It uses the same voice rules and duplicate gates, writes linkless X-native copy capped below the composer limit, and keeps the route URL in metadata instead of publishing live.
+
 Every post must satisfy all four:
 
 1. It teaches something specific.

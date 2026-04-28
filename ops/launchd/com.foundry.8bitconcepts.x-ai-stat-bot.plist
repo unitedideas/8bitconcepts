@@ -13,9 +13,9 @@
     <string>--mode</string>
     <string>draft</string>
     <string>--min-minutes</string>
-    <string>28</string>
+    <string>29</string>
     <string>--max-minutes</string>
-    <string>113</string>
+    <string>114</string>
   </array>
 
   <key>WorkingDirectory</key>

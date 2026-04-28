@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "updated_at": "2026-04-28T06:14:24+00:00",
+  "status": "quiet_hours",
+  "mode": "draft",
+  "account": "@8bitconcepts",
+  "min_minutes": 29,
+  "max_minutes": 114,
+  "quiet_hours_local": "23:00-05:00",
+  "timezone": "America/Los_Angeles",
+  "sleep_seconds": 20735,
+  "next_run_at": "2026-04-28T12:00:00+00:00"
+}
