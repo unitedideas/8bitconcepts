@@ -78,6 +78,8 @@ Never post a candidate whose fingerprint already exists as `posted`,
 - LinkedIn profile: `https://www.linkedin.com/in/shane-cheek-9173473b6/`
 - Hacker News: use `8bitconcepts`; submit only technical systems pieces, not generic consulting pages.
 
+`@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
+
 ## Hooks
 
 Each outreach target has a `hook` field selecting the email template.

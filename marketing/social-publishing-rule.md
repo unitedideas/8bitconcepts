@@ -9,6 +9,8 @@ Every 8bitconcepts research paper and every daily AI insight should teach first,
 - LinkedIn profile: `https://www.linkedin.com/in/shane-cheek-9173473b6/`
 - Hacker News: submit only technical systems pieces.
 
+`@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
+
 ## New Paper Distribution
 
 For every new paper:

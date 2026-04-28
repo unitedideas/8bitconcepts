@@ -3,6 +3,17 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "on-device-inference-x-main",
+      "source": "on-device-inference-launch",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-04-28",
+      "url": "https://x.com/8BitConcepts/status/2049006961837096997",
+      "fingerprint": "c9ecfce305d3aff5",
+      "note": "Posted by Codex from the agent-owned 8bitconcepts X account."
+    },
+    {
       "id": "q2-2026-mcp-ecosystem-health-x-main",
       "source": "marketing/latest-research-social.md",
       "channel": "x",

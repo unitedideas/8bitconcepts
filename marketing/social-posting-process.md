@@ -8,6 +8,8 @@ This is the reusable process from the Q2 2026 MCP Ecosystem Health launch. It ex
 - LinkedIn: Shane profile, login `hello@8bitconcepts.com`
 - Hacker News: `8bitconcepts`
 
+`@8bitconcepts` is agent-owned for normal 8bit marketing. Do not ask which X account to use or whether this account is appropriate. Draft, lock, post, and ledger the content from `@8bitconcepts`.
+
 ## Working Rule
 
 Every post must teach first, route second, and never read like a pitch. The route can be 8bit research, AI Dev Board, Not Human Search, or a case study, but the post should stand on its own without the link.
