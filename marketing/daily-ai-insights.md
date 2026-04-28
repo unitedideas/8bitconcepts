@@ -2,7 +2,7 @@
 
 Generated: 2026-04-27 22:58 UTC
 Post date: 2026-04-27
-X account: @TheShaneCheek
+X account: @8bitconcepts
 LinkedIn profile: https://www.linkedin.com/in/shane-cheek-9173473b6/
 
 Rule: two posts per day, always AI, always informative, always routed to an 8bitconcepts / Foundry proof point, never sales-first.

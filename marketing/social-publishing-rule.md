@@ -4,7 +4,7 @@ Every 8bitconcepts research paper and every daily AI insight should teach first,
 
 ## Accounts
 
-- X: `@TheShaneCheek`
+- X: `@8bitconcepts`
 - LinkedIn login: `hello@8bitconcepts.com`
 - LinkedIn profile: `https://www.linkedin.com/in/shane-cheek-9173473b6/`
 - Hacker News: submit only technical systems pieces.

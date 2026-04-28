@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-04-27T22:58:37.217029+00:00",
   "account_policy": {
-    "x": "@TheShaneCheek",
+    "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
     "hacker_news": "8bitconcepts; only for technical systems artifacts"
   },
@@ -20,7 +20,7 @@
       "funnel": "AI integration audits",
       "channels": {
         "x": {
-          "account": "@TheShaneCheek",
+          "account": "@8bitconcepts",
           "copy": "Model cost is the easy line item. The real AI budget goes to data plumbing, permissions, evals, observability, workflow redesign, and the last mile into the system people already use.\n\nMore field notes: https://8bitconcepts.com/research/the-integration-tax.html",
           "fingerprint": "c4a69f83243004fc",
           "duplicate": false
@@ -53,7 +53,7 @@
       "funnel": "embedded AI operating systems",
       "channels": {
         "x": {
-          "account": "@TheShaneCheek",
+          "account": "@8bitconcepts",
           "copy": "The mistake is treating agent instructions like a constitution. Most of them are lab notes. They need revision, pruning, and evidence from real runs.\n\nMore field notes: https://8bitconcepts.com/research/",
           "fingerprint": "db46bab707a1575a",
           "duplicate": false

@@ -4,7 +4,7 @@ This is the reusable process from the Q2 2026 MCP Ecosystem Health launch. It ex
 
 ## Accounts
 
-- X: `@TheShaneCheek`
+- X: `@8bitconcepts`
 - LinkedIn: Shane profile, login `hello@8bitconcepts.com`
 - Hacker News: `8bitconcepts`
 

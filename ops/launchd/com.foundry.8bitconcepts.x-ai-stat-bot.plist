@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.foundry.8bitconcepts.x-ai-stat-bot</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/owlassist/foundry-businesses/8bitconcepts/tools/x-ai-stat-bot.py</string>
+    <string>--daemon</string>
+    <string>--mode</string>
+    <string>draft</string>
+    <string>--min-minutes</string>
+    <string>28</string>
+    <string>--max-minutes</string>
+    <string>113</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/owlassist/foundry-businesses/8bitconcepts</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key>
+    <string>/Users/owlassist</string>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/owlassist/foundry-businesses/8bitconcepts/marketing/x-ai-stat-bot.stdout.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/owlassist/foundry-businesses/8bitconcepts/marketing/x-ai-stat-bot.stderr.log</string>
+</dict>
+</plist>

@@ -73,7 +73,7 @@ Never post a candidate whose fingerprint already exists as `posted`,
 
 ## Social accounts
 
-- X: `@TheShaneCheek`
+- X: `@8bitconcepts`
 - LinkedIn login: `hello@8bitconcepts.com`
 - LinkedIn profile: `https://www.linkedin.com/in/shane-cheek-9173473b6/`
 - Hacker News: use `8bitconcepts`; submit only technical systems pieces, not generic consulting pages.

@@ -22,7 +22,7 @@ REPO = Path(__file__).resolve().parent.parent
 OUT_PATH = REPO / "marketing" / "daily-ai-insights.md"
 QUEUE_PATH = REPO / "marketing" / "daily-ai-insights-queue.json"
 LEDGER_PATH = REPO / "marketing" / "social-post-ledger.json"
-X_ACCOUNT = "@TheShaneCheek"
+X_ACCOUNT = "@8bitconcepts"
 LINKEDIN_PROFILE = "https://www.linkedin.com/in/shane-cheek-9173473b6/"
 POST_TIMES_LOCAL = {"morning": "08:30", "afternoon": "14:30"}
 
