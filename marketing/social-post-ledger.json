@@ -215,6 +215,19 @@
             "route": "https://8bitconcepts.com/research/on-device-inference.html",
             "fingerprint": "f4c95f37a8d3798c",
             "note": "IndexNow returned HTTP 200; WebSub hubs returned HTTP 204; NHS submit returned HTTP 201."
+        },
+        {
+            "id": "linkedin-ai-insight-2026-04-28-adb-live-stats",
+            "source": "marketing/x-ai-stat-bot-outbox.json",
+            "channel": "linkedin",
+            "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+            "status": "blocked",
+            "date": "2026-04-28",
+            "route": "https://aidevboard.com",
+            "fact_key": "linkedin-adb-live-market-signal-2026-04-28",
+            "fingerprint": "299e507dd260005b",
+            "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now.\n\nThe useful signal is not the raw count. It is where the market is still hiring while everyone says the AI hiring cycle is saturated: senior builders, infra-heavy roles, and companies turning model work into production systems.\n\nLive board:\nhttps://aidevboard.com",
+            "note": "Blocked before posting: Chrome opened https://www.linkedin.com/feed/ to the LinkedIn login screen, so no active LinkedIn session or approved account identity could be verified. No public-action lock was claimed because no externally visible action was attempted."
         }
     ]
 }
