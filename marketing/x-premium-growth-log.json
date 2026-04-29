@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "runs": [
+    {
+      "id": "8bit-x-premium-growth-2026-04-29T0121Z",
+      "started_at": "2026-04-29T01:22:56Z",
+      "automation_id": "8bit-x-premium-growth-operator",
+      "account_identity": {
+        "verified": true,
+        "observed_account": "@8BitConcepts",
+        "display_name": "8bitconcepts",
+        "evidence": "X sidebar account menu and profile page showed 8bitconcepts / @8BitConcepts with verified badge."
+      },
+      "premium_status": {
+        "premium_active": true,
+        "evidence": "Premium hub showed Verified since April 2026.",
+        "revenue_sharing_status": "ineligible",
+        "revenue_sharing_gaps": [
+          "Premium subscription requirement met.",
+          "Needs 500 Premium followers; observed follower count is 0 and verified followers is 0.",
+          "Needs 5,000,000 impressions in the last 3 months; observed 3M analytics impressions is 17."
+        ],
+        "subscriptions_status": "ineligible"
+      },
+      "metrics": {
+        "observed_at": "2026-04-29T01:22:56Z",
+        "followers": 0,
+        "following": 1,
+        "verified_followers": 0,
+        "posts_total_visible": 4,
+        "analytics_7d": {
+          "impressions": 16,
+          "engagement_rate": "4.9%",
+          "engagements": 1,
+          "profile_visits": 1,
+          "replies": 0,
+          "likes": 0,
+          "reposts": 0,
+          "bookmarks": 0,
+          "shares": 0
+        },
+        "analytics_3m": {
+          "impressions": 17,
+          "engagement_rate": "5.8%",
+          "engagements": 1,
+          "profile_visits": 1,
+          "replies": 0,
+          "likes": 0,
+          "reposts": 0,
+          "bookmarks": 0,
+          "shares": 0
+        },
+        "post_analytics_7d": [
+          {
+            "url": "https://x.com/8BitConcepts/status/2049291936788554021",
+            "impressions": 1,
+            "likes": 0,
+            "replies": 0,
+            "reposts": 0
+          },
+          {
+            "url": "https://x.com/8BitConcepts/status/2049247604115206476",
+            "impressions": 4,
+            "likes": 0,
+            "replies": 0,
+            "reposts": 0
+          },
+          {
+            "url": "https://x.com/8BitConcepts/status/2049006961837096997",
+            "impressions": 5,
+            "likes": 0,
+            "replies": 0,
+            "reposts": 0
+          },
+          {
+            "url": "https://x.com/8BitConcepts/status/2049006357203005834",
+            "impressions": 7,
+            "likes": 0,
+            "replies": 0,
+            "reposts": 0
+          }
+        ]
+      },
+      "notifications": {
+        "unread_count_observed": 2,
+        "summary": "Verification notifications observed; account-security login notifications present. No private notification content copied into the repo."
+      },
+      "target_discovery": {
+        "queries": [
+          "X latest search: \"MCP\" \"agents\" -filter:replies",
+          "X latest search: \"AI hiring\" OR \"AI engineer\" -filter:replies",
+          "X latest search: \"operator software\" OR \"AI agents\" \"SaaS\" -filter:replies"
+        ],
+        "targets": [
+          {
+            "url": "https://x.com/zeeg/status/2049276940713181371",
+            "account": "@zeeg",
+            "context": "Sentry MCP search tools use an LLM over structured params and natural language."
+          },
+          {
+            "url": "https://x.com/charlesmendez/status/2049275544768766436",
+            "account": "@charlesmendez",
+            "context": "CLI versus MCP argument for agent-facing interfaces."
+          },
+          {
+            "url": "https://x.com/nik_kale/status/2049277526481244558",
+            "account": "@nik_kale",
+            "context": "Salesforce exposing APIs, MCP tools, and CLI commands to agents."
+          },
+          {
+            "url": "https://x.com/BlueNexusAI/status/2049257010928238788",
+            "account": "@BlueNexusAI",
+            "context": "Company knowledge is scattered across Slack, tickets, databases, SaaS tools, and email."
+          },
+          {
+            "url": "https://x.com/Britebot70/status/2049262477687332905",
+            "account": "@Britebot70",
+            "context": "Every major SaaS vendor now ships an Agent Studio; agent ops governance question."
+          },
+          {
+            "url": "https://x.com/ReneLacad/status/2049220135106289828",
+            "account": "@ReneLacad",
+            "context": "AI agents listed as one of the next large money-making categories."
+          },
+          {
+            "url": "https://x.com/rikonazza/status/2049181315489026305",
+            "account": "@rikonazza",
+            "context": "Claude to MCP to vidIQ live YouTube data workflow."
+          },
+          {
+            "url": "https://x.com/Charles_Haworth/status/2049180647982354909",
+            "account": "@Charles_Haworth",
+            "context": "Agent-ready systems are a current builder window."
+          },
+          {
+            "url": "https://x.com/MSaintjour/status/2049282977230684521",
+            "account": "@MSaintjour",
+            "context": "Open-source MCP context layer for Claude, Cursor, Codex, etc."
+          },
+          {
+            "url": "https://x.com/ibhavikmakwana/status/2049285289424912707",
+            "account": "@ibhavikmakwana",
+            "context": "FlutterFlow MCP brings Claude, Gemini, or Codex directly into projects."
+          }
+        ]
+      },
+      "public_actions": [],
+      "queued_actions": [
+        "x-premium-reply-2026-04-29-zeeg-sentry-mcp",
+        "x-premium-reply-2026-04-29-charlesmendez-cli-vs-mcp",
+        "x-premium-reply-2026-04-29-nik-kale-salesforce-mcp",
+        "x-premium-reply-2026-04-29-bluenexus-context-wall",
+        "x-premium-reply-2026-04-29-britebot-agent-ops",
+        "x-premium-reply-2026-04-29-renelacad-agent-category",
+        "x-premium-reply-2026-04-29-rikonazza-vidiq-mcp",
+        "x-premium-reply-2026-04-29-charleshaworth-agent-ready-systems",
+        "x-premium-quote-2026-04-29-msaintjour-portable-context",
+        "x-premium-quote-2026-04-29-flutterflow-mcp"
+      ],
+      "original_post_decision": {
+        "decision": "deferred",
+        "reason": "A BYA launch post was visible as active/recent during this run.",
+        "candidate_id": "x-premium-original-candidate-2026-04-29-mcp-handshake-gap",
+        "candidate_fingerprint": "c9bbe74b6544a5b6"
+      },
+      "article": {
+        "status": "drafted_local_only",
+        "path": "marketing/x-articles/q2-2026-mcp-ecosystem-health.md",
+        "source_paper": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "excerpt_post_candidates": [
+          "Most MCP discovery signals are still not working endpoints. 5,104 sites publish llms.txt; 418 of 7,117 pass a live MCP handshake.",
+          "Agents do not run on mentions. They run on calls that complete.",
+          "Agent-visible is not agent-usable. The boring stack is llms.txt, OpenAPI, structured API, robots rules, Schema.org, and a live MCP initialize response."
+        ]
+      },
+      "promotion_candidates": [
+        {
+          "url": "https://x.com/8BitConcepts/status/2049006357203005834",
+          "reason": "Best visible organic reach in account analytics at 7 impressions, but zero engagement; keep as a learning baseline, not a spend candidate yet.",
+          "audience": "AI operators and agent-infrastructure builders",
+          "objective": "Profile visits and qualified replies after stronger organic proof",
+          "blocked_spend_note": "No paid promotion or Ads Manager action without spend/action approval."
+        },
+        {
+          "url": "https://x.com/8BitConcepts/status/2049291936788554021",
+          "reason": "BYA launch post is current and route-aligned, but only 1 impression at inspection time; wait for organic signal before any paid consideration.",
+          "audience": "Claude Code and Codex users who need local handoff portability",
+          "objective": "Website traffic to BYA guide and replies from coding-agent users",
+          "blocked_spend_note": "No paid promotion or Ads Manager action without spend/action approval."
+        }
+      ],
+      "blockers": [
+        "No public X replies, quote posts, original posts, or Articles were published because creating third-party-facing communications requires action-time confirmation in this execution environment.",
+        "No paid promotion was attempted; spend remains gated."
+      ],
+      "next_best_action": "With action-time confirmation available, publish the 10 queued replies/quote posts first, then publish the MCP Article and use the three excerpt candidates over the next 24 hours."
+    }
+  ]
+}
