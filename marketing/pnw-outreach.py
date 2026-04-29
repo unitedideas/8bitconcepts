@@ -48,6 +48,7 @@ TARGETS_FILE = SCRIPT_DIR / "pnw-smb-targets.csv"
 SENT_FILE = SCRIPT_DIR / "pnw-outreach-sent.json"
 RESEND_API_URL = "https://api.resend.com/emails"
 FROM_EMAIL = "8bitconcepts <hello@8bitconcepts.com>"
+NO_FOLLOWUP_DELIVERY_STATUSES = {"bounced", "complained", "suppressed"}
 ROLE_BASED_LOCAL_PARTS = {
     "admin",
     "ask",
@@ -354,6 +355,72 @@ def send_via_resend(to_email, subject, body, api_key):
         return False, str(e)
 
 
+def fetch_resend_status(message_id, api_key):
+    """Fetch the latest Resend event for a sent email."""
+    import json as json_module
+    headers = {
+        'Authorization': f'Bearer {api_key}',
+        'User-Agent': 'curl/8.7.1',
+    }
+    try:
+        req = urllib.request.Request(
+            f"{RESEND_API_URL}/{message_id}",
+            headers=headers,
+            method='GET',
+        )
+        with urllib.request.urlopen(req, timeout=10) as response:
+            resp_data = json_module.loads(response.read().decode('utf-8'))
+            return True, {
+                "last_event": resp_data.get("last_event"),
+                "created_at": resp_data.get("created_at"),
+            }
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode('utf-8')
+        return False, f"HTTP {e.code}: {error_body}"
+    except Exception as e:
+        return False, str(e)
+
+
+def cmd_refresh_status():
+    """Refresh Resend delivery status for PNW outreach sends."""
+    sent = load_sent()
+    sent_list = list(sent.values()) if isinstance(sent, dict) else sent
+    if not sent_list:
+        print("No sent records.")
+        return
+
+    api_key = get_resend_api_key()
+    if not api_key:
+        print("Error: Cannot fetch Resend API key from keychain", file=sys.stderr)
+        sys.exit(1)
+
+    now_iso = datetime.now(timezone.utc).isoformat()
+    changed = 0
+    counts = {}
+    for record in sent_list:
+        message_id = record.get("message_id")
+        if not message_id:
+            continue
+        ok, result = fetch_resend_status(message_id, api_key)
+        if ok:
+            last_event = result.get("last_event") or "unknown"
+            counts[last_event] = counts.get(last_event, 0) + 1
+            if record.get("delivery_status") != last_event:
+                changed += 1
+            record["delivery_status"] = last_event
+            record["delivery_checked_at"] = now_iso
+            record.pop("delivery_error", None)
+        else:
+            counts["status_error"] = counts.get("status_error", 0) + 1
+            record["delivery_error"] = result
+            record["delivery_checked_at"] = now_iso
+
+    save_sent(sent_list)
+    print(f"Refreshed {len(sent_list)} records; {changed} status changes")
+    for status, count in sorted(counts.items()):
+        print(f"  {status}: {count}")
+
+
 def cmd_send(limit=None, dry_run=False, include_role_based=False):
     """Prepare or send outreach batch."""
     targets = load_targets()
@@ -433,6 +500,10 @@ def cmd_followup(hours_after=96, dry_run=False, limit=None):
         sent_at = datetime.fromisoformat(record.get("sent_at", ""))
         age = now - sent_at
         if age.total_seconds() > hours_after * 3600:
+            delivery_status = record.get("delivery_status", "")
+            if delivery_status in NO_FOLLOWUP_DELIVERY_STATUSES:
+                record["followup_blocked_reason"] = f"delivery_status={delivery_status}"
+                continue
             if not record.get("followup_sent"):
                 followup_due.append(record)
     if limit:
@@ -494,6 +565,7 @@ if __name__ == "__main__":
 
     subparsers.add_parser("status", help="Show outreach status")
     subparsers.add_parser("template-preview", help="Show all email templates")
+    subparsers.add_parser("refresh-status", help="Refresh Resend delivery status")
 
     followup_parser = subparsers.add_parser("followup", help="Send follow-ups")
     followup_parser.add_argument("--hours", type=int, default=96, help="Follow-ups N hours after send")
@@ -508,6 +580,8 @@ if __name__ == "__main__":
         cmd_status()
     elif args.command == "template-preview":
         cmd_template_preview()
+    elif args.command == "refresh-status":
+        cmd_refresh_status()
     elif args.command == "followup":
         cmd_followup(hours_after=args.hours, dry_run=args.dry_run, limit=args.limit)
     else:
