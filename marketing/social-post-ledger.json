@@ -109,7 +109,7 @@
       "source": "marketing/daily-ai-insights-queue.json",
       "channel": "x",
       "account": "@8bitconcepts",
-      "status": "queued",
+      "status": "posted",
       "date": "2026-04-27",
       "post_time_local": "08:30",
       "fingerprint": "c4a69f83243004fc",
@@ -256,7 +256,9 @@
       "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "fingerprint": "83e93c951960b4a5",
       "copy": "This is the right direction: natural-language tool fronts still need live verification underneath. In the current NHS crawl, 418 of 7,117 agent-ready sites pass a real MCP initialize handshake. The schema is the invitation; the round trip is the product.",
-      "note": "Queued after active @8bitconcepts identity verification. Not posted in this run because creating public X replies/quote posts requires action-time confirmation in the current execution policy."
+      "posted_at": "2026-04-29T01:48:16Z",
+      "posted_url": "https://x.com/8BitConcepts/status/2049304562511847851",
+      "note": "Posted live from verified @8BitConcepts after account/Premium verification. X showed the graduated-access notice and confirmed: Your post was sent."
     },
     {
       "id": "x-premium-reply-2026-04-29-charlesmendez-cli-vs-mcp",
