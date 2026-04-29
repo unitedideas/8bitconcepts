@@ -25,6 +25,8 @@ Tools for outbound marketing. Everything uses Resend from the verified
   new-paper distribution and twice-daily AI insight posts.
 - `social-posting-process.md` — step-by-step posting workflow, including the
   exact Q2 2026 MCP paper process that worked.
+- `x-premium-distribution-playbook.md` — current X Premium / Creator Revenue
+  Sharing / Articles / Media Studio / paid reach playbook for `@8bitconcepts`.
 - `reddit-posting-process.md` — Reddit-specific browser/API process, account
   state, subreddit fit rules, OAuth setup, and submit examples.
 - `social-post-ledger.json` — status ledger for posted, pending, queued, and
