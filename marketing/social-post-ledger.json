@@ -228,6 +228,19 @@
             "fingerprint": "299e507dd260005b",
             "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now.\n\nThe useful signal is not the raw count. It is where the market is still hiring while everyone says the AI hiring cycle is saturated: senior builders, infra-heavy roles, and companies turning model work into production systems.\n\nLive board:\nhttps://aidevboard.com",
             "note": "Blocked before posting: Chrome opened https://www.linkedin.com/feed/ to the LinkedIn login screen, so no active LinkedIn session or approved account identity could be verified. No public-action lock was claimed because no externally visible action was attempted."
+        },
+        {
+            "id": "x-ai-stat-2026-04-29-compensation-by-skill",
+            "source": "marketing/x-ai-stat-bot-outbox.json",
+            "channel": "x",
+            "account": "@8bitconcepts",
+            "status": "blocked",
+            "date": "2026-04-28",
+            "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+            "fact_key": "d0b366705683b61e40d789eb",
+            "fingerprint": "7f578dbb9c5027ea",
+            "copy": "Research AI roles averaged $273,880, while generative-AI roles averaged $230,707 despite having about 2.5x more openings.",
+            "note": "Blocked before posting: this launchd worker could not verify the active X account. Computer Use returned cgWindowNotFound for Brave and Chrome, and direct screenshot capture was black. No public post attempted."
         }
     ]
 }
