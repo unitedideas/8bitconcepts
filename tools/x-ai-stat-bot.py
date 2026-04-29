@@ -195,6 +195,16 @@ def x_weighted_length(value: str) -> int:
     return len(collapsed)
 
 
+def starts_with_x_mention(value: str) -> bool:
+    return bool(re.match(r"^\s*@[\w_]{1,15}\b", value))
+
+
+def enforce_no_leading_x_mention(value: str) -> str:
+    if not starts_with_x_mention(value):
+        return value
+    return f"Looking at public AI market signal: {value.lstrip()}"
+
+
 def http_json(url: str, timeout: float = 10) -> Any:
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -361,7 +371,7 @@ def render_copy(candidate: Candidate) -> str:
         body = f"{candidate.text}. The useful question is what becomes a real workflow."
     else:
         body = candidate.text
-    return body
+    return enforce_no_leading_x_mention(body)
 
 
 def choose_candidate(candidates: list[Candidate], ledger: dict[str, Any]) -> tuple[Candidate, str]:

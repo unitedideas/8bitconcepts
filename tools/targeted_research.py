@@ -419,7 +419,7 @@ def targeted_queue_item(
             },
         },
         "quality_gate": [
-            "target company or influential person is named/tagged naturally",
+            "target company or influential person is named/tagged naturally but never as the first token",
             "documented sources are attached",
             "uses live ADB or NHS stats",
             "does not negatively call out the target",

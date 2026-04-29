@@ -35,6 +35,21 @@ class XAIStatBotTests(unittest.TestCase):
             copy = bot.render_copy(candidate)
             self.assertLessEqual(bot.x_weighted_length(copy), bot.MAX_POST_CHARS, candidate.fact_id)
             self.assertFalse(any(term in copy.lower() for term in banned), candidate.fact_id)
+            self.assertFalse(bot.starts_with_x_mention(copy), candidate.fact_id)
+
+    def test_render_copy_never_starts_with_target_mention(self) -> None:
+        candidate = bot.Candidate(
+            kind="stat",
+            source="test",
+            source_url="https://example.com",
+            fact_id="leading-mention",
+            text="@cohere has 20 indexed AI/ML roles in the current sample.",
+            route="https://example.com",
+        )
+        copy = bot.render_copy(candidate)
+        self.assertFalse(bot.starts_with_x_mention(copy))
+        self.assertIn("@cohere", copy)
+        self.assertTrue(copy.startswith("Looking at public AI market signal:"))
 
     def test_fact_key_blocks_same_fact_with_rewording(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
