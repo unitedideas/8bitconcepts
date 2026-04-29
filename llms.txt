@@ -18,6 +18,7 @@
 
 ## Research Papers
 
+- [The Self-Testing Layer](https://8bitconcepts.com/research/the-self-testing-layer.html): A researched white paper on self-testing agentic businesses: artifact scoring, feedback loops, evaluator calibration, audit trails, and regression infrastructure.
 - [Your AI Is Moving Back Onto the Machine](https://8bitconcepts.com/research/on-device-inference.html): Why everyday AI inference is shifting from cloud-only APIs toward local, private, low-latency device intelligence while cloud models handle expensive frontier work.
 - [The Compounding Gap](https://8bitconcepts.com/research/the-compounding-gap.html): The lead fast-moving companies build over slow movers in 2026 compounds — by the time slow movers notice, the lead is structural and unrecoverable. Why velocity must be imported, not built.
 - [The Context Wall](https://8bitconcepts.com/research/the-context-wall.html): AI agents fail 97.5% of real work — not because of model quality but because organizations lack the four pieces of context infrastructure that make agents reliable. Why solo deployments fail.

@@ -33,6 +33,7 @@ SKIP = {"index.html", "overview.html"}
 
 # Mirrors the curated descriptions used in generate-overview.py; keep sources aligned.
 CURATED_DESC: dict[str, str] = {
+    "the-self-testing-layer": "A researched white paper on why agentic businesses need self-testing, self-improving systems: artifact scoring, feedback loops, evaluator calibration, audit trails, and regression infrastructure.",
     "the-integration-tax": "Model API costs are 10-20% of what AI actually costs to ship. Where the other 80% goes.",
     "beyond-the-prompt": "The teams shipping reliable production agentic systems are not prompting harder - they moved through a specific engineering maturity ladder.",
     "the-six-percent": "88% of organizations use AI. Only 6% see meaningful returns. What McKinsey found in 2,000 companies across 105 countries.",
@@ -51,6 +52,7 @@ CURATED_DESC: dict[str, str] = {
 }
 
 SLUG_TAGS: dict[str, list[str]] = {
+    "the-self-testing-layer": ["agents", "evaluation", "self-improvement", "governance"],
     "the-integration-tax": ["integration", "tco", "enterprise"],
     "beyond-the-prompt": ["llm", "engineering", "systems-design"],
     "the-six-percent": ["adoption", "case-studies", "best-practices"],

@@ -38,6 +38,7 @@ SKIP = {"index.html", "overview.html"}
 # Curated card descriptions (fallbacks if a paper doesn't yet ship its own summary).
 # Keep in sync with /research/index.html; indexed by slug.
 CURATED_DESC: dict[str, str] = {
+    "the-self-testing-layer": "Agentic businesses do not fail because agents make mistakes. They fail because mistakes do not become structure. A researched operating model for artifact scoring, feedback loops, evaluator calibration, audit trails, and regression systems.",
     "the-integration-tax": "Model API costs are 10-20% of what AI actually costs to ship. Where the other 80% goes.",
     "beyond-the-prompt": "The teams shipping reliable production agentic systems are not prompting harder - they moved through a specific engineering maturity ladder.",
     "the-six-percent": "88% of organizations use AI. Only 6% see meaningful returns. What McKinsey found in 2,000 companies across 105 countries.",
@@ -58,6 +59,7 @@ CURATED_DESC: dict[str, str] = {
 
 # Tag enrichment per slug (mirrors /research/index.html + research.json).
 SLUG_TAGS: dict[str, list[str]] = {
+    "the-self-testing-layer": ["agents", "evaluation", "self-improvement", "governance"],
     "the-integration-tax": ["integration", "tco", "enterprise"],
     "beyond-the-prompt": ["llm", "engineering", "systems-design"],
     "the-six-percent": ["adoption", "case-studies", "best-practices"],
@@ -86,12 +88,12 @@ TOPIC_INDEX: list[tuple[str, str, list[str]]] = [
     (
         "AI Governance & Accountability",
         "Guardrails, compliance, and who owns agent actions.",
-        ["the-guardrails-gap", "the-agentic-accountability-gap", "the-hallucination-budget"],
+        ["the-self-testing-layer", "the-guardrails-gap", "the-agentic-accountability-gap", "the-hallucination-budget"],
     ),
     (
         "Multi-Agent & Production Systems",
         "What separates shipping agentic systems from pilots.",
-        ["beyond-the-prompt", "shift-handoff-intelligence", "the-guardrails-gap"],
+        ["the-self-testing-layer", "beyond-the-prompt", "shift-handoff-intelligence", "the-guardrails-gap"],
     ),
     (
         "Organizational Design",
@@ -101,7 +103,7 @@ TOPIC_INDEX: list[tuple[str, str, list[str]]] = [
     (
         "Reliability & Evaluation",
         "Measurement, eval, and detecting silent degradation.",
-        ["the-measurement-problem", "the-hallucination-budget", "beyond-the-prompt"],
+        ["the-self-testing-layer", "the-measurement-problem", "the-hallucination-budget", "beyond-the-prompt"],
     ),
     (
         "Market & Hiring Data",
@@ -120,12 +122,12 @@ READING_PATHS: list[tuple[str, str, list[str]]] = [
     (
         "Deploying multi-agent systems in production",
         "The teams actually shipping agentic systems have moved past prompting. Read the engineering ladder, then the operational handoff patterns, then the reliability discipline underneath.",
-        ["beyond-the-prompt", "shift-handoff-intelligence", "the-hallucination-budget", "the-integration-tax"],
+        ["beyond-the-prompt", "shift-handoff-intelligence", "the-self-testing-layer", "the-hallucination-budget", "the-integration-tax"],
     ),
     (
         "AI governance and compliance",
         "Frameworks built for generative AI break the moment agents act. Start with the shift, then the accountability gap, then the reliability floor you need under it.",
-        ["the-guardrails-gap", "the-agentic-accountability-gap", "the-hallucination-budget"],
+        ["the-guardrails-gap", "the-agentic-accountability-gap", "the-self-testing-layer", "the-hallucination-budget"],
     ),
 ]
 
