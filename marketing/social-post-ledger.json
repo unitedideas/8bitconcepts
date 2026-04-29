@@ -447,7 +447,7 @@
       "source": "marketing/daily-ai-insights-queue.json",
       "channel": "x",
       "account": "@8bitconcepts",
-      "status": "queued",
+      "status": "deferred_recent_related_post",
       "date": "2026-04-29",
       "post_time_local": "08:30",
       "route": "https://aidevboard.com/company/cohere",
@@ -455,7 +455,23 @@
       "fact_key": "targeted-research:cohere:81:search,generative-ai,agents",
       "fingerprint": "6d28db191fc4974a",
       "copy": "Looking at public AI hiring as a market signal: @cohere has 81 indexed AI/ML roles on AI Dev Board, with current tags clustering around search, generative-ai, agents. Avg published salary: $235,000. Cohere is #13 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to enterprise AI platforms, fine-tuning, retrieval, and multilingual deployment. Where should operators spend first: retrieval quality, fine-tuning data, or deployment observability?\n\nData: https://aidevboard.com/company/cohere",
-      "note": "Ready to publish from verified @8bitconcepts; public posting blocked in this run by action-time confirmation policy for representational communications."
+      "note": "Exact queued copy was not posted. A stale browser Cohere draft posted first as https://x.com/8BitConcepts/status/2049309973168181281; keep this deferred to avoid an immediate duplicate topic."
+    },
+    {
+      "id": "x-ai-stat-bot-2026-04-29-cohere-staged-browser-draft",
+      "source": "stale-x-composer-from-8bit-x-premium-growth-company-research",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-04-29",
+      "posted_at": "2026-04-29T02:12:24Z",
+      "url": "https://x.com/8BitConcepts/status/2049309973168181281",
+      "route": "https://aidevboard.com/company/cohere",
+      "target_account": "@cohere",
+      "fact_key": "x-premium-company-research:cohere:first-segment:20-roles",
+      "fingerprint": "e1373fb39981ee4f",
+      "copy": "@cohere is hiring in a way that says more than 'enterprise AI platform.' ADB shows 20 Cohere roles across backend, FDE, safety, product, security, data, and infra. The repeated tags are agents/search/generative-ai/cloud. That looks like deployment architecture, not demo work.",
+      "note": "Posted from verified @8BitConcepts via Brave. This was the existing staged browser draft, not the daily targeted_research queue copy 6d28db191fc4974a; recorded exactly to prevent duplicate reposting."
     }
   ]
 }
