@@ -1,0 +1,34 @@
+[
+  {
+    "email": "seang@apfreight.com",
+    "company": "Atlantic & Pacific Freightways",
+    "subject": "AI for Atlantic & Pacific Freightways dispatch + invoicing",
+    "sent_at": "2026-04-29T00:45:47.598187+00:00",
+    "message_id": "bd888b5e-7331-478a-bbec-f46ca26aee42",
+    "followup_sent": false
+  },
+  {
+    "email": "guy@pacnwtax.com",
+    "company": "Pacific Northwest Tax and Accounting Services",
+    "subject": "AI for Pacific Northwest Tax and Accounting Services \u2014 without the disruption",
+    "sent_at": "2026-04-29T00:45:47.889611+00:00",
+    "message_id": "f2f41763-550b-402a-90c8-f472d6c7bd0c",
+    "followup_sent": false
+  },
+  {
+    "email": "dsfabinc@gmail.com",
+    "company": "DS Fabrication & Design",
+    "subject": "A small note about your shop floor",
+    "sent_at": "2026-04-29T00:45:48.121453+00:00",
+    "message_id": "1da03425-f848-4b10-b382-b9b1983368be",
+    "followup_sent": false
+  },
+  {
+    "email": "siany@jjh-law.com",
+    "company": "JJH Law",
+    "subject": "AI for JJH Law \u2014 without the disruption",
+    "sent_at": "2026-04-29T00:45:48.420552+00:00",
+    "message_id": "74d5ee72-b7e2-45e9-bea2-04860bea5a71",
+    "followup_sent": false
+  }
+]

@@ -3,13 +3,13 @@
 PNW SMB Outreach — Cold Email Sender for Local Consulting Leads
 
 Sends personalized cold emails to 31 PNW SMB owners (Vancouver WA, Camas WA,
-Portland OR, Tigard OR) via Shane's personal email.
+Portland OR, Tigard OR) via the 8bitconcepts-owned Resend account.
 
 Usage:
     python3 marketing/pnw-outreach.py send [--limit N]     # prepare batch for sending
     python3 marketing/pnw-outreach.py template-preview     # show all templates
     python3 marketing/pnw-outreach.py status               # show sent/pending counts
-    python3 marketing/pnw-outreach.py followup [--hours H] # generate follow-ups due
+    python3 marketing/pnw-outreach.py followup [--hours H] # send follow-ups due
 
 This script:
 1. Reads pnw-smb-targets.csv (31 local SMB owners with names, emails, industries)
@@ -19,9 +19,7 @@ This script:
 5. Tracks sent emails in pnw-outreach-sent.json
 6. Generates follow-ups 4 days after initial send
 
-Sender: hello@8bitconcepts.com (from Resend)
-Note: Original playbook says "personal email," but Resend from branded domain
-is functionally equivalent + provides delivery tracking + follow-up automation.
+Sender: hello@8bitconcepts.com (8bitconcepts-owned Resend account)
 
 Templates:
 - logistics (dispatch, invoicing, route optimization)
@@ -49,7 +47,7 @@ SCRIPT_DIR = Path(__file__).parent
 TARGETS_FILE = SCRIPT_DIR / "pnw-smb-targets.csv"
 SENT_FILE = SCRIPT_DIR / "pnw-outreach-sent.json"
 RESEND_API_URL = "https://api.resend.com/emails"
-FROM_EMAIL = "Shane at 8bitconcepts <hello@8bitconcepts.com>"
+FROM_EMAIL = "8bitconcepts <hello@8bitconcepts.com>"
 ROLE_BASED_LOCAL_PARTS = {
     "admin",
     "ask",
@@ -264,6 +262,34 @@ def personalize_email(template_name, target):
     return subject, body
 
 
+def find_target_by_email(email, targets):
+    for target in targets:
+        if target.get("email", "").strip().lower() == email.strip().lower():
+            return target
+    return {}
+
+
+def first_name_for_record(record, targets):
+    target = find_target_by_email(record.get("email", ""), targets)
+    decision_maker = target.get("decision_maker_name", "")
+    if decision_maker and decision_maker != "needs LinkedIn outreach":
+        return decision_maker.split()[0]
+    return "there"
+
+
+def followup_body(record, targets):
+    first_name = first_name_for_record(record, targets)
+    company = record.get("company") or "your team"
+    return f"""Hi {first_name},
+
+Following up on the note below. Short version: 8bitconcepts installs AI workflows inside operating businesses like {company}, in the PNW, in 4-12 weeks.
+
+If this is not current, no problem.
+
+8bitconcepts
+https://8bitconcepts.com/work-with-us"""
+
+
 def cmd_status():
     """Show outreach status."""
     targets = load_targets()
@@ -302,6 +328,7 @@ def send_via_resend(to_email, subject, body, api_key):
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json',
+        'User-Agent': 'curl/8.7.1',
     }
     data = {
         'from': FROM_EMAIL,
@@ -376,6 +403,7 @@ def cmd_send(limit=None, dry_run=False, include_role_based=False):
             record = {
                 'email': email,
                 'company': company,
+                'industry': industry,
                 'subject': subject,
                 'sent_at': datetime.now(timezone.utc).isoformat(),
                 'message_id': result,
@@ -392,38 +420,66 @@ def cmd_send(limit=None, dry_run=False, include_role_based=False):
     print(f"\nResult: {sent_count} sent, {failed_count} failed")
 
 
-def cmd_followup(hours_after=96):
-    """Generate follow-ups for emails sent N hours ago (default 4 days = 96 hours)."""
+def cmd_followup(hours_after=96, dry_run=False, limit=None):
+    """Send follow-ups for emails sent N hours ago (default 4 days = 96 hours)."""
     sent = load_sent()
+    sent_list = list(sent.values()) if isinstance(sent, dict) else sent
+    targets = load_targets()
     now = datetime.now(timezone.utc)
     followup_due = []
 
-    for email_addr, record in sent.items():
+    for record in sent_list:
         sent_at = datetime.fromisoformat(record.get("sent_at", ""))
         age = now - sent_at
         if age.total_seconds() > hours_after * 3600:
             if not record.get("followup_sent"):
                 followup_due.append(record)
+    if limit:
+        followup_due = followup_due[:limit]
 
     if not followup_due:
         print(f"No follow-ups due (checked {hours_after}-hour window)")
         return
 
-    print(f"Follow-ups due: {len(followup_due)}\n")
+    if dry_run:
+        print(f"DRY RUN: Would send {len(followup_due)} follow-ups\n")
+        for record in followup_due:
+            company = record.get("company", "")
+            email = record.get("email")
+            print(f"\nTo: {email} ({company})")
+            print("Subject: Re: " + record.get("subject", ""))
+            print(followup_body(record, targets))
+        return
+
+    api_key = get_resend_api_key()
+    if not api_key:
+        print("Error: Cannot fetch Resend API key from keychain", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"Sending {len(followup_due)} follow-ups via Resend...\n")
+    sent_count = 0
+    failed_count = 0
+    by_email = {record.get("email"): record for record in sent_list}
+
     for record in followup_due:
         company = record.get("company", "")
         email = record.get("email")
-        print(f"\nTo: {email} ({company})")
-        print("Subject: Re: " + record.get("subject", ""))
-        print(f"""Hi,
+        subject = "Re: " + record.get("subject", "")
+        body = followup_body(record, targets)
+        success, result = send_via_resend(email, subject, body, api_key)
+        if success:
+            by_email[email]["followup_sent"] = True
+            by_email[email]["followup_sent_at"] = now.isoformat()
+            by_email[email]["followup_message_id"] = result
+            sent_count += 1
+            print(f"✓ {email} ({company})")
+        else:
+            by_email[email]["followup_error"] = result
+            failed_count += 1
+            print(f"✗ {email} ({company}): {result}")
 
-Just following up on my note from {record.get('sent_at', 'earlier')}.
-
-Wanted to check if you had a chance to look at the research — if it resonates, would be worth a conversation.
-
-— Shane
-8bitconcepts.com""")
-        print("\n---COPY ABOVE TO GMAIL---\n")
+    save_sent(sent_list)
+    print(f"\nResult: {sent_count} follow-ups sent, {failed_count} failed")
 
 
 if __name__ == "__main__":
@@ -438,8 +494,10 @@ if __name__ == "__main__":
     subparsers.add_parser("status", help="Show outreach status")
     subparsers.add_parser("template-preview", help="Show all email templates")
 
-    followup_parser = subparsers.add_parser("followup", help="Generate follow-ups")
+    followup_parser = subparsers.add_parser("followup", help="Send follow-ups")
     followup_parser.add_argument("--hours", type=int, default=96, help="Follow-ups N hours after send")
+    followup_parser.add_argument("--limit", type=int, help="Limit to N due follow-ups")
+    followup_parser.add_argument("--dry-run", action="store_true", help="Don't send, just preview")
 
     args = parser.parse_args()
 
@@ -450,6 +508,6 @@ if __name__ == "__main__":
     elif args.command == "template-preview":
         cmd_template_preview()
     elif args.command == "followup":
-        cmd_followup(hours_after=args.hours)
+        cmd_followup(hours_after=args.hours, dry_run=args.dry_run, limit=args.limit)
     else:
         parser.print_help()
