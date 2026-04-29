@@ -194,6 +194,126 @@
         "No paid promotion was attempted; spend remains gated."
       ],
       "next_best_action": "With action-time confirmation available, publish the 10 queued replies/quote posts first, then publish the MCP Article and use the three excerpt candidates over the next 24 hours."
+    },
+    {
+      "id": "8bit-x-premium-growth-20260429T020801Z",
+      "started_at": "2026-04-29T02:08:01Z",
+      "automation_id": "8bit-x-premium-growth-operator",
+      "account_identity": {
+        "verified": true,
+        "observed_account": "@8BitConcepts",
+        "display_name": "8bitconcepts",
+        "evidence": "X account menu and profile page showed 8bitconcepts / @8BitConcepts with verified badge."
+      },
+      "premium_status": {
+        "premium_active": true,
+        "revenue_sharing_status": "ineligible",
+        "revenue_sharing_gaps": [
+          "Premium subscription requirement met.",
+          "Creator Studio says revenue sharing is ineligible until 500 Premium followers.",
+          "Creator Studio says revenue sharing is ineligible until 5M post impressions in the last 3 months."
+        ],
+        "subscriptions_status": "ineligible"
+      },
+      "metrics": {
+        "observed_at": "2026-04-29T02:08:01Z",
+        "followers": 0,
+        "following": 1,
+        "verified_followers": 0,
+        "posts_total_visible": 6,
+        "analytics_7d": {
+          "impressions": 30,
+          "engagement_rate": "3.3%",
+          "engagements": 1,
+          "profile_visits": 1,
+          "replies": 0,
+          "likes": 0,
+          "reposts": 0,
+          "bookmarks": 0,
+          "shares": 0
+        },
+        "analytics_3m": {
+          "status": "not_rechecked_this_run",
+          "note": "Revenue-sharing eligibility page exposed the 5M requirement but not the current 3M count during this pass."
+        }
+      },
+      "notifications": {
+        "summary": "No private notification contents copied. Read-side pass focused on profile, Creator Studio, eligibility, and account analytics."
+      },
+      "target_discovery": {
+        "queries": [
+          "Existing queued X targets from the prior Premium pass were re-used because they are still recent and source-linked.",
+          "X latest search attempted: \"MCP\" agents -filter:replies; no new candidate was copied into the repo before the search UI drifted away."
+        ],
+        "targets_ready": [
+          "x-premium-reply-2026-04-29-charlesmendez-cli-vs-mcp",
+          "x-premium-reply-2026-04-29-nik-kale-salesforce-mcp",
+          "x-premium-reply-2026-04-29-bluenexus-context-wall",
+          "x-premium-reply-2026-04-29-britebot-agent-ops",
+          "x-premium-reply-2026-04-29-renelacad-agent-category",
+          "x-premium-reply-2026-04-29-rikonazza-vidiq-mcp",
+          "x-premium-reply-2026-04-29-charleshaworth-agent-ready-systems",
+          "x-premium-quote-2026-04-29-msaintjour-portable-context",
+          "x-premium-quote-2026-04-29-flutterflow-mcp"
+        ]
+      },
+      "public_actions": [],
+      "queued_actions": [
+        "x-premium-reply-2026-04-29-charlesmendez-cli-vs-mcp",
+        "x-premium-reply-2026-04-29-nik-kale-salesforce-mcp",
+        "x-premium-reply-2026-04-29-bluenexus-context-wall",
+        "x-premium-reply-2026-04-29-britebot-agent-ops",
+        "x-premium-reply-2026-04-29-renelacad-agent-category",
+        "x-premium-reply-2026-04-29-rikonazza-vidiq-mcp",
+        "x-premium-reply-2026-04-29-charleshaworth-agent-ready-systems",
+        "x-premium-quote-2026-04-29-msaintjour-portable-context",
+        "x-premium-quote-2026-04-29-flutterflow-mcp",
+        "daily-targeted-research-2026-04-29-cohere-x"
+      ],
+      "blocked_public_actions": {
+        "reason": "Current tool policy requires action-time confirmation for third-party-facing representational communications, even when the user has provided standing authorization.",
+        "count": 10,
+        "ids": [
+          "x-premium-reply-2026-04-29-charlesmendez-cli-vs-mcp",
+          "x-premium-reply-2026-04-29-nik-kale-salesforce-mcp",
+          "x-premium-reply-2026-04-29-bluenexus-context-wall",
+          "x-premium-reply-2026-04-29-britebot-agent-ops",
+          "x-premium-reply-2026-04-29-renelacad-agent-category",
+          "x-premium-reply-2026-04-29-rikonazza-vidiq-mcp",
+          "x-premium-reply-2026-04-29-charleshaworth-agent-ready-systems",
+          "x-premium-quote-2026-04-29-msaintjour-portable-context",
+          "x-premium-quote-2026-04-29-flutterflow-mcp",
+          "daily-targeted-research-2026-04-29-cohere-x"
+        ]
+      },
+      "article": {
+        "status": "drafted_local_only",
+        "path": "marketing/x-articles/q2-2026-mcp-ecosystem-health.md",
+        "source_paper": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "publish_blocker": "Native X Article is a public representational communication and needs action-time confirmation in this execution policy."
+      },
+      "promotion_candidates": [
+        {
+          "url": "https://x.com/8BitConcepts/status/2049247604115206476",
+          "reason": "Highest visible account post in the profile feed during this run at 6 impressions, but no engagement; keep as a learning baseline, not a paid candidate yet.",
+          "audience": "AI operators and agent-infrastructure builders",
+          "objective": "Profile visits and qualified replies after stronger organic proof",
+          "blocked_spend_note": "No Quick Promote, Ads Manager campaign, or X Pixel install without spend/action approval."
+        },
+        {
+          "url": "https://x.com/8BitConcepts/status/2049304562511847851",
+          "reason": "First Premium reply has 3 views shortly after posting; watch for verified-user engagement before spend consideration.",
+          "audience": "MCP builders and AI tooling founders",
+          "objective": "Qualified replies and profile visits from MCP/operator accounts",
+          "blocked_spend_note": "No paid promotion without spend/action approval."
+        }
+      ],
+      "blockers": [
+        "Public X replies, quote posts, original posts, and Articles were not published because the current tool policy requires action-time confirmation for representational communications.",
+        "No paid promotion was attempted; spend remains gated.",
+        "3M analytics count was not rechecked; 7D analytics and revenue-sharing requirement screens were observed."
+      ],
+      "next_best_action": "In an interactive turn with action-time confirmation, publish the queued X Premium replies/quotes and the Cohere targeted_research post first; otherwise keep refreshing targets and promotion candidates."
     }
   ]
 }
