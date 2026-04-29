@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T01:57:29.095418+00:00",
+  "generated_at": "2026-04-29T15:20:10.853689+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -74,7 +74,7 @@
         }
       },
       "quality_gate": [
-        "target company or influential person is named/tagged naturally",
+        "target company or influential person is named/tagged naturally but never as the first token",
         "documented sources are attached",
         "uses live ADB or NHS stats",
         "does not negatively call out the target",
