@@ -1,68 +1,111 @@
 {
-  "generated_at": "2026-04-28T05:48:08.777519+00:00",
+  "generated_at": "2026-04-29T01:57:29.095418+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
     "hacker_news": "8bitconcepts; only for technical systems artifacts"
   },
-  "cadence": "two AI insight posts per day",
+  "cadence": "two AI insight posts per day; one daily targeted documented research post",
   "items": [
     {
-      "id": "daily-ai-insight-2026-04-27-morning",
-      "date": "2026-04-27",
+      "id": "daily-targeted-research-2026-04-29-cohere",
+      "kind": "targeted_research",
+      "date": "2026-04-29",
       "slot": "morning",
       "post_time_local": "08:30",
       "timezone": "America/Los_Angeles",
-      "theme": "AI ROI hides in integration, not inference.",
-      "format": "meme",
-      "asset_brief": "Two-panel meme: 'we budgeted for tokens' vs. 'permissions, evals, workflow, observability'.",
-      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
-      "funnel": "AI integration audits",
+      "target": {
+        "name": "Cohere",
+        "x_mention": "@cohere",
+        "linkedin_mention": "@Cohere",
+        "domain": "cohere.com",
+        "company_slug": "cohere"
+      },
+      "fact_key": "targeted-research:cohere:81:search,generative-ai,agents",
+      "theme": "Cohere public AI hiring signal",
+      "format": "targeted documented research",
+      "asset_brief": "Small source-backed stat card: role count, top tags, sample roles, operator question.",
+      "route": "https://aidevboard.com/company/cohere",
+      "research_sources": {
+        "adb_company": "https://aidevboard.com/company/cohere",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=cohere&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
+        "nhs_profile": "https://nothumansearch.ai/site/cohere.com",
+        "official_source": "https://cohere.com/careers"
+      },
+      "research_findings": {
+        "indexed_roles": 81,
+        "rank": 13,
+        "avg_salary": 235000,
+        "top_tags": [
+          "search",
+          "generative-ai",
+          "agents",
+          "llm"
+        ],
+        "sample_titles": [
+          "Fine-Tuning Engineer",
+          "Backend Engineer - Enterprise AI Platform",
+          "Engineering Manager, FDE Infrastructure (EMEA)"
+        ],
+        "workplace_mix": "remote: 14, hybrid: 5, onsite: 1",
+        "nhs_score": 50,
+        "nhs_signals": [
+          "llms.txt",
+          "structured API"
+        ],
+        "source_errors": {},
+        "paper_candidate": false,
+        "paper_reason": ""
+      },
+      "funnel": "AI Dev Board data, Not Human Search agent-readiness check, or 8bit research follow-up",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Model cost is the easy line item. The real AI budget goes to data plumbing, permissions, evals, observability, workflow redesign, and the last mile into the system people already use.\n\nMore field notes: https://8bitconcepts.com/research/the-integration-tax.html",
-          "fingerprint": "c4a69f83243004fc",
-          "duplicate": true
+          "copy": "Looking at public AI hiring as a market signal: @cohere has 81 indexed AI/ML roles on AI Dev Board, with current tags clustering around search, generative-ai, agents. Avg published salary: $235,000. Cohere is #13 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to enterprise AI platforms, fine-tuning, retrieval, and multilingual deployment. Where should operators spend first: retrieval quality, fine-tuning data, or deployment observability?\n\nData: https://aidevboard.com/company/cohere",
+          "fingerprint": "6d28db191fc4974a",
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Model cost is the easy line item. The real AI budget goes to data plumbing, permissions, evals, observability, workflow redesign, and the last mile into the system people already use.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
-          "fingerprint": "6131fc773bb2189d",
-          "duplicate": true
+          "copy": "Looking at @Cohere through the public hiring data:\n\n1. 81 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around search, generative-ai, agents, llm.\n3. Sample roles include Fine-Tuning Engineer; Backend Engineer - Enterprise AI Platform; Engineering Manager, FDE Infrastructure (EMEA).\n4. Avg published salary in the indexed sample: $235,000.\n\nThe useful read is where the operational work is moving: enterprise AI platforms, fine-tuning, retrieval, and multilingual deployment.\n\nCohere is a useful public lens on this area. Where should operators spend first: retrieval quality, fine-tuning data, or deployment observability?\n\nNHS follow-up lens: public agent-readiness profile shows llms.txt, structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/cohere\nhttps://nothumansearch.ai/site/cohere.com",
+          "fingerprint": "c2f9b382803545f2",
+          "duplicate": false
         }
       },
       "quality_gate": [
-        "AI topic",
-        "teaches one specific thing",
-        "routes to a proof point",
-        "not sales-first",
-        "has a click/comment trigger"
+        "target company or influential person is named/tagged naturally",
+        "documented sources are attached",
+        "uses live ADB or NHS stats",
+        "does not negatively call out the target",
+        "includes a useful operator question or recommendation",
+        "flags longform paper opportunity when the stat is large enough"
       ]
     },
     {
-      "id": "daily-ai-insight-2026-04-27-afternoon",
-      "date": "2026-04-27",
+      "id": "daily-ai-insight-2026-04-29-afternoon",
+      "kind": "generic_insight",
+      "date": "2026-04-29",
       "slot": "afternoon",
       "post_time_local": "14:30",
       "timezone": "America/Los_Angeles",
-      "theme": "Prompt quality stops compounding without memory.",
-      "format": "think piece",
-      "asset_brief": "Simple diagram: prompt -> run -> lesson -> expertise file -> next run.",
-      "route": "https://8bitconcepts.com/research/",
-      "funnel": "embedded AI operating systems",
+      "theme": "Autonomous loops fail silently before they fail loudly.",
+      "format": "infographic",
+      "asset_brief": "Checklist graphic: heartbeat, freshness deadline, lock age, last output, alert path.",
+      "route": "https://8bitconcepts.com/case-studies.html",
+      "funnel": "production agent ops",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "The mistake is treating agent instructions like a constitution. Most of them are lab notes. They need revision, pruning, and evidence from real runs.\n\nMore field notes: https://8bitconcepts.com/research/",
-          "fingerprint": "db46bab707a1575a",
-          "duplicate": true
+          "copy": "A production agent loop needs a status file before it needs another model upgrade. 'What is it doing now?' has to be machine-answerable.\n\nMore field notes: https://8bitconcepts.com/case-studies.html",
+          "fingerprint": "7f7dfda4a63c1e92",
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "The mistake is treating agent instructions like a constitution. Most of them are lab notes. They need revision, pruning, and evidence from real runs.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/",
-          "fingerprint": "e75825e1f3d3cf92",
-          "duplicate": true
+          "copy": "A production agent loop needs a status file before it needs another model upgrade. 'What is it doing now?' has to be machine-answerable.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/case-studies.html",
+          "fingerprint": "ca65a4640c86b70a",
+          "duplicate": false
         }
       },
       "quality_gate": [
