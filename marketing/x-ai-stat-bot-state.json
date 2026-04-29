@@ -1,18 +1,18 @@
 {
   "schema": 1,
-  "updated_at": "2026-04-28T22:01:52+00:00",
+  "updated_at": "2026-04-29T01:34:22Z",
   "status": "sleeping",
   "mode": "live",
   "account": "@8bitconcepts",
   "min_minutes": 29,
   "max_minutes": 114,
-  "random_minutes": 54,
-  "sleep_seconds": 3240,
-  "next_run_at": "2026-04-28T22:51:19+00:00",
+  "random_minutes": 30,
+  "sleep_seconds": 1800,
+  "next_run_at": "2026-04-29T02:04:22Z",
   "quiet_hours_local": "23:00-05:00",
   "timezone": "America/Los_Angeles",
-  "last_posted_id": "x-ai-stat-2026-04-28T21:57:19+00:00-e3ae40e6",
-  "last_posted_at": "2026-04-28T22:01:52+00:00",
-  "last_posted_url": "https://x.com/8BitConcepts/status/2049247604115206476",
-  "next_action": "manual_live_posting_until_api_poster_is_configured"
+  "last_posted_id": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2",
+  "last_posted_at": "2026-04-29T01:33:27Z",
+  "last_posted_url": "https://x.com/8BitConcepts/status/2049300494800314767",
+  "next_action": "continue_launchd_sync_state_runs"
 }

@@ -414,6 +414,21 @@
       "fingerprint": "c9bbe74b6544a5b6",
       "copy": "Agent-ready is not a vibe. In the live crawl, 418 of 7,117 agent-ready sites pass a real MCP handshake, while 5,104 publish llms.txt. Discovery files are winning adoption; working endpoints are still the bottleneck.",
       "note": "Not queued as a live post because the BYA launch post was active this run. Use if the next run has no active recent post and action-time confirmation is available."
+    },
+    {
+      "id": "x-ai-stat-2026-04-29-nhs-live-stats",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-04-28",
+      "posted_at": "2026-04-29T01:33:27Z",
+      "url": "https://x.com/8BitConcepts/status/2049300494800314767",
+      "route": "https://nothumansearch.ai",
+      "fact_key": "9b68cca2b2a4d45a5bedcfcb",
+      "fingerprint": "60bed1e029577af4",
+      "copy": "Not Human Search is tracking 4,106 agent-ready sites. Average agent-readiness score: 34.0/100.",
+      "note": "Posted from verified @8BitConcepts via Brave/Computer Use after sync-state public-action lock 60bed1e029577af4."
     }
   ]
 }

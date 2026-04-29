@@ -222,7 +222,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-29T01:29:13+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -233,7 +233,11 @@
       "fact_id": "nhs-total-sites-4106-avg-34",
       "fact_key": "9b68cca2b2a4d45a5bedcfcb",
       "fingerprint": "60bed1e029577af4",
-      "copy": "Not Human Search is tracking 4,106 agent-ready sites. Average agent-readiness score: 34.0/100."
+      "copy": "Not Human Search is tracking 4,106 agent-ready sites. Average agent-readiness score: 34.0/100.",
+      "updated_at": "2026-04-29T01:33:27Z",
+      "posted_at": "2026-04-29T01:33:27Z",
+      "url": "https://x.com/8BitConcepts/status/2049300494800314767",
+      "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
     }
   ]
 }
