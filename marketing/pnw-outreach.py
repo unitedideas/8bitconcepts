@@ -240,6 +240,7 @@ def save_sent(sent_records):
     """Save sent log (list of dicts)."""
     with open(SENT_FILE, "w") as f:
         json.dump(sent_records, f, indent=2)
+        f.write("\n")
 
 
 def personalize_email(template_name, target):
