@@ -219,6 +219,21 @@
       "copy": "Research AI roles averaged $273,880, while generative-AI roles averaged $230,707 despite having about 2.5x more openings.",
       "updated_at": "2026-04-29T00:23:59Z",
       "blocker": "Could not verify active X account from this launchd worker: Computer Use returned cgWindowNotFound for Brave and Chrome, and direct screenshot capture was black. No public post attempted."
+    },
+    {
+      "id": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2",
+      "status": "drafted",
+      "created_at": "2026-04-29T01:29:13+00:00",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search live stats",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "route": "https://nothumansearch.ai",
+      "fact_id": "nhs-total-sites-4106-avg-34",
+      "fact_key": "9b68cca2b2a4d45a5bedcfcb",
+      "fingerprint": "60bed1e029577af4",
+      "copy": "Not Human Search is tracking 4,106 agent-ready sites. Average agent-readiness score: 34.0/100."
     }
   ]
 }

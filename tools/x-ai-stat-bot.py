@@ -336,7 +336,7 @@ def blocked_fact_keys(ledger: dict[str, Any]) -> set[str]:
     return {
         item.get("fact_key", "")
         for item in ledger.get("items", [])
-        if item.get("status") in POSTABLE_STATUSES and item.get("fact_key")
+        if item.get("fact_key")
     }
 
 
