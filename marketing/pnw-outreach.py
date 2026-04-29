@@ -50,6 +50,43 @@ TARGETS_FILE = SCRIPT_DIR / "pnw-smb-targets.csv"
 SENT_FILE = SCRIPT_DIR / "pnw-outreach-sent.json"
 RESEND_API_URL = "https://api.resend.com/emails"
 FROM_EMAIL = "Shane at 8bitconcepts <hello@8bitconcepts.com>"
+ROLE_BASED_LOCAL_PARTS = {
+    "admin",
+    "ask",
+    "billing",
+    "careers",
+    "contact",
+    "feedback",
+    "hello",
+    "help",
+    "hi",
+    "hr",
+    "info",
+    "jobs",
+    "no-reply",
+    "office",
+    "people",
+    "recruiting",
+    "sales",
+    "support",
+    "talent",
+    "team",
+}
+
+
+def valid_email(value):
+    """Reject placeholders and obvious non-email fields from the CSV."""
+    if not value:
+        return False
+    value = value.strip().lower()
+    if "needs " in value or "linkedin" in value:
+        return False
+    return "@" in value and "." in value.rsplit("@", 1)[-1]
+
+
+def is_role_based(email):
+    local = email.split("@", 1)[0].strip().lower()
+    return local in ROLE_BASED_LOCAL_PARTS
 
 def get_resend_api_key():
     """Fetch Resend API key from macOS keychain."""
@@ -289,14 +326,19 @@ def send_via_resend(to_email, subject, body, api_key):
         return False, str(e)
 
 
-def cmd_send(limit=None, dry_run=False):
+def cmd_send(limit=None, dry_run=False, include_role_based=False):
     """Prepare or send outreach batch."""
     targets = load_targets()
     sent = load_sent()
     sent_emails = set(sent.keys())
     sent_list = list(sent.values()) if isinstance(sent, dict) else sent
 
-    pending = [t for t in targets if t.get("email") and t.get("email") not in sent_emails]
+    pending = [
+        t for t in targets
+        if valid_email(t.get("email", "")) and t.get("email") not in sent_emails
+    ]
+    if not include_role_based:
+        pending = [t for t in pending if not is_role_based(t.get("email", ""))]
     if limit:
         pending = pending[:limit]
 
@@ -391,6 +433,7 @@ if __name__ == "__main__":
     send_parser = subparsers.add_parser("send", help="Prepare batch for sending")
     send_parser.add_argument("--limit", type=int, help="Limit to N pending targets")
     send_parser.add_argument("--dry-run", action="store_true", help="Don't send, just preview")
+    send_parser.add_argument("--include-role-based", action="store_true", help="Include hello/info/ask/etc. addresses")
 
     subparsers.add_parser("status", help="Show outreach status")
     subparsers.add_parser("template-preview", help="Show all email templates")
@@ -401,7 +444,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.command == "send":
-        cmd_send(limit=args.limit, dry_run=args.dry_run)
+        cmd_send(limit=args.limit, dry_run=args.dry_run, include_role_based=args.include_role_based)
     elif args.command == "status":
         cmd_status()
     elif args.command == "template-preview":
