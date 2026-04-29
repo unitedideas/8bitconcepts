@@ -110,7 +110,7 @@ def posted_fingerprints() -> set[str]:
     return {
         item["fingerprint"]
         for item in data.get("items", [])
-        if item.get("status") in {"posted", "scheduled", "queued"}
+        if item.get("status") in {"posted", "scheduled", "queued", "claimed", "deferred_recent_related_post"}
     }
 
 
@@ -251,11 +251,21 @@ def upsert_queued_items(queue: dict[str, object]) -> None:
 
     items = ledger.setdefault("items", [])
     by_id = {item.get("id"): item for item in items}
+    preserve_statuses = {
+        "posted",
+        "scheduled",
+        "claimed",
+        "blocked",
+        "deferred_recent_related_post",
+        "removed",
+        "sent",
+        "submitted",
+    }
     for queue_item_data in queue["items"]:
         for channel, channel_data in queue_item_data["channels"].items():
             item_id = f"{queue_item_data['id']}-{channel}"
             existing = by_id.get(item_id)
-            if existing and existing.get("status") == "posted":
+            if existing and existing.get("status") in preserve_statuses:
                 continue
             record = {
                 "id": item_id,
