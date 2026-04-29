@@ -396,6 +396,7 @@ def cmd_refresh_status():
 
     now_iso = datetime.now(timezone.utc).isoformat()
     changed = 0
+    should_save = False
     counts = {}
     for record in sent_list:
         message_id = record.get("message_id")
@@ -407,15 +408,21 @@ def cmd_refresh_status():
             counts[last_event] = counts.get(last_event, 0) + 1
             if record.get("delivery_status") != last_event:
                 changed += 1
-            record["delivery_status"] = last_event
-            record["delivery_checked_at"] = now_iso
-            record.pop("delivery_error", None)
+                should_save = True
+                record["delivery_status"] = last_event
+                record["delivery_checked_at"] = now_iso
+            if record.get("delivery_error"):
+                should_save = True
+                record.pop("delivery_error", None)
         else:
             counts["status_error"] = counts.get("status_error", 0) + 1
-            record["delivery_error"] = result
-            record["delivery_checked_at"] = now_iso
+            if record.get("delivery_error") != result:
+                should_save = True
+                record["delivery_error"] = result
+                record["delivery_checked_at"] = now_iso
 
-    save_sent(sent_list)
+    if should_save:
+        save_sent(sent_list)
     print(f"Refreshed {len(sent_list)} records; {changed} status changes")
     for status, count in sorted(counts.items()):
         print(f"  {status}: {count}")
