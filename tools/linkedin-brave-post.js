@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+console.error("LinkedIn Brave browser posting is disabled. Use API-backed publishing or an explicitly rebuilt supervised one-shot tool.");
+process.exit(3);
 /*
  * Supervised LinkedIn recovery publisher for the authenticated Brave session.
  *
@@ -32,6 +34,7 @@ const ACTIVITY_ALL_URL = "https://www.linkedin.com/in/shane-cheek-9173473b6/rece
 const DEFAULT_NAME = "Shane Cheek";
 const DEFAULT_HEADLINE = "Founder at 8bitconcepts";
 const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";
+const LINKEDIN_ONE_SHOT_TOKEN = "8bit-linkedin-supervised-manual-v2";
 
 function usage() {
   console.error("usage: node tools/linkedin-brave-post.js (--text <copy> | --text-file <path>) --allow-browser [--dry-run] [--recover-only] [--skip-lease] [--expected-name <name>] [--expected-headline <headline>]");
@@ -62,10 +65,11 @@ function parseArgs(argv) {
   if ((!args.text && !args.textFile) || (args.text && args.textFile) || !args.expectedName || !args.expectedHeadline) usage();
   if (
     !args.allowBrowser ||
-    process.env.SOCIAL_BRAVE_LINKEDIN_ONE_SHOT !== "8bit-linkedin-supervised-20260430" ||
-    !fs.existsSync(LINKEDIN_ALLOW_FILE)
+    process.env.SOCIAL_BRAVE_LINKEDIN_ONE_SHOT !== LINKEDIN_ONE_SHOT_TOKEN ||
+    !fs.existsSync(LINKEDIN_ALLOW_FILE) ||
+    fs.readFileSync(LINKEDIN_ALLOW_FILE, "utf8").trim() !== LINKEDIN_ONE_SHOT_TOKEN
   ) {
-    console.error("LinkedIn Brave browser posting is disabled unless --allow-browser, SOCIAL_BRAVE_LINKEDIN_ONE_SHOT, and the one-shot allow-file are all set by an explicit supervised run.");
+    console.error("LinkedIn Brave browser posting is disabled unless --allow-browser, SOCIAL_BRAVE_LINKEDIN_ONE_SHOT, and the one-shot allow-file content are all set by an explicit supervised run.");
     process.exit(3);
   }
   return args;
@@ -103,11 +107,16 @@ function openComposer(args) {
   markActiveWindow(`8bit-linkedin-${process.pid}`);
   waitFor("LinkedIn feed load", () => {
     const snap = bodySnapshot();
-    return { ok: (snap.text || "").includes(args.expectedName), snap };
-  }, 25000);
+    const text = snap.text || "";
+    const identityOk = text.includes(args.expectedName) && text.includes(args.expectedHeadline);
+    if (!identityOk) return { ok: false, snap };
+    const editor = visibleEditor();
+    const composerOk = text.includes("Start a post") || Boolean(editor && editor.ok);
+    return { ok: composerOk, snap };
+  }, 35000);
   verifyIdentity(args.expectedName, args.expectedHeadline);
 
-  const shareUrlEditor = tryWaitFor("LinkedIn composer from shareActive", () => visibleEditor(), 5000);
+  const shareUrlEditor = tryWaitFor("LinkedIn composer from shareActive", () => visibleEditor(), 15000);
   if (shareUrlEditor.ok) return { mode: "dom", ...shareUrlEditor };
 
   waitFor("LinkedIn Start a post visible", () => braveJS(`(() => {
@@ -119,7 +128,7 @@ function openComposer(args) {
         return r.width > 0 && r.height > 0 && (text === "Start a post" || label === "Start a post" || text.includes("Start a post"));
       });
     return JSON.stringify({ ok: candidates.length > 0, count: candidates.length });
-  })()`), 18000);
+  })()`), 45000);
 
   const clicked = braveJS(`(() => {
     const preferred = Array.from(document.querySelectorAll('button[aria-label], [role="button"][aria-label]'))
@@ -406,7 +415,7 @@ function findPostUrlFromActivity(text) {
     const cards = document.querySelectorAll('div.feed-shared-update-v2');
     const url = location.href || "";
     return JSON.stringify({ ok: url.includes("recent-activity") && cards.length > 0, cardCount: cards.length, url });
-  })()`), 25000);
+  })()`), 15000);
 
   const candidates = waitFor("LinkedIn activity candidate urls", () => braveJS(`(() => {
     const anchors = Array.from(document.querySelectorAll('a')).map(a => a && a.href ? a.href : '').filter(Boolean);
@@ -419,10 +428,10 @@ function findPostUrlFromActivity(text) {
       if (m && m[1]) add('https://www.linkedin.com/feed/update/urn:li:activity:' + m[1] + '/');
       if (href.includes('/posts/')) add(href);
     }
-    return JSON.stringify({ ok: urls.length > 0, count: urls.length, urls: urls.slice(0, 40) });
-  })()`), 25000);
+    return JSON.stringify({ ok: urls.length > 0, count: urls.length, urls: urls.slice(0, 12) });
+  })()`), 15000);
 
-  for (const url of candidates.urls || []) {
+  for (const url of (candidates.urls || []).slice(0, 6)) {
     if (verifyLivePost(url, text)) return { ok: true, url, method: "activity_candidates" };
   }
   return { ok: false, url: "", method: "activity_candidates", reason: "no verified match", candidate_count: (candidates.urls || []).length };
@@ -434,7 +443,7 @@ function verifyLivePost(url, text) {
   const result = tryWaitFor("LinkedIn live post verification", () => {
     const snap = bodySnapshot(12000);
     return { ok: normalize(snap.text || "").includes(needle), url: snap.url };
-  }, 18000);
+  }, 6000);
   return Boolean(result.ok);
 }
 

@@ -1,9 +1,12 @@
 const { spawnSync } = require("child_process");
 const fs = require("fs");
 
+throw new Error("Brave/AppleScript social browser control is disabled. Use API-backed publishing or rebuild a supervised foreground-only tool.");
+
 const BRAVE_APP_ID = "com.brave.Browser";
 const LEASE_BIN = "/Users/shanecheek/.foundry/foundry-sync-state/bin/foundry-computer-use-lease";
 const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";
+const LINKEDIN_ONE_SHOT_TOKEN = "8bit-linkedin-supervised-manual-v2";
 let targetWindowName = "";
 
 function assertUrlAllowed(url) {
@@ -16,11 +19,12 @@ function assertUrlAllowed(url) {
   if (
     host.endsWith("linkedin.com") &&
     (
-      process.env.SOCIAL_BRAVE_LINKEDIN_ONE_SHOT !== "8bit-linkedin-supervised-20260430" ||
-      !fs.existsSync(LINKEDIN_ALLOW_FILE)
+      process.env.SOCIAL_BRAVE_LINKEDIN_ONE_SHOT !== LINKEDIN_ONE_SHOT_TOKEN ||
+      !fs.existsSync(LINKEDIN_ALLOW_FILE) ||
+      fs.readFileSync(LINKEDIN_ALLOW_FILE, "utf8").trim() !== LINKEDIN_ONE_SHOT_TOKEN
     )
   ) {
-    throw new Error("LinkedIn Brave browser control is disabled unless the supervised one-shot env and allow-file are both set.");
+    throw new Error("LinkedIn Brave browser control is disabled unless the supervised one-shot env and allow-file content are both set.");
   }
 }
 
@@ -36,7 +40,11 @@ function osa(script) {
     input: script,
     encoding: "utf8",
     maxBuffer: 1024 * 1024 * 12,
+    timeout: 60000,
   });
+  if (proc.error) {
+    throw new Error(proc.error.message || "osascript failed");
+  }
   if (proc.status !== 0) {
     throw new Error((proc.stderr || proc.stdout || "osascript failed").trim());
   }
@@ -145,6 +153,24 @@ end tell
 
 function focusTargetWindow() {
   if (!targetWindowName) return false;
+  try {
+    const front = osa(`
+tell application id "${BRAVE_APP_ID}"
+  try
+    set marker to execute active tab of front window javascript "window.name"
+    if marker is ${appleString(targetWindowName)} then
+      set index of front window to 1
+      activate
+      return "ok"
+    end if
+  end try
+end tell
+return "nope"
+`);
+    if (front === "ok") return true;
+  } catch {
+    // fall through to full scan
+  }
   const script = `
 tell application id "${BRAVE_APP_ID}"
   repeat with wi from 1 to count of windows
