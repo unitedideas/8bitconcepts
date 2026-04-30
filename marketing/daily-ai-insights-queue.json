@@ -58,7 +58,7 @@
         "paper_candidate": false,
         "paper_reason": "",
         "last_verification": {
-          "checked_at": "2026-04-30T03:38:52Z",
+          "checked_at": "2026-04-30T04:47:42Z",
           "status": "source_verified",
           "note": "Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim."
         }
@@ -72,7 +72,7 @@
           "duplicate": false,
           "last_publish_attempt": {
             "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T03:38:52Z",
+            "checked_at": "2026-04-30T04:47:42Z",
             "status": "skipped_deferred_recent_related_post",
             "blocker": "Existing sync-state lock 6d28db191fc4974a has status=deferred_recent_related_post because a related Cohere X post already went live at https://x.com/8BitConcepts/status/2049309973168181281. Selected x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef for X instead. Official X API credentials are missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, and X_POSTER_COMMAND. Scheduled publisher is not allowed to use Browser/Computer Use, so active @8bitconcepts identity could not be verified through the posting API and no public post was attempted."
           }
@@ -84,7 +84,7 @@
           "duplicate": false,
           "last_publish_attempt": {
             "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T03:38:52Z",
+            "checked_at": "2026-04-30T04:47:42Z",
             "status": "skipped_related_lock_and_missing_credentials",
             "blocker": "Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim. Related LinkedIn social-content lock f364b059b76e6abf is already claimed by Shanes-MacBook-Pro-M4-2025.local for the same Cohere topic, so selected daily-ai-insight-2026-04-29-afternoon for LinkedIn instead. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted."
           }
@@ -119,7 +119,7 @@
           "duplicate": false,
           "last_publish_attempt": {
             "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T03:38:52Z",
+            "checked_at": "2026-04-30T04:47:42Z",
             "status": "skipped_duplicate_lock",
             "blocker": "Sync-state social-content lock 7f7dfda4a63c1e92 is already status=posted, so this X copy was not selected."
           }
@@ -131,7 +131,7 @@
           "duplicate": false,
           "last_publish_attempt": {
             "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T03:38:52Z",
+            "checked_at": "2026-04-30T04:47:42Z",
             "status": "blocked_missing_credentials",
             "blocker": "Selected for LinkedIn after skipping the related Cohere item already claimed by Shanes-MacBook-Pro-M4-2025.local. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted."
           }
