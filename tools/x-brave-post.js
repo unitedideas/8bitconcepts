@@ -271,6 +271,20 @@ function clickPost() {
 
 function findPostedTweet(expectedHandle, text) {
   const needle = normalize(text).slice(0, 90);
+  const fromCurrentPage = tryWaitFor("X current page live post verification", () => braveJS(`(() => {
+    const normalize = s => String(s || "").trim().toLowerCase().replace(/\\s+/g, " ");
+    const needle = ${JSON.stringify(needle)};
+    const articles = Array.from(document.querySelectorAll('article[data-testid="tweet"]'));
+    const article = articles.find(a => normalize(a.innerText || "").includes(needle));
+    if (!article) return JSON.stringify({ ok: false, reason: "matching tweet not visible", articles: articles.length });
+    const links = Array.from(article.querySelectorAll('a[href*="/status/"]'))
+      .map(a => a.href)
+      .filter(Boolean);
+    const url = links.find(h => /\\/status\\/\\d+/.test(h)) || "";
+    return JSON.stringify({ ok: Boolean(url), url, articleText: (article.innerText || "").slice(0, 400) });
+  })()`), 12000);
+  if (fromCurrentPage && fromCurrentPage.ok && fromCurrentPage.url) return fromCurrentPage.url;
+
   const profileUrl = `${PROFILE_BASE}/${expectedHandle}`;
   setBraveUrl(profileUrl);
   return waitFor("X profile live post verification", () => braveJS(`(() => {

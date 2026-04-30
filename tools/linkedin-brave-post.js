@@ -257,7 +257,7 @@ function clickPost() {
 
 function clickNativePost() {
   if (clickAXButton("Post")) return { ok: true, method: "accessibility" };
-  const clicked = nativeClickWindowRelative(1010, 1100);
+  const clicked = nativeClickWindowRelative(835, 922);
   return { ok: true, method: "native", clicked };
 }
 

@@ -722,6 +722,48 @@
       "format": "meme",
       "copy": "If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
       "note": "Posted by 8bit-social-posting-validator after the two-hour validation found no recent LinkedIn post. LinkedIn native composer mode required manual URL capture from the Post successful View post link."
+    },
+    {
+      "id": "daily-targeted-research-2026-04-30-openai-x-1p",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-04-30",
+      "posted_at": "2026-04-30T15:47:30Z",
+      "url": "https://x.com/8BitConcepts/status/2049875126129422778",
+      "route": "https://aidevboard.com/company/openai",
+      "fingerprint": "3c8c707226fd33e5",
+      "fact_key": "targeted-research:openai:354:llm,distributed-systems,agents",
+      "format": "targeted documented research",
+      "target": {
+        "name": "OpenAI",
+        "domain": "openai.com",
+        "company_slug": "openai"
+      },
+      "copy": "OpenAI is still hiring like an infrastructure company.\n\nAI Dev Board shows 354 OpenAI AI/ML roles. Tags cluster around llm, distributed-systems, agents, and infrastructure. Avg published salary: $360k.\n\nThe bottleneck looks less like models and more like delivery loops.",
+      "note": "Posted by 8bit-temp-social-runner from 1P. X script dry-run passed, live script posted but hung during profile verification; live URL captured from verified @8BitConcepts home timeline. Facts verified against https://aidevboard.com/company/openai and https://nothumansearch.ai/api/v1/site/openai.com on 2026-04-30: OpenAI page title shows 354 AI roles, avg salary $360k, tags include distributed-systems, llm, research, mlops, infrastructure, cloud, search, agents; NHS profile score 15 with structured API."
+    },
+    {
+      "id": "daily-targeted-research-2026-04-30-openai-linkedin-1p",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-04-30",
+      "posted_at": "2026-04-30T15:47:30Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7455642977735081984/",
+      "route": "https://aidevboard.com/company/openai",
+      "fingerprint": "0526a2c64d41a04b",
+      "fact_key": "targeted-research:openai:354:llm,distributed-systems,agents",
+      "format": "targeted documented research",
+      "target": {
+        "name": "OpenAI",
+        "domain": "openai.com",
+        "company_slug": "openai"
+      },
+      "copy": "Looking at OpenAI through the public hiring data:\n\n1. AI Dev Board shows 354 indexed AI/ML roles.\n2. Current sample tags cluster around llm, distributed-systems, agents, and infrastructure.\n3. Sample roles include Software Engineer, Delivery / CD; Researcher, Alignment Science; Software Engineer, Compute Infrastructure.\n4. Avg published salary in the indexed sample: $360,000.\n\nThe useful read is where the operational work is moving: platform delivery, multicloud infrastructure, evals, and agent deployment loops.\n\nOpenAI is a useful public lens on this area. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
+      "note": "Posted by 8bit-temp-social-runner from 1P after verifying Shane Cheek / Founder at 8bitconcepts in Brave. linkedin-brave-post.js dry-run passed but native composer did not insert copy on first live attempt; copy was inserted through the verified native composer path, Post successful was observed, and the live View post URL was captured. Facts verified against https://aidevboard.com/company/openai and https://nothumansearch.ai/api/v1/site/openai.com on 2026-04-30."
     }
   ]
 }
