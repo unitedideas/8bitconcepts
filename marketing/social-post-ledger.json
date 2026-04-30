@@ -18,11 +18,11 @@
       "source": "8bit-self-testing-layer",
       "channel": "linkedin",
       "account": "Shane Cheek",
-      "status": "blocked",
-      "posted_at": "",
-      "url": "",
+      "status": "posted",
+      "posted_at": "2026-04-29",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7455412699565514752/",
       "fingerprint": "133b9f1e11675ea6",
-      "note": "Not posted. LinkedIn feed loaded in Brave and Shane Cheek identity was verified, but desktop automation could not reliably open the composer."
+      "note": "Posted to Shane Cheek LinkedIn after Brave showed the approved Shane Cheek / Founder at 8bitconcepts identity. Automation opened the composer, inserted the copy, observed the post-success toast, and captured the View post URL; Shane manually clicked the final Post button during the supervised recovery run."
     },
     {
       "id": "on-device-inference-x-main",

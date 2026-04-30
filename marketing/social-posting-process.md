@@ -50,6 +50,22 @@ Fast path:
 
 API path is blocked until a Reddit app exists and credentials are stored. The required shape is a first-party script app named `8bitconcepts-publisher`, OAuth token request to `https://www.reddit.com/api/v1/access_token`, and submit calls to `https://oauth.reddit.com/api/submit` with User-Agent `script:8bitconcepts-publisher:v1.0.0 (by /u/<reddit username>)`.
 
+## LinkedIn Browser Recovery Flow
+
+Use this only for explicit supervised recovery runs. Recurring LinkedIn posting must stay API-backed or queue-backed until LinkedIn API credentials exist.
+
+1. Hold the local Computer Use lease before touching Brave.
+2. Use Brave Browser, not Chrome.
+3. Open `https://www.linkedin.com/feed/`.
+4. Verify the visible identity is `Shane Cheek` and the profile line says `Founder at 8bitconcepts`.
+5. Verify the post fingerprint is claimed in `public-action-locks/social-content/`.
+6. Click `Start a post`. If DOM click fails, use the visible button coordinates after screenshot/rect verification.
+7. Paste the approved copy into the composer.
+8. Confirm the composer contains the full copy and the `Post` button is enabled.
+9. Click `Post`; do not stop at a filled composer when identity, copy, lock, and enabled state are all verified.
+10. Treat LinkedIn's `Post successful. View post` toast as the authoritative success signal.
+11. Capture the `View post` URL and immediately update both `marketing/social-post-ledger.json` and the sync-state social-content lock to `posted`.
+
 ## Twice-Daily AI Insight Flow
 
 1. Run `python3 tools/generate-daily-ai-insights.py`.
