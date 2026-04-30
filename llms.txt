@@ -84,6 +84,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Observability Blind Spot](https://8bitconcepts.com/research/the-observability-blind-spot.html): Engineering teams spent years building world-class observability for their APIs — latency dashboards
 
+- [The Governance Vacuum](https://8bitconcepts.com/research/the-governance-vacuum.html): Most enterprises now have AI deployed in production. Almost none have decided who owns it when it br
+
 ## Contact
 
 Website: https://8bitconcepts.com
