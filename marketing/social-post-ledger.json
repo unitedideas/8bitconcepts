@@ -523,6 +523,47 @@
       "note": "Blocked in the Slack bridge run before posting. LinkedIn identity could not be verified: Brave/Computer Use returned cgWindowNotFound, Chrome/Computer Use timed out, screen capture stayed black, and browser JavaScript inspection is disabled. No public-action lock was claimed because no public post was attempted.",
       "last_checked_at": "2026-04-30T05:52:50Z",
       "last_blocker": "Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, linkedin-client-id, linkedin-client-secret, linkedin-refresh-token, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, and LINKEDIN_ORGANIZATION_URN. Scheduled publisher cannot use Browser/Computer Use, so LinkedIn identity was not API-verifiable and no public post was attempted. Item remains queued for the API-backed path."
+    },
+    {
+      "id": "x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-04-30",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
+      "fact_key": "c6e848ef61cd7a3258d235ee",
+      "fingerprint": "399b097978684dc0",
+      "copy": "The AI Dev Board index had 9,161 AI/ML roles across 524 companies on 2026-04-27.",
+      "note": "Blocked in scheduled API-only publisher before posting. Live ADB stats still show 9,161 AI/ML roles across 524 companies. Official X API credentials are missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, and X_POSTER_COMMAND. Scheduled publisher is not allowed to use Browser/Computer Use, so active @8bitconcepts identity could not be verified through the posting API and no public post was attempted. No public-action lock was claimed because no public post was attempted."
+    },
+    {
+      "id": "ai-news-model-custody-2026-04-30-x",
+      "source": "8bit-ai-news-2026-04-30",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-04-30",
+      "posted_at": "2026-04-30T05:45:00Z",
+      "url": "https://x.com/8BitConcepts/status/2049725463330001071",
+      "route": "https://www.axios.com/2026/04/29/ai-firms-china-congress",
+      "fingerprint": "e7c1d2671a5babf7",
+      "copy": "AI news today is moving from leaderboards to model custody.\n\nAxios reports senators asked major AI labs how they protect frontier AI work from China-related insider threats.\n\nThe operator question: who can prove who touched the model, data, and deployment path?",
+      "note": "Posted from verified @8BitConcepts in Brave. Source news verified from Axios: senators asked major AI labs about China-related safeguards and insider access."
+    },
+    {
+      "id": "ai-news-model-custody-2026-04-30-linkedin",
+      "source": "8bit-ai-news-2026-04-30",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-04-30",
+      "posted_at": "2026-04-30T05:50:00Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7455492563387555840/",
+      "route": "https://www.axios.com/2026/04/29/ai-firms-china-congress",
+      "fingerprint": "5b5141aced03e289",
+      "copy": "AI news today is less about model leaderboards and more about model custody.\n\nAxios reports Senators Chuck Grassley and Jim Banks sent letters to CEOs at Amazon, Anthropic, OpenAI, Google, Meta, Microsoft, Safe Superintelligence, Thinking Machines, and xAI asking how they protect frontier AI work from China-related insider threats.\n\nThe useful part is the category shift.\n\nAI governance is becoming an audit question: who had access, what did they touch, where did model artifacts move, and what proof exists after the fact?\n\nThat is the layer most agentic businesses still do not have.\n\nSource: https://www.axios.com/2026/04/29/ai-firms-china-congress\n\nWhat breaks first in most teams: model access controls, data movement logs, or vendor-side visibility?",
+      "note": "Posted to Shane Cheek LinkedIn after verifying Shane Cheek / Founder at 8bitconcepts in Brave. Initial composer recovery inserted an extra leading \"a \"; post was edited in-place through the post menu, Save was verified, and live body no longer contains the typo."
     }
   ]
 }

@@ -56,15 +56,19 @@ Use this only for explicit supervised recovery runs. Recurring LinkedIn posting 
 
 1. Hold the local Computer Use lease before touching Brave.
 2. Use Brave Browser, not Chrome.
-3. Open `https://www.linkedin.com/feed/`.
-4. Verify the visible identity is `Shane Cheek` and the profile line says `Founder at 8bitconcepts`.
-5. Verify the post fingerprint is claimed in `public-action-locks/social-content/`.
-6. Click `Start a post`. If DOM click fails, use the visible button coordinates after screenshot/rect verification.
-7. Paste the approved copy into the composer.
-8. Confirm the composer contains the full copy and the `Post` button is enabled.
-9. Click `Post`; do not stop at a filled composer when identity, copy, lock, and enabled state are all verified.
-10. Treat LinkedIn's `Post successful. View post` toast as the authoritative success signal.
-11. Capture the `View post` URL and immediately update both `marketing/social-post-ledger.json` and the sync-state social-content lock to `posted`.
+3. Use one browser automation script for the whole action: navigate, verify identity, open composer, insert copy, verify button state, click `Post`, capture URL. Do not run a sequence of exploratory `osascript` probes and manual coordinate clicks.
+4. Prefer a persistent Brave session controlled through Browser Use or Playwright with DOM selectors. If a platform ignores synthetic clicks or paste events, selector-derived native clicks are allowed inside the same script after the target element is found and verified. Use true headless only for read-only verification when the platform accepts it; X and LinkedIn may reject headless sessions, so publication can be headed but must still be script-driven.
+5. Open `https://www.linkedin.com/feed/`.
+6. Verify the visible identity is `Shane Cheek` and the profile line says `Founder at 8bitconcepts`.
+7. Verify the post fingerprint is claimed in `public-action-locks/social-content/`.
+8. Open `Start a post` through a DOM selector or accessibility selector.
+9. Paste or programmatically insert the approved copy into `[role="dialog"] [contenteditable="true"][role="textbox"]`.
+10. Confirm the composer contains the full copy and the `Post` button is enabled.
+11. Click `Post`; do not stop at a filled composer when identity, copy, lock, and enabled state are all verified.
+12. Treat LinkedIn's `Post successful. View post` toast as the authoritative success signal.
+13. Capture the `View post` URL and immediately update both `marketing/social-post-ledger.json` and the sync-state social-content lock to `posted`.
+
+If the script cannot open the composer or cannot find the enabled button, stop and report `blocked` with the exact selector/state failure. Selector-derived native clicks are acceptable; exploratory coordinate probing is allowed only when Shane is actively supervising and explicitly asks for a manual recovery click.
 
 ## Twice-Daily AI Insight Flow
 
