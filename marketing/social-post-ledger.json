@@ -564,6 +564,20 @@
       "fingerprint": "5b5141aced03e289",
       "copy": "AI news today is less about model leaderboards and more about model custody.\n\nAxios reports Senators Chuck Grassley and Jim Banks sent letters to CEOs at Amazon, Anthropic, OpenAI, Google, Meta, Microsoft, Safe Superintelligence, Thinking Machines, and xAI asking how they protect frontier AI work from China-related insider threats.\n\nThe useful part is the category shift.\n\nAI governance is becoming an audit question: who had access, what did they touch, where did model artifacts move, and what proof exists after the fact?\n\nThat is the layer most agentic businesses still do not have.\n\nSource: https://www.axios.com/2026/04/29/ai-firms-china-congress\n\nWhat breaks first in most teams: model access controls, data movement logs, or vendor-side visibility?",
       "note": "Posted to Shane Cheek LinkedIn after verifying Shane Cheek / Founder at 8bitconcepts in Brave. Initial composer recovery inserted an extra leading \"a \"; post was edited in-place through the post menu, Save was verified, and live body no longer contains the typo."
+    },
+    {
+      "id": "live-adb-hiring-2026-04-30-x",
+      "source": "aidevboard-live-stats-2026-04-30",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-04-30",
+      "posted_at": "2026-04-30T06:48:22Z",
+      "url": "https://x.com/8BitConcepts/status/2049742553789145196",
+      "route": "https://aidevboard.com",
+      "fingerprint": "1b63a18f3af5bdee",
+      "copy": "AI hiring is not cooling evenly.\n\nAI Dev Board is tracking 9,906 AI/ML roles across 527 companies. 571 were added this week.\n\nSenior, lead, and principal roles make up 6,472 openings.",
+      "note": "Posted from verified @8BitConcepts through the hardened X Brave script. Live stats verified against https://aidevboard.com/api/v1/stats at 2026-04-30T06:47:34Z: total_jobs=9906, total_companies=527, new_this_week=571, senior=3330, lead=2607, principal=535."
     }
   ]
 }
