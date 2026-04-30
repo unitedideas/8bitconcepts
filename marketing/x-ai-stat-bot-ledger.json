@@ -36,7 +36,7 @@
       "copy": "The AI Dev Board index had 9,161 AI/ML roles across 524 companies on 2026-04-27.",
       "last_publish_attempt": {
         "automation_id": "8bit-smart-social-publisher",
-        "checked_at": "2026-04-30T02:24:18Z",
+        "checked_at": "2026-04-30T03:38:52Z",
         "status": "blocked_missing_credentials",
         "blocker": "Official X API credentials are missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, and X_POSTER_COMMAND. Scheduled publisher is not allowed to use Browser/Computer Use, so active @8bitconcepts identity could not be verified through the posting API and no public post was attempted."
       }

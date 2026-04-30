@@ -480,7 +480,7 @@
         "nhs_profile": "https://nothumansearch.ai/site/cohere.com",
         "official_source": "https://cohere.com/careers"
       },
-      "note": "Not selected in scheduled API-only publisher. Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim. Existing sync-state lock 6d28db191fc4974a has status=deferred_recent_related_post because a related Cohere X post already went live at https://x.com/8BitConcepts/status/2049309973168181281. No public post attempted."
+      "note": "Not selected in scheduled API-only publisher. Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim. Existing sync-state lock 6d28db191fc4974a has status=deferred_recent_related_post because a related Cohere X post already went live at https://x.com/8BitConcepts/status/2049309973168181281. Selected x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef for X instead. No public post attempted."
     },
     {
       "id": "daily-targeted-research-2026-04-29-cohere-linkedin",
@@ -508,7 +508,7 @@
         "nhs_profile": "https://nothumansearch.ai/site/cohere.com",
         "official_source": "https://cohere.com/careers"
       },
-      "note": "Blocked in scheduled API-only publisher before posting. Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted. No public-action lock was claimed because no public post was attempted."
+      "note": "Not selected in scheduled API-only publisher. Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim. Related LinkedIn social-content lock f364b059b76e6abf is already claimed by Shanes-MacBook-Pro-M4-2025.local for the same Cohere topic, so selected daily-ai-insight-2026-04-29-afternoon for LinkedIn instead. No public post attempted."
     },
     {
       "id": "daily-ai-insight-2026-04-29-afternoon-x",
@@ -542,7 +542,7 @@
       "format": "infographic",
       "target": null,
       "research_sources": null,
-      "note": "Not selected in this scheduled run because the verified Cohere targeted_research LinkedIn item had priority. LinkedIn remains blocked for API-only publishing: Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted."
+      "note": "Blocked in scheduled API-only publisher before posting. Selected after skipping the related Cohere item already claimed by Shanes-MacBook-Pro-M4-2025.local. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted. No public-action lock was claimed because no public post was attempted."
     },
     {
       "id": "x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef",
