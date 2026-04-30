@@ -1,8 +1,28 @@
 const { spawnSync } = require("child_process");
+const fs = require("fs");
 
 const BRAVE_APP_ID = "com.brave.Browser";
 const LEASE_BIN = "/Users/shanecheek/.foundry/foundry-sync-state/bin/foundry-computer-use-lease";
+const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";
 let targetWindowName = "";
+
+function assertUrlAllowed(url) {
+  let host = "";
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch {
+    return;
+  }
+  if (
+    host.endsWith("linkedin.com") &&
+    (
+      process.env.SOCIAL_BRAVE_LINKEDIN_ONE_SHOT !== "8bit-linkedin-supervised-20260430" ||
+      !fs.existsSync(LINKEDIN_ALLOW_FILE)
+    )
+  ) {
+    throw new Error("LinkedIn Brave browser control is disabled unless the supervised one-shot env and allow-file are both set.");
+  }
+}
 
 function appleString(value) {
   return `"${String(value)
@@ -43,6 +63,7 @@ end tell
 }
 
 function setBraveUrl(url, options = {}) {
+  assertUrlAllowed(url);
   const focus = options.focus !== false;
   if (focus) focusTargetWindow();
   osa(`
@@ -55,6 +76,7 @@ end tell
 }
 
 function openDedicatedWindow(url, options = {}) {
+  assertUrlAllowed(url);
   const focus = options.focus !== false;
   const namePrefix = options.namePrefix || "";
   let host = options.host || "";
