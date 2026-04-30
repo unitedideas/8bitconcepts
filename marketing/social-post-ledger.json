@@ -3,6 +3,28 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "self-testing-layer-x-main",
+      "source": "8bit-self-testing-layer",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-04-29",
+      "url": "",
+      "fingerprint": "a509b5f91622d7ac",
+      "note": "Posted on X from the 8bitconcepts account; Shane confirmed the post in-session after browser automation lost visible state at desktop lock."
+    },
+    {
+      "id": "self-testing-layer-linkedin-main",
+      "source": "8bit-self-testing-layer",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "blocked",
+      "posted_at": "",
+      "url": "",
+      "fingerprint": "133b9f1e11675ea6",
+      "note": "Not posted. LinkedIn feed loaded in Brave and Shane Cheek identity was verified, but desktop automation could not reliably open the composer."
+    },
+    {
       "id": "on-device-inference-x-main",
       "source": "on-device-inference-launch",
       "channel": "x",
