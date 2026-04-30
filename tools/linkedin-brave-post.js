@@ -255,6 +255,21 @@ function clickPost() {
   }
 }
 
+function clickNativePost() {
+  if (clickAXButton("Post")) return { ok: true, method: "accessibility" };
+  const clicked = nativeClickWindowRelative(1010, 1100);
+  return { ok: true, method: "native", clicked };
+}
+
+function waitForPostSuccess() {
+  return waitFor("LinkedIn post success", () => braveJS(`(() => {
+    const text = document.body ? document.body.innerText : "";
+    const link = Array.from(document.querySelectorAll('a'))
+      .find(a => ((a.innerText || a.textContent || "").trim() === "View post") && a.href.includes("/feed/update/"));
+    return JSON.stringify({ ok: Boolean(link) && text.includes("Post successful"), url: link ? link.href : "" });
+  })()`), 24000);
+}
+
 function verifyLivePost(url, text) {
   setBraveUrl(url);
   const needle = normalize(text).slice(0, 90);
@@ -280,7 +295,11 @@ function postOrDryRun(dryRun, text, mode) {
       console.log(JSON.stringify({ ok: true, dryRun: true, cleaned: Boolean(cleanup && cleanup.ok), mode }));
       return;
     }
-    throw new Error("LinkedIn native composer mode cannot safely capture a live URL; rerun with Browser/Computer Use or LinkedIn API credentials");
+    const clicked = clickNativePost();
+    const result = waitForPostSuccess();
+    const verified = verifyLivePost(result.url, text);
+    console.log(JSON.stringify({ ok: true, url: result.url, verified, mode, click: clicked.method }));
+    return;
   }
   const state = postButtonState();
   if (!state || !state.ok || state.disabled) {
@@ -293,12 +312,7 @@ function postOrDryRun(dryRun, text, mode) {
     return;
   }
   clickPost();
-  const result = waitFor("LinkedIn post success", () => braveJS(`(() => {
-    const text = document.body ? document.body.innerText : "";
-    const link = Array.from(document.querySelectorAll('a'))
-      .find(a => ((a.innerText || a.textContent || "").trim() === "View post") && a.href.includes("/feed/update/"));
-    return JSON.stringify({ ok: Boolean(link) && text.includes("Post successful"), url: link ? link.href : "" });
-  })()`), 24000);
+  const result = waitForPostSuccess();
   const verified = verifyLivePost(result.url, text);
   console.log(JSON.stringify({ ok: true, url: result.url, verified }));
 }
