@@ -55,13 +55,13 @@
           "structured API"
         ],
         "source_errors": {},
+        "paper_candidate": false,
+        "paper_reason": "",
         "last_verification": {
-          "checked_at": "2026-04-30T00:07:46Z",
+          "checked_at": "2026-04-30T01:14:30Z",
           "status": "stale_source",
           "note": "Live ADB company API returned 20 Cohere jobs while this queued copy claims 81. Regenerate before posting."
-        },
-        "paper_candidate": false,
-        "paper_reason": ""
+        }
       },
       "funnel": "AI Dev Board data, Not Human Search agent-readiness check, or 8bit research follow-up",
       "channels": {
@@ -72,9 +72,9 @@
           "duplicate": false,
           "last_publish_attempt": {
             "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T00:07:46Z",
-            "status": "skipped_stale_or_deferred",
-            "blocker": "Queued copy is stale against live ADB company data and sync-state already has a related posted Cohere X lock. Official X API credentials are also missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, and X_POSTER_COMMAND."
+            "checked_at": "2026-04-30T01:14:30Z",
+            "status": "skipped_stale_source",
+            "blocker": "Live ADB company API returned 20 Cohere jobs while this queued copy claims 81. Regenerate before posting. Official X API credentials are missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, and X_POSTER_COMMAND. Scheduled publisher is not allowed to use Browser/Computer Use, so active @8bitconcepts identity could not be verified through the posting API and no public post was attempted."
           }
         },
         "linkedin": {
@@ -84,9 +84,9 @@
           "duplicate": false,
           "last_publish_attempt": {
             "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T00:07:46Z",
+            "checked_at": "2026-04-30T01:14:30Z",
             "status": "skipped_stale_source",
-            "blocker": "Queued copy is stale against live ADB company data. Official LinkedIn API credentials are also missing from Keychain/env: linkedin-access-token, linkedin-person-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, linkedin-client-id, and linkedin-client-secret."
+            "blocker": "Live ADB company API returned 20 Cohere jobs while this queued copy claims 81. Regenerate before posting. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted."
           }
         }
       },
@@ -125,9 +125,9 @@
           "duplicate": false,
           "last_publish_attempt": {
             "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T00:07:46Z",
+            "checked_at": "2026-04-30T01:14:30Z",
             "status": "blocked_missing_credentials",
-            "blocker": "Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, linkedin-client-id, and linkedin-client-secret. Scheduled publisher is not allowed to use Browser/Computer Use."
+            "blocker": "Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted."
           }
         }
       },
