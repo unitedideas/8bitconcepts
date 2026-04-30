@@ -23,11 +23,12 @@ function osa(script) {
   return proc.stdout.trim();
 }
 
-function braveJS(js) {
-  focusTargetWindow();
+function braveJS(js, options = {}) {
+  const focus = options.focus !== false;
+  if (focus) focusTargetWindow();
   const script = `
 tell application id "${BRAVE_APP_ID}"
-  activate
+  if ${focus ? "true" : "false"} then activate
   if (count of windows) = 0 then make new window
   return execute active tab of front window javascript ${appleString(js)}
 end tell
@@ -41,26 +42,59 @@ end tell
   }
 }
 
-function setBraveUrl(url) {
-  focusTargetWindow();
+function setBraveUrl(url, options = {}) {
+  const focus = options.focus !== false;
+  if (focus) focusTargetWindow();
   osa(`
 tell application id "${BRAVE_APP_ID}"
-  activate
+  if ${focus ? "true" : "false"} then activate
   if (count of windows) = 0 then make new window
   set URL of active tab of front window to ${appleString(url)}
 end tell
 `);
 }
 
-function openDedicatedWindow(url) {
-  osa(`
+function openDedicatedWindow(url, options = {}) {
+  const focus = options.focus !== false;
+  const namePrefix = options.namePrefix || "";
+  let host = options.host || "";
+  try {
+    host = host || new URL(url).hostname;
+  } catch {
+    host = "";
+  }
+  const out = osa(`
 tell application id "${BRAVE_APP_ID}"
-  activate
+  if ${focus ? "true" : "false"} then activate
+  repeat with wi from 1 to count of windows
+    repeat with ti from 1 to count of tabs of window wi
+      set tabUrl to ""
+      set marker to ""
+      try
+        set tabUrl to URL of tab ti of window wi
+      end try
+      try
+        set marker to execute tab ti of window wi javascript "window.name"
+      end try
+      if (${appleString(namePrefix)} is not "" and marker starts with ${appleString(namePrefix)}) or (${appleString(host)} is not "" and tabUrl contains ${appleString(host)}) then
+        set URL of tab ti of window wi to ${appleString(url)}
+        set active tab index of window wi to ti
+        if ${focus ? "true" : "false"} then set index of window wi to 1
+        return "reused"
+      end if
+    end repeat
+  end repeat
+  if not ${focus ? "true" : "false"} then return "not-found"
   set w to make new window
   set URL of active tab of w to ${appleString(url)}
   set index of w to 1
+  return "created"
 end tell
 `);
+  if (out === "not-found") {
+    throw new Error(`no reusable Brave window found for ${url}`);
+  }
+  return out;
 }
 
 function markActiveWindow(marker) {
