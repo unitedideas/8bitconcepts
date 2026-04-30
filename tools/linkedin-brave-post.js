@@ -31,6 +31,7 @@ const FEED_URL = "https://www.linkedin.com/feed/?shareActive=true";
 const ACTIVITY_ALL_URL = "https://www.linkedin.com/in/shane-cheek-9173473b6/recent-activity/all/";
 const DEFAULT_NAME = "Shane Cheek";
 const DEFAULT_HEADLINE = "Founder at 8bitconcepts";
+const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";
 
 function usage() {
   console.error("usage: node tools/linkedin-brave-post.js (--text <copy> | --text-file <path>) --allow-browser [--dry-run] [--recover-only] [--skip-lease] [--expected-name <name>] [--expected-headline <headline>]");
@@ -59,8 +60,12 @@ function parseArgs(argv) {
     else usage();
   }
   if ((!args.text && !args.textFile) || (args.text && args.textFile) || !args.expectedName || !args.expectedHeadline) usage();
-  if (!args.allowBrowser || process.env.SOCIAL_BRAVE_LINKEDIN_ONE_SHOT !== "8bit-linkedin-supervised-20260430") {
-    console.error("LinkedIn Brave browser posting is disabled unless --allow-browser and SOCIAL_BRAVE_LINKEDIN_ONE_SHOT are set by an explicit supervised one-shot run.");
+  if (
+    !args.allowBrowser ||
+    process.env.SOCIAL_BRAVE_LINKEDIN_ONE_SHOT !== "8bit-linkedin-supervised-20260430" ||
+    !fs.existsSync(LINKEDIN_ALLOW_FILE)
+  ) {
+    console.error("LinkedIn Brave browser posting is disabled unless --allow-browser, SOCIAL_BRAVE_LINKEDIN_ONE_SHOT, and the one-shot allow-file are all set by an explicit supervised run.");
     process.exit(3);
   }
   return args;
