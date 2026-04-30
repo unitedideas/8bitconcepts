@@ -3,28 +3,6 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
-      "id": "self-testing-layer-x-main",
-      "source": "8bit-self-testing-layer",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "posted_at": "2026-04-29",
-      "url": "",
-      "fingerprint": "a509b5f91622d7ac",
-      "note": "Posted on X from the 8bitconcepts account; Shane confirmed the post in-session after browser automation lost visible state at desktop lock."
-    },
-    {
-      "id": "self-testing-layer-linkedin-main",
-      "source": "8bit-self-testing-layer",
-      "channel": "linkedin",
-      "account": "Shane Cheek",
-      "status": "posted",
-      "posted_at": "2026-04-29",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7455412699565514752/",
-      "fingerprint": "133b9f1e11675ea6",
-      "note": "Posted to Shane Cheek LinkedIn after Brave showed the approved Shane Cheek / Founder at 8bitconcepts identity. Automation opened the composer, inserted the copy, observed the post-success toast, and captured the View post URL; Shane manually clicked the final Post button during the supervised recovery run."
-    },
-    {
       "id": "on-device-inference-x-main",
       "source": "on-device-inference-launch",
       "channel": "x",
@@ -480,7 +458,7 @@
         "nhs_profile": "https://nothumansearch.ai/site/cohere.com",
         "official_source": "https://cohere.com/careers"
       },
-      "note": "Not selected in scheduled API-only publisher. Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim. Existing sync-state lock 6d28db191fc4974a has status=deferred_recent_related_post because a related Cohere X post already went live at https://x.com/8BitConcepts/status/2049309973168181281. Selected x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef for X instead. No public post attempted."
+      "note": "Not posted in the Slack bridge run. Existing sync-state lock 6d28db191fc4974a marks this exact copy deferred because a related Cohere X draft already went live at https://x.com/8BitConcepts/status/2049309973168181281."
     },
     {
       "id": "daily-targeted-research-2026-04-29-cohere-linkedin",
@@ -508,7 +486,7 @@
         "nhs_profile": "https://nothumansearch.ai/site/cohere.com",
         "official_source": "https://cohere.com/careers"
       },
-      "note": "Not selected in scheduled API-only publisher. Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim. Related LinkedIn social-content lock f364b059b76e6abf is already claimed by Shanes-MacBook-Pro-M4-2025.local for the same Cohere topic, so selected daily-ai-insight-2026-04-29-afternoon for LinkedIn instead. No public post attempted."
+      "note": "Blocked in the Slack bridge run before posting. Current live ADB company API returned 20 Cohere jobs while this queued copy claims 81, so the stat needs regeneration before use. LinkedIn identity also could not be verified: Brave/Computer Use returned cgWindowNotFound, Chrome/Computer Use timed out, screen capture stayed black, and browser JavaScript inspection is disabled."
     },
     {
       "id": "daily-ai-insight-2026-04-29-afternoon-x",
@@ -534,7 +512,7 @@
       "channel": "linkedin",
       "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
       "status": "blocked",
-      "date": "2026-04-30",
+      "date": "2026-04-29",
       "post_time_local": "14:30",
       "fingerprint": "ca65a4640c86b70a",
       "fact_key": null,
@@ -542,20 +520,9 @@
       "format": "infographic",
       "target": null,
       "research_sources": null,
-      "note": "Blocked in scheduled API-only publisher before posting. Selected after skipping the related Cohere item already claimed by Shanes-MacBook-Pro-M4-2025.local. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted. No public-action lock was claimed because no public post was attempted."
-    },
-    {
-      "id": "x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef",
-      "source": "marketing/x-ai-stat-bot-outbox.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "date": "2026-04-30",
-      "route": "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
-      "fact_key": "c6e848ef61cd7a3258d235ee",
-      "fingerprint": "399b097978684dc0",
-      "copy": "The AI Dev Board index had 9,161 AI/ML roles across 524 companies on 2026-04-27.",
-      "note": "Blocked in scheduled API-only publisher before posting. Live ADB stats still show 9,161 AI/ML roles across 524 companies. Official X API credentials are missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, and X_POSTER_COMMAND. Scheduled publisher is not allowed to use Browser/Computer Use, so active @8bitconcepts identity could not be verified through the posting API and no public post was attempted. No public-action lock was claimed because no public post was attempted."
+      "note": "Blocked in the Slack bridge run before posting. LinkedIn identity could not be verified: Brave/Computer Use returned cgWindowNotFound, Chrome/Computer Use timed out, screen capture stayed black, and browser JavaScript inspection is disabled. No public-action lock was claimed because no public post was attempted.",
+      "last_checked_at": "2026-04-30T05:52:50Z",
+      "last_blocker": "Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, linkedin-client-id, linkedin-client-secret, linkedin-refresh-token, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, and LINKEDIN_ORGANIZATION_URN. Scheduled publisher cannot use Browser/Computer Use, so LinkedIn identity was not API-verifiable and no public post was attempted. Item remains queued for the API-backed path."
     }
   ]
 }
