@@ -104,5 +104,60 @@
     "followup_sent": false,
     "delivery_status": "bounced",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
+  },
+  {
+    "email": "info@htmfg.com",
+    "company": "High Tech Manufacturing",
+    "industry": "manufacturing",
+    "subject": "A small note about your shop floor",
+    "sent_at": "2026-04-30T00:38:09.812787+00:00",
+    "message_id": "c2ebc5c8-7ce4-4dd4-9afb-9eb3e31f9be8",
+    "followup_sent": false,
+    "delivery_status": "delivered",
+    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00"
+  },
+  {
+    "email": "hello@gradybritton.com",
+    "company": "Grady Britton",
+    "industry": "diagnostic",
+    "subject": "A $500 written diagnosis, no upsell",
+    "sent_at": "2026-04-30T00:38:10.093587+00:00",
+    "message_id": "14a01ebc-8c17-49cb-9459-5dc2542d7e4a",
+    "followup_sent": false,
+    "delivery_status": "delivered",
+    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00"
+  },
+  {
+    "email": "info@freelandspirits.com",
+    "company": "Freeland Spirits",
+    "industry": "diagnostic",
+    "subject": "A $500 written diagnosis, no upsell",
+    "sent_at": "2026-04-30T00:38:10.377961+00:00",
+    "message_id": "1f5bc60b-7309-4652-95e0-66f529b90b24",
+    "followup_sent": false,
+    "delivery_status": "delivered",
+    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00"
+  },
+  {
+    "email": "info@portlandpetfoodcompany.com",
+    "company": "Portland Pet Food Company",
+    "industry": "diagnostic",
+    "subject": "A $500 written diagnosis, no upsell",
+    "sent_at": "2026-04-30T00:38:10.643987+00:00",
+    "message_id": "be6b858c-b71b-4159-8700-03aa53ae7aad",
+    "followup_sent": false,
+    "delivery_status": "delivered",
+    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00"
+  },
+  {
+    "email": "hello@jacobsensalt.com",
+    "company": "Jacobsen Salt Co.",
+    "industry": "diagnostic",
+    "subject": "A $500 written diagnosis, no upsell",
+    "sent_at": "2026-04-30T00:38:10.923715+00:00",
+    "message_id": "3bc4e080-d3c0-42ff-bf65-8a983f2412ea",
+    "followup_sent": false,
+    "delivery_status": "delivered",
+    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00"
   }
 ]

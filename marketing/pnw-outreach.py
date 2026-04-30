@@ -104,8 +104,20 @@ INDUSTRY_KEYWORDS = {
     "logistics": ["freight", "3pl", "logistics", "shipping", "delivery"],
     "manufacturing": ["manufacturing", "precision", "machine", "fabrication", "shop"],
     "healthcare": ["healthcare", "clinic", "health", "doctor", "chiro", "naturopath", "practice"],
-    "professional-services": ["professional services", "cpa", "accounting", "law", "legal", "insurance"],
-    "distribution": ["wholesale", "distributor", "retail", "ecommerce", "e-commerce"],
+    "professional-services": [
+        "professional services",
+        "cpa",
+        "accounting",
+        "law",
+        "legal",
+        "insurance",
+        "financial advisory",
+        "creative",
+        "marketing agency",
+        "agency",
+    ],
+    "distribution": ["wholesale", "distributor", "retail", "ecommerce", "e-commerce", "food", "beverage"],
+    "trades": ["specialty trades", "hvac", "electrical", "fire protection", "construction"],
 }
 
 TEMPLATES = {
@@ -182,6 +194,23 @@ The pattern we see at most wholesale operations: 3–5 hours per operator per da
 Short read on why this fails for businesses your size: https://8bitconcepts.com/research/the-pnw-ai-desert.html
 
 We embed for 4–12 weeks, ship working systems on your existing stack (NetSuite, SPS, EDI, custom, whatever), and leave the playbook behind. Worth a 30-min call?
+
+— Shane
+8bitconcepts.com/work-with-us""",
+    },
+    "trades": {
+        "subject": "A small note about your dispatch workflow",
+        "body": """Hi {first_name},
+
+Saw {company} in the local business directories. I lead 8bitconcepts — we install AI workflows inside operating businesses like yours, here in the PNW.
+
+The workflow we hear about most from specialty trades teams your size: dispatch, scheduling, quote follow-ups, maintenance reminders, parts tracking. It is high-friction work, but most generic AI tools do not understand how service calls actually move through the business.
+
+Quick read on why this stalls inside operating businesses: https://8bitconcepts.com/research/the-pnw-ai-desert.html
+
+We embed for 4–12 weeks, ship a working system on top of what you already use, and hand it off to your team. Costs less than a senior hire.
+
+Open to a 30-min call?
 
 — Shane
 8bitconcepts.com/work-with-us""",
