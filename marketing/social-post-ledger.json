@@ -688,6 +688,38 @@
       "last_checked_at": "2026-04-30T10:23:02Z",
       "last_blocker": "Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, linkedin-client-id, linkedin-client-secret, linkedin-refresh-token, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, LINKEDIN_CLIENT_ID, LINKEDIN_CLIENT_SECRET, and LINKEDIN_REFRESH_TOKEN. Scheduled publisher cannot use Browser/Computer Use, so LinkedIn identity was not API-verifiable and no public post was attempted.",
       "note": "Blocked in scheduled API-only publisher before posting. Sync-state social-content lock check returned blocked=false for fingerprint 459b4c39052328c4, but no public-action lock was claimed because no public post was attempted. Live sources verified: OpenAI has 354 indexed AI/ML roles in AI Dev Board, ADB overview has 9,906 roles across 527 companies with 562 added this week, and NHS shows openai.com score 15 with structured API only. Official source check for https://openai.com/careers/ returned a Cloudflare 403 challenge from curl, so the scheduled run did not rely on that source for posting. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, linkedin-client-id, linkedin-client-secret, linkedin-refresh-token, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, LINKEDIN_CLIENT_ID, LINKEDIN_CLIENT_SECRET, and LINKEDIN_REFRESH_TOKEN. Scheduled publisher cannot use Browser/Computer Use, so LinkedIn identity was not API-verifiable and no public post was attempted. Item remains queued for the API-backed path."
+    },
+    {
+      "id": "daily-ai-insight-2026-04-30-afternoon-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-04-30",
+      "post_time_local": "14:30",
+      "fingerprint": "7b441aae9e7834ac",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "format": "meme",
+      "copy": "If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'\n\nMore field notes: https://8bitconcepts.com/research/the-integration-tax.html",
+      "last_checked_at": "2026-04-30T13:38:13Z",
+      "last_blocker": "Official X API credentials are missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, twitter-bearer-token, X_POSTER_COMMAND, X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_TOKEN_SECRET, TWITTER_API_KEY, TWITTER_API_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET, X_BEARER_TOKEN, and TWITTER_BEARER_TOKEN. Scheduled publisher cannot use Browser/Computer Use, so active @8bitconcepts identity was not API-verifiable and no public post was attempted.",
+      "note": "Blocked in scheduled API-only publisher before posting. Sync-state social-content lock check returned blocked=false for fingerprint 7b441aae9e7834ac, but no public-action lock was claimed because no public post was attempted. Route verified HTTP 200. Item remains queued for the API-backed path."
+    },
+    {
+      "id": "daily-ai-insight-2026-04-30-afternoon-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "date": "2026-04-30",
+      "post_time_local": "14:30",
+      "fingerprint": "a9eb9256d2dbfdb1",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "format": "meme",
+      "copy": "If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "last_checked_at": "2026-04-30T13:38:13Z",
+      "last_blocker": "Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, linkedin-client-id, linkedin-client-secret, linkedin-refresh-token, linkedin-api-key, linkedin-api-secret, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, LINKEDIN_CLIENT_ID, LINKEDIN_CLIENT_SECRET, LINKEDIN_REFRESH_TOKEN, LINKEDIN_API_KEY, and LINKEDIN_API_SECRET. Scheduled publisher cannot use Browser/Computer Use, so LinkedIn identity was not API-verifiable and no public post was attempted.",
+      "note": "Blocked in scheduled API-only publisher before posting. Sync-state social-content lock check returned blocked=false for fingerprint a9eb9256d2dbfdb1, but no public-action lock was claimed because no public post was attempted. Route verified HTTP 200. Item remains queued for the API-backed path."
     }
   ]
 }
