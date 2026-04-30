@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T17:19:15.254579+00:00",
+  "generated_at": "2026-04-30T06:12:08.435861+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -8,86 +8,68 @@
   "cadence": "two AI insight posts per day; one daily targeted documented research post",
   "items": [
     {
-      "id": "daily-targeted-research-2026-04-29-cohere",
+      "id": "daily-targeted-research-2026-04-30-openai",
       "kind": "targeted_research",
-      "date": "2026-04-29",
+      "date": "2026-04-30",
       "slot": "morning",
       "post_time_local": "08:30",
       "timezone": "America/Los_Angeles",
       "target": {
-        "name": "Cohere",
-        "x_mention": "@cohere",
-        "linkedin_mention": "@Cohere",
-        "domain": "cohere.com",
-        "company_slug": "cohere"
+        "name": "OpenAI",
+        "x_mention": "@OpenAI",
+        "linkedin_mention": "@OpenAI",
+        "domain": "openai.com",
+        "company_slug": "openai"
       },
-      "fact_key": "targeted-research:cohere:81:search,generative-ai,agents",
-      "theme": "Cohere public AI hiring signal",
+      "fact_key": "targeted-research:openai:354:llm,distributed-systems,agents",
+      "theme": "OpenAI public AI hiring signal",
       "format": "targeted documented research",
       "asset_brief": "Small source-backed stat card: role count, top tags, sample roles, operator question.",
-      "route": "https://aidevboard.com/company/cohere",
+      "route": "https://aidevboard.com/company/openai",
       "research_sources": {
-        "adb_company": "https://aidevboard.com/company/cohere",
-        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=cohere&limit=100",
+        "adb_company": "https://aidevboard.com/company/openai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=openai&limit=100",
         "adb_stats_api": "https://aidevboard.com/api/v1/stats",
-        "nhs_profile": "https://nothumansearch.ai/site/cohere.com",
-        "official_source": "https://cohere.com/careers"
+        "nhs_profile": "https://nothumansearch.ai/site/openai.com",
+        "official_source": "https://openai.com/careers/"
       },
       "research_findings": {
-        "indexed_roles": 81,
-        "rank": 13,
-        "avg_salary": 235000,
+        "indexed_roles": 354,
+        "rank": 2,
+        "avg_salary": 360000,
         "top_tags": [
-          "search",
-          "generative-ai",
+          "llm",
+          "distributed-systems",
           "agents",
-          "llm"
+          "infrastructure"
         ],
         "sample_titles": [
-          "Fine-Tuning Engineer",
-          "Backend Engineer - Enterprise AI Platform",
-          "Engineering Manager, FDE Infrastructure (EMEA)"
+          "Software Engineer, Delivery / CD",
+          "Researcher, Alignment Science",
+          "Software Engineer, Compute Infrastructure"
         ],
-        "workplace_mix": "remote: 14, hybrid: 5, onsite: 1",
-        "nhs_score": 50,
+        "workplace_mix": "onsite: 10, remote: 6, hybrid: 4",
+        "nhs_score": 15,
         "nhs_signals": [
-          "llms.txt",
           "structured API"
         ],
         "source_errors": {},
-        "paper_candidate": false,
-        "paper_reason": "",
-        "last_verification": {
-          "checked_at": "2026-04-30T04:47:42Z",
-          "status": "source_verified",
-          "note": "Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim."
-        }
+        "paper_candidate": true,
+        "paper_reason": "OpenAI is a top-scale AI hiring signal with 354 indexed roles."
       },
       "funnel": "AI Dev Board data, Not Human Search agent-readiness check, or 8bit research follow-up",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Looking at public AI hiring as a market signal: @cohere has 81 indexed AI/ML roles on AI Dev Board, with current tags clustering around search, generative-ai, agents. Avg published salary: $235,000. Cohere is #13 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to enterprise AI platforms, fine-tuning, retrieval, and multilingual deployment. Where should operators spend first: retrieval quality, fine-tuning data, or deployment observability?\n\nData: https://aidevboard.com/company/cohere",
-          "fingerprint": "6d28db191fc4974a",
-          "duplicate": false,
-          "last_publish_attempt": {
-            "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T04:47:42Z",
-            "status": "skipped_deferred_recent_related_post",
-            "blocker": "Existing sync-state lock 6d28db191fc4974a has status=deferred_recent_related_post because a related Cohere X post already went live at https://x.com/8BitConcepts/status/2049309973168181281. Selected x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef for X instead. Official X API credentials are missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, and X_POSTER_COMMAND. Scheduled publisher is not allowed to use Browser/Computer Use, so active @8bitconcepts identity could not be verified through the posting API and no public post was attempted."
-          }
+          "copy": "Looking at public AI hiring as a market signal: @OpenAI has 354 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, distributed-systems, agents. Avg published salary: $360,000. OpenAI is #2 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to platform delivery, multicloud infrastructure, evals, and agent deployment loops. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?\n\nData: https://aidevboard.com/company/openai",
+          "fingerprint": "363cf393fc03e760",
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Looking at @Cohere through the public hiring data:\n\n1. 81 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around search, generative-ai, agents, llm.\n3. Sample roles include Fine-Tuning Engineer; Backend Engineer - Enterprise AI Platform; Engineering Manager, FDE Infrastructure (EMEA).\n4. Avg published salary in the indexed sample: $235,000.\n\nThe useful read is where the operational work is moving: enterprise AI platforms, fine-tuning, retrieval, and multilingual deployment.\n\nCohere is a useful public lens on this area. Where should operators spend first: retrieval quality, fine-tuning data, or deployment observability?\n\nNHS follow-up lens: public agent-readiness profile shows llms.txt, structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/cohere\nhttps://nothumansearch.ai/site/cohere.com",
-          "fingerprint": "c2f9b382803545f2",
-          "duplicate": false,
-          "last_publish_attempt": {
-            "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T04:47:42Z",
-            "status": "skipped_related_lock_and_missing_credentials",
-            "blocker": "Live ADB company API verified Cohere total=81; the API returned 20 rows because the endpoint pages results, matching the queued 81-role claim. Related LinkedIn social-content lock f364b059b76e6abf is already claimed by Shanes-MacBook-Pro-M4-2025.local for the same Cohere topic, so selected daily-ai-insight-2026-04-29-afternoon for LinkedIn instead. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted."
-          }
+          "copy": "Looking at @OpenAI through the public hiring data:\n\n1. 354 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around llm, distributed-systems, agents, infrastructure.\n3. Sample roles include Software Engineer, Delivery / CD; Researcher, Alignment Science; Software Engineer, Compute Infrastructure.\n4. Avg published salary in the indexed sample: $360,000.\n\nThe useful read is where the operational work is moving: platform delivery, multicloud infrastructure, evals, and agent deployment loops.\n\nOpenAI is a useful public lens on this area. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
+          "fingerprint": "459b4c39052328c4",
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -100,41 +82,29 @@
       ]
     },
     {
-      "id": "daily-ai-insight-2026-04-29-afternoon",
+      "id": "daily-ai-insight-2026-04-30-afternoon",
       "kind": "generic_insight",
-      "date": "2026-04-29",
+      "date": "2026-04-30",
       "slot": "afternoon",
       "post_time_local": "14:30",
       "timezone": "America/Los_Angeles",
-      "theme": "Autonomous loops fail silently before they fail loudly.",
-      "format": "infographic",
-      "asset_brief": "Checklist graphic: heartbeat, freshness deadline, lock age, last output, alert path.",
-      "route": "https://8bitconcepts.com/case-studies.html",
-      "funnel": "production agent ops",
+      "theme": "AI ROI hides in integration, not inference.",
+      "format": "meme",
+      "asset_brief": "Two-panel meme: 'we budgeted for tokens' vs. 'permissions, evals, workflow, observability'.",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "funnel": "AI integration audits",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "A production agent loop needs a status file before it needs another model upgrade. 'What is it doing now?' has to be machine-answerable.\n\nMore field notes: https://8bitconcepts.com/case-studies.html",
-          "fingerprint": "7f7dfda4a63c1e92",
-          "duplicate": false,
-          "last_publish_attempt": {
-            "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T04:47:42Z",
-            "status": "skipped_duplicate_lock",
-            "blocker": "Sync-state social-content lock 7f7dfda4a63c1e92 is already status=posted, so this X copy was not selected."
-          }
+          "copy": "If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'\n\nMore field notes: https://8bitconcepts.com/research/the-integration-tax.html",
+          "fingerprint": "7b441aae9e7834ac",
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "A production agent loop needs a status file before it needs another model upgrade. 'What is it doing now?' has to be machine-answerable.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/case-studies.html",
-          "fingerprint": "ca65a4640c86b70a",
-          "duplicate": false,
-          "last_publish_attempt": {
-            "automation_id": "8bit-smart-social-publisher",
-            "checked_at": "2026-04-30T04:47:42Z",
-            "status": "blocked_missing_credentials",
-            "blocker": "Selected for LinkedIn after skipping the related Cohere item already claimed by Shanes-MacBook-Pro-M4-2025.local. Official LinkedIn API credentials are missing from Keychain/env: linkedin-access-token, linkedin-person-urn, linkedin-organization-urn, LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN, LINKEDIN_ORGANIZATION_URN, linkedin-client-id, linkedin-client-secret, LINKEDIN_CLIENT_ID, and LINKEDIN_CLIENT_SECRET. Scheduled publisher is not allowed to use Browser/Computer Use, so LinkedIn identity could not be verified through the posting API and no public post was attempted."
-          }
+          "copy": "If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+          "fingerprint": "a9eb9256d2dbfdb1",
+          "duplicate": false
         }
       },
       "quality_gate": [
