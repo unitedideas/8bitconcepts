@@ -67,14 +67,16 @@ function readText(args) {
 
 function profileHref() {
   return braveJS(`(() => {
+    const host = location.hostname;
     const link = document.querySelector('a[data-testid="AppTabBar_Profile_Link"]');
-    return JSON.stringify({ ok: Boolean(link), href: link ? link.href : "", body: document.body ? document.body.innerText.slice(0, 1000) : "" });
+    return JSON.stringify({ ok: host.endsWith("x.com") && Boolean(link), host, href: link ? link.href : "", body: document.body ? document.body.innerText.slice(0, 1000) : "" });
   })()`);
 }
 
 function verifyAccount(expectedHandle) {
   const marker = `8bit-x-${process.pid}`;
   openDedicatedWindow(HOME_URL, { marker, namePrefix: "8bit-x-", host: "x.com" });
+  waitFor("X home URL load", () => braveJS(`(() => JSON.stringify({ ok: location.hostname.endsWith("x.com"), host: location.hostname, href: location.href }))()`), 12000);
   const result = waitFor("X home/account load", () => {
     const info = profileHref();
     if (!info || !info.ok) return info;

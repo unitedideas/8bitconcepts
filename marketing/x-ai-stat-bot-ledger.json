@@ -50,7 +50,17 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "last_publish_attempt": {
+        "automation_id": "8bit-x-agent-publisher",
+        "codex_automation_id": "temp-1p-8bit-x-agent-publisher",
+        "checked_at": "2026-05-01T13:22:44Z",
+        "status": "blocked_browser_timeout",
+        "content_lock": "public-action-locks/social-content/d98634ae51b8b3ec.json",
+        "blocker": "Blocked before a verified public X post: selected x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28, fact-checked https://8bitconcepts.com/research/the-integration-tax.html as HTTP 200 with the 10-20% model API cost claim and integration/evals/observability framing, social-editor approved the final copy unchanged, and sync-state social-content lock d98634ae51b8b3ec was claimed. First tools/x-brave-post.js attempt failed before account verification because the X window matcher reused a LinkedIn tab. Same-run repair patched Brave window targeting to match hostnames and added x.com URL verification. Retry then failed with `spawnSync osascript ETIMEDOUT` and returned no live status URL. Read-only profile recovery under Computer Use lease found no matching @8BitConcepts status URL (`matching profile tweet failed: null`). No public X post was ledgered.",
+        "next_action": "Debug the remaining osascript timeout in tools/x-brave-post.js or replace the browser path with an API publisher; rerun this same locked outbox item only if no live status URL exists."
+      },
+      "last_blocker": "Blocked before a verified public X post: selected x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28, fact-checked https://8bitconcepts.com/research/the-integration-tax.html as HTTP 200 with the 10-20% model API cost claim and integration/evals/observability framing, social-editor approved the final copy unchanged, and sync-state social-content lock d98634ae51b8b3ec was claimed. First tools/x-brave-post.js attempt failed before account verification because the X window matcher reused a LinkedIn tab. Same-run repair patched Brave window targeting to match hostnames and added x.com URL verification. Retry then failed with `spawnSync osascript ETIMEDOUT` and returned no live status URL. Read-only profile recovery under Computer Use lease found no matching @8BitConcepts status URL (`matching profile tweet failed: null`). No public X post was ledgered."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",

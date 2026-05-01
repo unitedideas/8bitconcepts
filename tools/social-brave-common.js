@@ -92,6 +92,7 @@ function openDedicatedWindow(url, options = {}) {
   } catch {
     host = "";
   }
+  const hostSuffix = host ? `.${host}` : "";
   const out = osa(`
 tell application id "${BRAVE_APP_ID}"
   if ${focus ? "true" : "false"} then activate
@@ -105,9 +106,13 @@ tell application id "${BRAVE_APP_ID}"
       try
         set marker to execute tab ti of window wi javascript "window.name"
       end try
+      set tabHost to ""
+      try
+        set tabHost to execute tab ti of window wi javascript "location.hostname"
+      end try
       set markerMatches to (${appleString(namePrefix)} is not "" and marker starts with ${appleString(namePrefix)})
-      set hostMatches to (${appleString(host)} is not "" and tabUrl contains ${appleString(host)})
-      set markerHostSafe to (markerMatches and (${appleString(host)} is "" or tabUrl is "" or tabUrl contains ${appleString(host)}))
+      set hostMatches to (${appleString(host)} is not "" and (tabHost is ${appleString(host)} or tabHost ends with ${appleString(hostSuffix)}))
+      set markerHostSafe to (markerMatches and (${appleString(host)} is "" or tabHost is "" or tabHost is ${appleString(host)} or tabHost ends with ${appleString(hostSuffix)}))
       if hostMatches or markerHostSafe then
         set URL of tab ti of window wi to ${appleString(url)}
         set active tab index of window wi to ti
