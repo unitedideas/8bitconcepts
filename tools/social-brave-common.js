@@ -194,7 +194,30 @@ tell application id "${BRAVE_APP_ID}"
 end tell
 return "not found"
 `;
-  return osa(script) === "ok";
+  if (osa(script) === "ok") return true;
+  if (targetWindowName.startsWith("8bit-linkedin-")) {
+    const linkedin = `
+tell application id "${BRAVE_APP_ID}"
+  repeat with wi from 1 to count of windows
+    repeat with ti from 1 to count of tabs of window wi
+      try
+        set tabUrl to URL of tab ti of window wi
+        if tabUrl contains "linkedin.com" then
+          set active tab index of window wi to ti
+          set index of window wi to 1
+          activate
+          execute tab ti of window wi javascript ${appleString(`window.name = ${JSON.stringify(targetWindowName)}; window.name`)}
+          return "ok"
+        end if
+      end try
+    end repeat
+  end repeat
+end tell
+return "not found"
+`;
+    return osa(linkedin) === "ok";
+  }
+  return false;
 }
 
 function getClipboard() {

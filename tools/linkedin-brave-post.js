@@ -18,7 +18,6 @@ const {
   clickAXButton,
   closeFrontWindow,
   getClipboard,
-  markActiveWindow,
   nativeClickElement,
   nativeClickScreenPoint,
   nativeClickWindowRelative,
@@ -106,8 +105,8 @@ function verifyIdentity(expectedName, expectedHeadline) {
 }
 
 function openComposer(args) {
-  openDedicatedWindow(FEED_URL, { namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
-  markActiveWindow(`8bit-linkedin-${process.pid}`);
+  const marker = `8bit-linkedin-${process.pid}`;
+  openDedicatedWindow(FEED_URL, { marker, namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
   waitFor("LinkedIn feed load", () => {
     const snap = bodySnapshot();
     const text = snap.text || "";
@@ -646,8 +645,8 @@ function waitForPostSuccess() {
 }
 
 function findPostUrlFromActivity(text) {
-  openDedicatedWindow(ACTIVITY_ALL_URL, { namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
-  markActiveWindow(`8bit-linkedin-activity-${process.pid}`);
+  const marker = `8bit-linkedin-activity-${process.pid}`;
+  openDedicatedWindow(ACTIVITY_ALL_URL, { marker, namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
   waitFor("LinkedIn activity cards", () => braveJS(`(() => {
     const cards = document.querySelectorAll('div.feed-shared-update-v2');
     const url = location.href || "";
