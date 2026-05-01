@@ -1,0 +1,229 @@
+{
+  "generated_at": "2026-05-01T05:34:58.439866+00:00",
+  "source_index": "/Users/shanecheek/.foundry/foundry-sync-state/systems/foundry-business-index.md",
+  "cadence": "one X and one LinkedIn candidate per active business per day",
+  "items": [
+    {
+      "id": "portfolio-daily-2026-05-02-agentic-evidence",
+      "kind": "portfolio_daily",
+      "date": "2026-05-02",
+      "business": {
+        "name": "Agentic Evidence",
+        "stage": "Cooking / live MVP",
+        "repo": "/Users/shanecheek/foundry-businesses/agentic-evidence",
+        "url": "https://agentic-evidence.fly.dev",
+        "primary_job": "Agentic technical interview evidence layer for Hatchways-style assessments.",
+        "current_motion": "Build toward strategic acquisition by Hatchways; VM/session evidence path is live.",
+        "next_move": "Add VM TTL teardown and disposable per-session repo templates."
+      },
+      "fact_key": "portfolio-daily:2026-05-02:agentic-evidence",
+      "route": "https://agentic-evidence.fly.dev",
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "Agentic Evidence is the daily operator note today.\n\nThe interesting part is not the landing page. It is the motion: Build toward strategic acquisition by Hatchways; VM/session evidence path is live.\n\nhttps://agentic-evidence.fly.dev",
+          "fingerprint": "c3e5e896fc1a9fc8",
+          "duplicate": true
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "The practical question for Agentic Evidence is not whether the idea is interesting.\n\nIt is whether the current motion keeps shrinking the distance between proof and distribution:\nBuild toward strategic acquisition by Hatchways; VM/session evidence path is live.\n\nNext useful move:\nAdd VM TTL teardown and disposable per-session repo templates.\n\nhttps://agentic-evidence.fly.dev",
+          "fingerprint": "b99407653e327edb",
+          "duplicate": true
+        }
+      },
+      "quality_gate": [
+        "uses the active business index as source",
+        "includes the product URL",
+        "states one concrete current motion or next move",
+        "routes second, teaches first",
+        "requires social-editor approval before posting"
+      ]
+    },
+    {
+      "id": "portfolio-daily-2026-05-02-geo-agent",
+      "kind": "portfolio_daily",
+      "date": "2026-05-02",
+      "business": {
+        "name": "Geo Agent",
+        "stage": "Cooking / review prep",
+        "repo": "/Users/shanecheek/foundry-businesses/geo-agent",
+        "url": "https://geo-agent.fly.dev",
+        "primary_job": "Shopify GEO and agentic-search optimization app.",
+        "current_motion": "Shopify app-review readiness after benchmark/runtime repair.",
+        "next_move": "Replace template README/listing copy and submit Shopify app review."
+      },
+      "fact_key": "portfolio-daily:2026-05-02:geo-agent",
+      "route": "https://geo-agent.fly.dev",
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "The next move for Geo Agent: Replace template README/listing copy and submit Shopify app review.\n\nThat is the useful level for AI products: one live artifact, one next constraint, one measurable surface.\n\nhttps://geo-agent.fly.dev",
+          "fingerprint": "66eab909becd1c12",
+          "duplicate": true
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "Geo Agent is the portfolio note today.\n\nWhat it does:\nShopify GEO and agentic-search optimization app.\n\nWhy it matters operationally:\nShopify app-review readiness after benchmark/runtime repair.\n\nWhat needs to happen next:\nReplace template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
+          "fingerprint": "08109abdf7ed0fb5",
+          "duplicate": true
+        }
+      },
+      "quality_gate": [
+        "uses the active business index as source",
+        "includes the product URL",
+        "states one concrete current motion or next move",
+        "routes second, teaches first",
+        "requires social-editor approval before posting"
+      ]
+    },
+    {
+      "id": "portfolio-daily-2026-05-02-bring-your-ai",
+      "kind": "portfolio_daily",
+      "date": "2026-05-02",
+      "business": {
+        "name": "Bring Your AI",
+        "stage": "Running / revenue-ready",
+        "repo": "/Users/shanecheek/foundry-businesses/portable",
+        "url": "https://bringyour.ai",
+        "primary_job": "Local-first Claude Code to Codex harness migration.",
+        "current_motion": "Traffic and directory distribution; product and payments are live.",
+        "next_move": "Continue Claude/Codex-user distribution without MCP-org/punkpeye engagement from `unitedideas`."
+      },
+      "fact_key": "portfolio-daily:2026-05-02:bring-your-ai",
+      "route": "https://bringyour.ai",
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "Bring Your AI is worth talking about because it is not a deck. Local-first Claude Code to Codex harness migration.\n\nCurrent motion: Traffic and directory distribution; product and payments are live.\n\nhttps://bringyour.ai",
+          "fingerprint": "7b3ccb1ba209d1d1",
+          "duplicate": true
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "Bring Your AI is one of the current Foundry businesses worth watching.\n\nThe job is simple: Local-first Claude Code to Codex harness migration.\n\nCurrent motion:\nTraffic and directory distribution; product and payments are live.\n\nThe next move is not broad strategy. It is this:\nContinue Claude/Codex-user distribution without MCP-org/punkpeye engagement from `unitedideas`.\n\nLive route:\nhttps://bringyour.ai",
+          "fingerprint": "ecbd9e6028d78ba2",
+          "duplicate": true
+        }
+      },
+      "quality_gate": [
+        "uses the active business index as source",
+        "includes the product URL",
+        "states one concrete current motion or next move",
+        "routes second, teaches first",
+        "requires social-editor approval before posting"
+      ]
+    },
+    {
+      "id": "portfolio-daily-2026-05-02-ai-dev-board",
+      "kind": "portfolio_daily",
+      "date": "2026-05-02",
+      "business": {
+        "name": "AI Dev Board",
+        "stage": "Running",
+        "repo": "/Users/shanecheek/foundry-businesses/ai-dev-jobs",
+        "url": "https://aidevboard.com",
+        "primary_job": "AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.",
+        "current_motion": "API/MCP/indexed-job distribution plus monetization surfaces.",
+        "next_move": "Keep API invariant green; improve SEO indexing and semantic/search conversion surfaces."
+      },
+      "fact_key": "portfolio-daily:2026-05-02:ai-dev-board",
+      "route": "https://aidevboard.com",
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "Current Foundry proof point: AI Dev Board.\n\nIt tests a concrete wedge: AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nThe next useful move is also concrete: Keep API invariant green; improve SEO indexing and semantic/search conversion sur.\n\nhttps://aidevboard.com",
+          "fingerprint": "43f5bf6a57abf56d",
+          "duplicate": true
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "Daily Foundry business note: AI Dev Board.\n\nThis is the operating shape:\n\n1. Stage: Running.\n2. Job: AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n3. Motion: API/MCP/indexed-job distribution plus monetization surfaces.\n4. Next constraint: Keep API invariant green; improve SEO indexing and semantic/search conversion surfaces.\n\nThe useful test is whether this keeps producing public proof instead of internal planning.\n\nhttps://aidevboard.com",
+          "fingerprint": "550ac0d3ef2fa6fd",
+          "duplicate": true
+        }
+      },
+      "quality_gate": [
+        "uses the active business index as source",
+        "includes the product URL",
+        "states one concrete current motion or next move",
+        "routes second, teaches first",
+        "requires social-editor approval before posting"
+      ]
+    },
+    {
+      "id": "portfolio-daily-2026-05-02-not-human-search",
+      "kind": "portfolio_daily",
+      "date": "2026-05-02",
+      "business": {
+        "name": "Not Human Search",
+        "stage": "Running",
+        "repo": "/Users/shanecheek/foundry-businesses/nothumansearch",
+        "url": "https://nothumansearch.ai",
+        "primary_job": "Agentic-readiness search engine and scoring system.",
+        "current_motion": "Discovery, monitoring, score-fix monetization, and agent/MCP discoverability.",
+        "next_move": "Continue distribution directories and improve indexed agent-first coverage."
+      },
+      "fact_key": "portfolio-daily:2026-05-02:not-human-search",
+      "route": "https://nothumansearch.ai",
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "A useful AI product signal is whether the work creates a reusable surface.\n\nNot Human Search does that through: Agentic-readiness search engine and scoring system.\n\nLive route: https://nothumansearch.ai",
+          "fingerprint": "ee4f8915f9a0f04c",
+          "duplicate": true
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "Not Human Search is a good example of how I want these products to compound.\n\nOne artifact should do more than one job. It should serve users, give agents something inspectable, create a marketing surface, and expose the next bottleneck.\n\nRight now the bottleneck is:\nContinue distribution directories and improve indexed agent-first coverage.\n\nhttps://nothumansearch.ai",
+          "fingerprint": "d8244304bd8fee30",
+          "duplicate": true
+        }
+      },
+      "quality_gate": [
+        "uses the active business index as source",
+        "includes the product URL",
+        "states one concrete current motion or next move",
+        "routes second, teaches first",
+        "requires social-editor approval before posting"
+      ]
+    },
+    {
+      "id": "portfolio-daily-2026-05-02-8bitconcepts",
+      "kind": "portfolio_daily",
+      "date": "2026-05-02",
+      "business": {
+        "name": "8bitconcepts",
+        "stage": "Running / agency funnel",
+        "repo": "/Users/shanecheek/go/src/8bitconcepts",
+        "url": "https://8bitconcepts.com",
+        "primary_job": "Research, consulting funnel, and marketing/distribution engine for Foundry.",
+        "current_motion": "PNW SMB outreach, research, daily social posts, consulting leads.",
+        "next_move": "Continue one-post-per-app daily social cadence and local-search/SMB lead work."
+      },
+      "fact_key": "portfolio-daily:2026-05-02:8bitconcepts",
+      "route": "https://8bitconcepts.com",
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "8bitconcepts is the daily operator note today.\n\nThe interesting part is not the landing page. It is the motion: PNW SMB outreach, research, daily social posts, consulting leads.\n\nhttps://8bitconcepts.com",
+          "fingerprint": "6e6c35f311b3eb9c",
+          "duplicate": true
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "The practical question for 8bitconcepts is not whether the idea is interesting.\n\nIt is whether the current motion keeps shrinking the distance between proof and distribution:\nPNW SMB outreach, research, daily social posts, consulting leads.\n\nNext useful move:\nContinue one-post-per-app daily social cadence and local-search/SMB lead work.\n\nhttps://8bitconcepts.com",
+          "fingerprint": "7ee9f5f24e952af1",
+          "duplicate": true
+        }
+      },
+      "quality_gate": [
+        "uses the active business index as source",
+        "includes the product URL",
+        "states one concrete current motion or next move",
+        "routes second, teaches first",
+        "requires social-editor approval before posting"
+      ]
+    }
+  ]
+}
