@@ -8,6 +8,10 @@
  * expected state.
  */
 const fs = require("fs");
+const os = require("os");
+const path = require("path");
+const zlib = require("zlib");
+const { spawnSync } = require("child_process");
 const {
   bodySnapshot,
   braveJS,
@@ -16,6 +20,7 @@ const {
   getClipboard,
   markActiveWindow,
   nativeClickElement,
+  nativeClickScreenPoint,
   nativeClickWindowRelative,
   normalize,
   openDedicatedWindow,
@@ -373,37 +378,271 @@ function clickPost() {
   }
 }
 
+function postSuccessProbe() {
+  return braveJS(`(() => {
+    const toastRoots = Array.from(document.querySelectorAll('[role="alert"], [role="status"], .artdeco-toast-item, .artdeco-toast-item__content, .artdeco-toasts'));
+    for (const root of toastRoots) {
+      const t = ((root.innerText || root.textContent || "") || "").trim();
+      if (!t || !/post/i.test(t)) continue;
+      const link = Array.from(root.querySelectorAll('a'))
+        .find(a => (a && a.href && a.href.includes('/feed/update/')));
+      return JSON.stringify({ ok: true, url: link ? link.href : "", toast: t.slice(0, 240) });
+    }
+    return JSON.stringify({ ok: false, url: "" });
+  })()`);
+}
+
+function postClickEffect() {
+  const success = postSuccessProbe();
+  if (success && success.ok) return success;
+  const draft = braveJS(`(() => {
+    const editor = Array.from(document.querySelectorAll('[contenteditable="true"]'))
+      .find(e => {
+        const r = e.getBoundingClientRect();
+        if (r.width < 200 || r.height < 40) return false;
+        const style = getComputedStyle(e);
+        return style.display !== "none" && style.visibility !== "hidden" && String(e.innerText || e.textContent || "").trim();
+      });
+    return JSON.stringify({ ok: true, open: Boolean(editor) });
+  })()`);
+  if (draft && draft.open) return { ok: false, reason: "draft still open" };
+  const state = postButtonState();
+  return { ok: !state || !state.ok || Boolean(state.disabled), state };
+}
+
+function openDraftState(text) {
+  return braveJS(`(() => {
+    const expected = ${JSON.stringify(normalize(text))};
+    const editors = Array.from(document.querySelectorAll('[contenteditable="true"]'))
+      .filter(e => {
+        const r = e.getBoundingClientRect();
+        if (r.width < 200 || r.height < 40) return false;
+        const style = getComputedStyle(e);
+        return style.display !== "none" && style.visibility !== "hidden";
+      })
+      .map(e => (e.innerText || e.textContent || ""))
+      .filter(Boolean)
+      .sort((a, b) => b.length - a.length);
+    const got = String(editors[0] || "");
+    const normalized = got.trim().toLowerCase().replace(/\\s+/g, " ");
+    return JSON.stringify({
+      ok: true,
+      open: Boolean(got) && normalized.includes(expected.slice(0, 60)),
+      text: got.slice(0, 180),
+      url: location.href
+    });
+  })()`);
+}
+
+function frontWindowBounds() {
+  const proc = spawnSync("osascript", ["-"], {
+    input: `tell application id "com.brave.Browser"\n  activate\n  return bounds of front window\nend tell\n`,
+    encoding: "utf8",
+    maxBuffer: 1024 * 128,
+    timeout: 10000,
+  });
+  if (proc.status !== 0 || proc.error) {
+    throw new Error((proc.stderr || (proc.error && proc.error.message) || "could not read Brave bounds").trim());
+  }
+  const nums = proc.stdout.trim().split(",").map(v => Number(v.trim())).filter(Number.isFinite);
+  if (nums.length !== 4) throw new Error(`could not parse Brave bounds: ${proc.stdout.trim()}`);
+  return { left: nums[0], top: nums[1], right: nums[2], bottom: nums[3], width: nums[2] - nums[0], height: nums[3] - nums[1] };
+}
+
+function decodePngRgba(filePath) {
+  const data = fs.readFileSync(filePath);
+  if (!data.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+    throw new Error("screen capture was not PNG");
+  }
+  let pos = 8;
+  let width = 0;
+  let height = 0;
+  let bitDepth = 0;
+  let colorType = 0;
+  let interlace = 0;
+  const idat = [];
+  while (pos < data.length) {
+    const len = data.readUInt32BE(pos);
+    const type = data.subarray(pos + 4, pos + 8).toString("ascii");
+    const chunk = data.subarray(pos + 8, pos + 8 + len);
+    pos += len + 12;
+    if (type === "IHDR") {
+      width = chunk.readUInt32BE(0);
+      height = chunk.readUInt32BE(4);
+      bitDepth = chunk[8];
+      colorType = chunk[9];
+      interlace = chunk[12];
+    } else if (type === "IDAT") {
+      idat.push(chunk);
+    } else if (type === "IEND") {
+      break;
+    }
+  }
+  if (bitDepth !== 8 || colorType !== 6 || interlace !== 0) {
+    throw new Error(`unsupported PNG format: bitDepth=${bitDepth} colorType=${colorType} interlace=${interlace}`);
+  }
+  const raw = zlib.inflateSync(Buffer.concat(idat));
+  const bpp = 4;
+  const stride = width * bpp;
+  const pixels = Buffer.alloc(width * height * bpp);
+  let offset = 0;
+  let prev = Buffer.alloc(stride);
+  for (let y = 0; y < height; y += 1) {
+    const filter = raw[offset];
+    offset += 1;
+    const scan = raw.subarray(offset, offset + stride);
+    offset += stride;
+    const recon = Buffer.alloc(stride);
+    for (let x = 0; x < stride; x += 1) {
+      const a = x >= bpp ? recon[x - bpp] : 0;
+      const b = prev[x];
+      const c = x >= bpp ? prev[x - bpp] : 0;
+      const v = scan[x];
+      let r;
+      if (filter === 0) r = v;
+      else if (filter === 1) r = (v + a) & 255;
+      else if (filter === 2) r = (v + b) & 255;
+      else if (filter === 3) r = (v + Math.floor((a + b) / 2)) & 255;
+      else if (filter === 4) {
+        const p = a + b - c;
+        const pa = Math.abs(p - a);
+        const pb = Math.abs(p - b);
+        const pc = Math.abs(p - c);
+        const pr = pa <= pb && pa <= pc ? a : (pb <= pc ? b : c);
+        r = (v + pr) & 255;
+      } else {
+        throw new Error(`unsupported PNG filter ${filter}`);
+      }
+      recon[x] = r;
+    }
+    recon.copy(pixels, y * stride);
+    prev = recon;
+  }
+  return { width, height, pixels };
+}
+
+function findVisibleBluePostButton() {
+  const bounds = frontWindowBounds();
+  const capture = path.join(os.tmpdir(), `linkedin-post-${process.pid}-${Date.now()}.png`);
+  const cap = spawnSync("screencapture", ["-x", capture], { encoding: "utf8", timeout: 10000 });
+  if (cap.status !== 0 || cap.error) {
+    throw new Error((cap.stderr || (cap.error && cap.error.message) || "screencapture failed").trim());
+  }
+  try {
+    const { width, height, pixels } = decodePngRgba(capture);
+    const scale = Math.round(width / 1728) || 2;
+    const minX = Math.max(0, Math.floor(bounds.left * scale));
+    const maxX = Math.min(width - 1, Math.ceil(bounds.right * scale));
+    const minY = Math.max(0, Math.floor((bounds.top + 160) * scale));
+    const maxY = Math.min(height - 1, Math.ceil((bounds.bottom - 80) * scale));
+    const seen = new Uint8Array(width * height);
+    const candidates = [];
+    const isBlue = (x, y) => {
+      if (x < minX || x > maxX || y < minY || y > maxY) return false;
+      const o = (y * width + x) * 4;
+      const r = pixels[o], g = pixels[o + 1], b = pixels[o + 2], a = pixels[o + 3];
+      return a > 200 && r < 80 && g >= 80 && g <= 180 && b >= 135 && b > g + 20;
+    };
+    for (let y = minY; y <= maxY; y += 1) {
+      for (let x = minX; x <= maxX; x += 1) {
+        const idx = y * width + x;
+        if (seen[idx] || !isBlue(x, y)) continue;
+        const stack = [[x, y]];
+        seen[idx] = 1;
+        let count = 0, sumX = 0, sumY = 0, loX = x, hiX = x, loY = y, hiY = y;
+        while (stack.length) {
+          const [cx, cy] = stack.pop();
+          count += 1;
+          sumX += cx;
+          sumY += cy;
+          loX = Math.min(loX, cx); hiX = Math.max(hiX, cx);
+          loY = Math.min(loY, cy); hiY = Math.max(hiY, cy);
+          for (const [nx, ny] of [[cx + 1, cy], [cx - 1, cy], [cx, cy + 1], [cx, cy - 1]]) {
+            const nidx = ny * width + nx;
+            if (nx >= minX && nx <= maxX && ny >= minY && ny <= maxY && !seen[nidx] && isBlue(nx, ny)) {
+              seen[nidx] = 1;
+              stack.push([nx, ny]);
+            }
+          }
+        }
+        const w = hiX - loX + 1;
+        const h = hiY - loY + 1;
+        if (count >= 800 && w >= 70 && w <= 260 && h >= 28 && h <= 110) {
+          candidates.push({ count, x: sumX / count / scale, y: sumY / count / scale, rect: { x: loX / scale, y: loY / scale, w: w / scale, h: h / scale } });
+        }
+      }
+    }
+    candidates.sort((a, b) => (b.y - a.y) || (b.count - a.count));
+    const chosen = candidates[0];
+    if (!chosen) throw new Error(`visible blue Post button not found in screenshot; bounds=${JSON.stringify(bounds)}`);
+    return { ok: true, ...chosen, candidates: candidates.slice(0, 5) };
+  } finally {
+    try { fs.unlinkSync(capture); } catch {}
+  }
+}
+
 function clickNativePost() {
-  const domRect = braveJS(`(() => {
+  const target = braveJS(`(() => {
     const post = Array.from(document.querySelectorAll('[role="dialog"] button'))
       .find(b => ((b.innerText || "").trim() === "Post") || b.getAttribute("aria-label") === "Post");
     if (!post || post.disabled || post.getAttribute("aria-disabled") === "true") return JSON.stringify({ ok: false });
     const r = post.getBoundingClientRect();
     if (!r || r.width <= 0 || r.height <= 0) return JSON.stringify({ ok: false });
-    return JSON.stringify({ ok: true, rect: { x: r.x, y: r.y, w: r.width, h: r.height }, innerHeight: window.innerHeight });
+    return JSON.stringify({
+      ok: true,
+      rect: { x: r.x, y: r.y, w: r.width, h: r.height },
+      innerHeight: window.innerHeight,
+      screen: {
+        x: window.screenX + r.x + (r.width / 2),
+        y: window.screenY + (window.outerHeight - window.innerHeight) + r.y + (r.height / 2),
+        screenX: window.screenX,
+        screenY: window.screenY,
+        outerHeight: window.outerHeight,
+        innerHeight: window.innerHeight
+      }
+    });
   })()`);
-  if (domRect && domRect.ok) {
-    nativeClickElement(domRect.rect, domRect.innerHeight);
-    return { ok: true, method: "dom-native" };
+  const attempts = [];
+  const domClick = braveJS(`(() => {
+    const post = Array.from(document.querySelectorAll('[role="dialog"] button'))
+      .find(b => ((b.innerText || "").trim() === "Post") || b.getAttribute("aria-label") === "Post");
+    if (!post || post.disabled || post.getAttribute("aria-disabled") === "true") return JSON.stringify({ ok: false });
+    post.click();
+    post.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+    return JSON.stringify({ ok: true });
+  })()`);
+  if (domClick && domClick.ok) {
+    attempts.push("dom");
+    const effect = tryWaitFor("LinkedIn post click effect after DOM click", postClickEffect, 4000);
+    if (effect.ok) return { ok: true, method: "dom", effect };
   }
-  if (clickAXButton("Post")) return { ok: true, method: "accessibility" };
-  const clicked = nativeClickWindowRelative(835, 922);
-  return { ok: true, method: "native", clicked };
+  if (clickAXButton("Post")) {
+    attempts.push("accessibility");
+    const effect = tryWaitFor("LinkedIn post click effect after accessibility click", postClickEffect, 4000);
+    if (effect.ok) return { ok: true, method: "accessibility", effect };
+  }
+  if (target && target.ok && target.screen) {
+    const clicked = nativeClickScreenPoint(target.screen.x, target.screen.y);
+    attempts.push("screen-point");
+    const effect = tryWaitFor("LinkedIn post click effect after screen-point click", postClickEffect, 5000);
+    if (effect.ok) return { ok: true, method: "screen-point", clicked, effect };
+  }
+  if (target && target.ok) {
+    nativeClickElement(target.rect, target.innerHeight);
+    attempts.push("window-bounds");
+    const effect = tryWaitFor("LinkedIn post click effect after window-bounds click", postClickEffect, 4000);
+    if (effect.ok) return { ok: true, method: "window-bounds", effect };
+  }
+  const screenshotTarget = findVisibleBluePostButton();
+  nativeClickScreenPoint(screenshotTarget.x, screenshotTarget.y);
+  attempts.push("screenshot-blue-button");
+  const effect = tryWaitFor("LinkedIn post click effect after screenshot-blue-button click", postClickEffect, 8000);
+  if (effect.ok) return { ok: true, method: "screenshot-blue-button", clicked: { x: screenshotTarget.x, y: screenshotTarget.y }, effect };
+  throw new Error(`LinkedIn post click did not affect composer: ${JSON.stringify({ attempts, target, domClick, screenshotTarget })}`);
 }
 
 function waitForPostSuccess() {
-  return waitFor("LinkedIn post success", () => braveJS(`(() => {
-    const toastRoots = Array.from(document.querySelectorAll('[role="alert"], [role="status"], .artdeco-toast-item, .artdeco-toast-item__content, .artdeco-toasts'));
-    for (const root of toastRoots) {
-      const t = ((root.innerText || root.textContent || "") || "").trim();
-      if (!t) continue;
-      if (!/post/i.test(t)) continue;
-      const link = Array.from(root.querySelectorAll('a'))
-        .find(a => (a && a.href && a.href.includes('/feed/update/')));
-      if (link) return JSON.stringify({ ok: true, url: link.href, toast: t.slice(0, 240) });
-    }
-    return JSON.stringify({ ok: false, url: "" });
-  })()`), 24000);
+  return waitFor("LinkedIn post success", postSuccessProbe, 45000);
 }
 
 function findPostUrlFromActivity(text) {
@@ -461,15 +700,22 @@ function postOrDryRun(dryRun, text, mode) {
       return;
     }
     const clicked = clickNativePost();
-    let result;
-    try {
-      result = waitForPostSuccess();
-    } catch (error) {
-      result = findPostUrlFromActivity(text);
-    }
+    const result = tryWaitFor("LinkedIn post success", postSuccessProbe, 45000);
     let url = result.url;
+    if (!url) {
+      const draft = openDraftState(text);
+      if (draft && draft.open) {
+        throw new Error(`LinkedIn post did not submit; draft is still open at ${draft.url}`);
+      }
+      const recovered = findPostUrlFromActivity(text);
+      url = recovered.url;
+    }
     let verified = Boolean(url) && verifyLivePost(url, text);
     if (!verified) {
+      const draft = openDraftState(text);
+      if (draft && draft.open) {
+        throw new Error(`LinkedIn live URL verification blocked because draft is still open at ${draft.url}`);
+      }
       const recovered = findPostUrlFromActivity(text);
       url = recovered.url;
       verified = Boolean(url) && verifyLivePost(url, text);
@@ -491,15 +737,22 @@ function postOrDryRun(dryRun, text, mode) {
     return;
   }
   clickPost();
-  let result;
-  try {
-    result = waitForPostSuccess();
-  } catch (error) {
-    result = findPostUrlFromActivity(text);
-  }
+  const result = tryWaitFor("LinkedIn post success", postSuccessProbe, 45000);
   let url = result.url;
+  if (!url) {
+    const draft = openDraftState(text);
+    if (draft && draft.open) {
+      throw new Error(`LinkedIn post did not submit; draft is still open at ${draft.url}`);
+    }
+    const recovered = findPostUrlFromActivity(text);
+    url = recovered.url;
+  }
   let verified = Boolean(url) && verifyLivePost(url, text);
   if (!verified) {
+    const draft = openDraftState(text);
+    if (draft && draft.open) {
+      throw new Error(`LinkedIn live URL verification blocked because draft is still open at ${draft.url}`);
+    }
     const recovered = findPostUrlFromActivity(text);
     url = recovered.url;
     verified = Boolean(url) && verifyLivePost(url, text);

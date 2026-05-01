@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T06:12:08.435861+00:00",
+  "generated_at": "2026-05-01T01:16:26.468888+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -8,67 +8,67 @@
   "cadence": "two AI insight posts per day; one daily targeted documented research post",
   "items": [
     {
-      "id": "daily-targeted-research-2026-04-30-openai",
+      "id": "daily-targeted-research-2026-05-01-xai",
       "kind": "targeted_research",
-      "date": "2026-04-30",
+      "date": "2026-05-01",
       "slot": "morning",
       "post_time_local": "08:30",
       "timezone": "America/Los_Angeles",
       "target": {
-        "name": "OpenAI",
-        "x_mention": "@OpenAI",
-        "linkedin_mention": "@OpenAI",
-        "domain": "openai.com",
-        "company_slug": "openai"
+        "name": "xAI",
+        "x_mention": "@xai",
+        "linkedin_mention": "@xAI",
+        "domain": "x.ai",
+        "company_slug": "xai"
       },
-      "fact_key": "targeted-research:openai:354:llm,distributed-systems,agents",
-      "theme": "OpenAI public AI hiring signal",
+      "fact_key": "targeted-research:xai:98:distributed-systems,data-pipeline,llm",
+      "theme": "xAI public AI hiring signal",
       "format": "targeted documented research",
       "asset_brief": "Small source-backed stat card: role count, top tags, sample roles, operator question.",
-      "route": "https://aidevboard.com/company/openai",
+      "route": "https://aidevboard.com/company/xai",
       "research_sources": {
-        "adb_company": "https://aidevboard.com/company/openai",
-        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=openai&limit=100",
+        "adb_company": "https://aidevboard.com/company/xai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=xai&limit=100",
         "adb_stats_api": "https://aidevboard.com/api/v1/stats",
-        "nhs_profile": "https://nothumansearch.ai/site/openai.com",
-        "official_source": "https://openai.com/careers/"
+        "nhs_profile": "https://nothumansearch.ai/site/x.ai",
+        "official_source": "https://x.ai/careers"
       },
       "research_findings": {
-        "indexed_roles": 354,
-        "rank": 2,
-        "avg_salary": 360000,
+        "indexed_roles": 98,
+        "rank": 11,
+        "avg_salary": 287740,
         "top_tags": [
-          "llm",
           "distributed-systems",
-          "agents",
-          "infrastructure"
+          "data-pipeline",
+          "llm",
+          "payments"
         ],
         "sample_titles": [
-          "Software Engineer, Delivery / CD",
-          "Researcher, Alignment Science",
-          "Software Engineer, Compute Infrastructure"
+          "Member of Technical Staff - Voice Model",
+          "Member of Technical Staff - Model Training",
+          "Backend Engineer - API"
         ],
-        "workplace_mix": "onsite: 10, remote: 6, hybrid: 4",
-        "nhs_score": 15,
+        "workplace_mix": "onsite: 20",
+        "nhs_score": 20,
         "nhs_signals": [
           "structured API"
         ],
         "source_errors": {},
-        "paper_candidate": true,
-        "paper_reason": "OpenAI is a top-scale AI hiring signal with 354 indexed roles."
+        "paper_candidate": false,
+        "paper_reason": ""
       },
       "funnel": "AI Dev Board data, Not Human Search agent-readiness check, or 8bit research follow-up",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Looking at public AI hiring as a market signal: @OpenAI has 354 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, distributed-systems, agents. Avg published salary: $360,000. OpenAI is #2 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to platform delivery, multicloud infrastructure, evals, and agent deployment loops. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?\n\nData: https://aidevboard.com/company/openai",
-          "fingerprint": "363cf393fc03e760",
+          "copy": "Looking at public AI hiring as a market signal: @xai has 98 indexed AI/ML roles on AI Dev Board, with current tags clustering around distributed-systems, data-pipeline, llm. Avg published salary: $287,740. xAI is #11 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to multimodal understanding, model serving, product feedback loops, and consumer-scale AI. Which signal is more useful for builders: model capability, latency, or the feedback loop around the product?\n\nData: https://aidevboard.com/company/xai",
+          "fingerprint": "d0e4cca70be9c118",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Looking at @OpenAI through the public hiring data:\n\n1. 354 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around llm, distributed-systems, agents, infrastructure.\n3. Sample roles include Software Engineer, Delivery / CD; Researcher, Alignment Science; Software Engineer, Compute Infrastructure.\n4. Avg published salary in the indexed sample: $360,000.\n\nThe useful read is where the operational work is moving: platform delivery, multicloud infrastructure, evals, and agent deployment loops.\n\nOpenAI is a useful public lens on this area. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
-          "fingerprint": "459b4c39052328c4",
+          "copy": "Looking at @xAI through the public hiring data:\n\n1. 98 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around distributed-systems, data-pipeline, llm, payments.\n3. Sample roles include Member of Technical Staff - Voice Model; Member of Technical Staff - Model Training; Backend Engineer - API.\n4. Avg published salary in the indexed sample: $287,740.\n\nThe useful read is where the operational work is moving: multimodal understanding, model serving, product feedback loops, and consumer-scale AI.\n\nxAI is a useful public lens on this area. Which signal is more useful for builders: model capability, latency, or the feedback loop around the product?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/xai\nhttps://nothumansearch.ai/site/x.ai",
+          "fingerprint": "c6ea5885446bc1c7",
           "duplicate": false
         }
       },
@@ -82,28 +82,28 @@
       ]
     },
     {
-      "id": "daily-ai-insight-2026-04-30-afternoon",
+      "id": "daily-ai-insight-2026-05-01-afternoon",
       "kind": "generic_insight",
-      "date": "2026-04-30",
+      "date": "2026-05-01",
       "slot": "afternoon",
       "post_time_local": "14:30",
       "timezone": "America/Los_Angeles",
-      "theme": "AI ROI hides in integration, not inference.",
-      "format": "meme",
-      "asset_brief": "Two-panel meme: 'we budgeted for tokens' vs. 'permissions, evals, workflow, observability'.",
-      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
-      "funnel": "AI integration audits",
+      "theme": "Agent readiness is a live behavior, not a badge.",
+      "format": "mini teardown",
+      "asset_brief": "Three-column table: claim, endpoint response, what broke.",
+      "route": "https://nothumansearch.ai",
+      "funnel": "agent-readiness audits and Not Human Search",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'\n\nMore field notes: https://8bitconcepts.com/research/the-integration-tax.html",
-          "fingerprint": "7b441aae9e7834ac",
+          "copy": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.\n\nMore field notes: https://nothumansearch.ai",
+          "fingerprint": "0206cb13ee4d42e7",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
-          "fingerprint": "a9eb9256d2dbfdb1",
+          "copy": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://nothumansearch.ai",
+          "fingerprint": "cd9fdcb7ca81b451",
           "duplicate": false
         }
       },

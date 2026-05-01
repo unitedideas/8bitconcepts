@@ -1,7 +1,7 @@
 # Daily AI Insight Drafts
 
-Generated: 2026-04-30 06:12 UTC
-Post date: 2026-04-30
+Generated: 2026-05-01 01:16 UTC
+Post date: 2026-05-01
 X account: @8bitconcepts
 LinkedIn profile: https://www.linkedin.com/in/shane-cheek-9173473b6/
 
@@ -10,21 +10,21 @@ Rule: two posts per day, always AI, always informative, always routed to an 8bit
 ### Morning Targeted Research Post
 
 Post time: 08:30 America/Los_Angeles
-Target: OpenAI
-X mention: @OpenAI
-LinkedIn tag hint: @OpenAI
-Research angle: platform delivery, multicloud infrastructure, evals, and agent deployment loops
-Observed signal: 354 indexed roles, #2 by indexed role count, $360,000 average published salary, top tags: llm, distributed-systems, agents
-Sample roles: Software Engineer, Delivery / CD; Researcher, Alignment Science
-Workplace mix: onsite: 10, remote: 6, hybrid: 4
-Longform decision: Paper trigger: OpenAI is a top-scale AI hiring signal with 354 indexed roles.
+Target: xAI
+X mention: @xai
+LinkedIn tag hint: @xAI
+Research angle: multimodal understanding, model serving, product feedback loops, and consumer-scale AI
+Observed signal: 98 indexed roles, #11 by indexed role count, $287,740 average published salary, top tags: distributed-systems, data-pipeline, llm
+Sample roles: Member of Technical Staff - Voice Model; Member of Technical Staff - Model Training
+Workplace mix: onsite: 20
+Longform decision: No longform trigger today.
 
 Documented sources:
-- AI Dev Board company page: https://aidevboard.com/company/openai
-- AI Dev Board jobs API: https://aidevboard.com/api/v1/jobs?company=openai&limit=100
+- AI Dev Board company page: https://aidevboard.com/company/xai
+- AI Dev Board jobs API: https://aidevboard.com/api/v1/jobs?company=xai&limit=100
 - AI Dev Board stats API: https://aidevboard.com/api/v1/stats
-- Not Human Search profile: https://nothumansearch.ai/site/openai.com
-- Official source: https://openai.com/careers/
+- Not Human Search profile: https://nothumansearch.ai/site/x.ai
+- Official source: https://x.ai/careers
 
 Source fetch errors:
 - None
@@ -32,60 +32,60 @@ Source fetch errors:
 #### X
 
 ```text
-Looking at public AI hiring as a market signal: @OpenAI has 354 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, distributed-systems, agents. Avg published salary: $360,000. OpenAI is #2 by indexed role count in the current AI Dev Board sample.
+Looking at public AI hiring as a market signal: @xai has 98 indexed AI/ML roles on AI Dev Board, with current tags clustering around distributed-systems, data-pipeline, llm. Avg published salary: $287,740. xAI is #11 by indexed role count in the current AI Dev Board sample.
 
-The read is not just hiring volume. It points to platform delivery, multicloud infrastructure, evals, and agent deployment loops. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?
+The read is not just hiring volume. It points to multimodal understanding, model serving, product feedback loops, and consumer-scale AI. Which signal is more useful for builders: model capability, latency, or the feedback loop around the product?
 
-Data: https://aidevboard.com/company/openai
+Data: https://aidevboard.com/company/xai
 ```
 
 #### LinkedIn
 
 ```text
-Looking at @OpenAI through the public hiring data:
+Looking at @xAI through the public hiring data:
 
-1. 354 indexed AI/ML roles in AI Dev Board.
-2. Current sample tags cluster around llm, distributed-systems, agents, infrastructure.
-3. Sample roles include Software Engineer, Delivery / CD; Researcher, Alignment Science; Software Engineer, Compute Infrastructure.
-4. Avg published salary in the indexed sample: $360,000.
+1. 98 indexed AI/ML roles in AI Dev Board.
+2. Current sample tags cluster around distributed-systems, data-pipeline, llm, payments.
+3. Sample roles include Member of Technical Staff - Voice Model; Member of Technical Staff - Model Training; Backend Engineer - API.
+4. Avg published salary in the indexed sample: $287,740.
 
-The useful read is where the operational work is moving: platform delivery, multicloud infrastructure, evals, and agent deployment loops.
+The useful read is where the operational work is moving: multimodal understanding, model serving, product feedback loops, and consumer-scale AI.
 
-OpenAI is a useful public lens on this area. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?
+xAI is a useful public lens on this area. Which signal is more useful for builders: model capability, latency, or the feedback loop around the product?
 
 NHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.
 
 Data:
-https://aidevboard.com/company/openai
-https://nothumansearch.ai/site/openai.com
+https://aidevboard.com/company/xai
+https://nothumansearch.ai/site/x.ai
 ```
 
 ### Afternoon Post
 
 Post time: 14:30 America/Los_Angeles
-Theme: AI ROI hides in integration, not inference.
-Format: meme
-Route: https://8bitconcepts.com/research/the-integration-tax.html
-Funnel: AI integration audits
-Asset brief: Two-panel meme: 'we budgeted for tokens' vs. 'permissions, evals, workflow, observability'.
+Theme: Agent readiness is a live behavior, not a badge.
+Format: mini teardown
+Route: https://nothumansearch.ai
+Funnel: agent-readiness audits and Not Human Search
+Asset brief: Three-column table: claim, endpoint response, what broke.
 
 #### X
 
 ```text
-If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'
+A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.
 
-More field notes: https://8bitconcepts.com/research/the-integration-tax.html
+More field notes: https://nothumansearch.ai
 ```
 
 #### LinkedIn
 
 ```text
-If an AI project budget starts with token costs, it is probably missing the hard part. The question is not 'what does the model cost?' It is 'what has to change around it?'
+A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.
 
 The useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.
 
 More field notes:
-https://8bitconcepts.com/research/the-integration-tax.html
+https://nothumansearch.ai
 ```
 
 Machine queue: `marketing/daily-ai-insights-queue.json`

@@ -270,6 +270,11 @@ CGEvent(mouseEventSource: nil, mouseType: .leftMouseUp, mouseCursorPosition: p, 
   }
 }
 
+function nativeClickScreenPoint(x, y) {
+  nativeClick(Number(x), Number(y));
+  return { x: Number(x), y: Number(y) };
+}
+
 function nativeClickElement(rect, innerHeight) {
   const bounds = frontWindowBounds();
   const contentYOffset = Math.max(0, bounds.height - Number(innerHeight || 0));
@@ -402,6 +407,7 @@ module.exports = {
   closeFrontWindow,
   getClipboard,
   nativeClickElement,
+  nativeClickScreenPoint,
   nativeClickWindowRelative,
   markActiveWindow,
   normalize,
