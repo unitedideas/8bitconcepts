@@ -104,7 +104,10 @@ tell application id "${BRAVE_APP_ID}"
       try
         set marker to execute tab ti of window wi javascript "window.name"
       end try
-      if (${appleString(namePrefix)} is not "" and marker starts with ${appleString(namePrefix)}) or (${appleString(host)} is not "" and tabUrl contains ${appleString(host)}) then
+      set markerMatches to (${appleString(namePrefix)} is not "" and marker starts with ${appleString(namePrefix)})
+      set hostMatches to (${appleString(host)} is not "" and tabUrl contains ${appleString(host)})
+      set markerHostSafe to (markerMatches and (${appleString(host)} is "" or tabUrl is "" or tabUrl contains ${appleString(host)}))
+      if hostMatches or markerHostSafe then
         set URL of tab ti of window wi to ${appleString(url)}
         set active tab index of window wi to ti
         if ${focus ? "true" : "false"} then set index of window wi to 1
