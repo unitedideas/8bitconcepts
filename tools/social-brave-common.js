@@ -1,8 +1,10 @@
 const { spawnSync } = require("child_process");
 const fs = require("fs");
+const os = require("os");
 
 const BRAVE_APP_ID = "com.brave.Browser";
-const LEASE_BIN = "/Users/shanecheek/.foundry/foundry-sync-state/bin/foundry-computer-use-lease";
+const LEASE_BIN = process.env.FOUNDRY_COMPUTER_USE_LEASE_BIN ||
+  `${os.homedir()}/.foundry/foundry-sync-state/bin/foundry-computer-use-lease`;
 const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";
 const LINKEDIN_ONE_SHOT_TOKEN = "8bit-linkedin-supervised-manual-v2";
 let targetWindowName = "";

@@ -1558,6 +1558,32 @@
         "blocker": "Required file missing: /Users/owlassist/.codex/agent-memory/social-editor/expertise.md"
       },
       "x_operator_closeout": "X-eligible after updating copy to current facts; duplicate/account/lock gates still required before any later live post. No scoped memory update needed."
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-01-agentic-evidence-brave-apple-events",
+      "date": "2026-05-01",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "source_item": "portfolio-daily-2026-05-01-agentic-evidence",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-01T23:35:20Z",
+      "blocker": "X post blocked before public POST: tools/x-brave-post.js could not execute because Brave Browser reports JavaScript from Apple Events is turned off. The Owl-path lease bug was fixed, the local Computer Use lease was held, @8BitConcepts was visible before the browser relaunch, and agent-social-editor approved copy; after relaunch the script still failed, Computer Use for Brave returned cgWindowNotFound/timed out, and screencapture returned a black desktop, so active account/composer/status URL could not be safely verified.",
+      "fingerprint": "7930ca94b63a980f",
+      "fact_key": "portfolio-daily:2026-05-01:agentic-evidence",
+      "text": "Agentic Evidence returned 200 today: https://agentic-evidence.fly.dev\n\nDeveloper-VM interviews for retroactive Codex/Claude session review: 72-hour candidate sessions, 240-minute VM TTL, auto teardown on submit, tamper-evident audit trail, and secret-pattern blocking.",
+      "facts_verified": [
+        "https://agentic-evidence.fly.dev returned HTTP 200",
+        "https://agentic-evidence.fly.dev/llms.txt identifies Agentic Evidence as a developer-VM interview platform for retroactive Codex/Claude session review",
+        "https://agentic-evidence.fly.dev/api/config returned 72-hour candidate sessions, 240-minute VM TTL, autoTeardownVmOnSubmit=true, tamperEvidentAuditTrail=true, secretPatternBlocking=true, overage=disabled",
+        "foundry-business-index identifies Agentic Evidence as the Hatchways-style assessment evidence layer"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "source_left_queued": true,
+      "post_attempted": false,
+      "public_action_lock_claimed": true
     }
   ]
 }
