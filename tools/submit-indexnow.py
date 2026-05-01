@@ -60,7 +60,7 @@ def submit_to_indexnow(urls: List[str], key: str, dry_run: bool = False) -> bool
     payload = {
         "host": "8bitconcepts.com",
         "key": key,
-        "keyLocation": f"{BASE_URL}/.well-known/8bc-indexnow-key.txt",
+        "keyLocation": f"{BASE_URL}/{key}.txt",
         "urlList": full_urls
     }
     

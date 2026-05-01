@@ -1,0 +1,31 @@
+business,touch_type,target,route,status,next_action,blocker
+Agentic Evidence,conversion_repair,OpenAPI route,https://agentic-evidence.fly.dev/openapi.yaml,done,Deployed current app and verified route returns HTTP 200,"Fly CLI DNS check timed out, but live GET checks passed"
+Agentic Evidence,outreach,Hatchways acquisition/buyer angle,https://agentic-evidence.fly.dev/sample-report,ready,Draft and send first buyer note using sample reviewer packet,
+Agentic Evidence,outreach,Technical assessment platform operators,https://agentic-evidence.fly.dev/github-action.yml,ready,Create 10-target buyer list and email batch,
+Agentic Evidence,proof_asset,GitHub Action adapter,https://agentic-evidence.fly.dev/github-action.yml,ready,Turn adapter into short distribution post and directory note,
+Agentic Evidence,seo_agent_discovery,Agent/discovery manifest audit,https://agentic-evidence.fly.dev,ready,Check llms/openapi/ai-plugin surfaces and repair missing ones,
+Geo Agent,conversion,Shopify listing copy,https://geo-agent.fly.dev,ready,Replace template README/listing copy,
+Geo Agent,conversion,Shopify privacy/compliance URLs,https://geo-agent.fly.dev,ready,Verify required app-review URLs and scopes,
+Geo Agent,directory,Shopify App Review,https://partners.shopify.com,blocked,Submit review after listing assets are ready,"partner dashboard/browser auth"
+Geo Agent,community,Shopify merchant/operator post,https://community.shopify.com,ready,Prepare no-hype benchmark proof post,
+Geo Agent,proof_asset,Kimi benchmark proof,https://geo-agent.fly.dev,ready,Extract benchmark result snippet for listing and social,
+Bring Your AI,directory,Smithery MCP directory,https://smithery.ai/new,blocked,Submit no-data remote MCP endpoint,"browser/account required"
+Bring Your AI,directory,Glama MCP directory,https://glama.ai/mcp/servers,blocked,Submit no-data remote MCP endpoint,"browser/account required"
+Bring Your AI,directory,PulseMCP follow-up,https://www.pulsemcp.com/submit,ready,Check pending submission and send follow-up if no listing,
+Bring Your AI,community,Claude/Codex migration threads,https://bringyour.ai/claude-code-to-codex,ready,Find relevant active threads and comment only where directly useful,
+Bring Your AI,seo_agent_discovery,Agent-readable commerce endpoints,https://bringyour.ai/.well-known/agent.json,ready,Create short distribution note around no-data MCP plus checkout endpoints,
+AI Dev Board,directory,Postman API Network,https://aidevboard.com/openapi.yaml,blocked,Publish public Postman workspace from OpenAPI,"Postman account required"
+AI Dev Board,directory,APIList.fun,https://apilist.fun/,blocked,Submit REST API listing,"browser form"
+AI Dev Board,directory,Jobicy cross-post,https://aidevboard.com,blocked,Create employer account and post showcase jobs,"account creation"
+AI Dev Board,seo,Google Indexing API job URLs,https://aidevboard.com,blocked,Prepare service account path for JobPosting indexing,"Shane GCP/Search Console setup"
+AI Dev Board,community,RSS-Renaissance AI feeds,https://aidevboard.com/feed.xml,ready,Open PR adding ADB feed if repo still accepts entries,
+Not Human Search,directory,Puliczek awesome-mcp-security,https://nothumansearch.ai,ready,Open PR adding verify_mcp as live MCP endpoint test tool,
+Not Human Search,directory,chaosync awesome-ai-agent-testing,https://nothumansearch.ai,ready,Open PR adding verify_mcp and score-check action,
+Not Human Search,directory,toolsdk MCP registry JSON,https://nothumansearch.ai/mcp,ready,Create JSON package entry and validate,
+Not Human Search,directory,Glama MCP directory,https://glama.ai/mcp/servers,blocked,Submit hosted endpoint and glama metadata,"browser/account required"
+Not Human Search,seo_agent_discovery,Top scored sites/API proof,https://nothumansearch.ai/api/v1/top,ready,Package API proof into distribution note,
+8bitconcepts,outreach,PNW SMB follow-ups,marketing/pnw-outreach-sent.json,done,13 follow-ups sent through Resend,
+8bitconcepts,outreach,Bridge City Medical,info@bridgecitymedical.com,done,Initial email sent through Resend,
+8bitconcepts,call_queue,PNW public main-line queue,marketing/pnw-call-queue.csv,ready,Call during business hours; no automated calling or SMS,
+8bitconcepts,seo,Local page IndexNow resubmit,https://api.indexnow.org/indexnow,done,HTTP 200 for 5 local URLs,
+8bitconcepts,conversion,Cal.com booking link,https://8bitconcepts.com/work-with-us,blocked,Create Cal.com event and swap CTAs,"account/setup required"

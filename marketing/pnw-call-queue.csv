@@ -1,0 +1,7 @@
+company,city,state,phone,source_url,source_evidence,status,next_action,notes
+Tri-Tech Heating Inc.,Vancouver,WA,360-891-2002,https://tri-techheating.com,"telephone schema and tel links on homepage",ready,Call public main line during business hours,"Ask for Jeremy Harmon or operations owner; HVAC dispatch/scheduling pitch."
+Albatross HVAC Inc.,Battle Ground,WA,360-687-8660,https://albatrosshvac.com,"homepage topbar tel link and service copy",ready,Call public main line during business hours,"Ask for Ryan Albertus; owner-operator quote follow-up and maintenance reminder pitch."
+Albatross HVAC Inc.,Battle Ground,WA,503-260-4287,https://albatrosshvac.com,"homepage topbar secondary tel link",backup,Use only if primary main line fails,"Same source as primary; do not text."
+MSP Accounting,Tigard,OR,971-317-9024,https://www.msp-accounting.com,"homepage contact block tel link",ready,Call public main line during business hours,"Ask for owner/managing partner; client tax organizer and document follow-up pitch."
+Tax Matters Inc.,Tigard,OR,503-246-4577,https://www.taxmatterspdx.com,"homepage header/footer tel links",ready,Call public main line during business hours,"Bookkeeping/payroll support and client reporting pitch."
+Hildebrand Concrete Construction,Washougal,WA,360-835-2955,https://hildebrandconcrete.com,"homepage header tel link",ready,Call public main line during business hours,"Project bidding, subcontractor coordination, invoice tracking pitch."
