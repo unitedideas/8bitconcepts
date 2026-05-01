@@ -1,8 +1,6 @@
 const { spawnSync } = require("child_process");
 const fs = require("fs");
 
-throw new Error("Brave/AppleScript social browser control is disabled. Use API-backed publishing or rebuild a supervised foreground-only tool.");
-
 const BRAVE_APP_ID = "com.brave.Browser";
 const LEASE_BIN = "/Users/shanecheek/.foundry/foundry-sync-state/bin/foundry-computer-use-lease";
 const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";

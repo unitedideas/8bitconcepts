@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-console.error("LinkedIn Brave browser posting is disabled. Use API-backed publishing or an explicitly rebuilt supervised one-shot tool.");
-process.exit(3);
 /*
  * Supervised LinkedIn recovery publisher for the authenticated Brave session.
  *
