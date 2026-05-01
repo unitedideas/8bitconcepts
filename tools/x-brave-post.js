@@ -15,6 +15,7 @@ const {
   getClipboard,
   markActiveWindow,
   nativeClickElement,
+  nudgeFocusedElement,
   normalize,
   openDedicatedWindow,
   pasteIntoFocusedElement,
@@ -71,14 +72,15 @@ function profileHref() {
 }
 
 function verifyAccount(expectedHandle) {
-  openDedicatedWindow(HOME_URL);
+  const marker = `8bit-x-${process.pid}`;
+  openDedicatedWindow(HOME_URL, { marker, namePrefix: "8bit-x-", host: "x.com" });
   const result = waitFor("X home/account load", () => {
     const info = profileHref();
     if (!info || !info.ok) return info;
     const path = new URL(info.href).pathname.replace(/^\//, "").replace(/\/$/, "");
     return { ok: path.toLowerCase() === expectedHandle.toLowerCase(), href: info.href, path };
   }, 25000);
-  markActiveWindow(`8bit-x-${process.pid}`);
+  markActiveWindow(marker);
   return result;
 }
 
@@ -197,13 +199,25 @@ function insertCopy(text) {
       const current = visibleEditor();
       return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
     }, 4500);
-    if (pasted.ok) return;
+    if (pasted.ok) {
+      nudgeFocusedElement();
+      waitFor("X composer content verification after keyboard nudge", () => {
+        const current = visibleEditor();
+        return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
+      }, 3000);
+      return;
+    }
 
     directInsertCopy(text);
     waitFor("X composer content verification", () => {
       const current = visibleEditor();
       return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
     }, 9000);
+    nudgeFocusedElement();
+    waitFor("X composer content verification after keyboard nudge", () => {
+      const current = visibleEditor();
+      return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
+    }, 3000);
   } finally {
     setClipboard(oldClipboard);
   }
@@ -215,10 +229,15 @@ function postButtonState() {
       .filter(b => {
         const r = b.getBoundingClientRect();
         return r.width > 0 && r.height > 0;
-      });
-    const button = buttons[0];
+      })
+      .map(b => ({
+        disabled: b.disabled || b.getAttribute("aria-disabled") === "true",
+        testid: b.getAttribute("data-testid"),
+        text: (b.innerText || b.textContent || "").trim()
+      }));
+    const button = buttons.find(b => !b.disabled) || buttons[0];
     if (!button) return JSON.stringify({ ok: false, reason: "Post button not found" });
-    return JSON.stringify({ ok: true, disabled: button.disabled || button.getAttribute("aria-disabled") === "true", testid: button.getAttribute("data-testid") });
+    return JSON.stringify({ ok: true, disabled: button.disabled, testid: button.testid, text: button.text, buttons });
   })()`);
 }
 
@@ -258,7 +277,7 @@ function clickPost() {
     const button = Array.from(document.querySelectorAll('button[data-testid="tweetButton"], button[data-testid="tweetButtonInline"]'))
       .find(b => {
         const r = b.getBoundingClientRect();
-        return r.width > 0 && r.height > 0;
+        return r.width > 0 && r.height > 0 && !b.disabled && b.getAttribute("aria-disabled") !== "true";
       });
     if (!button || button.disabled || button.getAttribute("aria-disabled") === "true") return JSON.stringify({ ok: false });
     button.click();
@@ -302,10 +321,10 @@ function findPostedTweet(expectedHandle, text) {
 }
 
 function postOrDryRun(args, text) {
-  const state = postButtonState();
-  if (!state || !state.ok || state.disabled) {
-    throw new Error(`Post button not ready: ${JSON.stringify(state)}`);
-  }
+  const state = waitFor("X Post button enabled", () => {
+    const button = postButtonState();
+    return { ok: Boolean(button && button.ok && !button.disabled), button, editor: visibleEditor() };
+  }, 25000);
   if (args.dryRun) {
     const cleanup = closeDraft();
     if (cleanup && cleanup.ok) closeFrontWindow();

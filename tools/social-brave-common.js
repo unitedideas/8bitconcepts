@@ -85,6 +85,7 @@ function openDedicatedWindow(url, options = {}) {
   assertUrlAllowed(url);
   const focus = options.focus !== false;
   const namePrefix = options.namePrefix || "";
+  const marker = options.marker || "";
   let host = options.host || "";
   try {
     host = host || new URL(url).hostname;
@@ -111,6 +112,7 @@ tell application id "${BRAVE_APP_ID}"
         set URL of tab ti of window wi to ${appleString(url)}
         set active tab index of window wi to ti
         if ${focus ? "true" : "false"} then set index of window wi to 1
+        if ${appleString(marker)} is not "" then execute tab ti of window wi javascript ${appleString(`window.name = ${JSON.stringify(marker)}; window.name`)}
         return "reused"
       end if
     end repeat
@@ -118,6 +120,7 @@ tell application id "${BRAVE_APP_ID}"
   if not ${focus ? "true" : "false"} then return "not-found"
   set w to make new window
   set URL of active tab of w to ${appleString(url)}
+  if ${appleString(marker)} is not "" then execute active tab of w javascript ${appleString(`window.name = ${JSON.stringify(marker)}; window.name`)}
   set index of w to 1
   return "created"
 end tell
@@ -125,6 +128,7 @@ end tell
   if (out === "not-found") {
     throw new Error(`no reusable Brave window found for ${url}`);
   }
+  if (marker) targetWindowName = marker;
   return out;
 }
 
@@ -212,6 +216,16 @@ function pasteIntoFocusedElement() {
   osa(`
 tell application "System Events"
   keystroke "v" using command down
+end tell
+`);
+}
+
+function nudgeFocusedElement() {
+  focusTargetWindow();
+  osa(`
+tell application "System Events"
+  keystroke " "
+  key code 51
 end tell
 `);
 }
@@ -416,6 +430,7 @@ module.exports = {
   nativeClickElement,
   nativeClickScreenPoint,
   nativeClickWindowRelative,
+  nudgeFocusedElement,
   markActiveWindow,
   normalize,
   pasteIntoFocusedElement,
