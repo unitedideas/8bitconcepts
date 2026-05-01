@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T07:13:39.862843+00:00",
+  "generated_at": "2026-05-01T13:07:38.083646+00:00",
   "source_index": "/Users/shanecheek/.foundry/foundry-sync-state/systems/foundry-business-index.md",
   "cadence": "one X and one LinkedIn candidate per active business per day",
   "items": [
@@ -23,13 +23,13 @@
           "account": "@8bitconcepts",
           "copy": "A useful AI product signal is whether the work creates a reusable surface.\n\nAgentic Evidence does that through: Agentic technical interview evidence layer for Hatchways-style assessments.\n\nLive route: https://agentic-evidence.fly.dev",
           "fingerprint": "a32fef3c95a1a10e",
-          "duplicate": false
+          "duplicate": true
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Agentic Evidence is a good example of how I want these products to compound.\n\nOne artifact should do more than one job. It should serve users, give agents something inspectable, create a marketing surface, and expose the next bottleneck.\n\nRight now the bottleneck is:\nAdd VM TTL teardown and disposable per-session repo templates.\n\nhttps://agentic-evidence.fly.dev",
           "fingerprint": "d64d155460da0b9f",
-          "duplicate": false
+          "duplicate": true
         }
       },
       "quality_gate": [
@@ -60,13 +60,13 @@
           "account": "@8bitconcepts",
           "copy": "Geo Agent is the daily operator note today.\n\nThe interesting part is not the landing page. It is the motion: Shopify app-review readiness after benchmark/runtime repair.\n\nhttps://geo-agent.fly.dev",
           "fingerprint": "d7124e0db0f8e332",
-          "duplicate": false
+          "duplicate": true
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "The practical question for Geo Agent is not whether the idea is interesting.\n\nIt is whether the current motion keeps shrinking the distance between proof and distribution:\nShopify app-review readiness after benchmark/runtime repair.\n\nNext useful move:\nReplace template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
           "fingerprint": "8e3ddeddebafb855",
-          "duplicate": false
+          "duplicate": true
         }
       },
       "quality_gate": [
@@ -97,13 +97,13 @@
           "account": "@8bitconcepts",
           "copy": "The next move for Bring Your AI: Continue Claude/Codex-user distribution without MCP-org/punkpeye engagement from.\n\nThat is the useful level for AI products: one live artifact, one next constraint, one measurable surface.\n\nhttps://bringyour.ai",
           "fingerprint": "615cdc14c61261f4",
-          "duplicate": false
+          "duplicate": true
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Bring Your AI is the portfolio note today.\n\nWhat it does:\nLocal-first Claude Code to Codex harness migration.\n\nWhy it matters operationally:\nTraffic and directory distribution; product, payments, and agent-readable commerce endpoints are live.\n\nWhat needs to happen next:\nContinue Claude/Codex-user distribution without MCP-org/punkpeye engagement from `unitedideas`; SPT/ACP and x402/MPP remain private-preview-gated.\n\nhttps://bringyour.ai",
           "fingerprint": "b9ddccea7a2bf0dc",
-          "duplicate": false
+          "duplicate": true
         }
       },
       "quality_gate": [
@@ -134,13 +134,13 @@
           "account": "@8bitconcepts",
           "copy": "AI Dev Board is worth talking about because it is not a deck. AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nCurrent motion: API/MCP/indexed-job distribution plus monetization surfaces.\n\nhttps://aidevboard.com",
           "fingerprint": "22ee57d1479ec475",
-          "duplicate": false
+          "duplicate": true
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "AI Dev Board is one of the current Foundry businesses worth watching.\n\nThe job is simple: AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nCurrent motion:\nAPI/MCP/indexed-job distribution plus monetization surfaces.\n\nThe next move is not broad strategy. It is this:\nKeep API invariant green; improve SEO indexing and semantic/search conversion surfaces.\n\nLive route:\nhttps://aidevboard.com",
           "fingerprint": "c50372c7d10dc749",
-          "duplicate": false
+          "duplicate": true
         }
       },
       "quality_gate": [
@@ -171,13 +171,13 @@
           "account": "@8bitconcepts",
           "copy": "Current Foundry proof point: Not Human Search.\n\nIt tests a concrete wedge: Agentic-readiness search engine and scoring system.\n\nThe next useful move is also concrete: Continue distribution directories and improve indexed agent-first coverage.\n\nhttps://nothumansearch.ai",
           "fingerprint": "47217118f6a272be",
-          "duplicate": false
+          "duplicate": true
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Daily Foundry business note: Not Human Search.\n\nThis is the operating shape:\n\n1. Stage: Running.\n2. Job: Agentic-readiness search engine and scoring system.\n3. Motion: Discovery, monitoring, score-fix monetization, and agent/MCP discoverability.\n4. Next constraint: Continue distribution directories and improve indexed agent-first coverage.\n\nThe useful test is whether this keeps producing public proof instead of internal planning.\n\nhttps://nothumansearch.ai",
           "fingerprint": "a4857a42fe4389fc",
-          "duplicate": false
+          "duplicate": true
         }
       },
       "quality_gate": [
@@ -208,13 +208,13 @@
           "account": "@8bitconcepts",
           "copy": "A useful AI product signal is whether the work creates a reusable surface.\n\n8bitconcepts does that through: Research, consulting funnel, and marketing/distribution engine for Foundry.\n\nLive route: https://8bitconcepts.com",
           "fingerprint": "00a221e98f781b76",
-          "duplicate": false
+          "duplicate": true
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "8bitconcepts is a good example of how I want these products to compound.\n\nOne artifact should do more than one job. It should serve users, give agents something inspectable, create a marketing surface, and expose the next bottleneck.\n\nRight now the bottleneck is:\nContinue one-post-per-app daily social cadence and local-search/SMB lead work.\n\nhttps://8bitconcepts.com",
           "fingerprint": "82563ca76b351909",
-          "duplicate": false
+          "duplicate": true
         }
       },
       "quality_gate": [
