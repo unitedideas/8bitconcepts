@@ -236,7 +236,11 @@ tell application "System Events"
 end tell
 return "not found"
 `;
-  return osa(script) === "ok";
+  try {
+    return osa(script) === "ok";
+  } catch {
+    return false;
+  }
 }
 
 function frontWindowBounds() {
