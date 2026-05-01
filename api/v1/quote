@@ -5,6 +5,8 @@
   "amount_cents": 50000,
   "total_cents": 50000,
   "payment_mode": "stripe_payment_link",
+  "supported_payment_modes": ["stripe_payment_link", "stripe_link", "link"],
+  "unsupported_payment_modes": ["stripe_acp", "stripe_spt", "x402", "mpp"],
   "quote_type": "static",
   "checkout_url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03"
 }

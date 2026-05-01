@@ -9,12 +9,15 @@
   "currency": "USD",
   "agentic_payments": {
     "ready": true,
-    "supported_modes": ["stripe_payment_link"],
+    "supported_modes": ["stripe_payment_link", "stripe_link", "link"],
     "unsupported_modes": {
-      "stripe_spt": "Stripe SPT payments are not generally available for this seller surface yet.",
-      "x402": "No x402 endpoint is deployed for this static site.",
-      "mpp": "No Machine Payment Protocol endpoint is deployed for this static site."
+      "stripe_acp": "Stripe Agentic Commerce Protocol is private-preview gated for this static seller surface.",
+      "stripe_spt": "Stripe Shared Payment Tokens are private-preview gated for this static seller surface.",
+      "x402": "No Stripe machine payments / x402 endpoint is deployed for this static site.",
+      "mpp": "No machine-payment endpoint is deployed for this static site."
     },
+    "link": "Available inside the Stripe Payment Link checkout when enabled on the Stripe account.",
+    "private_preview_required": ["stripe_acp", "stripe_spt", "x402"],
     "endpoints": {
       "catalog": "https://8bitconcepts.com/api/v1/catalog",
       "quote": "https://8bitconcepts.com/api/v1/quote",
@@ -34,6 +37,7 @@
       },
       "checkout": {
         "mode": "stripe_payment_link",
+        "supported_modes": ["stripe_payment_link", "stripe_link", "link"],
         "url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03"
       }
     }
