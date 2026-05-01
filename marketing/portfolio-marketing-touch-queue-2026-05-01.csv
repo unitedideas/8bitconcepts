@@ -19,8 +19,8 @@ AI Dev Board,directory,APIList.fun,https://apilist.fun/,blocked,Submit REST API 
 AI Dev Board,directory,Jobicy cross-post,https://aidevboard.com,blocked,Create employer account and post showcase jobs,"account creation"
 AI Dev Board,seo,Google Indexing API job URLs,https://aidevboard.com,blocked,Prepare service account path for JobPosting indexing,"Shane GCP/Search Console setup"
 AI Dev Board,community,RSS-Renaissance AI feeds,https://aidevboard.com/feed.xml,ready,Open PR adding ADB feed if repo still accepts entries,
-Not Human Search,directory,Puliczek awesome-mcp-security,https://nothumansearch.ai,ready,Open PR adding verify_mcp as live MCP endpoint test tool,
-Not Human Search,directory,chaosync awesome-ai-agent-testing,https://nothumansearch.ai,ready,Open PR adding verify_mcp and score-check action,
+Not Human Search,directory,Puliczek awesome-mcp-security,https://github.com/Puliczek/awesome-mcp-security/pull/144,done,Opened PR adding Not Human Search as live MCP endpoint verification and discovery-surface checker,
+Not Human Search,directory,chaosync awesome-ai-agent-testing,https://github.com/chaosync-org/awesome-ai-agent-testing/pull/3,done,Opened PR adding Not Human Search as live agent-readiness and MCP endpoint verification tool,
 Not Human Search,directory,toolsdk MCP registry JSON,https://nothumansearch.ai/mcp,ready,Create JSON package entry and validate,
 Not Human Search,directory,Glama MCP directory,https://glama.ai/mcp/servers,blocked,Submit hosted endpoint and glama metadata,"browser/account required"
 Not Human Search,seo_agent_discovery,Top scored sites/API proof,https://nothumansearch.ai/api/v1/top,ready,Package API proof into distribution note,

@@ -1,6 +1,6 @@
 # Portfolio Marketing Sprint - 2026-05-01 Night
 
-Window: 2026-05-01 06:15Z to 2026-05-01 14:15Z.
+Window: 2026-05-01 06:15Z to 2026-05-02 02:37Z.
 
 Goal: turn "market harder" into shipped, ledgered actions tonight and a repeatable autonomous system.
 
@@ -14,10 +14,20 @@ Goal: turn "market harder" into shipped, ledgered actions tonight and a repeatab
 - Submitted 5 8bit local-search URLs to IndexNow; response HTTP 200.
 - Created a public-main-line PNW call queue with source URLs and no-SMS guardrail.
 - Added sync-state daily autonomous marketing routine: 30 measurable touches per active business per day.
-- Added sync-state 8-hour marketing sprint definition and Owl install request.
+- Added sync-state marketing sprint definition and Owl install request.
+- Expanded the sprint and daily routine to 20 active hours/day in 30-minute leased segments.
 - Deployed Agentic Evidence and restored live agent-discovery/proof routes: `/health`, `/openapi.yaml`, `/llms.txt`, `/.well-known/ai-plugin.json`, `/sample-report`, and `/github-action.yml` all return HTTP 200 on GET.
+- Opened Not Human Search PR into `chaosync-org/awesome-ai-agent-testing`: https://github.com/chaosync-org/awesome-ai-agent-testing/pull/3.
+- Opened Not Human Search PR into `Puliczek/awesome-mcp-security`: https://github.com/Puliczek/awesome-mcp-security/pull/144.
 
 ## Tonight Execution Order
+
+0. Agentic discovery and selling to agents
+   - Treat agent readability as a marketing channel, not only a technical checklist.
+   - Keep every live product discoverable through `llms.txt`, OpenAPI, agent manifests, MCP endpoints where relevant, sitemaps, and machine-readable proof/demo routes.
+   - Submit these surfaces to AI-agent directories, MCP registries, testing lists, API directories, and high-fit GitHub lists where the product truly belongs.
+   - Package proof for agents and agent builders: API docs, sample payloads, CLI commands, score checks, GitHub Actions, and MCP handshakes.
+   - Sell to agents by making next actions executable: scan, verify, install, call API, start checkout, request demo, or open a pilot packet.
 
 1. 8bitconcepts consulting
    - Call queue: use `marketing/pnw-call-queue.csv`.
@@ -48,6 +58,7 @@ Goal: turn "market harder" into shipped, ledgered actions tonight and a repeatab
 6. Not Human Search
    - Continue MCP/agent-readiness directory submissions and testing-list PRs.
    - Prioritize lists where `verify_mcp` is a real fit; skip scope-mismatched lists.
+   - Use the awesome-ai-agent-testing PR as proof that agent-readiness verification belongs in testing/discovery workflows.
 
 ## Autonomous System Acceptance
 
