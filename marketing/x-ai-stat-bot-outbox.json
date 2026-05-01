@@ -67,7 +67,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T12:00:02+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -78,7 +78,22 @@
       "fact_id": "junior-share-2026-04-27",
       "fact_key": "ca00110a6e9b669c803921d1",
       "fingerprint": "b2c2b4042b5d360d",
-      "copy": "Only 6.6% of classified AI/ML roles were entry-level. Senior, lead, and principal roles made up 67%."
+      "copy": "Only 6.6% of classified AI/ML roles were entry-level. Senior, lead, and principal roles made up 67%.",
+      "updated_at": "2026-05-01T16:08:52.332Z",
+      "posted_at": "2026-05-01T16:08:52.332Z",
+      "url": "https://x.com/8BitConcepts/status/2050245834865021000",
+      "posted_url": "https://x.com/8BitConcepts/status/2050245834865021000",
+      "published_fingerprint": "1cda802a062af5a8",
+      "published_copy": "Only 6.6% of classified AI/ML roles are entry-level. Senior, lead, and principal roles make up 67%.\n\nThe hiring signal is not \"AI jobs are gone.\" It is \"AI teams are buying judgment, not training it.\"\n\nData: https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "last_publish_attempt": {
+        "automation_id": "8bit-x-agent-publisher",
+        "codex_automation_id": "temp-1p-8bit-x-agent-publisher",
+        "checked_at": "2026-05-01T16:08:52.332Z",
+        "status": "posted",
+        "content_lock": "public-action-locks/social-content/1cda802a062af5a8.json",
+        "url": "https://x.com/8BitConcepts/status/2050245834865021000"
+      },
+      "last_blocker": ""
     },
     {
       "id": "x-ai-stat-2026-04-28T12:55:03+00:00-e715f4d6",
