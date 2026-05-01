@@ -1,0 +1,41 @@
+{
+  "seller": {
+    "id": "8bitconcepts",
+    "name": "8bitconcepts",
+    "url": "https://8bitconcepts.com",
+    "contact_email": "hello@8bitconcepts.com"
+  },
+  "version": "2026-05-01",
+  "currency": "USD",
+  "agentic_payments": {
+    "ready": true,
+    "supported_modes": ["stripe_payment_link"],
+    "unsupported_modes": {
+      "stripe_spt": "Stripe SPT payments are not generally available for this seller surface yet.",
+      "x402": "No x402 endpoint is deployed for this static site.",
+      "mpp": "No Machine Payment Protocol endpoint is deployed for this static site."
+    },
+    "endpoints": {
+      "catalog": "https://8bitconcepts.com/api/v1/catalog",
+      "quote": "https://8bitconcepts.com/api/v1/quote",
+      "checkout": "https://8bitconcepts.com/api/v1/checkout"
+    }
+  },
+  "products": [
+    {
+      "id": "8bc_ai_diagnostic",
+      "name": "AI diagnostic",
+      "description": "A fixed-scope diagnostic for teams evaluating where agentic automation can safely create leverage.",
+      "type": "service",
+      "price": {
+        "amount": 50000,
+        "currency": "USD",
+        "display": "$500 one-time"
+      },
+      "checkout": {
+        "mode": "stripe_payment_link",
+        "url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03"
+      }
+    }
+  ]
+}

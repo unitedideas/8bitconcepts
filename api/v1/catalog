@@ -1,0 +1,15 @@
+{
+  "seller": "8bitconcepts",
+  "currency": "USD",
+  "products": [
+    {
+      "id": "8bc_ai_diagnostic",
+      "name": "AI diagnostic",
+      "type": "service",
+      "price_cents": 50000,
+      "price_display": "$500 one-time",
+      "checkout_url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03",
+      "payment_mode": "stripe_payment_link"
+    }
+  ]
+}

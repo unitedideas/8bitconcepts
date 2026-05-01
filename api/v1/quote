@@ -1,0 +1,10 @@
+{
+  "seller": "8bitconcepts",
+  "product_id": "8bc_ai_diagnostic",
+  "currency": "USD",
+  "amount_cents": 50000,
+  "total_cents": 50000,
+  "payment_mode": "stripe_payment_link",
+  "quote_type": "static",
+  "checkout_url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03"
+}

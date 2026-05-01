@@ -1,0 +1,27 @@
+{
+  "service": "8bitconcepts",
+  "description": "Embedded AI consulting, diagnostics, and research from 8bitconcepts.",
+  "version": "1.1.0",
+  "endpoints": {
+    "research": "/research/",
+    "consulting": "/work-with-us.html",
+    "diagnostic": "/diagnostic.html",
+    "commerce": "/.well-known/commerce.json",
+    "catalog": "/api/v1/catalog",
+    "quote": "/api/v1/quote",
+    "checkout": "/api/v1/checkout",
+    "openapi": "/openapi.yaml",
+    "llms": "/llms.txt"
+  },
+  "commerce": {
+    "seller": "8bitconcepts",
+    "agent_checkout": true,
+    "payment_modes": ["stripe_payment_link"],
+    "unsupported_payment_modes": ["stripe_spt", "x402", "mpp"]
+  },
+  "stats": {
+    "research_papers": 22,
+    "consulting_offers": 3,
+    "paid_diagnostics": 1
+  }
+}

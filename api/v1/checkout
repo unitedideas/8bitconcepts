@@ -1,0 +1,8 @@
+{
+  "seller": "8bitconcepts",
+  "product_id": "8bc_ai_diagnostic",
+  "status": "requires_customer_action",
+  "payment_mode": "stripe_payment_link",
+  "checkout_url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03",
+  "unsupported_payment_modes": ["stripe_spt", "x402", "mpp"]
+}

@@ -17,6 +17,61 @@ servers:
   - url: https://8bitconcepts.com
     description: Production
 paths:
+  /.well-known/agent.json:
+    get:
+      operationId: getAgentManifest
+      summary: Agent-facing manifest
+      responses:
+        "200":
+          description: Agent manifest with commerce endpoints
+          content:
+            application/json:
+              schema:
+                type: object
+  /.well-known/commerce.json:
+    get:
+      operationId: getCommerceManifest
+      summary: Agent-readable commerce manifest
+      responses:
+        "200":
+          description: Commerce manifest for 8bitconcepts paid offers
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/catalog:
+    get:
+      operationId: getCommerceCatalog
+      summary: List paid products
+      responses:
+        "200":
+          description: Catalog of paid 8bitconcepts offers
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/quote:
+    get:
+      operationId: getDiagnosticQuote
+      summary: Static quote for the AI diagnostic
+      responses:
+        "200":
+          description: Static quote with total and checkout URL
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/checkout:
+    get:
+      operationId: getDiagnosticCheckout
+      summary: Static Stripe Payment Link checkout handoff
+      responses:
+        "200":
+          description: Checkout URL for the AI diagnostic
+          content:
+            application/json:
+              schema:
+                type: object
   /research.json:
     get:
       operationId: listResearchPapers

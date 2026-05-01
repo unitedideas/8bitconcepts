@@ -1,0 +1,24 @@
+{
+  "name": "8bitconcepts",
+  "description": "Embedded AI consulting and research for teams shipping agentic systems.",
+  "url": "https://8bitconcepts.com",
+  "version": "1.1.0",
+  "contact": "hello@8bitconcepts.com",
+  "capabilities": [
+    "embedded_ai_consulting",
+    "ai_diagnostic",
+    "research"
+  ],
+  "commerce": {
+    "manifest": "https://8bitconcepts.com/.well-known/commerce.json",
+    "catalog": "https://8bitconcepts.com/api/v1/catalog",
+    "quote": "https://8bitconcepts.com/api/v1/quote",
+    "checkout": "https://8bitconcepts.com/api/v1/checkout",
+    "payment_modes": ["stripe_payment_link"],
+    "agentic_payments_ready": true
+  },
+  "docs": {
+    "llms": "https://8bitconcepts.com/llms.txt",
+    "openapi": "https://8bitconcepts.com/openapi.yaml"
+  }
+}
