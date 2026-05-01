@@ -52,14 +52,41 @@ function osa(script) {
 function braveJS(js, options = {}) {
   const focus = options.focus !== false;
   if (focus) focusTargetWindow();
-  const script = `
+  const targetByName = !focus && targetWindowName;
+  const targetScript = targetByName ? `
+tell application id "${BRAVE_APP_ID}"
+  repeat with wi from 1 to count of windows
+    repeat with ti from 1 to count of tabs of window wi
+      try
+        set marker to execute tab ti of window wi javascript "window.name"
+        if marker is ${appleString(targetWindowName)} then
+          return execute tab ti of window wi javascript ${appleString(js)}
+        end if
+      end try
+    end repeat
+  end repeat
+  if ${String(targetWindowName.startsWith("8bit-linkedin-"))} then
+    repeat with wi from 1 to count of windows
+      repeat with ti from 1 to count of tabs of window wi
+        try
+          set tabUrl to URL of tab ti of window wi
+          if tabUrl contains "linkedin.com" then
+            return execute tab ti of window wi javascript ${appleString(js)}
+          end if
+        end try
+      end repeat
+    end repeat
+  end if
+end tell
+return "missing value"
+` : `
 tell application id "${BRAVE_APP_ID}"
   if ${focus ? "true" : "false"} then activate
   if (count of windows) = 0 then make new window
   return execute active tab of front window javascript ${appleString(js)}
 end tell
 `;
-  const out = osa(script);
+  const out = osa(targetScript);
   if (!out || out === "missing value") return null;
   try {
     return JSON.parse(out);
@@ -72,7 +99,36 @@ function setBraveUrl(url, options = {}) {
   assertUrlAllowed(url);
   const focus = options.focus !== false;
   if (focus) focusTargetWindow();
-  osa(`
+  const targetByName = !focus && targetWindowName;
+  osa(targetByName ? `
+tell application id "${BRAVE_APP_ID}"
+  repeat with wi from 1 to count of windows
+    repeat with ti from 1 to count of tabs of window wi
+      try
+        set marker to execute tab ti of window wi javascript "window.name"
+        if marker is ${appleString(targetWindowName)} then
+          set URL of tab ti of window wi to ${appleString(url)}
+          return "ok"
+        end if
+      end try
+    end repeat
+  end repeat
+  if ${String(targetWindowName.startsWith("8bit-linkedin-"))} then
+    repeat with wi from 1 to count of windows
+      repeat with ti from 1 to count of tabs of window wi
+        try
+          set tabUrl to URL of tab ti of window wi
+          if tabUrl contains "linkedin.com" then
+            set URL of tab ti of window wi to ${appleString(url)}
+            return "ok"
+          end if
+        end try
+      end repeat
+    end repeat
+  end if
+end tell
+return "not found"
+` : `
 tell application id "${BRAVE_APP_ID}"
   if ${focus ? "true" : "false"} then activate
   if (count of windows) = 0 then make new window
@@ -122,7 +178,17 @@ tell application id "${BRAVE_APP_ID}"
       end if
     end repeat
   end repeat
-  if not ${focus ? "true" : "false"} then return "not-found"
+  if not ${focus ? "true" : "false"} then
+    if (count of windows) = 0 then return "not-found"
+    set targetTab to make new tab at end of tabs of window 1 with properties {URL:${appleString(url)}}
+    if ${appleString(marker)} is not "" then
+      try
+        delay 0.5
+        execute targetTab javascript ${appleString(`window.name = ${JSON.stringify(marker)}; window.name`)}
+      end try
+    end if
+    return "created-background-tab"
+  end if
   set w to make new window
   set URL of active tab of w to ${appleString(url)}
   if ${appleString(marker)} is not "" then execute active tab of w javascript ${appleString(`window.name = ${JSON.stringify(marker)}; window.name`)}
@@ -447,6 +513,17 @@ function runWithLease(options, fn) {
   });
   try {
     const result = fn();
+    if (result && typeof result.then === "function") {
+      return result.then(value => {
+        done = true;
+        release();
+        return value;
+      }, error => {
+        done = true;
+        release();
+        throw error;
+      });
+    }
     done = true;
     release();
     return result;

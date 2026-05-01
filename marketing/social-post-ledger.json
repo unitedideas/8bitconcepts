@@ -3,6 +3,18 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "geo-agent-linkedin-background-2026-05-01",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "posted_at": "2026-05-01T20:47:33Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7456081826521042945",
+      "fingerprint": "cdc6162ee921c67b",
+      "text": "Geo Agent is a practical Shopify distribution test.\n\nThe product promise is specific: scan products against the OpenAI Product Feed spec and schema.org completeness, benchmark assistant recommendations with real queries, then auto-fix descriptions, JSON-LD, llms.txt, and UCP profile gaps.\n\nCurrent constraint: app-review readiness after the benchmark/runtime repair.\n\nNext move: replace the template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
+      "note": "Posted by tools/linkedin-brave-post.js through a non-focused Brave background tab using LinkedIn Voyager API; live URL verified."
+    },
+    {
       "id": "on-device-inference-x-main",
       "source": "on-device-inference-launch",
       "channel": "x",

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /*
- * Supervised LinkedIn recovery publisher for the authenticated Brave session.
+ * Background LinkedIn publisher using the authenticated Brave session.
  *
  * This is intentionally a one-shot recovery tool, not a recurring automation.
- * It avoids coordinate clicks: every step uses DOM selectors in Brave, verifies
- * identity/content/button state, and exits non-zero if the page is not in the
- * expected state.
+ * The default path reads Brave's LinkedIn cookies and posts through LinkedIn's
+ * authenticated Voyager HTTPS endpoints, so Brave never becomes the focused app.
+ * The DOM helpers below are retained only as supervised emergency recovery code.
  */
 const fs = require("fs");
 const os = require("os");
@@ -71,7 +71,7 @@ function parseArgs(argv) {
     !fs.existsSync(LINKEDIN_ALLOW_FILE) ||
     fs.readFileSync(LINKEDIN_ALLOW_FILE, "utf8").trim() !== LINKEDIN_ONE_SHOT_TOKEN
   ) {
-    console.error("LinkedIn Brave browser posting is disabled unless --allow-browser, SOCIAL_BRAVE_LINKEDIN_ONE_SHOT, and the one-shot allow-file content are all set by an explicit supervised run.");
+    console.error("LinkedIn posting is disabled unless --allow-browser, SOCIAL_BRAVE_LINKEDIN_ONE_SHOT, and the one-shot allow-file content are all set by an explicit supervised run.");
     process.exit(3);
   }
   return args;
@@ -82,12 +82,153 @@ function readText(args) {
   return String(text || "").trim();
 }
 
+function extractMe(json) {
+  const data = (json && json.data ? json.data : json) || {};
+  const included = json && Array.isArray(json.included) ? json.included : [];
+  let mini = data && data.miniProfile ? data.miniProfile : null;
+  if (!mini && data && data["*miniProfile"]) {
+    mini = included.find(item => item && item.entityUrn === data["*miniProfile"]);
+  }
+  if (!mini) {
+    mini = included.find(item => item && (
+      String(item.$type || "").includes("MiniProfile") ||
+      (item.firstName && item.lastName && item.occupation)
+    ));
+  }
+  mini = mini || {};
+  const first = data.firstName || mini.firstName || "";
+  const last = data.lastName || mini.lastName || "";
+  const name = `${first} ${last}`.trim();
+  return {
+    name,
+    headline: data.occupation || mini.occupation || "",
+    objectUrn: data.objectUrn || "",
+    plainId: data.plainId || "",
+    publicIdentifier: mini.publicIdentifier || data.publicIdentifier || "",
+  };
+}
+
+function ensureLinkedInBackgroundTab(args) {
+  const marker = `8bit-linkedin-api-${process.pid}`;
+  linkedinOpenDedicatedWindow("https://www.linkedin.com/feed/", { marker, namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
+  return waitFor("LinkedIn background tab API readiness", () => {
+    const snap = linkedinBodySnapshot(3000);
+    const text = snap.text || "";
+    return { ok: Boolean(snap.url && snap.url.includes("linkedin.com") && text.includes(args.expectedName)), snap };
+  }, 15000);
+}
+
+function linkedinPageRequest(method, target, body = null, accept = "application/vnd.linkedin.normalized+json+2.1") {
+  return linkedinJS(`(() => {
+    const method = ${JSON.stringify(method)};
+    const target = ${JSON.stringify(target)};
+    const body = ${JSON.stringify(body)};
+    const accept = ${JSON.stringify(accept)};
+    const csrf = (document.cookie.match(/(?:^|; )JSESSIONID=([^;]+)/) || [])[1] || "";
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, target, false);
+    xhr.setRequestHeader("accept", accept);
+    xhr.setRequestHeader("csrf-token", decodeURIComponent(csrf).replace(/^"|"$/g, ""));
+    xhr.setRequestHeader("x-restli-protocol-version", "2.0.0");
+    if (body !== null) xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");
+    xhr.send(body === null ? null : JSON.stringify(body));
+    let json = null;
+    try { json = xhr.responseText ? JSON.parse(xhr.responseText) : null; } catch {}
+    return JSON.stringify({
+      ok: xhr.status >= 200 && xhr.status < 300,
+      status: xhr.status,
+      responseURL: xhr.responseURL,
+      json,
+      text: json ? "" : String(xhr.responseText || "").slice(0, 12000)
+    });
+  })()`);
+}
+
+function verifyLinkedInPageIdentity(args) {
+  const res = linkedinPageRequest("GET", "/voyager/api/me");
+  if (!res || !res.ok) {
+    throw new Error(`LinkedIn background tab identity request failed: ${JSON.stringify({ status: res && res.status, responseURL: res && res.responseURL, text: res && res.text ? res.text.slice(0, 300) : "" })}`);
+  }
+  const me = extractMe(res.json);
+  if (me.name !== args.expectedName || me.headline !== args.expectedHeadline) {
+    throw new Error(`LinkedIn background tab identity mismatch: expected ${args.expectedName} / ${args.expectedHeadline}, got ${me.name || "(missing name)"} / ${me.headline || "(missing headline)"}`);
+  }
+  return me;
+}
+
+function extractPostResult(json) {
+  const status = json && json.data && json.data.status ? json.data.status : {};
+  const urn = status.urn || json.urn || "";
+  const updateV2 = status["*updateV2"] || "";
+  const activityUrn = updateV2 && updateV2.includes("(") ? updateV2.split("(").pop().split(",")[0] : "";
+  const url = status.toastCtaUrl || (activityUrn ? `https://www.linkedin.com/feed/update/${activityUrn}/` : (urn ? `https://www.linkedin.com/feed/update/${urn}/` : ""));
+  return { urn, activityUrn, url, message: status.mainToastText || "" };
+}
+
+function postTextPayload(text) {
+  return {
+    visibleToConnectionsOnly: false,
+    externalAudienceProviders: [],
+    commentaryV2: { text, attributes: [] },
+    origin: "FEED",
+    allowedCommentersScope: "ALL",
+    postState: "PUBLISHED",
+    media: [],
+  };
+}
+
+async function postOrDryRunApi(args, text) {
+  ensureLinkedInBackgroundTab(args);
+  const me = verifyLinkedInPageIdentity(args);
+  if (args.dryRun) {
+    console.log(JSON.stringify({ ok: true, dryRun: true, method: "linkedin_background_tab_voyager_api", identity: { name: me.name, headline: me.headline, plainId: me.plainId } }));
+    return;
+  }
+  const created = linkedinPageRequest("POST", "/voyager/api/contentcreation/normShares", postTextPayload(text));
+  if (!created || !created.ok) {
+    throw new Error(`LinkedIn background post request failed: ${JSON.stringify({ status: created && created.status, responseURL: created && created.responseURL, text: created && created.text ? created.text.slice(0, 500) : "" })}`);
+  }
+  const result = extractPostResult(created.json);
+  const verified = Boolean(result.url) && verifyLivePost(result.url, text);
+  if (!verified) throw new Error(`LinkedIn API post created but live URL verification failed for ${result.url || "(missing url)"}`);
+  console.log(JSON.stringify({ ok: true, url: result.url, verified: true, method: "linkedin_background_tab_voyager_api", urn: result.urn, activityUrn: result.activityUrn }));
+}
+
+function linkedinJS(js) {
+  return braveJS(js, { focus: false });
+}
+
+function linkedinSetBraveUrl(url) {
+  return setBraveUrl(url, { focus: false });
+}
+
+function linkedinOpenDedicatedWindow(url, options = {}) {
+  return openDedicatedWindow(url, { ...options, focus: false });
+}
+
+function linkedinBodySnapshot(maxChars = 3000) {
+  return linkedinJS(`(() => {
+    const text = document.body ? document.body.innerText : "";
+    return JSON.stringify({ ok: true, url: location.href, title: document.title, text: text.slice(0, ${maxChars}) });
+  })()`);
+}
+
 function visibleEditor() {
-  return braveJS(`(() => {
-    const editors = Array.from(document.querySelectorAll('[role="dialog"] [contenteditable="true"]'))
+  return linkedinJS(`(() => {
+    const dialog = Array.from(document.querySelectorAll('[role="dialog"]'))
+      .find(d => {
+        const r = d.getBoundingClientRect();
+        return r.width > 300 && r.height > 200 && getComputedStyle(d).display !== "none" && getComputedStyle(d).visibility !== "hidden";
+      });
+    const root = dialog || document;
+    const editors = Array.from(root.querySelectorAll('[contenteditable="true"], .ql-editor, [role="textbox"]'))
       .filter(e => {
         const r = e.getBoundingClientRect();
-        return r.width > 100 && r.height > 20 && getComputedStyle(e).display !== "none" && getComputedStyle(e).visibility !== "hidden";
+        const label = e.getAttribute("aria-label") || "";
+        const placeholder = e.getAttribute("data-placeholder") || e.getAttribute("placeholder") || "";
+        const editorLike = /text editor|creating content|what do you want|talk about/i.test(label + " " + placeholder)
+          || String(e.className || "").includes("ql-editor");
+        return r.width > 200 && r.height > 10 && editorLike && getComputedStyle(e).display !== "none" && getComputedStyle(e).visibility !== "hidden";
       });
     const el = editors[0];
     if (!el) return JSON.stringify({ ok: false, reason: "no visible composer editor" });
@@ -97,7 +238,7 @@ function visibleEditor() {
 }
 
 function verifyIdentity(expectedName, expectedHeadline) {
-  const snap = bodySnapshot(4000);
+  const snap = linkedinBodySnapshot(4000);
   const text = snap.text || "";
   if (!text.includes(expectedName) || !text.includes(expectedHeadline)) {
     throw new Error(`LinkedIn identity mismatch at ${snap.url}: expected ${expectedName} / ${expectedHeadline}`);
@@ -106,22 +247,24 @@ function verifyIdentity(expectedName, expectedHeadline) {
 
 function openComposer(args) {
   const marker = `8bit-linkedin-${process.pid}`;
-  openDedicatedWindow(FEED_URL, { marker, namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
+  linkedinOpenDedicatedWindow(FEED_URL, { marker, namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
   waitFor("LinkedIn feed load", () => {
-    const snap = bodySnapshot();
+    const snap = linkedinBodySnapshot();
     const text = snap.text || "";
     const identityOk = text.includes(args.expectedName) && text.includes(args.expectedHeadline);
     if (!identityOk) return { ok: false, snap };
     const editor = visibleEditor();
     const composerOk = text.includes("Start a post") || Boolean(editor && editor.ok);
     return { ok: composerOk, snap };
-  }, 35000);
+  }, 15000);
   verifyIdentity(args.expectedName, args.expectedHeadline);
 
-  const shareUrlEditor = tryWaitFor("LinkedIn composer from shareActive", () => visibleEditor(), 15000);
+  const shareUrlEditor = tryWaitFor("LinkedIn composer from shareActive", () => visibleEditor(), 4000);
   if (shareUrlEditor.ok) return { mode: "dom", ...shareUrlEditor };
 
-  waitFor("LinkedIn Start a post visible", () => braveJS(`(() => {
+  linkedinJS(`(() => { window.scrollTo(0, 0); return JSON.stringify({ ok: true, y: window.scrollY }); })()`);
+
+  waitFor("LinkedIn Start a post visible", () => linkedinJS(`(() => {
     const candidates = Array.from(document.querySelectorAll('button, [role="button"], a, div'))
       .filter(e => {
         const text = ((e.innerText || e.textContent || "").trim());
@@ -130,9 +273,9 @@ function openComposer(args) {
         return r.width > 0 && r.height > 0 && (text === "Start a post" || label === "Start a post" || text.includes("Start a post"));
       });
     return JSON.stringify({ ok: candidates.length > 0, count: candidates.length });
-  })()`), 45000);
+  })()`), 12000);
 
-  const clicked = braveJS(`(() => {
+  const clicked = linkedinJS(`(() => {
     const preferred = Array.from(document.querySelectorAll('button[aria-label], [role="button"][aria-label]'))
       .find(e => {
         const label = e.getAttribute("aria-label") || "";
@@ -171,43 +314,25 @@ function openComposer(args) {
   const afterDomClick = tryWaitFor("LinkedIn composer after DOM Start a post", () => visibleEditor(), 5000);
   if (afterDomClick.ok) return { mode: "dom", ...afterDomClick };
 
-  if (clickAXButton("Start a post")) {
-    const afterAXClick = tryWaitFor("LinkedIn composer after accessibility Start a post", () => visibleEditor(), 5000);
-    if (afterAXClick.ok) return { mode: "dom", ...afterAXClick };
-  }
-
-  const startRect = braveJS(`(() => {
-    const els = Array.from(document.querySelectorAll('div, button, [role="button"], a'));
-    let found = null;
-    for (const e of els) {
-      const text = String(e.innerText || e.textContent || "").trim();
-      const label = e.getAttribute("aria-label") || "";
-      const a = e.closest('a');
-      if (a && a.href && a.href.includes('/in/')) continue;
-      if (text.includes("Start a post") || label.includes("Start a post")) {
-        const r = e.getBoundingClientRect();
-        if (r.width > 0 && r.height > 0) { found = e; break; }
-      }
-    }
-    if (!found) return JSON.stringify({ ok: false, reason: "Start a post selector not found" });
-    const r = found.getBoundingClientRect();
-    return JSON.stringify({ ok: true, rect: { x: r.x, y: r.y, w: r.width, h: r.height }, innerHeight: window.innerHeight });
-  })()`);
-  if (!startRect || !startRect.ok) {
-    throw new Error(`LinkedIn Start a post selector failed: ${JSON.stringify(startRect)}`);
-  }
-  nativeClickElement(startRect.rect, startRect.innerHeight);
-  const afterNativeClick = tryWaitFor("LinkedIn composer after native Start a post", () => visibleEditor(), 5000);
-  if (afterNativeClick.ok) return { mode: "dom", ...afterNativeClick };
-  return { ok: true, mode: "native" };
+  throw new Error("LinkedIn background mode could not open the composer with DOM events; foreground/native interaction is required and was refused.");
 }
 
 function focusAndClearEditor() {
-  const focused = braveJS(`(() => {
-    const editors = Array.from(document.querySelectorAll('[role="dialog"] [contenteditable="true"]'))
+  const focused = linkedinJS(`(() => {
+    const dialog = Array.from(document.querySelectorAll('[role="dialog"]'))
+      .find(d => {
+        const r = d.getBoundingClientRect();
+        return r.width > 300 && r.height > 200 && getComputedStyle(d).display !== "none" && getComputedStyle(d).visibility !== "hidden";
+      });
+    const root = dialog || document;
+    const editors = Array.from(root.querySelectorAll('[contenteditable="true"], .ql-editor, [role="textbox"]'))
       .filter(e => {
         const r = e.getBoundingClientRect();
-        return r.width > 100 && r.height > 20 && getComputedStyle(e).display !== "none" && getComputedStyle(e).visibility !== "hidden";
+        const label = e.getAttribute("aria-label") || "";
+        const placeholder = e.getAttribute("data-placeholder") || e.getAttribute("placeholder") || "";
+        const editorLike = /text editor|creating content|what do you want|talk about/i.test(label + " " + placeholder)
+          || String(e.className || "").includes("ql-editor");
+        return r.width > 200 && r.height > 10 && editorLike && getComputedStyle(e).display !== "none" && getComputedStyle(e).visibility !== "hidden";
       });
     const el = editors[0];
     if (!el) return JSON.stringify({ ok: false, reason: "no editor" });
@@ -227,12 +352,22 @@ function focusAndClearEditor() {
 }
 
 function directInsertCopy(text) {
-  const inserted = braveJS(`(() => {
+  const inserted = linkedinJS(`(() => {
     const text = ${JSON.stringify(text)};
-    const editors = Array.from(document.querySelectorAll('[role="dialog"] [contenteditable="true"]'))
+    const dialog = Array.from(document.querySelectorAll('[role="dialog"]'))
+      .find(d => {
+        const r = d.getBoundingClientRect();
+        return r.width > 300 && r.height > 200 && getComputedStyle(d).display !== "none" && getComputedStyle(d).visibility !== "hidden";
+      });
+    const root = dialog || document;
+    const editors = Array.from(root.querySelectorAll('[contenteditable="true"], .ql-editor, [role="textbox"]'))
       .filter(e => {
         const r = e.getBoundingClientRect();
-        return r.width > 100 && r.height > 20 && getComputedStyle(e).display !== "none" && getComputedStyle(e).visibility !== "hidden";
+        const label = e.getAttribute("aria-label") || "";
+        const placeholder = e.getAttribute("data-placeholder") || e.getAttribute("placeholder") || "";
+        const editorLike = /text editor|creating content|what do you want|talk about/i.test(label + " " + placeholder)
+          || String(e.className || "").includes("ql-editor");
+        return r.width > 200 && r.height > 10 && editorLike && getComputedStyle(e).display !== "none" && getComputedStyle(e).visibility !== "hidden";
       });
     const el = editors[0];
     if (!el) return JSON.stringify({ ok: false, reason: "no editor" });
@@ -254,71 +389,29 @@ function directInsertCopy(text) {
 }
 
 function insertCopy(text, mode) {
-  const oldClipboard = getClipboard();
-  try {
-    if (mode === "native") {
-      const editorRect = braveJS(`(() => {
-        const editors = Array.from(document.querySelectorAll('[contenteditable="true"]'))
-          .filter(e => {
-            const r = e.getBoundingClientRect();
-            if (r.width < 200 || r.height < 60) return false;
-            const style = getComputedStyle(e);
-            return style.display !== "none" && style.visibility !== "hidden";
-          })
-          .map(e => {
-            const r = e.getBoundingClientRect();
-            return { el: e, area: r.width * r.height, rect: { x: r.x, y: r.y, w: r.width, h: r.height }, text: (e.innerText || e.textContent || "").slice(0, 200) };
-          })
-          .sort((a, b) => b.area - a.area);
-        const best = editors[0];
-        if (!best) return JSON.stringify({ ok: false, reason: "no contenteditable editor found" });
-        return JSON.stringify({ ok: true, rect: best.rect, innerHeight: window.innerHeight, text: best.text });
-      })()`);
-      const hasEditorRect = Boolean(editorRect && editorRect.ok);
-      if (hasEditorRect) nativeClickElement(editorRect.rect, editorRect.innerHeight);
-      else nativeClickWindowRelative(170, 312);
-      setClipboard(text);
-      pasteIntoFocusedElement();
-      if (!hasEditorRect) return;
-      waitFor("LinkedIn native composer content verification", () => braveJS(`(() => {
-        const normalize = (t) => String(t || '').trim().toLowerCase().replace(/\\s+/g, ' ');
-        const expected = ${JSON.stringify(normalize(text))};
-        const editors = Array.from(document.querySelectorAll('[contenteditable=\"true\"]'))
-          .filter(e => {
-            const r = e.getBoundingClientRect();
-            if (r.width < 200 || r.height < 60) return false;
-            const style = getComputedStyle(e);
-            return style.display !== \"none\" && style.visibility !== \"hidden\";
-          })
-          .map(e => ({ text: e.innerText || e.textContent || \"\" }))
-          .sort((a, b) => b.text.length - a.text.length);
-        const got = normalize((editors[0] && editors[0].text) || \"\");
-        return JSON.stringify({ ok: got.includes(expected.slice(0, 60)), got: got.slice(0, 200) });
-      })()`), 9000);
-      return;
-    }
-    focusAndClearEditor();
-    const direct = tryWaitFor("LinkedIn direct composer insertion", () => {
-      directInsertCopy(text);
-      const editor = visibleEditor();
-      return { ok: editor.ok && normalize(editor.text) === normalize(text), editor };
-    }, 2500);
-    if (direct.ok) return;
-
-    setClipboard(text);
-    pasteIntoFocusedElement();
-    waitFor("LinkedIn composer content verification", () => {
-      const editor = visibleEditor();
-      return { ok: editor.ok && normalize(editor.text) === normalize(text), editor };
-    }, 9000);
-  } finally {
-    setClipboard(oldClipboard);
+  if (mode === "native") {
+    throw new Error("LinkedIn background mode refused native paste/click fallback.");
+  }
+  focusAndClearEditor();
+  const direct = waitFor("LinkedIn direct composer insertion", () => {
+    directInsertCopy(text);
+    const editor = visibleEditor();
+    return { ok: editor.ok && normalize(editor.text) === normalize(text), editor };
+  }, 4000);
+  if (!direct.ok) {
+    throw new Error(`LinkedIn direct composer insertion failed: ${JSON.stringify(direct)}`);
   }
 }
 
 function postButtonState() {
-  return braveJS(`(() => {
-    const buttons = Array.from(document.querySelectorAll('[role="dialog"] button'))
+  return linkedinJS(`(() => {
+    const dialog = Array.from(document.querySelectorAll('[role="dialog"]'))
+      .find(d => {
+        const r = d.getBoundingClientRect();
+        return r.width > 300 && r.height > 200 && getComputedStyle(d).display !== "none" && getComputedStyle(d).visibility !== "hidden";
+      });
+    const root = dialog || document;
+    const buttons = Array.from(root.querySelectorAll('button, [role="button"]'))
       .filter(b => {
         const r = b.getBoundingClientRect();
         return r.width > 0 && r.height > 0;
@@ -330,7 +423,7 @@ function postButtonState() {
 }
 
 function closeDraft() {
-  const close = braveJS(`(() => {
+  const close = linkedinJS(`(() => {
     const dialog = document.querySelector('[role="dialog"]');
     if (!dialog) return JSON.stringify({ ok: true, alreadyClosed: true });
     const buttons = Array.from(dialog.querySelectorAll('button'))
@@ -346,7 +439,7 @@ function closeDraft() {
   })()`);
   if (!close || !close.ok) return close;
 
-  tryWaitFor("LinkedIn discard dialog", () => braveJS(`(() => {
+  tryWaitFor("LinkedIn discard dialog", () => linkedinJS(`(() => {
     const buttons = Array.from(document.querySelectorAll('button, [role="button"]'))
       .filter(b => {
         const r = b.getBoundingClientRect();
@@ -365,8 +458,14 @@ function closeDraft() {
 }
 
 function clickPost() {
-  const clicked = braveJS(`(() => {
-    const post = Array.from(document.querySelectorAll('[role="dialog"] button'))
+  const clicked = linkedinJS(`(() => {
+    const dialog = Array.from(document.querySelectorAll('[role="dialog"]'))
+      .find(d => {
+        const r = d.getBoundingClientRect();
+        return r.width > 300 && r.height > 200 && getComputedStyle(d).display !== "none" && getComputedStyle(d).visibility !== "hidden";
+      });
+    const root = dialog || document;
+    const post = Array.from(root.querySelectorAll('button, [role="button"]'))
       .find(b => ((b.innerText || "").trim() === "Post") || b.getAttribute("aria-label") === "Post");
     if (!post || post.disabled || post.getAttribute("aria-disabled") === "true") return JSON.stringify({ ok: false });
     post.click();
@@ -378,7 +477,7 @@ function clickPost() {
 }
 
 function postSuccessProbe() {
-  return braveJS(`(() => {
+  return linkedinJS(`(() => {
     const toastRoots = Array.from(document.querySelectorAll('[role="alert"], [role="status"], .artdeco-toast-item, .artdeco-toast-item__content, .artdeco-toasts'));
     for (const root of toastRoots) {
       const t = ((root.innerText || root.textContent || "") || "").trim();
@@ -394,7 +493,7 @@ function postSuccessProbe() {
 function postClickEffect() {
   const success = postSuccessProbe();
   if (success && success.ok) return success;
-  const draft = braveJS(`(() => {
+  const draft = linkedinJS(`(() => {
     const editor = Array.from(document.querySelectorAll('[contenteditable="true"]'))
       .find(e => {
         const r = e.getBoundingClientRect();
@@ -410,7 +509,7 @@ function postClickEffect() {
 }
 
 function openDraftState(text) {
-  return braveJS(`(() => {
+  return linkedinJS(`(() => {
     const expected = ${JSON.stringify(normalize(text))};
     const editors = Array.from(document.querySelectorAll('[contenteditable="true"]'))
       .filter(e => {
@@ -581,8 +680,15 @@ function findVisibleBluePostButton() {
 }
 
 function clickNativePost() {
-  const target = braveJS(`(() => {
-    const post = Array.from(document.querySelectorAll('[role="dialog"] button'))
+  throw new Error("LinkedIn background mode refused native post click.");
+  const target = linkedinJS(`(() => {
+    const dialog = Array.from(document.querySelectorAll('[role="dialog"]'))
+      .find(d => {
+        const r = d.getBoundingClientRect();
+        return r.width > 300 && r.height > 200 && getComputedStyle(d).display !== "none" && getComputedStyle(d).visibility !== "hidden";
+      });
+    const root = dialog || document;
+    const post = Array.from(root.querySelectorAll('button, [role="button"]'))
       .find(b => ((b.innerText || "").trim() === "Post") || b.getAttribute("aria-label") === "Post");
     if (!post || post.disabled || post.getAttribute("aria-disabled") === "true") return JSON.stringify({ ok: false });
     const r = post.getBoundingClientRect();
@@ -602,8 +708,14 @@ function clickNativePost() {
     });
   })()`);
   const attempts = [];
-  const domClick = braveJS(`(() => {
-    const post = Array.from(document.querySelectorAll('[role="dialog"] button'))
+  const domClick = linkedinJS(`(() => {
+    const dialog = Array.from(document.querySelectorAll('[role="dialog"]'))
+      .find(d => {
+        const r = d.getBoundingClientRect();
+        return r.width > 300 && r.height > 200 && getComputedStyle(d).display !== "none" && getComputedStyle(d).visibility !== "hidden";
+      });
+    const root = dialog || document;
+    const post = Array.from(root.querySelectorAll('button, [role="button"]'))
       .find(b => ((b.innerText || "").trim() === "Post") || b.getAttribute("aria-label") === "Post");
     if (!post || post.disabled || post.getAttribute("aria-disabled") === "true") return JSON.stringify({ ok: false });
     post.click();
@@ -646,84 +758,55 @@ function waitForPostSuccess() {
 
 function findPostUrlFromActivity(text) {
   const marker = `8bit-linkedin-activity-${process.pid}`;
-  openDedicatedWindow(ACTIVITY_ALL_URL, { marker, namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
-  waitFor("LinkedIn activity cards", () => braveJS(`(() => {
+  linkedinOpenDedicatedWindow(ACTIVITY_ALL_URL, { marker, namePrefix: "8bit-linkedin-", host: "www.linkedin.com" });
+  waitFor("LinkedIn activity cards", () => linkedinJS(`(() => {
     const cards = document.querySelectorAll('div.feed-shared-update-v2');
     const url = location.href || "";
     return JSON.stringify({ ok: url.includes("recent-activity") && cards.length > 0, cardCount: cards.length, url });
   })()`), 15000);
 
-  const candidates = waitFor("LinkedIn activity candidate urls", () => braveJS(`(() => {
-    const anchors = Array.from(document.querySelectorAll('a')).map(a => a && a.href ? a.href : '').filter(Boolean);
-    const urls = [];
-    const seen = new Set();
-    const add = (u) => { if (!u || seen.has(u)) return; seen.add(u); urls.push(u); };
-    for (const href of anchors) {
-      if (href.includes('/feed/update/')) add(href);
-      const m = href.match(/urn:li:activity:(\\d+)/);
-      if (m && m[1]) add('https://www.linkedin.com/feed/update/urn:li:activity:' + m[1] + '/');
-      if (href.includes('/posts/')) add(href);
+  const match = waitFor("LinkedIn activity exact text match", () => linkedinJS(`(() => {
+    const normalize = (t) => String(t || '').trim().toLowerCase().replace(/\\s+/g, ' ');
+    const needle = normalize(${JSON.stringify(text)}).slice(0, 110);
+    const cards = Array.from(document.querySelectorAll('div.feed-shared-update-v2')).slice(0, 4);
+    for (const card of cards) {
+      const body = normalize(card.innerText || card.textContent || '');
+      if (!body.includes(needle)) continue;
+      const anchors = Array.from(card.querySelectorAll('a')).map(a => a && a.href ? a.href : '').filter(Boolean);
+      const direct = anchors.find(h => h.includes('/feed/update/'));
+      if (direct) return JSON.stringify({ ok: true, url: direct, method: 'activity_card_exact' });
+      for (const href of anchors) {
+        const m = href.match(/urn:li:activity:(\\d+)/);
+        if (m && m[1]) return JSON.stringify({ ok: true, url: 'https://www.linkedin.com/feed/update/urn:li:activity:' + m[1] + '/', method: 'activity_card_exact' });
+      }
+      const post = anchors.find(h => h.includes('/posts/'));
+      if (post) return JSON.stringify({ ok: true, url: post, method: 'activity_card_exact' });
+      return JSON.stringify({ ok: false, reason: 'matching card had no permalink' });
     }
-    return JSON.stringify({ ok: urls.length > 0, count: urls.length, urls: urls.slice(0, 12) });
+    return JSON.stringify({ ok: false, reason: 'no recent activity card matched exact text', checked: cards.length });
   })()`), 15000);
 
-  for (const url of (candidates.urls || []).slice(0, 6)) {
-    if (verifyLivePost(url, text)) return { ok: true, url, method: "activity_candidates" };
-  }
-  return { ok: false, url: "", method: "activity_candidates", reason: "no verified match", candidate_count: (candidates.urls || []).length };
+  if (match && match.ok && verifyLivePost(match.url, text)) return match;
+  return { ok: false, url: "", method: "activity_card_exact", reason: match && match.reason ? match.reason : "no verified exact text match" };
 }
 
 function verifyLivePost(url, text) {
-  setBraveUrl(url);
+  linkedinSetBraveUrl(url);
   const needle = normalize(text).slice(0, 90);
   const result = tryWaitFor("LinkedIn live post verification", () => {
-    const snap = bodySnapshot(12000);
+    const snap = linkedinBodySnapshot(12000);
     return { ok: normalize(snap.text || "").includes(needle), url: snap.url };
   }, 6000);
   return Boolean(result.ok);
 }
 
 function closeNativeDraft() {
-  nativeClickWindowRelative(713, 195);
-  // LinkedIn shows a discard confirmation only after text exists.
-  nativeClickWindowRelative(1010, 1100);
-  closeFrontWindow();
-  return { ok: true };
+  throw new Error("LinkedIn background mode refused native draft cleanup.");
 }
 
 function postOrDryRun(dryRun, text, mode) {
   if (mode === "native") {
-    if (dryRun) {
-      const cleanup = closeNativeDraft();
-      console.log(JSON.stringify({ ok: true, dryRun: true, cleaned: Boolean(cleanup && cleanup.ok), mode }));
-      return;
-    }
-    const clicked = clickNativePost();
-    const result = tryWaitFor("LinkedIn post success", postSuccessProbe, 45000);
-    let url = result.url;
-    if (!url) {
-      const draft = openDraftState(text);
-      if (draft && draft.open) {
-        throw new Error(`LinkedIn post did not submit; draft is still open at ${draft.url}`);
-      }
-      const recovered = findPostUrlFromActivity(text);
-      url = recovered.url;
-    }
-    let verified = Boolean(url) && verifyLivePost(url, text);
-    if (!verified) {
-      const draft = openDraftState(text);
-      if (draft && draft.open) {
-        throw new Error(`LinkedIn live URL verification blocked because draft is still open at ${draft.url}`);
-      }
-      const recovered = findPostUrlFromActivity(text);
-      url = recovered.url;
-      verified = Boolean(url) && verifyLivePost(url, text);
-    }
-    if (!verified) {
-      throw new Error(`LinkedIn live URL verification failed for ${url || "(missing url)"}`);
-    }
-    console.log(JSON.stringify({ ok: true, url, verified, mode, click: clicked.method }));
-    return;
+    throw new Error("LinkedIn background mode refused native post fallback.");
   }
   const state = postButtonState();
   if (!state || !state.ok || state.disabled) {
@@ -731,7 +814,6 @@ function postOrDryRun(dryRun, text, mode) {
   }
   if (dryRun) {
     const cleanup = closeDraft();
-    if (cleanup && cleanup.ok) closeFrontWindow();
     console.log(JSON.stringify({ ok: true, dryRun: true, cleaned: Boolean(cleanup && cleanup.ok) }));
     return;
   }
@@ -767,30 +849,29 @@ function main() {
   const text = readText(args);
   if (!text) throw new Error("post text is empty");
 
-  return runWithLease({
-    owner: "8bit-linkedin-brave-post",
-    reason: args.dryRun ? "dry-run LinkedIn Brave posting flow" : "publish LinkedIn post through Brave",
-    ttl: 900,
-    skip: args.skipLease,
-  }, () => {
-    if (args.recoverOnly) {
+  const run = () => {
+    if (!args.recoverOnly) return postOrDryRunApi(args, text);
+    return Promise.resolve().then(() => {
       const recovered = findPostUrlFromActivity(text);
       const verified = Boolean(recovered.url) && verifyLivePost(recovered.url, text);
       if (!verified) {
         throw new Error(`LinkedIn recover-only verification failed for ${recovered.url || "(missing url)"}`);
       }
       console.log(JSON.stringify({ ok: true, url: recovered.url, verified, recovered: true, method: recovered.method || "" }));
-      return;
-    }
-    const composer = openComposer(args);
-    insertCopy(text, composer.mode);
-    postOrDryRun(args.dryRun, text, composer.mode);
-  });
+    });
+  };
+
+  return runWithLease({
+    owner: "8bit-linkedin-brave-post",
+    reason: args.dryRun ? "dry-run LinkedIn background posting flow" : "publish LinkedIn post through background HTTPS",
+    ttl: 900,
+    skip: args.skipLease,
+  }, run);
 }
 
-try {
-  main();
-} catch (error) {
-  console.error((error && error.stack) || (error && error.message) || String(error));
-  process.exit(1);
-}
+Promise.resolve()
+  .then(() => main())
+  .catch(error => {
+    console.error((error && error.stack) || (error && error.message) || String(error));
+    process.exit(1);
+  });
