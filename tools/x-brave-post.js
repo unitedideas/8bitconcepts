@@ -22,6 +22,7 @@ const {
   runWithLease,
   setBraveUrl,
   setClipboard,
+  typeIntoFocusedElement,
   tryWaitFor,
   waitFor,
 } = require("./social-brave-common");
@@ -184,6 +185,19 @@ function directInsertCopy(text) {
   return inserted;
 }
 
+function keyboardInsertCopy(text) {
+  const editor = visibleEditor();
+  if (!editor || !editor.ok) {
+    throw new Error(`X composer editor disappeared before keyboard insert: ${JSON.stringify(editor)}`);
+  }
+  nativeClickElement(editor.rect, editor.innerHeight);
+  typeIntoFocusedElement(text);
+  return waitFor("X composer keyboard entry verification", () => {
+    const current = visibleEditor();
+    return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
+  }, 12000);
+}
+
 function insertCopy(text) {
   const oldClipboard = getClipboard();
   try {
@@ -218,6 +232,14 @@ function insertCopy(text) {
       const current = visibleEditor();
       return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
     }, 3000);
+    const ready = tryWaitFor("X Post button after direct insert", () => {
+      const button = postButtonState();
+      return { ok: Boolean(button && button.ok && !button.disabled), button, editor: visibleEditor() };
+    }, 3000);
+    if (!ready.ok) {
+      focusAndClearEditor();
+      keyboardInsertCopy(text);
+    }
   } finally {
     setClipboard(oldClipboard);
   }

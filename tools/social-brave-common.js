@@ -230,6 +230,15 @@ end tell
 `);
 }
 
+function typeIntoFocusedElement(text) {
+  focusTargetWindow();
+  osa(`
+tell application "System Events"
+  keystroke ${appleString(text)}
+end tell
+`);
+}
+
 function clickAXButton(name) {
   focusTargetWindow();
   const script = `
@@ -439,6 +448,7 @@ module.exports = {
   setBraveUrl,
   setClipboard,
   sleep,
+  typeIntoFocusedElement,
   tryWaitFor,
   visibleElementInfo,
   waitFor,
