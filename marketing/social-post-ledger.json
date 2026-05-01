@@ -1518,6 +1518,34 @@
       "fingerprint": "1cda802a062af5a8",
       "copy": "Only 6.6% of classified AI/ML roles are entry-level. Senior, lead, and principal roles make up 67%.\n\nThe hiring signal is not \"AI jobs are gone.\" It is \"AI teams are buying judgment, not training it.\"\n\nData: https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
       "note": "Posted by temp 1P 8bit X agent publisher after source fact-check, social-editor approval, public-action lock, and active @8BitConcepts verification through tools/x-brave-post.js."
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-01-adb-live-stats",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-01T23:01:38Z",
+      "fingerprint": "8ee5a9654ae3221e",
+      "fact_key": "71d43027a1a60f8bb8e53527",
+      "route": "https://aidevboard.com",
+      "source_url": "https://aidevboard.com/api/v1/stats",
+      "copy": "AI Dev Board is tracking 9,906 AI/ML roles across 527 companies right now.\n\nhttps://aidevboard.com",
+      "blocker": "agent-social-editor blocked: Required file missing: /Users/owlassist/.codex/agent-memory/social-editor/expertise.md",
+      "note": "No public-action lock was claimed and no browser post was attempted because the required social-editor expertise file is missing. Source item left drafted/queued for a later run after the editor is installed.",
+      "verified_facts": [
+        "https://aidevboard.com/api/v1/stats returned HTTP 200",
+        "overview.total_jobs=9906",
+        "overview.total_companies=527",
+        "overview.updated_at=2026-05-01T23:00:11Z",
+        "https://aidevboard.com returned HTTP 200 and advertised 9906 AI developer jobs plus API access"
+      ],
+      "social_editor": {
+        "status": "blocked",
+        "blocker": "Required file missing: /Users/owlassist/.codex/agent-memory/social-editor/expertise.md"
+      },
+      "x_operator_closeout": "X-eligible after updating copy to current facts; duplicate/account/lock gates still required before any later live post. No scoped memory update needed."
     }
   ]
 }

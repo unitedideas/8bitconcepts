@@ -196,7 +196,18 @@
       "fact_id": "adb-total-jobs-9161-companies-524",
       "fact_key": "71d43027a1a60f8bb8e53527",
       "fingerprint": "708a1e42008d35e0",
-      "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now."
+      "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now.",
+      "last_blocked_at": "2026-05-01T23:01:38Z",
+      "last_blocker": "agent-social-editor blocked: Required file missing: /Users/owlassist/.codex/agent-memory/social-editor/expertise.md",
+      "last_verified_copy": "AI Dev Board is tracking 9,906 AI/ML roles across 527 companies right now.\n\nhttps://aidevboard.com",
+      "last_verified_fingerprint": "8ee5a9654ae3221e",
+      "last_verified_facts": {
+        "total_jobs": 9906,
+        "total_companies": 527,
+        "updated_at": "2026-05-01T23:00:11Z",
+        "source_url": "https://aidevboard.com/api/v1/stats",
+        "business_url": "https://aidevboard.com"
+      }
     },
     {
       "id": "x-ai-stat-2026-04-28T21:03:17+00:00-31d1c476",
