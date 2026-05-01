@@ -1383,7 +1383,7 @@
       "fingerprint": "22ee57d1479ec475",
       "fact_key": "portfolio-daily:2026-05-01:ai-dev-board",
       "route": "https://aidevboard.com",
-      "note": "Still queued. Fact-check and social-editor completed at 2026-05-01T11:19Z, but no public X post was attempted: X composer content verification returned an empty editor, then the local Computer Use lease became held by the LinkedIn poster before same-run X repair could continue. Approved final-copy fingerprint: 1cebe56a470b75bb.",
+      "note": "Still queued. 2026-05-01T11:19Z AI Dev Board attempts were fact-checked and social-editor approved, but no verified X status URL was captured. Prior same-run approved fingerprint 1cebe56a470b75bb hit X composer empty-content verification, and this run claimed 2c54c7165636b0de before tools/x-brave-post.js returned without a URL while Computer Use was held by 8bit-linkedin-brave-post owner_pid=70659 until 2026-05-01T11:33:25Z.",
       "last_attempted_at": "2026-05-01T11:19:00Z",
       "last_blocker": "Blocked after claiming the AI Dev Board X content lock and starting tools/x-brave-post.js: the command returned no stdout/stderr before the runner killed it, no live X status URL was captured, and recovery found the local Computer Use lease held by 8bit-linkedin-brave-post owner_pid=70659 until 2026-05-01T11:33:25Z. The X post remains unverified, so it was not recorded as posted; rerun after the desktop lease clears and the X composer path can return a status URL.",
       "last_checked_at": "2026-05-01T11:19:36Z",
