@@ -10,6 +10,7 @@
 const fs = require("fs");
 const os = require("os");
 const path = require("path");
+const crypto = require("crypto");
 const zlib = require("zlib");
 const { spawnSync } = require("child_process");
 const {
@@ -34,9 +35,21 @@ const {
 const FEED_URL = "https://www.linkedin.com/feed/?shareActive=true";
 const ACTIVITY_ALL_URL = "https://www.linkedin.com/in/shane-cheek-9173473b6/recent-activity/all/";
 const DEFAULT_NAME = "Shane Cheek";
-const DEFAULT_HEADLINE = "Founder at 8bitconcepts";
+const DEFAULT_HEADLINE = "Software Engineer at 8BitConcepts";
 const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";
 const LINKEDIN_ONE_SHOT_TOKEN = "8bit-linkedin-supervised-manual-v2";
+const COOKIE_SOURCES = [
+  {
+    name: "brave-default",
+    db: `${os.homedir()}/Library/Application Support/BraveSoftware/Brave-Browser/Default/Cookies`,
+    safeStorageService: "Brave Safe Storage",
+  },
+  {
+    name: "chrome-profile-3",
+    db: `${os.homedir()}/Library/Application Support/Google/Chrome/Profile 3/Cookies`,
+    safeStorageService: "Chrome Safe Storage",
+  },
+];
 
 function usage() {
   console.error("usage: node tools/linkedin-brave-post.js (--text <copy> | --text-file <path>) --allow-browser [--dry-run] [--recover-only] [--skip-lease] [--expected-name <name>] [--expected-headline <headline>]");
@@ -65,16 +78,21 @@ function parseArgs(argv) {
     else usage();
   }
   if ((!args.text && !args.textFile) || (args.text && args.textFile) || !args.expectedName || !args.expectedHeadline) usage();
+  const browserMode = args.recoverOnly || process.env.SOCIAL_LINKEDIN_FORCE_BROWSER === "1";
+  if (browserMode) requireBrowserAllowance(args);
+  return args;
+}
+
+function requireBrowserAllowance(args) {
   if (
     !args.allowBrowser ||
     process.env.SOCIAL_BRAVE_LINKEDIN_ONE_SHOT !== LINKEDIN_ONE_SHOT_TOKEN ||
     !fs.existsSync(LINKEDIN_ALLOW_FILE) ||
     fs.readFileSync(LINKEDIN_ALLOW_FILE, "utf8").trim() !== LINKEDIN_ONE_SHOT_TOKEN
   ) {
-    console.error("LinkedIn posting is disabled unless --allow-browser, SOCIAL_BRAVE_LINKEDIN_ONE_SHOT, and the one-shot allow-file content are all set by an explicit supervised run.");
+    console.error("LinkedIn browser recovery is disabled unless --allow-browser, SOCIAL_BRAVE_LINKEDIN_ONE_SHOT, and the one-shot allow-file content are all set by an explicit supervised run.");
     process.exit(3);
   }
-  return args;
 }
 
 function readText(args) {
@@ -177,21 +195,132 @@ function postTextPayload(text) {
   };
 }
 
+function sqliteQuote(value) {
+  return `'${String(value).replace(/'/g, "''")}'`;
+}
+
+function browserSafeStorageKey(source) {
+  const proc = spawnSync("security", ["find-generic-password", "-w", "-s", source.safeStorageService], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024,
+    timeout: 10000,
+  });
+  if (proc.status !== 0 || proc.error) {
+    throw new Error((proc.stderr || (proc.error && proc.error.message) || "could not read Brave Safe Storage key").trim());
+  }
+  return crypto.pbkdf2Sync(proc.stdout.trim(), "saltysalt", 1003, 16, "sha1");
+}
+
+function decryptBraveCookie(host, encryptedHex, key) {
+  const encrypted = Buffer.from(encryptedHex, "hex");
+  if (!encrypted.subarray(0, 3).equals(Buffer.from("v10"))) {
+    throw new Error(`unsupported Brave cookie encryption prefix for ${host}`);
+  }
+  const decipher = crypto.createDecipheriv("aes-128-cbc", key, Buffer.alloc(16, 0x20));
+  let value = Buffer.concat([decipher.update(encrypted.subarray(3)), decipher.final()]);
+  const hostDigest = crypto.createHash("sha256").update(host).digest();
+  if (value.subarray(0, 32).equals(hostDigest)) value = value.subarray(32);
+  return value.toString("utf8");
+}
+
+function readLinkedInCookies(source) {
+  if (!fs.existsSync(source.db)) {
+    throw new Error(`${source.name} cookie DB not found at ${source.db}`);
+  }
+  const hosts = [".www.linkedin.com", ".linkedin.com", "www.linkedin.com", "linkedin.com"];
+  const sql = `select host_key,name,hex(encrypted_value) from cookies where host_key in (${hosts.map(sqliteQuote).join(",")});`;
+  const proc = spawnSync("sqlite3", [source.db, sql], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024,
+    timeout: 10000,
+  });
+  if (proc.status !== 0 || proc.error) {
+    throw new Error((proc.stderr || (proc.error && proc.error.message) || "could not read Brave cookies").trim());
+  }
+  const key = browserSafeStorageKey(source);
+  const cookies = {};
+  for (const row of proc.stdout.trim().split(/\n/).filter(Boolean)) {
+    const [host, name, encryptedHex] = row.split("|");
+    if (!cookies[name]) cookies[name] = decryptBraveCookie(host, encryptedHex, key);
+  }
+  const missing = ["li_at", "JSESSIONID"].filter(name => !cookies[name]);
+  if (missing.length) throw new Error(`missing ${source.name} LinkedIn cookies: ${missing.join(", ")}`);
+  return cookies;
+}
+
+function linkedinDirectAuth() {
+  const errors = [];
+  let cookies = null;
+  let sourceName = "";
+  for (const source of COOKIE_SOURCES) {
+    try {
+      cookies = readLinkedInCookies(source);
+      sourceName = source.name;
+      break;
+    } catch (error) {
+      errors.push(error.message || String(error));
+    }
+  }
+  if (!cookies) throw new Error(`missing LinkedIn authenticated cookies in local browser stores: ${errors.join("; ")}`);
+  const csrf = cookies.JSESSIONID.replace(/^"|"$/g, "");
+  return {
+    sourceName,
+    headers: {
+      "accept": "application/vnd.linkedin.normalized+json+2.1",
+      "csrf-token": csrf,
+      "referer": "https://www.linkedin.com/feed/",
+      "x-restli-protocol-version": "2.0.0",
+      "x-li-lang": "en_US",
+      "x-li-track": JSON.stringify({ clientVersion: "1.13.14473", mpVersion: "1.13.14473", osName: "web", timezoneOffset: -7, timezone: "America/Los_Angeles" }),
+      "user-agent": "Mozilla/5.0",
+      "cookie": Object.entries(cookies).map(([name, value]) => `${name}=${encodeURIComponent(value)}`).join("; "),
+    },
+  };
+}
+
+async function linkedinDirectRequest(method, target, body = null, accept = "application/vnd.linkedin.normalized+json+2.1") {
+  const auth = linkedinDirectAuth();
+  const headers = { ...auth.headers, accept };
+  if (body !== null) headers["content-type"] = "application/json; charset=UTF-8";
+  const res = await fetch(new URL(target, "https://www.linkedin.com").toString(), {
+    method,
+    headers,
+    body: body === null ? undefined : JSON.stringify(body),
+    redirect: "manual",
+  });
+  const text = await res.text();
+  let json = null;
+  try { json = text ? JSON.parse(text) : null; } catch {}
+  return { ok: res.status >= 200 && res.status < 300, status: res.status, location: res.headers.get("location") || "", json, text: json ? "" : text.slice(0, 12000), responseURL: res.url };
+}
+
+async function verifyLivePostDirect(url, text) {
+  const res = await linkedinDirectRequest("GET", url, null, "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+  if (!res.ok) return false;
+  return normalize(res.text || JSON.stringify(res.json || "")).includes(normalize(text).slice(0, 90));
+}
+
 async function postOrDryRunApi(args, text) {
-  ensureLinkedInBackgroundTab(args);
-  const me = verifyLinkedInPageIdentity(args);
+  const meRes = await linkedinDirectRequest("GET", "/voyager/api/me");
+  if (!meRes || !meRes.ok) {
+    throw new Error(`LinkedIn direct identity request failed: ${JSON.stringify({ status: meRes && meRes.status, location: meRes && meRes.location, responseURL: meRes && meRes.responseURL, text: meRes && meRes.text ? meRes.text.slice(0, 300) : "" })}`);
+  }
+  const me = extractMe(meRes.json);
+  if (me.name !== args.expectedName || me.headline !== args.expectedHeadline) {
+    throw new Error(`LinkedIn direct identity mismatch: expected ${args.expectedName} / ${args.expectedHeadline}, got ${me.name || "(missing name)"} / ${me.headline || "(missing headline)"}`);
+  }
   if (args.dryRun) {
-    console.log(JSON.stringify({ ok: true, dryRun: true, method: "linkedin_background_tab_voyager_api", identity: { name: me.name, headline: me.headline, plainId: me.plainId } }));
+    console.log(JSON.stringify({ ok: true, dryRun: true, method: "linkedin_direct_cookie_voyager_api", identity: { name: me.name, headline: me.headline, plainId: me.plainId } }));
     return;
   }
-  const created = linkedinPageRequest("POST", "/voyager/api/contentcreation/normShares", postTextPayload(text));
+  const created = await linkedinDirectRequest("POST", "/voyager/api/contentcreation/normShares", postTextPayload(text));
   if (!created || !created.ok) {
-    throw new Error(`LinkedIn background post request failed: ${JSON.stringify({ status: created && created.status, responseURL: created && created.responseURL, text: created && created.text ? created.text.slice(0, 500) : "" })}`);
+    throw new Error(`LinkedIn direct post request failed: ${JSON.stringify({ status: created && created.status, responseURL: created && created.responseURL, text: created && created.text ? created.text.slice(0, 500) : "" })}`);
   }
   const result = extractPostResult(created.json);
-  const verified = Boolean(result.url) && verifyLivePost(result.url, text);
+  const verified = Boolean(result.url) && await verifyLivePostDirect(result.url, text);
   if (!verified) throw new Error(`LinkedIn API post created but live URL verification failed for ${result.url || "(missing url)"}`);
-  console.log(JSON.stringify({ ok: true, url: result.url, verified: true, method: "linkedin_background_tab_voyager_api", urn: result.urn, activityUrn: result.activityUrn }));
+  console.log(JSON.stringify({ ok: true, url: result.url, verified: true, method: "linkedin_direct_cookie_voyager_api", urn: result.urn, activityUrn: result.activityUrn }));
 }
 
 function linkedinJS(js) {
@@ -872,6 +1001,7 @@ function main() {
 Promise.resolve()
   .then(() => main())
   .catch(error => {
-    console.error((error && error.stack) || (error && error.message) || String(error));
+    const cause = error && error.cause ? `\nCause: ${error.cause.code || error.cause.message || String(error.cause)}` : "";
+    console.error(`${(error && error.stack) || (error && error.message) || String(error)}${cause}`);
     process.exit(1);
   });

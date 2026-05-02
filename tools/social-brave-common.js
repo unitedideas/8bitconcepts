@@ -1,10 +1,12 @@
 const { spawnSync } = require("child_process");
 const fs = require("fs");
 const os = require("os");
+const path = require("path");
 
 const BRAVE_APP_ID = "com.brave.Browser";
 const LEASE_BIN = process.env.FOUNDRY_COMPUTER_USE_LEASE_BIN ||
   `${os.homedir()}/.foundry/foundry-sync-state/bin/foundry-computer-use-lease`;
+const CDP_BIN = path.join(__dirname, "brave-cdp.js");
 const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";
 const LINKEDIN_ONE_SHOT_TOKEN = "8bit-linkedin-supervised-manual-v2";
 let targetWindowName = "";
@@ -51,7 +53,41 @@ function osa(script) {
   return proc.stdout.trim();
 }
 
+function cdp(args, timeout = 90000) {
+  const proc = spawnSync("node", [CDP_BIN, ...args], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024 * 12,
+    timeout,
+  });
+  if (proc.error) {
+    throw new Error(proc.error.message || "Brave CDP helper failed");
+  }
+  if (proc.status !== 0) {
+    throw new Error((proc.stderr || proc.stdout || "Brave CDP helper failed").trim());
+  }
+  return proc.stdout.trim();
+}
+
+function parseBrowserValue(out) {
+  if (!out || out === "missing value") return null;
+  try {
+    return JSON.parse(out);
+  } catch {
+    return out;
+  }
+}
+
 function braveJS(js, options = {}) {
+  const host = targetWindowName && targetWindowName.startsWith("8bit-linkedin-")
+    ? "www.linkedin.com"
+    : (targetWindowName && targetWindowName.startsWith("8bit-x-") ? "x.com" : "");
+  if (process.env.SOCIAL_BRAVE_FORCE_APPLESCRIPT !== "1") {
+    try {
+      return parseBrowserValue(cdp(["eval", js, targetWindowName || "", targetWindowName ? targetWindowName.split(/-\d+$/)[0] + "-" : "", host]));
+    } catch (error) {
+      if (process.env.SOCIAL_BRAVE_CDP_ONLY === "1") throw error;
+    }
+  }
   const focus = options.focus !== false;
   if (focus) focusTargetWindow();
   const targetByName = !focus && targetWindowName;
@@ -99,6 +135,14 @@ end tell
 
 function setBraveUrl(url, options = {}) {
   assertUrlAllowed(url);
+  if (process.env.SOCIAL_BRAVE_FORCE_APPLESCRIPT !== "1") {
+    try {
+      cdp(["open", url, targetWindowName || "", targetWindowName ? targetWindowName.split(/-\d+$/)[0] + "-" : "", new URL(url).hostname]);
+      return;
+    } catch (error) {
+      if (process.env.SOCIAL_BRAVE_CDP_ONLY === "1") throw error;
+    }
+  }
   const focus = options.focus !== false;
   if (focus) focusTargetWindow();
   const targetByName = !focus && targetWindowName;
@@ -141,6 +185,22 @@ end tell
 
 function openDedicatedWindow(url, options = {}) {
   assertUrlAllowed(url);
+  if (process.env.SOCIAL_BRAVE_FORCE_APPLESCRIPT !== "1") {
+    const marker = options.marker || "";
+    let host = options.host || "";
+    try {
+      host = host || new URL(url).hostname;
+    } catch {
+      host = "";
+    }
+    try {
+      cdp(["open", url, marker, options.namePrefix || "", host]);
+      if (marker) targetWindowName = marker;
+      return "cdp";
+    } catch (error) {
+      if (process.env.SOCIAL_BRAVE_CDP_ONLY === "1") throw error;
+    }
+  }
   const focus = options.focus !== false;
   const namePrefix = options.namePrefix || "";
   const marker = options.marker || "";
@@ -206,6 +266,18 @@ end tell
 }
 
 function markActiveWindow(marker) {
+  if (process.env.SOCIAL_BRAVE_FORCE_APPLESCRIPT !== "1") {
+    try {
+      const host = marker.startsWith("8bit-linkedin-") ? "www.linkedin.com" : (marker.startsWith("8bit-x-") ? "x.com" : "");
+      const out = cdp(["eval", `window.name = ${JSON.stringify(marker)}; window.name`, "", "", host]);
+      if (out === marker) {
+        targetWindowName = marker;
+        return;
+      }
+    } catch (error) {
+      if (process.env.SOCIAL_BRAVE_CDP_ONLY === "1") throw error;
+    }
+  }
   targetWindowName = "";
   const script = `
 tell application id "${BRAVE_APP_ID}"
