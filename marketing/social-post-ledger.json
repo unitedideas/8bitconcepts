@@ -1586,36 +1586,32 @@
       "public_action_lock_claimed": true
     },
     {
-      "id": "8bit-x-agent-publisher-blocked-2026-05-02-nhs-digest-developer-share",
+      "id": "8bit-x-agent-publisher-posted-2026-05-02-nhs-digest-developer-share",
       "date": "2026-05-02",
       "source": "marketing/x-ai-stat-bot-outbox.json",
       "source_item": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
       "channel": "x",
       "account": "@8bitconcepts",
-      "status": "blocked",
-      "blocked_at": "2026-05-02T02:00:46Z",
-      "fingerprint": "19b28bbdb6c79ddc",
+      "status": "posted",
+      "posted_at": "2026-05-02T02:19:00Z",
+      "url": "https://x.com/8BitConcepts/status/2050399400929923457",
+      "fingerprint": "ecc7d855363125f1",
       "fact_key": "22b86351dd4354cb04d47fb4",
-      "route": "https://nothumansearch.ai/digest",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "source_url": "https://nothumansearch.ai/digest.json",
-      "copy": "Current NHS digest: 7,090 sites. 1,691 are developer (23.9%). 5,076 expose llms.txt (71.6%). 425 have live verified MCP endpoints (6.0%). https://nothumansearch.ai/digest",
-      "blocker": "X post blocked before public POST: the direct authenticated X API path in tools/x-brave-post.js returned X error 226 ('This request looks like it might be automated'). Browser fallback in the same script then failed because Brave has 'Allow JavaScript from Apple Events' turned off, so no live status URL could be captured.",
-      "note": "Active identity was verified as @8BitConcepts via direct cookie auth. The source X stat item remains drafted/queued for a later run after the posting path is repaired.",
+      "copy": "Developer tools are still the largest category in the agent-ready web: 1,691 of 7,090 sites in the current NHS digest, or 23.8% of the index. The interesting part is the composition, not just the size.\n\nMethod + context: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "verified_facts": [
         "https://nothumansearch.ai/digest returned HTTP 200",
         "https://nothumansearch.ai/digest.json returned HTTP 200 application/json",
-        "digest.json generated_at=2026-05-02T01:57:16Z",
+        "digest.json generated_at=2026-05-02T02:13:30Z",
         "digest.json total_sites=7090",
-        "digest.json developer category count=1691 (23.9%)",
-        "digest.json llms_txt_count=5076 (71.6%)",
-        "digest.json mcp_verified=425 (6.0%)"
+        "digest.json developer category count=1691 (23.8%)",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200"
       ],
       "social_editor_status": "approved",
       "social_editor_closeout": "No scoped memory update needed",
       "x_operator_closeout": "No scoped memory update needed",
-      "public_action_lock_claimed": true,
-      "source_left_queued": true,
-      "post_attempted": false
+      "note": "Selected from the X stat outbox after portfolio and targeted-research X candidates were already drained."
     }
   ]
 }

@@ -157,7 +157,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T18:26:11+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -168,7 +168,29 @@
       "fact_id": "developer-tools-mcp-category",
       "fact_key": "22b86351dd4354cb04d47fb4",
       "fingerprint": "6c4882c5a4070d25",
-      "copy": "Developer tools account for 1,672 agent-ready sites, 23.8% of the indexed MCP/agent-ready web."
+      "copy": "Developer tools account for 1,672 agent-ready sites, 23.8% of the indexed MCP/agent-ready web.",
+      "updated_at": "2026-05-02T02:19:00Z",
+      "posted_at": "2026-05-02T02:19:00Z",
+      "url": "https://x.com/8BitConcepts/status/2050399400929923457",
+      "posted_url": "https://x.com/8BitConcepts/status/2050399400929923457",
+      "published_fingerprint": "ecc7d855363125f1",
+      "published_copy": "Developer tools are still the largest category in the agent-ready web: 1,691 of 7,090 sites in the current NHS digest, or 23.8% of the index. The interesting part is the composition, not just the size.\n\nMethod + context: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "last_publish_attempt": {
+        "automation_id": "8bit-x-agent-publisher",
+        "checked_at": "2026-05-02T02:19:00Z",
+        "status": "posted",
+        "content_lock": "public-action-locks/social-content/ecc7d855363125f1.json",
+        "url": "https://x.com/8BitConcepts/status/2050399400929923457"
+      },
+      "last_attempt_verified_facts": [
+        "https://nothumansearch.ai/digest returned HTTP 200",
+        "https://nothumansearch.ai/digest.json returned HTTP 200 application/json",
+        "digest.json generated_at=2026-05-02T02:13:30Z",
+        "digest.json total_sites=7090",
+        "digest.json developer category count=1691 (23.8%)",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200"
+      ],
+      "last_blocker": ""
     },
     {
       "id": "x-ai-stat-2026-04-28T19:33:13+00:00-31836ea7",
