@@ -410,6 +410,23 @@ function keyboardInsertCopy(text) {
 }
 
 function insertCopy(text) {
+  if (process.env.SOCIAL_X_DOM_ONLY === "1") {
+    focusAndClearEditor();
+    directInsertCopy(text);
+    waitFor("X composer DOM-only content verification", () => {
+      const current = visibleEditor();
+      return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
+    }, 9000);
+    const ready = tryWaitFor("X Post button after DOM-only insert", () => {
+      const button = postButtonState();
+      return { ok: Boolean(button && button.ok && !button.disabled), button, editor: visibleEditor() };
+    }, 3000);
+    if (!ready.ok) {
+      throw new Error(`X DOM-only insert did not enable Post: ${JSON.stringify(ready)}`);
+    }
+    return;
+  }
+
   const oldClipboard = getClipboard();
   try {
     focusAndClearEditor();
