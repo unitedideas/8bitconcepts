@@ -374,7 +374,7 @@ def targeted_queue_item(
         "id": f"daily-targeted-research-{target_date.isoformat()}-{target['slug']}",
         "kind": "targeted_research",
         "date": target_date.isoformat(),
-        "slot": "morning",
+        "slot": "targeted",
         "post_time_local": post_time,
         "timezone": "America/Los_Angeles",
         "target": {

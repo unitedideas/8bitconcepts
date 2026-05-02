@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T17:16:06.588529+00:00",
+  "generated_at": "2026-05-02T17:20:05.680462+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -63,13 +63,13 @@
           "account": "@8bitconcepts",
           "copy": "Looking at public AI hiring as a market signal: @scale_AI has 135 indexed AI/ML roles on AI Dev Board, with current tags clustering around generative-ai, llm, agents. Avg published salary: $237,478. Scale AI is #7 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to enterprise ML delivery, expert feedback loops, data quality, and applied agent systems. Does the constraint look more like data quality, workflow integration, or evaluation coverage?\n\nData: https://aidevboard.com/company/scale-ai",
           "fingerprint": "e0cd05d47d0ff112",
-          "duplicate": true
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Looking at @Scale AI through the public hiring data:\n\n1. 135 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around generative-ai, llm, agents, research.\n3. Sample roles include Director, Enterprise Machine Learning & Research; Manager, Machine Learning Research Scientist, GenAI; Senior AI Infrastructure Engineer - Training Platform.\n4. Avg published salary in the indexed sample: $237,478.\n\nThe useful read is where the operational work is moving: enterprise ML delivery, expert feedback loops, data quality, and applied agent systems.\n\nScale AI is a useful public lens on this area. Does the constraint look more like data quality, workflow integration, or evaluation coverage?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/scale-ai\nhttps://nothumansearch.ai/site/scale.com",
           "fingerprint": "62391497a3c4dcb9",
-          "duplicate": true
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -103,13 +103,13 @@
           "account": "@8bitconcepts",
           "copy": "Little fact from the 8bit research stack: model API fees are usually 10-20% of the AI build cost. The rest is data plumbing, integration, evals, observability, and maintenance.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
           "fingerprint": "d515af20e77c8ac2",
-          "duplicate": true
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Little fact from the 8bit research stack: model API fees are usually 10-20% of an AI build. The bigger lines are data pipelines, system integration, evaluation, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
           "fingerprint": "10e029c31f27bd4e",
-          "duplicate": true
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -142,13 +142,13 @@
           "account": "@8bitconcepts",
           "copy": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28. The agent ecosystem is crowded in tools and thin in regulated verticals.\n\nSource: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
           "fingerprint": "293c6fac908a130c",
-          "duplicate": true
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28.\n\nThe agent ecosystem is crowded around tools and still thin in regulated verticals where the workflow value is high.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
           "fingerprint": "62e44c166ea835f4",
-          "duplicate": true
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -181,13 +181,13 @@
           "account": "@8bitconcepts",
           "copy": "Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents. The actual move runs locally.\n\nSource: https://8bitconcepts.com/case-studies.html#bringyour",
           "fingerprint": "130f945fac2cbc3f",
-          "duplicate": true
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents.\n\nThe product boundary is the point: discovery can happen through an agent surface, but private context moves locally.\n\nSource:\nhttps://8bitconcepts.com/case-studies.html#bringyour",
           "fingerprint": "67605e87b2bdc387",
-          "duplicate": true
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -220,13 +220,13 @@
           "account": "@8bitconcepts",
           "copy": "Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.\n\nSource: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
           "fingerprint": "a47213c55309e790",
-          "duplicate": true
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.\n\nVolume and negotiating leverage are not the same signal.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
           "fingerprint": "39b847448bb7977c",
-          "duplicate": true
+          "duplicate": false
         }
       },
       "quality_gate": [

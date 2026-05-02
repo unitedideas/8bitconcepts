@@ -2,7 +2,8 @@
 /*
  * Background LinkedIn publisher using the authenticated Brave session.
  *
- * This is intentionally a one-shot recovery tool, not a recurring automation.
+ * This is intentionally a one-shot publishing tool behind the sync-state
+ * LinkedIn automation, not a generic browser automation loop.
  * The default path reads Brave's LinkedIn cookies and posts through LinkedIn's
  * authenticated Voyager HTTPS endpoints, so Brave never becomes the focused app.
  * The DOM helpers below are retained only as supervised emergency recovery code.
@@ -50,6 +51,32 @@ const COOKIE_SOURCES = [
     safeStorageService: "Chrome Safe Storage",
   },
 ];
+
+function verificationNeedles(text) {
+  const normalized = normalize(text || "");
+  const withoutUrls = normalized
+    .replace(/https?:\/\/\S+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const chunks = withoutUrls
+    .split(/(?<=[.!?])\s+|\n+/)
+    .map(s => s.trim())
+    .filter(s => s.length >= 36);
+  const needles = [];
+  for (const chunk of chunks) {
+    const needle = chunk.slice(0, 90).trim();
+    if (needle.length >= 36 && !needles.includes(needle)) needles.push(needle);
+    if (needles.length >= 2) break;
+  }
+  if (!needles.length && withoutUrls.length >= 36) needles.push(withoutUrls.slice(0, 90));
+  if (!needles.length) needles.push(normalized.slice(0, 90));
+  return needles;
+}
+
+function livePostTextMatches(liveText, expectedText) {
+  const live = normalize(liveText || "");
+  return verificationNeedles(expectedText).some(needle => live.includes(needle));
+}
 
 function usage() {
   console.error("usage: node tools/linkedin-brave-post.js (--text <copy> | --text-file <path>) --allow-browser [--dry-run] [--recover-only] [--skip-lease] [--expected-name <name>] [--expected-headline <headline>]");
@@ -248,23 +275,11 @@ function readLinkedInCookies(source) {
   return cookies;
 }
 
-function linkedinDirectAuth() {
-  const errors = [];
-  let cookies = null;
-  let sourceName = "";
-  for (const source of COOKIE_SOURCES) {
-    try {
-      cookies = readLinkedInCookies(source);
-      sourceName = source.name;
-      break;
-    } catch (error) {
-      errors.push(error.message || String(error));
-    }
-  }
-  if (!cookies) throw new Error(`missing LinkedIn authenticated cookies in local browser stores: ${errors.join("; ")}`);
+function linkedinDirectAuthForSource(source) {
+  const cookies = readLinkedInCookies(source);
   const csrf = cookies.JSESSIONID.replace(/^"|"$/g, "");
   return {
-    sourceName,
+    sourceName: source.name,
     headers: {
       "accept": "application/vnd.linkedin.normalized+json+2.1",
       "csrf-token": csrf,
@@ -280,26 +295,47 @@ function linkedinDirectAuth() {
   };
 }
 
+function linkedinDirectAuthCandidates() {
+  const errors = [];
+  const candidates = [];
+  for (const source of COOKIE_SOURCES) {
+    try {
+      candidates.push(linkedinDirectAuthForSource(source));
+    } catch (error) {
+      errors.push(`${source.name}: ${error.message || String(error)}`);
+    }
+  }
+  if (!candidates.length) throw new Error(`missing LinkedIn authenticated cookies in local browser stores: ${errors.join("; ")}`);
+  return candidates;
+}
+
 async function linkedinDirectRequest(method, target, body = null, accept = "application/vnd.linkedin.normalized+json+2.1") {
-  const auth = linkedinDirectAuth();
-  const headers = { ...auth.headers, accept };
-  if (body !== null) headers["content-type"] = "application/json; charset=UTF-8";
-  const res = await fetch(new URL(target, "https://www.linkedin.com").toString(), {
-    method,
-    headers,
-    body: body === null ? undefined : JSON.stringify(body),
-    redirect: "manual",
-  });
-  const text = await res.text();
-  let json = null;
-  try { json = text ? JSON.parse(text) : null; } catch {}
-  return { ok: res.status >= 200 && res.status < 300, status: res.status, location: res.headers.get("location") || "", json, text: json ? "" : text.slice(0, 12000), responseURL: res.url };
+  const candidates = linkedinDirectAuthCandidates();
+  const attempts = [];
+  for (const auth of candidates) {
+    const headers = { ...auth.headers, accept };
+    if (body !== null) headers["content-type"] = "application/json; charset=UTF-8";
+    const res = await fetch(new URL(target, "https://www.linkedin.com").toString(), {
+      method,
+      headers,
+      body: body === null ? undefined : JSON.stringify(body),
+      redirect: "manual",
+    });
+    const text = await res.text();
+    let json = null;
+    try { json = text ? JSON.parse(text) : null; } catch {}
+    const out = { ok: res.status >= 200 && res.status < 300, status: res.status, location: res.headers.get("location") || "", json, text: json ? "" : text.slice(0, 12000), responseURL: res.url, sourceName: auth.sourceName };
+    if (out.ok || ![301, 302, 401, 403].includes(out.status)) return out;
+    attempts.push(`${auth.sourceName}:${out.status}`);
+  }
+  const last = attempts[attempts.length - 1] || "no-attempt";
+  return { ok: false, status: 0, location: "", json: null, text: `all LinkedIn cookie sources rejected (${attempts.join(", ") || last})`, responseURL: new URL(target, "https://www.linkedin.com").toString(), sourceName: "" };
 }
 
 async function verifyLivePostDirect(url, text) {
   const res = await linkedinDirectRequest("GET", url, null, "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
   if (!res.ok) return false;
-  return normalize(res.text || JSON.stringify(res.json || "")).includes(normalize(text).slice(0, 90));
+  return livePostTextMatches(res.text || JSON.stringify(res.json || ""), text);
 }
 
 async function postOrDryRunApi(args, text) {
@@ -323,6 +359,20 @@ async function postOrDryRunApi(args, text) {
   const verified = Boolean(result.url) && await verifyLivePostDirect(result.url, text);
   if (!verified) throw new Error(`LinkedIn API post created but live URL verification failed for ${result.url || "(missing url)"}`);
   console.log(JSON.stringify({ ok: true, url: result.url, verified: true, method: "linkedin_direct_cookie_voyager_api", urn: result.urn, activityUrn: result.activityUrn }));
+}
+
+async function postOrDryRunApiWithFallback(args, text) {
+  try {
+    return await postOrDryRunApi(args, text);
+  } catch (error) {
+    const message = error && error.message ? error.message : String(error);
+    if (message.includes("LinkedIn direct identity request failed")) {
+      requireBrowserAllowance(args);
+      console.error(`LinkedIn direct identity failed; falling back to page-context Voyager API: ${message}`);
+      return postOrDryRunPageApi(args, text);
+    }
+    throw error;
+  }
 }
 
 function postOrDryRunPageApi(args, text) {
@@ -948,10 +998,9 @@ function findPostUrlFromActivity(text) {
 
 function verifyLivePost(url, text) {
   linkedinSetBraveUrl(url);
-  const needle = normalize(text).slice(0, 90);
   const result = tryWaitFor("LinkedIn live post verification", () => {
     const snap = linkedinBodySnapshot(12000);
-    return { ok: normalize(snap.text || "").includes(needle), url: snap.url };
+    return { ok: livePostTextMatches(snap.text || "", text), url: snap.url };
   }, 6000);
   return Boolean(result.ok);
 }
@@ -1009,7 +1058,7 @@ function main() {
     if (process.env.SOCIAL_LINKEDIN_FORCE_BROWSER === "1") {
       return Promise.resolve().then(() => postOrDryRunPageApi(args, text));
     }
-    if (!args.recoverOnly) return postOrDryRunApi(args, text);
+    if (!args.recoverOnly) return postOrDryRunApiWithFallback(args, text);
     return Promise.resolve().then(() => {
       const recovered = findPostUrlFromActivity(text);
       const verified = Boolean(recovered.url) && verifyLivePost(recovered.url, text);

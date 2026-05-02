@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate the twice-daily 8bitconcepts AI insight queue.
+Generate the daily 8bitconcepts AI insight queue.
 
 The cadence is deliberately broad, but every post teaches something concrete,
 uses a rotating format, and routes back to an 8bitconcepts / Foundry proof
@@ -30,7 +30,13 @@ QUEUE_PATH = REPO / "marketing" / "daily-ai-insights-queue.json"
 LEDGER_PATH = REPO / "marketing" / "social-post-ledger.json"
 X_ACCOUNT = "@8bitconcepts"
 LINKEDIN_PROFILE = "https://www.linkedin.com/in/shane-cheek-9173473b6/"
-POST_TIMES_LOCAL = {"morning": "08:30", "afternoon": "14:30"}
+POST_TIMES_LOCAL = {
+    "targeted": "08:30",
+    "8bit": "10:30",
+    "nhs": "12:30",
+    "bya": "14:30",
+    "adb": "16:30",
+}
 
 
 TOPICS = [
@@ -91,11 +97,116 @@ TOPICS = [
 ]
 
 
+RESEARCH_FACTS = [
+    {
+        "product": "8bit",
+        "theme": "AI integration budgets",
+        "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+        "funnel": "8bitconcepts research",
+        "format": "little fact",
+        "asset": "Cost stack: data, integration, evals, observability, maintenance, model fees.",
+        "fact_key": "8bit:integration-tax:model-cost-10-20",
+        "x": "Little fact from the 8bit research stack: model API fees are usually 10-20% of the AI build cost. The rest is data plumbing, integration, evals, observability, and maintenance.",
+        "linkedin": "Little fact from the 8bit research stack: model API fees are usually 10-20% of an AI build. The bigger lines are data pipelines, system integration, evaluation, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.",
+    },
+    {
+        "product": "8bit",
+        "theme": "Shift handoff intelligence",
+        "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+        "funnel": "8bitconcepts research",
+        "format": "little fact",
+        "asset": "Handoff comparison: digital capture vs verbal retention.",
+        "fact_key": "8bit:shift-handoff:100-vs-40-60",
+        "x": "Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%. The lost category is usually the early warning.",
+        "linkedin": "Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%.\n\nThe dangerous loss is not the obvious critical issue. It is the developing trend that is not urgent yet.",
+    },
+    {
+        "product": "nhs",
+        "theme": "Live MCP verification",
+        "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "funnel": "Not Human Search research",
+        "format": "little fact",
+        "asset": "MCP claim vs live JSON-RPC handshake.",
+        "fact_key": "nhs:mcp-ecosystem:7118-417",
+        "x": "Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake. A manifest is not the same as a callable endpoint.",
+        "linkedin": "Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake.\n\nThat gap matters. Agents need a callable endpoint, not a badge or a static manifest.",
+    },
+    {
+        "product": "nhs",
+        "theme": "Greenfield MCP verticals",
+        "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "funnel": "Not Human Search research",
+        "format": "little fact",
+        "asset": "Vertical maturity: finance, health, education.",
+        "fact_key": "nhs:mcp-verticals:finance-health-education",
+        "x": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28. The agent ecosystem is crowded in tools and thin in regulated verticals.",
+        "linkedin": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28.\n\nThe agent ecosystem is crowded around tools and still thin in regulated verticals where the workflow value is high.",
+    },
+    {
+        "product": "bya",
+        "theme": "Local-first agent migration",
+        "route": "https://8bitconcepts.com/case-studies.html#bringyour",
+        "funnel": "Bring Your AI proof point",
+        "format": "little fact",
+        "asset": "Privacy boundary: remote discovery, local movement.",
+        "fact_key": "bya:case-study:no-data-remote-mcp",
+        "x": "Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents. The actual move runs locally.",
+        "linkedin": "Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents.\n\nThe product boundary is the point: discovery can happen through an agent surface, but private context moves locally.",
+    },
+    {
+        "product": "bya",
+        "theme": "On-device inference",
+        "route": "https://8bitconcepts.com/research/on-device-inference.html",
+        "funnel": "Bring Your AI research path",
+        "format": "little fact",
+        "asset": "Local inference as a privacy and cost boundary.",
+        "fact_key": "bya:on-device:local-context",
+        "x": "Little fact from the local-inference paper: the best model without local context can be worse than a smaller model next to the data. The useful system knows when to stay local.",
+        "linkedin": "Little fact from the local-inference paper: the best model without local context can be worse than a smaller model next to the data.\n\nFor agent tooling, that is the same product boundary BYA uses: keep private working context on the user's machine unless there is a real reason to move it.",
+    },
+    {
+        "product": "adb",
+        "theme": "AI workplace premium",
+        "route": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
+        "funnel": "AI Dev Board research",
+        "format": "little fact",
+        "asset": "Workplace mix and salary bands.",
+        "fact_key": "adb:remote-vs-onsite:hybrid-253469",
+        "x": "Little fact from the ADB hiring data: hybrid AI/ML roles averaged $253,469, ahead of remote at $218,273 and onsite at $216,846 across 9,161 classified roles.",
+        "linkedin": "Little fact from the ADB hiring data: hybrid AI/ML roles averaged $253,469, ahead of remote at $218,273 and onsite at $216,846 across 9,161 classified roles.\n\nThe practical read is that hybrid concentrates seniority and major-metro salary bands.",
+    },
+    {
+        "product": "adb",
+        "theme": "AI skill demand",
+        "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+        "funnel": "AI Dev Board research",
+        "format": "little fact",
+        "asset": "Skill demand vs salary.",
+        "fact_key": "adb:skills:agents-2437",
+        "x": "Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.",
+        "linkedin": "Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.\n\nVolume and negotiating leverage are not the same signal.",
+    },
+]
+
+
 def pick_topics(target: date) -> tuple[dict[str, str], dict[str, str]]:
     day_index = target.toordinal()
     morning = TOPICS[day_index % len(TOPICS)]
     afternoon = TOPICS[(day_index + 3) % len(TOPICS)]
     return morning, afternoon
+
+
+def pick_research_facts(target: date) -> list[dict[str, str]]:
+    day_index = target.toordinal()
+    facts_by_product: dict[str, list[dict[str, str]]] = {}
+    for fact in RESEARCH_FACTS:
+        facts_by_product.setdefault(fact["product"], []).append(fact)
+
+    selected: list[dict[str, str]] = []
+    for offset, product in enumerate(("8bit", "nhs", "bya", "adb")):
+        product_facts = facts_by_product[product]
+        selected.append(product_facts[(day_index + offset) % len(product_facts)])
+    return selected
 
 
 def fingerprint(text: str) -> str:
@@ -148,6 +259,38 @@ More field notes:
 """
 
 
+def render_research_fact_post(fact: dict[str, str]) -> str:
+    slot = fact["product"]
+    post_time = POST_TIMES_LOCAL[slot]
+    return f"""### {fact["product"].upper()} Research Fact
+
+Post time: {post_time} America/Los_Angeles
+Theme: {fact["theme"]}
+Format: {fact["format"]}
+Route: {fact["route"]}
+Funnel: {fact["funnel"]}
+Asset brief: {fact["asset"]}
+Fact key: {fact["fact_key"]}
+
+#### X
+
+```text
+{fact["x"]}
+
+Source: {fact["route"]}
+```
+
+#### LinkedIn
+
+```text
+{fact["linkedin"]}
+
+Source:
+{fact["route"]}
+```
+"""
+
+
 def queue_item(target: date, slot: str, topic: dict[str, str]) -> dict[str, object]:
     body = topic[slot]
     route = topic["route"]
@@ -192,9 +335,59 @@ def queue_item(target: date, slot: str, topic: dict[str, str]) -> dict[str, obje
     }
 
 
+def research_fact_queue_item(
+    target: date,
+    fact: dict[str, str],
+    existing_fingerprints: set[str],
+) -> dict[str, object]:
+    slot = fact["product"]
+    route = fact["route"]
+    x_copy = f"{fact['x']}\n\nSource: {route}"
+    linkedin_copy = f"{fact['linkedin']}\n\nSource:\n{route}"
+    x_fingerprint = fingerprint(x_copy)
+    linkedin_fingerprint = fingerprint(linkedin_copy)
+    return {
+        "id": f"daily-research-fact-{target.isoformat()}-{slot}",
+        "kind": "research_fact",
+        "date": target.isoformat(),
+        "slot": slot,
+        "post_time_local": POST_TIMES_LOCAL[slot],
+        "timezone": "America/Los_Angeles",
+        "product": fact["product"],
+        "theme": fact["theme"],
+        "format": fact["format"],
+        "asset_brief": fact["asset"],
+        "route": route,
+        "funnel": fact["funnel"],
+        "fact_key": fact["fact_key"],
+        "research_sources": [route],
+        "channels": {
+            "x": {
+                "account": X_ACCOUNT,
+                "copy": x_copy,
+                "fingerprint": x_fingerprint,
+                "duplicate": x_fingerprint in existing_fingerprints,
+            },
+            "linkedin": {
+                "profile": LINKEDIN_PROFILE,
+                "copy": linkedin_copy,
+                "fingerprint": linkedin_fingerprint,
+                "duplicate": linkedin_fingerprint in existing_fingerprints,
+            },
+        },
+        "quality_gate": [
+            "one small verified fact",
+            "source-backed by 8bit research or case-study page",
+            "routes to the relevant product or paper",
+            "no sales-first CTA",
+            "materially different fact_key from previous posts",
+        ],
+    }
+
+
 def render(target: date) -> str:
-    _morning, afternoon = pick_topics(target)
     targeted = build_target_research(target)
+    facts = pick_research_facts(target)
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     return f"""# Daily AI Insight Drafts
 
@@ -203,10 +396,10 @@ Post date: {target.isoformat()}
 X account: {X_ACCOUNT}
 LinkedIn profile: {LINKEDIN_PROFILE}
 
-Rule: two posts per day, always AI, always informative, always routed to an 8bitconcepts / Foundry proof point, never sales-first. One post per day is a documented target/company/person research post with natural tag framing and no negative callout.
+Rule: multiple posts per day, always AI, always informative, always routed to an 8bitconcepts / Foundry proof point, never sales-first. Each daily run includes one documented target/company/person research post plus four small research facts across 8bit, NHS, BYA, and ADB.
 
-{render_targeted_research_post(targeted, POST_TIMES_LOCAL["morning"])}
-{render_post("Afternoon Post", afternoon, "afternoon")}
+{render_targeted_research_post(targeted, POST_TIMES_LOCAL["targeted"])}
+{"".join(render_research_fact_post(fact) for fact in facts)}
 Machine queue: `marketing/daily-ai-insights-queue.json`
 
 ## Operator Checklist
@@ -215,15 +408,19 @@ Machine queue: `marketing/daily-ai-insights-queue.json`
 - Teach one thing specific.
 - Route to methodology, data, or a working artifact.
 - For the morning post, use the target mention/tag naturally and never as a dunk or negative callout.
+- For research facts, keep the post to one claim and one source link.
 - Refresh stale stats before posting old drafts.
 - If the morning research flags a paper trigger, draft the paper before the next recurring distribution run.
 """
 
 
 def render_queue(target: date) -> dict[str, object]:
-    _morning, afternoon = pick_topics(target)
     targeted = build_target_research(target)
     existing = posted_fingerprints()
+    fact_items = [
+        research_fact_queue_item(target, fact, existing)
+        for fact in pick_research_facts(target)
+    ]
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "account_policy": {
@@ -231,10 +428,10 @@ def render_queue(target: date) -> dict[str, object]:
             "linkedin": LINKEDIN_PROFILE,
             "hacker_news": "8bitconcepts; only for technical systems artifacts",
         },
-        "cadence": "two AI insight posts per day; one daily targeted documented research post",
+        "cadence": "five AI insight posts per day; one targeted documented research post plus four rotating research facts across 8bit, NHS, BYA, and ADB",
         "items": [
-            targeted_queue_item(target, targeted, existing, POST_TIMES_LOCAL["morning"]),
-            queue_item(target, "afternoon", afternoon),
+            targeted_queue_item(target, targeted, existing, POST_TIMES_LOCAL["targeted"]),
+            *fact_items,
         ],
     }
 
