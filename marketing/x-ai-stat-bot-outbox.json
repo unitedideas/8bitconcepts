@@ -32,13 +32,7 @@
       "fact_id": "ai-jobs-total-2026-04-27",
       "fact_key": "c6e848ef61cd7a3258d235ee",
       "fingerprint": "399b097978684dc0",
-      "copy": "The AI Dev Board index had 9,161 AI/ML roles across 524 companies on 2026-04-27.",
-      "last_publish_attempt": {
-        "automation_id": "8bit-smart-social-publisher",
-        "checked_at": "2026-04-30T04:47:42Z",
-        "status": "blocked_missing_credentials",
-        "blocker": "Official X API credentials are missing from Keychain/env: x-api-key, x-api-secret, x-access-token, x-access-token-secret, twitter-api-key, twitter-api-secret, twitter-access-token, twitter-access-token-secret, x-bearer-token, and X_POSTER_COMMAND. Scheduled publisher is not allowed to use Browser/Computer Use, so active @8bitconcepts identity could not be verified through the posting API and no public post was attempted."
-      }
+      "copy": "The AI Dev Board index had 9,161 AI/ML roles across 524 companies on 2026-04-27."
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
@@ -53,21 +47,11 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
-      "last_publish_attempt": {
-        "automation_id": "8bit-x-agent-publisher",
-        "codex_automation_id": "temp-1p-8bit-x-agent-publisher",
-        "checked_at": "2026-05-01T13:22:44Z",
-        "status": "blocked_browser_timeout",
-        "content_lock": "public-action-locks/social-content/d98634ae51b8b3ec.json",
-        "blocker": "Blocked before a verified public X post: selected x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28, fact-checked https://8bitconcepts.com/research/the-integration-tax.html as HTTP 200 with the 10-20% model API cost claim and integration/evals/observability framing, social-editor approved the final copy unchanged, and sync-state social-content lock d98634ae51b8b3ec was claimed. First tools/x-brave-post.js attempt failed before account verification because the X window matcher reused a LinkedIn tab. Same-run repair patched Brave window targeting to match hostnames and added x.com URL verification. Retry then failed with `spawnSync osascript ETIMEDOUT` and returned no live status URL. Read-only profile recovery under Computer Use lease found no matching @8BitConcepts status URL (`matching profile tweet failed: null`). No public X post was ledgered.",
-        "next_action": "Debug the remaining osascript timeout in tools/x-brave-post.js or replace the browser path with an API publisher; rerun this same locked outbox item only if no live status URL exists."
-      },
-      "last_blocker": "Blocked before a verified public X post: selected x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28, fact-checked https://8bitconcepts.com/research/the-integration-tax.html as HTTP 200 with the 10-20% model API cost claim and integration/evals/observability framing, social-editor approved the final copy unchanged, and sync-state social-content lock d98634ae51b8b3ec was claimed. First tools/x-brave-post.js attempt failed before account verification because the X window matcher reused a LinkedIn tab. Same-run repair patched Brave window targeting to match hostnames and added x.com URL verification. Retry then failed with `spawnSync osascript ETIMEDOUT` and returned no live status URL. Read-only profile recovery under Computer Use lease found no matching @8BitConcepts status URL (`matching profile tweet failed: null`). No public X post was ledgered."
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
-      "status": "posted",
+      "status": "drafted",
       "created_at": "2026-04-28T12:00:02+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -78,22 +62,7 @@
       "fact_id": "junior-share-2026-04-27",
       "fact_key": "ca00110a6e9b669c803921d1",
       "fingerprint": "b2c2b4042b5d360d",
-      "copy": "Only 6.6% of classified AI/ML roles were entry-level. Senior, lead, and principal roles made up 67%.",
-      "updated_at": "2026-05-01T16:08:52.332Z",
-      "posted_at": "2026-05-01T16:08:52.332Z",
-      "url": "https://x.com/8BitConcepts/status/2050245834865021000",
-      "posted_url": "https://x.com/8BitConcepts/status/2050245834865021000",
-      "published_fingerprint": "1cda802a062af5a8",
-      "published_copy": "Only 6.6% of classified AI/ML roles are entry-level. Senior, lead, and principal roles make up 67%.\n\nThe hiring signal is not \"AI jobs are gone.\" It is \"AI teams are buying judgment, not training it.\"\n\nData: https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
-      "last_publish_attempt": {
-        "automation_id": "8bit-x-agent-publisher",
-        "codex_automation_id": "temp-1p-8bit-x-agent-publisher",
-        "checked_at": "2026-05-01T16:08:52.332Z",
-        "status": "posted",
-        "content_lock": "public-action-locks/social-content/1cda802a062af5a8.json",
-        "url": "https://x.com/8BitConcepts/status/2050245834865021000"
-      },
-      "last_blocker": ""
+      "copy": "Only 6.6% of classified AI/ML roles were entry-level. Senior, lead, and principal roles made up 67%."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:55:03+00:00-e715f4d6",
@@ -157,7 +126,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
-      "status": "posted",
+      "status": "drafted",
       "created_at": "2026-04-28T18:26:11+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -168,29 +137,7 @@
       "fact_id": "developer-tools-mcp-category",
       "fact_key": "22b86351dd4354cb04d47fb4",
       "fingerprint": "6c4882c5a4070d25",
-      "copy": "Developer tools account for 1,672 agent-ready sites, 23.8% of the indexed MCP/agent-ready web.",
-      "updated_at": "2026-05-02T02:19:00Z",
-      "posted_at": "2026-05-02T02:19:00Z",
-      "url": "https://x.com/8BitConcepts/status/2050399400929923457",
-      "posted_url": "https://x.com/8BitConcepts/status/2050399400929923457",
-      "published_fingerprint": "ecc7d855363125f1",
-      "published_copy": "Developer tools are still the largest category in the agent-ready web: 1,691 of 7,090 sites in the current NHS digest, or 23.8% of the index. The interesting part is the composition, not just the size.\n\nMethod + context: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "last_publish_attempt": {
-        "automation_id": "8bit-x-agent-publisher",
-        "checked_at": "2026-05-02T02:19:00Z",
-        "status": "posted",
-        "content_lock": "public-action-locks/social-content/ecc7d855363125f1.json",
-        "url": "https://x.com/8BitConcepts/status/2050399400929923457"
-      },
-      "last_attempt_verified_facts": [
-        "https://nothumansearch.ai/digest returned HTTP 200",
-        "https://nothumansearch.ai/digest.json returned HTTP 200 application/json",
-        "digest.json generated_at=2026-05-02T02:13:30Z",
-        "digest.json total_sites=7090",
-        "digest.json developer category count=1691 (23.8%)",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200"
-      ],
-      "last_blocker": ""
+      "copy": "Developer tools account for 1,672 agent-ready sites, 23.8% of the indexed MCP/agent-ready web."
     },
     {
       "id": "x-ai-stat-2026-04-28T19:33:13+00:00-31836ea7",
@@ -257,7 +204,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-29T00:21:55+00:00-d0b36670",
-      "status": "blocked",
+      "status": "queued",
       "created_at": "2026-04-29T00:21:55+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -267,10 +214,11 @@
       "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
       "fact_id": "research-premium-vs-genai",
       "fact_key": "d0b366705683b61e40d789eb",
-      "fingerprint": "7f578dbb9c5027ea",
-      "copy": "Research AI roles averaged $273,880, while generative-AI roles averaged $230,707 despite having about 2.5x more openings.",
-      "updated_at": "2026-04-29T00:23:59Z",
-      "blocker": "Could not verify active X account from this launchd worker: Computer Use returned cgWindowNotFound for Brave and Chrome, and direct screenshot capture was black. No public post attempted."
+      "fingerprint": "559ac6e199455d2a",
+      "copy": "Research AI roles pay a $43k premium over generative-AI roles: $273,880 vs $230,707 on average, with 737 openings vs 1,846. https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "updated_at": "2026-05-02T18:52:35Z",
+      "blocker": "tools/x-brave-post.js authenticated the @8BitConcepts session, but direct CreateTweet returned AuthorizationError 344 (daily limit reached) and the browser fallback then failed `X composer keyboard entry verification` with only a newline in the editor. No live status URL was created.",
+      "note": "Re-queued after agent-social-editor approval so a later X publisher run can retry this exact copy when X posting is available again."
     },
     {
       "id": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2",
