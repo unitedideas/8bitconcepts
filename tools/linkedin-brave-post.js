@@ -273,7 +273,9 @@ function linkedinDirectAuth() {
       "x-li-lang": "en_US",
       "x-li-track": JSON.stringify({ clientVersion: "1.13.14473", mpVersion: "1.13.14473", osName: "web", timezoneOffset: -7, timezone: "America/Los_Angeles" }),
       "user-agent": "Mozilla/5.0",
-      "cookie": Object.entries(cookies).map(([name, value]) => `${name}=${encodeURIComponent(value)}`).join("; "),
+      // Cookie header values must stay raw; percent-encoding breaks LinkedIn's
+      // session parsing and causes Voyager to 400 before identity verification.
+      "cookie": Object.entries(cookies).map(([name, value]) => `${name}=${value}`).join("; "),
     },
   };
 }
@@ -321,6 +323,31 @@ async function postOrDryRunApi(args, text) {
   const verified = Boolean(result.url) && await verifyLivePostDirect(result.url, text);
   if (!verified) throw new Error(`LinkedIn API post created but live URL verification failed for ${result.url || "(missing url)"}`);
   console.log(JSON.stringify({ ok: true, url: result.url, verified: true, method: "linkedin_direct_cookie_voyager_api", urn: result.urn, activityUrn: result.activityUrn }));
+}
+
+function postOrDryRunPageApi(args, text) {
+  ensureLinkedInBackgroundTab(args);
+  const me = verifyLinkedInPageIdentity(args);
+  if (args.dryRun) {
+    console.log(JSON.stringify({ ok: true, dryRun: true, method: "linkedin_page_voyager_api", identity: { name: me.name, headline: me.headline, plainId: me.plainId } }));
+    return;
+  }
+  const created = linkedinPageRequest("POST", "/voyager/api/contentcreation/normShares", postTextPayload(text));
+  if (!created || !created.ok) {
+    throw new Error(`LinkedIn page-context post request failed: ${JSON.stringify({ status: created && created.status, responseURL: created && created.responseURL, text: created && created.text ? created.text.slice(0, 500) : "" })}`);
+  }
+  const result = extractPostResult(created.json);
+  let url = result.url || "";
+  let verified = Boolean(url) && verifyLivePost(url, text);
+  if (!verified) {
+    const recovered = findPostUrlFromActivity(text);
+    url = recovered.url || "";
+    verified = Boolean(url) && verifyLivePost(url, text);
+  }
+  if (!verified) {
+    throw new Error(`LinkedIn page-context post created but live URL verification failed for ${url || "(missing url)"}`);
+  }
+  console.log(JSON.stringify({ ok: true, url, verified: true, method: "linkedin_page_voyager_api", urn: result.urn, activityUrn: result.activityUrn }));
 }
 
 function linkedinJS(js) {
@@ -979,6 +1006,9 @@ function main() {
   if (!text) throw new Error("post text is empty");
 
   const run = () => {
+    if (process.env.SOCIAL_LINKEDIN_FORCE_BROWSER === "1") {
+      return Promise.resolve().then(() => postOrDryRunPageApi(args, text));
+    }
     if (!args.recoverOnly) return postOrDryRunApi(args, text);
     return Promise.resolve().then(() => {
       const recovered = findPostUrlFromActivity(text);
