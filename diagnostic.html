@@ -38,7 +38,7 @@
       --green: #4ade80;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       background: var(--slate);
@@ -47,6 +47,7 @@
       font-size: 16px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     nav {
@@ -142,6 +143,8 @@
       border-radius: 12px;
       padding: 36px;
       margin-bottom: 48px;
+      max-width: 100%;
+      overflow: hidden;
     }
 
     .price-row {
@@ -185,6 +188,7 @@
       text-align: center;
       font-size: 13px;
       color: var(--text-dimmer);
+      overflow-wrap: break-word;
     }
 
     .what-you-get {
@@ -304,6 +308,49 @@
       line-height: 1.4;
     }
 
+    .source-note {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      line-height: 1.6;
+      margin-top: -12px;
+      margin-bottom: 28px;
+    }
+
+    .source-note a,
+    .source-list a {
+      color: var(--terra);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(217,119,87,0.35);
+    }
+
+    .source-list {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      margin: 24px 0 0;
+      font-size: 13px;
+      color: var(--text-dimmer);
+      line-height: 1.6;
+    }
+
+    .source-list h2 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 10px;
+    }
+
+    .source-list ol {
+      padding-left: 20px;
+    }
+
+    .source-list li {
+      margin-bottom: 10px;
+      overflow-wrap: anywhere;
+    }
+
     .faq {
       margin-bottom: 48px;
     }
@@ -387,6 +434,15 @@
       .page-wrap { padding: 88px 20px 60px; }
       nav { padding: 0 20px; }
       .nav-links { display: none; }
+      h1 { overflow-wrap: break-word; }
+      .price-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+      .price-amount { font-size: 42px; }
+      .price-desc { font-size: 14px; }
+      .buy-btn { padding: 15px 18px; }
       .stat-row { grid-template-columns: 1fr 1fr; }
       .price-card { padding: 24px; }
     }
@@ -471,18 +527,18 @@
     </div>
 
     <div class="context">
-      <p>BCG surveyed 1,000 CxOs and found 74% of companies have yet to generate tangible value from AI. MIT research puts generative AI pilot failure rates at 95%. Most explanations focus on technology, data quality, or change management.</p>
+      <p>BCG surveyed 1,000 CxOs and found 74% of companies had yet to generate tangible value from AI. MIT Project NANDA's 2025 GenAI Divide report puts the share of integrated AI pilots with no measurable P&amp;L impact at 95%.<a href="#source-bcg">[1]</a><a href="#source-mit">[2]</a> Most explanations focus on technology, data quality, or change management.</p>
 
       <p>The primary variable is organizational -- specifically, where AI lives in the org chart and what ceiling that placement creates. This is diagnosable in 30 minutes from the answers to five questions.</p>
 
       <div class="stat-row">
         <div class="stat-box">
           <div class="stat-num">74%</div>
-          <div class="stat-label">of companies fail to generate tangible AI value (BCG, n=1,000)</div>
+          <div class="stat-label">of companies had yet to show tangible AI value in BCG's 2024 survey (n=1,000)</div>
         </div>
         <div class="stat-box">
           <div class="stat-num">95%</div>
-          <div class="stat-label">of generative AI pilots fail to deliver business impact (MIT)</div>
+          <div class="stat-label">of integrated GenAI pilots showed no measurable P&amp;L impact in MIT Project NANDA's 2025 report</div>
         </div>
         <div class="stat-box">
           <div class="stat-num">$500</div>
@@ -490,7 +546,17 @@
         </div>
       </div>
 
-      <p>The companies in the 26% that generate real AI value invest 70% of their resources on organizational change, not technology. The diagnostic tells you what that change is for your specific situation.</p>
+      <p class="source-note">These are market-level failure-rate signals, not a claim that every company in the same category fails for the same reason.</p>
+
+      <p>The companies in the 26% that generate real AI value invest 70% of their resources on people and process, not algorithms. The diagnostic tells you what organizational change is most likely to matter for your specific situation.<a href="#source-bcg">[1]</a></p>
+
+      <div class="source-list" aria-label="Sources">
+        <h2>Sources</h2>
+        <ol>
+          <li id="source-bcg">Boston Consulting Group, <a href="https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value" target="_blank" rel="noopener">AI Adoption in 2024: 74% of Companies Struggle to Achieve and Scale Value</a>, October 24, 2024.</li>
+          <li id="source-mit">MIT Project NANDA, <a href="https://www.pi.inc/docs/356103613275648" target="_blank" rel="noopener">The GenAI Divide: State of AI in Business 2025</a>, July 2025.</li>
+        </ol>
+      </div>
     </div>
 
     <div class="faq">

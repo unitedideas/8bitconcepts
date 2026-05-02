@@ -125,7 +125,7 @@
       --text-dimmer: #5a5c61;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       background: var(--slate);
@@ -134,6 +134,7 @@
       font-size: 16px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     a { color: inherit; }
@@ -231,6 +232,117 @@
     }
 
     .hero-sub strong { color: var(--text); font-weight: 500; }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 6px;
+      font-size: 15px;
+      text-decoration: none;
+      transition: opacity 0.15s, border-color 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--terra);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      font-weight: 500;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover { border-color: var(--terra); }
+
+    .hero-proof {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 8px 32px 32px;
+    }
+
+    .hero-proof-inner {
+      display: grid;
+      grid-template-columns: 1.1fr repeat(3, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .hero-proof-label,
+    .hero-proof-card {
+      background: var(--slate-1);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .hero-proof-label {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.55;
+    }
+
+    .hero-proof-label strong {
+      display: block;
+      color: var(--terra);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-proof-card {
+      display: block;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+
+    .hero-proof-card:hover {
+      border-color: rgba(217,119,87,0.35);
+      transform: translateY(-1px);
+    }
+
+    .hero-proof-card span {
+      display: block;
+      color: var(--terra);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-proof-card strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+
+    .hero-proof-card em {
+      display: block;
+      color: var(--text-dim);
+      font-size: 13px;
+      font-style: normal;
+      line-height: 1.45;
+    }
 
     /* LIVE PAPERS HERO GRID */
     .live-wrap {
@@ -559,6 +671,11 @@
 
     footer a:hover { color: var(--terra); }
 
+    footer code {
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
     .footer-row {
       margin-bottom: 12px;
     }
@@ -573,6 +690,11 @@
       .nav-links { gap: 14px; }
       .nav-links a:not(.nav-cta) { display: none; }
       .hero { padding: 104px 20px 24px; }
+      .hero h1 { overflow-wrap: break-word; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas a { width: 100%; text-align: center; }
+      .hero-proof { padding: 4px 20px 28px; }
+      .hero-proof-inner { grid-template-columns: 1fr; }
       .live-wrap { padding: 32px 20px 60px; }
       .subscribe-section { padding: 48px 20px; }
       .atlas-section { padding: 60px 20px; }
@@ -589,7 +711,7 @@
       <a href="/work-with-us.html">Work with us</a>
       <a href="/case-studies.html">Case studies</a>
       <a href="/research/overview.html">Research</a>
-      <a href="/work-with-us.html#lead-form" class="nav-cta">Book a call</a>
+      <a href="/work-with-us.html#lead-form" class="nav-cta">Request intro</a>
     </div>
   </nav>
 
@@ -597,10 +719,34 @@
   <div class="hero">
     <div class="hero-eyebrow">Embedded AI consulting</div>
     <h1>Your team is doing work AI should be doing.</h1>
-    <p class="hero-sub">We embed in your business for a few weeks, find the workflows draining your people's hours, and ship the AI systems that take that work off them &mdash; permanently. <strong>Costs less than a senior hire. Compounds forever.</strong></p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;">
-      <a href="/work-with-us.html#lead-form" style="display:inline-block;background:var(--terra);color:#ffffff;padding:13px 24px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;transition:opacity 0.15s;" onmouseover="this.style.opacity=0.88" onmouseout="this.style.opacity=1">Book a 30-min intro call &rarr;</a>
-      <a href="/work-with-us.html#offers" style="display:inline-block;background:transparent;color:var(--text);padding:13px 22px;border-radius:6px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid var(--border);transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--terra)'" onmouseout="this.style.borderColor='var(--border)'">How it works</a>
+    <p class="hero-sub">We embed with operating businesses that have repeat ops, support, data-prep, and review workflows &mdash; especially local and Pacific Northwest teams that need leverage before another senior hire makes sense. <strong>We find one workflow worth automating, ship it into your stack, and leave the runbooks behind.</strong></p>
+    <div class="hero-ctas">
+      <a href="/work-with-us.html#lead-form" class="btn-primary">Request a 30-min intro &rarr;</a>
+      <a href="/work-with-us.html#offers" class="btn-secondary">How it works</a>
+    </div>
+  </div>
+
+  <div class="hero-proof" aria-label="Proof of work">
+    <div class="hero-proof-inner">
+      <div class="hero-proof-label">
+        <strong>Proof near the ask</strong>
+        Same team, same operating model: live AI products, agent-readable APIs, and a research pipeline built on public data.
+      </div>
+      <a class="hero-proof-card" href="/case-studies.html#aidevboard">
+        <span>Case study</span>
+        <strong>aidevboard.com</strong>
+        <em>AI/ML job board with a real agent API and paid loop.</em>
+      </a>
+      <a class="hero-proof-card" href="/case-studies.html#nothumansearch">
+        <span>Case study</span>
+        <strong>nothumansearch.ai</strong>
+        <em>Agent-first search index with live MCP verification.</em>
+      </a>
+      <a class="hero-proof-card" href="/research/overview.html">
+        <span>Research system</span>
+        <strong>22 papers, 6 live-data refreshes</strong>
+        <em>Public evidence from the same build discipline.</em>
+      </a>
     </div>
   </div>
 
@@ -609,14 +755,14 @@
     <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;">What changes for you</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
       <div style="background:var(--slate-1);border:1px solid var(--border);border-radius:10px;padding:24px 26px;display:flex;flex-direction:column;">
-        <div style="font-size:26px;font-weight:700;letter-spacing:-0.025em;color:var(--terra);margin-bottom:6px;line-height:1.1;">10&ndash;15 hrs/wk</div>
-        <h3 style="font-size:15px;letter-spacing:-0.01em;color:var(--text);margin-bottom:8px;font-weight:600;">reclaimed per operator</h3>
-        <p style="font-size:14px;color:var(--text-dim);line-height:1.55;margin:0;">The ops, support, data-prep, and review work AI should be doing &mdash; we build the systems that do it, so your people stop.</p>
+        <div style="font-size:26px;font-weight:700;letter-spacing:-0.025em;color:var(--terra);margin-bottom:6px;line-height:1.1;">5&ndash;15 hrs/wk</div>
+        <h3 style="font-size:15px;letter-spacing:-0.01em;color:var(--text);margin-bottom:8px;font-weight:600;">targeted per operator</h3>
+        <p style="font-size:14px;color:var(--text-dim);line-height:1.55;margin:0;">A planning range for repetitive ops, support, data-prep, and review workflows. We validate the actual number in the audit before building.</p>
       </div>
       <div style="background:var(--slate-1);border:1px solid rgba(217,119,87,0.35);border-radius:10px;padding:24px 26px;display:flex;flex-direction:column;">
         <div style="font-size:26px;font-weight:700;letter-spacing:-0.025em;color:var(--terra);margin-bottom:6px;line-height:1.1;">2&ndash;3&times;</div>
-        <h3 style="font-size:15px;letter-spacing:-0.01em;color:var(--text);margin-bottom:8px;font-weight:600;">capacity with the same headcount</h3>
-        <p style="font-size:14px;color:var(--text-dim);line-height:1.55;margin:0;">Grow without burning out the people you have or making hires you can't yet justify.</p>
+        <h3 style="font-size:15px;letter-spacing:-0.01em;color:var(--text);margin-bottom:8px;font-weight:600;">workflow capacity target</h3>
+        <p style="font-size:14px;color:var(--text-dim);line-height:1.55;margin:0;">An upside target for the specific workflow we ship, not a blanket company-wide promise.</p>
       </div>
       <div style="background:var(--slate-1);border:1px solid var(--border);border-radius:10px;padding:24px 26px;display:flex;flex-direction:column;">
         <div style="font-size:26px;font-weight:700;letter-spacing:-0.025em;color:var(--terra);margin-bottom:6px;line-height:1.1;">Out-execute</div>
