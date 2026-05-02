@@ -27,6 +27,8 @@ QUEUE_PATH = REPO / "marketing" / "daily-portfolio-social-queue.json"
 LEDGER_PATH = REPO / "marketing" / "social-post-ledger.json"
 X_ACCOUNT = "@8bitconcepts"
 LINKEDIN_PROFILE = "https://www.linkedin.com/in/shane-cheek-9173473b6/"
+URL_LENGTH_BUDGET = 23
+X_MAX_LENGTH = 280
 
 
 @dataclass(frozen=True)
@@ -54,6 +56,22 @@ def fingerprint(text: str) -> str:
 
 def strip_code(value: str) -> str:
     return value.strip().strip("`")
+
+
+def clean_text(value: str) -> str:
+    value = re.sub(r"`+", "", value)
+    value = value.replace("SPT/ACP", "agent-payment rails")
+    value = value.replace("x402/MPP", "machine-payment rails")
+    value = value.replace("private-preview-gated", "still private-preview gated")
+    return " ".join(value.split())
+
+
+def safe_next_move(value: str) -> str:
+    cleaned = clean_text(value)
+    lowered = cleaned.lower()
+    if "mcp-org/punkpeye" in lowered or "unitedideas" in lowered:
+        return "keep distribution moving without platform-specific account dependencies"
+    return cleaned
 
 
 def parse_active_portfolio(index_path: Path) -> list[Business]:
@@ -91,40 +109,35 @@ def parse_active_portfolio(index_path: Path) -> list[Business]:
 
 
 def clipped(value: str, limit: int) -> str:
-    value = " ".join(value.split())
+    value = clean_text(value)
     if len(value) <= limit:
         return value
-    return value[: limit - 1].rstrip() + "."
+    cut = value[: limit - 1].rstrip()
+    if " " in cut:
+        cut = cut.rsplit(" ", 1)[0].rstrip()
+    return cut.rstrip(" ,;:-") + "."
 
 
-def x_copy(business: Business, angle_index: int) -> str:
-    primary = clipped(business.primary_job, 86)
-    motion = clipped(business.current_motion, 84)
-    next_move = clipped(business.next_move, 82)
-    templates = [
-        f"{business.name} is worth talking about because it is not a deck. {primary}\n\nCurrent motion: {motion}\n\n{business.url}",
-        f"Current Foundry proof point: {business.name}.\n\nIt tests a concrete wedge: {primary}\n\nThe next useful move is also concrete: {next_move}\n\n{business.url}",
-        f"A useful AI product signal is whether the work creates a reusable surface.\n\n{business.name} does that through: {primary}\n\nLive route: {business.url}",
-        f"{business.name} is the daily operator note today.\n\nThe interesting part is not the landing page. It is the motion: {motion}\n\n{business.url}",
-        f"The next move for {business.name}: {next_move}\n\nThat is the useful level for AI products: one live artifact, one next constraint, one measurable surface.\n\n{business.url}",
-    ]
-    return templates[angle_index % len(templates)]
+def first_clause(value: str, limit: int) -> str:
+    cleaned = clean_text(value)
+    for separator in ("; ", ": ", ". ", ", "):
+        head = cleaned.split(separator, 1)[0].strip()
+        if len(head) >= 24:
+            return clipped(head, limit)
+    return clipped(cleaned, limit)
 
 
-def linkedin_copy(business: Business, angle_index: int) -> str:
-    templates = [
-        f"{business.name} is one of the current Foundry businesses worth watching.\n\nThe job is simple: {business.primary_job}\n\nCurrent motion:\n{business.current_motion}\n\nThe next move is not broad strategy. It is this:\n{business.next_move}\n\nLive route:\n{business.url}",
-        f"Daily Foundry business note: {business.name}.\n\nThis is the operating shape:\n\n1. Stage: {business.stage}.\n2. Job: {business.primary_job}\n3. Motion: {business.current_motion}\n4. Next constraint: {business.next_move}\n\nThe useful test is whether this keeps producing public proof instead of internal planning.\n\n{business.url}",
-        f"{business.name} is a good example of how I want these products to compound.\n\nOne artifact should do more than one job. It should serve users, give agents something inspectable, create a marketing surface, and expose the next bottleneck.\n\nRight now the bottleneck is:\n{business.next_move}\n\n{business.url}",
-        f"The practical question for {business.name} is not whether the idea is interesting.\n\nIt is whether the current motion keeps shrinking the distance between proof and distribution:\n{business.current_motion}\n\nNext useful move:\n{business.next_move}\n\n{business.url}",
-        f"{business.name} is the portfolio note today.\n\nWhat it does:\n{business.primary_job}\n\nWhy it matters operationally:\n{business.current_motion}\n\nWhat needs to happen next:\n{business.next_move}\n\n{business.url}",
-    ]
-    return templates[angle_index % len(templates)]
+def x_length(text: str) -> int:
+    text = text.strip()
+    if not text:
+        return 0
+    parts = text.split()
+    return sum(URL_LENGTH_BUDGET if token.startswith("http://") or token.startswith("https://") else len(token) for token in parts) + max(0, len(parts) - 1)
 
 
-def posted_fingerprints() -> set[str]:
+def existing_fingerprints() -> dict[str, set[str]]:
     if not LEDGER_PATH.exists():
-        return set()
+        return {}
     ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
     statuses = {
         "posted",
@@ -133,15 +146,49 @@ def posted_fingerprints() -> set[str]:
         "claimed",
         "deferred_recent_related_post",
     }
-    return {
-        item["fingerprint"]
-        for item in ledger.get("items", [])
-        if item.get("fingerprint") and item.get("status") in statuses
-    }
+    fingerprints: dict[str, set[str]] = {}
+    for item in ledger.get("items", []):
+        if item.get("fingerprint") and item.get("status") in statuses:
+            fingerprints.setdefault(item["fingerprint"], set()).add(item.get("id", ""))
+    return fingerprints
+
+
+def x_copy(business: Business, angle_index: int) -> str:
+    primary = first_clause(business.primary_job, 88)
+    motion = first_clause(business.current_motion, 76)
+    next_move = first_clause(safe_next_move(business.next_move), 74)
+    templates = [
+        f"{primary}\n\nCurrent move at {business.name}: {motion}\n\n{business.url}",
+        f"{primary}\n\nNext move for {business.name}: {next_move}\n\n{business.url}",
+        f"{business.name} is live: {business.url}\n\n{primary}\n\nConstraint: {next_move}",
+        f"{primary}\n\nLive surface: {business.url}\n\nCurrent constraint: {next_move}",
+        f"{primary}\n\n{business.name} is shipping around this constraint: {motion}\n\n{business.url}",
+    ]
+    for template in templates[angle_index % len(templates):] + templates[: angle_index % len(templates)]:
+        if x_length(template) <= X_MAX_LENGTH and not template.endswith(".."):
+            return template
+    fallback = f"{primary}\n\nNext move: {next_move}\n\n{business.url}"
+    if x_length(fallback) > X_MAX_LENGTH:
+        fallback = f"{primary}\n\n{business.url}"
+    return fallback
+
+
+def linkedin_copy(business: Business, angle_index: int) -> str:
+    primary = clipped(business.primary_job, 120)
+    motion = clipped(first_clause(business.current_motion, 140), 140)
+    next_move = clipped(first_clause(safe_next_move(business.next_move), 140), 140)
+    templates = [
+        f"{business.name} is live at {business.url}.\n\nWhat is shipping now: {motion}\n\nWhat the product is for: {primary}\n\nNext move: {next_move}",
+        f"One live Foundry surface today is {business.name}.\n\nProduct: {primary}\n\nCurrent motion: {motion}\n\nNext move: {next_move}\n\n{business.url}",
+        f"{business.name} is a useful operating example because the proof is public.\n\nCurrent motion: {motion}\n\nNext move: {next_move}\n\nRoute: {business.url}",
+        f"{business.name} is live, and the interesting part is the current bottleneck.\n\nProduct: {primary}\n\nConstraint: {next_move}\n\n{business.url}",
+        f"{business.name} is a live product, not a roadmap.\n\nWhat is visible now: {motion}\n\nWhat needs to happen next: {next_move}\n\n{business.url}",
+    ]
+    return templates[angle_index % len(templates)]
 
 
 def render_queue(target: date, index_path: Path) -> dict[str, object]:
-    existing = posted_fingerprints()
+    existing = existing_fingerprints()
     businesses = parse_active_portfolio(index_path)
     items = []
     for offset, business in enumerate(businesses):
@@ -149,6 +196,10 @@ def render_queue(target: date, index_path: Path) -> dict[str, object]:
         x = x_copy(business, angle_index)
         linkedin = linkedin_copy(business, angle_index)
         item_id = f"portfolio-daily-{target.isoformat()}-{slugify(business.name)}"
+        x_id = f"{item_id}-x"
+        linkedin_id = f"{item_id}-linkedin"
+        x_fp = fingerprint(x)
+        linkedin_fp = fingerprint(linkedin)
         items.append(
             {
                 "id": item_id,
@@ -169,14 +220,15 @@ def render_queue(target: date, index_path: Path) -> dict[str, object]:
                     "x": {
                         "account": X_ACCOUNT,
                         "copy": x,
-                        "fingerprint": fingerprint(x),
-                        "duplicate": fingerprint(x) in existing,
+                        "fingerprint": x_fp,
+                        "duplicate": x_fp in existing and any(existing_id != x_id for existing_id in existing[x_fp]),
+                        "length": x_length(x),
                     },
                     "linkedin": {
                         "profile": LINKEDIN_PROFILE,
                         "copy": linkedin,
-                        "fingerprint": fingerprint(linkedin),
-                        "duplicate": fingerprint(linkedin) in existing,
+                        "fingerprint": linkedin_fp,
+                        "duplicate": linkedin_fp in existing and any(existing_id != linkedin_id for existing_id in existing[linkedin_fp]),
                     },
                 },
                 "quality_gate": [
