@@ -14,7 +14,8 @@ const { spawnSync } = require("child_process");
 const {
   bodySnapshot,
   braveJS,
-  closeFrontWindow,
+  cdpClickElement,
+  cdpInputText,
   getClipboard,
   markActiveWindow,
   nativeClickElement,
@@ -131,7 +132,7 @@ function xCookieAuth() {
     if (!cookies[name]) throw new Error(`missing Brave X cookie: ${name}`);
   }
   const cookie = Object.entries(cookies)
-    .map(([name, value]) => `${name}=${encodeURIComponent(value)}`)
+    .map(([name, value]) => `${name}=${String(value).replace(/;/g, "%3B")}`)
     .join("; ");
   return { cookies, cookie };
 }
@@ -396,6 +397,48 @@ function directInsertCopy(text) {
   return inserted;
 }
 
+function editorTargetExpression({ clear = false } = {}) {
+  return `(() => {
+    const editors = Array.from(document.querySelectorAll('[data-testid="tweetTextarea_0"]'))
+      .filter(e => {
+        const r = e.getBoundingClientRect();
+        return r.width > 100 && r.height > 20 && getComputedStyle(e).display !== "none" && getComputedStyle(e).visibility !== "hidden";
+      });
+    const el = editors[0];
+    if (!el) return JSON.stringify({ ok: false, reason: "no editor" });
+    el.focus();
+    ${clear ? `
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    document.execCommand("delete");
+    el.dispatchEvent(new InputEvent("input", { bubbles: true, inputType: "deleteContentBackward", data: null }));
+    ` : ""}
+    const r = el.getBoundingClientRect();
+    return JSON.stringify({ ok: true, text: el.innerText || "", rect: { x: r.x, y: r.y, w: r.width, h: r.height } });
+  })()`;
+}
+
+function cdpInsertCopy(text) {
+  const inserted = cdpInputText(editorTargetExpression({ clear: true }), text, { host: "x.com" });
+  if (!inserted || !inserted.ok) {
+    throw new Error(`X CDP composer insertion failed: ${JSON.stringify(inserted)}`);
+  }
+  waitFor("X composer CDP content verification", () => {
+    const current = visibleEditor();
+    return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
+  }, 9000);
+  const ready = tryWaitFor("X Post button after CDP insert", () => {
+    const button = postButtonState();
+    return { ok: Boolean(button && button.ok && !button.disabled), button, editor: visibleEditor() };
+  }, 5000);
+  if (!ready.ok) {
+    throw new Error(`X CDP insert did not enable Post: ${JSON.stringify(ready)}`);
+  }
+}
+
 function keyboardInsertCopy(text) {
   const editor = visibleEditor();
   if (!editor || !editor.ok) {
@@ -411,21 +454,15 @@ function keyboardInsertCopy(text) {
 
 function insertCopy(text) {
   if (process.env.SOCIAL_X_DOM_ONLY === "1") {
-    focusAndClearEditor();
-    directInsertCopy(text);
-    waitFor("X composer DOM-only content verification", () => {
-      const current = visibleEditor();
-      return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
-    }, 9000);
-    const ready = tryWaitFor("X Post button after DOM-only insert", () => {
-      const button = postButtonState();
-      return { ok: Boolean(button && button.ok && !button.disabled), button, editor: visibleEditor() };
-    }, 3000);
-    if (!ready.ok) {
-      throw new Error(`X DOM-only insert did not enable Post: ${JSON.stringify(ready)}`);
-    }
+    cdpInsertCopy(text);
     return;
   }
+
+  const cdpInserted = tryWaitFor("X composer CDP insert", () => {
+    cdpInsertCopy(text);
+    return { ok: true };
+  }, 1000, 1000);
+  if (cdpInserted.ok) return;
 
   const oldClipboard = getClipboard();
   try {
@@ -523,6 +560,22 @@ function closeDraft() {
 }
 
 function clickPost() {
+  const expression = `(() => {
+    const button = Array.from(document.querySelectorAll('button[data-testid="tweetButton"], button[data-testid="tweetButtonInline"]'))
+      .find(b => {
+        const r = b.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && !b.disabled && b.getAttribute("aria-disabled") !== "true";
+      });
+    if (!button || button.disabled || button.getAttribute("aria-disabled") === "true") return JSON.stringify({ ok: false });
+    const r = button.getBoundingClientRect();
+    return JSON.stringify({ ok: true, testid: button.getAttribute("data-testid"), text: (button.innerText || button.textContent || "").trim(), rect: { x: r.x, y: r.y, w: r.width, h: r.height } });
+  })()`;
+  const cdpClicked = tryWaitFor("X CDP post click", () => {
+    const result = cdpClickElement(expression, { host: "x.com" });
+    return { ok: Boolean(result && result.ok), result };
+  }, 1000, 1000);
+  if (cdpClicked.ok) return;
+
   const clicked = braveJS(`(() => {
     const button = Array.from(document.querySelectorAll('button[data-testid="tweetButton"], button[data-testid="tweetButtonInline"]'))
       .find(b => {
@@ -534,17 +587,26 @@ function clickPost() {
     return JSON.stringify({ ok: true, testid: button.getAttribute("data-testid") });
   })()`);
   if (!clicked || !clicked.ok) {
-    throw new Error(`X post click failed: ${JSON.stringify(clicked)}`);
+    throw new Error(`X post click failed: ${JSON.stringify({ cdpClicked, domClicked: clicked })}`);
   }
 }
 
 function findPostedTweet(expectedHandle, text) {
-  const needle = normalize(text).slice(0, 90);
+  const needles = [
+    normalize(text).slice(0, 90),
+    normalize(text.replace(/https?:\/\/\S+/g, "")).slice(0, 90),
+    normalize(text.split(/\n+/).filter(line => !/^https?:\/\//.test(line.trim())).join(" ")).slice(0, 90),
+  ].filter(Boolean);
   const fromCurrentPage = tryWaitFor("X current page live post verification", () => braveJS(`(() => {
     const normalize = s => String(s || "").trim().toLowerCase().replace(/\\s+/g, " ");
-    const needle = ${JSON.stringify(needle)};
+    const stripUrls = s => normalize(normalize(s).replace(/https?:\\/\\/\\s+/g, "https://").replace(/https?:\\/\\/\\S+/g, ""));
+    const needles = ${JSON.stringify(needles)};
     const articles = Array.from(document.querySelectorAll('article[data-testid="tweet"]'));
-    const article = articles.find(a => normalize(a.innerText || "").includes(needle));
+    const article = articles.find(a => {
+      const text = a.innerText || "";
+      const haystacks = [normalize(text), stripUrls(text)];
+      return needles.some(needle => haystacks.some(haystack => haystack.includes(needle)));
+    });
     if (!article) return JSON.stringify({ ok: false, reason: "matching tweet not visible", articles: articles.length });
     const links = Array.from(article.querySelectorAll('a[href*="/status/"]'))
       .map(a => a.href)
@@ -558,9 +620,14 @@ function findPostedTweet(expectedHandle, text) {
   setBraveUrl(profileUrl);
   return waitFor("X profile live post verification", () => braveJS(`(() => {
     const normalize = s => String(s || "").trim().toLowerCase().replace(/\\s+/g, " ");
-    const needle = ${JSON.stringify(needle)};
+    const stripUrls = s => normalize(normalize(s).replace(/https?:\\/\\/\\s+/g, "https://").replace(/https?:\\/\\/\\S+/g, ""));
+    const needles = ${JSON.stringify(needles)};
     const articles = Array.from(document.querySelectorAll('article[data-testid="tweet"]'));
-    const article = articles.find(a => normalize(a.innerText || "").includes(needle));
+    const article = articles.find(a => {
+      const text = a.innerText || "";
+      const haystacks = [normalize(text), stripUrls(text)];
+      return needles.some(needle => haystacks.some(haystack => haystack.includes(needle)));
+    });
     if (!article) return JSON.stringify({ ok: false, reason: "matching tweet not visible", articles: articles.length });
     const links = Array.from(article.querySelectorAll('a[href*="/status/"]'))
       .map(a => a.href)
@@ -577,7 +644,6 @@ function postOrDryRun(args, text) {
   }, 25000);
   if (args.dryRun) {
     const cleanup = closeDraft();
-    if (cleanup && cleanup.ok) closeFrontWindow();
     const payload = { ok: true, dryRun: true, cleaned: Boolean(cleanup && cleanup.ok) };
     console.log(JSON.stringify(payload));
     return;
@@ -604,8 +670,23 @@ function main() {
     skip: args.skipLease,
   }, async () => {
     if (process.env.SOCIAL_X_FORCE_BROWSER !== "1") {
-      await postOrDryRunDirect(args, text);
-      return;
+      try {
+        await postOrDryRunDirect(args, text);
+        return;
+      } catch (error) {
+        const message = error && error.message ? error.message : String(error);
+        if (/identity mismatch|missing Brave X cookie|authenticated home fetch failed/i.test(message)) {
+          throw error;
+        }
+        if (/duplicate/i.test(message)) {
+          verifyAccount(args.expectedHandle);
+          const url = findPostedTweet(args.expectedHandle, text);
+          if (args.json) console.log(JSON.stringify({ ok: true, url, verified: true, method: "x_direct_duplicate_recovery" }));
+          else console.log(url);
+          return;
+        }
+        console.error(`X direct API failed; falling back to browser CDP: ${message}`);
+      }
     }
     verifyAccount(args.expectedHandle);
     openComposer();

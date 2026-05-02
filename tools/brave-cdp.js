@@ -90,6 +90,10 @@ function hostMatches(pageUrl, host) {
 function wsSend(ws, method, params = {}) {
   return new Promise((resolve, reject) => {
     const id = ws.nextId++;
+    const timer = setTimeout(() => {
+      ws.removeEventListener("message", onMessage);
+      reject(new Error(`${method} timed out`));
+    }, 8000);
     const onMessage = event => {
       let msg;
       try {
@@ -98,6 +102,7 @@ function wsSend(ws, method, params = {}) {
         return;
       }
       if (msg.id !== id) return;
+      clearTimeout(timer);
       ws.removeEventListener("message", onMessage);
       if (msg.error) reject(new Error(`${method}: ${JSON.stringify(msg.error)}`));
       else resolve(msg.result || {});
@@ -144,6 +149,207 @@ async function evalOnPage(page, expression) {
     if (remote.type === "undefined") return "";
     if (Object.prototype.hasOwnProperty.call(remote, "value")) return remote.value;
     return remote.description || "";
+  });
+}
+
+function valueFromRuntimeResult(result) {
+  if (result.exceptionDetails) {
+    throw new Error(result.exceptionDetails.text || "CDP evaluation failed");
+  }
+  const remote = result.result || {};
+  if (remote.type === "undefined") return "";
+  if (Object.prototype.hasOwnProperty.call(remote, "value")) return remote.value;
+  return remote.description || "";
+}
+
+function parseElementTarget(value) {
+  let parsed = value;
+  if (typeof value === "string") {
+    try {
+      parsed = JSON.parse(value);
+    } catch {
+      parsed = { ok: false, reason: value };
+    }
+  }
+  if (!parsed || !parsed.ok || !parsed.rect) {
+    throw new Error(`CDP target lookup failed: ${JSON.stringify(parsed)}`);
+  }
+  const rect = parsed.rect;
+  const x = Number(rect.x) + Number(rect.w) / 2;
+  const y = Number(rect.y) + Math.min(Number(rect.h) / 2, 18);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) {
+    throw new Error(`CDP target has invalid rect: ${JSON.stringify(parsed)}`);
+  }
+  return { target: parsed, x, y };
+}
+
+async function inputOnPage(page, expression, text) {
+  return withPage(page, async ws => {
+    await wsSend(ws, "Runtime.enable");
+    await wsSend(ws, "Input.enable").catch(() => {});
+    const result = await wsSend(ws, "Runtime.evaluate", {
+      expression,
+      awaitPromise: true,
+      returnByValue: true,
+      userGesture: true,
+    });
+    const resolved = parseElementTarget(valueFromRuntimeResult(result));
+    await wsSend(ws, "Input.dispatchMouseEvent", {
+      type: "mousePressed",
+      x: resolved.x,
+      y: resolved.y,
+      button: "left",
+      buttons: 1,
+      clickCount: 1,
+    });
+    await wsSend(ws, "Input.dispatchMouseEvent", {
+      type: "mouseReleased",
+      x: resolved.x,
+      y: resolved.y,
+      button: "left",
+      buttons: 0,
+      clickCount: 1,
+    });
+    await wsSend(ws, "DOM.enable").catch(() => {});
+    try {
+      const root = await wsSend(ws, "DOM.getDocument", { depth: 1, pierce: true });
+      const node = await wsSend(ws, "DOM.querySelector", {
+        nodeId: root.root.nodeId,
+        selector: '[data-testid="tweetTextarea_0"], [contenteditable="true"], textarea, input',
+      });
+      if (node.nodeId) await wsSend(ws, "DOM.focus", { nodeId: node.nodeId });
+    } catch {}
+    await wsSend(ws, "Runtime.evaluate", {
+      expression,
+      awaitPromise: true,
+      returnByValue: true,
+      userGesture: true,
+    });
+    for (const ch of Array.from(String(text))) {
+      if (ch === "\n") {
+        await wsSend(ws, "Input.dispatchKeyEvent", {
+          type: "rawKeyDown",
+          key: "Enter",
+          code: "Enter",
+          windowsVirtualKeyCode: 13,
+          nativeVirtualKeyCode: 36,
+        });
+        await wsSend(ws, "Input.dispatchKeyEvent", {
+          type: "keyUp",
+          key: "Enter",
+          code: "Enter",
+          windowsVirtualKeyCode: 13,
+          nativeVirtualKeyCode: 36,
+        });
+      } else {
+        await wsSend(ws, "Input.dispatchKeyEvent", {
+          type: "char",
+          text: ch,
+          unmodifiedText: ch,
+        });
+      }
+    }
+    return resolved.target;
+  });
+}
+
+async function pasteOnPage(page, expression) {
+  return withPage(page, async ws => {
+    await wsSend(ws, "Runtime.enable");
+    await wsSend(ws, "Input.enable").catch(() => {});
+    const result = await wsSend(ws, "Runtime.evaluate", {
+      expression,
+      awaitPromise: true,
+      returnByValue: true,
+      userGesture: true,
+    });
+    const resolved = parseElementTarget(valueFromRuntimeResult(result));
+    await wsSend(ws, "Input.dispatchMouseEvent", {
+      type: "mousePressed",
+      x: resolved.x,
+      y: resolved.y,
+      button: "left",
+      buttons: 1,
+      clickCount: 1,
+    });
+    await wsSend(ws, "Input.dispatchMouseEvent", {
+      type: "mouseReleased",
+      x: resolved.x,
+      y: resolved.y,
+      button: "left",
+      buttons: 0,
+      clickCount: 1,
+    });
+    await wsSend(ws, "Runtime.evaluate", {
+      expression,
+      awaitPromise: true,
+      returnByValue: true,
+      userGesture: true,
+    });
+    await wsSend(ws, "Input.dispatchKeyEvent", {
+      type: "rawKeyDown",
+      key: "Meta",
+      code: "MetaLeft",
+      windowsVirtualKeyCode: 91,
+      nativeVirtualKeyCode: 55,
+      modifiers: 4,
+    });
+    await wsSend(ws, "Input.dispatchKeyEvent", {
+      type: "rawKeyDown",
+      key: "v",
+      code: "KeyV",
+      windowsVirtualKeyCode: 86,
+      nativeVirtualKeyCode: 9,
+      modifiers: 4,
+    });
+    await wsSend(ws, "Input.dispatchKeyEvent", {
+      type: "keyUp",
+      key: "v",
+      code: "KeyV",
+      windowsVirtualKeyCode: 86,
+      nativeVirtualKeyCode: 9,
+      modifiers: 4,
+    });
+    await wsSend(ws, "Input.dispatchKeyEvent", {
+      type: "keyUp",
+      key: "Meta",
+      code: "MetaLeft",
+      windowsVirtualKeyCode: 91,
+      nativeVirtualKeyCode: 55,
+      modifiers: 0,
+    });
+    return resolved.target;
+  });
+}
+
+async function clickOnPage(page, expression) {
+  return withPage(page, async ws => {
+    await wsSend(ws, "Runtime.enable");
+    await wsSend(ws, "Input.enable").catch(() => {});
+    const result = await wsSend(ws, "Runtime.evaluate", {
+      expression,
+      awaitPromise: true,
+      returnByValue: true,
+      userGesture: true,
+    });
+    const resolved = parseElementTarget(valueFromRuntimeResult(result));
+    await wsSend(ws, "Input.dispatchMouseEvent", {
+      type: "mousePressed",
+      x: resolved.x,
+      y: resolved.y,
+      button: "left",
+      buttons: 1,
+      clickCount: 1,
+    });
+    await wsSend(ws, "Input.dispatchMouseEvent", {
+      type: "mouseReleased",
+      x: resolved.x,
+      y: resolved.y,
+      button: "left",
+      buttons: 0,
+      clickCount: 1,
+    });
+    return resolved.target;
   });
 }
 
@@ -254,7 +460,37 @@ async function main() {
     else console.log(JSON.stringify(value));
     return;
   }
-  throw new Error("usage: brave-cdp.js ensure [url] | open <url> [marker] [namePrefix] [host] | eval <js> [marker] [namePrefix] [host]");
+  if (cmd === "input-text") {
+    const [expression, text = "", marker = "", namePrefix = "", host = ""] = args;
+    if (!expression) throw new Error("missing expression");
+    await ensureCdp();
+    const page = (marker || namePrefix || host) ? await findPage({ marker, namePrefix, host }) : await activePage();
+    if (!page) throw new Error("no matching Brave page for CDP input");
+    const target = await inputOnPage(page, expression, text);
+    console.log(JSON.stringify({ ok: true, target }));
+    return;
+  }
+  if (cmd === "paste-text") {
+    const [expression, marker = "", namePrefix = "", host = ""] = args;
+    if (!expression) throw new Error("missing expression");
+    await ensureCdp();
+    const page = (marker || namePrefix || host) ? await findPage({ marker, namePrefix, host }) : await activePage();
+    if (!page) throw new Error("no matching Brave page for CDP paste");
+    const target = await pasteOnPage(page, expression);
+    console.log(JSON.stringify({ ok: true, target }));
+    return;
+  }
+  if (cmd === "click") {
+    const [expression, marker = "", namePrefix = "", host = ""] = args;
+    if (!expression) throw new Error("missing expression");
+    await ensureCdp();
+    const page = (marker || namePrefix || host) ? await findPage({ marker, namePrefix, host }) : await activePage();
+    if (!page) throw new Error("no matching Brave page for CDP click");
+    const target = await clickOnPage(page, expression);
+    console.log(JSON.stringify({ ok: true, target }));
+    return;
+  }
+  throw new Error("usage: brave-cdp.js ensure [url] | open <url> [marker] [namePrefix] [host] | eval <js> [marker] [namePrefix] [host] | input-text <js> <text> [marker] [namePrefix] [host] | paste-text <js> [marker] [namePrefix] [host] | click <js> [marker] [namePrefix] [host]");
 }
 
 main().catch(error => {

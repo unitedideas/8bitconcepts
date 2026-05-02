@@ -77,13 +77,21 @@ function parseBrowserValue(out) {
   }
 }
 
+function targetHost() {
+  if (targetWindowName && targetWindowName.startsWith("8bit-linkedin-")) return "www.linkedin.com";
+  if (targetWindowName && targetWindowName.startsWith("8bit-x-")) return "x.com";
+  return "";
+}
+
+function targetNamePrefix() {
+  return targetWindowName ? targetWindowName.split(/-\d+$/)[0] + "-" : "";
+}
+
 function braveJS(js, options = {}) {
-  const host = targetWindowName && targetWindowName.startsWith("8bit-linkedin-")
-    ? "www.linkedin.com"
-    : (targetWindowName && targetWindowName.startsWith("8bit-x-") ? "x.com" : "");
+  const host = targetHost();
   if (process.env.SOCIAL_BRAVE_FORCE_APPLESCRIPT !== "1") {
     try {
-      return parseBrowserValue(cdp(["eval", js, targetWindowName || "", targetWindowName ? targetWindowName.split(/-\d+$/)[0] + "-" : "", host]));
+      return parseBrowserValue(cdp(["eval", js, targetWindowName || "", targetNamePrefix(), host]));
     } catch (error) {
       if (process.env.SOCIAL_BRAVE_CDP_ONLY === "1") throw error;
     }
@@ -133,11 +141,46 @@ end tell
   }
 }
 
+function cdpInputText(expression, text, options = {}) {
+  const out = cdp([
+    "input-text",
+    expression,
+    text,
+    targetWindowName || "",
+    targetNamePrefix(),
+    options.host || targetHost(),
+  ], options.timeout || 90000);
+  return parseBrowserValue(out);
+}
+
+function cdpClickElement(expression, options = {}) {
+  const out = cdp([
+    "click",
+    expression,
+    targetWindowName || "",
+    targetNamePrefix(),
+    options.host || targetHost(),
+  ], options.timeout || 90000);
+  return parseBrowserValue(out);
+}
+
+function cdpPasteText(expression, text, options = {}) {
+  setClipboard(text);
+  const out = cdp([
+    "paste-text",
+    expression,
+    targetWindowName || "",
+    targetNamePrefix(),
+    options.host || targetHost(),
+  ], options.timeout || 90000);
+  return parseBrowserValue(out);
+}
+
 function setBraveUrl(url, options = {}) {
   assertUrlAllowed(url);
   if (process.env.SOCIAL_BRAVE_FORCE_APPLESCRIPT !== "1") {
     try {
-      cdp(["open", url, targetWindowName || "", targetWindowName ? targetWindowName.split(/-\d+$/)[0] + "-" : "", new URL(url).hostname]);
+      cdp(["open", url, targetWindowName || "", targetNamePrefix(), new URL(url).hostname]);
       return;
     } catch (error) {
       if (process.env.SOCIAL_BRAVE_CDP_ONLY === "1") throw error;
@@ -366,6 +409,12 @@ return "not found"
 }
 
 function getClipboard() {
+  const proc = spawnSync("pbpaste", [], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024 * 12,
+    timeout: 10000,
+  });
+  if (!proc.error && proc.status === 0) return proc.stdout;
   return osa(`
 try
   return the clipboard as text
@@ -376,6 +425,13 @@ end try
 }
 
 function setClipboard(text) {
+  const proc = spawnSync("pbcopy", [], {
+    input: String(text),
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024 * 12,
+    timeout: 10000,
+  });
+  if (!proc.error && proc.status === 0) return;
   osa(`set the clipboard to ${appleString(text)}`);
 }
 
@@ -612,6 +668,9 @@ module.exports = {
   appleString,
   bodySnapshot,
   braveJS,
+  cdpClickElement,
+  cdpInputText,
+  cdpPasteText,
   clickAXButton,
   closeFrontWindow,
   getClipboard,
