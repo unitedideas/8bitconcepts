@@ -1,12 +1,13 @@
 {
   "seller": "8bitconcepts",
-  "product_id": "8bc_ai_diagnostic",
+  "product_id": "8bitconcepts_ai_diagnostic",
   "currency": "USD",
   "amount_cents": 50000,
   "total_cents": 50000,
   "payment_mode": "stripe_payment_link",
-  "supported_payment_modes": ["stripe_payment_link", "stripe_link", "link"],
-  "unsupported_payment_modes": ["stripe_acp", "stripe_spt", "x402", "mpp"],
+  "supported_payment_modes": ["stripe_payment_link", "stripe_link", "link", "stripe_spt"],
+  "checkout_endpoint": "https://aidevboard.com/api/v1/checkout",
+  "unsupported_payment_modes": ["stripe_acp", "x402", "mpp"],
   "quote_type": "static",
   "checkout_url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03"
 }

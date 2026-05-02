@@ -9,24 +9,25 @@
   "currency": "USD",
   "agentic_payments": {
     "ready": true,
-    "supported_modes": ["stripe_payment_link", "stripe_link", "link"],
+    "supported_modes": ["stripe_payment_link", "stripe_link", "link", "stripe_spt"],
     "unsupported_modes": {
       "stripe_acp": "Stripe Agentic Commerce Protocol is private-preview gated for this static seller surface.",
-      "stripe_spt": "Stripe Shared Payment Tokens are private-preview gated for this static seller surface.",
       "x402": "No Stripe machine payments / x402 endpoint is deployed for this static site.",
       "mpp": "No machine-payment endpoint is deployed for this static site."
     },
+    "stripe_spt": "Supported for the AI diagnostic through the 8Bit Stripe settlement endpoint hosted at https://aidevboard.com/api/v1/checkout.",
     "link": "Available inside the Stripe Payment Link checkout when enabled on the Stripe account.",
-    "private_preview_required": ["stripe_acp", "stripe_spt", "x402"],
+    "private_preview_required": ["stripe_acp", "x402"],
     "endpoints": {
       "catalog": "https://8bitconcepts.com/api/v1/catalog",
       "quote": "https://8bitconcepts.com/api/v1/quote",
-      "checkout": "https://8bitconcepts.com/api/v1/checkout"
+      "checkout": "https://8bitconcepts.com/api/v1/checkout",
+      "stripe_spt_checkout": "https://aidevboard.com/api/v1/checkout"
     }
   },
   "products": [
     {
-      "id": "8bc_ai_diagnostic",
+      "id": "8bitconcepts_ai_diagnostic",
       "name": "AI diagnostic",
       "description": "A fixed-scope diagnostic for teams evaluating where agentic automation can safely create leverage.",
       "type": "service",
@@ -37,7 +38,8 @@
       },
       "checkout": {
         "mode": "stripe_payment_link",
-        "supported_modes": ["stripe_payment_link", "stripe_link", "link"],
+        "supported_modes": ["stripe_payment_link", "stripe_link", "link", "stripe_spt"],
+        "endpoint": "https://aidevboard.com/api/v1/checkout",
         "url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03"
       }
     }

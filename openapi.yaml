@@ -64,10 +64,10 @@ paths:
   /api/v1/checkout:
     get:
       operationId: getDiagnosticCheckout
-      summary: Static Stripe Payment Link and Link checkout handoff
+      summary: Static Stripe Payment Link and SPT checkout handoff
       responses:
         "200":
-          description: Checkout URL for the AI diagnostic
+          description: Checkout URL for the AI diagnostic plus the external SPT settlement endpoint hosted on aidevboard.com.
           content:
             application/json:
               schema:
