@@ -1586,38 +1586,25 @@
       "public_action_lock_claimed": true
     },
     {
-      "id": "daily-targeted-research-2026-05-02-scale-ai-linkedin",
+      "id": "daily-ai-insight-2026-05-01-afternoon-x",
       "source": "marketing/daily-ai-insights-queue.json",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "failed",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
       "date": "2026-05-02",
-      "post_time_local": "08:30",
-      "fingerprint": "28720f9226862847",
-      "original_fingerprint": "62391497a3c4dcb9",
-      "fact_key": "targeted-research:scale-ai:135:generative-ai,llm,agents",
-      "route": "https://aidevboard.com/company/scale-ai",
-      "format": "targeted documented research",
-      "target": {
-        "name": "Scale AI",
-        "x_mention": "@scale_AI",
-        "linkedin_mention": "@Scale AI",
-        "domain": "scale.com",
-        "company_slug": "scale-ai"
-      },
-      "research_sources": {
-        "adb_company": "https://aidevboard.com/company/scale-ai",
-        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=scale-ai&limit=100",
-        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
-        "nhs_profile": "https://nothumansearch.ai/site/scale.com",
-        "official_source": "https://scale.com/careers"
-      },
-      "last_attempted_at": "2026-05-03T02:23:55Z",
-      "last_checked_at": "2026-05-03T02:23:55Z",
-      "last_blocker": "LinkedIn posting blocked before any public post: direct Brave cookie path rejected all LinkedIn cookie sources, page-context Voyager identity returned 401, and supervised browser recovery could not verify an authenticated Shane Cheek / Founder at 8bitconcepts surface. No active approved LinkedIn session was available, so no live post URL was created.",
-      "text": "Scale AI has 135 indexed AI/ML roles on AI Dev Board right now, with 16 marked remote and an average published salary of $237,478.\n\nThe current role mix says a lot about where the work is moving: Director, Enterprise Machine Learning & Research; Manager, Machine Learning Research Scientist, GenAI; Senior AI Infrastructure Engineer - Training Platform. Sample tags cluster around generative-ai, llm, agents, and research.\n\nThe read I take from that is less AI strategy and more delivery pressure: training infrastructure, research management, expert feedback loops, and data quality at production scale.\n\nSeparate lens: Scale's public profile on Not Human Search is 15/100. That is a low agent-readiness score, not a stronger readiness claim. It is still useful as a narrow check on what an agent can inspect directly from the public web without a human browsing.\n\nFor teams at this stage, does the bottleneck look more like data quality, workflow integration, or evaluation coverage?\n\nhttps://aidevboard.com/company/scale-ai\nhttps://nothumansearch.ai/site/scale.com",
-      "editor": "agent-social-editor",
-      "note": "Final copy approved by agent-social-editor and selected by 8bit-linkedin-agent-publisher. Shared social-content lock was claimed, but posting stopped at the LinkedIn auth wall because the approved Shane profile session was missing."
+      "posted_at": "2026-05-03T02:51:21Z",
+      "url": "https://x.com/8BitConcepts/status/2050770003142881360",
+      "route": "https://nothumansearch.ai",
+      "fact_key": "nhs-digest-2026-05-03-llmstxt5079-mcp431",
+      "fingerprint": "0d5102d102179d58",
+      "copy": "5,079 sites expose llms.txt. 431 verify an MCP endpoint. That gap is the audit: what the site claims, what the endpoint returns, and what survives a real request. https://nothumansearch.ai",
+      "verified_facts": [
+        "https://nothumansearch.ai returned HTTP 200",
+        "https://nothumansearch.ai/digest.json returned HTTP 200 at 2026-05-03T02:48:15Z",
+        "digest.llms_txt_count=5079",
+        "digest.mcp_verified=431"
+      ],
+      "note": "Posted by 8bit-x-agent-publisher after X specialist approval, social-editor approval, sync-state lock claim, active @8BitConcepts verification, and tools/x-brave-post.js browser fallback after direct API rate-limit error 344."
     }
   ]
 }
