@@ -16,6 +16,7 @@ const {
   braveJS,
   cdpClickElement,
   cdpInputText,
+  cdpPasteText,
   getClipboard,
   markActiveWindow,
   nativeClickElement,
@@ -422,14 +423,27 @@ function editorTargetExpression({ clear = false } = {}) {
 }
 
 function cdpInsertCopy(text) {
-  const inserted = cdpInputText(editorTargetExpression({ clear: true }), text, { host: "x.com" });
+  let inserted = cdpPasteText(editorTargetExpression({ clear: true }), text, { host: "x.com" });
+  if (!inserted || !inserted.ok) {
+    inserted = cdpInputText(editorTargetExpression({ clear: true }), text, { host: "x.com" });
+  }
   if (!inserted || !inserted.ok) {
     throw new Error(`X CDP composer insertion failed: ${JSON.stringify(inserted)}`);
   }
-  waitFor("X composer CDP content verification", () => {
+  const verified = tryWaitFor("X composer CDP content verification", () => {
     const current = visibleEditor();
     return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
   }, 9000);
+  if (!verified.ok) {
+    const direct = directInsertCopy(text);
+    const directVerified = waitFor("X composer direct content verification after CDP miss", () => {
+      const current = visibleEditor();
+      return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
+    }, 9000);
+    if (!directVerified.ok) {
+      throw new Error(`X CDP/direct composer verification failed: ${JSON.stringify({ inserted, verified, direct, directVerified })}`);
+    }
+  }
   const ready = tryWaitFor("X Post button after CDP insert", () => {
     const button = postButtonState();
     return { ok: Boolean(button && button.ok && !button.disabled), button, editor: visibleEditor() };
