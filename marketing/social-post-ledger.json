@@ -1648,6 +1648,35 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "validator-adb-stats-cbcb3d0807775ec4-x",
+      "source": "validator:live https://aidevboard.com/api/v1/stats",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-03",
+      "posted_at": "2026-05-03T01:25:32Z",
+      "url": "https://x.com/8BitConcepts/status/2050747743187108274",
+      "fingerprint": "cbcb3d0807775ec4",
+      "fact_key": "adb_stats:experience_levels:senior=3330,mid=2815,lead=2607,junior=619,principal=535",
+      "format": "stat",
+      "route": "https://aidevboard.com",
+      "copy": "AI hiring still skews experienced: senior 3,330, mid 2,815, lead 2,607. Junior is 619; principal is 535. AI Dev Board has 9,906 jobs across 527 companies, with 368 added this week. https://aidevboard.com",
+      "editor": "agent-social-editor",
+      "editor_note": "Shortened to keep the experience-level mix as the main angle while preserving the verified route URL.",
+      "note": "Posted via tools/x-brave-post.js after patching empty-200 direct-response recovery; verified from @8BitConcepts with live stats fetched from /api/v1/stats at 2026-05-03T01:18:51Z.",
+      "facts_verified": [
+        "https://aidevboard.com/api/v1/stats returned HTTP 200",
+        "overview.total_jobs=9906",
+        "overview.total_companies=527",
+        "overview.new_this_week=368",
+        "experience_levels senior=3330, mid=2815, lead=2607, junior=619, principal=535",
+        "overview.updated_at=2026-05-03T01:18:51Z",
+        "https://aidevboard.com returned HTTP 200"
+      ],
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed"
     }
   ]
 }

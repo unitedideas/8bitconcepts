@@ -266,6 +266,18 @@ async function postOrDryRunDirect(args, text) {
   const tweet = created.json && created.json.data && created.json.data.create_tweet && created.json.data.create_tweet.tweet_results && created.json.data.create_tweet.tweet_results.result;
   const tweetId = tweet && tweet.rest_id;
   const fullText = tweet && tweet.legacy && tweet.legacy.full_text;
+  if (created.ok && !tweetId && !created.text && !created.json) {
+    verifyAccount(args.expectedHandle);
+    const recoveredUrl = tryWaitFor("X direct empty-200 recovery", () => {
+      const url = findPostedTweet(args.expectedHandle, text);
+      return { ok: Boolean(url), url };
+    }, 12000);
+    if (recoveredUrl.ok && recoveredUrl.url) {
+      if (args.json) console.log(JSON.stringify({ ok: true, url: recoveredUrl.url, verified: true, method: "x_direct_empty_200_recovery" }));
+      else console.log(recoveredUrl.url);
+      return;
+    }
+  }
   if (!created.ok || !tweetId || normalize(fullText || "") !== normalize(text)) {
     throw new Error(`X direct post request failed: ${JSON.stringify({ status: created.status, responseURL: created.responseURL, text: created.text ? created.text.slice(0, 500) : "", errors: created.json && created.json.errors })}`);
   }
