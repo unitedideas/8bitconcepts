@@ -790,7 +790,7 @@
       "fact_key": "adb_stats:top_companies:Speechify=1063,OpenAI=354,Anthropic=283",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "AI hiring signal (public AI Dev Board stats):\n\nSpeechify: 1063\nOpenAI: 354\nAnthropic: 283\n\nAs of 10:52 am PT. Mindshare ≠ hiring signal. What metric do you track to find where execution work is actually happening?",
+      "copy": "AI hiring signal (public AI Dev Board stats):\n\nSpeechify: 1063\nOpenAI: 354\nAnthropic: 283\n\nAs of 10:52 am PT. Mindshare \u2260 hiring signal. What metric do you track to find where execution work is actually happening?",
       "note": "Validator posted to close the 2h gap; stats fetched live from /api/v1/stats."
     },
     {
@@ -806,7 +806,7 @@
       "fact_key": "adb_stats:top_companies:Speechify=1063,OpenAI=354,Anthropic=283",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "AI hiring signal from the public AI Dev Board stats endpoint:\n\n- Speechify: 1063 indexed AI/ML roles\n- OpenAI: 354 indexed AI/ML roles\n- Anthropic: 283 indexed AI/ML roles\n\nAs of 10:52 am PT.\n\nMindshare and hiring don’t always match. If you had to pick one proxy for where AI execution work is really happening (infra, evals, deployment loops, applied product), what do you use?\n\nData: https://aidevboard.com/api/v1/stats",
+      "copy": "AI hiring signal from the public AI Dev Board stats endpoint:\n\n- Speechify: 1063 indexed AI/ML roles\n- OpenAI: 354 indexed AI/ML roles\n- Anthropic: 283 indexed AI/ML roles\n\nAs of 10:52 am PT.\n\nMindshare and hiring don\u2019t always match. If you had to pick one proxy for where AI execution work is really happening (infra, evals, deployment loops, applied product), what do you use?\n\nData: https://aidevboard.com/api/v1/stats",
       "note": "LinkedIn browser post did not complete with a verified permalink; sync-state lock marked failed."
     },
     {
@@ -838,7 +838,7 @@
       "fact_key": "adb_stats:overview.total_jobs=9906,companies=527,median_salary=212750,tags.llm=2655,tags.agents=2451,tag.distributed-systems=1481 (updated_at=2026-04-30T20:56:35Z)",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "Public AI Dev Board snapshot (updated 1:56pm PT):\n\n- 9,906 AI/ML jobs across 527 companies\n- median posted salary: $212,750\n- tag counts: llm 2,655; agents 2,451\n- distributed-systems: 1,481 jobs, $256,046 avg salary\n\nIf you’re trying to track where execution work is actually happening (vs mindshare), what do you look at?\n\nData: https://aidevboard.com/api/v1/stats",
+      "copy": "Public AI Dev Board snapshot (updated 1:56pm PT):\n\n- 9,906 AI/ML jobs across 527 companies\n- median posted salary: $212,750\n- tag counts: llm 2,655; agents 2,451\n- distributed-systems: 1,481 jobs, $256,046 avg salary\n\nIf you\u2019re trying to track where execution work is actually happening (vs mindshare), what do you look at?\n\nData: https://aidevboard.com/api/v1/stats",
       "note": "Blocked: Brave AppleScript focus/activate operations are SIGKILLed in this Codex exec environment, so tools/linkedin-brave-post.js could not complete a verified permalink. Sync-state lock marked failed at public-action-locks/social-content/9b62abfed4f04467.json."
     },
     {
@@ -1045,17 +1045,13 @@
       "source": "marketing/daily-portfolio-social-queue.json",
       "channel": "linkedin",
       "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "failed",
+      "status": "queued",
       "date": "2026-05-02",
       "business": "AI Dev Board",
-      "fingerprint": "f735f996a927d963",
+      "fingerprint": "550ac0d3ef2fa6fd",
       "fact_key": "portfolio-daily:2026-05-02:ai-dev-board",
       "route": "https://aidevboard.com",
-      "last_attempted_at": "2026-05-03T01:35:51Z",
-      "last_checked_at": "2026-05-03T01:35:51Z",
-      "last_blocker": "LinkedIn posting blocked before any public post: direct Brave cookie path rejected all LinkedIn cookie sources (chrome-profile-3:302), page-context Voyager identity returned 401, and the visible Brave window was the LinkedIn sign-in page instead of Shane Cheek / Founder at 8bitconcepts. No active approved LinkedIn session was available, so no live post URL was created.",
-      "text": "9,906 AI/ML jobs across 527 companies, with the board live at https://aidevboard.com.\n\nAI Dev Board is the useful shape of this category: a jobs board with a REST API, an MCP server, company claims, and promoted listings. `/api/v1`, `/.well-known/agent.json`, and MCP `tools/list` are live.\n\nCurrent motion is API/MCP/indexed-job distribution plus monetization surfaces. The next move is narrower: keep the API invariant green, then improve SEO indexing and semantic/search conversion surfaces.",
-      "note": "Final copy approved by agent-social-editor and selected by 8bit-linkedin-agent-publisher. Shared social-content lock was claimed, but posting stopped at the LinkedIn login wall because the active approved Shane profile session was missing."
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
     },
     {
       "id": "portfolio-daily-2026-05-02-not-human-search-x",
@@ -1327,7 +1323,7 @@
           "at": "2026-05-01T08:24:36Z",
           "fingerprint": "df110af4579482f1",
           "result": "blocked",
-          "blocker": "Second same-run LinkedIn publish attempt used social-content lock df110af4579482f1. The first df110 attempt failed in System Events accessibility lookup with `Can’t get window 1 of process \"Brave Browser\"`; recover-only found no matching live URL; retry with guarded clickAXButton stayed on https://www.linkedin.com/feed/?shareActive=true and exited without a verified LinkedIn URL. No public post was ledgered.",
+          "blocker": "Second same-run LinkedIn publish attempt used social-content lock df110af4579482f1. The first df110 attempt failed in System Events accessibility lookup with `Can\u2019t get window 1 of process \"Brave Browser\"`; recover-only found no matching live URL; retry with guarded clickAXButton stayed on https://www.linkedin.com/feed/?shareActive=true and exited without a verified LinkedIn URL. No public post was ledgered.",
           "copy": "Agentic Evidence is the portfolio note today.\n\nThe point is not another assessment dashboard. It is an inspectable evidence layer for agentic technical interviews: the work, the session trail, and the next bottleneck are visible instead of buried in a summary.\n\nCurrent constraint:\nVM TTL teardown and disposable per-session repo templates.\n\nhttps://agentic-evidence.fly.dev"
         },
         {
@@ -1375,7 +1371,7 @@
       "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record.",
       "last_checked_at": "2026-05-01T11:27:36Z",
       "last_blocker": "Retry after same-run LinkedIn window-targeting repair failed: tools/linkedin-brave-post.js ran with exact approved copy fingerprint cdc6162ee921c67b, held the Computer Use lease as 8bit-linkedin-brave-post pid 78529, then exited with `LinkedIn live URL verification failed for (missing url)`. No public LinkedIn URL was verified, so this lock remains failed and must not be ledgered as posted.",
-      "approved_final_copy": "Geo Agent is past the “is this interesting?” phase.\n\nThe useful question now is whether the work keeps reducing the gap between proof and distribution.\n\nCurrent state: live app route is up, benchmark/runtime repair is done, and the motion is Shopify app-review readiness.\n\nNext move is less glamorous and more important:\nreplace the template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
+      "approved_final_copy": "Geo Agent is past the \u201cis this interesting?\u201d phase.\n\nThe useful question now is whether the work keeps reducing the gap between proof and distribution.\n\nCurrent state: live app route is up, benchmark/runtime repair is done, and the motion is Shopify app-review readiness.\n\nNext move is less glamorous and more important:\nreplace the template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
       "approved_final_fingerprint": "cfd6352df0ce6041",
       "last_repair_commit": "ba2a68a",
       "blocked_attempts": [
@@ -1588,6 +1584,40 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-02-scale-ai-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "failed",
+      "date": "2026-05-02",
+      "post_time_local": "08:30",
+      "fingerprint": "28720f9226862847",
+      "original_fingerprint": "62391497a3c4dcb9",
+      "fact_key": "targeted-research:scale-ai:135:generative-ai,llm,agents",
+      "route": "https://aidevboard.com/company/scale-ai",
+      "format": "targeted documented research",
+      "target": {
+        "name": "Scale AI",
+        "x_mention": "@scale_AI",
+        "linkedin_mention": "@Scale AI",
+        "domain": "scale.com",
+        "company_slug": "scale-ai"
+      },
+      "research_sources": {
+        "adb_company": "https://aidevboard.com/company/scale-ai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=scale-ai&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
+        "nhs_profile": "https://nothumansearch.ai/site/scale.com",
+        "official_source": "https://scale.com/careers"
+      },
+      "last_attempted_at": "2026-05-03T02:23:55Z",
+      "last_checked_at": "2026-05-03T02:23:55Z",
+      "last_blocker": "LinkedIn posting blocked before any public post: direct Brave cookie path rejected all LinkedIn cookie sources, page-context Voyager identity returned 401, and supervised browser recovery could not verify an authenticated Shane Cheek / Founder at 8bitconcepts surface. No active approved LinkedIn session was available, so no live post URL was created.",
+      "text": "Scale AI has 135 indexed AI/ML roles on AI Dev Board right now, with 16 marked remote and an average published salary of $237,478.\n\nThe current role mix says a lot about where the work is moving: Director, Enterprise Machine Learning & Research; Manager, Machine Learning Research Scientist, GenAI; Senior AI Infrastructure Engineer - Training Platform. Sample tags cluster around generative-ai, llm, agents, and research.\n\nThe read I take from that is less AI strategy and more delivery pressure: training infrastructure, research management, expert feedback loops, and data quality at production scale.\n\nSeparate lens: Scale's public profile on Not Human Search is 15/100. That is a low agent-readiness score, not a stronger readiness claim. It is still useful as a narrow check on what an agent can inspect directly from the public web without a human browsing.\n\nFor teams at this stage, does the bottleneck look more like data quality, workflow integration, or evaluation coverage?\n\nhttps://aidevboard.com/company/scale-ai\nhttps://nothumansearch.ai/site/scale.com",
+      "editor": "agent-social-editor",
+      "note": "Final copy approved by agent-social-editor and selected by 8bit-linkedin-agent-publisher. Shared social-content lock was claimed, but posting stopped at the LinkedIn auth wall because the approved Shane profile session was missing."
     }
   ]
 }
