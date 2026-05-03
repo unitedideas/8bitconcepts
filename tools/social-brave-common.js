@@ -599,6 +599,7 @@ function visibleElementInfo(selector, predicate = "") {
 
 function acquireLease({ owner, reason, ttl = 900, skip = false }) {
   if (skip) return () => {};
+  if (process.env.FOUNDRY_COMPUTER_USE_OWNER) return () => {};
   const proc = spawnSync("python3", [
     LEASE_BIN,
     "acquire",

@@ -435,17 +435,22 @@ function editorTargetExpression({ clear = false } = {}) {
 }
 
 function cdpInsertCopy(text) {
-  let inserted = cdpPasteText(editorTargetExpression({ clear: true }), text, { host: "x.com" });
-  if (!inserted || !inserted.ok) {
-    inserted = cdpInputText(editorTargetExpression({ clear: true }), text, { host: "x.com" });
+  const attempts = [];
+  let verified = { ok: false };
+  for (const [method, fn] of [
+    ["paste", () => cdpPasteText(editorTargetExpression({ clear: true }), text, { host: "x.com" })],
+    ["input", () => cdpInputText(editorTargetExpression({ clear: true }), text, { host: "x.com" })],
+  ]) {
+    const inserted = fn();
+    attempts.push({ method, inserted });
+    if (!inserted || !inserted.ok) continue;
+    verified = tryWaitFor(`X composer CDP ${method} content verification`, () => {
+      const current = visibleEditor();
+      return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
+    }, 9000);
+    attempts[attempts.length - 1].verified = verified;
+    if (verified.ok) break;
   }
-  if (!inserted || !inserted.ok) {
-    throw new Error(`X CDP composer insertion failed: ${JSON.stringify(inserted)}`);
-  }
-  const verified = tryWaitFor("X composer CDP content verification", () => {
-    const current = visibleEditor();
-    return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
-  }, 9000);
   if (!verified.ok) {
     const direct = directInsertCopy(text);
     const directVerified = waitFor("X composer direct content verification after CDP miss", () => {
@@ -453,7 +458,7 @@ function cdpInsertCopy(text) {
       return { ok: current.ok && normalize(current.text) === normalize(text), editor: current };
     }, 9000);
     if (!directVerified.ok) {
-      throw new Error(`X CDP/direct composer verification failed: ${JSON.stringify({ inserted, verified, direct, directVerified })}`);
+      throw new Error(`X CDP/direct composer verification failed: ${JSON.stringify({ attempts, direct, directVerified })}`);
     }
   }
   const ready = tryWaitFor("X Post button after CDP insert", () => {

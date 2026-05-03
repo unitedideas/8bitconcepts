@@ -225,6 +225,10 @@ async function inputOnPage(page, expression, text) {
       returnByValue: true,
       userGesture: true,
     });
+    try {
+      await wsSend(ws, "Input.insertText", { text: String(text) });
+      return resolved.target;
+    } catch {}
     for (const ch of Array.from(String(text))) {
       if (ch === "\n") {
         await wsSend(ws, "Input.dispatchKeyEvent", {
