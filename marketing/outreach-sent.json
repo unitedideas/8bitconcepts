@@ -279,16 +279,18 @@
     "resend_id": "5fb51784-8a93-4628-a1a1-12de65d4a2e3",
     "error": null
   },
-  {
-    "company": "Turing Post",
-    "contact_name": "Ksenia Se",
-    "email": "ks@turingpost.com",
-    "hook": "media-six-percent",
-    "subject": "McKinsey says 88% use AI, 6% see returns \u2014 what the 6% actually do differently",
-    "sent_at": "2026-04-15T21:02:53.937976+00:00",
-    "resend_id": "ca6ee5dc-54e2-43c5-b74e-5905ee279d91",
-    "error": null
-  },
+	  {
+	    "company": "Turing Post",
+	    "contact_name": "Ksenia Se",
+	    "email": "ks@turingpost.com",
+	    "hook": "media-six-percent",
+	    "subject": "McKinsey says 88% use AI, 6% see returns \u2014 what the 6% actually do differently",
+	    "sent_at": "2026-04-15T21:02:53.937976+00:00",
+	    "resend_id": "ca6ee5dc-54e2-43c5-b74e-5905ee279d91",
+	    "error": null,
+	    "do_not_contact": true,
+	    "dnc_reason": "Opt-out request (2026-05-02)"
+	  },
   {
     "company": "OnlyCFO",
     "contact_name": "OnlyCFO",

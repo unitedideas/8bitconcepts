@@ -258,7 +258,9 @@
     "email": "ks@turingpost.com",
     "hook": "media-six-percent",
     "source_confidence": "verified",
-    "source": "https://turingpost.substack.com/about"
+    "source": "https://turingpost.substack.com/about",
+    "do_not_contact": true,
+    "dnc_reason": "Opt-out request (2026-05-02)"
   },
   {
     "company": "OnlyCFO",
