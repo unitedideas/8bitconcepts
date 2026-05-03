@@ -127,18 +127,22 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T18:26:11+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
       "kind": "stat",
-      "source": "8bitconcepts MCP Ecosystem Health",
-      "source_url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source": "Not Human Search digest",
+      "source_url": "https://nothumansearch.ai/digest.json",
       "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "fact_id": "developer-tools-mcp-category",
-      "fact_key": "22b86351dd4354cb04d47fb4",
-      "fingerprint": "6c4882c5a4070d25",
-      "copy": "Developer tools account for 1,672 agent-ready sites, 23.8% of the indexed MCP/agent-ready web."
+      "fact_key": "nhs-digest:developer-share:1691-of-7091:2026-05-03T04:55:45Z",
+      "fingerprint": "24fb1d3518d8c6ea",
+      "copy": "Developer is 23.8% of the current NHS digest: 1,691 of 7,091 sites. That points to where the agent-ready web is thickest: APIs, infra, package intelligence, monitoring, and workflow tooling. https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "updated_at": "2026-05-03T04:58:05Z",
+      "posted_at": "2026-05-03T04:58:05Z",
+      "url": "https://x.com/8BitConcepts/status/2050801976418701507",
+      "note": "Original drafted category-share stat was refreshed to live digest values before posting. Verified counts: developer=1691, total_sites=7091, generated_at=2026-05-03T04:55:45Z. X specialist closeout: No scoped memory update needed."
     },
     {
       "id": "x-ai-stat-2026-04-28T19:33:13+00:00-31836ea7",
