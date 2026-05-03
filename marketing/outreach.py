@@ -29,6 +29,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent
 TARGETS_FILE = SCRIPT_DIR / "outreach-targets.json"
 SENT_FILE = SCRIPT_DIR / "outreach-sent.json"
+SUPPRESSIONS_FILE = SCRIPT_DIR / "suppressions.json"
 RESEND_API_URL = "https://api.resend.com/emails"
 FROM_EMAIL = "Shane at 8bitconcepts <hello@8bitconcepts.com>"
 
@@ -201,6 +202,23 @@ def save_sent(entries):
     with open(SENT_FILE, "w") as f:
         json.dump(entries, f, indent=2)
 
+def load_suppressions():
+    if not SUPPRESSIONS_FILE.exists():
+        return set()
+    try:
+        with open(SUPPRESSIONS_FILE) as f:
+            data = json.load(f)
+        emails = data.get("emails", [])
+        out = set()
+        for e in emails:
+            if isinstance(e, str):
+                out.add(e.strip().lower())
+            elif isinstance(e, dict) and e.get("email"):
+                out.add(str(e["email"]).strip().lower())
+        return out
+    except Exception:
+        return set()
+
 
 def get_resend_key():
     key = os.environ.get("RESEND_API_KEY")
@@ -260,8 +278,13 @@ def send_via_resend(api_key, to_email, subject, body):
 def cmd_send(dry_run=False):
     targets = load_targets()
     sent = load_sent()
+    suppressed = load_suppressions()
     sent_emails = {e["email"].lower() for e in sent}
-    pending = [t for t in targets if t["email"].lower() not in sent_emails]
+    pending = [
+        t for t in targets
+        if t["email"].lower() not in sent_emails
+        and t["email"].lower() not in suppressed
+    ]
     if not pending:
         print("No pending targets.")
         return
@@ -348,12 +371,15 @@ def cmd_followup(after_days, dry_run=False):
     """Send follow-up to targets whose initial was delivered >= N days ago and no followup yet."""
     from datetime import datetime, timezone, timedelta
     sent = load_sent()
+    suppressed = load_suppressions()
     # Build delivered-initial set
     cutoff = datetime.now(timezone.utc) - timedelta(days=after_days)
     initials = [e for e in sent if e.get("type", "initial") == "initial" and not e.get("error")]
     followed_up = {e["email"].lower() for e in sent if e.get("type") == "follow-up"}
     eligible = []
     for e in initials:
+        if e.get("email", "").lower() in suppressed:
+            continue
         if e["email"].lower() in followed_up:
             continue
         try:
