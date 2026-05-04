@@ -87,6 +87,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Governance Vacuum](https://8bitconcepts.com/research/the-governance-vacuum.html): Most enterprises now have AI deployed in production. Almost none have decided who owns it when it br
 
+- [The Validation Gap](https://8bitconcepts.com/research/the-validation-gap.html): Most engineering teams can tell you whether their AI pipeline ran. Almost none can tell you whether 
+
 ## Contact
 
 Website: https://8bitconcepts.com
