@@ -11,3 +11,6 @@ sent_at,original_send_id,to,subject,followup_id,status
 2026-05-05T14:08:16+00:00,8556e7ea-9124-4cdc-b6ff-b0b3eb4e2650,ks@turingpost.com,Re: sent,f4334fde-39ea-4892-9bf0-a59f302b5baa,sent-delivered
 2026-05-05T14:08:17+00:00,d3f57774-6db3-4ff3-bb34-057ca6df0847,ks@turingpost.com,Re: sent-FOD-newsletter-recommendation,331a88d7-4756-49e7-9505-53a4acc598a4,sent-delivered
 2026-05-05T14:08:18+00:00,c99cde4b-dcc8-4a04-9aed-02d95d02a6cb,gergely@pragmaticengineer.com,Re: sent-comp-data-hook,8108b1b5-663d-4013-96d4-6c941d949734,sent-delivered
+2026-05-05T17:05:26+00:00,1cbe5871-8a6e-42b5-92d9-86bf6faf516b,editors@infoq.com,Re: sent-infoq-ai-hiring-snapshot,c5924439-dd6e-48b6-ae22-2775c59df042,sent-delivered
+2026-05-05T17:05:27+00:00,ebfa0148-ba98-4a0d-95db-61ac25ba5eb7,tips@theinformation.com,Re: sent-ai-hiring-data-with-csv-link,4a06306c-16ce-4f39-bc40-b8eed2730953,sent-delivered
+2026-05-05T17:05:27+00:00,68e86f58-dcee-4c9e-8604-1ce857cdbd17,team@levels.fyi,Re: sent-comp-by-skill-data-partnership,4d8856c7-1011-40fb-a7f9-83d413f6fb46,sent-delivered
