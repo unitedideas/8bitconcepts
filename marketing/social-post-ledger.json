@@ -2241,6 +2241,87 @@
         }
       ],
       "note": "No public post created; latest LinkedIn post is older than 3 hours, so sync-state failure event was written for watchdog recovery."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-8bit-x-blocked-fde4c35c38c827bf",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-05-8bit",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-05T21:43:56.398Z",
+      "url": null,
+      "fingerprint": "fde4c35c38c827bf",
+      "original_queue_fingerprint": "0e1c55e9d8fb5675",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "candidate_kind": "research_fact",
+      "candidate_date": "2026-05-05",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "text": "Shift handoff is where early warnings disappear.\n\nIn the 8bitconcepts simulation, digital handoff retained 100% of prior-shift entries. Modeled verbal briefings retained 40-60%.\n\nThe missing 40-60% is usually where the preventable failure starts.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "approved_final_copy": "Shift handoff is where early warnings disappear.\n\nIn the 8bitconcepts simulation, digital handoff retained 100% of prior-shift entries. Modeled verbal briefings retained 40-60%.\n\nThe missing 40-60% is usually where the preventable failure starts.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "approved_final_fingerprint": "fde4c35c38c827bf",
+      "blocker": "X direct API returned AuthorizationError code 226 (automated action blocked). Browser fallback opened the verified X composer but failed content insertion: X composer keyboard entry verification left editor text as only a newline. No public post URL was created.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html returned HTTP 200",
+        "Source page metadata states 100% information retention with digital shift handoff vs. 40-60% with verbal briefings",
+        "Source page says the pattern detection gap is where preventable failures originate",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts business URL"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/fde4c35c38c827bf.json",
+      "posting_attempts": [
+        {
+          "route": "x_direct_cookie_graphql_api",
+          "result": "blocked",
+          "detail": "X CreateTweet returned AuthorizationError code 226: automated action blocked"
+        },
+        {
+          "route": "browser_fallback_after_code_226",
+          "result": "blocked",
+          "detail": "Composer insertion verification failed; editor text remained newline-only"
+        }
+      ],
+      "note": "No public post created; latest X post is within the 3-hour SLA window, so this is ledgered as blocked without loud stale-channel escalation."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-8bit-x-blocked-ccb857715b4ae117",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-05-8bit",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-05T21:43:56.398Z",
+      "url": null,
+      "fingerprint": "ccb857715b4ae117",
+      "original_queue_fingerprint": "0e1c55e9d8fb5675",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "candidate_kind": "research_fact",
+      "candidate_date": "2026-05-05",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "text": "Shift handoff is where early warnings disappear.\n\n8bitconcepts simulation: digital handoff retained 100% of entries. Modeled verbal briefings retained 40-60%.\n\nThat gap is where preventable failures start.\n\nhttps://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "approved_final_copy": "Shift handoff is where early warnings disappear.\n\n8bitconcepts simulation: digital handoff retained 100% of entries. Modeled verbal briefings retained 40-60%.\n\nThat gap is where preventable failures start.\n\nhttps://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "approved_final_fingerprint": "ccb857715b4ae117",
+      "blocker": "Shorter approved retry: browser-only X composer path failed the same insertion verification, leaving editor text as only a newline. No public post URL was created.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html returned HTTP 200",
+        "Source page metadata states 100% information retention with digital shift handoff vs. 40-60% with verbal briefings",
+        "Source page says the pattern detection gap is where preventable failures originate",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts business URL"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/ccb857715b4ae117.json",
+      "posting_attempts": [
+        {
+          "route": "shorter_browser_only_retry",
+          "result": "blocked",
+          "detail": "Composer insertion verification failed; editor text remained newline-only"
+        }
+      ],
+      "note": "No public post created; latest X post is within the 3-hour SLA window, so this is ledgered as blocked without loud stale-channel escalation."
     }
   ]
 }
