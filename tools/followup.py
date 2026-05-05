@@ -89,6 +89,7 @@ from typing import Optional
 ROOT = Path(__file__).resolve().parent.parent
 DIST_LOG = ROOT / "outreach" / "distribution_log.csv"
 FOLLOWUP_LOG = ROOT / "outreach" / "followup_log.csv"
+SUPPRESSIONS_FILE = ROOT / "marketing" / "suppressions.json"
 RESEND_EMAIL_URL = "https://api.resend.com/emails"
 FROM_EMAIL = "Shane at 8bitconcepts <hello@8bitconcepts.com>"
 REPLY_TO = "hello@8bitconcepts.com"
@@ -287,6 +288,22 @@ def load_followup_log() -> set[tuple[str, str]]:
             if to and orig:
                 done.add((to, orig))
     return done
+
+
+def load_suppressed_emails() -> set[str]:
+    """Emails that have opted out or otherwise must never be mailed."""
+    if not SUPPRESSIONS_FILE.exists():
+        return set()
+    try:
+        data = json.loads(SUPPRESSIONS_FILE.read_text())
+    except Exception as e:
+        log(f"[WARN] could not read suppressions: {e}")
+        return set()
+    return {
+        str(item.get("email", "")).strip().lower()
+        for item in data.get("emails", [])
+        if item.get("email")
+    }
 
 
 def append_followup_log(row: dict) -> None:
@@ -609,6 +626,7 @@ def main() -> int:
         for e in (args.skip_emails or "").split(",")
         if e.strip()
     }
+    skip |= load_suppressed_emails()
     try:
         return run(
             after_days=args.after_days,

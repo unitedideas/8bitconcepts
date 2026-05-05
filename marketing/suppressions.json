@@ -2,8 +2,9 @@
   "emails": [
     {
       "email": "ks@turingpost.com",
-      "reason": "Opt-out request: \"Not interested, please stop mailing me.\"",
-      "added_at": "2026-05-03T00:36:09Z"
+      "reason": "Opt-out request confirmed again by reply on 2026-05-05: \"REMOVE ME FROM YOUR LIST\".",
+      "added_at": "2026-05-03T00:36:09Z",
+      "confirmed_at": "2026-05-05T15:35:00Z"
     }
   ]
 }
