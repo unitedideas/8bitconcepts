@@ -9,7 +9,12 @@
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
     "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "e80a8b77-c850-4a71-9f3f-928daf3e47aa"
+    "followup_message_id": "e80a8b77-c850-4a71-9f3f-928daf3e47aa",
+    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
+    "second_followup_message_id": "5ed5aade-d44e-45b8-984a-1dc32ad32be2",
+    "second_followup_subject": "Re: AI for Atlantic & Pacific Freightways dispatch + invoicing",
+    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
+    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
   },
   {
     "email": "guy@pacnwtax.com",
@@ -21,7 +26,12 @@
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
     "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "919a98be-53d3-4240-8664-41bc565b2617"
+    "followup_message_id": "919a98be-53d3-4240-8664-41bc565b2617",
+    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
+    "second_followup_message_id": "b9ecd315-87c8-4438-b1b7-753934e1bf9e",
+    "second_followup_subject": "Re: AI for Pacific Northwest Tax and Accounting Services \u2014 without the disruption",
+    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
+    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
   },
   {
     "email": "dsfabinc@gmail.com",
@@ -33,7 +43,12 @@
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
     "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "2d22b02a-a13d-4dc8-b59e-9d5d999f20c1"
+    "followup_message_id": "2d22b02a-a13d-4dc8-b59e-9d5d999f20c1",
+    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
+    "second_followup_message_id": "2d1cc4cc-3474-4d65-adfb-8b58348a0703",
+    "second_followup_subject": "Re: A small note about your shop floor",
+    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
+    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
   },
   {
     "email": "siany@jjh-law.com",
@@ -45,7 +60,12 @@
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
     "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "d3cc65e1-bce8-4c4c-912d-0fed01fdaed2"
+    "followup_message_id": "d3cc65e1-bce8-4c4c-912d-0fed01fdaed2",
+    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
+    "second_followup_message_id": "1f3c1640-5adf-4aea-ad97-5669eff98f5f",
+    "second_followup_subject": "Re: AI for JJH Law \u2014 without the disruption",
+    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
+    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
   },
   {
     "email": "info@gulicklogistics.com",
@@ -70,7 +90,12 @@
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
     "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "0354744c-6dad-4e6a-9a86-9a8ba91404c4"
+    "followup_message_id": "0354744c-6dad-4e6a-9a86-9a8ba91404c4",
+    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
+    "second_followup_message_id": "2b857038-556c-43b5-b665-415285bba361",
+    "second_followup_subject": "Re: AI for Greear Kramer Monaghan CPAs \u2014 without the disruption",
+    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
+    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
   },
   {
     "email": "info@brewercaley.com",
@@ -83,7 +108,12 @@
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
     "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "e1fd4e8d-2eca-44ee-9364-a86e1175ea92"
+    "followup_message_id": "e1fd4e8d-2eca-44ee-9364-a86e1175ea92",
+    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
+    "second_followup_message_id": "ff9cead1-35ab-4da2-8823-1c433e1dcce1",
+    "second_followup_subject": "Re: AI for Brewer Caley CPAs \u2014 without the disruption",
+    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
+    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
   },
   {
     "email": "info@pickettinsurance.com",
@@ -96,7 +126,12 @@
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
     "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "1d97165c-ff86-47e0-9d46-71a6ceda36c7"
+    "followup_message_id": "1d97165c-ff86-47e0-9d46-71a6ceda36c7",
+    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
+    "second_followup_message_id": "a889ff72-aaf6-4dcc-a45d-4c017c09be8f",
+    "second_followup_subject": "Re: AI for Pickett Insurance Agency \u2014 without the disruption",
+    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
+    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
   },
   {
     "email": "ask@harlowwealth.com",
@@ -109,7 +144,12 @@
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
     "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "cc0dc554-5f5a-4d6c-87e2-4c309594ea43"
+    "followup_message_id": "cc0dc554-5f5a-4d6c-87e2-4c309594ea43",
+    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
+    "second_followup_message_id": "cab9700d-4493-4180-9a48-b3dca5bb3f15",
+    "second_followup_subject": "Re: AI for Harlow Wealth Management \u2014 without the disruption",
+    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
+    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
   },
   {
     "email": "sales@precise1.net",
