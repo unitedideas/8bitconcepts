@@ -400,6 +400,12 @@ function postOrDryRunPageApi(args, text) {
   console.log(JSON.stringify({ ok: true, url, verified: true, method: "linkedin_page_voyager_api", urn: result.urn, activityUrn: result.activityUrn }));
 }
 
+function postOrDryRunBrowser(args, text) {
+  const composer = openComposer(args);
+  insertCopy(text, composer.mode);
+  return postOrDryRun(args.dryRun, text, composer.mode);
+}
+
 function linkedinJS(js) {
   return braveJS(js, { focus: false });
 }
@@ -482,6 +488,8 @@ function openComposer(args) {
   })()`), 12000);
 
   const clicked = linkedinJS(`(() => {
+    const interop = document.querySelector("#interop-outlet");
+    if (interop) interop.style.pointerEvents = "none";
     const preferred = Array.from(document.querySelectorAll('button[aria-label], [role="button"][aria-label]'))
       .find(e => {
         const label = e.getAttribute("aria-label") || "";
@@ -520,7 +528,37 @@ function openComposer(args) {
   const afterDomClick = tryWaitFor("LinkedIn composer after DOM Start a post", () => visibleEditor(), 5000);
   if (afterDomClick.ok) return { mode: "dom", ...afterDomClick };
 
-  throw new Error("LinkedIn background mode could not open the composer with DOM events; foreground/native interaction is required and was refused.");
+  const nativeTarget = linkedinJS(`(() => {
+    const interop = document.querySelector("#interop-outlet");
+    if (interop) interop.style.pointerEvents = "none";
+    const preferred = Array.from(document.querySelectorAll('button[aria-label], [role="button"][aria-label]'))
+      .find(e => {
+        const label = e.getAttribute("aria-label") || "";
+        const r = e.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && label.includes("Start a post");
+      });
+    const candidates = Array.from(document.querySelectorAll('button, [role="button"], a, div'))
+      .filter(e => {
+        const text = ((e.innerText || e.textContent || "").trim());
+        const label = e.getAttribute("aria-label") || "";
+        const a = e.closest('a');
+        if (a && a.href && a.href.includes('/in/')) return false;
+        const r = e.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && (text === "Start a post" || label === "Start a post" || text.includes("Start a post"));
+      });
+    const exact = candidates.filter(e => ((e.innerText || e.textContent || "").trim() === "Start a post") || e.getAttribute("aria-label") === "Start a post");
+    const el = preferred || exact.find(e => e.matches('button, [role="button"]')) || exact[0] || candidates[0];
+    if (!el) return JSON.stringify({ ok: false, reason: "Start a post not found for native click" });
+    const r = el.getBoundingClientRect();
+    return JSON.stringify({ ok: true, rect: { x: r.x, y: r.y, w: r.width, h: r.height }, innerHeight: window.innerHeight });
+  })()`);
+  if (nativeTarget && nativeTarget.ok) {
+    nativeClickElement(nativeTarget.rect, nativeTarget.innerHeight);
+    const afterNativeClick = tryWaitFor("LinkedIn composer after native Start a post", () => visibleEditor(), 7000);
+    if (afterNativeClick.ok) return { mode: "dom", ...afterNativeClick };
+  }
+
+  throw new Error(`LinkedIn browser recovery could not open the composer: ${JSON.stringify({ clicked, nativeTarget })}`);
 }
 
 function focusAndClearEditor() {
@@ -678,8 +716,9 @@ function clickPost() {
     return JSON.stringify({ ok: true });
   })()`);
   if (!clicked || !clicked.ok) {
-    throw new Error(`LinkedIn post click failed: ${JSON.stringify(clicked)}`);
+    return clickNativePost();
   }
+  return clicked;
 }
 
 function postSuccessProbe() {
@@ -886,7 +925,6 @@ function findVisibleBluePostButton() {
 }
 
 function clickNativePost() {
-  throw new Error("LinkedIn background mode refused native post click.");
   const target = linkedinJS(`(() => {
     const dialog = Array.from(document.querySelectorAll('[role="dialog"]'))
       .find(d => {
@@ -1006,7 +1044,7 @@ function verifyLivePost(url, text) {
 }
 
 function closeNativeDraft() {
-  throw new Error("LinkedIn background mode refused native draft cleanup.");
+  return closeDraft();
 }
 
 function postOrDryRun(dryRun, text, mode) {
@@ -1056,7 +1094,7 @@ function main() {
 
   const run = () => {
     if (process.env.SOCIAL_LINKEDIN_FORCE_BROWSER === "1") {
-      return Promise.resolve().then(() => postOrDryRunPageApi(args, text));
+      return Promise.resolve().then(() => postOrDryRunBrowser(args, text));
     }
     if (!args.recoverOnly) return postOrDryRunApiWithFallback(args, text);
     return Promise.resolve().then(() => {

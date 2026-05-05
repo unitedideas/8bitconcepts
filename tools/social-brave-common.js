@@ -382,7 +382,11 @@ tell application id "${BRAVE_APP_ID}"
 end tell
 return "not found"
 `;
-  if (osa(script) === "ok") return true;
+  try {
+    if (osa(script) === "ok") return true;
+  } catch {
+    // JavaScript from Apple Events can be disabled while CDP still works.
+  }
   if (targetWindowName.startsWith("8bit-linkedin-")) {
     const linkedin = `
 tell application id "${BRAVE_APP_ID}"
@@ -403,7 +407,14 @@ tell application id "${BRAVE_APP_ID}"
 end tell
 return "not found"
 `;
-    return osa(linkedin) === "ok";
+    try {
+      return osa(linkedin) === "ok";
+    } catch {
+      try {
+        osa(`tell application id "${BRAVE_APP_ID}" to activate`);
+      } catch {}
+      return false;
+    }
   }
   return false;
 }

@@ -1586,6 +1586,32 @@
       "public_action_lock_claimed": true
     },
     {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-05-anthropic-targeted-research",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "blocked",
+      "blocked_at": "2026-05-05T15:09:07Z",
+      "url": null,
+      "fingerprint": "ee37ae5750672d14",
+      "fact_key": "targeted-research:anthropic:283:alignment,llm,agents,research,search,data-pipeline,distributed-systems",
+      "candidate_kind": "targeted_research",
+      "candidate_date": "2026-05-05",
+      "text": "Anthropic has 283 indexed AI/ML roles in AI Dev Board right now, ranked third in the current company list.\n\nThe first fetched jobs include Research Engineer, Performance RL; Research Lead, Training Insights; and Research Engineer, Model Evaluations. The current fetched tags include alignment, LLM, agents, research, search, data-pipeline, and distributed systems.\n\nThe average published salary across the indexed Anthropic roles is $364,180.\n\nThat is a useful public read on where the operational work is clustering: RL infrastructure, evals, model behavior measurement, and agent systems.\n\nThe NHS follow-up lens adds the site-readiness side: anthropic.com shows Agentic Readiness at 20/100, with a structured API found and the careers page reachable.\n\nhttps://aidevboard.com/company/anthropic\nhttps://nothumansearch.ai/site/anthropic.com",
+      "blocker": "LinkedIn public post did not go live after required recovery routes: direct Voyager cookie route rejected all cookie sources (chrome-profile-3 returned 302), page-context Voyager /voyager/api/me returned 401, and approved one-shot Brave browser recovery verified Shane Cheek / Founder at 8bitconcepts on linkedin.com/feed but could not open the composer; LinkedIn Start a post ignored DOM/CDP/native click attempts while local screencapture was black and Apple Events JavaScript is disabled.",
+      "identity_verified": "Shane Cheek / Founder at 8bitconcepts visible on https://www.linkedin.com/feed/",
+      "facts_verified": [
+        "https://aidevboard.com/company/anthropic returned 200",
+        "https://aidevboard.com/api/v1/stats lists Anthropic with 283 roles, rank 3, avg_salary 364180",
+        "https://aidevboard.com/api/v1/jobs?company=anthropic returned 283 total jobs; first fetched titles included Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations",
+        "https://nothumansearch.ai/site/anthropic.com returned 200 and shows Agentic Readiness 20/100 plus Structured API Found",
+        "https://www.anthropic.com/careers returned 200"
+      ],
+      "social_editor": "approved",
+      "linkedin_operator": "eligible; no scoped memory update needed",
+      "public_action_lock": "/Users/owlassist/.foundry/foundry-sync-state/public-action-locks/social-content/ee37ae5750672d14.json"
+    },
+    {
       "id": "portfolio-daily-2026-05-05-agentic-evidence-x",
       "source": "marketing/daily-portfolio-social-queue.json",
       "channel": "x",
