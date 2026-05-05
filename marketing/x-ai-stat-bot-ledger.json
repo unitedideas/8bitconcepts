@@ -291,6 +291,23 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-ai-stat-fallback-mcp-current-2026-05-05-240d5468",
+      "status": "blocked",
+      "created_at": "2026-05-05T20:30:11.332Z",
+      "updated_at": "2026-05-05T20:30:11.332Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "8bitconcepts MCP Ecosystem Health",
+      "source_url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_id": "mcp-current-llms-5124-mcp-440",
+      "fact_key": "mcp-live-current:llms-5124-of-7159:mcp-440",
+      "fingerprint": "240d5468774ee94d",
+      "copy": "In the current MCP audit, 5,124 of 7,159 agent-ready sites publish llms.txt. Only 440 pass a live JSON-RPC MCP handshake. Discovery files are spreading faster than callable endpoints.",
+      "blocker": "Fallback was claimed and approved, but no public fallback post went live; X direct returned empty 200 and browser composer insertion failed. Anthropic candidate had already posted live twice, so fallback was stopped and lock was marked blocked."
     }
   ]
 }

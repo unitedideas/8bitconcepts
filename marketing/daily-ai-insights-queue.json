@@ -62,8 +62,16 @@
         "x": {
           "account": "@8bitconcepts",
           "copy": "Looking at public AI hiring as a market signal: @AnthropicAI has 283 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, alignment, agents. Avg published salary: $364,180. Anthropic is #3 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment. Which layer becomes the hardest to operationalize first: eval design, tool-use environments, or production feedback?\n\nData: https://aidevboard.com/company/anthropic",
-          "fingerprint": "866d3fb5f88a3ac0",
-          "duplicate": false
+          "fingerprint": "51498de0db65f71b",
+          "duplicate": false,
+          "status": "posted",
+          "posted_at": "2026-05-05T20:30:11.332Z",
+          "url": "https://x.com/8BitConcepts/status/2051758476020633970",
+          "final_copy": "Anthropic has 283 AI roles indexed on AI Dev Board.\n\nFirst fetched jobs cluster around Performance RL, Model Evaluations, Training Insights, and RL infrastructure.\n\nThe signal is evals, RL systems, and model behavior measurement.\n\nhttps://aidevboard.com/company/anthropic",
+          "approved_final_copy": "Anthropic has 283 AI roles indexed on AI Dev Board.\n\nFirst fetched jobs cluster around Performance RL, Model Evaluations, Training Insights, and RL infrastructure.\n\nThe signal is evals, RL systems, and model behavior measurement.\n\nhttps://aidevboard.com/company/anthropic",
+          "approved_final_fingerprint": "51498de0db65f71b",
+          "duplicate_retry_url": "https://x.com/8BitConcepts/status/2051759115844964809",
+          "note": "Posted from verified @8BitConcepts. X direct API returned empty 200 twice; profile recovery found two live Anthropic statuses, so both were ledgered."
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
