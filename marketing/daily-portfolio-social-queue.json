@@ -22,9 +22,13 @@
         "x": {
           "account": "@8bitconcepts",
           "copy": "Agentic technical interview evidence layer for Hatchways-style assessments.\n\nNext move for Agentic Evidence: Add hidden-test grading, optional GitHub App install UX, and reviewer.\n\nhttps://agentic-evidence.fly.dev",
-          "fingerprint": "fa45c89834549320",
-          "duplicate": false,
-          "length": 202
+          "fingerprint": "6ef1cd24cd68008e",
+          "duplicate": true,
+          "length": 455,
+          "status": "posted",
+          "posted_at": "2026-05-05T13:19:21Z",
+          "url": "https://x.com/8BitConcepts/status/2051652547514192316",
+          "final_copy": "Agentic Evidence is live as a developer-VM interview layer.\n\nCandidates work with Codex or Claude in a real VM. Reviewers get the transcript, command trail, git snapshots, tests, and final evidence in one packet.\n\nCurrent config: 72-hour candidate sessions, 240-minute VM TTL, auto-teardown on submit, tamper-evident audit trail, secret-pattern blocking, and overage disabled.\n\nThe useful bit is evidence, not proctoring.\n\nhttps://agentic-evidence.fly.dev"
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
