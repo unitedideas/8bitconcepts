@@ -499,6 +499,10 @@
     <h2 class="form-title">Tell us what you're trying to do.</h2>
     <p class="form-sub">This page uses an inquiry form, not instant calendar booking. Send the context and we'll reply from hello@8bitconcepts.com with next available times, or tell you directly if the work is not a fit.</p>
     <form id="lead-form-el" onsubmit="return submitLead(event)">
+      <div style="position:absolute;left:-5000px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+        <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
+      </div>
       <div class="row">
         <label class="required">Your name
           <input type="text" name="name" required autocomplete="name" />

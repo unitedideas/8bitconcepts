@@ -250,6 +250,10 @@
     <h2 class="form-title">Tell us what you're trying to do.</h2>
     <p class="form-sub">30 minutes, free, no slides. We'll tell you straight whether we can help, what shape the engagement should take, or who else you should talk to.</p>
     <form id="lead-form-el" onsubmit="return submitLead(event)">
+      <div style="position:absolute;left:-5000px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+        <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
+      </div>
       <div class="row">
         <label class="required">Your name<input type="text" name="name" required autocomplete="name" /></label>
         <label class="required">Work email<input type="email" name="email" required autocomplete="email" placeholder="you@company.com" /></label>
