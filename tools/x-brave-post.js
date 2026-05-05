@@ -43,7 +43,7 @@ const BRAVE_SAFE_STORAGE_SERVICE = "Brave Safe Storage";
 let xWebConfigCache = null;
 
 function usage() {
-  console.error("usage: node tools/x-brave-post.js (--text <copy> | --text-file <path>) [--expected-handle <handle>] [--dry-run] [--json] [--skip-lease]");
+  console.error("usage: node tools/x-brave-post.js (--text <copy> | --text-file <path> | --delete <statusUrlOrId>) [--expected-handle <handle>] [--dry-run] [--json] [--skip-lease]");
   process.exit(2);
 }
 
@@ -61,11 +61,19 @@ function parseArgs(argv) {
     else if (arg === "--skip-lease") args.skipLease = true;
     else if (arg === "--text") args.text = argv[++i];
     else if (arg === "--text-file") args.textFile = argv[++i];
+    else if (arg === "--delete") args.deleteTarget = argv[++i];
     else if (arg === "--expected-handle") args.expectedHandle = argv[++i];
     else usage();
   }
-  if (!args.text && !args.textFile) usage();
-  if (args.text && args.textFile) usage();
+  if (args.deleteTarget) {
+    if (args.text || args.textFile) usage();
+    const match = String(args.deleteTarget).match(/(\d{6,})/);
+    if (!match) usage();
+    args.deleteId = match[1];
+  } else {
+    if (!args.text && !args.textFile) usage();
+    if (args.text && args.textFile) usage();
+  }
   args.expectedHandle = args.expectedHandle.replace(/^@/, "");
   return args;
 }
@@ -175,6 +183,7 @@ async function xWebConfig() {
     bearer,
     operations: {
       CreateTweet: parseOperation(mainJs, "CreateTweet"),
+      DeleteTweet: parseOperation(mainJs, "DeleteTweet"),
       TweetResultByRestId: parseOperation(mainJs, "TweetResultByRestId"),
       UserByScreenName: parseOperation(mainJs, "UserByScreenName"),
     },
@@ -289,6 +298,27 @@ async function postOrDryRunDirect(args, text) {
   const url = `${PROFILE_BASE}/${account.screenName}/status/${tweetId}`;
   if (args.json) console.log(JSON.stringify({ ok: true, url, verified: true, method: "x_direct_cookie_graphql_api" }));
   else console.log(url);
+}
+
+async function deleteDirect(args) {
+  const account = await verifyAccountDirect(args.expectedHandle);
+  if (args.dryRun) {
+    if (args.json) console.log(JSON.stringify({ ok: true, dryRun: true, method: "x_direct_delete", id: args.deleteId, identity: account }));
+    else console.log(`would delete ${args.deleteId}`);
+    return;
+  }
+  await xWebConfig();
+  const op = xWebConfigCache.operations.DeleteTweet;
+  const res = await xApiRequest("POST", `/i/api/graphql/${op.queryId}/DeleteTweet`, {
+    variables: { tweet_id: args.deleteId, dark_request: false },
+    queryId: op.queryId,
+  });
+  const success = res.json && res.json.data && res.json.data.delete_tweet && res.json.data.delete_tweet.tweet_results;
+  if (!res.ok || !success) {
+    throw new Error(`X DeleteTweet failed: ${JSON.stringify({ status: res.status, errors: res.json && res.json.errors, text: res.text ? res.text.slice(0, 500) : "" })}`);
+  }
+  if (args.json) console.log(JSON.stringify({ ok: true, deleted: args.deleteId, method: "x_direct_delete", identity: account }));
+  else console.log(`deleted ${args.deleteId}`);
 }
 
 function profileHref() {
@@ -694,6 +724,14 @@ function postOrDryRun(args, text) {
 
 function main() {
   const args = parseArgs(process.argv);
+  if (args.deleteId) {
+    return runWithLease({
+      owner: "8bit-x-brave-post",
+      reason: args.dryRun ? "dry-run X direct delete" : `delete X status ${args.deleteId} via direct authenticated X API`,
+      ttl: 300,
+      skip: args.skipLease,
+    }, async () => deleteDirect(args));
+  }
   const text = readText(args);
   if (!text) throw new Error("post text is empty");
 
