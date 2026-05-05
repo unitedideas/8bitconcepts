@@ -133,7 +133,20 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%.\n\nThe dangerous loss is not the obvious critical issue. It is the developing trend that is not urgent yet.\n\nSource:\nhttps://8bitconcepts.com/research/shift-handoff-intelligence.html",
           "fingerprint": "04894f4e1db9f2e5",
-          "duplicate": false
+          "duplicate": false,
+          "status": "blocked",
+          "blocked_at": "2026-05-05T21:21:19Z",
+          "blocker": "LinkedIn auth hard stop before verified posting identity: direct Voyager cookies were rejected (chrome-profile-3 returned 302), page-context Voyager /voyager/api/me returned 401, and approved one-shot Brave recovery stayed on LinkedIn Login 'We’re signing you in' for Shane Cheek h*****@8bitconcepts.com instead of reaching the feed/composer. No public post was created.",
+          "approved_final_copy": "A shift-handoff simulation found 100% information retention with digital handoff versus an estimated 40-60% with verbal briefings.\n\nThe dangerous loss is not usually the obvious critical issue. It is the developing trend that is not urgent yet, so it gets cut first when the briefing compresses.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+          "approved_final_fingerprint": "762f91dd102ac7e0",
+          "facts_verified": [
+            "https://8bitconcepts.com/research/shift-handoff-intelligence.html returned HTTP 200",
+            "The source page metadata states 100% information retention with digital shift handoff vs. 40-60% with verbal briefings",
+            "The source page table shows 100% vs. 40-60% estimated retention",
+            "The source page says developing trends are dangerous because they are not urgent yet and are first cut from a verbal briefing",
+            "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts portfolio business URL"
+          ],
+          "social_editor_status": "approved"
         }
       },
       "quality_gate": [
