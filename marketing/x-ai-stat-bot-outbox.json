@@ -237,7 +237,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-29T00:21:55+00:00-d0b36670",
-      "status": "queued",
+      "status": "posted",
       "created_at": "2026-04-29T00:21:55+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -247,11 +247,26 @@
       "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
       "fact_id": "research-premium-vs-genai",
       "fact_key": "d0b366705683b61e40d789eb",
-      "fingerprint": "559ac6e199455d2a",
-      "copy": "Research AI roles pay a $43k premium over generative-AI roles: $273,880 vs $230,707 on average, with 737 openings vs 1,846. https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "updated_at": "2026-05-02T18:52:35Z",
+      "fingerprint": "4c246e3611337412",
+      "copy": "In 3,548 salary-disclosed AI/ML engineering roles, research roles average $279,788. Generative-AI roles average $233,414, despite having about 2.6x more openings.\n\nScarcity still pays.",
+      "updated_at": "2026-05-05T19:09:48Z",
       "blocker": "tools/x-brave-post.js authenticated the @8BitConcepts session, but direct CreateTweet returned AuthorizationError 344 (daily limit reached) and the browser fallback then failed `X composer keyboard entry verification` with only a newline in the editor. No live status URL was created.",
-      "note": "Re-queued after agent-social-editor approval so a later X publisher run can retry this exact copy when X posting is available again."
+      "note": "Stale compensation draft refreshed to live source-page values before posting from verified @8BitConcepts.",
+      "posted_at": "2026-05-05T19:09:48Z",
+      "url": "https://x.com/8BitConcepts/status/2051741063157793081",
+      "original_fingerprint": "559ac6e199455d2a",
+      "approved_final_copy": "In 3,548 salary-disclosed AI/ML engineering roles, research roles average $279,788. Generative-AI roles average $233,414, despite having about 2.6x more openings.\n\nScarcity still pays.",
+      "approved_final_fingerprint": "4c246e3611337412",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html returned HTTP 200",
+        "The live source page says it uses 3,548 salary-disclosed AI/ML engineering roles across 527 companies, as of 2026-05-04",
+        "The live source page says research roles average $279,788 and generative-AI roles average $233,414",
+        "The live source page says generative-AI has roughly 2.6x more openings: 1,892 vs 740",
+        "X identity verified by tools/x-brave-post.js dry-run as @8BitConcepts / 8bitconcepts"
+      ]
     },
     {
       "id": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2",
