@@ -45,6 +45,14 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+# Behavioral guards live in marketing/_outreach_guards.py — DO NOT remove this import
+# or inline the constants. See _outreach_guards.py for the rationale and contract.
+from _outreach_guards import (  # noqa: E402
+    RESEND_REQUIRED_USER_AGENT,
+    is_sendable_email,
+    self_check_outreach_guards,
+)
+
 SCRIPT_DIR = Path(__file__).parent
 TARGETS_FILE = SCRIPT_DIR / "pnw-smb-targets.csv"
 SENT_FILE = SCRIPT_DIR / "pnw-outreach-sent.json"
@@ -284,31 +292,6 @@ def cmd_template_preview():
         print(f"\nBody:\n{template['body']}")
 
 
-RESEND_REQUIRED_USER_AGENT = 'curl/8.7.1'
-"""DO NOT REMOVE OR INLINE THIS CONSTANT.
-
-Resend's API sits behind Cloudflare. Python's urllib default User-Agent
-('Python-urllib/3.x') triggers Cloudflare error 1010 and the request is
-blocked before it reaches Resend. Setting a real-looking UA fixes it.
-
-If you're an LLM editing this file: do not strip this header on the basis
-of "cleanup" or "redundancy". An automation in this repo has reverted this
-fix once already (commit 47b9acc). Removing it silently breaks the entire
-outreach pipeline (every email returns 403 Cloudflare 1010). See memory
-feedback_urllib_cloudflare_1010.
-"""
-
-
-def is_sendable_email(addr: str) -> bool:
-    """Filter for the outreach pending list. Reject empties and anything without
-    a literal '@'. Without this filter, role-based-only or LinkedIn-only entries
-    cause Resend to return 422 'invalid email' on every call. Stripping this
-    check produced a 30%+ effective bounce rate before it was added — DO NOT
-    REMOVE the '@' check.
-    """
-    return bool(addr) and '@' in addr
-
-
 def send_via_resend(to_email, subject, body, api_key):
     """Send email via Resend API. Return (success, message_id or error)."""
     import json as json_module
@@ -480,38 +463,8 @@ Wanted to check if you had a chance to look at the research — if it resonates,
         print("\n---COPY ABOVE TO GMAIL---\n")
 
 
-def _self_check_outreach_guards() -> None:
-    """Fail loudly if a future edit silently removes the Cloudflare UA workaround
-    or the email-filter regression guards. Verifies behavior, not just text —
-    tampering with comments/docstrings won't satisfy these checks; only the
-    actual runtime values do."""
-    if globals().get("RESEND_REQUIRED_USER_AGENT") != "curl/8.7.1":
-        raise SystemExit(
-            "pnw-outreach.py guard FAILED: RESEND_REQUIRED_USER_AGENT constant missing or altered. "
-            "Cloudflare 1010 will block every send. Restore from git history before running. "
-            "See memory feedback_urllib_cloudflare_1010."
-        )
-    if not callable(globals().get("is_sendable_email")):
-        raise SystemExit(
-            "pnw-outreach.py guard FAILED: is_sendable_email function missing. "
-            "Restore from git history before running."
-        )
-    if is_sendable_email("not-an-email") or not is_sendable_email("ok@example.com") or is_sendable_email(""):
-        raise SystemExit(
-            "pnw-outreach.py guard FAILED: is_sendable_email logic regressed. "
-            "It must accept strings containing '@' and reject everything else."
-        )
-    import inspect
-    src = inspect.getsource(send_via_resend)
-    if "RESEND_REQUIRED_USER_AGENT" not in src:
-        raise SystemExit(
-            "pnw-outreach.py guard FAILED: send_via_resend no longer references RESEND_REQUIRED_USER_AGENT. "
-            "Restore the User-Agent header before running."
-        )
-
-
 if __name__ == "__main__":
-    _self_check_outreach_guards()
+    self_check_outreach_guards()
     parser = argparse.ArgumentParser(description="PNW SMB Outreach")
     subparsers = parser.add_subparsers(dest="command")
 
