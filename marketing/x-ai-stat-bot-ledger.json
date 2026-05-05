@@ -176,7 +176,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T20:09:15+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -186,8 +186,26 @@
       "route": "https://aidevboard.com",
       "fact_id": "adb-total-jobs-9161-companies-524",
       "fact_key": "71d43027a1a60f8bb8e53527",
-      "fingerprint": "708a1e42008d35e0",
-      "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now."
+      "fingerprint": "77f6d7b028cf461a",
+      "copy": "AI Dev Board is tracking 9,906 AI/ML roles across 527 companies.\n\nThat is enough live supply for agents to query the AI hiring market directly instead of scraping job pages.\n\nhttps://aidevboard.com",
+      "updated_at": "2026-05-05T17:25:16.243Z",
+      "posted_at": "2026-05-05T17:25:16.243Z",
+      "url": "https://x.com/8BitConcepts/status/2051713209556730268",
+      "original_fingerprint": "708a1e42008d35e0",
+      "approved_final_copy": "AI Dev Board is tracking 9,906 AI/ML roles across 527 companies.\n\nThat is enough live supply for agents to query the AI hiring market directly instead of scraping job pages.\n\nhttps://aidevboard.com",
+      "approved_final_fingerprint": "77f6d7b028cf461a",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "facts_verified": [
+        "https://aidevboard.com/api/v1/stats returned HTTP 200",
+        "overview.total_jobs=9906",
+        "overview.total_companies=527",
+        "overview.updated_at=2026-05-05T17:16:01Z",
+        "https://aidevboard.com is the AI Dev Board portfolio URL in systems/foundry-business-index.md",
+        "X identity verified by tools/x-brave-post.js dry-run as @8BitConcepts / 8bitconcepts"
+      ],
+      "note": "Stale ADB live-stat draft refreshed to 9,906 roles / 527 companies from live stats before posting."
     },
     {
       "id": "x-ai-stat-2026-04-28T21:03:17+00:00-31d1c476",
