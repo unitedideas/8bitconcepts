@@ -3,54 +3,6 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
-      "id": "daily-research-fact-2026-05-04-nhs-linkedin",
-      "source": "8bit-linkedin-agent-publisher",
-      "source_item": "daily-research-fact-2026-05-04-nhs",
-      "channel": "linkedin",
-      "account": "Shane Cheek / Founder at 8bitconcepts",
-      "status": "blocked",
-      "blocked_at": "2026-05-05T17:57:34Z",
-      "blocker": "LinkedIn auth could not reach a verified posting identity: direct cookie Voyager rejected chrome-profile-3 with 302, page-context Voyager returned 401, and supervised browser recovery stayed on LinkedIn Login 'We’re signing you in' for Shane Cheek h*****@8bitconcepts.com instead of reaching the feed/composer. No public post was created.",
-      "fingerprint": "af61256c5d1af50b",
-      "text": "One split from the Not Human Search MCP audit:\n\nDeveloper tools: 1,708 indexed sites, 23.9% of the index.\nHealth / medical: 70 sites, 1.0%.\nEducation: 28 sites, 0.4%.\n\nThe agent ecosystem is much denser around developer tooling than the verticals where workflow constraints are heavier.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "facts_verified": [
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
-        "The live source page says Developer tools accounts for 1,708 indexed sites, 23.9% of the index",
-        "The live source page table says Health / medical has 70 indexed sites, 1.0%",
-        "The live source page table says Education has 28 indexed sites, 0.4%",
-        "https://nothumansearch.ai returned HTTP 200 and is the portfolio business URL for Not Human Search",
-        "https://8bitconcepts.com returned HTTP 200 and is the 8bitconcepts portfolio URL"
-      ],
-      "editor": "agent-social-editor",
-      "editor_status": "approved",
-      "operator_closeout": "No scoped memory update needed",
-      "note": "No public post created; direct Voyager, page-context Voyager, and approved one-shot browser recovery all failed before verified identity/composer access."
-    },
-    {
-      "id": "daily-research-fact-2026-05-04-8bit-linkedin",
-      "source": "8bit-linkedin-agent-publisher",
-      "source_item": "daily-research-fact-2026-05-04-8bit",
-      "channel": "linkedin",
-      "account": "Shane Cheek",
-      "status": "posted",
-      "posted_at": "2026-05-05T16:47:12Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7457470972552445954/",
-      "fingerprint": "b25728133637fecf",
-      "text": "Model API fees are usually 10-20% of an AI build.\n\nThe bigger costs are the work around the model: data pipelines, system integration, evaluation and testing, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
-      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
-      "facts_verified": [
-        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
-        "The source page states model API costs are 10-20% of what AI actually costs to ship",
-        "The source page names data pipelines, system integration, evaluation/testing, observability, and maintenance as major non-model cost centers",
-        "https://8bitconcepts.com returned HTTP 200 and is the portfolio index URL for 8bitconcepts"
-      ],
-      "editor": "agent-social-editor",
-      "editor_status": "approved",
-      "operator_closeout": "No scoped memory update needed",
-      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API from verified Shane Cheek / Founder at 8bitconcepts identity; live canonical activity page verified by curl."
-    },
-    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
@@ -838,7 +790,7 @@
       "fact_key": "adb_stats:top_companies:Speechify=1063,OpenAI=354,Anthropic=283",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "AI hiring signal (public AI Dev Board stats):\n\nSpeechify: 1063\nOpenAI: 354\nAnthropic: 283\n\nAs of 10:52 am PT. Mindshare ≠ hiring signal. What metric do you track to find where execution work is actually happening?",
+      "copy": "AI hiring signal (public AI Dev Board stats):\n\nSpeechify: 1063\nOpenAI: 354\nAnthropic: 283\n\nAs of 10:52 am PT. Mindshare \u2260 hiring signal. What metric do you track to find where execution work is actually happening?",
       "note": "Validator posted to close the 2h gap; stats fetched live from /api/v1/stats."
     },
     {
@@ -854,7 +806,7 @@
       "fact_key": "adb_stats:top_companies:Speechify=1063,OpenAI=354,Anthropic=283",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "AI hiring signal from the public AI Dev Board stats endpoint:\n\n- Speechify: 1063 indexed AI/ML roles\n- OpenAI: 354 indexed AI/ML roles\n- Anthropic: 283 indexed AI/ML roles\n\nAs of 10:52 am PT.\n\nMindshare and hiring don’t always match. If you had to pick one proxy for where AI execution work is really happening (infra, evals, deployment loops, applied product), what do you use?\n\nData: https://aidevboard.com/api/v1/stats",
+      "copy": "AI hiring signal from the public AI Dev Board stats endpoint:\n\n- Speechify: 1063 indexed AI/ML roles\n- OpenAI: 354 indexed AI/ML roles\n- Anthropic: 283 indexed AI/ML roles\n\nAs of 10:52 am PT.\n\nMindshare and hiring don\u2019t always match. If you had to pick one proxy for where AI execution work is really happening (infra, evals, deployment loops, applied product), what do you use?\n\nData: https://aidevboard.com/api/v1/stats",
       "note": "LinkedIn browser post did not complete with a verified permalink; sync-state lock marked failed."
     },
     {
@@ -886,7 +838,7 @@
       "fact_key": "adb_stats:overview.total_jobs=9906,companies=527,median_salary=212750,tags.llm=2655,tags.agents=2451,tag.distributed-systems=1481 (updated_at=2026-04-30T20:56:35Z)",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "Public AI Dev Board snapshot (updated 1:56pm PT):\n\n- 9,906 AI/ML jobs across 527 companies\n- median posted salary: $212,750\n- tag counts: llm 2,655; agents 2,451\n- distributed-systems: 1,481 jobs, $256,046 avg salary\n\nIf you’re trying to track where execution work is actually happening (vs mindshare), what do you look at?\n\nData: https://aidevboard.com/api/v1/stats",
+      "copy": "Public AI Dev Board snapshot (updated 1:56pm PT):\n\n- 9,906 AI/ML jobs across 527 companies\n- median posted salary: $212,750\n- tag counts: llm 2,655; agents 2,451\n- distributed-systems: 1,481 jobs, $256,046 avg salary\n\nIf you\u2019re trying to track where execution work is actually happening (vs mindshare), what do you look at?\n\nData: https://aidevboard.com/api/v1/stats",
       "note": "Blocked: Brave AppleScript focus/activate operations are SIGKILLed in this Codex exec environment, so tools/linkedin-brave-post.js could not complete a verified permalink. Sync-state lock marked failed at public-action-locks/social-content/9b62abfed4f04467.json."
     },
     {
@@ -1371,7 +1323,7 @@
           "at": "2026-05-01T08:24:36Z",
           "fingerprint": "df110af4579482f1",
           "result": "blocked",
-          "blocker": "Second same-run LinkedIn publish attempt used social-content lock df110af4579482f1. The first df110 attempt failed in System Events accessibility lookup with `Can’t get window 1 of process \"Brave Browser\"`; recover-only found no matching live URL; retry with guarded clickAXButton stayed on https://www.linkedin.com/feed/?shareActive=true and exited without a verified LinkedIn URL. No public post was ledgered.",
+          "blocker": "Second same-run LinkedIn publish attempt used social-content lock df110af4579482f1. The first df110 attempt failed in System Events accessibility lookup with `Can\u2019t get window 1 of process \"Brave Browser\"`; recover-only found no matching live URL; retry with guarded clickAXButton stayed on https://www.linkedin.com/feed/?shareActive=true and exited without a verified LinkedIn URL. No public post was ledgered.",
           "copy": "Agentic Evidence is the portfolio note today.\n\nThe point is not another assessment dashboard. It is an inspectable evidence layer for agentic technical interviews: the work, the session trail, and the next bottleneck are visible instead of buried in a summary.\n\nCurrent constraint:\nVM TTL teardown and disposable per-session repo templates.\n\nhttps://agentic-evidence.fly.dev"
         },
         {
@@ -1419,7 +1371,7 @@
       "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record.",
       "last_checked_at": "2026-05-01T11:27:36Z",
       "last_blocker": "Retry after same-run LinkedIn window-targeting repair failed: tools/linkedin-brave-post.js ran with exact approved copy fingerprint cdc6162ee921c67b, held the Computer Use lease as 8bit-linkedin-brave-post pid 78529, then exited with `LinkedIn live URL verification failed for (missing url)`. No public LinkedIn URL was verified, so this lock remains failed and must not be ledgered as posted.",
-      "approved_final_copy": "Geo Agent is past the “is this interesting?” phase.\n\nThe useful question now is whether the work keeps reducing the gap between proof and distribution.\n\nCurrent state: live app route is up, benchmark/runtime repair is done, and the motion is Shopify app-review readiness.\n\nNext move is less glamorous and more important:\nreplace the template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
+      "approved_final_copy": "Geo Agent is past the \u201cis this interesting?\u201d phase.\n\nThe useful question now is whether the work keeps reducing the gap between proof and distribution.\n\nCurrent state: live app route is up, benchmark/runtime repair is done, and the motion is Shopify app-review readiness.\n\nNext move is less glamorous and more important:\nreplace the template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
       "approved_final_fingerprint": "cfd6352df0ce6041",
       "last_repair_commit": "ba2a68a",
       "blocked_attempts": [
@@ -1634,6 +1586,54 @@
       "public_action_lock_claimed": true
     },
     {
+      "id": "daily-research-fact-2026-05-04-nhs-linkedin",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "daily-research-fact-2026-05-04-nhs",
+      "channel": "linkedin",
+      "account": "Shane Cheek / Founder at 8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-05T17:57:34Z",
+      "blocker": "LinkedIn auth could not reach a verified posting identity: direct cookie Voyager rejected chrome-profile-3 with 302, page-context Voyager returned 401, and supervised browser recovery stayed on LinkedIn Login 'We\u2019re signing you in' for Shane Cheek h*****@8bitconcepts.com instead of reaching the feed/composer. No public post was created.",
+      "fingerprint": "af61256c5d1af50b",
+      "text": "One split from the Not Human Search MCP audit:\n\nDeveloper tools: 1,708 indexed sites, 23.9% of the index.\nHealth / medical: 70 sites, 1.0%.\nEducation: 28 sites, 0.4%.\n\nThe agent ecosystem is much denser around developer tooling than the verticals where workflow constraints are heavier.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "The live source page says Developer tools accounts for 1,708 indexed sites, 23.9% of the index",
+        "The live source page table says Health / medical has 70 indexed sites, 1.0%",
+        "The live source page table says Education has 28 indexed sites, 0.4%",
+        "https://nothumansearch.ai returned HTTP 200 and is the portfolio business URL for Not Human Search",
+        "https://8bitconcepts.com returned HTTP 200 and is the 8bitconcepts portfolio URL"
+      ],
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "operator_closeout": "No scoped memory update needed",
+      "note": "No public post created; direct Voyager, page-context Voyager, and approved one-shot browser recovery all failed before verified identity/composer access."
+    },
+    {
+      "id": "daily-research-fact-2026-05-04-8bit-linkedin",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "daily-research-fact-2026-05-04-8bit",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "posted_at": "2026-05-05T16:47:12Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7457470972552445954/",
+      "fingerprint": "b25728133637fecf",
+      "text": "Model API fees are usually 10-20% of an AI build.\n\nThe bigger costs are the work around the model: data pipelines, system integration, evaluation and testing, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The source page states model API costs are 10-20% of what AI actually costs to ship",
+        "The source page names data pipelines, system integration, evaluation/testing, observability, and maintenance as major non-model cost centers",
+        "https://8bitconcepts.com returned HTTP 200 and is the portfolio index URL for 8bitconcepts"
+      ],
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "operator_closeout": "No scoped memory update needed",
+      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API from verified Shane Cheek / Founder at 8bitconcepts identity; live canonical activity page verified by curl."
+    },
+    {
       "id": "8bit-linkedin-agent-publisher-blocked-2026-05-05-anthropic-targeted-research",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
@@ -1824,6 +1824,206 @@
         "entry-level AI gap candidate was skipped because the same fact_key was already posted on X on 2026-05-01"
       ],
       "note": "Posted from the X AI stat bot backlog after linked NHS candidates hit X composer blockers."
+    },
+    {
+      "id": "daily-targeted-research-2026-05-05-anthropic-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "08:30",
+      "fingerprint": "866d3fb5f88a3ac0",
+      "fact_key": "targeted-research:anthropic:283:llm,alignment,agents",
+      "route": "https://aidevboard.com/company/anthropic",
+      "format": "targeted documented research",
+      "target": {
+        "name": "Anthropic",
+        "x_mention": "@AnthropicAI",
+        "linkedin_mention": "@Anthropic",
+        "domain": "anthropic.com",
+        "company_slug": "anthropic"
+      },
+      "research_sources": {
+        "adb_company": "https://aidevboard.com/company/anthropic",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=anthropic&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
+        "nhs_profile": "https://nothumansearch.ai/site/anthropic.com",
+        "official_source": "https://www.anthropic.com/careers"
+      },
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-targeted-research-2026-05-05-anthropic-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "08:30",
+      "fingerprint": "6a842d0bcc3d3eaf",
+      "fact_key": "targeted-research:anthropic:283:llm,alignment,agents",
+      "route": "https://aidevboard.com/company/anthropic",
+      "format": "targeted documented research",
+      "target": {
+        "name": "Anthropic",
+        "x_mention": "@AnthropicAI",
+        "linkedin_mention": "@Anthropic",
+        "domain": "anthropic.com",
+        "company_slug": "anthropic"
+      },
+      "research_sources": {
+        "adb_company": "https://aidevboard.com/company/anthropic",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=anthropic&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
+        "nhs_profile": "https://nothumansearch.ai/site/anthropic.com",
+        "official_source": "https://www.anthropic.com/careers"
+      },
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-8bit-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "10:30",
+      "fingerprint": "0e1c55e9d8fb5675",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-8bit-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "10:30",
+      "fingerprint": "04894f4e1db9f2e5",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-nhs-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "12:30",
+      "fingerprint": "20e4f40205a31f07",
+      "fact_key": "nhs:mcp-ecosystem:7118-417",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-nhs-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "12:30",
+      "fingerprint": "9d64f6c4c25879d4",
+      "fact_key": "nhs:mcp-ecosystem:7118-417",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-bya-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "14:30",
+      "fingerprint": "579fc4e1b1384df3",
+      "fact_key": "bya:on-device:local-context",
+      "route": "https://8bitconcepts.com/research/on-device-inference.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/on-device-inference.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-bya-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "14:30",
+      "fingerprint": "eb417f2d529464f3",
+      "fact_key": "bya:on-device:local-context",
+      "route": "https://8bitconcepts.com/research/on-device-inference.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/on-device-inference.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-adb-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "16:30",
+      "fingerprint": "4e5f88b891ab6a94",
+      "fact_key": "adb:remote-vs-onsite:hybrid-253469",
+      "route": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-05-adb-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-05",
+      "post_time_local": "16:30",
+      "fingerprint": "4f5a23cbb89df31d",
+      "fact_key": "adb:remote-vs-onsite:hybrid-253469",
+      "route": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T05:15:13.185163+00:00",
+  "generated_at": "2026-05-05T19:22:04.406980+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -8,82 +8,68 @@
   "cadence": "five AI insight posts per day; one targeted documented research post plus four rotating research facts across 8bit, NHS, BYA, and ADB",
   "items": [
     {
-      "id": "daily-targeted-research-2026-05-04-mistral-ai",
+      "id": "daily-targeted-research-2026-05-05-anthropic",
       "kind": "targeted_research",
-      "date": "2026-05-04",
+      "date": "2026-05-05",
       "slot": "targeted",
       "post_time_local": "08:30",
       "timezone": "America/Los_Angeles",
       "target": {
-        "name": "Mistral AI",
-        "x_mention": "@MistralAI",
-        "linkedin_mention": "@Mistral AI",
-        "domain": "mistral.ai",
-        "company_slug": "mistral-ai"
+        "name": "Anthropic",
+        "x_mention": "@AnthropicAI",
+        "linkedin_mention": "@Anthropic",
+        "domain": "anthropic.com",
+        "company_slug": "anthropic"
       },
-      "fact_key": "targeted-research:mistral-ai:82:llm,pytorch,fine-tuning",
-      "theme": "Mistral AI public AI hiring signal",
+      "fact_key": "targeted-research:anthropic:283:llm,alignment,agents",
+      "theme": "Anthropic public AI hiring signal",
       "format": "targeted documented research",
       "asset_brief": "Small source-backed stat card: role count, top tags, sample roles, operator question.",
-      "route": "https://aidevboard.com/company/mistral-ai",
+      "route": "https://aidevboard.com/company/anthropic",
       "research_sources": {
-        "adb_company": "https://aidevboard.com/company/mistral-ai",
-        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=mistral-ai&limit=100",
+        "adb_company": "https://aidevboard.com/company/anthropic",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=anthropic&limit=100",
         "adb_stats_api": "https://aidevboard.com/api/v1/stats",
-        "nhs_profile": "https://nothumansearch.ai/site/mistral.ai",
-        "official_source": "https://mistral.ai/careers/"
+        "nhs_profile": "https://nothumansearch.ai/site/anthropic.com",
+        "official_source": "https://www.anthropic.com/careers"
       },
       "research_findings": {
-        "indexed_roles": 82,
-        "rank": 13,
-        "avg_salary": 265000,
+        "indexed_roles": 283,
+        "rank": 3,
+        "avg_salary": 364180,
         "top_tags": [
           "llm",
-          "pytorch",
-          "fine-tuning",
-          "infrastructure"
+          "alignment",
+          "agents",
+          "search"
         ],
         "sample_titles": [
-          "ML Engineer - Pre-Training",
-          "Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA",
-          "Research Engineer, Data Infrastructure"
+          "Research Engineer, Performance RL",
+          "Research Lead, Training Insights",
+          "Research Engineer, Model Evaluations"
         ],
-        "workplace_mix": "onsite: 19, remote: 1",
-        "nhs_score": 40,
+        "workplace_mix": "hybrid: 12, onsite: 6, remote: 2",
+        "nhs_score": 20,
         "nhs_signals": [
-          "llms.txt",
           "structured API"
         ],
         "source_errors": {},
-        "paper_candidate": false,
-        "paper_reason": ""
+        "paper_candidate": true,
+        "paper_reason": "Anthropic is a top-scale AI hiring signal with 283 indexed roles."
       },
       "funnel": "AI Dev Board data, Not Human Search agent-readiness check, or 8bit research follow-up",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Mistral AI has 82 open AI developer roles indexed on AI Dev Board. The current cluster is llm, pytorch, fine-tuning, and infrastructure. Avg published salary: $265k.\n\nTheir agent-facing profile is thinner: mistral.ai scores 40/100 on Not Human Search, with llms.txt and a structured API present.\n\nhttps://aidevboard.com/company/mistral-ai",
-          "fingerprint": "ccd7294ccbe45194",
-          "duplicate": false,
-          "status": "posted",
-          "posted_at": "2026-05-05T05:20:03Z",
-          "url": "https://x.com/8BitConcepts/status/2051532064298852519",
-          "approved_final_copy": "Mistral AI has 82 open AI developer roles indexed on AI Dev Board. The current cluster is llm, pytorch, fine-tuning, and infrastructure. Avg published salary: $265k.\n\nTheir agent-facing profile is thinner: mistral.ai scores 40/100 on Not Human Search, with llms.txt and a structured API present.\n\nhttps://aidevboard.com/company/mistral-ai",
-          "approved_final_fingerprint": "ccd7294ccbe45194"
+          "copy": "Looking at public AI hiring as a market signal: @AnthropicAI has 283 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, alignment, agents. Avg published salary: $364,180. Anthropic is #3 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment. Which layer becomes the hardest to operationalize first: eval design, tool-use environments, or production feedback?\n\nData: https://aidevboard.com/company/anthropic",
+          "fingerprint": "866d3fb5f88a3ac0",
+          "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Looking at @Mistral AI through the public hiring data:\n\n1. 82 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around llm, pytorch, fine-tuning, infrastructure.\n3. Sample roles include ML Engineer - Pre-Training; Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA; Research Engineer, Data Infrastructure.\n4. Avg published salary in the indexed sample: $265,000.\n\nThe useful read is where the operational work is moving: open model deployment, pre-training, applied ML, and enterprise rollout.\n\nMistral AI is a useful public lens on this area. Does the next bottleneck sit in model access, internal integration, or agent-facing docs?\n\nNHS follow-up lens: public agent-readiness profile shows llms.txt, structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/mistral-ai\nhttps://nothumansearch.ai/site/mistral.ai",
-          "fingerprint": "6f2c8b2ec9d525a8",
-          "duplicate": false,
-          "status": "posted",
-          "posted_at": "2026-05-05T05:32:21Z",
-          "url": "https://www.linkedin.com/feed/update/urn:li:share:7457300885950582784/",
-          "approved_final_copy": "Mistral AI has 82 indexed AI/ML roles in AI Dev Board.\n\nThe current hiring sample clusters around LLMs, infrastructure, PyTorch, distributed systems, and fine-tuning. The average published salary in the indexed sample is $265,000.\n\nSample roles:\n1. ML Engineer - Pre-Training.\n2. Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA.\n3. Research Engineer, Data Infrastructure.\n\nThe useful read is where the operating work is sitting: pre-training, applied ML, data infrastructure, and enterprise deployment.\n\nThe agent-readiness profile is thinner. Not Human Search sees llms.txt and a structured API, but no OpenAPI spec or ai-plugin manifest.\n\nHiring data: https://aidevboard.com/company/mistral-ai\nAgent-readiness profile: https://nothumansearch.ai/site/mistral.ai\n",
-          "approved_final_fingerprint": "6cdda1f5f81c9129",
-          "editor": "agent-social-editor",
-          "editor_status": "approved",
-          "posting_note": "Posted from verified Shane Cheek / Founder at 8bitconcepts LinkedIn profile via supervised one-shot browser recovery after direct Voyager cookie sources returned 302 and page-context Voyager returned 401."
+          "copy": "Looking at @Anthropic through the public hiring data:\n\n1. 283 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around llm, alignment, agents, search.\n3. Sample roles include Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations.\n4. Avg published salary in the indexed sample: $364,180.\n\nThe useful read is where the operational work is moving: long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment.\n\nAnthropic is a useful public lens on this area. Which layer becomes the hardest to operationalize first: eval design, tool-use environments, or production feedback?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/anthropic\nhttps://nothumansearch.ai/site/anthropic.com",
+          "fingerprint": "6a842d0bcc3d3eaf",
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -96,42 +82,34 @@
       ]
     },
     {
-      "id": "daily-research-fact-2026-05-04-8bit",
+      "id": "daily-research-fact-2026-05-05-8bit",
       "kind": "research_fact",
-      "date": "2026-05-04",
+      "date": "2026-05-05",
       "slot": "8bit",
       "post_time_local": "10:30",
       "timezone": "America/Los_Angeles",
       "product": "8bit",
-      "theme": "AI integration budgets",
+      "theme": "Shift handoff intelligence",
       "format": "little fact",
-      "asset_brief": "Cost stack: data, integration, evals, observability, maintenance, model fees.",
-      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "asset_brief": "Handoff comparison: digital capture vs verbal retention.",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
       "funnel": "8bitconcepts research",
-      "fact_key": "8bit:integration-tax:model-cost-10-20",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
       "research_sources": [
-        "https://8bitconcepts.com/research/the-integration-tax.html"
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html"
       ],
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Little fact from the 8bit research stack: model API fees are usually 10-20% of the AI build cost. The rest is data plumbing, integration, evals, observability, and maintenance.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
-          "fingerprint": "d515af20e77c8ac2",
+          "copy": "Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%. The lost category is usually the early warning.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+          "fingerprint": "0e1c55e9d8fb5675",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the 8bit research stack: model API fees are usually 10-20% of an AI build. The bigger lines are data pipelines, system integration, evaluation, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
-          "fingerprint": "10e029c31f27bd4e",
-          "duplicate": false,
-          "status": "posted",
-          "posted_at": "2026-05-05T16:47:12Z",
-          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7457470972552445954/",
-          "approved_final_copy": "Model API fees are usually 10-20% of an AI build.\n\nThe bigger costs are the work around the model: data pipelines, system integration, evaluation and testing, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
-          "approved_final_fingerprint": "b25728133637fecf",
-          "editor": "agent-social-editor",
-          "editor_status": "approved",
-          "posting_note": "Posted from verified Shane Cheek / Founder at 8bitconcepts LinkedIn profile via LinkedIn Voyager API; immediate script verification missed the live share URL, then public curl verification matched the canonical activity page."
+          "copy": "Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%.\n\nThe dangerous loss is not the obvious critical issue. It is the developing trend that is not urgent yet.\n\nSource:\nhttps://8bitconcepts.com/research/shift-handoff-intelligence.html",
+          "fingerprint": "04894f4e1db9f2e5",
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -143,53 +121,34 @@
       ]
     },
     {
-      "id": "daily-research-fact-2026-05-04-nhs",
+      "id": "daily-research-fact-2026-05-05-nhs",
       "kind": "research_fact",
-      "date": "2026-05-04",
+      "date": "2026-05-05",
       "slot": "nhs",
       "post_time_local": "12:30",
       "timezone": "America/Los_Angeles",
       "product": "nhs",
-      "theme": "Greenfield MCP verticals",
+      "theme": "Live MCP verification",
       "format": "little fact",
-      "asset_brief": "Vertical maturity: finance, health, education.",
+      "asset_brief": "MCP claim vs live JSON-RPC handshake.",
       "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "funnel": "Not Human Search research",
-      "fact_key": "nhs:mcp-verticals:finance-health-education",
+      "fact_key": "nhs:mcp-ecosystem:7118-417",
       "research_sources": [
         "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
       ],
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28. The agent ecosystem is crowded in tools and thin in regulated verticals.\n\nSource: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-          "fingerprint": "293c6fac908a130c",
+          "copy": "Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake. A manifest is not the same as a callable endpoint.\n\nSource: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+          "fingerprint": "20e4f40205a31f07",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28.\n\nThe agent ecosystem is crowded around tools and still thin in regulated verticals where the workflow value is high.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-          "fingerprint": "62e44c166ea835f4",
-          "duplicate": false,
-          "status": "blocked",
-          "blocked_at": "2026-05-05T17:57:34Z",
-          "blocker": "LinkedIn auth could not reach a verified posting identity: direct cookie Voyager rejected chrome-profile-3 with 302, page-context Voyager returned 401, and supervised browser recovery stayed on LinkedIn Login 'We\u2019re signing you in' for Shane Cheek h*****@8bitconcepts.com instead of reaching the feed/composer. No public post was created.",
-          "approved_final_copy": "One split from the Not Human Search MCP audit:\n\nDeveloper tools: 1,708 indexed sites, 23.9% of the index.\nHealth / medical: 70 sites, 1.0%.\nEducation: 28 sites, 0.4%.\n\nThe agent ecosystem is much denser around developer tooling than the verticals where workflow constraints are heavier.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-          "approved_final_fingerprint": "af61256c5d1af50b",
-          "editor": "agent-social-editor",
-          "editor_status": "approved",
-          "editor_notes": [
-            "Corrected stale queue counts using live source facts before posting attempt."
-          ],
-          "facts_verified": [
-            "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
-            "The live source page says Developer tools accounts for 1,708 indexed sites, 23.9% of the index",
-            "The live source page table says Health / medical has 70 indexed sites, 1.0%",
-            "The live source page table says Education has 28 indexed sites, 0.4%",
-            "https://nothumansearch.ai returned HTTP 200 and is the portfolio business URL for Not Human Search",
-            "https://8bitconcepts.com returned HTTP 200 and is the 8bitconcepts portfolio URL"
-          ],
-          "posting_note": "No public LinkedIn post was attempted because active LinkedIn identity could not be verified after direct Voyager, page-context Voyager, and approved one-shot browser recovery paths."
+          "copy": "Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake.\n\nThat gap matters. Agents need a callable endpoint, not a badge or a static manifest.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+          "fingerprint": "9d64f6c4c25879d4",
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -201,33 +160,33 @@
       ]
     },
     {
-      "id": "daily-research-fact-2026-05-04-bya",
+      "id": "daily-research-fact-2026-05-05-bya",
       "kind": "research_fact",
-      "date": "2026-05-04",
+      "date": "2026-05-05",
       "slot": "bya",
       "post_time_local": "14:30",
       "timezone": "America/Los_Angeles",
       "product": "bya",
-      "theme": "Local-first agent migration",
+      "theme": "On-device inference",
       "format": "little fact",
-      "asset_brief": "Privacy boundary: remote discovery, local movement.",
-      "route": "https://8bitconcepts.com/case-studies.html#bringyour",
-      "funnel": "Bring Your AI proof point",
-      "fact_key": "bya:case-study:no-data-remote-mcp",
+      "asset_brief": "Local inference as a privacy and cost boundary.",
+      "route": "https://8bitconcepts.com/research/on-device-inference.html",
+      "funnel": "Bring Your AI research path",
+      "fact_key": "bya:on-device:local-context",
       "research_sources": [
-        "https://8bitconcepts.com/case-studies.html#bringyour"
+        "https://8bitconcepts.com/research/on-device-inference.html"
       ],
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents. The actual move runs locally.\n\nSource: https://8bitconcepts.com/case-studies.html#bringyour",
-          "fingerprint": "130f945fac2cbc3f",
+          "copy": "Little fact from the local-inference paper: the best model without local context can be worse than a smaller model next to the data. The useful system knows when to stay local.\n\nSource: https://8bitconcepts.com/research/on-device-inference.html",
+          "fingerprint": "579fc4e1b1384df3",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents.\n\nThe product boundary is the point: discovery can happen through an agent surface, but private context moves locally.\n\nSource:\nhttps://8bitconcepts.com/case-studies.html#bringyour",
-          "fingerprint": "67605e87b2bdc387",
+          "copy": "Little fact from the local-inference paper: the best model without local context can be worse than a smaller model next to the data.\n\nFor agent tooling, that is the same product boundary BYA uses: keep private working context on the user's machine unless there is a real reason to move it.\n\nSource:\nhttps://8bitconcepts.com/research/on-device-inference.html",
+          "fingerprint": "eb417f2d529464f3",
           "duplicate": false
         }
       },
@@ -240,33 +199,33 @@
       ]
     },
     {
-      "id": "daily-research-fact-2026-05-04-adb",
+      "id": "daily-research-fact-2026-05-05-adb",
       "kind": "research_fact",
-      "date": "2026-05-04",
+      "date": "2026-05-05",
       "slot": "adb",
       "post_time_local": "16:30",
       "timezone": "America/Los_Angeles",
       "product": "adb",
-      "theme": "AI skill demand",
+      "theme": "AI workplace premium",
       "format": "little fact",
-      "asset_brief": "Skill demand vs salary.",
-      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "asset_brief": "Workplace mix and salary bands.",
+      "route": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
       "funnel": "AI Dev Board research",
-      "fact_key": "adb:skills:agents-2437",
+      "fact_key": "adb:remote-vs-onsite:hybrid-253469",
       "research_sources": [
-        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html"
+        "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html"
       ],
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.\n\nSource: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-          "fingerprint": "a47213c55309e790",
+          "copy": "Little fact from the ADB hiring data: hybrid AI/ML roles averaged $253,469, ahead of remote at $218,273 and onsite at $216,846 across 9,161 classified roles.\n\nSource: https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
+          "fingerprint": "4e5f88b891ab6a94",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.\n\nVolume and negotiating leverage are not the same signal.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-          "fingerprint": "39b847448bb7977c",
+          "copy": "Little fact from the ADB hiring data: hybrid AI/ML roles averaged $253,469, ahead of remote at $218,273 and onsite at $216,846 across 9,161 classified roles.\n\nThe practical read is that hybrid concentrates seniority and major-metro salary bands.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
+          "fingerprint": "4f5a23cbb89df31d",
           "duplicate": false
         }
       },

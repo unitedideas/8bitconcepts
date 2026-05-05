@@ -1,7 +1,7 @@
 # Daily AI Insight Drafts
 
-Generated: 2026-05-05 05:15 UTC
-Post date: 2026-05-04
+Generated: 2026-05-05 19:22 UTC
+Post date: 2026-05-05
 X account: @8bitconcepts
 LinkedIn profile: https://www.linkedin.com/in/shane-cheek-9173473b6/
 
@@ -10,21 +10,21 @@ Rule: multiple posts per day, always AI, always informative, always routed to an
 ### Morning Targeted Research Post
 
 Post time: 08:30 America/Los_Angeles
-Target: Mistral AI
-X mention: @MistralAI
-LinkedIn tag hint: @Mistral AI
-Research angle: open model deployment, pre-training, applied ML, and enterprise rollout
-Observed signal: 82 indexed roles, #13 by indexed role count, $265,000 average published salary, top tags: llm, pytorch, fine-tuning
-Sample roles: ML Engineer - Pre-Training; Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA
-Workplace mix: onsite: 19, remote: 1
-Longform decision: No longform trigger today.
+Target: Anthropic
+X mention: @AnthropicAI
+LinkedIn tag hint: @Anthropic
+Research angle: long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment
+Observed signal: 283 indexed roles, #3 by indexed role count, $364,180 average published salary, top tags: llm, alignment, agents
+Sample roles: Research Engineer, Performance RL; Research Lead, Training Insights
+Workplace mix: hybrid: 12, onsite: 6, remote: 2
+Longform decision: Paper trigger: Anthropic is a top-scale AI hiring signal with 283 indexed roles.
 
 Documented sources:
-- AI Dev Board company page: https://aidevboard.com/company/mistral-ai
-- AI Dev Board jobs API: https://aidevboard.com/api/v1/jobs?company=mistral-ai&limit=100
+- AI Dev Board company page: https://aidevboard.com/company/anthropic
+- AI Dev Board jobs API: https://aidevboard.com/api/v1/jobs?company=anthropic&limit=100
 - AI Dev Board stats API: https://aidevboard.com/api/v1/stats
-- Not Human Search profile: https://nothumansearch.ai/site/mistral.ai
-- Official source: https://mistral.ai/careers/
+- Not Human Search profile: https://nothumansearch.ai/site/anthropic.com
+- Official source: https://www.anthropic.com/careers
 
 Source fetch errors:
 - None
@@ -32,76 +32,76 @@ Source fetch errors:
 #### X
 
 ```text
-Looking at public AI hiring as a market signal: @MistralAI has 82 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, pytorch, fine-tuning. Avg published salary: $265,000. Mistral AI is #13 by indexed role count in the current AI Dev Board sample.
+Looking at public AI hiring as a market signal: @AnthropicAI has 283 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, alignment, agents. Avg published salary: $364,180. Anthropic is #3 by indexed role count in the current AI Dev Board sample.
 
-The read is not just hiring volume. It points to open model deployment, pre-training, applied ML, and enterprise rollout. Does the next bottleneck sit in model access, internal integration, or agent-facing docs?
+The read is not just hiring volume. It points to long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment. Which layer becomes the hardest to operationalize first: eval design, tool-use environments, or production feedback?
 
-Data: https://aidevboard.com/company/mistral-ai
+Data: https://aidevboard.com/company/anthropic
 ```
 
 #### LinkedIn
 
 ```text
-Looking at @Mistral AI through the public hiring data:
+Looking at @Anthropic through the public hiring data:
 
-1. 82 indexed AI/ML roles in AI Dev Board.
-2. Current sample tags cluster around llm, pytorch, fine-tuning, infrastructure.
-3. Sample roles include ML Engineer - Pre-Training; Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA; Research Engineer, Data Infrastructure.
-4. Avg published salary in the indexed sample: $265,000.
+1. 283 indexed AI/ML roles in AI Dev Board.
+2. Current sample tags cluster around llm, alignment, agents, search.
+3. Sample roles include Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations.
+4. Avg published salary in the indexed sample: $364,180.
 
-The useful read is where the operational work is moving: open model deployment, pre-training, applied ML, and enterprise rollout.
+The useful read is where the operational work is moving: long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment.
 
-Mistral AI is a useful public lens on this area. Does the next bottleneck sit in model access, internal integration, or agent-facing docs?
+Anthropic is a useful public lens on this area. Which layer becomes the hardest to operationalize first: eval design, tool-use environments, or production feedback?
 
-NHS follow-up lens: public agent-readiness profile shows llms.txt, structured API. That is useful for checking what agents can inspect without a human browsing the site.
+NHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.
 
 Data:
-https://aidevboard.com/company/mistral-ai
-https://nothumansearch.ai/site/mistral.ai
+https://aidevboard.com/company/anthropic
+https://nothumansearch.ai/site/anthropic.com
 ```
 
 ### 8BIT Research Fact
 
 Post time: 10:30 America/Los_Angeles
-Theme: AI integration budgets
+Theme: Shift handoff intelligence
 Format: little fact
-Route: https://8bitconcepts.com/research/the-integration-tax.html
+Route: https://8bitconcepts.com/research/shift-handoff-intelligence.html
 Funnel: 8bitconcepts research
-Asset brief: Cost stack: data, integration, evals, observability, maintenance, model fees.
-Fact key: 8bit:integration-tax:model-cost-10-20
+Asset brief: Handoff comparison: digital capture vs verbal retention.
+Fact key: 8bit:shift-handoff:100-vs-40-60
 
 #### X
 
 ```text
-Little fact from the 8bit research stack: model API fees are usually 10-20% of the AI build cost. The rest is data plumbing, integration, evals, observability, and maintenance.
+Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%. The lost category is usually the early warning.
 
-Source: https://8bitconcepts.com/research/the-integration-tax.html
+Source: https://8bitconcepts.com/research/shift-handoff-intelligence.html
 ```
 
 #### LinkedIn
 
 ```text
-Little fact from the 8bit research stack: model API fees are usually 10-20% of an AI build. The bigger lines are data pipelines, system integration, evaluation, observability, and maintenance.
+Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%.
 
-That is why the budget conversation has to happen before the model-choice conversation.
+The dangerous loss is not the obvious critical issue. It is the developing trend that is not urgent yet.
 
 Source:
-https://8bitconcepts.com/research/the-integration-tax.html
+https://8bitconcepts.com/research/shift-handoff-intelligence.html
 ```
 ### NHS Research Fact
 
 Post time: 12:30 America/Los_Angeles
-Theme: Greenfield MCP verticals
+Theme: Live MCP verification
 Format: little fact
 Route: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html
 Funnel: Not Human Search research
-Asset brief: Vertical maturity: finance, health, education.
-Fact key: nhs:mcp-verticals:finance-health-education
+Asset brief: MCP claim vs live JSON-RPC handshake.
+Fact key: nhs:mcp-ecosystem:7118-417
 
 #### X
 
 ```text
-Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28. The agent ecosystem is crowded in tools and thin in regulated verticals.
+Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake. A manifest is not the same as a callable endpoint.
 
 Source: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html
 ```
@@ -109,9 +109,9 @@ Source: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html
 #### LinkedIn
 
 ```text
-Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28.
+Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake.
 
-The agent ecosystem is crowded around tools and still thin in regulated verticals where the workflow value is high.
+That gap matters. Agents need a callable endpoint, not a badge or a static manifest.
 
 Source:
 https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html
@@ -119,58 +119,58 @@ https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html
 ### BYA Research Fact
 
 Post time: 14:30 America/Los_Angeles
-Theme: Local-first agent migration
+Theme: On-device inference
 Format: little fact
-Route: https://8bitconcepts.com/case-studies.html#bringyour
-Funnel: Bring Your AI proof point
-Asset brief: Privacy boundary: remote discovery, local movement.
-Fact key: bya:case-study:no-data-remote-mcp
+Route: https://8bitconcepts.com/research/on-device-inference.html
+Funnel: Bring Your AI research path
+Asset brief: Local inference as a privacy and cost boundary.
+Fact key: bya:on-device:local-context
 
 #### X
 
 ```text
-Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents. The actual move runs locally.
+Little fact from the local-inference paper: the best model without local context can be worse than a smaller model next to the data. The useful system knows when to stay local.
 
-Source: https://8bitconcepts.com/case-studies.html#bringyour
+Source: https://8bitconcepts.com/research/on-device-inference.html
 ```
 
 #### LinkedIn
 
 ```text
-Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents.
+Little fact from the local-inference paper: the best model without local context can be worse than a smaller model next to the data.
 
-The product boundary is the point: discovery can happen through an agent surface, but private context moves locally.
+For agent tooling, that is the same product boundary BYA uses: keep private working context on the user's machine unless there is a real reason to move it.
 
 Source:
-https://8bitconcepts.com/case-studies.html#bringyour
+https://8bitconcepts.com/research/on-device-inference.html
 ```
 ### ADB Research Fact
 
 Post time: 16:30 America/Los_Angeles
-Theme: AI skill demand
+Theme: AI workplace premium
 Format: little fact
-Route: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html
+Route: https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html
 Funnel: AI Dev Board research
-Asset brief: Skill demand vs salary.
-Fact key: adb:skills:agents-2437
+Asset brief: Workplace mix and salary bands.
+Fact key: adb:remote-vs-onsite:hybrid-253469
 
 #### X
 
 ```text
-Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.
+Little fact from the ADB hiring data: hybrid AI/ML roles averaged $253,469, ahead of remote at $218,273 and onsite at $216,846 across 9,161 classified roles.
 
-Source: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html
+Source: https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html
 ```
 
 #### LinkedIn
 
 ```text
-Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.
+Little fact from the ADB hiring data: hybrid AI/ML roles averaged $253,469, ahead of remote at $218,273 and onsite at $216,846 across 9,161 classified roles.
 
-Volume and negotiating leverage are not the same signal.
+The practical read is that hybrid concentrates seniority and major-metro salary bands.
 
 Source:
-https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html
+https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html
 ```
 
 Machine queue: `marketing/daily-ai-insights-queue.json`
