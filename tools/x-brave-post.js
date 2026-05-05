@@ -27,6 +27,7 @@ const {
   runWithLease,
   setBraveUrl,
   setClipboard,
+  sleep,
   typeIntoFocusedElement,
   tryWaitFor,
   waitFor,
@@ -268,15 +269,17 @@ async function postOrDryRunDirect(args, text) {
   const fullText = tweet && tweet.legacy && tweet.legacy.full_text;
   if (created.ok && !tweetId && !created.text && !created.json) {
     verifyAccount(args.expectedHandle);
-    const recoveredUrl = tryWaitFor("X direct empty-200 recovery", () => {
-      const url = findPostedTweet(args.expectedHandle, text);
-      return { ok: Boolean(url), url };
-    }, 12000);
-    if (recoveredUrl.ok && recoveredUrl.url) {
-      if (args.json) console.log(JSON.stringify({ ok: true, url: recoveredUrl.url, verified: true, method: "x_direct_empty_200_recovery" }));
-      else console.log(recoveredUrl.url);
+    let recoveredUrl = null;
+    for (let attempt = 0; attempt < 3 && !recoveredUrl; attempt++) {
+      if (attempt > 0) sleep(15000);
+      try { recoveredUrl = findPostedTweet(args.expectedHandle, text); } catch (_) {}
+    }
+    if (recoveredUrl) {
+      if (args.json) console.log(JSON.stringify({ ok: true, url: recoveredUrl, verified: true, method: "x_direct_empty_200_recovery" }));
+      else console.log(recoveredUrl);
       return;
     }
+    throw new Error("EMPTY_200_NO_FALLBACK: X direct API returned empty 200; status likely created but unverifiable. Skipping browser fallback to prevent duplicate post.");
   }
   if (!created.ok || !tweetId || normalize(fullText || "") !== normalize(text)) {
     throw new Error(`X direct post request failed: ${JSON.stringify({ status: created.status, responseURL: created.responseURL, text: created.text ? created.text.slice(0, 500) : "", errors: created.json && created.json.errors })}`);
@@ -708,6 +711,12 @@ function main() {
         const message = error && error.message ? error.message : String(error);
         if (/identity mismatch|missing Brave X cookie|authenticated home fetch failed/i.test(message)) {
           throw error;
+        }
+        if (/EMPTY_200_NO_FALLBACK/i.test(message)) {
+          if (args.json) console.log(JSON.stringify({ ok: false, likely_posted: true, retry: false, method: "x_direct_empty_200_unverifiable", error: message }));
+          else console.error(message);
+          process.exitCode = 2;
+          return;
         }
         if (/duplicate/i.test(message)) {
           verifyAccount(args.expectedHandle);
