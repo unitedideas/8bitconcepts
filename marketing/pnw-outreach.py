@@ -265,6 +265,7 @@ def send_via_resend(to_email, subject, body, api_key):
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json',
+        'User-Agent': 'curl/8.7.1',
     }
     data = {
         'from': FROM_EMAIL,
@@ -350,41 +351,74 @@ def cmd_send(limit=None, dry_run=False):
     print(f"\nResult: {sent_count} sent, {failed_count} failed")
 
 
-def cmd_followup(hours_after=96):
-    """Generate follow-ups for emails sent N hours ago (default 4 days = 96 hours)."""
+def followup_body(record):
+    company = record.get("company", "your company")
+    return f"""Hi,
+
+I sent a note last week about 8bitconcepts and the PNW AI deployment gap.
+
+The practical angle for {company} is not a generic AI rollout. It is picking one workflow that is already repetitive, document-heavy, or scheduling-heavy, then shipping a working system around the tools already in place.
+
+If this is relevant, a short intro call would be enough to see whether there is a useful first workflow.
+
+Shane
+8bitconcepts.com/work-with-us"""
+
+
+def cmd_followup(hours_after=96, send=False):
+    """Generate or send follow-ups for delivered emails sent N hours ago."""
     sent = load_sent()
     now = datetime.now(timezone.utc)
     followup_due = []
 
     for email_addr, record in sent.items():
-        status = (record.get("delivery_status") or "").lower()
-        if status in ("bounced", "suppressed"):
-            continue
         sent_at = datetime.fromisoformat(record.get("sent_at", ""))
         age = now - sent_at
         if age.total_seconds() > hours_after * 3600:
-            if not record.get("followup_sent"):
+            if not record.get("followup_sent") and record.get("delivery_status") == "delivered":
                 followup_due.append(record)
 
     if not followup_due:
         print(f"No follow-ups due (checked {hours_after}-hour window)")
         return
 
-    print(f"Follow-ups due: {len(followup_due)}\n")
+    if not send:
+        print(f"Follow-ups due: {len(followup_due)}\n")
+    api_key = None
+    if send:
+        api_key = get_resend_api_key()
+        if not api_key:
+            print("Error: Cannot fetch Resend API key from keychain", file=sys.stderr)
+            sys.exit(1)
+    sent_count = 0
+    failed_count = 0
     for record in followup_due:
         company = record.get("company", "")
         email = record.get("email")
-        print(f"\nTo: {email} ({company})")
-        print("Subject: Re: " + record.get("subject", ""))
-        print(f"""Hi,
+        subject = "Re: " + record.get("subject", "")
+        body = followup_body(record)
+        if not send:
+            print(f"\nTo: {email} ({company})")
+            print("Subject: " + subject)
+            print(body)
+            print("\n---COPY ABOVE TO GMAIL---\n")
+            continue
+        success, result = send_via_resend(email, subject, body, api_key)
+        if success:
+            record["followup_sent"] = True
+            record["followup_sent_at"] = datetime.now(timezone.utc).isoformat()
+            record["followup_message_id"] = result
+            sent_count += 1
+            print(f"✓ follow-up {email} ({company})")
+        else:
+            record["followup_last_error"] = result
+            record["followup_last_error_at"] = datetime.now(timezone.utc).isoformat()
+            failed_count += 1
+            print(f"✗ follow-up {email} ({company}): {result}")
 
-Just following up on my note from {record.get('sent_at', 'earlier')}.
-
-Wanted to check if you had a chance to look at the research — if it resonates, would be worth a conversation.
-
-— Shane
-8bitconcepts.com""")
-        print("\n---COPY ABOVE TO GMAIL---\n")
+    if send:
+        save_sent(list(sent.values()))
+        print(f"\nResult: {sent_count} follow-ups sent, {failed_count} failed")
 
 
 if __name__ == "__main__":
@@ -400,6 +434,7 @@ if __name__ == "__main__":
 
     followup_parser = subparsers.add_parser("followup", help="Generate follow-ups")
     followup_parser.add_argument("--hours", type=int, default=96, help="Follow-ups N hours after send")
+    followup_parser.add_argument("--send", action="store_true", help="Send due delivered follow-ups via Resend")
 
     args = parser.parse_args()
 
@@ -410,6 +445,6 @@ if __name__ == "__main__":
     elif args.command == "template-preview":
         cmd_template_preview()
     elif args.command == "followup":
-        cmd_followup(hours_after=args.hours)
+        cmd_followup(hours_after=args.hours, send=args.send)
     else:
         parser.print_help()

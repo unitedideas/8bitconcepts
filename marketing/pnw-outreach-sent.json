@@ -8,13 +8,9 @@
     "followup_sent": true,
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "e80a8b77-c850-4a71-9f3f-928daf3e47aa",
-    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
-    "second_followup_message_id": "5ed5aade-d44e-45b8-984a-1dc32ad32be2",
-    "second_followup_subject": "Re: AI for Atlantic & Pacific Freightways dispatch + invoicing",
-    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
-    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
+    "followup_sent_at": "2026-05-05 12:05:12.416726+00",
+    "followup_message_id": "2ceb1dc7-9085-48d7-97fe-f9ca19672304",
+    "followup_delivery_status": "delivered"
   },
   {
     "email": "guy@pacnwtax.com",
@@ -25,13 +21,9 @@
     "followup_sent": true,
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "919a98be-53d3-4240-8664-41bc565b2617",
-    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
-    "second_followup_message_id": "b9ecd315-87c8-4438-b1b7-753934e1bf9e",
-    "second_followup_subject": "Re: AI for Pacific Northwest Tax and Accounting Services \u2014 without the disruption",
-    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
-    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
+    "followup_sent_at": "2026-05-05 12:05:12.644822+00",
+    "followup_message_id": "36ace230-20ea-407b-ac4f-ec9977e23e2f",
+    "followup_delivery_status": "delivered"
   },
   {
     "email": "dsfabinc@gmail.com",
@@ -42,13 +34,9 @@
     "followup_sent": true,
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "2d22b02a-a13d-4dc8-b59e-9d5d999f20c1",
-    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
-    "second_followup_message_id": "2d1cc4cc-3474-4d65-adfb-8b58348a0703",
-    "second_followup_subject": "Re: A small note about your shop floor",
-    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
-    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
+    "followup_sent_at": "2026-05-05 12:05:12.971239+00",
+    "followup_message_id": "a4c2bcc6-2b70-4072-bbc6-e90044f8600a",
+    "followup_delivery_status": "delivered"
   },
   {
     "email": "siany@jjh-law.com",
@@ -59,13 +47,9 @@
     "followup_sent": true,
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "d3cc65e1-bce8-4c4c-912d-0fed01fdaed2",
-    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
-    "second_followup_message_id": "1f3c1640-5adf-4aea-ad97-5669eff98f5f",
-    "second_followup_subject": "Re: AI for JJH Law \u2014 without the disruption",
-    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
-    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
+    "followup_sent_at": "2026-05-05 12:05:13.155492+00",
+    "followup_message_id": "795eff0d-8e33-479f-8044-c8dda5ac8512",
+    "followup_delivery_status": "delivered"
   },
   {
     "email": "info@gulicklogistics.com",
@@ -76,8 +60,7 @@
     "message_id": "56555ee2-a1af-4d95-ba78-26cb32329e48",
     "followup_sent": false,
     "delivery_status": "suppressed",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_blocked_reason": "delivery_status=suppressed"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "info@gkm.cpa",
@@ -89,13 +72,9 @@
     "followup_sent": true,
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "0354744c-6dad-4e6a-9a86-9a8ba91404c4",
-    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
-    "second_followup_message_id": "2b857038-556c-43b5-b665-415285bba361",
-    "second_followup_subject": "Re: AI for Greear Kramer Monaghan CPAs \u2014 without the disruption",
-    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
-    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
+    "followup_sent_at": "2026-05-05 12:05:13.392261+00",
+    "followup_message_id": "1be14671-2c28-4e5c-b824-4e0d486bd59e",
+    "followup_delivery_status": "delivered"
   },
   {
     "email": "info@brewercaley.com",
@@ -107,13 +86,9 @@
     "followup_sent": true,
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "e1fd4e8d-2eca-44ee-9364-a86e1175ea92",
-    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
-    "second_followup_message_id": "ff9cead1-35ab-4da2-8823-1c433e1dcce1",
-    "second_followup_subject": "Re: AI for Brewer Caley CPAs \u2014 without the disruption",
-    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
-    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
+    "followup_sent_at": "2026-05-05 12:05:13.660028+00",
+    "followup_message_id": "6047b78b-157d-4e03-94b3-cee5a1ca1773",
+    "followup_delivery_status": "delivered"
   },
   {
     "email": "info@pickettinsurance.com",
@@ -125,13 +100,9 @@
     "followup_sent": true,
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "1d97165c-ff86-47e0-9d46-71a6ceda36c7",
-    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
-    "second_followup_message_id": "a889ff72-aaf6-4dcc-a45d-4c017c09be8f",
-    "second_followup_subject": "Re: AI for Pickett Insurance Agency \u2014 without the disruption",
-    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
-    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
+    "followup_sent_at": "2026-05-05 12:05:13.882023+00",
+    "followup_message_id": "d9845020-6bf9-465e-89a2-89a30ef9b272",
+    "followup_delivery_status": "delivered"
   },
   {
     "email": "ask@harlowwealth.com",
@@ -143,13 +114,9 @@
     "followup_sent": true,
     "delivery_status": "delivered",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "cc0dc554-5f5a-4d6c-87e2-4c309594ea43",
-    "second_followup_sent_at": "2026-05-05T06:06:46.006630+00:00",
-    "second_followup_message_id": "cab9700d-4493-4180-9a48-b3dca5bb3f15",
-    "second_followup_subject": "Re: AI for Harlow Wealth Management \u2014 without the disruption",
-    "second_followup_route": "https://8bitconcepts.com/diagnostic.html",
-    "second_followup_note": "Sent during 2026-05-05 portfolio marketing run after working tree had stale removed followup markers."
+    "followup_sent_at": "2026-05-05 12:05:14.093333+00",
+    "followup_message_id": "9fec126a-136c-494b-b94f-6e3fdb0912be",
+    "followup_delivery_status": "delivered"
   },
   {
     "email": "sales@precise1.net",
@@ -160,83 +127,6 @@
     "message_id": "9975f4c3-b5d8-49fc-bce3-59c4a32a4b68",
     "followup_sent": false,
     "delivery_status": "bounced",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_blocked_reason": "delivery_status=bounced"
-  },
-  {
-    "email": "info@htmfg.com",
-    "company": "High Tech Manufacturing",
-    "industry": "manufacturing",
-    "subject": "A small note about your shop floor",
-    "sent_at": "2026-04-30T00:38:09.812787+00:00",
-    "message_id": "c2ebc5c8-7ce4-4dd4-9afb-9eb3e31f9be8",
-    "followup_sent": true,
-    "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "80579e43-3292-46bf-9c2f-1b2fa2abf9b7"
-  },
-  {
-    "email": "hello@gradybritton.com",
-    "company": "Grady Britton",
-    "industry": "diagnostic",
-    "subject": "A $500 written diagnosis, no upsell",
-    "sent_at": "2026-04-30T00:38:10.093587+00:00",
-    "message_id": "14a01ebc-8c17-49cb-9459-5dc2542d7e4a",
-    "followup_sent": true,
-    "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00",
-    "followup_sent_at": "2026-05-01T06:05:44.799408+00:00",
-    "followup_message_id": "5c032089-b7df-4db9-b207-74061804402b"
-  },
-  {
-    "email": "info@freelandspirits.com",
-    "company": "Freeland Spirits",
-    "industry": "diagnostic",
-    "subject": "A $500 written diagnosis, no upsell",
-    "sent_at": "2026-04-30T00:38:10.377961+00:00",
-    "message_id": "1f5bc60b-7309-4652-95e0-66f529b90b24",
-    "followup_sent": true,
-    "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00",
-    "followup_sent_at": "2026-05-01T06:09:23.560108+00:00",
-    "followup_message_id": "90a8b60c-76d3-4b45-9e05-e044940c371b"
-  },
-  {
-    "email": "info@portlandpetfoodcompany.com",
-    "company": "Portland Pet Food Company",
-    "industry": "diagnostic",
-    "subject": "A $500 written diagnosis, no upsell",
-    "sent_at": "2026-04-30T00:38:10.643987+00:00",
-    "message_id": "be6b858c-b71b-4159-8700-03aa53ae7aad",
-    "followup_sent": true,
-    "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00",
-    "followup_sent_at": "2026-05-01T06:09:23.560108+00:00",
-    "followup_message_id": "74a31632-8129-4eb4-9bff-8cf433152c7b"
-  },
-  {
-    "email": "hello@jacobsensalt.com",
-    "company": "Jacobsen Salt Co.",
-    "industry": "diagnostic",
-    "subject": "A $500 written diagnosis, no upsell",
-    "sent_at": "2026-04-30T00:38:10.923715+00:00",
-    "message_id": "3bc4e080-d3c0-42ff-bf65-8a983f2412ea",
-    "followup_sent": true,
-    "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-30T00:38:11.021252+00:00",
-    "followup_sent_at": "2026-05-01T06:09:23.560108+00:00",
-    "followup_message_id": "f8db7366-9517-439f-ba62-3a57b1fc4198"
-  },
-  {
-    "email": "info@bridgecitymedical.com",
-    "company": "Bridge City Medical",
-    "industry": "healthcare",
-    "subject": "Intake + prior auth without adding staff",
-    "sent_at": "2026-05-01T06:09:29.444100+00:00",
-    "message_id": "038be01a-1f06-4b25-9189-8eb1a4d97570",
-    "followup_sent": false,
-    "delivery_status": "delivered",
-    "delivery_checked_at": "2026-05-01T06:09:32.495513+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   }
 ]

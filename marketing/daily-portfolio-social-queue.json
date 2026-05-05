@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T11:05:48.711731+00:00",
+  "generated_at": "2026-05-05T12:07:23.042954+00:00",
   "source_index": "/Users/owlassist/.foundry/foundry-sync-state/systems/foundry-business-index.md",
   "cadence": "one X and one LinkedIn candidate per active business per day",
   "items": [
@@ -21,15 +21,15 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Technical interviews need evidence, not screen recordings. Agentic Evidence gives each candidate a developer VM, captures Codex/Claude/terminal/git/test artifacts, and turns the work into a reviewer packet.\n\nhttps://agentic-evidence.fly.dev/sample-report",
-          "fingerprint": "3c74ab7dbe6eda26",
+          "copy": "Agentic technical interview evidence layer for Hatchways-style assessments.\n\nNext move for Agentic Evidence: Add hidden-test grading, optional GitHub App install UX, and reviewer.\n\nhttps://agentic-evidence.fly.dev",
+          "fingerprint": "fa45c89834549320",
           "duplicate": false,
-          "length": 254
+          "length": 202
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Technical interviews are getting harder to read because AI use is now part of the work.\n\nAgentic Evidence gives each candidate a developer VM, captures Codex/Claude sessions, terminal commands, git snapshots, tests, and GitHub Action evidence, then turns that into a reviewer packet.\n\nSample packet: https://agentic-evidence.fly.dev/sample-report",
-          "fingerprint": "3a0fe0cf07cfb175",
+          "copy": "One live Foundry surface today is Agentic Evidence.\n\nProduct: Agentic technical interview evidence layer for Hatchways-style assessments.\n\nCurrent motion: Candidate AI-evidence entry, reviewer handoff, repo-packaged Claude JSONL exports, assignment packet, guided Claude VM behavior, and.\n\nNext move: Add hidden-test grading, optional GitHub App install UX, and reviewer analysis fields over captured sessions.\n\nhttps://agentic-evidence.fly.dev",
+          "fingerprint": "8b03d5df276a1713",
           "duplicate": false
         }
       },
@@ -59,15 +59,15 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Codex import gets the setup moved. Bring Your AI is the local second pass: validate Claude Code hooks, MCP refs, skills, and AGENTS.md notes before Codex edits code.\n\nhttps://bringyour.ai/codex-import-checklist",
-          "fingerprint": "ac8debc9b388263f",
+          "copy": "Bring Your AI is live: https://bringyour.ai\n\nLocal-first Claude Code to Codex harness migration.\n\nConstraint: Continue Claude/Codex-user distribution",
+          "fingerprint": "bce76e262237b47c",
           "duplicate": false,
-          "length": 210
+          "length": 150
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Codex import is the right starting point. The risk is treating import as proof that the harness still behaves correctly.\n\nBring Your AI runs the local second pass: Claude Code hooks, MCP refs, skills, AGENTS.md notes, and non-equivalent behavior before Codex edits code.\n\nhttps://bringyour.ai/codex-import-checklist",
-          "fingerprint": "e262081a9f82b2e7",
+          "copy": "Bring Your AI is a useful operating example because the proof is public.\n\nCurrent motion: Product, payments, agent-readable commerce, direct Stripe checkout, hold-slot fallback, and /pricing page are live after design pass.\n\nNext move: Continue Claude/Codex-user distribution\n\nRoute: https://bringyour.ai",
+          "fingerprint": "d9f7c7b735bc445d",
           "duplicate": false
         }
       },
@@ -97,15 +97,15 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "AI Dev Board is built for agents as much as humans: searchable AI/ML jobs, REST API, MCP server, RSS feeds, and employer checkout/claim routes.\n\nhttps://aidevboard.com",
-          "fingerprint": "fb01cc52b8fa3c94",
+          "copy": "AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nLive surface: https://aidevboard.com\n\nCurrent constraint: Keep API invariant green",
+          "fingerprint": "b142c9b5ab5f9f1f",
           "duplicate": false,
-          "length": 167
+          "length": 165
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "AI Dev Board is not just a job board UI.\n\nThe agent-facing surface matters: REST API, MCP server, RSS feeds, job search, company claim flow, and promoted-listing checkout.\n\nThat is the useful shape for hiring data in an agent workflow.\n\nhttps://aidevboard.com",
-          "fingerprint": "51ae8d80c8f8ac9d",
+          "copy": "AI Dev Board is live, and the interesting part is the current bottleneck.\n\nProduct: AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nConstraint: Keep API invariant green\n\nhttps://aidevboard.com",
+          "fingerprint": "50095113041ffff6",
           "duplicate": false
         }
       },
@@ -135,15 +135,15 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Agentic-readiness is measurable. Not Human Search checks llms.txt, OpenAPI, agent manifests, APIs, and MCP endpoints, then exposes the index back to agents.\n\nhttps://nothumansearch.ai",
-          "fingerprint": "858557cc15691acd",
+          "copy": "Agentic-readiness search engine and scoring system.\n\nNot Human Search is shipping around this constraint: Discovery, monitoring, score-fix monetization, score reasons, and clearer.\n\nhttps://nothumansearch.ai",
+          "fingerprint": "7972fa7af1bc0283",
           "duplicate": false,
-          "length": 183
+          "length": 203
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Agentic-readiness should be testable, not a badge someone adds to a footer.\n\nNot Human Search checks live signals: llms.txt, OpenAPI, agent manifests, structured APIs, and MCP endpoints. The index is exposed back to agents through API and MCP routes.\n\nhttps://nothumansearch.ai",
-          "fingerprint": "3a9f20cd7e267944",
+          "copy": "Not Human Search is a live product, not a roadmap.\n\nWhat is visible now: Discovery, monitoring, score-fix monetization, score reasons, and clearer search/monitor forms are live after design pass commit 73dc329\n\nWhat needs to happen next: Continue distribution directories and improve indexed agent-first coverage.\n\nhttps://nothumansearch.ai",
+          "fingerprint": "6dfebcb1648e5ad5",
           "duplicate": false
         }
       },
@@ -173,15 +173,15 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "8bitconcepts is the portfolio surface: research, proof from shipped Foundry products, and embedded AI consulting for PNW operators.\n\nhttps://8bitconcepts.com/work-with-us.html",
-          "fingerprint": "261ab593b577e21b",
+          "copy": "Research, consulting funnel, and marketing/distribution engine for Foundry.\n\nCurrent move at 8bitconcepts: PNW SMB outreach, research, daily social posts, consulting leads.\n\nhttps://8bitconcepts.com",
+          "fingerprint": "3d4be14bfe9c7ac0",
           "duplicate": false,
-          "length": 175
+          "length": 195
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "8bitconcepts is where the research and consulting motion meet.\n\nThe useful proof is not a slide: it is shipped Foundry products, live agent-readable surfaces, and local operator workflows that can be compressed without ripping out the existing business stack.\n\nhttps://8bitconcepts.com/work-with-us.html",
-          "fingerprint": "995f9317acdc995e",
+          "copy": "8bitconcepts is live at https://8bitconcepts.com.\n\nWhat is shipping now: PNW SMB outreach, research, daily social posts, consulting leads, proof-led consulting homepage, work-with-us page, and sourced.\n\nWhat the product is for: Research, consulting funnel, and marketing/distribution engine for Foundry.\n\nNext move: Continue one-post-per-app daily social cadence and local-search/SMB lead work.",
+          "fingerprint": "fffa34379ec17176",
           "duplicate": false
         }
       },
