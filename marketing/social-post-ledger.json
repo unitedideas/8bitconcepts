@@ -3,6 +3,31 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "daily-research-fact-2026-05-04-nhs-linkedin",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "daily-research-fact-2026-05-04-nhs",
+      "channel": "linkedin",
+      "account": "Shane Cheek / Founder at 8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-05T17:57:34Z",
+      "blocker": "LinkedIn auth could not reach a verified posting identity: direct cookie Voyager rejected chrome-profile-3 with 302, page-context Voyager returned 401, and supervised browser recovery stayed on LinkedIn Login 'We\u2019re signing you in' for Shane Cheek h*****@8bitconcepts.com instead of reaching the feed/composer. No public post was created.",
+      "fingerprint": "af61256c5d1af50b",
+      "text": "One split from the Not Human Search MCP audit:\n\nDeveloper tools: 1,708 indexed sites, 23.9% of the index.\nHealth / medical: 70 sites, 1.0%.\nEducation: 28 sites, 0.4%.\n\nThe agent ecosystem is much denser around developer tooling than the verticals where workflow constraints are heavier.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "The live source page says Developer tools accounts for 1,708 indexed sites, 23.9% of the index",
+        "The live source page table says Health / medical has 70 indexed sites, 1.0%",
+        "The live source page table says Education has 28 indexed sites, 0.4%",
+        "https://nothumansearch.ai returned HTTP 200 and is the portfolio business URL for Not Human Search",
+        "https://8bitconcepts.com returned HTTP 200 and is the 8bitconcepts portfolio URL"
+      ],
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "operator_closeout": "No scoped memory update needed",
+      "note": "No public post created; direct Voyager, page-context Voyager, and approved one-shot browser recovery all failed before verified identity/composer access."
+    },
+    {
       "id": "daily-research-fact-2026-05-04-8bit-linkedin",
       "source": "8bit-linkedin-agent-publisher",
       "source_item": "daily-research-fact-2026-05-04-8bit",

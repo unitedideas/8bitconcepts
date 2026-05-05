@@ -170,7 +170,26 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28.\n\nThe agent ecosystem is crowded around tools and still thin in regulated verticals where the workflow value is high.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
           "fingerprint": "62e44c166ea835f4",
-          "duplicate": false
+          "duplicate": false,
+          "status": "blocked",
+          "blocked_at": "2026-05-05T17:57:34Z",
+          "blocker": "LinkedIn auth could not reach a verified posting identity: direct cookie Voyager rejected chrome-profile-3 with 302, page-context Voyager returned 401, and supervised browser recovery stayed on LinkedIn Login 'We\u2019re signing you in' for Shane Cheek h*****@8bitconcepts.com instead of reaching the feed/composer. No public post was created.",
+          "approved_final_copy": "One split from the Not Human Search MCP audit:\n\nDeveloper tools: 1,708 indexed sites, 23.9% of the index.\nHealth / medical: 70 sites, 1.0%.\nEducation: 28 sites, 0.4%.\n\nThe agent ecosystem is much denser around developer tooling than the verticals where workflow constraints are heavier.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+          "approved_final_fingerprint": "af61256c5d1af50b",
+          "editor": "agent-social-editor",
+          "editor_status": "approved",
+          "editor_notes": [
+            "Corrected stale queue counts using live source facts before posting attempt."
+          ],
+          "facts_verified": [
+            "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+            "The live source page says Developer tools accounts for 1,708 indexed sites, 23.9% of the index",
+            "The live source page table says Health / medical has 70 indexed sites, 1.0%",
+            "The live source page table says Education has 28 indexed sites, 0.4%",
+            "https://nothumansearch.ai returned HTTP 200 and is the portfolio business URL for Not Human Search",
+            "https://8bitconcepts.com returned HTTP 200 and is the 8bitconcepts portfolio URL"
+          ],
+          "posting_note": "No public LinkedIn post was attempted because active LinkedIn identity could not be verified after direct Voyager, page-context Voyager, and approved one-shot browser recovery paths."
         }
       },
       "quality_gate": [
