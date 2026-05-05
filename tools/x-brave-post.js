@@ -276,7 +276,9 @@ async function postOrDryRunDirect(args, text) {
   const tweet = created.json && created.json.data && created.json.data.create_tweet && created.json.data.create_tweet.tweet_results && created.json.data.create_tweet.tweet_results.result;
   const tweetId = tweet && tweet.rest_id;
   const fullText = tweet && tweet.legacy && tweet.legacy.full_text;
-  if (created.ok && !tweetId && !created.text && !created.json) {
+  if (created.ok && !tweetId) {
+    // X returned 2xx without a usable tweet ID. Body may be empty, empty {}, or a JSON object that lacks data.create_tweet.tweet_results.result.
+    // In any of these cases the post may have been silently created — verify via profile before throwing or falling back.
     verifyAccount(args.expectedHandle);
     let recoveredUrl = null;
     for (let attempt = 0; attempt < 3 && !recoveredUrl; attempt++) {
