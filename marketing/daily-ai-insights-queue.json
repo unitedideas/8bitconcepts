@@ -185,7 +185,53 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake.\n\nThat gap matters. Agents need a callable endpoint, not a badge or a static manifest.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
           "fingerprint": "9d64f6c4c25879d4",
-          "duplicate": false
+          "duplicate": false,
+          "status": "posted",
+          "posted_at": "2026-05-05T22:24:31Z",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7457555399509164032/",
+          "approved_final_copy": "As of May 4, the NHS MCP audit had 7,159 agent-ready sites in the index.\n\n5,124 published llms.txt.\n440 passed a live JSON-RPC MCP handshake.\n\nThat gap matters. Static scanners can count string matches or manifests as MCP support. Agents need an endpoint that answers initialize with a valid result and protocolVersion.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+          "approved_final_fingerprint": "5ea9ae530fb9eb00",
+          "facts_verified": [
+            "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+            "The live source page says 7,159 agent-ready sites indexed as of 2026-05-04",
+            "The live source page says 440 (6.1%) MCP-verified via live JSON-RPC handshake",
+            "The live source page says 5,124 sites publish llms.txt",
+            "The methodology states MCP verification used initialize JSON-RPC and required a valid protocolVersion",
+            "https://nothumansearch.ai/ returned HTTP 200 and is the portfolio business URL for Not Human Search",
+            "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts business URL"
+          ],
+          "social_editor_status": "approved",
+          "social_editor_closeout": "No scoped memory update needed",
+          "linkedin_operator_closeout": "No scoped memory update needed",
+          "identity_verified": "Shane Cheek / Founder at 8bitconcepts visible in LinkedIn feed and create-post composer",
+          "public_action_lock": "public-action-locks/social-content/5ea9ae530fb9eb00.json",
+          "posting_attempts": [
+            {
+              "route": "direct_voyager_cookie_api",
+              "result": "blocked",
+              "detail": "All LinkedIn cookie sources rejected; chrome-profile-3 returned 302"
+            },
+            {
+              "route": "page_context_voyager_api",
+              "result": "blocked",
+              "detail": "LinkedIn /voyager/api/me returned 401 from page context"
+            },
+            {
+              "route": "approved_one_shot_browser_recovery",
+              "result": "blocked",
+              "detail": "Initial browser recovery reached the feed and verified Shane Cheek / Founder at 8bitconcepts, but the script expected an outdated headline"
+            },
+            {
+              "route": "approved_one_shot_browser_recovery_with_current_headline",
+              "result": "blocked",
+              "detail": "The browser recovery script clicked Start a post but could not open the composer through its selector path"
+            },
+            {
+              "route": "supervised_computer_use_recovery",
+              "result": "posted",
+              "detail": "Verified Shane Cheek / Founder at 8bitconcepts in the LinkedIn feed and composer, inserted the approved final copy exactly, clicked Post, and captured the successful View post URL"
+            }
+          ]
         }
       },
       "quality_gate": [
