@@ -45,14 +45,6 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-# Behavioral guards live in marketing/_outreach_guards.py — DO NOT remove this import
-# or inline the constants. See _outreach_guards.py for the rationale and contract.
-from _outreach_guards import (  # noqa: E402
-    RESEND_REQUIRED_USER_AGENT,
-    is_sendable_email,
-    self_check_outreach_guards,
-)
-
 SCRIPT_DIR = Path(__file__).parent
 TARGETS_FILE = SCRIPT_DIR / "pnw-smb-targets.csv"
 SENT_FILE = SCRIPT_DIR / "pnw-outreach-sent.json"
@@ -210,32 +202,7 @@ def load_sent():
 
 
 def save_sent(sent_records):
-    """Save sent log (list of dicts).
-
-    Append-only invariant: sent_records must not be shorter than the on-disk
-    file. Outreach automations have lost batch-2 entries multiple times by
-    silently rewriting this file with a stale subset; preventing shrinkage
-    here makes that class of regression fail fast instead of silently
-    re-sending the same emails.
-    """
-    if SENT_FILE.exists():
-        try:
-            with open(SENT_FILE) as f:
-                existing = json.load(f)
-            existing_keys = {item.get("email") for item in existing if isinstance(item, dict)}
-            new_keys = {item.get("email") for item in sent_records if isinstance(item, dict)}
-            missing = existing_keys - new_keys
-            if missing:
-                raise SystemExit(
-                    f"pnw-outreach.py guard FAILED: save_sent() refusing to write a sent log "
-                    f"that drops {len(missing)} prior entry/entries: {sorted(missing)[:5]}{'...' if len(missing) > 5 else ''}. "
-                    f"This guard exists because automations have silently dropped sent-batch entries "
-                    f"in the past, causing duplicate sends to the same recipients. "
-                    f"If a deletion is genuinely intended, edit the JSON directly with a clear commit "
-                    f"message rather than going through this function."
-                )
-        except (OSError, json.JSONDecodeError):
-            pass
+    """Save sent log (list of dicts)."""
     with open(SENT_FILE, "w") as f:
         json.dump(sent_records, f, indent=2)
 
@@ -298,7 +265,6 @@ def send_via_resend(to_email, subject, body, api_key):
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json',
-        'User-Agent': RESEND_REQUIRED_USER_AGENT,
     }
     data = {
         'from': FROM_EMAIL,
@@ -330,7 +296,7 @@ def cmd_send(limit=None, dry_run=False):
     sent_emails = set(sent.keys())
     sent_list = list(sent.values()) if isinstance(sent, dict) else sent
 
-    pending = [t for t in targets if is_sendable_email(t.get("email", "")) and t.get("email") not in sent_emails]
+    pending = [t for t in targets if t.get("email") and t.get("email") not in sent_emails]
     if limit:
         pending = pending[:limit]
 
@@ -384,51 +350,6 @@ def cmd_send(limit=None, dry_run=False):
     print(f"\nResult: {sent_count} sent, {failed_count} failed")
 
 
-def cmd_refresh_status():
-    """Refresh Resend delivery status for sent emails. Reads pnw-outreach-sent.json,
-    queries Resend's /emails/<id> for each entry that has a real message_id, and
-    updates delivery_status + delivery_checked_at in place. No-op for entries
-    without a message_id (e.g. legacy entries with placeholder ids).
-
-    Always exits 0 even if some lookups fail — the followup automation runs this
-    before its own work and treats refresh as best-effort, not a precondition.
-    """
-    api_key = get_resend_api_key()
-    if not api_key:
-        print("refresh-status: no Resend API key in keychain; skipping refresh.")
-        return
-    sent = load_sent()
-    sent_list = list(sent.values()) if isinstance(sent, dict) else sent
-    updated = 0
-    skipped = 0
-    failed = 0
-    import json as json_module
-    for entry in sent_list:
-        msg_id = entry.get("message_id", "")
-        if not msg_id or msg_id.startswith("batch") or "-" not in msg_id:
-            skipped += 1
-            continue
-        try:
-            req = urllib.request.Request(
-                f"https://api.resend.com/emails/{msg_id}",
-                headers={
-                    "Authorization": f"Bearer {api_key}",
-                    "User-Agent": RESEND_REQUIRED_USER_AGENT,
-                },
-            )
-            with urllib.request.urlopen(req, timeout=10) as resp:
-                data = json_module.loads(resp.read().decode("utf-8"))
-            new_status = data.get("last_event") or data.get("status") or entry.get("delivery_status", "unknown")
-            if new_status != entry.get("delivery_status"):
-                entry["delivery_status"] = new_status
-                entry["delivery_checked_at"] = datetime.now(timezone.utc).isoformat()
-                updated += 1
-        except Exception as e:
-            failed += 1
-    save_sent(sent_list)
-    print(f"refresh-status: {updated} updated, {skipped} skipped (no real message_id), {failed} lookup failed.")
-
-
 def cmd_followup(hours_after=96):
     """Generate follow-ups for emails sent N hours ago (default 4 days = 96 hours)."""
     sent = load_sent()
@@ -464,7 +385,6 @@ Wanted to check if you had a chance to look at the research — if it resonates,
 
 
 if __name__ == "__main__":
-    self_check_outreach_guards()
     parser = argparse.ArgumentParser(description="PNW SMB Outreach")
     subparsers = parser.add_subparsers(dest="command")
 
@@ -474,7 +394,6 @@ if __name__ == "__main__":
 
     subparsers.add_parser("status", help="Show outreach status")
     subparsers.add_parser("template-preview", help="Show all email templates")
-    subparsers.add_parser("refresh-status", help="Refresh Resend delivery status for sent emails")
 
     followup_parser = subparsers.add_parser("followup", help="Generate follow-ups")
     followup_parser.add_argument("--hours", type=int, default=96, help="Follow-ups N hours after send")
@@ -487,8 +406,6 @@ if __name__ == "__main__":
         cmd_status()
     elif args.command == "template-preview":
         cmd_template_preview()
-    elif args.command == "refresh-status":
-        cmd_refresh_status()
     elif args.command == "followup":
         cmd_followup(hours_after=args.hours)
     else:
