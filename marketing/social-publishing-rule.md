@@ -120,14 +120,6 @@ Before posting, check the subreddit rules, verify the active browser account, cl
 
 API posting is not configured yet. Reddit requires OAuth, a registered app, and a descriptive User-Agent. Store the app credentials before wiring automation; current free Data API usage is rate-limited at 100 QPM per OAuth client ID.
 
-## LinkedIn Browser Recovery Guard
-
-LinkedIn browser posting is allowed only for explicit supervised recovery runs while API credentials are missing. Use Brave, hold the local Computer Use lease, verify `Shane Cheek` plus `Founder at 8bitconcepts` on the feed, and claim the sync-state social-content lock before composing.
-
-The reliable path is one script, not manual command probing: open the feed, verify identity, open `Start a post`, insert the approved copy into the contenteditable textbox, verify the full copy appears in the composer, wait for the `Post` button to become enabled, click `Post`, then capture the `Post successful. View post` URL. Do not stop at a filled composer when the identity, copy, lock, and enabled state are all verified.
-
-Use DOM or accessibility selectors. Prefer Browser Use or Playwright against a persistent Brave session; use true headless only when the platform accepts the authenticated session. Selector-derived native clicks are acceptable when X or LinkedIn ignores synthetic DOM events; exploratory coordinate fallback is a supervised manual recovery only, not the normal automated process.
-
 ## Anti-Duplicate Guard
 
 Before any public post:

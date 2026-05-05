@@ -29,8 +29,7 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Agentic Evidence is a good example of how I want these products to compound.\n\nOne artifact should do more than one job. It should serve users, give agents something inspectable, create a marketing surface, and expose the next bottleneck.\n\nRight now the bottleneck is:\nAdd VM TTL teardown and disposable per-session repo templates.\n\nhttps://agentic-evidence.fly.dev",
           "fingerprint": "d64d155460da0b9f",
-          "duplicate": true,
-          "posted_at": "2026-05-05T13:45:14Z"
+          "duplicate": true
         }
       },
       "quality_gate": [
