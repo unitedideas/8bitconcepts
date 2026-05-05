@@ -202,7 +202,32 @@ def load_sent():
 
 
 def save_sent(sent_records):
-    """Save sent log (list of dicts)."""
+    """Save sent log (list of dicts).
+
+    Append-only invariant: sent_records must not be shorter than the on-disk
+    file. Outreach automations have lost batch-2 entries multiple times by
+    silently rewriting this file with a stale subset; preventing shrinkage
+    here makes that class of regression fail fast instead of silently
+    re-sending the same emails.
+    """
+    if SENT_FILE.exists():
+        try:
+            with open(SENT_FILE) as f:
+                existing = json.load(f)
+            existing_keys = {item.get("email") for item in existing if isinstance(item, dict)}
+            new_keys = {item.get("email") for item in sent_records if isinstance(item, dict)}
+            missing = existing_keys - new_keys
+            if missing:
+                raise SystemExit(
+                    f"pnw-outreach.py guard FAILED: save_sent() refusing to write a sent log "
+                    f"that drops {len(missing)} prior entry/entries: {sorted(missing)[:5]}{'...' if len(missing) > 5 else ''}. "
+                    f"This guard exists because automations have silently dropped sent-batch entries "
+                    f"in the past, causing duplicate sends to the same recipients. "
+                    f"If a deletion is genuinely intended, edit the JSON directly with a clear commit "
+                    f"message rather than going through this function."
+                )
+        except (OSError, json.JSONDecodeError):
+            pass
     with open(SENT_FILE, "w") as f:
         json.dump(sent_records, f, indent=2)
 
