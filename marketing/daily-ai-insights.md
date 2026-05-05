@@ -1,7 +1,7 @@
 # Daily AI Insight Drafts
 
-Generated: 2026-05-02 17:20 UTC
-Post date: 2026-05-02
+Generated: 2026-05-05 05:15 UTC
+Post date: 2026-05-04
 X account: @8bitconcepts
 LinkedIn profile: https://www.linkedin.com/in/shane-cheek-9173473b6/
 
@@ -10,21 +10,21 @@ Rule: multiple posts per day, always AI, always informative, always routed to an
 ### Morning Targeted Research Post
 
 Post time: 08:30 America/Los_Angeles
-Target: Scale AI
-X mention: @scale_AI
-LinkedIn tag hint: @Scale AI
-Research angle: enterprise ML delivery, expert feedback loops, data quality, and applied agent systems
-Observed signal: 135 indexed roles, #7 by indexed role count, $237,478 average published salary, top tags: generative-ai, llm, agents
-Sample roles: Director, Enterprise Machine Learning & Research; Manager, Machine Learning Research Scientist, GenAI
-Workplace mix: onsite: 20
+Target: Mistral AI
+X mention: @MistralAI
+LinkedIn tag hint: @Mistral AI
+Research angle: open model deployment, pre-training, applied ML, and enterprise rollout
+Observed signal: 82 indexed roles, #13 by indexed role count, $265,000 average published salary, top tags: llm, pytorch, fine-tuning
+Sample roles: ML Engineer - Pre-Training; Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA
+Workplace mix: onsite: 19, remote: 1
 Longform decision: No longform trigger today.
 
 Documented sources:
-- AI Dev Board company page: https://aidevboard.com/company/scale-ai
-- AI Dev Board jobs API: https://aidevboard.com/api/v1/jobs?company=scale-ai&limit=100
+- AI Dev Board company page: https://aidevboard.com/company/mistral-ai
+- AI Dev Board jobs API: https://aidevboard.com/api/v1/jobs?company=mistral-ai&limit=100
 - AI Dev Board stats API: https://aidevboard.com/api/v1/stats
-- Not Human Search profile: https://nothumansearch.ai/site/scale.com
-- Official source: https://scale.com/careers
+- Not Human Search profile: https://nothumansearch.ai/site/mistral.ai
+- Official source: https://mistral.ai/careers/
 
 Source fetch errors:
 - None
@@ -32,32 +32,32 @@ Source fetch errors:
 #### X
 
 ```text
-Looking at public AI hiring as a market signal: @scale_AI has 135 indexed AI/ML roles on AI Dev Board, with current tags clustering around generative-ai, llm, agents. Avg published salary: $237,478. Scale AI is #7 by indexed role count in the current AI Dev Board sample.
+Looking at public AI hiring as a market signal: @MistralAI has 82 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, pytorch, fine-tuning. Avg published salary: $265,000. Mistral AI is #13 by indexed role count in the current AI Dev Board sample.
 
-The read is not just hiring volume. It points to enterprise ML delivery, expert feedback loops, data quality, and applied agent systems. Does the constraint look more like data quality, workflow integration, or evaluation coverage?
+The read is not just hiring volume. It points to open model deployment, pre-training, applied ML, and enterprise rollout. Does the next bottleneck sit in model access, internal integration, or agent-facing docs?
 
-Data: https://aidevboard.com/company/scale-ai
+Data: https://aidevboard.com/company/mistral-ai
 ```
 
 #### LinkedIn
 
 ```text
-Looking at @Scale AI through the public hiring data:
+Looking at @Mistral AI through the public hiring data:
 
-1. 135 indexed AI/ML roles in AI Dev Board.
-2. Current sample tags cluster around generative-ai, llm, agents, research.
-3. Sample roles include Director, Enterprise Machine Learning & Research; Manager, Machine Learning Research Scientist, GenAI; Senior AI Infrastructure Engineer - Training Platform.
-4. Avg published salary in the indexed sample: $237,478.
+1. 82 indexed AI/ML roles in AI Dev Board.
+2. Current sample tags cluster around llm, pytorch, fine-tuning, infrastructure.
+3. Sample roles include ML Engineer - Pre-Training; Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA; Research Engineer, Data Infrastructure.
+4. Avg published salary in the indexed sample: $265,000.
 
-The useful read is where the operational work is moving: enterprise ML delivery, expert feedback loops, data quality, and applied agent systems.
+The useful read is where the operational work is moving: open model deployment, pre-training, applied ML, and enterprise rollout.
 
-Scale AI is a useful public lens on this area. Does the constraint look more like data quality, workflow integration, or evaluation coverage?
+Mistral AI is a useful public lens on this area. Does the next bottleneck sit in model access, internal integration, or agent-facing docs?
 
-NHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.
+NHS follow-up lens: public agent-readiness profile shows llms.txt, structured API. That is useful for checking what agents can inspect without a human browsing the site.
 
 Data:
-https://aidevboard.com/company/scale-ai
-https://nothumansearch.ai/site/scale.com
+https://aidevboard.com/company/mistral-ai
+https://nothumansearch.ai/site/mistral.ai
 ```
 
 ### 8BIT Research Fact
