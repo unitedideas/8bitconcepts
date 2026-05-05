@@ -11,7 +11,8 @@ Follow-up policy:
   - delivered but NOT opened  -> follow up (editor never saw first)
   - opened but no reply       -> follow up (editor saw, needs nudge)
   - clicked                   -> follow up (highest-intent nudge)
-  - bounced / failed          -> log, skip, never follow up
+  - bounced / failed / suppressed
+                              -> log, skip, never follow up
   - sent (no event yet)       -> defer one cycle (Resend event may still land)
   - no resend id / api error  -> skip this cycle, retry tomorrow
 
@@ -508,7 +509,7 @@ def run(
             log(f"  api-fail {c['to']} ({c['send_id'][:8]}): {err}")
             continue
         status = status or "sent"
-        if status in {"bounced", "complained", "failed"}:
+        if status in {"bounced", "complained", "failed", "suppressed"}:
             log(f"  skip {c['to']}: status={status}")
             continue
         if status == "sent":
