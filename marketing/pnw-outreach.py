@@ -265,6 +265,7 @@ def send_via_resend(to_email, subject, body, api_key):
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json',
+        'User-Agent': 'curl/8.7.1',
     }
     data = {
         'from': FROM_EMAIL,
@@ -296,7 +297,7 @@ def cmd_send(limit=None, dry_run=False):
     sent_emails = set(sent.keys())
     sent_list = list(sent.values()) if isinstance(sent, dict) else sent
 
-    pending = [t for t in targets if t.get("email") and t.get("email") not in sent_emails]
+    pending = [t for t in targets if t.get("email") and "@" in t.get("email", "") and t.get("email") not in sent_emails]
     if limit:
         pending = pending[:limit]
 

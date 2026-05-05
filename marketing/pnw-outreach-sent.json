@@ -104,5 +104,53 @@
     "followup_sent": false,
     "delivery_status": "bounced",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
+  },
+  {
+    "email": "info@htmfg.com",
+    "company": "High Tech Manufacturing",
+    "subject": "A small note about your shop floor",
+    "sent_at": "2026-05-05T00:00:00+00:00",
+    "message_id": "batch2-htmfg",
+    "followup_sent": false
+  },
+  {
+    "email": "hello@gradybritton.com",
+    "company": "Grady Britton",
+    "subject": "AI for Grady Britton dispatch + invoicing",
+    "sent_at": "2026-05-05T00:00:00+00:00",
+    "message_id": "batch2-gradybritton",
+    "followup_sent": false
+  },
+  {
+    "email": "info@freelandspirits.com",
+    "company": "Freeland Spirits",
+    "subject": "AI for Freeland Spirits",
+    "sent_at": "2026-05-05T00:00:00+00:00",
+    "message_id": "batch2-freeland",
+    "followup_sent": false
+  },
+  {
+    "email": "info@portlandpetfoodcompany.com",
+    "company": "Portland Pet Food Company",
+    "subject": "AI for Portland Pet Food Company",
+    "sent_at": "2026-05-05T00:00:00+00:00",
+    "message_id": "batch2-pdxpetfood",
+    "followup_sent": false
+  },
+  {
+    "email": "hello@jacobsensalt.com",
+    "company": "Jacobsen Salt Co.",
+    "subject": "AI for Jacobsen Salt Co.",
+    "sent_at": "2026-05-05T00:00:00+00:00",
+    "message_id": "batch2-jacobsen",
+    "followup_sent": false
+  },
+  {
+    "email": "info@bridgecitymedical.com",
+    "company": "Bridge City Medical",
+    "subject": "AI for Bridge City Medical",
+    "sent_at": "2026-05-05T00:00:00+00:00",
+    "message_id": "batch2-bridgecity",
+    "followup_sent": false
   }
 ]
