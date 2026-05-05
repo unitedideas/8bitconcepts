@@ -37,7 +37,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T05:58:51+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -47,8 +47,23 @@
       "route": "https://8bitconcepts.com/research/the-integration-tax.html",
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
-      "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+      "fingerprint": "ebf5d6c0d36e3cdc",
+      "copy": "Model API fees are usually 10-20% of what AI costs to ship. The rest is data prep, integration, evals, observability, maintenance, and process change.",
+      "updated_at": "2026-05-05T16:10:59.743Z",
+      "posted_at": "2026-05-05T16:10:59.743Z",
+      "url": "https://x.com/8BitConcepts/status/2051695887903273326",
+      "original_fingerprint": "d98634ae51b8b3ec",
+      "approved_final_copy": "Model API fees are usually 10-20% of what AI costs to ship. The rest is data prep, integration, evals, observability, maintenance, and process change.",
+      "approved_final_fingerprint": "ebf5d6c0d36e3cdc",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The source page states model API costs are 10-20% of what AI actually costs to ship",
+        "The source page identifies data prep, integration, evaluation/testing, observability, annual maintenance, and process change as major non-model cost centers"
+      ],
+      "note": "Refreshed through social-editor and posted by 8bit-x-agent-publisher from verified @8BitConcepts."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
