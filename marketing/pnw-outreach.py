@@ -401,6 +401,51 @@ def cmd_send(limit=None, dry_run=False):
     print(f"\nResult: {sent_count} sent, {failed_count} failed")
 
 
+def cmd_refresh_status():
+    """Refresh Resend delivery status for sent emails. Reads pnw-outreach-sent.json,
+    queries Resend's /emails/<id> for each entry that has a real message_id, and
+    updates delivery_status + delivery_checked_at in place. No-op for entries
+    without a message_id (e.g. legacy entries with placeholder ids).
+
+    Always exits 0 even if some lookups fail — the followup automation runs this
+    before its own work and treats refresh as best-effort, not a precondition.
+    """
+    api_key = get_resend_api_key()
+    if not api_key:
+        print("refresh-status: no Resend API key in keychain; skipping refresh.")
+        return
+    sent = load_sent()
+    sent_list = list(sent.values()) if isinstance(sent, dict) else sent
+    updated = 0
+    skipped = 0
+    failed = 0
+    import json as json_module
+    for entry in sent_list:
+        msg_id = entry.get("message_id", "")
+        if not msg_id or msg_id.startswith("batch") or "-" not in msg_id:
+            skipped += 1
+            continue
+        try:
+            req = urllib.request.Request(
+                f"https://api.resend.com/emails/{msg_id}",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "User-Agent": RESEND_REQUIRED_USER_AGENT,
+                },
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                data = json_module.loads(resp.read().decode("utf-8"))
+            new_status = data.get("last_event") or data.get("status") or entry.get("delivery_status", "unknown")
+            if new_status != entry.get("delivery_status"):
+                entry["delivery_status"] = new_status
+                entry["delivery_checked_at"] = datetime.now(timezone.utc).isoformat()
+                updated += 1
+        except Exception as e:
+            failed += 1
+    save_sent(sent_list)
+    print(f"refresh-status: {updated} updated, {skipped} skipped (no real message_id), {failed} lookup failed.")
+
+
 def cmd_followup(hours_after=96):
     """Generate follow-ups for emails sent N hours ago (default 4 days = 96 hours)."""
     sent = load_sent()
@@ -476,6 +521,7 @@ if __name__ == "__main__":
 
     subparsers.add_parser("status", help="Show outreach status")
     subparsers.add_parser("template-preview", help="Show all email templates")
+    subparsers.add_parser("refresh-status", help="Refresh Resend delivery status for sent emails")
 
     followup_parser = subparsers.add_parser("followup", help="Generate follow-ups")
     followup_parser.add_argument("--hours", type=int, default=96, help="Follow-ups N hours after send")
@@ -488,6 +534,8 @@ if __name__ == "__main__":
         cmd_status()
     elif args.command == "template-preview":
         cmd_template_preview()
+    elif args.command == "refresh-status":
+        cmd_refresh_status()
     elif args.command == "followup":
         cmd_followup(hours_after=args.hours)
     else:
