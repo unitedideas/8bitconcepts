@@ -123,7 +123,15 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Little fact from the 8bit research stack: model API fees are usually 10-20% of an AI build. The bigger lines are data pipelines, system integration, evaluation, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
           "fingerprint": "10e029c31f27bd4e",
-          "duplicate": false
+          "duplicate": false,
+          "status": "posted",
+          "posted_at": "2026-05-05T16:47:12Z",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7457470972552445954/",
+          "approved_final_copy": "Model API fees are usually 10-20% of an AI build.\n\nThe bigger costs are the work around the model: data pipelines, system integration, evaluation and testing, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+          "approved_final_fingerprint": "b25728133637fecf",
+          "editor": "agent-social-editor",
+          "editor_status": "approved",
+          "posting_note": "Posted from verified Shane Cheek / Founder at 8bitconcepts LinkedIn profile via LinkedIn Voyager API; immediate script verification missed the live share URL, then public curl verification matched the canonical activity page."
         }
       },
       "quality_gate": [

@@ -3,6 +3,29 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "daily-research-fact-2026-05-04-8bit-linkedin",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "daily-research-fact-2026-05-04-8bit",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "posted_at": "2026-05-05T16:47:12Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7457470972552445954/",
+      "fingerprint": "b25728133637fecf",
+      "text": "Model API fees are usually 10-20% of an AI build.\n\nThe bigger costs are the work around the model: data pipelines, system integration, evaluation and testing, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The source page states model API costs are 10-20% of what AI actually costs to ship",
+        "The source page names data pipelines, system integration, evaluation/testing, observability, and maintenance as major non-model cost centers",
+        "https://8bitconcepts.com returned HTTP 200 and is the portfolio index URL for 8bitconcepts"
+      ],
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "operator_closeout": "No scoped memory update needed",
+      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API from verified Shane Cheek / Founder at 8bitconcepts identity; live canonical activity page verified by curl."
+    },
+    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
