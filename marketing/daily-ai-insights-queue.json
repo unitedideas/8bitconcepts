@@ -75,7 +75,15 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Looking at @Mistral AI through the public hiring data:\n\n1. 82 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around llm, pytorch, fine-tuning, infrastructure.\n3. Sample roles include ML Engineer - Pre-Training; Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA; Research Engineer, Data Infrastructure.\n4. Avg published salary in the indexed sample: $265,000.\n\nThe useful read is where the operational work is moving: open model deployment, pre-training, applied ML, and enterprise rollout.\n\nMistral AI is a useful public lens on this area. Does the next bottleneck sit in model access, internal integration, or agent-facing docs?\n\nNHS follow-up lens: public agent-readiness profile shows llms.txt, structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/mistral-ai\nhttps://nothumansearch.ai/site/mistral.ai",
           "fingerprint": "6f2c8b2ec9d525a8",
-          "duplicate": false
+          "duplicate": false,
+          "status": "posted",
+          "posted_at": "2026-05-05T05:32:21Z",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7457300885950582784/",
+          "approved_final_copy": "Mistral AI has 82 indexed AI/ML roles in AI Dev Board.\n\nThe current hiring sample clusters around LLMs, infrastructure, PyTorch, distributed systems, and fine-tuning. The average published salary in the indexed sample is $265,000.\n\nSample roles:\n1. ML Engineer - Pre-Training.\n2. Applied AI, Forward Deployed Machine Learning Engineer, Critical and Sovereign Institutions, EMEA.\n3. Research Engineer, Data Infrastructure.\n\nThe useful read is where the operating work is sitting: pre-training, applied ML, data infrastructure, and enterprise deployment.\n\nThe agent-readiness profile is thinner. Not Human Search sees llms.txt and a structured API, but no OpenAPI spec or ai-plugin manifest.\n\nHiring data: https://aidevboard.com/company/mistral-ai\nAgent-readiness profile: https://nothumansearch.ai/site/mistral.ai\n",
+          "approved_final_fingerprint": "6cdda1f5f81c9129",
+          "editor": "agent-social-editor",
+          "editor_status": "approved",
+          "posting_note": "Posted from verified Shane Cheek / Founder at 8bitconcepts LinkedIn profile via supervised one-shot browser recovery after direct Voyager cookie sources returned 302 and page-context Voyager returned 401."
         }
       },
       "quality_gate": [
