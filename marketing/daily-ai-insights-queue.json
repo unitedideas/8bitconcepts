@@ -77,7 +77,23 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Looking at @Anthropic through the public hiring data:\n\n1. 283 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around llm, alignment, agents, search.\n3. Sample roles include Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations.\n4. Avg published salary in the indexed sample: $364,180.\n\nThe useful read is where the operational work is moving: long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment.\n\nAnthropic is a useful public lens on this area. Which layer becomes the hardest to operationalize first: eval design, tool-use environments, or production feedback?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/anthropic\nhttps://nothumansearch.ai/site/anthropic.com",
           "fingerprint": "6a842d0bcc3d3eaf",
-          "duplicate": false
+          "duplicate": false,
+          "status": "blocked",
+          "blocked_at": "2026-05-05T20:52:17Z",
+          "blocker": "LinkedIn auth hard stop before verified posting identity: direct Voyager cookies were rejected (chrome-profile-3 returned 302), page-context Voyager /voyager/api/me returned 401, and approved one-shot Brave recovery stayed on LinkedIn Login 'We’re signing you in' for Shane Cheek h*****@8bitconcepts.com instead of reaching the feed/composer. No public post was created.",
+          "approved_final_copy": "Anthropic is a useful public lens on where AI operations are moving.\n\nAI Dev Board currently indexes 283 Anthropic AI/ML roles. The indexed sample averages $364,180 in published salary, with early roles including Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations; and Research Engineer, RL Infrastructure and Reliability.\n\nThe tags cluster around LLMs, alignment, agents, search, reinforcement learning, distributed systems, evaluation, infrastructure, PyTorch, fine-tuning, pre-training, and data pipelines.\n\nThe useful read is not just that Anthropic is hiring. It is where the operational work is concentrating: eval design, RL infrastructure, model behavior measurement, and production systems for agent work.\n\nNHS adds the public agent-readiness lens. Anthropic.com currently shows 20/100 with a structured API found, which is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/anthropic\nhttps://nothumansearch.ai/site/anthropic.com\n\nAI Dev Board:\nhttps://aidevboard.com",
+          "approved_final_fingerprint": "3318f6ccfefbbf54",
+          "facts_verified": [
+            "https://aidevboard.com/company/anthropic returned HTTP 200",
+            "https://aidevboard.com/api/v1/jobs?company=anthropic&limit=100 returned total=283",
+            "https://aidevboard.com/api/v1/stats lists Anthropic with roles=283 and avg_salary=364180; overview total_jobs=9906, total_companies=527, updated_at=2026-05-05T20:48:14Z",
+            "First fetched Anthropic titles included Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations; Research Engineer, RL Infrastructure and Reliability (Knowledge Work)",
+            "First fetched Anthropic tags included search, gpu, alignment, reinforcement-learning, distributed-systems, code-generation, pytorch, fine-tuning, llm, pre-training, agents, research, data-pipeline, evaluation, infrastructure",
+            "https://nothumansearch.ai/site/anthropic.com returned HTTP 200 and shows Agentic Readiness 20/100 plus Structured API found",
+            "https://www.anthropic.com/careers returned HTTP 200",
+            "https://aidevboard.com returned HTTP 200 and is the AI Dev Board portfolio business URL"
+          ],
+          "social_editor_status": "approved"
         }
       },
       "quality_gate": [

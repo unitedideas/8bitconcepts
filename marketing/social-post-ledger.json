@@ -2108,6 +2108,58 @@
       "x_operator_closeout": "No scoped memory update needed",
       "blocker": "Fallback was claimed after two linked Anthropic attempts appeared blocked, but later X profile recovery showed both Anthropic posts were already live. Fallback direct/browser attempt also failed composer insertion and no matching fallback status was visible on the profile.",
       "social_content_lock": "public-action-locks/social-content/240d5468774ee94d.json"
+    },
+    {
+      "id": "daily-targeted-research-2026-05-05-anthropic-linkedin-blocked-3318f6ccfefbbf54",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-05-anthropic",
+      "channel": "linkedin",
+      "account": "Shane Cheek / Founder at 8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-05T20:52:17Z",
+      "url": null,
+      "fingerprint": "3318f6ccfefbbf54",
+      "original_queue_fingerprint": "6a842d0bcc3d3eaf",
+      "fact_key": "targeted-research:anthropic:283:llm,alignment,agents",
+      "candidate_kind": "targeted_research",
+      "candidate_date": "2026-05-05",
+      "route": "https://aidevboard.com/company/anthropic",
+      "text": "Anthropic is a useful public lens on where AI operations are moving.\n\nAI Dev Board currently indexes 283 Anthropic AI/ML roles. The indexed sample averages $364,180 in published salary, with early roles including Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations; and Research Engineer, RL Infrastructure and Reliability.\n\nThe tags cluster around LLMs, alignment, agents, search, reinforcement learning, distributed systems, evaluation, infrastructure, PyTorch, fine-tuning, pre-training, and data pipelines.\n\nThe useful read is not just that Anthropic is hiring. It is where the operational work is concentrating: eval design, RL infrastructure, model behavior measurement, and production systems for agent work.\n\nNHS adds the public agent-readiness lens. Anthropic.com currently shows 20/100 with a structured API found, which is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/anthropic\nhttps://nothumansearch.ai/site/anthropic.com\n\nAI Dev Board:\nhttps://aidevboard.com",
+      "approved_final_copy": "Anthropic is a useful public lens on where AI operations are moving.\n\nAI Dev Board currently indexes 283 Anthropic AI/ML roles. The indexed sample averages $364,180 in published salary, with early roles including Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations; and Research Engineer, RL Infrastructure and Reliability.\n\nThe tags cluster around LLMs, alignment, agents, search, reinforcement learning, distributed systems, evaluation, infrastructure, PyTorch, fine-tuning, pre-training, and data pipelines.\n\nThe useful read is not just that Anthropic is hiring. It is where the operational work is concentrating: eval design, RL infrastructure, model behavior measurement, and production systems for agent work.\n\nNHS adds the public agent-readiness lens. Anthropic.com currently shows 20/100 with a structured API found, which is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/anthropic\nhttps://nothumansearch.ai/site/anthropic.com\n\nAI Dev Board:\nhttps://aidevboard.com",
+      "approved_final_fingerprint": "3318f6ccfefbbf54",
+      "blocker": "LinkedIn auth hard stop before verified posting identity: direct Voyager cookies were rejected (chrome-profile-3 returned 302), page-context Voyager /voyager/api/me returned 401, and approved one-shot Brave recovery stayed on LinkedIn Login 'We’re signing you in' for Shane Cheek h*****@8bitconcepts.com instead of reaching the feed/composer. No public post was created.",
+      "facts_verified": [
+        "https://aidevboard.com/company/anthropic returned HTTP 200",
+        "https://aidevboard.com/api/v1/jobs?company=anthropic&limit=100 returned total=283",
+        "https://aidevboard.com/api/v1/stats lists Anthropic with roles=283 and avg_salary=364180; overview total_jobs=9906, total_companies=527, updated_at=2026-05-05T20:48:14Z",
+        "First fetched Anthropic titles included Research Engineer, Performance RL; Research Lead, Training Insights; Research Engineer, Model Evaluations; Research Engineer, RL Infrastructure and Reliability (Knowledge Work)",
+        "First fetched Anthropic tags included search, gpu, alignment, reinforcement-learning, distributed-systems, code-generation, pytorch, fine-tuning, llm, pre-training, agents, research, data-pipeline, evaluation, infrastructure",
+        "https://nothumansearch.ai/site/anthropic.com returned HTTP 200 and shows Agentic Readiness 20/100 plus Structured API found",
+        "https://www.anthropic.com/careers returned HTTP 200",
+        "https://aidevboard.com returned HTTP 200 and is the AI Dev Board portfolio business URL"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/3318f6ccfefbbf54.json",
+      "posting_attempts": [
+        {
+          "route": "direct_voyager_cookie_api",
+          "result": "blocked",
+          "detail": "all LinkedIn cookie sources rejected; chrome-profile-3 returned 302"
+        },
+        {
+          "route": "page_context_voyager_api",
+          "result": "blocked",
+          "detail": "/voyager/api/me returned 401"
+        },
+        {
+          "route": "one_shot_brave_browser_recovery",
+          "result": "blocked",
+          "detail": "LinkedIn Login 'We’re signing you in' page did not reach feed/composer"
+        }
+      ],
+      "note": "No public post created; channel auth state is stale and latest LinkedIn post is older than 3 hours, so sync-state failure event was written for watchdog recovery."
     }
   ]
 }
