@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="color-scheme" content="dark light" />
+<title>Claude Code vs OpenAI Codex CLI: Side-by-Side Comparison (2026) | 8bitconcepts</title>
+<meta name="description" content="Claude Code vs OpenAI Codex CLI: model quality, pricing, config files, MCP support, sandboxing, and when to pick each. Accurate 2026 comparison from developers who've used both." />
+<link rel="canonical" href="https://8bitconcepts.com/research/claude-code-vs-codex.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Claude Code vs OpenAI Codex CLI: Side-by-Side Comparison (2026)" />
+<meta property="og:description" content="Claude Code vs OpenAI Codex CLI: model quality, pricing, config files, MCP support, sandboxing, and when to pick each. Accurate 2026 comparison." />
+<meta property="og:url" content="https://8bitconcepts.com/research/claude-code-vs-codex.html" />
+<meta property="og:image" content="https://8bitconcepts.com/og-research.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Claude Code vs OpenAI Codex CLI: Side-by-Side Comparison (2026)" />
+<meta name="twitter:description" content="Claude Code vs Codex CLI: model quality, pricing, config files, MCP support, sandboxing, and when to pick each." />
+<meta name="twitter:image" content="https://8bitconcepts.com/og-research.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude Code vs OpenAI Codex CLI: Side-by-Side Comparison (2026)",
+  "description": "Claude Code vs OpenAI Codex CLI: model quality, pricing, config files, MCP support, sandboxing, and when to pick each. Accurate 2026 comparison from developers who've used both.",
+  "url": "https://8bitconcepts.com/research/claude-code-vs-codex.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+  "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+  "image": "https://8bitconcepts.com/og-research.png",
+  "isPartOf": {"@type": "WebSite", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Claude Code vs Codex CLI"}
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--slate:#0d0d0e;--terra:#d97757;--text:#e8e8e9;--muted:#8b8d91;--subtle:#c5c5c9;--border:rgba(255,255,255,0.07);--card:#111214}
+body{background:var(--slate);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.75;padding:40px 20px;}
+.wrap{max-width:720px;margin:0 auto;}
+a{color:var(--terra);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1{font-size:38px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:16px;color:#fff;}
+h2{font-size:22px;letter-spacing:-0.01em;margin:44px 0 12px;color:#fff;}
+h3{font-size:17px;margin:28px 0 8px;color:#fff;}
+p{margin-bottom:16px;color:var(--subtle);}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--terra);margin-bottom:12px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:40px;}
+.nav-back{display:inline-block;margin-bottom:24px;color:var(--terra);font-size:14px;}
+pre{background:#18191b;border:1px solid rgba(255,255,255,0.09);border-radius:6px;padding:16px 18px;margin:0 0 20px;overflow-x:auto;}
+code{font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#e8e8e9;}
+p code,li code,td code{background:rgba(255,255,255,0.07);padding:1px 6px;border-radius:3px;font-size:13px;color:#e8e8e9;}
+ul,ol{padding-left:20px;margin-bottom:16px;color:var(--subtle);}
+li{margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:14px;}
+th{text-align:left;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.12);color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;}
+td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--subtle);}
+tr:last-child td{border-bottom:none;}
+td:first-child{color:var(--text);font-weight:500;}
+.verdict{display:inline-block;font-size:11px;font-family:'IBM Plex Mono',monospace;padding:2px 8px;border-radius:3px;margin-left:8px;vertical-align:middle;}
+.win-cc{background:rgba(217,119,87,0.15);color:var(--terra);}
+.win-codex{background:rgba(99,179,237,0.12);color:#63b3ed;}
+.tie{background:rgba(255,255,255,0.07);color:var(--muted);}
+.callout{background:rgba(217,119,87,0.07);border-left:3px solid var(--terra);padding:14px 18px;border-radius:0 6px 6px 0;margin:24px 0;}
+.callout p{margin:0;color:var(--subtle);}
+.article-cta{background:linear-gradient(135deg,rgba(217,119,87,0.12) 0%,rgba(217,119,87,0.04) 100%);border:1px solid rgba(217,119,87,0.35);border-radius:10px;padding:28px 32px;margin:56px 0 40px;}
+.article-cta h3{margin:0 0 8px;font-size:20px;color:#fff;}
+.article-cta p{margin:0 0 20px;color:var(--subtle);}
+.cta-btn{display:inline-block;background:var(--terra);color:#fff;padding:11px 22px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+footer a{color:var(--terra);}
+@media(max-width:600px){h1{font-size:28px;}}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+<div class="wrap">
+  <a class="nav-back" href="/research/">← Research</a>
+  <div class="eyebrow">Developer Tools</div>
+  <h1>Claude Code vs OpenAI Codex CLI: Side-by-Side Comparison (2026)</h1>
+  <p class="meta">By 8bitconcepts &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; 11 min read</p>
+
+  <p>Two terminal-native AI coding agents from the two leading AI labs. Both work in your existing editor, both understand your codebase, both can run commands on your behalf. The differences are real — in model quality, pricing model, project configuration, sandboxing approach, and what happens when things get complex.</p>
+
+  <p>This comparison covers the technical and practical differences that affect your actual workflow, not just the surface-level feature matrices.</p>
+
+  <h2>Quick overview</h2>
+
+  <table>
+    <thead>
+      <tr><th>Factor</th><th>Claude Code</th><th>Codex CLI</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Underlying model</td><td>Claude Sonnet 4.6 / Opus 4.6</td><td>OpenAI frontier models</td></tr>
+      <tr><td>Context window</td><td>Up to 1M tokens</td><td>Not disclosed</td></tr>
+      <tr><td>Install</td><td><code>npm install -g @anthropic-ai/claude-code</code></td><td><code>npm install -g @openai/codex</code></td></tr>
+      <tr><td>License</td><td>Proprietary</td><td>Apache-2.0 (open source)</td></tr>
+      <tr><td>GitHub stars</td><td>Proprietary — no repo</td><td>80k+</td></tr>
+      <tr><td>Project config file</td><td><code>CLAUDE.md</code></td><td><code>AGENTS.md</code></td></tr>
+      <tr><td>Pricing model</td><td>Pay-per-token (API key)</td><td>ChatGPT subscription or pay-per-token</td></tr>
+      <tr><td>MCP support</td><td>Yes (deep integration)</td><td>Yes</td></tr>
+      <tr><td>OS-level sandboxing</td><td>Permission prompts</td><td>Seatbelt (macOS) / bwrap (Linux)</td></tr>
+      <tr><td>Sub-agent / orchestration</td><td>Yes (Task tool)</td><td>Yes (parallel worktrees)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Installation and setup</h2>
+
+  <p>Both install via npm:</p>
+
+  <pre><code># Claude Code
+npm install -g @anthropic-ai/claude-code
+
+# Codex CLI
+npm install -g @openai/codex</code></pre>
+
+  <p>Claude Code requires an Anthropic API key; token usage billed directly. Codex CLI lets you sign in with a ChatGPT account (Plus, Pro, Business, or Enterprise) and charges against your subscription's message allocation, or you can provide an OpenAI API key for pay-per-token access.</p>
+
+  <p>The subscription path is a material difference: if you already pay for ChatGPT Plus ($20/month), Codex CLI usage is included up to your tier's limits — no additional API spend. Claude Code has no equivalent subscription tier; it's always token-billed.</p>
+
+  <h2>Models and output quality</h2>
+
+  <p>Claude Code uses Anthropic's Claude family — Sonnet 4.6 by default, with Opus 4.6 for hard problems and Haiku 4.5 for fast, cheap tasks. You switch models mid-session with <code>/model</code>.</p>
+
+  <p>Codex CLI uses OpenAI's frontier models and pulls whichever version is current for your subscription tier. You also switch models with <code>/model</code> inside the interactive session.</p>
+
+  <p>The honest answer on output quality is: it depends on the task. Claude tends to produce more coherent, well-structured multi-file changes with better contextual reasoning. GPT-4o class models are strong at code generation but can be more mechanical. The 1M-token context window in Claude Code is a genuine differentiator for large codebases — you can load entire repos into context in ways that Codex CLI's undisclosed context limit can't match.</p>
+
+  <h2>Project configuration: CLAUDE.md vs AGENTS.md</h2>
+
+  <p>Both tools read a project config file that you commit to the repo:</p>
+
+  <ul>
+    <li><strong>Claude Code</strong>: <code>CLAUDE.md</code> — loaded at every session start. Put your stack, conventions, test commands, and things to avoid. Supports nested CLAUDE.md files in subdirectories. Heavily documented; see the <a href="/research/claude-md-guide.html">CLAUDE.md guide</a> for what to include.</li>
+    <li><strong>Codex CLI</strong>: <code>AGENTS.md</code> — same concept. Originally an OpenAI format, now stewarded by the Linux Foundation as a cross-tool standard. Adopted by 60,000+ open-source projects. The cross-tool standardization means you can write one file and have it work with Codex, and potentially other agents that adopt the standard.</li>
+  </ul>
+
+  <p>In practice, CLAUDE.md supports more Claude-specific features (sub-agent behavior, tool permissions, memory). AGENTS.md is slightly more portable but slightly less powerful within its home tool.</p>
+
+  <p>Neither is clearly better if you're only using one tool. If your team is split between Claude Code and Codex CLI, AGENTS.md's cross-tool positioning is genuinely useful — one project config, two tools.</p>
+
+  <h2>Sandboxing and execution safety</h2>
+
+  <p>This is a real difference in approach.</p>
+
+  <p><strong>Codex CLI</strong> uses OS-level sandbox enforcement:</p>
+  <ul>
+    <li>macOS: Apple's Seatbelt via <code>sandbox-exec</code></li>
+    <li>Linux: <code>bwrap</code> (Bubblewrap) + seccomp</li>
+    <li>Windows: native sandbox + WSL2 option</li>
+  </ul>
+
+  <p>The default sandbox mode (<code>workspace-write</code>) lets Codex read and write files in your workspace, run routine local commands, but blocks network access. The <code>danger-full-access</code> mode removes all restrictions. The <code>read-only</code> mode prevents all mutations.</p>
+
+  <p><strong>Claude Code</strong> uses a permission prompt system: before any destructive or external action, Claude asks for approval unless you've configured auto-approval for specific tool categories. The <code>--dangerously-skip-permissions</code> flag removes all prompts (equivalent to Codex's <code>danger-full-access</code>).</p>
+
+  <p>Codex's OS-level sandboxing is more trustworthy in security-sensitive environments — the kernel enforces the boundary, not the model's self-restraint. Claude Code's permission system is more granular (you can allow <code>Bash</code> while requiring approval for <code>Write</code> to specific paths) but relies on the model correctly describing its intent before each action.</p>
+
+  <p>For most development work, both are adequate. For CI pipelines, automated scripts, or running untrusted code, Codex's OS sandbox is stronger.</p>
+
+  <h2>Approval modes</h2>
+
+  <p>Codex CLI has three named approval policies:</p>
+
+  <ul>
+    <li><code>on-request</code> — explicit approval before any action outside sandbox limits</li>
+    <li><code>untrusted</code> — auto-approves safe reads, prompts for state-mutating commands</li>
+    <li><code>never</code> — disables all approval prompts (full autonomy)</li>
+  </ul>
+
+  <p>An auto-review agent mode can also evaluate risk before passing approval decisions to you — useful for long-running autonomous tasks.</p>
+
+  <p>Claude Code has plan mode, auto mode, and per-tool permission configuration. You can also wire <a href="/research/claude-code-hooks.html">hooks</a> to intercept and block specific tool calls programmatically — something Codex doesn't have a direct equivalent for.</p>
+
+  <h2>Git integration</h2>
+
+  <p>Codex CLI has notably deep git integration. It analyzes your repo history for context, auto-generates meaningful commit messages, warns when operating in untracked directories, and supports parallel agents in isolated git worktrees for simultaneous non-conflicting work streams.</p>
+
+  <p>Claude Code reads git context but is less opinionated about commits — it will make changes, run your tests, and let you commit on your terms. If you want auto-commit behavior in Claude Code, you need to instruct it explicitly or configure a PostToolUse hook.</p>
+
+  <p>For teams that want a tighter git workflow with automatic commit generation, Codex's native approach is cleaner.</p>
+
+  <h2>MCP support</h2>
+
+  <p>Both tools support Model Context Protocol for wiring in external tools. Claude Code's MCP integration is more mature and better documented — it was one of the first tools to ship MCP support, and the ecosystem of Claude Code MCP servers is broader. See the <a href="/research/claude-code-mcp.html">Claude Code MCP guide</a> for setup and useful servers.</p>
+
+  <p>Codex CLI supports stdio and streaming HTTP MCP servers via <code>~/.codex/config.toml</code>, and can itself run as an MCP server when integrated with the OpenAI Agents SDK. For Claude Code-style MCP depth, you're currently better positioned.</p>
+
+  <h2>Hooks and automation</h2>
+
+  <p>Claude Code has a hooks system — scripts that run at lifecycle events (before/after tool calls, on session start/stop). You can block dangerous commands, log all file writes, trigger notifications, auto-lint after edits. See the <a href="/research/claude-code-hooks.html">hooks guide</a>.</p>
+
+  <p>Codex CLI doesn't have an equivalent first-class hooks system. You get the sandbox and approval modes, but not the programmatic lifecycle interception that Claude Code's hooks provide. For teams that want to enforce custom guardrails (block writes to generated files, audit all bash executions, auto-run tests after edits), Claude Code has a real advantage here.</p>
+
+  <h2>Context window and large codebase work</h2>
+
+  <p>Claude Code's 1M-token context window is one of its most practical advantages. You can load entire codebases — multiple large files, full git history, extensive documentation — into a single session without chunking or summarizing. This matters most for:</p>
+
+  <ul>
+    <li>Understanding and refactoring unfamiliar codebases</li>
+    <li>Cross-cutting changes that touch many files</li>
+    <li>Long research sessions where history accumulates</li>
+  </ul>
+
+  <p>Codex CLI doesn't disclose its effective context limit. In practice, it compresses or truncates older context in long sessions. For most day-to-day tasks (bug fixes, feature additions within a module, short automation scripts), this doesn't matter. For large-scale architectural work, Claude Code's context advantage is material.</p>
+
+  <h2>Pricing comparison</h2>
+
+  <table>
+    <thead>
+      <tr><th>Path</th><th>Claude Code</th><th>Codex CLI</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Entry point</td><td>Anthropic API key (token-billed)</td><td>ChatGPT Plus ($20/mo) or API key</td></tr>
+      <tr><td>Typical dev (1 hr/day)</td><td>$30–80/mo (Sonnet)</td><td>Included in ChatGPT Plus</td></tr>
+      <tr><td>Heavy use (4+ hr/day)</td><td>$150–400/mo (Sonnet/Opus mix)</td><td>Hits rate limits; needs Pro tier ($100+/mo)</td></tr>
+      <tr><td>Teams</td><td>Token costs scale linearly per seat</td><td>Business tier pricing (custom)</td></tr>
+      <tr><td>Cost visibility</td><td><code>/cost</code> command shows real-time spend</td><td>Usage tied to subscription allocation</td></tr>
+    </tbody>
+  </table>
+
+  <p>The real comparison is: do you already pay for ChatGPT Plus? If yes, Codex CLI is effectively free up to your monthly allocation — a significant cost advantage. If you're starting from zero, both require meaningful monthly spend at serious usage levels.</p>
+
+  <p>Claude Code's token-based billing is more predictable for teams (cost is proportional to usage) but can surprise you with a large bill when running long agentic sessions with many tool calls. Codex's subscription model caps your cost but also caps your throughput at the highest usage volumes.</p>
+
+  <h2>Open source and ecosystem</h2>
+
+  <p>Codex CLI is Apache-2.0 licensed with 80,000+ GitHub stars and over 760 releases since April 2025. You can read the source, fork it, audit what it does with your code, and contribute to the project. This matters in enterprise environments where security and compliance teams want full auditability.</p>
+
+  <p>Claude Code is proprietary. Anthropic doesn't publish the source. For teams where open source is a hard requirement, Codex wins by default.</p>
+
+  <h2>When to pick Claude Code</h2>
+
+  <ul>
+    <li><strong>Large codebases</strong> where 1M-token context changes what's possible in a single session</li>
+    <li><strong>Deep MCP workflows</strong> — more mature ecosystem, better tooling, more documented patterns</li>
+    <li><strong>Custom automation and hooks</strong> — lifecycle interception isn't in Codex</li>
+    <li><strong>Claude's reasoning quality</strong> — for complex architecture decisions, subtle bug diagnosis, or nuanced code review</li>
+    <li><strong>Teams using CLAUDE.md</strong> for shared project memory — the per-project config is richer</li>
+    <li><strong>No existing OpenAI subscription</strong> — starting from zero, costs are comparable</li>
+  </ul>
+
+  <h2>When to pick Codex CLI</h2>
+
+  <ul>
+    <li><strong>You already pay for ChatGPT Plus/Pro</strong> — Codex is effectively included</li>
+    <li><strong>Security-critical environments</strong> — OS-level sandbox is stronger than permission prompts</li>
+    <li><strong>Deep git workflows</strong> — auto-commit generation and worktree parallel agents are native</li>
+    <li><strong>Open source requirement</strong> — Apache-2.0 with full source available</li>
+    <li><strong>GPT model preference</strong> — you get OpenAI's frontier models, not Claude</li>
+    <li><strong>Cross-tool teams</strong> — AGENTS.md is a more portable standard if the team uses multiple AI coding tools</li>
+  </ul>
+
+  <div class="callout">
+    <p>Both tools solve the same problem: AI that understands your codebase and can make changes across it. The choice is less about which has more features and more about which model you prefer, which vendor relationship you have, and whether your workflow is better served by token-billed depth (Claude Code) or subscription-based breadth (Codex CLI).</p>
+  </div>
+
+  <h2>The session boundary problem</h2>
+
+  <p>Neither tool has built-in memory across sessions. Start a new Claude Code session and it doesn't know what it did yesterday — CLAUDE.md gives you project context, but not session history. Start a new Codex CLI session and AGENTS.md does the same. Every session starts fresh.</p>
+
+  <p>For most tasks this doesn't matter. For long-running projects where you need the AI to remember decisions made across multiple sessions — architectural choices, debugging history, previous attempts that didn't work — neither tool has a built-in answer.</p>
+
+  <div class="article-cta">
+    <h3>Add cross-session memory to Claude Code</h3>
+    <p>Beyond Your Ability (BYA) gives Claude Code persistent memory across sessions — so it remembers your project decisions, what was tried and why it didn't work, and how your architecture evolved. No more re-explaining the same context every morning.</p>
+    <a class="cta-btn" href="https://bringyour.ai">See how BYA works →</a>
+  </div>
+
+  <h2>Related reading</h2>
+  <ul>
+    <li><a href="/research/claude-code-vs-cursor.html">Claude Code vs Cursor</a></li>
+    <li><a href="/research/claude-code-vs-github-copilot.html">Claude Code vs GitHub Copilot</a></li>
+    <li><a href="/research/claude-code-vs-windsurf.html">Claude Code vs Windsurf</a></li>
+    <li><a href="/research/claude-code-vs-aider.html">Claude Code vs Aider</a></li>
+    <li><a href="/research/claude-code-hooks.html">Claude Code Hooks: Guardrails and Automation</a></li>
+    <li><a href="/research/claude-md-guide.html">The Complete CLAUDE.md Guide</a></li>
+  </ul>
+
+  <footer>
+    <p><a href="/">8bitconcepts</a> &nbsp;·&nbsp; <a href="/research/">Research</a> &nbsp;·&nbsp; <a href="/work-with-us.html">Work with us</a></p>
+  </footer>
+</div>
+</body>
+</html>
