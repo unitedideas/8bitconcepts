@@ -6,11 +6,12 @@
 <atom:link href="https://8bitconcepts.com/research/feed.xml" rel="self" type="application/rss+xml" />
 <description>Practitioner-grade research on AI engineering, hiring, compensation, and infrastructure. Auto-refreshed weekly.</description>
 <language>en-US</language>
-<lastBuildDate>Wed, 06 May 2026 01:48:11 +0000</lastBuildDate>
+<lastBuildDate>Wed, 06 May 2026 01:53:56 +0000</lastBuildDate>
 <managingEditor>hello@8bitconcepts.com (8bitconcepts)</managingEditor>
 <webMaster>hello@8bitconcepts.com (8bitconcepts)</webMaster>
 <generator>tools/generate-research-feed.py</generator>
 <docs>https://www.rssboard.org/rss-specification</docs>
+<item><title>Claude Code for Teams: Setup, Sharing, and Making It Work in 2026</title><link>https://8bitconcepts.com/research/claude-code-for-teams.html</link><guid isPermaLink="true">https://8bitconcepts.com/research/claude-code-for-teams.html</guid><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><description><![CDATA[Running Claude Code across a development team is different from running it solo. Shared CLAUDE.md, API key management, cost attribution, and the coordination problems that appear at scale.]]></description></item>
 <item><title>Claude Code Pricing: What It Actually Costs in 2026</title><link>https://8bitconcepts.com/research/claude-code-pricing.html</link><guid isPermaLink="true">https://8bitconcepts.com/research/claude-code-pricing.html</guid><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><description><![CDATA[Claude Code is billed on API usage, not a flat monthly fee. What you'll actually pay per session, how to control costs, and when it's worth it vs Cursor or Copilot.]]></description></item>
 <item><title>Claude Code vs Cursor: A Practical Comparison for Working Developers</title><link>https://8bitconcepts.com/research/claude-code-vs-cursor.html</link><guid isPermaLink="true">https://8bitconcepts.com/research/claude-code-vs-cursor.html</guid><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><description><![CDATA[Claude Code and Cursor solve different problems. Here is what each is actually good at, where each falls short, and why the most productive teams use both.]]></description></item>
 <item><title>Claude Code vs GitHub Copilot: Which One Is Right for You?</title><link>https://8bitconcepts.com/research/claude-code-vs-github-copilot.html</link><guid isPermaLink="true">https://8bitconcepts.com/research/claude-code-vs-github-copilot.html</guid><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><description><![CDATA[GitHub Copilot and Claude Code do different things. Copilot is an inline completion engine. Claude Code is an agentic task runner. Here's when to use each.]]></description></item>
