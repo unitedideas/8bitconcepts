@@ -100,9 +100,12 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Little fact from the 8bit research stack: model API fees are usually 10-20% of the AI build cost. The rest is data plumbing, integration, evals, observability, and maintenance.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
-          "fingerprint": "d515af20e77c8ac2",
-          "duplicate": false
+          "copy": "Model API fees are usually 10-20% of the AI build cost. The rest is data plumbing, integration, evals, observability, and maintenance.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
+          "fingerprint": "975a824da1fbf1e9",
+          "duplicate": false,
+          "posted_url": "https://x.com/8BitConcepts/status/2052114241986171231",
+          "posted_at": "2026-05-06T19:56:06Z",
+          "source_fingerprint": "d515af20e77c8ac2"
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
