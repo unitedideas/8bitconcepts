@@ -45,6 +45,7 @@ URLS_TO_SUBMIT = [
     "/local/washougal-wa.html",
     "/research/claude-code-pricing.html",
     "/research/how-to-use-claude-code.html",
+    "/research/claude-code-vs-github-copilot.html",
 ]
 
 def get_indexnow_key() -> str:
