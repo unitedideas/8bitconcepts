@@ -3,3 +3,5 @@ validation/
 .claude/
 __pycache__/
 *.log
+marketing/*-ledger.json
+marketing/*-outbox.json
