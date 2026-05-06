@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="color-scheme" content="dark light" />
+<title>Claude Code Hooks: Automate Guardrails, Logging, and Workflow Enforcement | 8bitconcepts</title>
+<meta name="description" content="Claude Code hooks let you run code on specific events — block dangerous commands, log tool calls, auto-run tests, trigger notifications. A practical guide for power users." />
+<link rel="canonical" href="https://8bitconcepts.com/research/claude-code-hooks.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Claude Code Hooks: Automate Guardrails, Logging, and Workflow Enforcement" />
+<meta property="og:description" content="Claude Code hooks let you run code on specific events — block dangerous commands, log tool calls, auto-run tests, trigger notifications. A practical guide for power users." />
+<meta property="og:url" content="https://8bitconcepts.com/research/claude-code-hooks.html" />
+<meta property="og:image" content="https://8bitconcepts.com/og-research.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Claude Code Hooks: Automate Guardrails, Logging, and Workflow Enforcement" />
+<meta name="twitter:description" content="Claude Code hooks let you run code on specific events — block dangerous commands, log tool calls, auto-run tests, trigger notifications." />
+<meta name="twitter:image" content="https://8bitconcepts.com/og-research.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Claude Code Hooks: Automate Guardrails, Logging, and Workflow Enforcement",
+  "description": "Claude Code hooks let you run code on specific events — block dangerous commands, log tool calls, auto-run tests, trigger notifications. A practical guide for power users.",
+  "url": "https://8bitconcepts.com/research/claude-code-hooks.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+  "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+  "image": "https://8bitconcepts.com/og-research.png",
+  "isPartOf": {"@type": "WebSite", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Claude Code Hooks"}
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--slate:#0d0d0e;--terra:#d97757;--text:#e8e8e9;--muted:#8b8d91;--subtle:#c5c5c9;--border:rgba(255,255,255,0.07);--card:#111214}
+body{background:var(--slate);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.75;padding:40px 20px;}
+.wrap{max-width:720px;margin:0 auto;}
+a{color:var(--terra);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1{font-size:38px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:16px;color:#fff;}
+h2{font-size:22px;letter-spacing:-0.01em;margin:44px 0 12px;color:#fff;}
+h3{font-size:17px;margin:28px 0 8px;color:#fff;}
+p{margin-bottom:16px;color:var(--subtle);}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--terra);margin-bottom:12px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:40px;}
+.nav-back{display:inline-block;margin-bottom:24px;color:var(--terra);font-size:14px;}
+pre{background:#18191b;border:1px solid rgba(255,255,255,0.09);border-radius:6px;padding:16px 18px;margin:0 0 20px;overflow-x:auto;}
+code{font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#e8e8e9;}
+p code,li code,td code{background:rgba(255,255,255,0.07);padding:1px 6px;border-radius:3px;font-size:13px;color:#e8e8e9;}
+ul,ol{padding-left:20px;margin-bottom:16px;color:var(--subtle);}
+li{margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:14px;}
+th{text-align:left;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.12);color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;}
+td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--subtle);}
+tr:last-child td{border-bottom:none;}
+.event-tag{display:inline-block;font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--terra);background:rgba(217,119,87,0.1);padding:2px 8px;border-radius:3px;margin-bottom:8px;}
+.callout{background:rgba(217,119,87,0.07);border-left:3px solid var(--terra);padding:14px 18px;border-radius:0 6px 6px 0;margin:24px 0;}
+.callout p{margin:0;color:var(--subtle);}
+.article-cta{background:linear-gradient(135deg,rgba(217,119,87,0.12) 0%,rgba(217,119,87,0.04) 100%);border:1px solid rgba(217,119,87,0.35);border-radius:10px;padding:28px 32px;margin:56px 0 40px;}
+.article-cta h3{margin:0 0 8px;font-size:20px;color:#fff;}
+.article-cta p{margin:0 0 20px;color:var(--subtle);}
+.cta-btn{display:inline-block;background:var(--terra);color:#fff;padding:11px 22px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+footer a{color:var(--terra);}
+@media(max-width:600px){h1{font-size:28px;}}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+<div class="wrap">
+  <a class="nav-back" href="/research/">← Research</a>
+  <div class="eyebrow">Developer Tools</div>
+  <h1>Claude Code Hooks: Automate Guardrails, Logging, and Workflow Enforcement</h1>
+  <p class="meta">By 8bitconcepts &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; 10 min read</p>
+
+  <p>Most developers use Claude Code interactively — send a task, review the output, move on. Hooks unlock a different mode: deterministic behavior enforcement that runs regardless of what Claude decides to do. Block a class of commands. Log every file write to an audit trail. Trigger a notification when a long task finishes. Run your linter automatically after every code edit.</p>
+
+  <p>Hooks are shell scripts (or any executable) that Claude Code calls at specific lifecycle events. They run outside the model — no tokens, no latency, no prompt needed. The model cannot override them.</p>
+
+  <h2>What hooks actually are</h2>
+
+  <p>A hook is a shell command wired to a Claude Code lifecycle event. When the event fires, Claude Code runs your command, inspects the exit code, and proceeds accordingly.</p>
+
+  <p>Exit code behavior:</p>
+  <ul>
+    <li><code>0</code> — success; allow the operation to proceed</li>
+    <li><code>2</code> — blocking error; deny the operation, report reason to Claude</li>
+    <li>Any other non-zero — non-blocking failure; logged but does not stop execution</li>
+  </ul>
+
+  <p>Your hook can also write JSON to stdout to communicate back to Claude — providing additional context, modifying inputs, or setting a permission decision. This makes hooks composable with Claude's reasoning, not just blunt gate-checks.</p>
+
+  <h2>Where hooks are configured</h2>
+
+  <p>Hook configuration lives in <code>settings.json</code> at one of three scopes:</p>
+
+  <table>
+    <thead>
+      <tr><th>File</th><th>Scope</th><th>Committed?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>~/.claude/settings.json</code></td><td>All projects (user-level)</td><td>No</td></tr>
+      <tr><td><code>.claude/settings.json</code></td><td>This project (shared)</td><td>Yes — team hooks go here</td></tr>
+      <tr><td><code>.claude/settings.local.json</code></td><td>This project (local only)</td><td>No — gitignored</td></tr>
+    </tbody>
+  </table>
+
+  <p>User-level hooks apply globally. Project-level hooks let teams enforce consistent behavior — everyone on the project gets the same pre-commit check, the same audit log, the same blocked commands — automatically, from the first checkout.</p>
+
+  <p>The structure inside <code>settings.json</code>:</p>
+
+  <pre><code>{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/path/to/your/hook.sh"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+
+  <p>The <code>matcher</code> field filters which tool triggers the hook. Use <code>"Bash"</code> to catch shell commands, <code>"Write"</code> to catch file writes, <code>"*"</code> to match all tools.</p>
+
+  <h2>Hook events</h2>
+
+  <p>The events that matter most for real workflows:</p>
+
+  <table>
+    <thead>
+      <tr><th>Event</th><th>Fires when</th><th>Can block?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>PreToolUse</code></td><td>Before any tool runs</td><td>Yes (exit 2)</td></tr>
+      <tr><td><code>PostToolUse</code></td><td>After any tool completes</td><td>No</td></tr>
+      <tr><td><code>SessionStart</code></td><td>Session begins</td><td>No</td></tr>
+      <tr><td><code>Stop</code></td><td>Claude stops (task done or interrupted)</td><td>No</td></tr>
+      <tr><td><code>UserPromptSubmit</code></td><td>User sends a message</td><td>Yes</td></tr>
+      <tr><td><code>SubagentStart</code></td><td>Sub-agent spawned</td><td>No</td></tr>
+      <tr><td><code>SubagentStop</code></td><td>Sub-agent completes</td><td>No</td></tr>
+      <tr><td><code>FileChanged</code></td><td>File written or modified</td><td>No</td></tr>
+      <tr><td><code>PreCompact</code></td><td>Before context compaction</td><td>No</td></tr>
+    </tbody>
+  </table>
+
+  <p><code>PreToolUse</code> is where most safety guardrails live. <code>PostToolUse</code> is where audit logging and automatic follow-up actions go. <code>Stop</code> is useful for notifications and handoff files. <code>SessionStart</code> lets you inject dynamic context that doesn't belong in a static CLAUDE.md.</p>
+
+  <h2>What your hook receives</h2>
+
+  <p>When Claude Code fires a hook, it passes context as environment variables and/or stdin JSON. For <code>PreToolUse</code> on Bash, your script receives the command that Claude is about to run. You can inspect it, reject it, or pass it through.</p>
+
+  <p>Example: Claude Code calls your hook with something like:</p>
+  <pre><code>{
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "rm -rf /tmp/build",
+    "description": "Clean build directory"
+  }
+}</code></pre>
+
+  <p>Your hook reads this from stdin (or env), checks the command, and exits 0 or 2.</p>
+
+  <h2>Four practical examples</h2>
+
+  <h3><span class="event-tag">PreToolUse</span> Block destructive shell commands</h3>
+
+  <p>The most common hook: refuse any <code>rm -rf</code> that Claude tries to run without an explicit path you approve.</p>
+
+  <pre><code>#!/usr/bin/env bash
+# ~/.claude/hooks/block-destructive.sh
+set -euo pipefail
+
+INPUT=$(cat)
+COMMAND=$(echo "$INPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('tool_input',{}).get('command',''))" 2>/dev/null || echo "")
+
+if echo "$COMMAND" | grep -qE 'rm\s+-rf\s+(/|~|\$HOME|\./)'; then
+  echo '{"decision":"block","reason":"Destructive rm -rf on root/home path blocked by safety hook."}'
+  exit 2
+fi
+exit 0</code></pre>
+
+  <p>Wire it into <code>~/.claude/settings.json</code>:</p>
+
+  <pre><code>{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/block-destructive.sh"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+
+  <p>Claude gets a clear reason for the block and can propose an alternative. You don't have to monitor every command — the hook does it.</p>
+
+  <h3><span class="event-tag">PostToolUse</span> Audit log every file write</h3>
+
+  <p>For compliance-sensitive projects or debugging, log every file Claude writes — path, timestamp, size — to a local audit file.</p>
+
+  <pre><code>#!/usr/bin/env bash
+# .claude/hooks/audit-writes.sh
+set -euo pipefail
+
+INPUT=$(cat)
+FILE=$(echo "$INPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('tool_input',{}).get('file_path',''))" 2>/dev/null || echo "")
+TOOL=$(echo "$INPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('tool_name',''))" 2>/dev/null || echo "")
+
+if [ -n "$FILE" ]; then
+  SIZE=$(wc -c < "$FILE" 2>/dev/null || echo 0)
+  echo "$(date -Iseconds) | $TOOL | $FILE | ${SIZE}B" >> "${CLAUDE_PROJECT_DIR}/.claude/audit.log"
+fi
+exit 0</code></pre>
+
+  <p>The <code>CLAUDE_PROJECT_DIR</code> environment variable is set by Claude Code to the project root — use it instead of hardcoding paths. The hook exits 0 (PostToolUse hooks can't block anyway), but the audit trail accumulates silently.</p>
+
+  <h3><span class="event-tag">Stop</span> Notify when a long task finishes</h3>
+
+  <p>Long tasks run while you switch focus. A Stop hook fires when Claude is done — you can send a desktop notification, write a handoff file, or ping a webhook.</p>
+
+  <pre><code>#!/usr/bin/env bash
+# ~/.claude/hooks/notify-done.sh
+# macOS notification
+osascript -e 'display notification "Claude Code task complete" with title "Claude Code" sound name "Ping"'
+
+# Write handoff file
+echo "$(date -Iseconds): Session complete" >> ~/.foundry/runs/handoff-latest.md
+exit 0</code></pre>
+
+  <p>Wire to the Stop event:</p>
+
+  <pre><code>{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notify-done.sh"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+
+  <h3><span class="event-tag">PostToolUse</span> Auto-run linter after file edits</h3>
+
+  <p>Every time Claude writes to a <code>.py</code> or <code>.ts</code> file, run the linter and surface failures immediately — before Claude moves on to the next file.</p>
+
+  <pre><code>#!/usr/bin/env bash
+# .claude/hooks/lint-on-write.sh
+set -euo pipefail
+
+INPUT=$(cat)
+FILE=$(echo "$INPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('tool_input',{}).get('file_path',''))" 2>/dev/null || echo "")
+
+case "$FILE" in
+  *.py)
+    ruff check "$FILE" --quiet || {
+      echo "{\"additionalContext\": \"ruff found issues in $FILE — fix before continuing\"}"
+      exit 2
+    }
+    ;;
+  *.ts|*.tsx)
+    npx eslint "$FILE" --quiet || {
+      echo "{\"additionalContext\": \"ESLint found issues in $FILE — fix before continuing\"}"
+      exit 2
+    }
+    ;;
+esac
+exit 0</code></pre>
+
+  <div class="callout">
+    <p>This hook uses <code>additionalContext</code> in the JSON output to pass the linter message back to Claude. Claude reads this and incorporates it into its next response — it knows what failed and why, without you having to re-explain.</p>
+  </div>
+
+  <h2>JSON output fields</h2>
+
+  <p>Your hook can write JSON to stdout to communicate with Claude beyond a bare exit code:</p>
+
+  <table>
+    <thead>
+      <tr><th>Field</th><th>Use</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>decision</code></td><td><code>"allow"</code> or <code>"block"</code> — explicit permission decision</td></tr>
+      <tr><td><code>reason</code></td><td>Human-readable reason shown to Claude when blocking</td></tr>
+      <tr><td><code>additionalContext</code></td><td>Extra info passed to Claude's context (non-blocking)</td></tr>
+      <tr><td><code>updatedInput</code></td><td>Modified version of the tool input (PreToolUse only)</td></tr>
+    </tbody>
+  </table>
+
+  <p>Using <code>additionalContext</code> turns your hooks from blunt blockers into context injectors — the hook can say "this file was last modified by the deploy pipeline" or "this test suite takes 4 minutes" and Claude reasons with that information.</p>
+
+  <h2>Team hooks via project settings</h2>
+
+  <p>Hooks in <code>.claude/settings.json</code> are committed to source control. Every developer who checks out the repo gets the same hook enforcement automatically — no per-developer setup required.</p>
+
+  <p>Useful patterns for teams:</p>
+  <ul>
+    <li><strong>Block writes to generated files</strong> — prevent Claude from directly editing files that should only be updated by a generator script</li>
+    <li><strong>Enforce migration naming conventions</strong> — reject file writes to <code>migrations/</code> that don't match your timestamp + description format</li>
+    <li><strong>Log all MCP tool calls</strong> — track which external tools Claude is using in automated pipelines for cost attribution</li>
+    <li><strong>Require test runs after edits to core modules</strong> — PostToolUse hook that checks if the edited file is in a protected directory and triggers the test suite</li>
+  </ul>
+
+  <p>The <code>.claude/settings.local.json</code> file (gitignored) is for hooks that shouldn't be shared — personal notification preferences, local-only paths, developer-specific secrets for hook scripts.</p>
+
+  <h2>Discovering configured hooks</h2>
+
+  <p>Run <code>/hooks</code> inside any Claude Code session to see all hooks currently active for that session — which events are wired, which scripts run, and at which scope (user vs. project). This is the fastest way to debug a hook that isn't firing or a permission decision you don't understand.</p>
+
+  <p>You can also check the config directly:</p>
+  <pre><code># User-level hooks
+cat ~/.claude/settings.json | python3 -m json.tool | grep -A20 '"hooks"'
+
+# Project-level hooks
+cat .claude/settings.json 2>/dev/null | python3 -m json.tool | grep -A20 '"hooks"'</code></pre>
+
+  <h2>What hooks can't do</h2>
+
+  <p>Hooks run per-session and don't share state between sessions. A hook that writes to a temp file in <code>/tmp/</code> won't find that file in the next session. For cross-session memory — tracking what was done in prior runs, persisting decisions — you need to write to a stable path and read from it explicitly.</p>
+
+  <p>Hooks also can't modify Claude's base behavior: they operate on specific tool events, not on Claude's planning or reasoning. You can't hook into "Claude is about to make a bad architectural decision" — you can only hook into the discrete tool calls that result from that decision.</p>
+
+  <p>For teams using hooks in CI or automated pipelines, keep hook scripts fast. A hook that takes 10 seconds on every Bash call will make Claude Code unusable for rapid iteration. Cache expensive checks where you can; fail fast where you can't.</p>
+
+  <h2>Hooks and session persistence</h2>
+
+  <p>One pattern that doesn't work the way developers expect: using a Stop hook to "save state" that a SessionStart hook restores. The Stop hook fires reliably, but the context it saves is only useful if your SessionStart hook loads it and injects it into Claude's initial prompt — which requires the hook to produce output in the right format.</p>
+
+  <p>Claude Code doesn't have native cross-session memory. Each session starts fresh. Hooks can paper over this at the edges — injecting a handoff file at SessionStart, writing a summary at Stop — but the session boundary problem remains. Every new session, the model has no memory of what it did last time unless you explicitly hand that context back in.</p>
+
+  <div class="article-cta">
+    <h3>The session boundary problem, solved</h3>
+    <p>Hooks help at the edges, but they don't solve the fundamental issue: Claude Code loses all context at session end. Beyond Your Ability (BYA) gives Claude persistent project memory across sessions — no handoff files, no re-explaining your stack every morning.</p>
+    <a class="cta-btn" href="https://bringyour.ai">Learn how BYA works →</a>
+  </div>
+
+  <h2>Related reading</h2>
+  <ul>
+    <li><a href="/research/claude-code-tips.html">Claude Code Tips: 12 Ways to Get More Out of Every Session</a></li>
+    <li><a href="/research/claude-md-guide.html">The Complete CLAUDE.md Guide</a></li>
+    <li><a href="/research/claude-code-mcp.html">Claude Code MCP: Connect External Tools to Claude</a></li>
+    <li><a href="/research/claude-code-for-teams.html">Claude Code for Teams: Shared Config, Costs, and Governance</a></li>
+    <li><a href="/research/claude-code-context-limit-fix.html">Claude Code Context Limit Fix</a></li>
+  </ul>
+
+  <footer>
+    <p><a href="/">8bitconcepts</a> &nbsp;·&nbsp; <a href="/research/">Research</a> &nbsp;·&nbsp; <a href="/work-with-us.html">Work with us</a></p>
+  </footer>
+</div>
+</body>
+</html>
