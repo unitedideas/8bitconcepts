@@ -121,6 +121,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://8bitconcepts.com/research/claude-code-context-limit-fix.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://8bitconcepts.com/research/beyond-the-prompt.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
