@@ -49,6 +49,7 @@ URLS_TO_SUBMIT = [
     "/research/claude-code-for-teams.html",
     "/research/claude-code-mcp.html",
     "/research/claude-code-vs-windsurf.html",
+    "/research/claude-code-vs-aider.html",
 ]
 
 def get_indexnow_key() -> str:
