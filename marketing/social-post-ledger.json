@@ -1584,6 +1584,37 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28-posted-2026-05-06",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-06",
+      "posted_at": "2026-05-06T05:22:35Z",
+      "url": "https://x.com/8BitConcepts/status/2051895622635319584",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "fingerprint": "30c639d4e4e3c157",
+      "original_fingerprint": "d98634ae51b8b3ec",
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is the 80% around permissions, evals, observability, workflow integration, data preparation, and retry logic.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The page states model API costs are 10-20% of what AI actually costs to ship",
+        "The page supports the 80% integration/process-cost framing and names permissions, evaluation/testing, observability, workflow integration, data preparation, and retry/error handling as cost centers",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts portfolio URL in systems/foundry-business-index.md",
+        "X identity verified by tools/x-brave-post.js dry-run as @8BitConcepts / 8bitconcepts"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Model API costs are usually the easy 10-20%. The expensive part is the 80% around permissions, evals, observability, workflow integration, data preparation, and retry logic.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "note": "Direct X API returned EMPTY_200_NO_FALLBACK and no profile timeline hit was found, so the same approved copy was posted through SOCIAL_X_FORCE_BROWSER=1 browser fallback after the existing local Computer Use lease was confirmed."
     }
   ]
 }
