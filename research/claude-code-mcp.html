@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="color-scheme" content="dark light" />
+<title>Claude Code MCP Servers: How to Add, Configure, and Use Them | 8bitconcepts</title>
+<meta name="description" content="Step-by-step guide to adding MCP servers to Claude Code. Command syntax, scope options (.mcp.json for teams), environment variables, and the tools that actually matter." />
+<link rel="canonical" href="https://8bitconcepts.com/research/claude-code-mcp.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Claude Code MCP Servers: How to Add, Configure, and Use Them" />
+<meta property="og:description" content="Step-by-step guide to adding MCP servers to Claude Code. Command syntax, scope options, environment variables, and the tools that actually matter." />
+<meta property="og:url" content="https://8bitconcepts.com/research/claude-code-mcp.html" />
+<meta property="og:image" content="https://8bitconcepts.com/og-research.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Claude Code MCP Servers: How to Add, Configure, and Use Them" />
+<meta name="twitter:description" content="Step-by-step guide to adding MCP servers to Claude Code. Command syntax, scope options, environment variables, and the tools that actually matter." />
+<meta name="twitter:image" content="https://8bitconcepts.com/og-research.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Claude Code MCP Servers: How to Add, Configure, and Use Them",
+  "description": "Step-by-step guide to adding MCP servers to Claude Code. Command syntax, scope options (.mcp.json for teams), environment variables, and the tools that actually matter.",
+  "url": "https://8bitconcepts.com/research/claude-code-mcp.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+  "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+  "image": "https://8bitconcepts.com/og-research.png",
+  "isPartOf": {"@type": "WebSite", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Claude Code MCP Servers"}
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--slate:#0d0d0e;--terra:#d97757;--text:#e8e8e9;--muted:#8b8d91;--subtle:#c5c5c9;--border:rgba(255,255,255,0.07);--card:#111214}
+body{background:var(--slate);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.75;padding:40px 20px;}
+.wrap{max-width:720px;margin:0 auto;}
+a{color:var(--terra);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1{font-size:38px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:16px;color:#fff;}
+h2{font-size:24px;letter-spacing:-0.01em;margin:48px 0 14px;color:#fff;}
+h3{font-size:18px;margin:32px 0 10px;color:#fff;}
+p{margin-bottom:16px;color:var(--subtle);}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--terra);margin-bottom:12px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:40px;}
+.nav-back{display:inline-block;margin-bottom:24px;color:var(--terra);font-size:14px;}
+pre{background:#18191b;border:1px solid rgba(255,255,255,0.09);border-radius:6px;padding:16px 18px;margin:0 0 20px;overflow-x:auto;}
+code{font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#e8e8e9;}
+p code,li code{background:rgba(255,255,255,0.07);padding:1px 6px;border-radius:3px;font-size:13px;color:#e8e8e9;}
+ul,ol{padding-left:20px;margin-bottom:16px;color:var(--subtle);}
+li{margin-bottom:6px;}
+.callout{background:rgba(217,119,87,0.07);border-left:3px solid var(--terra);padding:14px 18px;border-radius:0 6px 6px 0;margin:24px 0;}
+.callout p{margin:0;color:var(--subtle);}
+table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:14px;}
+th{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.12);color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--subtle);}
+td:first-child{color:var(--text);}
+.article-cta{background:linear-gradient(135deg,rgba(217,119,87,0.12) 0%,rgba(217,119,87,0.04) 100%);border:1px solid rgba(217,119,87,0.35);border-radius:10px;padding:28px 32px;margin:56px 0 40px;}
+.article-cta h3{margin:0 0 8px;font-size:20px;color:#fff;}
+.article-cta p{margin:0 0 20px;color:var(--subtle);}
+.cta-btn{display:inline-block;background:var(--terra);color:#fff;padding:11px 22px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+footer a{color:var(--terra);}
+@media(max-width:600px){h1{font-size:28px;}}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+<div class="wrap">
+  <a class="nav-back" href="/research/">← Research</a>
+  <div class="eyebrow">Developer Tools</div>
+  <h1>Claude Code MCP Servers: How to Add, Configure, and Use Them</h1>
+  <p class="meta">By 8bitconcepts &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; 10 min read</p>
+
+  <p>MCP (Model Context Protocol) servers are what turn Claude Code from a capable coding assistant into a tool that can actually reach into your infrastructure. Without MCP, Claude Code knows your codebase. With MCP, it can query your database, read GitHub issues, post to Slack, or search external data sources — all from a single conversation.</p>
+
+  <p>This guide covers the complete setup: adding servers with the right command syntax, scoping them correctly for solo work versus team projects, passing secrets safely, and verifying the connection worked.</p>
+
+  <h2>What MCP servers do in Claude Code</h2>
+  <p>An MCP server is a process or remote endpoint that exposes a set of tools Claude can call during a session. When you write "pull the last 10 Postgres errors from the production log table," Claude doesn't do that by guessing — it calls a <code>query</code> tool exposed by a configured MCP server, gets back structured data, and reasons over it.</p>
+
+  <p>Tools appear automatically in the session context once a server is connected. Claude sees the tool names and their descriptions and decides when to invoke them. You don't have to explicitly ask it to use a tool — if the task calls for it, it will.</p>
+
+  <h2>Adding your first MCP server</h2>
+  <p>The <code>claude mcp add</code> command handles registration. The syntax depends on the transport type:</p>
+
+  <h3>HTTP servers (remote)</h3>
+  <pre><code>claude mcp add --transport http &lt;name&gt; &lt;url&gt;</code></pre>
+  <p>For example, to add Not Human Search (an MCP search engine for discovering agent-ready tools):</p>
+  <pre><code>claude mcp add --transport http nothumansearch https://nothumansearch.ai/mcp</code></pre>
+
+  <h3>Stdio servers (local process)</h3>
+  <pre><code>claude mcp add --transport stdio &lt;name&gt; -- &lt;command&gt; [args]</code></pre>
+  <p>The <code>--</code> separator is required. Everything after it is the command Claude Code will spawn:</p>
+  <pre><code>claude mcp add --transport stdio github -- npx -y @github/mcp-server</code></pre>
+
+  <div class="callout">
+    <p><strong>Flag ordering matters.</strong> All flags (<code>--transport</code>, <code>--scope</code>, <code>--env</code>) must come <em>before</em> the server name. Putting them after will silently fail or produce confusing errors.</p>
+  </div>
+
+  <h3>With authentication headers</h3>
+  <p>For HTTP servers that need a bearer token:</p>
+  <pre><code>claude mcp add --transport http github \
+  https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer $GITHUB_TOKEN"</code></pre>
+
+  <h3>With environment variables</h3>
+  <p>Pass secrets to stdio servers using <code>--env</code>. The flag is repeatable:</p>
+  <pre><code>claude mcp add --transport stdio postgres \
+  --env DATABASE_URL="$DATABASE_URL" \
+  -- npx -y @modelcontextprotocol/server-postgres</code></pre>
+
+  <h2>The three scope levels</h2>
+  <p>Where a server gets stored determines who can use it and when:</p>
+
+  <table>
+    <thead>
+      <tr><th>Scope</th><th>Flag</th><th>Stored in</th><th>Who sees it</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>local</td><td>(default)</td><td><code>~/.claude.json</code> (project entry)</td><td>You, current project only</td></tr>
+      <tr><td>project</td><td><code>--scope project</code></td><td><code>.mcp.json</code> in project root</td><td>Anyone with the repo</td></tr>
+      <tr><td>user</td><td><code>--scope user</code></td><td><code>~/.claude.json</code> (global)</td><td>You, all projects</td></tr>
+    </tbody>
+  </table>
+
+  <p>The default <code>local</code> scope is right for personal credentials on a shared project. The <code>project</code> scope — stored in <code>.mcp.json</code> at the repo root — is what you commit to version control so the whole team gets it automatically.</p>
+
+  <h2>Team-shared MCP config with .mcp.json</h2>
+  <p>Adding a project-scoped server writes a <code>.mcp.json</code> file to your project root:</p>
+  <pre><code>claude mcp add --scope project --transport stdio postgres \
+  --env DATABASE_URL="${DATABASE_URL}" \
+  -- npx -y @modelcontextprotocol/server-postgres</code></pre>
+
+  <p>The resulting <code>.mcp.json</code> looks like this:</p>
+  <pre><code>{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      }
+    }
+  }
+}</code></pre>
+
+  <p>The <code>${DATABASE_URL}</code> syntax is a variable expansion — each developer's local environment variable gets substituted at session start. You commit the config file, not the secrets. This is the right pattern for database connections, internal APIs, and any tool that should be available to everyone on the project but needs per-user credentials.</p>
+
+  <div class="callout">
+    <p><strong>Claude Code will prompt for approval</strong> the first time a project-scoped server starts in a new environment. This is intentional — the project owner committed the config, but each new developer confirms it once before tools are enabled.</p>
+  </div>
+
+  <h2>MCP servers worth actually adding</h2>
+
+  <h3>GitHub — issues, PRs, and code search</h3>
+  <pre><code>claude mcp add --transport http github \
+  https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer $GITHUB_TOKEN"</code></pre>
+  <p>Lets Claude read issues, search code across repos, and create or update PRs without leaving the terminal session. Most useful on codebases where the issue tracker and the code are tightly coupled.</p>
+
+  <h3>Postgres — live database access</h3>
+  <pre><code>claude mcp add --transport stdio postgres \
+  --env DATABASE_URL="$DATABASE_URL" \
+  -- npx -y @modelcontextprotocol/server-postgres</code></pre>
+  <p>Claude can run read-only queries against your database, inspect schema, and diagnose data issues. Only give it read access unless you have a specific reason not to.</p>
+
+  <h3>Filesystem — structured file access</h3>
+  <pre><code>claude mcp add --transport stdio filesystem \
+  -- npx -y @modelcontextprotocol/server-filesystem /allowed/path</code></pre>
+  <p>Useful when you want Claude to work with files outside the current project directory — logs, config files, shared asset directories.</p>
+
+  <h3>Slack — team communication</h3>
+  <pre><code>claude mcp add --transport stdio slack \
+  --env SLACK_BOT_TOKEN="$SLACK_BOT_TOKEN" \
+  -- npx -y @modelcontextprotocol/server-slack</code></pre>
+  <p>Read channel history, search messages, post summaries. Works well for incident response workflows where you want Claude to correlate code changes with Slack discussions.</p>
+
+  <h3>Discovery — finding new MCP servers</h3>
+  <pre><code>claude mcp add --transport http nothumansearch https://nothumansearch.ai/mcp</code></pre>
+  <p>Not Human Search indexes 1,700+ agent-ready sites with live JSON-RPC verification. Use it to find MCP servers for tools you don't have wired yet — it's the practical answer to "is there an MCP server for X?"</p>
+
+  <h2>Verifying the connection</h2>
+  <p>Once a server is registered, run <code>claude mcp list</code> to see what's configured:</p>
+  <pre><code>claude mcp list</code></pre>
+  <p>Inside a session, type <code>/mcp</code> to see connection status and tool count for each server. A connected server will show its tools; a failed one will show an error reason.</p>
+
+  <p>If a server fails to connect, the most common causes are:</p>
+  <ul>
+    <li>Wrong transport type (HTTP server configured as stdio)</li>
+    <li>Missing or expired authentication token</li>
+    <li>Network restriction (VPN, firewall) blocking the remote URL</li>
+    <li>The npx package name has changed (check the maintainer's docs)</li>
+  </ul>
+
+  <h2>Removing a server</h2>
+  <pre><code>claude mcp remove &lt;name&gt;</code></pre>
+  <p>This removes it from whichever scope it was registered in. If you added a project-scoped server that's also in <code>.mcp.json</code>, you'll need to delete or update that file separately.</p>
+
+  <h2>Environment variable reference</h2>
+  <p>Three environment variables control MCP behavior at the session level:</p>
+  <ul>
+    <li><code>MCP_TIMEOUT</code> — startup timeout in milliseconds (default: varies by server)</li>
+    <li><code>MAX_MCP_OUTPUT_TOKENS</code> — cap on tokens returned by any single tool call</li>
+    <li><code>ENABLE_TOOL_SEARCH=false</code> — load all tools upfront instead of deferring (useful when you need predictable tool availability from the first message)</li>
+  </ul>
+
+  <h2>Project-scoped versus user-scoped: when to use each</h2>
+  <p>The clearest split: anything that should follow the <em>project</em> goes in <code>.mcp.json</code>. Anything that follows <em>you</em> goes in user scope.</p>
+
+  <p>Your Postgres client for the production database is project-scoped — the connection config belongs in the repo, and other engineers on the project should get it automatically. Your personal search engine or note-taking tool is user-scoped — it makes no sense to force it on teammates.</p>
+
+  <p>A common mistake is registering everything at local scope (the default). Local scope is project-specific but <em>not</em> version-controlled, which means you have to re-add it every time you clone or when a teammate joins. If more than one person needs a server, commit it to <code>.mcp.json</code>.</p>
+
+  <h2>The context cost of MCP tools</h2>
+  <p>Every connected MCP server adds tool definitions to your session context. For small MCP configurations (2–4 servers), the overhead is negligible. For large ones — teams wiring in a dozen or more servers — tool definitions alone can consume 10–15% of the usable context window.</p>
+
+  <p>More importantly, tool <em>calls</em> cost context. Each round-trip (tool invocation + tool result) adds tokens. A session that calls a database query 8 times, reads 4 GitHub issues, and checks 3 Slack threads burns context fast — often several times faster than a pure coding session.</p>
+
+  <p>This is where context management matters. Sessions with active MCP tool use should be scoped narrower than pure coding sessions. One complex multi-tool investigation per session is better than trying to span multiple projects.</p>
+
+  <div class="article-cta">
+    <h3>Context limits hit hard during MCP sessions</h3>
+    <p>Heavy MCP tool use burns context faster than any other Claude Code pattern. When you hit the limit mid-investigation, you lose all the tool results and working state. Bring Your AI is built to solve exactly this: pass a complete working session — including MCP context, tool results, and in-progress decisions — to the next session without starting over.</p>
+    <a href="https://bringyour.ai" class="cta-btn">See how Bring Your AI works →</a>
+  </div>
+
+  <h2>What to read next</h2>
+  <ul>
+    <li><a href="/research/claude-md-guide.html">CLAUDE.md: The Practical Guide to Project Memory</a> — set project context so every session starts with the right tools already wired</li>
+    <li><a href="/research/how-to-use-claude-code.html">How to Use Claude Code</a> — full setup walkthrough from install to first task</li>
+    <li><a href="/research/claude-code-for-teams.html">Claude Code for Teams</a> — sharing .mcp.json, API key management, and cost at scale</li>
+    <li><a href="/research/claude-code-context-limit-fix.html">Claude Code Context Limit Fix</a> — what to do when long MCP sessions hit the wall</li>
+  </ul>
+
+  <footer>
+    <p><a href="/research/">← All research papers</a> &nbsp;·&nbsp; <a href="/work-with-us.html">Work with us</a> &nbsp;·&nbsp; <a href="/research/feed.xml">RSS</a></p>
+    <p style="margin-top:8px;">© 2026 8bitconcepts. Practitioner AI research for engineering teams.</p>
+  </footer>
+</div>
+</body>
+</html>
