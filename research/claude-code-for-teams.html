@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Claude Code for Teams: Setup, Sharing, and Making It Work in 2026 | 8bitconcepts</title>
+  <meta name="description" content="Running Claude Code across a development team is different from running it solo. Shared CLAUDE.md, API key management, cost attribution, and the coordination problems that appear at scale." />
+  <link rel="canonical" href="https://8bitconcepts.com/research/claude-code-for-teams.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="8bitconcepts" />
+  <meta property="og:title" content="Claude Code for Teams: Setup, Sharing, and Making It Work in 2026" />
+  <meta property="og:description" content="Running Claude Code across a development team is different from running it solo. Shared CLAUDE.md, API key management, cost attribution, and the coordination problems that appear at scale." />
+  <meta property="og:url" content="https://8bitconcepts.com/research/claude-code-for-teams.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/og-research.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://8bitconcepts.com/og-research.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Claude Code for Teams: Setup, Sharing, and Making It Work in 2026",
+    "description": "Shared CLAUDE.md, API key management, cost attribution, and the coordination problems that appear when you roll Claude Code out across a team.",
+    "author": {"@type": "Organization", "name": "8bitconcepts"},
+    "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "url": "https://8bitconcepts.com/research/claude-code-for-teams.html",
+    "datePublished": "2026-05-07",
+    "dateModified": "2026-05-07"
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"}, {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"}, {"@type": "ListItem", "position": 3, "name": "Claude Code for Teams"}]}
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --slate: #0d0d0e; --slate-1: #111214; --slate-2: #1a1c1f; --border: rgba(255,255,255,0.07); --terra: #d97757; --text: #e8e8e9; --text-dim: #8b8d91; --text-dimmer: #5a5c61; }
+    body { background: var(--slate); color: var(--text); font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    a { color: var(--terra); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,13,14,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 15px; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .nav-logo span { color: var(--terra); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.nav-cta { background: var(--terra); color: #fff; padding: 7px 16px; border-radius: 6px; font-weight: 600; }
+    .nav-links a.nav-cta:hover { color: #fff; opacity: 0.88; }
+    article { max-width: 720px; margin: 0 auto; padding: 96px 32px 80px; }
+    .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 18px; }
+    h1 { font-size: clamp(26px, 4.5vw, 38px); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; color: var(--text); margin-bottom: 20px; }
+    .meta { font-size: 13px; color: var(--text-dimmer); margin-bottom: 36px; font-family: 'IBM Plex Mono', monospace; }
+    .lede { font-size: 19px; line-height: 1.6; color: var(--text-dim); margin-bottom: 40px; border-left: 3px solid var(--terra); padding-left: 20px; }
+    h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin: 44px 0 14px; }
+    h3 { font-size: 17px; font-weight: 600; color: var(--text); margin: 28px 0 10px; }
+    p { margin-bottom: 20px; color: var(--text-dim); }
+    p strong { color: var(--text); font-weight: 600; }
+    ul, ol { margin: 0 0 20px 22px; color: var(--text-dim); }
+    li { margin-bottom: 8px; }
+    li strong { color: var(--text); }
+    code { font-family: 'IBM Plex Mono', monospace; font-size: 14px; background: var(--slate-2); padding: 2px 6px; border-radius: 3px; color: var(--terra); }
+    pre { background: var(--slate-1); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; overflow-x: auto; margin: 0 0 24px; }
+    pre code { background: none; padding: 0; color: var(--text-dim); font-size: 13px; line-height: 1.7; }
+    .callout { background: var(--slate-1); border: 1px solid rgba(217,119,87,0.25); border-left: 3px solid var(--terra); border-radius: 6px; padding: 18px 22px; margin: 28px 0; font-size: 15px; }
+    .callout strong { color: var(--text); }
+    .article-cta { margin: 56px 0 0; padding: 28px 32px; background: linear-gradient(135deg, rgba(217,119,87,0.1) 0%, rgba(217,119,87,0.03) 100%); border: 1px solid rgba(217,119,87,0.3); border-radius: 10px; }
+    .article-cta-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+    .article-cta-title { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: -0.02em; }
+    .article-cta-body { font-size: 14px; color: var(--text-dim); margin-bottom: 18px; line-height: 1.6; }
+    .article-cta-link { display: inline-block; background: var(--terra); color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; }
+    .article-cta-link:hover { opacity: 0.88; text-decoration: none; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 44px 0; }
+    footer { padding: 40px 32px; text-align: center; color: var(--text-dimmer); font-size: 13px; border-top: 1px solid var(--border); }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--terra); }
+    @media (max-width: 640px) { nav { padding: 0 20px; } .nav-links a:not(.nav-cta) { display: none; } article { padding: 80px 20px 60px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://8bitconcepts.com"><img src="/favicon.svg" width="26" height="26" alt="" aria-hidden="true" style="vertical-align:middle;margin-right:8px">8bit<span>concepts</span></a>
+  <div class="nav-links">
+    <a href="/work-with-us.html">Work with us</a>
+    <a href="/research/overview.html">Research</a>
+    <a href="/work-with-us.html#lead-form" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<article>
+  <div class="eyebrow">Research &middot; Claude Code &middot; Teams</div>
+  <h1>Claude Code for Teams: Setup, Sharing, and Making It Work in 2026</h1>
+  <div class="meta">8bitconcepts &mdash; May 2026</div>
+
+  <p class="lede">Claude Code works well for individual developers. Rolling it out to a team is a different problem. You need shared context that everyone uses, API costs that don't surprise anyone, and a coordination model that doesn't break when two developers are working in the same codebase at the same time.</p>
+
+  <h2>The team-specific problems</h2>
+
+  <p>When you're the only one using Claude Code, your CLAUDE.md lives on your machine, your API key bills to you, and your sessions don't conflict with anyone else's. Add a second developer and three problems emerge:</p>
+
+  <ol>
+    <li><strong>Shared project context.</strong> Each developer's CLAUDE.md should be consistent, or they'll get different quality of results from identical tasks. The project conventions, architecture notes, and "what not to touch" rules need to be canonical — not scattered across individual setups.</li>
+    <li><strong>API key and cost management.</strong> Individual API keys on team projects make cost attribution impossible and create security issues (keys shared informally, keys in dotfiles that get committed). Teams need a centralized billing approach.</li>
+    <li><strong>Session coordination.</strong> Two developers running long Claude Code sessions in the same repository can produce conflicting changes — especially if one session is mid-way through a refactor when the other's changes land on main.</li>
+  </ol>
+
+  <h2>Shared CLAUDE.md: the foundation of team usage</h2>
+
+  <p>The most important infrastructure decision for a team is treating CLAUDE.md as a team artifact, not a personal file. It should live in the repository, be committed to version control, and be maintained with the same care as a README.</p>
+
+  <p>A strong team CLAUDE.md has:</p>
+
+  <ul>
+    <li><strong>Architecture overview.</strong> Services, how they relate, deployment model, key infrastructure choices and why.</li>
+    <li><strong>Stack and conventions.</strong> Languages, frameworks, testing approach, code style decisions that aren't in a linter.</li>
+    <li><strong>What to avoid.</strong> Files that shouldn't be touched without discussion, APIs that are deprecated but still present, patterns the team is migrating away from.</li>
+    <li><strong>Active work notes.</strong> What's currently in progress, what branches are live, any known instabilities in the codebase right now. This section decays fast — someone needs to own keeping it current.</li>
+    <li><strong>Decision log.</strong> Recent significant architecture decisions with their rationale. Keeps Claude Code from re-litigating decisions that have already been made.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Version the CLAUDE.md with the code.</strong> If a refactor changes how authentication works, the CLAUDE.md should be updated in the same PR. Claude Code is reading it as documentation of reality — if it describes yesterday's reality, it'll make yesterday's decisions.
+  </div>
+
+  <h2>Subdirectory CLAUDE.md files for large monorepos</h2>
+
+  <p>For large monorepos with multiple distinct services, a single root CLAUDE.md becomes unwieldy. Claude Code supports subdirectory CLAUDE.md files — they layer on top of the root file when Claude Code is working in that directory.</p>
+
+  <pre><code>/monorepo/
+  CLAUDE.md              ← global conventions, team rules
+  services/
+    auth-service/
+      CLAUDE.md          ← auth-specific: JWT vs sessions, token schema, rate limit config
+    billing-service/
+      CLAUDE.md          ← billing-specific: Stripe version, payment flow, idempotency rules
+    api-gateway/
+      CLAUDE.md          ← gateway-specific: routing conventions, middleware order</code></pre>
+
+  <p>This keeps each service's context tight without overwhelming the global file. A developer working in <code>billing-service/</code> gets the global rules plus billing-specific context. A developer doing cross-service work at the root gets just the shared foundations.</p>
+
+  <h2>API key management at team scale</h2>
+
+  <p>Individual API keys are the path of least resistance but create real problems:</p>
+
+  <ul>
+    <li>No visibility into team-wide usage or cost</li>
+    <li>Keys scattered across dev machines with no rotation policy</li>
+    <li>Onboarding/offboarding friction — new developers need their own keys, departing developers' keys need to be revoked</li>
+    <li>No audit trail for what Claude Code was used for</li>
+  </ul>
+
+  <p>The recommended approach for teams of 5+ developers:</p>
+
+  <ol>
+    <li><strong>Create a team API key</strong> in Anthropic Console under a team organization account.</li>
+    <li><strong>Use a secrets manager</strong> (AWS Secrets Manager, 1Password Teams, HashiCorp Vault) to distribute the key — not Slack messages or dotfiles.</li>
+    <li><strong>Set per-developer usage tags</strong> via the API to attribute costs to individuals without requiring individual keys.</li>
+    <li><strong>Set spending alerts</strong> in Anthropic Console so a runaway session doesn't produce a surprise monthly bill.</li>
+  </ol>
+
+  <p>Anthropic's Workspaces feature lets you create isolated billing environments with separate API keys and usage limits per team or project. For enterprise setups, this is the right path.</p>
+
+  <h2>Cost modeling for teams</h2>
+
+  <p>A reasonable starting benchmark: a developer doing moderate Claude Code usage (2–4 substantial sessions per week) will cost $20–$60/month at Sonnet rates. Heavy users running daily multi-hour agentic sessions can hit $100–$200/month.</p>
+
+  <p>For a 10-developer team with moderate usage:</p>
+
+  <ul>
+    <li>Baseline estimate: $200–$400/month total</li>
+    <li>Heavy usage: $600–$1,200/month</li>
+    <li>Compare to: GitHub Copilot Team at $190/month (10 × $19)</li>
+  </ul>
+
+  <p>Claude Code costs more if developers are running long agentic sessions. It costs less if usage is sporadic. Track actual usage for the first month before budgeting — the range is wide.</p>
+
+  <h2>Session coordination: the hardest problem</h2>
+
+  <p>Two developers running parallel Claude Code sessions in the same codebase creates merge conflicts, but more subtly: one developer's session may be operating on a mental model of the codebase that the other developer's changes have already invalidated.</p>
+
+  <p>Claude Code doesn't know that Alice merged a PR while Bob's session was mid-refactor. Bob's session continues reasoning about the pre-merge state. When Bob's changes land, they may conflict not just at the line level but at the architectural level.</p>
+
+  <p>Practical mitigations:</p>
+
+  <ul>
+    <li><strong>Short sessions with frequent merges.</strong> The longer a Claude Code session runs before its changes are merged, the higher the conflict risk. Aim for sessions that produce review-ready diffs in 1–2 hours, not 8-hour marathon sessions.</li>
+    <li><strong>Task assignment conventions.</strong> If two developers are using Claude Code simultaneously, they should be working in different modules or services. Overlapping ownership with parallel agentic sessions is asking for conflict.</li>
+    <li><strong>Sync before starting.</strong> Pull and get current before starting a long Claude Code session. The model reads file state from disk — if those files are stale, its reasoning is based on stale reality.</li>
+    <li><strong>Export working state before stepping away.</strong> If a session has to be paused mid-task (context limit, end of day, context reset), capture the state explicitly — what files were changed, what decisions were made, what still needs to happen. Without this, the next developer picking up the task has to reconstruct that state manually.</li>
+  </ul>
+
+  <div class="article-cta">
+    <div class="article-cta-eyebrow">Session handoff</div>
+    <div class="article-cta-title">Pass Claude Code sessions between teammates</div>
+    <div class="article-cta-body">BringYour.AI exports session state — files modified, decisions made, task progress — as a portable handoff that any developer can import into their own Claude Code instance. Pair programming with AI becomes continuous instead of siloed.</div>
+    <a class="article-cta-link" href="https://bringyour.ai">See bringyour.ai &rarr;</a>
+  </div>
+
+  <hr />
+
+  <h2>The Anthropic Enterprise plan</h2>
+
+  <p>For organizations that need SSO, audit logs, custom usage policies, and dedicated API capacity, Anthropic offers an Enterprise tier. Claude Code usage runs against the enterprise API allocation rather than individual token billing.</p>
+
+  <p>Enterprise features relevant to teams:</p>
+
+  <ul>
+    <li>SSO and SAML integration for developer access control</li>
+    <li>Audit logs for API calls — who ran what, when</li>
+    <li>Dedicated rate limits (no throttling during peak team usage)</li>
+    <li>Custom system prompts that apply to all Claude Code sessions from the organization</li>
+    <li>Data privacy guarantees that individual API plans don't provide</li>
+  </ul>
+
+  <p>For teams under ~10 developers, the standard API plan with a shared organization account is usually sufficient. Enterprise pricing is negotiated directly with Anthropic and typically makes sense at 20+ developer seats.</p>
+
+  <h2>Practical team rollout sequence</h2>
+
+  <ol>
+    <li><strong>Start with one developer</strong> who knows the codebase well. Their CLAUDE.md becomes the initial version.</li>
+    <li><strong>Expand to the tech lead.</strong> Two people using it means two people contributing feedback to CLAUDE.md. Run this for 2–3 weeks.</li>
+    <li><strong>Write the team CLAUDE.md</strong> based on what you've learned. Commit it to the repo. Review it together.</li>
+    <li><strong>Roll out to the full team.</strong> Have everyone start with small, scoped tasks — not full refactors. Build familiarity with how the tool works before running overnight agentic sessions.</li>
+    <li><strong>Establish usage norms.</strong> Which tasks are appropriate for Claude Code? Which require human review before merging? What's the approval process for agentic changes to sensitive code paths?</li>
+  </ol>
+
+  <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px;">Continue reading</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <a href="/research/how-to-use-claude-code.html" style="color:var(--terra);font-size:15px;font-weight:500;">How to Use Claude Code: Practical Setup Guide &rarr;</a>
+      <a href="/research/claude-md-guide.html" style="color:var(--terra);font-size:15px;font-weight:500;">CLAUDE.md: The Practical Guide to Project Memory &rarr;</a>
+      <a href="/research/claude-code-pricing.html" style="color:var(--terra);font-size:15px;font-weight:500;">Claude Code Pricing: What It Actually Costs &rarr;</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <p style="margin-bottom:10px;">
+    <a href="/">Home</a>
+    &middot;
+    <a href="/research/overview.html">Research</a>
+    &middot;
+    <a href="/work-with-us.html">Work with us</a>
+    &middot;
+    <a href="mailto:hello@8bitconcepts.com">Email</a>
+  </p>
+  <p>&copy; 2026 8bitconcepts</p>
+</footer>
+
+</body>
+</html>
