@@ -6,11 +6,12 @@
 <atom:link href="https://8bitconcepts.com/research/feed.xml" rel="self" type="application/rss+xml" />
 <description>Practitioner-grade research on AI engineering, hiring, compensation, and infrastructure. Auto-refreshed weekly.</description>
 <language>en-US</language>
-<lastBuildDate>Wed, 06 May 2026 01:28:39 +0000</lastBuildDate>
+<lastBuildDate>Wed, 06 May 2026 01:39:34 +0000</lastBuildDate>
 <managingEditor>hello@8bitconcepts.com (8bitconcepts)</managingEditor>
 <webMaster>hello@8bitconcepts.com (8bitconcepts)</webMaster>
 <generator>tools/generate-research-feed.py</generator>
 <docs>https://www.rssboard.org/rss-specification</docs>
+<item><title>Claude Code Pricing: What It Actually Costs in 2026</title><link>https://8bitconcepts.com/research/claude-code-pricing.html</link><guid isPermaLink="true">https://8bitconcepts.com/research/claude-code-pricing.html</guid><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><description><![CDATA[Claude Code is billed on API usage, not a flat monthly fee. What you'll actually pay per session, how to control costs, and when it's worth it vs Cursor or Copilot.]]></description></item>
 <item><title>Claude Code vs Cursor: A Practical Comparison for Working Developers</title><link>https://8bitconcepts.com/research/claude-code-vs-cursor.html</link><guid isPermaLink="true">https://8bitconcepts.com/research/claude-code-vs-cursor.html</guid><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><description><![CDATA[Claude Code and Cursor solve different problems. Here is what each is actually good at, where each falls short, and why the most productive teams use both.]]></description></item>
 <item><title>Claude Code CLAUDE.md: The Practical Guide to Project Memory</title><link>https://8bitconcepts.com/research/claude-md-guide.html</link><guid isPermaLink="true">https://8bitconcepts.com/research/claude-md-guide.html</guid><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><description><![CDATA[CLAUDE.md gives Claude Code persistent project context across sessions. Here is what to put in it, what makes it worse, and the one problem it cannot solve.]]></description></item>
 <item><title>The Agentic Commerce Gap: Why Most Businesses Are Invisible to AI Agents</title><link>https://8bitconcepts.com/research/the-agentic-commerce-gap.html</link><guid isPermaLink="true">https://8bitconcepts.com/research/the-agentic-commerce-gap.html</guid><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><description><![CDATA[AI agents are beginning to shop, quote, and purchase on behalf of users. Most online businesses are architecturally invisible to them. Here is what that means and what to do about it.]]></description></item>
