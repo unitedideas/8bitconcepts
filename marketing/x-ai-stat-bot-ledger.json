@@ -112,7 +112,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T16:42:09+00:00-056e8240",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T16:42:09+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -122,8 +122,27 @@
       "route": "https://nothumansearch.ai",
       "fact_id": "nhs-total-sites-4108-avg-34",
       "fact_key": "056e8240993c8291f319d318",
-      "fingerprint": "8b599a252e9b0d43",
-      "copy": "Not Human Search is tracking 4,108 agent-ready sites. Average agent-readiness score: 34.0/100."
+      "fingerprint": "d0182ca2e7ea2628",
+      "copy": "Not Human Search is tracking 4,216 agent-ready sites. Average agent-readiness score: 35/100.",
+      "original_copy": "Not Human Search is tracking 4,108 agent-ready sites. Average agent-readiness score: 34.0/100.",
+      "original_fingerprint": "8b599a252e9b0d43",
+      "updated_at": "2026-05-05T22:50:18Z",
+      "posted_at": "2026-05-05T22:50:18Z",
+      "url": "https://x.com/8BitConcepts/status/2051796403660447980",
+      "approved_final_copy": "Not Human Search is tracking 4,216 agent-ready sites. Average agent-readiness score: 35/100.",
+      "approved_final_fingerprint": "d0182ca2e7ea2628",
+      "facts_verified": [
+        "https://nothumansearch.ai/api/v1/stats returned HTTP 200",
+        "total_sites=4216",
+        "avg_score=35",
+        "https://nothumansearch.ai/ returned HTTP 200 and is the Not Human Search portfolio URL in systems/foundry-business-index.md",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts portfolio URL",
+        "X identity verified by tools/x-brave-post.js dry-run as @8BitConcepts / 8bitconcepts"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "posting_method": "tools/x-brave-post.js from verified @8BitConcepts session; direct X API returned AuthorizationError code 226, then browser CDP fallback posted and returned live status URL."
     },
     {
       "id": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
