@@ -1,0 +1,89 @@
+{
+  "business_slug": "8bitconcepts",
+  "stage": "active",
+  "status": "proposed_for_review",
+  "agents": [
+    {
+      "id": "8bitconcepts-operator",
+      "name": "8bitconcepts Business Operator",
+      "kind": "operator",
+      "capabilities": [
+        "backlog_execution",
+        "state_updates",
+        "runbook_execution"
+      ],
+      "scope": "business:8bitconcepts",
+      "definition_ref": "business://8bitconcepts/agents/operator",
+      "expertise_ref": "business://8bitconcepts/agent-memory/operator",
+      "owner": "8bitconcepts",
+      "reuse_policy": "business_specific",
+      "private_safe": false
+    },
+    {
+      "id": "8bitconcepts-business-researcher",
+      "name": "8bitconcepts Business Researcher",
+      "kind": "business-researcher",
+      "capabilities": [
+        "market_research",
+        "competitor_tracking",
+        "customer_discovery"
+      ],
+      "scope": "business:8bitconcepts",
+      "definition_ref": "business://8bitconcepts/agents/business-researcher",
+      "expertise_ref": "business://8bitconcepts/agent-memory/business-researcher",
+      "owner": "8bitconcepts",
+      "reuse_policy": "business_specific",
+      "private_safe": false
+    },
+    {
+      "id": "8bitconcepts-marketer",
+      "name": "8bitconcepts Business Marketer",
+      "kind": "marketer",
+      "capabilities": [
+        "positioning",
+        "distribution_planning",
+        "campaign_execution"
+      ],
+      "scope": "business:8bitconcepts",
+      "definition_ref": "business://8bitconcepts/agents/marketer",
+      "expertise_ref": "business://8bitconcepts/agent-memory/marketer",
+      "owner": "8bitconcepts",
+      "reuse_policy": "business_specific",
+      "private_safe": false
+    },
+    {
+      "id": "8bitconcepts-support",
+      "name": "8bitconcepts Business Support Operator",
+      "kind": "support",
+      "capabilities": [
+        "support_triage",
+        "lead_followup",
+        "customer_evidence"
+      ],
+      "scope": "business:8bitconcepts",
+      "definition_ref": "business://8bitconcepts/agents/support",
+      "expertise_ref": "business://8bitconcepts/agent-memory/support",
+      "owner": "8bitconcepts",
+      "reuse_policy": "business_specific",
+      "private_safe": false
+    },
+    {
+      "id": "8bitconcepts-channel-operator",
+      "name": "8bitconcepts Channel Operator",
+      "kind": "channel-operator",
+      "capabilities": [
+        "x",
+        "linkedin",
+        "reddit",
+        "hn",
+        "directory_distribution"
+      ],
+      "scope": "business:8bitconcepts",
+      "definition_ref": "business://8bitconcepts/agents/channel-operator",
+      "expertise_ref": "business://8bitconcepts/agent-memory/channel-operator",
+      "owner": "8bitconcepts",
+      "reuse_policy": "business_specific",
+      "private_safe": false
+    }
+  ]
+}
