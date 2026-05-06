@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="color-scheme" content="dark light" />
+<title>Claude Code Tips: 12 Ways to Get More Out of Every Session | 8bitconcepts</title>
+<meta name="description" content="Practical Claude Code tips for developers who already have it installed. Model switching, CLAUDE.md, MCP setup, /compact timing, and the patterns that actually improve output quality." />
+<link rel="canonical" href="https://8bitconcepts.com/research/claude-code-tips.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Claude Code Tips: 12 Ways to Get More Out of Every Session" />
+<meta property="og:description" content="Practical tips for developers already using Claude Code. Model switching, CLAUDE.md, MCP setup, /compact timing, and the patterns that actually improve output quality." />
+<meta property="og:url" content="https://8bitconcepts.com/research/claude-code-tips.html" />
+<meta property="og:image" content="https://8bitconcepts.com/og-research.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Claude Code Tips: 12 Ways to Get More Out of Every Session" />
+<meta name="twitter:description" content="Practical tips for developers already using Claude Code. Model switching, CLAUDE.md, MCP setup, /compact timing, and the patterns that actually improve output quality." />
+<meta name="twitter:image" content="https://8bitconcepts.com/og-research.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude Code Tips: 12 Ways to Get More Out of Every Session",
+  "description": "Practical Claude Code tips for developers who already have it installed. Model switching, CLAUDE.md, MCP setup, /compact timing, and the patterns that actually improve output quality.",
+  "url": "https://8bitconcepts.com/research/claude-code-tips.html",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "author": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+  "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+  "image": "https://8bitconcepts.com/og-research.png",
+  "isPartOf": {"@type": "WebSite", "name": "8bitconcepts", "url": "https://8bitconcepts.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"},
+    {"@type": "ListItem", "position": 3, "name": "Claude Code Tips"}
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--slate:#0d0d0e;--terra:#d97757;--text:#e8e8e9;--muted:#8b8d91;--subtle:#c5c5c9;--border:rgba(255,255,255,0.07);--card:#111214}
+body{background:var(--slate);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.75;padding:40px 20px;}
+.wrap{max-width:720px;margin:0 auto;}
+a{color:var(--terra);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1{font-size:38px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:16px;color:#fff;}
+h2{font-size:22px;letter-spacing:-0.01em;margin:44px 0 12px;color:#fff;}
+p{margin-bottom:16px;color:var(--subtle);}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--terra);margin-bottom:12px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:40px;}
+.nav-back{display:inline-block;margin-bottom:24px;color:var(--terra);font-size:14px;}
+pre{background:#18191b;border:1px solid rgba(255,255,255,0.09);border-radius:6px;padding:16px 18px;margin:0 0 20px;overflow-x:auto;}
+code{font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#e8e8e9;}
+p code,li code{background:rgba(255,255,255,0.07);padding:1px 6px;border-radius:3px;font-size:13px;color:#e8e8e9;}
+ul,ol{padding-left:20px;margin-bottom:16px;color:var(--subtle);}
+li{margin-bottom:6px;}
+.tip-num{display:inline-block;font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--terra);background:rgba(217,119,87,0.1);padding:2px 8px;border-radius:3px;margin-bottom:8px;}
+.callout{background:rgba(217,119,87,0.07);border-left:3px solid var(--terra);padding:14px 18px;border-radius:0 6px 6px 0;margin:24px 0;}
+.callout p{margin:0;color:var(--subtle);}
+.article-cta{background:linear-gradient(135deg,rgba(217,119,87,0.12) 0%,rgba(217,119,87,0.04) 100%);border:1px solid rgba(217,119,87,0.35);border-radius:10px;padding:28px 32px;margin:56px 0 40px;}
+.article-cta h3{margin:0 0 8px;font-size:20px;color:#fff;}
+.article-cta p{margin:0 0 20px;color:var(--subtle);}
+.cta-btn{display:inline-block;background:var(--terra);color:#fff;padding:11px 22px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+footer a{color:var(--terra);}
+@media(max-width:600px){h1{font-size:28px;}}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+<div class="wrap">
+  <a class="nav-back" href="/research/">← Research</a>
+  <div class="eyebrow">Developer Tools</div>
+  <h1>Claude Code Tips: 12 Ways to Get More Out of Every Session</h1>
+  <p class="meta">By 8bitconcepts &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; 9 min read</p>
+
+  <p>Getting started with Claude Code is easy. Getting good output consistently is a different problem. Most developers who install it and try it a few times are leaving significant value on the table — wrong model for the task, no project memory, context filling up before the work is done.</p>
+
+  <p>These are the patterns that actually make Claude Code useful in daily practice, not just for impressive demos.</p>
+
+  <h2><span class="tip-num">01</span> Give it a sharp, scoped task — not a vague goal</h2>
+  <p>The quality of Claude Code's output tracks directly to the quality of your task description. Vague inputs produce exploratory, unfocused output. Specific inputs produce direct execution.</p>
+
+  <p><strong>Worse:</strong> "Clean up the auth code"<br>
+  <strong>Better:</strong> "Refactor <code>src/auth/session.ts</code> to use JWT instead of session cookies. Keep the existing interface — only change the implementation. Run the auth tests when done."</p>
+
+  <p>Include: what to change, where to change it, what "done" means, and any constraints. One clear task per session is more reliable than a stream-of-consciousness conversation that accumulates across multiple requests.</p>
+
+  <h2><span class="tip-num">02</span> Write a CLAUDE.md and commit it</h2>
+  <p><code>CLAUDE.md</code> is a file Claude Code reads at the start of every session. Put your project context in it — stack, conventions, what to avoid, active work. You stop re-explaining the same things every session; Claude starts with the right frame already loaded.</p>
+
+  <p>A minimal CLAUDE.md:</p>
+  <pre><code># Project
+
+Go service, PostgreSQL (Fly.io), deployed via GitHub Actions.
+
+## Stack
+- Go 1.23, Gin, pgx/v5 for Postgres
+- Tests: `go test ./...`
+- Migrations: `tools/migrate.sh`
+
+## Conventions
+- Error handling: always wrap with context, never suppress
+- New endpoints need a test in _test.go
+- Never commit .env files
+
+## Do not touch
+- vendor/ directory (managed externally)
+- legacy/billing/ (Shane owns this)</code></pre>
+
+  <p>See the <a href="/research/claude-md-guide.html">full CLAUDE.md guide</a> for what to include and what makes it worse.</p>
+
+  <h2><span class="tip-num">03</span> Match the model to the task</h2>
+  <p>Claude Code defaults to Sonnet, which is right for most work. But switching models mid-session changes both quality and cost significantly:</p>
+
+  <ul>
+    <li><code>/model claude-haiku-4-5</code> — fast and cheap; use for simple edits, formatting, boilerplate, adding comments. Costs roughly 10× less than Opus.</li>
+    <li><code>/model claude-sonnet-4-6</code> — the right default; good balance of reasoning and speed for standard dev work</li>
+    <li><code>/model claude-opus-4-7</code> — use for genuinely hard problems: complex architecture decisions, subtle bug diagnosis, large refactors where getting it wrong is expensive</li>
+  </ul>
+
+  <p>Don't burn Opus credits on tasks that don't need deep reasoning. Don't use Haiku for tasks where a wrong architectural decision will cost you a day of cleanup. Match the model to what the task actually requires.</p>
+
+  <h2><span class="tip-num">04</span> Check cost before the session ends</h2>
+  <p>Run <code>/cost</code> at the end of a session to see what you spent. Do this consistently and you'll develop intuition for which kinds of tasks are expensive (large refactors, many file reads, heavy MCP tool use) versus cheap (targeted edits, simple additions). This pays off when you're deciding whether to continue a session or start fresh.</p>
+
+  <h2><span class="tip-num">05</span> Use /compact early, not desperately</h2>
+  <p>When your context starts filling, the instinct is to keep going and deal with it later. The better move is to compact before the model starts losing the beginning of the conversation — not after.</p>
+
+  <p><code>/compact</code> summarizes the conversation so far and resets the context window with a condensed version. Running it when you're at ~60–70% context preserves more useful detail than waiting until the model is already degraded. You can also use it between major phases of a long task — finish the implementation, compact, then start the testing phase fresh.</p>
+
+  <p>See the <a href="/research/claude-code-context-limit-fix.html">context limit guide</a> for the full set of strategies.</p>
+
+  <h2><span class="tip-num">06</span> Wire in your test runner from the start</h2>
+  <p>Tell Claude to run your tests after every significant change — in the task description, not as an afterthought:</p>
+
+  <p><em>"After each change, run <code>npm test</code> and confirm it passes before moving on. If tests fail, fix them before continuing."</em></p>
+
+  <p>This single instruction transforms Claude Code from a code generator into a code generator that verifies its own output. It catches regressions immediately rather than letting them accumulate through five changes before you notice something broke.</p>
+
+  <h2><span class="tip-num">07</span> Scope changes to specific directories</h2>
+  <p>For large repos, tell Claude explicitly where to work:</p>
+
+  <p><em>"Work only in <code>src/api/handlers/</code> and <code>src/middleware/</code>. Don't touch anything in <code>src/legacy/</code>."</em></p>
+
+  <p>Scoping reduces noise in your diff, prevents unintended side effects, and makes the output easier to review. It also keeps Claude from spending tokens exploring irrelevant parts of the codebase.</p>
+
+  <h2><span class="tip-num">08</span> Add MCP servers for your actual stack</h2>
+  <p>If you have a Postgres database, wire it in as an MCP server. Same for GitHub, Slack, or any internal API your work touches. The one-time setup:</p>
+
+  <pre><code>claude mcp add --transport stdio postgres \
+  --env DATABASE_URL="$DATABASE_URL" \
+  -- npx -y @modelcontextprotocol/server-postgres</code></pre>
+
+  <p>Once it's wired, Claude can query live database state, read GitHub issues, and search Slack threads during a session — without you copy-pasting output into the conversation. The sessions that need external context go from slow and manual to fast and complete.</p>
+
+  <p>See the <a href="/research/claude-code-mcp.html">full MCP setup guide</a> for the command syntax and scope options.</p>
+
+  <h2><span class="tip-num">09</span> Let Claude plan before executing on hard tasks</h2>
+  <p>For complex multi-step tasks, ask Claude to write its plan to a file before touching any code:</p>
+
+  <p><em>"Before making any changes, write a plan to <code>TASK-PLAN.md</code> describing what you'll do step by step. Wait for my confirmation before starting."</em></p>
+
+  <p>Benefits: you catch wrong assumptions before they propagate through code; the plan file survives if the session ends; Claude can resume from the plan in a new session without losing the thread of the work.</p>
+
+  <h2><span class="tip-num">10</span> Use --print mode for CI and scripting</h2>
+  <p>Claude Code's non-interactive mode lets you call it from scripts and CI pipelines:</p>
+
+  <pre><code>claude --print "Generate a migration to add indexes to the jobs table. Output only the SQL."</code></pre>
+
+  <p>Combine with <code>--allow-shell</code> and <code>--allow-edits</code> flags for autonomous pipelines where you don't want interactive prompts. This is how you build Claude Code into automated code review, documentation generation, or scheduled analysis workflows.</p>
+
+  <h2><span class="tip-num">11</span> Start a new session for each new task</h2>
+  <p>The temptation is to keep one session running all day and stack tasks. The result is a context window that's half-full of irrelevant history before your new task even starts, and a model that's dragging prior decisions into current work.</p>
+
+  <p>Fresh sessions are cheaper (less context to process), more focused (no prior task noise), and produce cleaner output. Make it a habit: finish a task, review the output, start a new session for the next one.</p>
+
+  <h2><span class="tip-num">12</span> Write permissions flags once, not per-command</h2>
+  <p>If you're doing a long autonomous task where you trust Claude to run commands, set the permission flags at startup instead of approving each one manually:</p>
+
+  <pre><code>claude --allow-shell --allow-edits "Migrate all tests from Jest to Vitest"</code></pre>
+
+  <p>For tasks where you know what Claude will need to do and you trust the scope, pre-approving eliminates the interruption loop. For exploratory tasks where you don't know what Claude will touch, keep interactive approval on — it's the right safeguard.</p>
+
+  <div class="callout">
+    <p><strong>The compounding tip:</strong> Tip 02 (CLAUDE.md) + Tip 08 (MCP servers) together eliminate most of the session startup overhead. CLAUDE.md loads your project context; MCP servers give Claude live access to your stack. Combined, a new session starts with everything it needs to work effectively from the first message.</p>
+  </div>
+
+  <h2>The one problem tips can't solve</h2>
+  <p>Every tip here helps you get more from individual sessions. None of them solve the session boundary problem: when a long task spans multiple sessions, you lose the working state, the decisions made, and the context built — and you start over.</p>
+
+  <p>This is especially painful on complex tasks: a multi-day refactor, a debugging investigation that runs into the context limit, a task you handed off to Claude overnight. The next session doesn't know what the previous one did.</p>
+
+  <div class="article-cta">
+    <h3>Carry your working session forward, not just your code</h3>
+    <p>Bring Your AI captures the decisions made, context built, and working state from a Claude Code session and carries it forward to the next one. When you hit the context limit mid-task — or need to hand the session off — you don't start over from scratch.</p>
+    <a href="https://bringyour.ai" class="cta-btn">See how Bring Your AI works →</a>
+  </div>
+
+  <h2>What to read next</h2>
+  <ul>
+    <li><a href="/research/claude-md-guide.html">The CLAUDE.md Guide</a> — what to put in your project memory file and what makes it worse</li>
+    <li><a href="/research/claude-code-mcp.html">Claude Code MCP Servers</a> — full setup guide for wiring external tools</li>
+    <li><a href="/research/claude-code-context-limit-fix.html">Claude Code Context Limit Fix</a> — strategies for sessions that hit the wall</li>
+    <li><a href="/research/how-to-use-claude-code.html">How to Use Claude Code</a> — the full setup walkthrough if you're just getting started</li>
+    <li><a href="/research/claude-code-for-teams.html">Claude Code for Teams</a> — shared CLAUDE.md, API key management, cost modeling</li>
+  </ul>
+
+  <footer>
+    <p><a href="/research/">← All research papers</a> &nbsp;·&nbsp; <a href="/work-with-us.html">Work with us</a> &nbsp;·&nbsp; <a href="/research/feed.xml">RSS</a></p>
+    <p style="margin-top:8px;">© 2026 8bitconcepts. Practitioner AI research for engineering teams.</p>
+  </footer>
+</div>
+</body>
+</html>
