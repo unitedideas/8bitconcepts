@@ -36,6 +36,12 @@
         "currency": "USD",
         "display": "$500 one-time"
       },
+      "fulfillment": {
+        "type": "professional_service",
+        "delivery": "scheduled",
+        "turnaround_days": 5,
+        "description": "Written diagnostic report delivered within 5 business days via email."
+      },
       "checkout": {
         "mode": "stripe_payment_link",
         "supported_modes": ["stripe_payment_link", "stripe_link", "link", "stripe_spt"],
