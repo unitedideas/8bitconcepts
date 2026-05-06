@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <title>How to Use Claude Code: A Practical Guide for 2026 | 8bitconcepts</title>
+  <meta name="description" content="Claude Code is Anthropic's agentic coding tool. How to install it, set up your API key, configure CLAUDE.md, and use it effectively for real development work." />
+  <link rel="canonical" href="https://8bitconcepts.com/research/how-to-use-claude-code.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="8bitconcepts" />
+  <meta property="og:title" content="How to Use Claude Code: A Practical Guide for 2026" />
+  <meta property="og:description" content="Install, configure, and use Claude Code effectively for real development work." />
+  <meta property="og:url" content="https://8bitconcepts.com/research/how-to-use-claude-code.html" />
+  <meta property="og:image" content="https://8bitconcepts.com/og-research.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://8bitconcepts.com/og-research.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use Claude Code",
+    "description": "Install, configure, and use Claude Code effectively for real development work.",
+    "author": {"@type": "Organization", "name": "8bitconcepts"},
+    "publisher": {"@type": "Organization", "name": "8bitconcepts", "url": "https://8bitconcepts.com"},
+    "url": "https://8bitconcepts.com/research/how-to-use-claude-code.html",
+    "datePublished": "2026-05-07",
+    "step": [
+      {"@type": "HowToStep", "name": "Install Claude Code", "text": "npm install -g @anthropic-ai/claude-code"},
+      {"@type": "HowToStep", "name": "Set your API key", "text": "export ANTHROPIC_API_KEY=sk-ant-..."},
+      {"@type": "HowToStep", "name": "Create a CLAUDE.md", "text": "Add project context so Claude Code understands your codebase"},
+      {"@type": "HowToStep", "name": "Start a session", "text": "Run `claude` in your project directory"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "8bitconcepts", "item": "https://8bitconcepts.com/"}, {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://8bitconcepts.com/research/"}, {"@type": "ListItem", "position": 3, "name": "How to Use Claude Code"}]}
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --slate: #0d0d0e; --slate-1: #111214; --slate-2: #1a1c1f; --border: rgba(255,255,255,0.07); --terra: #d97757; --text: #e8e8e9; --text-dim: #8b8d91; --text-dimmer: #5a5c61; }
+    body { background: var(--slate); color: var(--text); font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    a { color: var(--terra); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,13,14,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 15px; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .nav-logo span { color: var(--terra); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.nav-cta { background: var(--terra); color: #fff; padding: 7px 16px; border-radius: 6px; font-weight: 600; }
+    .nav-links a.nav-cta:hover { color: #fff; opacity: 0.88; }
+    article { max-width: 720px; margin: 0 auto; padding: 96px 32px 80px; }
+    .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 18px; }
+    h1 { font-size: clamp(26px, 4.5vw, 38px); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; color: var(--text); margin-bottom: 20px; }
+    .meta { font-size: 13px; color: var(--text-dimmer); margin-bottom: 36px; font-family: 'IBM Plex Mono', monospace; }
+    .lede { font-size: 19px; line-height: 1.6; color: var(--text-dim); margin-bottom: 40px; border-left: 3px solid var(--terra); padding-left: 20px; }
+    h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin: 44px 0 14px; }
+    h3 { font-size: 17px; font-weight: 600; color: var(--text); margin: 28px 0 10px; }
+    p { margin-bottom: 20px; color: var(--text-dim); }
+    p strong { color: var(--text); font-weight: 600; }
+    ul, ol { margin: 0 0 20px 22px; color: var(--text-dim); }
+    li { margin-bottom: 8px; }
+    li strong { color: var(--text); }
+    code { font-family: 'IBM Plex Mono', monospace; font-size: 14px; background: var(--slate-2); padding: 2px 6px; border-radius: 3px; color: var(--terra); }
+    pre { background: var(--slate-1); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; overflow-x: auto; margin: 0 0 24px; }
+    pre code { background: none; padding: 0; color: var(--text-dim); font-size: 13px; line-height: 1.7; }
+    .step { background: var(--slate-1); border: 1px solid var(--border); border-radius: 10px; padding: 24px 28px; margin: 0 0 16px; }
+    .step-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; color: var(--terra); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    .step h3 { margin: 0 0 10px; font-size: 16px; }
+    .step p { margin-bottom: 10px; font-size: 15px; }
+    .step p:last-child { margin-bottom: 0; }
+    .callout { background: var(--slate-1); border: 1px solid rgba(217,119,87,0.25); border-left: 3px solid var(--terra); border-radius: 6px; padding: 18px 22px; margin: 28px 0; font-size: 15px; }
+    .callout strong { color: var(--text); }
+    .article-cta { margin: 56px 0 0; padding: 28px 32px; background: linear-gradient(135deg, rgba(217,119,87,0.1) 0%, rgba(217,119,87,0.03) 100%); border: 1px solid rgba(217,119,87,0.3); border-radius: 10px; }
+    .article-cta-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+    .article-cta-title { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: -0.02em; }
+    .article-cta-body { font-size: 14px; color: var(--text-dim); margin-bottom: 18px; line-height: 1.6; }
+    .article-cta-link { display: inline-block; background: var(--terra); color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; }
+    .article-cta-link:hover { opacity: 0.88; text-decoration: none; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 44px 0; }
+    footer { padding: 40px 32px; text-align: center; color: var(--text-dimmer); font-size: 13px; border-top: 1px solid var(--border); }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--terra); }
+    @media (max-width: 640px) { nav { padding: 0 20px; } .nav-links a:not(.nav-cta) { display: none; } article { padding: 80px 20px 60px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://8bitconcepts.com"><img src="/favicon.svg" width="26" height="26" alt="" aria-hidden="true" style="vertical-align:middle;margin-right:8px">8bit<span>concepts</span></a>
+  <div class="nav-links">
+    <a href="/work-with-us.html">Work with us</a>
+    <a href="/research/overview.html">Research</a>
+    <a href="/work-with-us.html#lead-form" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<article>
+  <div class="eyebrow">Research &middot; Claude Code &middot; Developer tools</div>
+  <h1>How to Use Claude Code: A Practical Guide for 2026</h1>
+  <div class="meta">8bitconcepts &mdash; May 2026</div>
+
+  <p class="lede">Claude Code is Anthropic's terminal-based agentic coding tool. It can read your codebase, run shell commands, edit files, and work through multi-step tasks end-to-end. This is a practical setup and usage guide — what to install, how to configure it, and how to actually get work done with it.</p>
+
+  <h2>What Claude Code does</h2>
+
+  <p>Claude Code runs in your terminal, not in an editor. You give it a task in plain language — "refactor this module to use the new API", "add tests for this function", "find all the places we're logging user email and remove them" — and it reads the relevant files, reasons about what needs to change, edits the files, and runs commands to verify.</p>
+
+  <p>It's built for tasks that require multi-file understanding: refactors, migrations, debugging complex issues, adding features that touch several parts of the codebase. For single-line inline completions, a tool like Cursor or Copilot is faster. Claude Code's advantage is the agentic loop — it keeps working until the task is done, not just until it fills the current line.</p>
+
+  <h2>Installation</h2>
+
+  <div class="step">
+    <div class="step-num">Step 1</div>
+    <h3>Install via npm</h3>
+    <p>Claude Code requires Node.js 18 or later.</p>
+    <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+    <p>Verify the install:</p>
+    <pre><code>claude --version</code></pre>
+  </div>
+
+  <div class="step">
+    <div class="step-num">Step 2</div>
+    <h3>Set your Anthropic API key</h3>
+    <p>You need an Anthropic account and an API key from console.anthropic.com. New accounts include free credits.</p>
+    <pre><code>export ANTHROPIC_API_KEY=sk-ant-api03-...</code></pre>
+    <p>To persist across terminal sessions, add it to your shell profile (<code>~/.zshrc</code> or <code>~/.bashrc</code>):</p>
+    <pre><code>echo 'export ANTHROPIC_API_KEY=sk-ant-api03-...' >> ~/.zshrc
+source ~/.zshrc</code></pre>
+  </div>
+
+  <div class="step">
+    <div class="step-num">Step 3</div>
+    <h3>Navigate to your project and start Claude Code</h3>
+    <pre><code>cd /path/to/your/project
+claude</code></pre>
+    <p>Claude Code opens an interactive session. Type your task in plain language and press Enter.</p>
+  </div>
+
+  <h2>Your first real task</h2>
+
+  <p>Once Claude Code is running, you interact by describing what you want. Some examples that work well out of the box:</p>
+
+  <pre><code>&gt; What does this codebase do? Give me a 3-paragraph summary.
+
+&gt; Find all the TODO comments in the src/ directory and list them.
+
+&gt; Add input validation to the createUser function in auth/user.go.
+
+&gt; Run the test suite and fix any failing tests.</code></pre>
+
+  <p>Claude Code will read files, show you what it's doing, ask for confirmation before making changes (depending on your settings), and execute shell commands when needed.</p>
+
+  <h2>Setting up CLAUDE.md for better results</h2>
+
+  <p>CLAUDE.md is a project-level context file that Claude Code reads at the start of every session. Without it, Claude Code has to figure out your project structure from scratch each time. With it, you're getting a warm start — Claude Code already knows your stack, conventions, and what to avoid.</p>
+
+  <p>Create a CLAUDE.md in your project root:</p>
+
+  <pre><code>touch CLAUDE.md</code></pre>
+
+  <p>A minimal effective CLAUDE.md:</p>
+
+  <pre><code># Project context
+
+## Stack
+- Go 1.22, Postgres 15, Redis
+- Deployment: Fly.io
+- Frontend: None — API-only service
+
+## Key files
+- main.go — entry point + HTTP router
+- db/migrations/ — schema migrations (use goose)
+- internal/auth/ — auth + JWT logic
+
+## Conventions
+- All errors returned, not panicked
+- Context passed as first argument to every function
+- No ORM — raw SQL with pgx
+
+## What to avoid
+- Don't modify db/migrations/ directly — create new migration files
+- Don't add dependencies without asking first</code></pre>
+
+  <p>The more specific, the better. Context that tells Claude Code what NOT to do is as valuable as context about what your stack looks like.</p>
+
+  <div class="callout">
+    <strong>Global CLAUDE.md:</strong> You can also put a CLAUDE.md in <code>~/.claude/CLAUDE.md</code> for preferences that apply across all projects — preferred coding style, banned patterns, personal workflow notes. Project CLAUDE.md takes precedence on conflicts.
+  </div>
+
+  <h2>Useful commands during a session</h2>
+
+  <p>Claude Code has several slash commands you'll use regularly:</p>
+
+  <ul>
+    <li><code>/compact</code> — Compress conversation history to save context space. Use this every 30–60 minutes on long sessions. Without it, context bloat will slow things down and eventually break the session.</li>
+    <li><code>/clear</code> — Reset the conversation completely. Use when you're switching to an unrelated task.</li>
+    <li><code>/model</code> — Switch the active model tier. Useful if you want to drop to Sonnet for routine work and save cost.</li>
+    <li><code>/cost</code> — Shows token usage and estimated cost for the current session.</li>
+    <li><code>/help</code> — List all available commands.</li>
+  </ul>
+
+  <h2>Controlling what Claude Code can touch</h2>
+
+  <p>By default, Claude Code asks for permission before writing files or running shell commands. You can adjust this:</p>
+
+  <ul>
+    <li><strong>Auto-approve file edits</strong> in a known safe project: <code>claude --allow-edits</code></li>
+    <li><strong>Auto-approve shell commands</strong>: <code>claude --allow-shell</code></li>
+    <li><strong>Fully autonomous mode</strong>: <code>claude --dangerously-skip-permissions</code> — use this only in sandboxed environments or when you trust the task completely.</li>
+  </ul>
+
+  <p>For the first few sessions in any new project, keep permissions at the default (ask each time). Once you understand how Claude Code behaves with your codebase, you can open up more autonomy.</p>
+
+  <h2>Task types where Claude Code excels</h2>
+
+  <ul>
+    <li><strong>Large refactors.</strong> Moving a module, renaming a type across 20 files, updating an API contract everywhere it's used — tasks that require holding the whole codebase in mind.</li>
+    <li><strong>Codebase exploration.</strong> "Where does this variable come from?" / "What calls this function?" / "What does the authentication flow look like?" — Claude Code is fast at navigating an unfamiliar codebase.</li>
+    <li><strong>Debugging.</strong> Describe the symptom, let Claude Code trace through the code and form a hypothesis. Better than grepping if the issue involves multiple interacting components.</li>
+    <li><strong>Writing tests.</strong> Generate tests for existing functions. Claude Code can read the implementation and write meaningful assertions, not just boilerplate.</li>
+    <li><strong>Shell scripting and automation.</strong> Ask it to write a script, run it, debug it, and iterate until it works.</li>
+  </ul>
+
+  <h2>Where Claude Code struggles</h2>
+
+  <ul>
+    <li><strong>Inline completions.</strong> If you want to complete the current line as you type, use Cursor or Copilot. Claude Code isn't designed for that latency.</li>
+    <li><strong>Very long sessions.</strong> Context limits are real. Sessions longer than a few hours start to degrade as the context window fills up. The fix is <code>/compact</code> and session portability.</li>
+    <li><strong>Novel frameworks it hasn't seen.</strong> If your stack is very new or internal-only, Claude Code may make incorrect assumptions. CLAUDE.md context and explicit correction help, but there's a ceiling.</li>
+  </ul>
+
+  <h2>The context limit problem</h2>
+
+  <p>This is the most common frustration with Claude Code. In a long session, the conversation history and open file contents fill the context window. When it's full, either the session degrades (older context gets dropped silently) or it errors out entirely and you have to restart.</p>
+
+  <p>The practical mitigations:</p>
+
+  <ul>
+    <li>Use <code>/compact</code> every 30–60 minutes on long sessions</li>
+    <li>Keep CLAUDE.md tight — only include context that's actively relevant</li>
+    <li>Break large tasks into independent sessions with clear hand-off state</li>
+    <li>Use a session harness to export working state and reimport it after a reset</li>
+  </ul>
+
+  <div class="article-cta">
+    <div class="article-cta-eyebrow">Context limit solution</div>
+    <div class="article-cta-title">Keep working after Claude Code hits the limit</div>
+    <div class="article-cta-body">BringYour.AI is a portable session harness for Claude Code. It exports your working state — open files, task progress, decisions made — so you can resume exactly where you left off after a context reset, or continue in a different tool.</div>
+    <a class="article-cta-link" href="https://bringyour.ai">See bringyour.ai &rarr;</a>
+  </div>
+
+  <hr />
+
+  <h2>Working with MCP servers</h2>
+
+  <p>Claude Code supports the Model Context Protocol (MCP), which lets you connect it to external tools and data sources. If you have an MCP server — a database connector, a Slack integration, an internal knowledge base — you can wire it into Claude Code so it has access during sessions.</p>
+
+  <p>Add MCP servers to your Claude Code config:</p>
+
+  <pre><code># ~/.claude/config.json
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-postgres", "postgresql://localhost/mydb"]
+    }
+  }
+}</code></pre>
+
+  <p>Once configured, Claude Code can query your database directly, search your docs, or call your internal APIs as part of solving tasks. The MCP ecosystem is growing fast — check the MCP registry for available servers.</p>
+
+  <h2>Practical workflow tips</h2>
+
+  <ul>
+    <li><strong>Be specific about scope.</strong> "Fix the bug in the login flow" is harder than "The login endpoint at /auth/login returns 500 when the password has a special character. Fix it." The more context you provide upfront, the fewer clarifying loops.</li>
+    <li><strong>Ask for a plan first.</strong> For big tasks: "Before making any changes, show me your plan for what you'd do." Review it, redirect if needed, then say "go ahead." This avoids surprises in large refactors.</li>
+    <li><strong>Use the session for a whole task, not one command.</strong> Claude Code builds up context within a session. If you're refactoring a module, do it all in one session rather than opening and closing sessions for each file.</li>
+    <li><strong>Keep a CHANGELOG in CLAUDE.md.</strong> Logging recent significant decisions ("2026-05-05: migrated auth from JWT to sessions; don't re-introduce JWT") gives Claude Code institutional memory that survives context resets.</li>
+  </ul>
+
+  <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px;">Continue reading</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <a href="/research/claude-md-guide.html" style="color:var(--terra);font-size:15px;font-weight:500;">CLAUDE.md: The Practical Guide to Project Memory &rarr;</a>
+      <a href="/research/claude-code-context-limit-fix.html" style="color:var(--terra);font-size:15px;font-weight:500;">Claude Code Context Limit: Why It Breaks and the Fix &rarr;</a>
+      <a href="/research/claude-code-pricing.html" style="color:var(--terra);font-size:15px;font-weight:500;">Claude Code Pricing: What It Actually Costs in 2026 &rarr;</a>
+      <a href="/research/claude-code-vs-cursor.html" style="color:var(--terra);font-size:15px;font-weight:500;">Claude Code vs Cursor: Which One Should You Actually Use? &rarr;</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <p style="margin-bottom:10px;">
+    <a href="/">Home</a>
+    &middot;
+    <a href="/research/overview.html">Research</a>
+    &middot;
+    <a href="/work-with-us.html">Work with us</a>
+    &middot;
+    <a href="mailto:hello@8bitconcepts.com">Email</a>
+  </p>
+  <p>&copy; 2026 8bitconcepts</p>
+</footer>
+
+</body>
+</html>
