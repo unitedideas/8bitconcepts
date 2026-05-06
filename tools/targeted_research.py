@@ -180,6 +180,15 @@ def source_links(target: Target) -> JsonMap:
     }
 
 
+def usable_source_links(research: JsonMap) -> JsonMap:
+    errors = research.get("source_errors") or {}
+    return {
+        key: value
+        for key, value in research["sources"].items()
+        if key not in errors
+    }
+
+
 def build_target_research(target_date: date) -> JsonMap:
     target = pick_target(target_date)
     sources = source_links(target)
@@ -297,6 +306,9 @@ def targeted_linkedin_copy(research: JsonMap) -> str:
     if research.get("nhs_score") is not None:
         signal_text = ", ".join(research.get("nhs_signals") or ["public agent-facing signals tracked"])
         nhs_line = f"\n\nNHS follow-up lens: public agent-readiness profile shows {signal_text}. That is useful for checking what agents can inspect without a human browsing the site."
+    data_lines = [sources["adb_company"]]
+    if "nhs_profile" not in (research.get("source_errors") or {}):
+        data_lines.append(sources["nhs_profile"])
     return (
         f"Looking at {target['linkedin_mention']} through the public hiring data:\n\n"
         f"1. {fmt_int(research['total_roles'])} indexed AI/ML roles in AI Dev Board.\n"
@@ -306,7 +318,7 @@ def targeted_linkedin_copy(research: JsonMap) -> str:
         f"The useful read is where the operational work is moving: {target['angle']}.\n\n"
         f"{target['name']} is a useful public lens on this area. {target['question']}"
         f"{nhs_line}\n\n"
-        f"Data:\n{sources['adb_company']}\n{sources['nhs_profile']}"
+        f"Data:\n" + "\n".join(data_lines)
     )
 
 
@@ -389,7 +401,7 @@ def targeted_queue_item(
         "format": "targeted documented research",
         "asset_brief": "Small source-backed stat card: role count, top tags, sample roles, operator question.",
         "route": sources["adb_company"],
-        "research_sources": sources,
+        "research_sources": usable_source_links(research),
         "research_findings": {
             "indexed_roles": research["total_roles"],
             "rank": research.get("rank"),

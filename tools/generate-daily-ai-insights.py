@@ -496,7 +496,15 @@ def upsert_queued_items(queue: dict[str, object]) -> None:
             existing = by_id.get(item_id)
             if existing and existing.get("status") in preserve_statuses:
                 continue
-            fact_already_posted = bool(item_fact_key and item_fact_key in recent_fact_keys)
+            same_daily_queue_item = bool(
+                existing
+                and existing.get("source") == "marketing/daily-ai-insights-queue.json"
+                and existing.get("date") == queue_item_data["date"]
+                and existing.get("fact_key") == item_fact_key
+            )
+            fact_already_posted = bool(
+                item_fact_key and item_fact_key in recent_fact_keys and not same_daily_queue_item
+            )
             status_for_record = "deferred_recent_related_post" if fact_already_posted else "queued"
             record = {
                 "id": item_id,
