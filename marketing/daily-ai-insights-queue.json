@@ -63,7 +63,13 @@
           "account": "@8bitconcepts",
           "copy": "Looking at public AI hiring as a market signal: @Waymo has 108 indexed AI/ML roles on AI Dev Board, with current tags clustering around autonomous-vehicles, generative-ai, pytorch. Avg published salary: $252,541. Waymo is #8 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to robotics evaluation, prediction systems, simulation, and safety-critical deployment. What is the cleaner proxy for readiness: model quality, scenario coverage, or operational monitoring?\n\nData: https://aidevboard.com/company/waymo",
           "fingerprint": "79b9765ecaba57e9",
-          "duplicate": false
+          "duplicate": false,
+          "status": "posted",
+          "posted_at": "2026-05-06T13:29:36Z",
+          "url": "https://x.com/8BitConcepts/status/2052017708426998256",
+          "final_fingerprint": "c2f0b036eb2cb8e3",
+          "original_fingerprint": "79b9765ecaba57e9",
+          "final_copy": "Waymo has 108 indexed AI developer roles on AI Dev Board. ADB shows an average published salary of about $252k across 92 listings with salary data. Visible tags include autonomous-vehicles, generative-ai, pytorch, and robotics.\n\nData: https://aidevboard.com/company/waymo"
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
