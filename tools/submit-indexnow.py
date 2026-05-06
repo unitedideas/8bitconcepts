@@ -27,6 +27,11 @@ URLS_TO_SUBMIT = [
     "/local/camas-wa.html",
     "/local/portland-or.html",
     "/local/tigard-or.html",
+    "/research/claude-code-context-limit-fix.html",
+    "/research/claude-md-guide.html",
+    "/research/the-self-testing-layer.html",
+    "/research/on-device-inference.html",
+    "/research/q2-2026-ai-hiring-geography.html",
 ]
 
 def get_indexnow_key() -> str:

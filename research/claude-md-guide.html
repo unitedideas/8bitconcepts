@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Claude Code CLAUDE.md: The Practical Guide to Project Memory -- 8bitconcepts</title>
+  <meta name="description" content="CLAUDE.md gives Claude Code persistent project context across sessions. Here is what to put in it, what makes it worse, and the one problem it cannot solve." />
+  <meta property="og:title" content="Claude Code CLAUDE.md: The Practical Guide to Project Memory" />
+  <meta property="og:description" content="CLAUDE.md gives Claude Code persistent project context across sessions. Here is what to put in it, what makes it worse, and the one problem it cannot solve." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://8bitconcepts.com/research/claude-md-guide.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Claude Code CLAUDE.md: The Practical Guide to Project Memory" />
+  <meta name="twitter:description" content="CLAUDE.md gives Claude Code persistent project context across sessions. Here is what to put in it, what makes it worse, and the one problem it cannot solve." />
+  <link rel="canonical" href="https://8bitconcepts.com/research/claude-md-guide.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate: #0d0d0e;
+      --slate-1: #111214;
+      --slate-2: #1a1c1f;
+      --slate-3: #242729;
+      --slate-4: #2e3135;
+      --border: rgba(255,255,255,0.07);
+      --terra: #d97757;
+      --terra-dim: rgba(217,119,87,0.15);
+      --terra-dim2: rgba(217,119,87,0.08);
+      --text: #e8e8e9;
+      --text-dim: #8b8d91;
+      --text-dimmer: #5a5c61;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--slate);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--terra); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 96px 32px 80px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--terra);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta-date { font-size: 13px; color: var(--text-dimmer); }
+
+    .meta-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--terra);
+      background: var(--terra-dim);
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    .meta-read { font-size: 13px; color: var(--text-dimmer); }
+
+    .article-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    .article-body p {
+      color: var(--text-dim);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .article-body ul, .article-body ol {
+      color: var(--text-dim);
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .article-body code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      background: var(--slate-3);
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: var(--terra);
+    }
+
+    .article-body pre {
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+      margin: 28px 0;
+      overflow-x: auto;
+    }
+
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .callout {
+      background: var(--slate-2);
+      border-left: 3px solid var(--terra);
+      padding: 20px 24px;
+      margin: 36px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .callout p {
+      margin-bottom: 0 !important;
+      color: var(--text) !important;
+      font-size: 16px !important;
+      line-height: 1.65 !important;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--slate-3);
+      color: var(--text-dim);
+      font-weight: 500;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .data-table .td-label {
+      font-weight: 600;
+      color: var(--terra);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 36px 0;
+    }
+
+    .stat-box {
+      background: var(--slate-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .stat-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--terra);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .article-cta {
+      background: var(--terra-dim2);
+      border: 1px solid rgba(217,119,87,0.2);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 20px !important;
+    }
+
+    .article-cta a {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: opacity 0.15s;
+    }
+
+    .article-cta a:hover { opacity: 0.88; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--text-dimmer);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      .article-wrap { padding: 96px 20px 60px; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Claude Code CLAUDE.md: The Practical Guide to Project Memory",
+    "description": "CLAUDE.md gives Claude Code persistent project context across sessions. Here is what to put in it, what makes it worse, and the one problem it cannot solve.",
+    "url": "https://8bitconcepts.com/research/claude-md-guide.html",
+    "datePublished": "2026-05-07",
+    "author": {
+      "@type": "Organization",
+      "name": "8bitconcepts",
+      "url": "https://8bitconcepts.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "8bitconcepts",
+      "url": "https://8bitconcepts.com"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">8bit<span>concepts</span></a>
+    <div class="nav-links">
+      <a href="/research/">Research</a>
+      <a href="/diagnostic.html">Diagnostic</a>
+      <a href="/work-with-us.html">Work with us</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+
+    <div class="eyebrow">Developer Tools &mdash; AI Coding</div>
+
+    <h1>Claude Code CLAUDE.md: The Practical Guide to Project Memory</h1>
+
+    <p class="subtitle">CLAUDE.md is how you give Claude Code a persistent understanding of your project. Most developers underuse it. Some overuse it. Here is what actually belongs in it — and the one thing it cannot do.</p>
+
+    <div class="meta">
+      <span class="meta-date">May 2026</span>
+      <span class="meta-tag">AI Coding</span>
+      <span class="meta-read">~1,700 words</span>
+    </div>
+
+    <div class="article-body">
+
+      <p>Claude Code loses all context when a session ends. That is not a limitation of the tool — it is a property of how large language models work. Each session starts fresh, with no memory of what you discussed, what files you read, what decisions you made, or what you were in the middle of building.</p>
+
+      <p><code>CLAUDE.md</code> is the designed solution to this. It is a markdown file that Claude Code reads at the start of every session, injecting project-level context before you write your first message. Done well, it means Claude Code understands your codebase architecture, your conventions, your deployment targets, and your non-obvious constraints without you having to explain them every time.</p>
+
+      <p>Done poorly, it adds noise that consumes context without providing value — and it still does not solve the problem people most often want it to solve.</p>
+
+      <h2>Where CLAUDE.md files live</h2>
+
+      <p>Claude Code supports <code>CLAUDE.md</code> files at three levels, each with different scope:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Scope</th>
+            <th>Use for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-label"><code>~/.claude/CLAUDE.md</code></td>
+            <td>All projects on this machine</td>
+            <td>Global preferences, tools you always use, your working style</td>
+          </tr>
+          <tr>
+            <td class="td-label"><code>./CLAUDE.md</code></td>
+            <td>Current project only</td>
+            <td>Project architecture, conventions, commands, non-obvious constraints</td>
+          </tr>
+          <tr>
+            <td class="td-label"><code>./subdir/CLAUDE.md</code></td>
+            <td>Subdirectory scope</td>
+            <td>Service-specific context when working in a monorepo</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>All applicable <code>CLAUDE.md</code> files are loaded at session start, in order from global to local. Project-level overrides global where they conflict.</p>
+
+      <p>The contents count against the context window. A global <code>CLAUDE.md</code> at 800 tokens and a project <code>CLAUDE.md</code> at 1,200 tokens adds 2,000 tokens to every session before you write anything. That is small compared to a 200,000-token context window. It becomes meaningful if your <code>CLAUDE.md</code> files grow unchecked.</p>
+
+      <h2>What to put in CLAUDE.md</h2>
+
+      <p>The question is not "what does Claude Code need to know?" The question is "what would I have to explain at the start of every session if CLAUDE.md did not exist?" Those are different questions.</p>
+
+      <p>The first leads to documentation. The second leads to useful session context.</p>
+
+      <p><strong>High-ROI content:</strong></p>
+      <ul>
+        <li><strong>How to run the project.</strong> The exact commands to build, test, and run. Not documentation prose — the commands themselves, formatted so Claude Code can use them directly.</li>
+        <li><strong>Non-obvious architecture decisions.</strong> Why the service is split the way it is. Why the data model is shaped the way it is. Not what it is — that is derivable from the code. Why it is.</li>
+        <li><strong>Active constraints and in-progress work.</strong> What you are not changing right now and why. What is broken on purpose. What is temporary.</li>
+        <li><strong>Coding conventions that are not enforced by tooling.</strong> If your linter enforces it, Claude Code will see it in the code. If it is informal convention, put it in CLAUDE.md.</li>
+        <li><strong>Key files and their purpose.</strong> In a large codebase, the file that controls X or the file where Y is configured is not obvious. A short map of non-obvious locations saves a read operation every session.</li>
+      </ul>
+
+      <pre><code># Project: Payments Service
+
+## Build and test
+cargo build --release
+cargo test -- --nocapture
+cargo clippy --all-targets
+
+## Architecture
+- src/handlers/ — HTTP entry points only. No business logic.
+- src/domain/ — Business logic. No I/O. Pure functions where possible.
+- src/infra/ — DB, external API clients, event publishers.
+Domain layer must not import from infra layer. This is enforced by module visibility.
+
+## Active constraints (as of 2026-05-07)
+- Do NOT touch src/infra/stripe.rs — migration in progress, PR #441 owns it.
+- The settlement reconciler (src/domain/settle.rs) has a known off-by-one on DST boundaries. Not fixing until next quarter. Do not "fix" it.
+
+## Non-obvious files
+- config/feature-flags.toml — runtime feature flags, loaded at startup
+- scripts/seed-dev.sh — populate a local dev DB with realistic test data</code></pre>
+
+      <p><strong>Low-ROI content that adds noise:</strong></p>
+      <ul>
+        <li>General descriptions of what the project does (derivable from the README Claude Code will read anyway)</li>
+        <li>Lists of every file and what each one contains (Claude Code reads the directory structure itself)</li>
+        <li>Generic instructions like "write clean code" or "follow best practices"</li>
+        <li>Outdated information you have not updated in months</li>
+      </ul>
+
+      <div class="callout">
+        <p>CLAUDE.md is not documentation. It is a briefing. The right length is the length of a good meeting briefing: enough to get someone up to speed quickly, not a complete record of everything that has ever been decided. If your CLAUDE.md is longer than 400 lines, it is probably carrying documentation weight it should not carry.</p>
+      </div>
+
+      <h2>The global CLAUDE.md: personal working style</h2>
+
+      <p>The global <code>~/.claude/CLAUDE.md</code> is where you encode how you want Claude Code to work with you across all projects. This is genuinely useful because it removes friction on preferences that should apply everywhere but are not enforced by any project-level convention.</p>
+
+      <p>Useful global entries:</p>
+      <ul>
+        <li>Your preferred response style (terse or detailed, code-first or explanation-first)</li>
+        <li>Tools or commands you always want Claude Code to have available</li>
+        <li>Security guardrails you want enforced globally (never run <code>rm -rf</code> without confirmation, always read a file before editing it)</li>
+        <li>Commit message style or PR body format you use across all projects</li>
+        <li>The model behavior you want when you give an unclear instruction (ask for clarification vs. make a reasonable assumption and proceed)</li>
+      </ul>
+
+      <pre><code># Global — applies to all projects
+
+## Response style
+Lead with the code or command. Explanation after, not before.
+One sentence of context is enough. Do not explain what you are about to do — do it.
+
+## Safety rules
+Always read a file before editing it.
+Never delete files without listing them first and confirming.
+When in doubt about destructive operations, ask.
+
+## Commit messages
+Imperative mood, 50 chars or less for the subject.
+Reference issue number if one exists.
+No co-author footers unless I ask for them.</code></pre>
+
+      <h2>Keeping CLAUDE.md current</h2>
+
+      <p>A CLAUDE.md that is six months out of date is worse than no CLAUDE.md. It actively misleads — Claude Code will confidently follow instructions that no longer apply, use commands that have changed, avoid constraints that have been resolved, and preserve architecture decisions that have been replaced.</p>
+
+      <p>The maintenance pattern that works: treat CLAUDE.md as a living document that changes alongside the codebase. When a constraint is lifted, remove the constraint. When a non-obvious file moves, update the path. When the build command changes, update it immediately — not at the end of the PR, in the same commit.</p>
+
+      <p>One useful heuristic: if you would be embarrassed to show your CLAUDE.md to a new hire as a project orientation document, it needs a pass. Either it contains things that do not belong there, or it is missing things that a new person would need to know.</p>
+
+      <h2>What CLAUDE.md cannot do</h2>
+
+      <p>CLAUDE.md solves the cross-session problem for static project context. It does not solve two classes of problems that engineers frequently want it to solve:</p>
+
+      <p><strong>1. Mid-session context loss.</strong> When Claude Code's context window fills during a long session, CLAUDE.md is already loaded. It does not help you recover the decisions you made, the files you read mid-session, the approach you were taking, or the partial work in progress. The context limit clears all of that regardless of what CLAUDE.md contains.</p>
+
+      <p><strong>2. Dynamic session state.</strong> CLAUDE.md is read once at session start. It cannot capture what happened in the current session. If you make an architectural decision mid-session, that decision lives in the conversation context. It does not flow back into CLAUDE.md automatically, and it is not available to the next session unless you manually update the file.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">Read</div>
+          <div class="stat-label">once at session start — not updated as you work</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">Static</div>
+          <div class="stat-label">context only — no mid-session state capture</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">0</div>
+          <div class="stat-label">protection against mid-session context limit loss</div>
+        </div>
+      </div>
+
+      <p>These are not criticisms of CLAUDE.md. They are boundaries. CLAUDE.md is the right tool for project-level static context. It is not the right tool for session continuity.</p>
+
+      <h2>The session continuity gap</h2>
+
+      <p>The gap CLAUDE.md does not fill is the one engineers feel most acutely: picking up a long session after the context window fills, or after a day boundary, or after a context switch to a different task. The session was making progress. That progress is not in CLAUDE.md. It is in the conversation that is now gone.</p>
+
+      <p>What fills this gap is not a better CLAUDE.md strategy. It is structured session handoffs — capturing the working state of a session (decisions made, files read, current task state, what remains) into a compact format that a new session can load and continue from.</p>
+
+      <p>This is what <a href="https://bringyour.ai" style="color: var(--terra);">Bring Your AI</a> does. It is a portable coding harness that handles the handoff layer: when your session hits the context limit, it exports the structured session state. The next session — in Claude Code, Codex, or Cursor — loads the handoff and continues without re-explaining the full task.</p>
+
+      <pre><code># When Claude Code hits the context limit mid-refactor:
+$ bya export --session current
+Exported: .bya/handoff-2026-05-07T09:18.json
+
+# Resume in a fresh Claude Code session:
+$ claude --import .bya/handoff-2026-05-07T09:18.json
+
+# Or hand off to Codex:
+$ codex --import .bya/handoff-2026-05-07T09:18.json</code></pre>
+
+      <p>The handoff is not a transcript. It is structured state: the task definition, the approach, the decisions, the current partial artifacts, and what the next session needs to do. Small enough to fit well within a fresh context window. Structured enough that any capable AI coding assistant can resume without extended re-explanation.</p>
+
+      <h2>CLAUDE.md + session handoffs: the complete picture</h2>
+
+      <p>The two tools are complementary, not overlapping:</p>
+
+      <ul>
+        <li><strong>CLAUDE.md</strong> handles project-level persistent context — architecture, conventions, commands, constraints. It is written by humans, updated alongside the codebase, and read by Claude Code at every session start.</li>
+        <li><strong>Session handoffs</strong> handle the dynamic state of in-progress work — what was being done, what decisions were made during the session, what the partial state is. They are generated automatically at the point of interruption and consumed by the next session.</li>
+      </ul>
+
+      <p>The engineers who get the most consistent value from AI coding assistants have both: a maintained CLAUDE.md that reliably provides project context, and a handoff discipline that makes any interruption — context limit, end of day, tool switch — recoverable without starting over.</p>
+
+      <p>Most developers have the CLAUDE.md part and are still losing work to context limits. The handoff layer is the missing piece.</p>
+
+      <div class="article-cta">
+        <p>Bring Your AI is a portable coding harness for Claude Code, Codex, and Cursor. Export your session state when you hit the context limit and resume in any tool without losing your work.</p>
+        <a href="https://bringyour.ai">Try Bring Your AI &rarr;</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="/">8bitconcepts</a> &nbsp;&middot;&nbsp;
+    <a href="/research/">Research</a> &nbsp;&middot;&nbsp;
+    <a href="/diagnostic.html">AI Diagnostic</a> &nbsp;&middot;&nbsp;
+    <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a>
+  </footer>
+</body>
+</html>
