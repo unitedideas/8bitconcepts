@@ -39,6 +39,8 @@ URLS_TO_SUBMIT = [
     "/local/",
     "/research/the-agentic-commerce-gap.html",
     "/research/claude-code-vs-cursor.html",
+    "/local/battle-ground-wa.html",
+    "/local/sherwood-or.html",
 ]
 
 def get_indexnow_key() -> str:
