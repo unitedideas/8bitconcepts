@@ -357,6 +357,8 @@ def cmd_followup(hours_after=96):
     followup_due = []
 
     for email_addr, record in sent.items():
+        if record.get("delivery_status") in ("bounced", "failed", "suppressed"):
+            continue
         sent_at = datetime.fromisoformat(record.get("sent_at", ""))
         age = now - sent_at
         if age.total_seconds() > hours_after * 3600:
