@@ -32,6 +32,10 @@ URLS_TO_SUBMIT = [
     "/research/the-self-testing-layer.html",
     "/research/on-device-inference.html",
     "/research/q2-2026-ai-hiring-geography.html",
+    "/local/beaverton-or.html",
+    "/local/hillsboro-or.html",
+    "/local/lake-oswego-or.html",
+    "/local/",
 ]
 
 def get_indexnow_key() -> str:
