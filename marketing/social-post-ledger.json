@@ -1584,6 +1584,46 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "research-backlog-the-validation-gap-linkedin-2026-05-06",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "research/the-validation-gap.html",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-06",
+      "posted_at": "2026-05-06T04:51:29Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7457653004180271104",
+      "route": "https://8bitconcepts.com/research/the-validation-gap.html",
+      "fact_key": "research-backlog:the-validation-gap:linkedin",
+      "fingerprint": "ef78908a32f5fb11",
+      "text": "Most AI pipelines can tell whether a run happened. Fewer can tell whether the work survived the handoff.\n\nThat is the validation gap: output moves from model to workflow to user-facing system, and silent degradation can happen at every boundary. The data is valid enough to pass forward, but wrong enough to matter.\n\nThe useful fix is boundary-specific validation: schema checks, semantic constraints, stage-level halt logic, runtime evaluation, behavioral monitoring, final artifact quality checks, and rollback criteria.\n\nSource:\nhttps://8bitconcepts.com/research/the-validation-gap.html",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-validation-gap.html returned HTTP 200",
+        "The source headline is The Validation Gap",
+        "The source says most engineering teams can tell whether their AI pipeline ran, but almost none can tell whether it worked",
+        "The source describes silent degradation between multi-stage AI workflow steps where outputs are syntactically valid but semantically wrong",
+        "The source recommends schema checks, semantic constraints, stage-level halt logic, runtime evaluation, behavioral monitoring, final artifact quality checks, and rollback criteria",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts business URL"
+      ],
+      "posting_attempts": [
+        {
+          "route": "direct_voyager_cookie_api",
+          "result": "created_unverified",
+          "detail": "LinkedIn API returned share URL https://www.linkedin.com/feed/update/urn:li:share:7457653004180271104 but the script's authenticated live verification failed"
+        },
+        {
+          "route": "public_live_url_check",
+          "result": "verified",
+          "detail": "The live LinkedIn URL returned HTTP 200 and contained the approved copy fragments plus Shane Cheek identity"
+        }
+      ],
+      "identity_verified": "Shane Cheek / Founder at 8bitconcepts verified by the LinkedIn posting script before the direct Voyager post",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Posted from the clean LinkedIn-only publisher after 6-hour cadence gate, duplicate check, social-editor approval, and sync-state social-content lock ef78908a32f5fb11."
     }
   ]
 }
