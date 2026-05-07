@@ -402,6 +402,10 @@ def targeted_queue_item(
         "asset_brief": "Small source-backed stat card: role count, top tags, sample roles, operator question.",
         "route": sources["adb_company"],
         "research_sources": usable_source_links(research),
+        "fingerprint": {
+            "x": x_fingerprint,
+            "linkedin": linkedin_fingerprint,
+        },
         "research_findings": {
             "indexed_roles": research["total_roles"],
             "rank": research.get("rank"),

@@ -214,15 +214,25 @@ def fingerprint(text: str) -> str:
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:16]
 
 
-def posted_fingerprints() -> set[str]:
+def posted_fingerprints(target: date | None = None) -> set[str]:
     if not LEDGER_PATH.exists():
         return set()
     data = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
-    return {
-        item["fingerprint"]
-        for item in data.get("items", [])
-        if item.get("status") in {"posted", "scheduled", "queued", "claimed", "deferred_recent_related_post"}
-    }
+    fingerprints: set[str] = set()
+    for item in data.get("items", []):
+        if item.get("status") not in {"posted", "scheduled", "queued", "claimed", "deferred_recent_related_post"}:
+            continue
+        if (
+            target
+            and item.get("status") == "queued"
+            and item.get("source") == "marketing/daily-ai-insights-queue.json"
+            and item.get("date") == target.isoformat()
+        ):
+            continue
+        item_fingerprint = item.get("fingerprint")
+        if item_fingerprint:
+            fingerprints.add(item_fingerprint)
+    return fingerprints
 
 
 def posted_fact_keys(within_days: int = 14) -> set[str]:
@@ -326,7 +336,7 @@ def queue_item(target: date, slot: str, topic: dict[str, str]) -> dict[str, obje
     route = topic["route"]
     x_copy = f"{body}\n\nMore field notes: {route}"
     linkedin_copy = f"{body}\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\n{route}"
-    existing = posted_fingerprints()
+    existing = posted_fingerprints(target)
     x_fingerprint = fingerprint(x_copy)
     linkedin_fingerprint = fingerprint(linkedin_copy)
     return {
@@ -341,6 +351,10 @@ def queue_item(target: date, slot: str, topic: dict[str, str]) -> dict[str, obje
         "asset_brief": topic["asset"],
         "route": route,
         "funnel": topic["offering"],
+        "fingerprint": {
+            "x": x_fingerprint,
+            "linkedin": linkedin_fingerprint,
+        },
         "channels": {
             "x": {
                 "account": X_ACCOUNT,
@@ -391,6 +405,10 @@ def research_fact_queue_item(
         "funnel": fact["funnel"],
         "fact_key": fact["fact_key"],
         "research_sources": [route],
+        "fingerprint": {
+            "x": x_fingerprint,
+            "linkedin": linkedin_fingerprint,
+        },
         "channels": {
             "x": {
                 "account": X_ACCOUNT,
@@ -446,7 +464,7 @@ Machine queue: `marketing/daily-ai-insights-queue.json`
 
 def render_queue(target: date) -> dict[str, object]:
     targeted = build_target_research(target)
-    existing = posted_fingerprints()
+    existing = posted_fingerprints(target)
     fact_items = [
         research_fact_queue_item(target, fact, existing)
         for fact in pick_research_facts(target)
