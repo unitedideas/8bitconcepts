@@ -3,6 +3,54 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "observability-blind-spot-linkedin-2026-05-07",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "8bit-research-backlog:the-observability-blind-spot",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "failed",
+      "severity": "loud",
+      "date": "2026-05-07",
+      "failed_at": "2026-05-07T19:28:25Z",
+      "route": "https://8bitconcepts.com/research/the-observability-blind-spot.html",
+      "fingerprint": "b2c3cb74408d410c",
+      "text": "Traditional APM can tell us whether a service is up, fast enough, throwing errors, and where the bottleneck is.\n\nThat does not cover the production AI failure mode. A 200 OK from an LLM endpoint only proves the model received a prompt and returned tokens. It does not prove the answer was accurate, relevant, on-brand, safe, grounded in retrieved context, or appropriate.\n\nThat leaves semantic drift, prompt regression, context saturation, and retrieval failure outside the normal green-dashboard view.\n\nField note:\nhttps://8bitconcepts.com/research/the-observability-blind-spot.html",
+      "blocker": "LinkedIn auth hard stop: direct Voyager cookies rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn Login / We're signing you in for h*****@8bitconcepts.com instead of reaching the feed.",
+      "posting_attempts": [
+        {
+          "route": "direct_voyager_cookie_api",
+          "result": "blocked",
+          "detail": "All LinkedIn cookie sources rejected; chrome-profile-3 returned 302 before identity verification. No public POST occurred."
+        },
+        {
+          "route": "page_context_voyager_api",
+          "result": "blocked",
+          "detail": "LinkedIn /voyager/api/me returned 401 from the Brave page context. No public POST occurred."
+        },
+        {
+          "route": "approved_one_shot_browser_recovery",
+          "result": "blocked",
+          "detail": "Browser composer path stayed on LinkedIn Login / We're signing you in for h*****@8bitconcepts.com. No public POST occurred."
+        }
+      ],
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-observability-blind-spot.html returned HTTP 200.",
+        "https://8bitconcepts.com/ returned HTTP 200 and systems/foundry-business-index.md lists 8bitconcepts at https://8bitconcepts.com/.",
+        "The source page title is The Observability Blind Spot.",
+        "The source page says traditional APM answers whether a service is up, fast enough, throwing errors, and where the bottleneck is.",
+        "The source page says a 200 OK from an LLM endpoint only means the model received a prompt and returned tokens; it does not prove the answer was accurate, relevant, on-brand, safe, grounded in retrieved context, or appropriate.",
+        "The source page names semantic drift, prompt regression, context saturation, and retrieval failure as production AI failure modes not caught by normal infrastructure monitoring."
+      ],
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "social_editor": "approved; No scoped memory update needed",
+      "operator_closeouts": {
+        "linkedin-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "note": "No public LinkedIn post was created; latest LinkedIn posted ledger entry is older than 3 hours, so sync-state automation-events records a loud failure for watchdog force-wake."
+    },
+    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
