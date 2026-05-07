@@ -1606,6 +1606,40 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "guardrails-gap-linkedin-2026-05-07",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "failed",
+      "failed_at": "2026-05-07T17:59:24.300Z",
+      "fingerprint": "1c5090b96cd2456a",
+      "route": "https://8bitconcepts.com/research/the-guardrails-gap.html",
+      "fact_key": "8bit-research-backlog:guardrails-gap:action-risk",
+      "format": "research backlog",
+      "copy": "AI guardrails built for output risk do not cover action risk.\n\nA content filter cannot constrain an agent that has permission to call tools, write to databases, send email, execute code, or mutate systems.\n\nThe control point has to move to the action boundary: runtime authorization, short-lived least-privilege credentials, full action tracing, continuous behavioral evaluation, and explicit escalation thresholds for irreversible, external, financial, or production-data actions.\n\nThe Guardrails Gap:\nhttps://8bitconcepts.com/research/the-guardrails-gap.html",
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "blocker": "LinkedIn auth hard stop: direct Voyager cookies rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn Login / We’re signing you in for h*****@8bitconcepts.com instead of reaching the feed.",
+      "attempts": [
+        "direct_voyager_cookie_api: cookie sources rejected; chrome-profile-3 returned 302",
+        "page_context_voyager_api: /voyager/api/me returned 401",
+        "one_shot_browser_recovery: LinkedIn login page stayed on We’re signing you in for h*****@8bitconcepts.com"
+      ],
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-guardrails-gap.html returned HTTP 200.",
+        "https://8bitconcepts.com/ returned HTTP 200 and the portfolio business index lists 8bitconcepts at https://8bitconcepts.com.",
+        "The source page title is The Guardrails Gap.",
+        "The source page states that output-era AI guardrails assumed the AI talks and humans act.",
+        "The source page states that in 2026 agentic systems can write to databases, call APIs, send emails, execute code, and trigger payments.",
+        "The source page recommends runtime authorization, short-lived least-privilege credentials, action tracing, continuous behavioral evaluation, and explicit escalation thresholds for irreversible, external, financial, or production-data actions."
+      ],
+      "operator_closeouts": {
+        "linkedin-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "note": "No public LinkedIn post went live; latest LinkedIn posted ledger entry is older than 3 hours, so sync-state automation-events records a loud failure for watchdog force-wake."
     }
   ]
 }
