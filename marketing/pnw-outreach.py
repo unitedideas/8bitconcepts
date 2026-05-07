@@ -45,9 +45,12 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from _outreach_guards import RESEND_REQUIRED_USER_AGENT, is_sendable_email, self_check_outreach_guards
+
 SCRIPT_DIR = Path(__file__).parent
 TARGETS_FILE = SCRIPT_DIR / "pnw-smb-targets.csv"
 SENT_FILE = SCRIPT_DIR / "pnw-outreach-sent.json"
+SUPPRESSIONS_FILE = SCRIPT_DIR / "suppressions.json"
 RESEND_API_URL = "https://api.resend.com/emails"
 FROM_EMAIL = "Shane at 8bitconcepts <hello@8bitconcepts.com>"
 
@@ -201,6 +204,19 @@ def load_sent():
     return {item.get("email"): item for item in sent_list}
 
 
+def load_suppressed_emails():
+    """Load local suppression ledger; return normalized email addresses."""
+    if not SUPPRESSIONS_FILE.exists():
+        return set()
+    with open(SUPPRESSIONS_FILE) as f:
+        data = json.load(f)
+    return {
+        item.get("email", "").strip().lower()
+        for item in data.get("emails", [])
+        if item.get("email")
+    }
+
+
 def save_sent(sent_records):
     """Save sent log (list of dicts)."""
     with open(SENT_FILE, "w") as f:
@@ -232,12 +248,19 @@ def cmd_status():
     targets = load_targets()
     sent = load_sent()
     sent_emails = set(sent.keys())
+    suppressed = load_suppressed_emails()
+    sendable_targets = [
+        t for t in targets
+        if is_sendable_email(t.get("email", "")) and t.get("email", "").strip().lower() not in suppressed
+    ]
 
     print(f"\nPNW SMB Outreach Status")
     print(f"======================")
     print(f"Total targets: {len(targets)}")
     print(f"Already sent: {len(sent_emails)}")
-    print(f"Pending: {len(targets) - len(sent_emails)}")
+    print(f"Sendable targets: {len(sendable_targets)}")
+    print(f"Blocked or LinkedIn-only: {len(targets) - len(sendable_targets)}")
+    print(f"Pending sendable: {len([t for t in sendable_targets if t.get('email') not in sent_emails])}")
 
     if targets:
         print(f"\nIndustry breakdown:")
@@ -265,6 +288,7 @@ def send_via_resend(to_email, subject, body, api_key):
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json',
+        'User-Agent': RESEND_REQUIRED_USER_AGENT,
     }
     data = {
         'from': FROM_EMAIL,
@@ -295,8 +319,14 @@ def cmd_send(limit=None, dry_run=False):
     sent = load_sent()
     sent_emails = set(sent.keys())
     sent_list = list(sent.values()) if isinstance(sent, dict) else sent
+    suppressed = load_suppressed_emails()
 
-    pending = [t for t in targets if t.get("email") and t.get("email") not in sent_emails]
+    pending = [
+        t for t in targets
+        if is_sendable_email(t.get("email", ""))
+        and t.get("email") not in sent_emails
+        and t.get("email", "").strip().lower() not in suppressed
+    ]
     if limit:
         pending = pending[:limit]
 
@@ -387,6 +417,8 @@ Wanted to check if you had a chance to look at the research — if it resonates,
 
 
 if __name__ == "__main__":
+    self_check_outreach_guards()
+
     parser = argparse.ArgumentParser(description="PNW SMB Outreach")
     subparsers = parser.add_subparsers(dest="command")
 
