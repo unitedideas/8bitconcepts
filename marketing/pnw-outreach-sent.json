@@ -5,14 +5,9 @@
     "subject": "AI for Atlantic & Pacific Freightways dispatch + invoicing",
     "sent_at": "2026-04-29T00:45:47.598187+00:00",
     "message_id": "bd888b5e-7331-478a-bbec-f46ca26aee42",
-    "followup_sent": true,
-    "followup_sent_at": "2026-05-06T14:46:00Z",
-    "followup_message_id": "9dc1aa8d-ee4f-4d11-be7c-7645c3d340d7",
-    "followup_note": "Marked from sync-state public-action lock email-outreach/87845d241a85a2af to prevent another duplicate follow-up send.",
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_delivery_status": "delivered",
-    "followup_delivery_checked_at": "2026-05-07T17:34:48.588312+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "guy@pacnwtax.com",
@@ -20,14 +15,9 @@
     "subject": "AI for Pacific Northwest Tax and Accounting Services \u2014 without the disruption",
     "sent_at": "2026-04-29T00:45:47.889611+00:00",
     "message_id": "f2f41763-550b-402a-90c8-f472d6c7bd0c",
-    "followup_sent": true,
-    "followup_sent_at": "2026-05-06T14:46:00Z",
-    "followup_message_id": "6ce2e084-fd2a-4f47-a6e0-2ebacb579e2b",
-    "followup_note": "Marked from sync-state public-action lock email-outreach/87845d241a85a2af to prevent another duplicate follow-up send.",
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_delivery_status": "delivered",
-    "followup_delivery_checked_at": "2026-05-07T17:34:48.588312+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "dsfabinc@gmail.com",
@@ -35,14 +25,9 @@
     "subject": "A small note about your shop floor",
     "sent_at": "2026-04-29T00:45:48.121453+00:00",
     "message_id": "1da03425-f848-4b10-b382-b9b1983368be",
-    "followup_sent": true,
-    "followup_sent_at": "2026-05-06T14:46:00Z",
-    "followup_message_id": "d8591859-2b95-4b4d-a82e-9d2a60522d3b",
-    "followup_note": "Marked from sync-state public-action lock email-outreach/87845d241a85a2af to prevent another duplicate follow-up send.",
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_delivery_status": "delivered",
-    "followup_delivery_checked_at": "2026-05-07T17:34:48.588312+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "siany@jjh-law.com",
@@ -50,14 +35,9 @@
     "subject": "AI for JJH Law \u2014 without the disruption",
     "sent_at": "2026-04-29T00:45:48.420552+00:00",
     "message_id": "74d5ee72-b7e2-45e9-bea2-04860bea5a71",
-    "followup_sent": true,
-    "followup_sent_at": "2026-05-06T14:46:00Z",
-    "followup_message_id": "e0b74cb0-27f2-49c4-b810-5335bfe54f26",
-    "followup_note": "Marked from sync-state public-action lock email-outreach/87845d241a85a2af to prevent another duplicate follow-up send.",
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_delivery_status": "delivered",
-    "followup_delivery_checked_at": "2026-05-07T17:34:48.588312+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "info@gulicklogistics.com",
@@ -67,7 +47,6 @@
     "sent_at": "2026-04-29T00:52:04.311222+00:00",
     "message_id": "56555ee2-a1af-4d95-ba78-26cb32329e48",
     "followup_sent": false,
-    "followup_blocked_reason": "delivery_status=suppressed",
     "delivery_status": "suppressed",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
@@ -78,14 +57,9 @@
     "subject": "AI for Greear Kramer Monaghan CPAs \u2014 without the disruption",
     "sent_at": "2026-04-29T00:52:04.574039+00:00",
     "message_id": "93fddf3c-3326-4bc5-a0e9-8eb2fb327676",
-    "followup_sent": true,
-    "followup_sent_at": "2026-05-06T14:46:00Z",
-    "followup_message_id": "613bb439-48db-4d74-87ba-58524efd04f4",
-    "followup_note": "Marked from sync-state public-action lock email-outreach/87845d241a85a2af to prevent another duplicate follow-up send.",
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_delivery_status": "delivered",
-    "followup_delivery_checked_at": "2026-05-07T17:34:48.588312+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "info@brewercaley.com",
@@ -94,14 +68,9 @@
     "subject": "AI for Brewer Caley CPAs \u2014 without the disruption",
     "sent_at": "2026-04-29T00:52:04.905576+00:00",
     "message_id": "1608aa28-75a1-4646-89c4-da6512b507a3",
-    "followup_sent": true,
-    "followup_sent_at": "2026-05-06T14:46:00Z",
-    "followup_message_id": "78867d23-1592-4b0e-9ee0-2f40e4c0a8e6",
-    "followup_note": "Marked from sync-state public-action lock email-outreach/87845d241a85a2af to prevent another duplicate follow-up send.",
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_delivery_status": "delivered",
-    "followup_delivery_checked_at": "2026-05-07T17:34:48.588312+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "info@pickettinsurance.com",
@@ -110,14 +79,9 @@
     "subject": "AI for Pickett Insurance Agency \u2014 without the disruption",
     "sent_at": "2026-04-29T00:52:05.146566+00:00",
     "message_id": "476ea648-a931-45a5-a659-c988f22ea3f5",
-    "followup_sent": true,
-    "followup_sent_at": "2026-05-06T14:46:00Z",
-    "followup_message_id": "38adb930-c1c6-4cdc-adbd-3b1710d28e50",
-    "followup_note": "Marked from sync-state public-action lock email-outreach/87845d241a85a2af to prevent another duplicate follow-up send.",
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_delivery_status": "delivered",
-    "followup_delivery_checked_at": "2026-05-07T17:34:48.588312+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "ask@harlowwealth.com",
@@ -126,14 +90,9 @@
     "subject": "AI for Harlow Wealth Management \u2014 without the disruption",
     "sent_at": "2026-04-29T00:52:05.399357+00:00",
     "message_id": "e5f6b681-0b42-4868-b657-f1054a6deb0d",
-    "followup_sent": true,
-    "followup_sent_at": "2026-05-06T14:46:00Z",
-    "followup_message_id": "2baeb618-e7ef-4a89-a1a0-8af6bcb1b383",
-    "followup_note": "Marked from sync-state public-action lock email-outreach/87845d241a85a2af to prevent another duplicate follow-up send.",
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_delivery_status": "delivered",
-    "followup_delivery_checked_at": "2026-05-07T17:34:48.588312+00:00"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "sales@precise1.net",
@@ -143,7 +102,6 @@
     "sent_at": "2026-04-29T00:52:05.656073+00:00",
     "message_id": "9975f4c3-b5d8-49fc-bce3-59c4a32a4b68",
     "followup_sent": false,
-    "followup_blocked_reason": "delivery_status=bounced",
     "delivery_status": "bounced",
     "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   }
