@@ -3,6 +3,50 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "agentic-evidence-linkedin-2026-05-07-auth-blocked",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "portfolio-daily-agentic-evidence-fresh-2026-05-07",
+      "channel": "linkedin",
+      "account": "Shane Cheek / Founder at 8bitconcepts",
+      "status": "failed",
+      "severity": "loud",
+      "date": "2026-05-07",
+      "failed_at": "2026-05-07T19:00:20.217Z",
+      "route": "https://agentic-evidence.fly.dev",
+      "fingerprint": "4ecb0165ca15acb3",
+      "text": "Agentic Evidence is a narrow evidence layer for developer assessments.\n\nCandidates get a real developer VM. Reviewers get the Codex/Claude transcript, command trail, git snapshots, tests, and final evidence packet in one place.\n\nThe live health check has Stripe, Anthropic, and Fly Machines configured. The guardrails are concrete: 72-hour candidate sessions, 240-minute VM TTL, and a tamper-evident audit trail.\n\nThe point is not proctoring. It is making AI-assisted work inspectable enough to review.\n\nhttps://agentic-evidence.fly.dev",
+      "blocker": "LinkedIn auth hard stop: direct Voyager cookies rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn Login / We’re signing you in for h*****@8bitconcepts.com instead of reaching the feed.",
+      "posting_attempts": [
+        {
+          "route": "direct_voyager_cookie_api",
+          "result": "blocked",
+          "detail": "All LinkedIn cookie sources rejected; chrome-profile-3 returned 302 before identity verification. No public POST occurred."
+        },
+        {
+          "route": "page_context_voyager_api",
+          "result": "blocked",
+          "detail": "LinkedIn /voyager/api/me returned 401 from the Brave page context. No public POST occurred."
+        },
+        {
+          "route": "approved_one_shot_browser_recovery",
+          "result": "blocked",
+          "detail": "Browser composer path stayed on LinkedIn Login / We’re signing you in for h*****@8bitconcepts.com. No public POST occurred."
+        }
+      ],
+      "facts_verified": [
+        "https://agentic-evidence.fly.dev/ returned live homepage content for Agentic Evidence.",
+        "Homepage states candidates get a real developer VM and reviewers can review Codex/Claude transcripts, command trail, git snapshots, tests, and final evidence in one packet.",
+        "Homepage states founding access is $199/mo, 25 candidate sessions/month, and 2M estimated monthly token cap.",
+        "https://agentic-evidence.fly.dev/health returned ok=true with stripe=true, anthropic=true, flyMachines=true.",
+        "Health guardrails returned candidateSessionTtlHours=72, vmTtlMinutes=240, tamperEvidentAuditTrail=true.",
+        "https://agentic-evidence.fly.dev/llms.txt says Agentic Evidence is a developer-VM interview platform for retroactive Codex/Claude session review.",
+        "https://8bitconcepts.com/ returned HTTP 200 and systems/foundry-business-index.md lists 8bitconcepts at https://8bitconcepts.com/."
+      ],
+      "social_editor": "approved; No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "No public LinkedIn post was created; auth stopped before identity verification in all routes."
+    },
+    {
       "id": "beyond-the-prompt-linkedin-2026-05-07",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
