@@ -1773,7 +1773,7 @@
       "status": "blocked",
       "date": "2026-05-07",
       "post_time_local": "08:30",
-      "fingerprint": "1f43f219f1e3b162",
+      "fingerprint": "ac464dbda5705881",
       "fact_key": "targeted-research:cohere:88:generative-ai,search,agents",
       "route": "https://aidevboard.com/company/cohere",
       "format": "targeted documented research",
@@ -1791,20 +1791,20 @@
         "nhs_profile": "https://nothumansearch.ai/site/cohere.com",
         "official_source": "https://cohere.com/careers"
       },
-      "note": "Blocked after social-editor approval and lock claim; no public LinkedIn post occurred. Reuse only after LinkedIn auth is healthy and duplicate locks are rechecked.",
-      "blocked_at": "2026-05-07T15:02:08Z",
-      "blocker": "LinkedIn auth blocker: direct Voyager cookie sources rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn login 'We're signing you in' for h*****@8bitconcepts.com. No public post occurred.",
+      "note": "Blocked after social-editor approval and social-content lock claim; no public LinkedIn post occurred. Reuse only after LinkedIn auth is healthy and duplicate locks are rechecked.",
+      "blocked_at": "2026-05-07T16:03:28Z",
+      "blocker": "LinkedIn auth blocker: direct Voyager cookie sources rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn login 'We’re signing you in' for h*****@8bitconcepts.com. No public post occurred.",
       "original_fingerprint": "128fda49ccecd22b",
-      "final_copy": "Public hiring data gives a useful read on where Cohere is putting AI/ML capacity.\n\nAI Dev Board has 88 indexed Cohere roles, ranking 13th in the current company sample. The top active-role tags are generative-ai (17), search (17), agents (9), cloud (8), and llm (7).\n\nSample roles include Fine-Tuning Engineer, Backend Engineer — Enterprise AI Platform, and Engineering Manager, Agentic Platform. The average published salary in the indexed sample is $235,000.\n\nThe pattern is less about generic AI hiring and more about operational depth: enterprise AI platforms, fine-tuning, retrieval/search, agentic systems, and deployment surfaces.\n\nNHS adds the agent-readiness lens: cohere.com shows llms.txt and structured API signals, plus robots-ai and schema.org, with an agentic score of 50.\n\nData:\nhttps://aidevboard.com/company/cohere\nhttps://nothumansearch.ai/site/cohere.com",
+      "final_copy": "Cohere is 13th in the current AI Dev Board company sample, with 88 indexed roles and an average published salary of $235,000.\n\nThe active-role tags point to where the capacity is going: generative-ai (17), search (17), agents (9), cloud (8), and llm (7).\n\nSample roles include Fine-Tuning Engineer, Backend Engineer - Enterprise AI Platform, and Engineering Manager, Agentic Platform.\n\nNot Human Search gives cohere.com an agentic score of 50. The site shows llms.txt, AI-friendly robots, structured API, and schema.org signals, but no ai-plugin, OpenAPI, or MCP server signal in the current scan.\n\nData:\nhttps://aidevboard.com/company/cohere\nhttps://nothumansearch.ai/site/cohere.com",
       "social_editor_status": "approved",
-      "social_editor_note": "Trimmed the CTA question and tightened the NHS paragraph to verified signals only.",
+      "social_editor_note": "Approved; lifecycle closeout removed from public copy.",
       "facts_verified": [
         "https://aidevboard.com/api/v1/jobs?company=cohere&limit=100 returned HTTP 200 with total 88 and 20 jobs on page 1.",
         "https://aidevboard.com/api/v1/stats returned Cohere rank 13, roles 88, avg_salary 235000.",
         "Returned active-role tags were generative-ai 17, search 17, agents 9, cloud 8, llm 7.",
-        "Returned sample titles included Fine-Tuning Engineer, Backend Engineer — Enterprise AI Platform, and Engineering Manager, Agentic Platform.",
-        "https://aidevboard.com/company/cohere returned HTTP 200 and contained Cohere and 88.",
-        "https://nothumansearch.ai/api/v1/site/cohere.com returned agentic_score 50 with llms.txt, structured API, robots-ai, and schema.org signals.",
+        "Returned sample titles included Fine-Tuning Engineer, Backend Engineer - Enterprise AI Platform, and Engineering Manager, Agentic Platform.",
+        "https://aidevboard.com/company/cohere returned HTTP 200.",
+        "https://nothumansearch.ai/api/v1/site/cohere.com returned agentic_score 50 with llms.txt, robots-ai, structured API, and schema.org signals; ai-plugin, OpenAPI, and MCP server were false.",
         "https://cohere.com/careers returned HTTP 200.",
         "https://aidevboard.com/ and https://nothumansearch.ai/ returned HTTP 200 as portfolio business URLs."
       ],
@@ -1812,23 +1812,29 @@
         {
           "route": "direct_voyager_cookie_api",
           "result": "blocked",
-          "detail": "Initial run hit stale expected-headline false-negative; rerun with verified headline reached direct cookies, but all cookie sources rejected with 302. No public POST occurred."
+          "detail": "All LinkedIn cookie sources rejected; chrome-profile-3 returned 302 before identity verification. No public POST occurred."
         },
         {
           "route": "page_context_voyager_api",
           "result": "blocked",
-          "detail": "LinkedIn /voyager/api/me returned 401. No public POST occurred."
+          "detail": "LinkedIn /voyager/api/me returned 401 from the Brave page context. No public POST occurred."
         },
         {
           "route": "approved_one_shot_browser_recovery",
           "result": "blocked",
-          "detail": "Visible page stayed on LinkedIn login 'We're signing you in' for h*****@8bitconcepts.com after retry. No public POST occurred."
+          "detail": "Browser composer path stayed on LinkedIn login 'We’re signing you in' for h*****@8bitconcepts.com. No public POST occurred."
         }
       ],
       "operator_closeout": [
         "linkedin-operator: No scoped memory update needed",
         "social-editor: No scoped memory update needed"
-      ]
+      ],
+      "last_checked_at": "2026-05-07T16:03:28Z",
+      "last_blocker": "LinkedIn auth blocker: direct Voyager cookie sources rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn login 'We’re signing you in' for h*****@8bitconcepts.com. No public post occurred.",
+      "approved_final_copy": "Cohere is 13th in the current AI Dev Board company sample, with 88 indexed roles and an average published salary of $235,000.\n\nThe active-role tags point to where the capacity is going: generative-ai (17), search (17), agents (9), cloud (8), and llm (7).\n\nSample roles include Fine-Tuning Engineer, Backend Engineer - Enterprise AI Platform, and Engineering Manager, Agentic Platform.\n\nNot Human Search gives cohere.com an agentic score of 50. The site shows llms.txt, AI-friendly robots, structured API, and schema.org signals, but no ai-plugin, OpenAPI, or MCP server signal in the current scan.\n\nData:\nhttps://aidevboard.com/company/cohere\nhttps://nothumansearch.ai/site/cohere.com",
+      "approved_final_fingerprint": "ac464dbda5705881",
+      "url": null,
+      "posted_at": null
     },
     {
       "id": "daily-research-fact-2026-05-07-8bit-x",
