@@ -159,6 +159,14 @@ function parseOperation(mainJs, operationName) {
   };
 }
 
+function parseOperationOptional(mainJs, operationName) {
+  try {
+    return parseOperation(mainJs, operationName);
+  } catch (_) {
+    return null;
+  }
+}
+
 async function xWebConfig() {
   if (xWebConfigCache) return xWebConfigCache;
   const { cookie } = xCookieAuth();
@@ -186,6 +194,7 @@ async function xWebConfig() {
       DeleteTweet: parseOperation(mainJs, "DeleteTweet"),
       TweetResultByRestId: parseOperation(mainJs, "TweetResultByRestId"),
       UserByScreenName: parseOperation(mainJs, "UserByScreenName"),
+      UserTweets: parseOperationOptional(mainJs, "UserTweets"),
     },
   };
   return xWebConfigCache;
@@ -263,6 +272,41 @@ async function verifyTweetDirect(tweetId, text) {
   return Boolean(res.ok && fullText && normalize(fullText).includes(normalize(text).slice(0, 90)));
 }
 
+function collectTweets(value, tweets = []) {
+  if (!value || typeof value !== "object") return tweets;
+  if (value.legacy && value.legacy.full_text && value.rest_id) {
+    tweets.push(value);
+  }
+  for (const child of Object.values(value)) {
+    if (child && typeof child === "object") collectTweets(child, tweets);
+  }
+  return tweets;
+}
+
+async function findPostedTweetDirect(expectedHandle, text) {
+  const account = await verifyAccountDirect(expectedHandle);
+  const config = await xWebConfig();
+  const op = config.operations.UserTweets;
+  if (!op) throw new Error("could not find X UserTweets operation metadata");
+  const query = new URLSearchParams({
+    variables: JSON.stringify({ userId: account.id, count: 20, includePromotedContent: false, withQuickPromoteEligibilityTweetFields: true, withVoice: false }),
+    features: JSON.stringify(op.features),
+    fieldToggles: JSON.stringify(op.fieldToggles),
+  });
+  const res = await xApiRequest("GET", `/i/api/graphql/${op.queryId}/UserTweets?${query}`);
+  if (!res.ok || !res.json) {
+    throw new Error(`X direct timeline fetch failed: ${JSON.stringify({ status: res.status, errors: res.json && res.json.errors, text: res.text ? res.text.slice(0, 500) : "" })}`);
+  }
+  const target = normalize(text);
+  const prefix = target.slice(0, 90);
+  const tweet = collectTweets(res.json).find(item => {
+    const fullText = normalize(item.legacy && item.legacy.full_text || "");
+    return fullText === target || fullText.includes(prefix);
+  });
+  if (!tweet) throw new Error("X direct timeline did not contain the expected post text");
+  return `${PROFILE_BASE}/${account.screenName}/status/${tweet.rest_id}`;
+}
+
 async function postOrDryRunDirect(args, text) {
   const account = await verifyAccountDirect(args.expectedHandle);
   if (args.dryRun) {
@@ -271,6 +315,12 @@ async function postOrDryRunDirect(args, text) {
     return;
   }
   await xWebConfig();
+  try {
+    const existingUrl = await findPostedTweetDirect(args.expectedHandle, text);
+    if (args.json) console.log(JSON.stringify({ ok: true, url: existingUrl, verified: true, method: "x_direct_existing_recovery" }));
+    else console.log(existingUrl);
+    return;
+  } catch (_) {}
   const op = xWebConfigCache.operations.CreateTweet;
   const created = await xApiRequest("POST", `/i/api/graphql/${op.queryId}/CreateTweet`, createTweetPayload(text));
   const tweet = created.json && created.json.data && created.json.data.create_tweet && created.json.data.create_tweet.tweet_results && created.json.data.create_tweet.tweet_results.result;
@@ -278,12 +328,14 @@ async function postOrDryRunDirect(args, text) {
   const fullText = tweet && tweet.legacy && tweet.legacy.full_text;
   if (created.ok && !tweetId) {
     // X returned 2xx without a usable tweet ID. Body may be empty, empty {}, or a JSON object that lacks data.create_tweet.tweet_results.result.
-    // In any of these cases the post may have been silently created — verify via profile before throwing or falling back.
-    verifyAccount(args.expectedHandle);
+    // In any of these cases the post may have been silently created — verify through the authenticated timeline before any browser fallback.
     let recoveredUrl = null;
     for (let attempt = 0; attempt < 3 && !recoveredUrl; attempt++) {
       if (attempt > 0) sleep(15000);
-      try { recoveredUrl = findPostedTweet(args.expectedHandle, text); } catch (_) {}
+      try { recoveredUrl = await findPostedTweetDirect(args.expectedHandle, text); } catch (_) {}
+      if (!recoveredUrl) {
+        try { recoveredUrl = findPostedTweet(args.expectedHandle, text); } catch (_) {}
+      }
     }
     if (recoveredUrl) {
       if (args.json) console.log(JSON.stringify({ ok: true, url: recoveredUrl, verified: true, method: "x_direct_empty_200_recovery" }));
