@@ -3,6 +3,63 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "beyond-the-prompt-linkedin-2026-05-07",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "failed",
+      "failed_at": "2026-05-07T18:31:36Z",
+      "fingerprint": "d58f27b1118120e9",
+      "route": "https://8bitconcepts.com/research/beyond-the-prompt.html",
+      "fact_key": "8bit-research-backlog:beyond-the-prompt:maturity-ladder",
+      "format": "research backlog",
+      "copy": "Most companies think they have an AI agent problem. They have a process maturity problem.\n\nThe teams shipping reliable production agentic systems are not doing it because they have better models. They moved through an engineering maturity progression:\n\nL1 conversational prompting\nL2 planning first\nL3 skills\nL4 agents as infrastructure\nL5 orchestration\nL6 systematic validation\n\nThe highest-leverage transition is L2 to L3: moving individual expertise into a versioned, maintained skill library the team can reuse.\n\nBeyond the Prompt:\nhttps://8bitconcepts.com/research/beyond-the-prompt.html",
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "blocker": "LinkedIn auth hard stop: direct Voyager cookies rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn Login / We’re signing you in for h*****@8bitconcepts.com instead of reaching the feed.",
+      "attempts": [
+        "direct_voyager_cookie_api: cookie sources rejected; chrome-profile-3 returned 302",
+        "page_context_voyager_api: /voyager/api/me returned 401",
+        "one_shot_browser_recovery: LinkedIn login page stayed on We’re signing you in for h*****@8bitconcepts.com"
+      ],
+      "facts_verified": [
+        "https://8bitconcepts.com/research/beyond-the-prompt.html returned HTTP 200.",
+        "https://8bitconcepts.com/ returned HTTP 200 and the portfolio business index lists 8bitconcepts at https://8bitconcepts.com.",
+        "The source page title is Beyond the Prompt.",
+        "The source page states: Most companies think they have an AI agent problem. They have a process maturity problem.",
+        "The source page states teams shipping reliable production agentic systems are not doing it because they have better models; they moved through an engineering maturity progression.",
+        "The source page maturity ladder includes L1 conversational prompting, L2 planning first, L3 skills, L4 agents as infrastructure, L5 orchestration, and L6 systematic validation.",
+        "The source page states the highest-leverage transition is L2 to L3, where individual expertise becomes organizational expertise through a versioned, maintained skill library."
+      ],
+      "operator_closeouts": {
+        "linkedin-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "note": "No public LinkedIn post went live; latest LinkedIn ledger post is older than 3 hours, so sync-state automation-events records a loud failure for watchdog force-wake."
+    },
+    {
+      "id": "agentic-commerce-gap-linkedin-2026-05-07",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "failed",
+      "failed_at": "2026-05-07T17:26:57.894Z",
+      "fingerprint": "e19bf9a0240a3393",
+      "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "fact_key": "8bit-research-backlog:agentic-commerce-gap:agent-readable-catalog",
+      "format": "research backlog",
+      "copy": "Most business websites are built for people who can interpret pages, click around, and recover from ambiguity. Agents do not work that way.\n\nIf an AI agent cannot find a machine-readable catalog, get a deterministic quote, and understand the checkout or payment handoff, the business is degraded or invisible to that agent.\n\nThat makes commerce infrastructure distribution infrastructure.\n\n8bit now has a live agent-readable catalog. The current catalog exposes one product: AI diagnostic.\n\nField note:\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "blocker": "LinkedIn auth hard stop: direct Voyager cookies rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn Login / We’re signing you in for h*****@8bitconcepts.com instead of reaching the feed.",
+      "attempts": [
+        "direct_voyager_cookie_api: cookie sources rejected; chrome-profile-3 returned 302",
+        "page_context_voyager_api: /voyager/api/me returned 401",
+        "one_shot_browser_recovery: LinkedIn login page stayed on We’re signing you in for h*****@8bitconcepts.com"
+      ],
+      "note": "No public LinkedIn post went live; latest LinkedIn posted ledger entry is older than 3 hours, so sync-state automation-events records a loud failure for watchdog force-wake."
+    },
+    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
@@ -1584,6 +1641,40 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "guardrails-gap-linkedin-2026-05-07",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "failed",
+      "failed_at": "2026-05-07T17:59:24.300Z",
+      "fingerprint": "1c5090b96cd2456a",
+      "route": "https://8bitconcepts.com/research/the-guardrails-gap.html",
+      "fact_key": "8bit-research-backlog:guardrails-gap:action-risk",
+      "format": "research backlog",
+      "copy": "AI guardrails built for output risk do not cover action risk.\n\nA content filter cannot constrain an agent that has permission to call tools, write to databases, send email, execute code, or mutate systems.\n\nThe control point has to move to the action boundary: runtime authorization, short-lived least-privilege credentials, full action tracing, continuous behavioral evaluation, and explicit escalation thresholds for irreversible, external, financial, or production-data actions.\n\nThe Guardrails Gap:\nhttps://8bitconcepts.com/research/the-guardrails-gap.html",
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "blocker": "LinkedIn auth hard stop: direct Voyager cookies rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery stayed on LinkedIn Login / We’re signing you in for h*****@8bitconcepts.com instead of reaching the feed.",
+      "attempts": [
+        "direct_voyager_cookie_api: cookie sources rejected; chrome-profile-3 returned 302",
+        "page_context_voyager_api: /voyager/api/me returned 401",
+        "one_shot_browser_recovery: LinkedIn login page stayed on We’re signing you in for h*****@8bitconcepts.com"
+      ],
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-guardrails-gap.html returned HTTP 200.",
+        "https://8bitconcepts.com/ returned HTTP 200 and the portfolio business index lists 8bitconcepts at https://8bitconcepts.com.",
+        "The source page title is The Guardrails Gap.",
+        "The source page states that output-era AI guardrails assumed the AI talks and humans act.",
+        "The source page states that in 2026 agentic systems can write to databases, call APIs, send emails, execute code, and trigger payments.",
+        "The source page recommends runtime authorization, short-lived least-privilege credentials, action tracing, continuous behavioral evaluation, and explicit escalation thresholds for irreversible, external, financial, or production-data actions."
+      ],
+      "operator_closeouts": {
+        "linkedin-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "note": "No public LinkedIn post went live; latest LinkedIn posted ledger entry is older than 3 hours, so sync-state automation-events records a loud failure for watchdog force-wake."
     }
   ]
 }
