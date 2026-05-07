@@ -36,7 +36,7 @@ const {
 const FEED_URL = "https://www.linkedin.com/feed/?shareActive=true";
 const ACTIVITY_ALL_URL = "https://www.linkedin.com/in/shane-cheek-9173473b6/recent-activity/all/";
 const DEFAULT_NAME = "Shane Cheek";
-const DEFAULT_HEADLINE = "Software Engineer at 8BitConcepts";
+const DEFAULT_HEADLINE = "Founder at 8bitconcepts";
 const LINKEDIN_ALLOW_FILE = "/tmp/8bit-linkedin-browser-one-shot-allow";
 const LINKEDIN_ONE_SHOT_TOKEN = "8bit-linkedin-supervised-manual-v2";
 const COOKIE_SOURCES = [
