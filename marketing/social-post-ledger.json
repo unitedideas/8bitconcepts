@@ -1584,60 +1584,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-07-abandonment-curve-gartner",
-      "date": "2026-05-07",
-      "source": "8bit-research-backlog",
-      "source_item": "the-abandonment-curve",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "blocked",
-      "blocked_at": "2026-05-07T21:59:06Z",
-      "blocker": "LinkedIn posting hard stop: direct Voyager cookies were rejected with 302, page-context /voyager/api/me returned 401, and approved one-shot browser recovery found Start a post but could not open the composer. No public POST occurred and no LinkedIn URL was created.",
-      "fingerprint": "79feb71291253b03",
-      "fact_key": "8bit-research-backlog:the-abandonment-curve:gartner-failure-data",
-      "route": "https://8bitconcepts.com/research/the-abandonment-curve.html",
-      "source_urls": [
-        "https://8bitconcepts.com/research/the-abandonment-curve.html",
-        "https://www.gartner.com/en/articles/genai-project-failure",
-        "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027"
-      ],
-      "copy": "Gartner's GenAI failure data points to a handoff problem, not an AI-is-useless problem.\n\nBy the end of 2025, at least 50% of GenAI projects were abandoned after proof of concept. Gartner also predicts over 40% of agentic AI projects will be canceled by the end of 2027.\n\nThe useful question is where the work dies: after the demo, when someone has to own integration, cost, monitoring, retraining, and production regression.\n\nI wrote up that gap as The Abandonment Curve: integration wall, ownership vacuum, and model regression.\n\nhttps://8bitconcepts.com/research/the-abandonment-curve.html",
-      "facts_verified": [
-        "https://8bitconcepts.com/research/the-abandonment-curve.html returned HTTP 200.",
-        "https://8bitconcepts.com/ returned HTTP 200 and foundry-business-index lists 8bitconcepts at https://8bitconcepts.com/.",
-        "The source page title is The Abandonment Curve and datePublished is 2026-05-01.",
-        "The source page frames the issue as a handoff gap between proof-of-concept/prototype and production ownership.",
-        "The source page names three operational failure points: integration wall, ownership vacuum, and model regression.",
-        "Gartner says by the end of 2025 at least 50% of GenAI projects were abandoned after proof of concept due to poor data quality, inadequate risk controls, escalating costs, or unclear business value.",
-        "Gartner predicts over 40% of agentic AI projects will be canceled by end of 2027 due to escalating costs, unclear business value, or inadequate risk controls."
-      ],
-      "social_editor_status": "approved",
-      "social_editor_closeout": "No scoped memory update needed",
-      "linkedin_operator_status": "eligible",
-      "linkedin_operator_closeout": "No scoped memory update needed",
-      "posting_attempts": [
-        {
-          "route": "direct_voyager_cookie_api",
-          "result": "blocked",
-          "detail": "All LinkedIn cookie sources rejected before identity verification; chrome-profile-3 returned 302. No public POST occurred."
-        },
-        {
-          "route": "page_context_voyager_api",
-          "result": "blocked",
-          "detail": "LinkedIn /voyager/api/me returned 401 from the Brave page context. No public POST occurred."
-        },
-        {
-          "route": "approved_one_shot_browser_recovery",
-          "result": "blocked",
-          "detail": "Browser recovery reached a LinkedIn surface with Start a post visible, but DOM/native clicks did not open the composer. No public POST occurred."
-        }
-      ],
-      "public_action_lock_claimed": true,
-      "public_post_url": "",
-      "post_attempted": false,
-      "note": "No public LinkedIn post went live. Latest public LinkedIn ledger post is older than 3 hours, so a loud automation event was written for the SLA watchdog."
     }
   ]
 }
