@@ -517,10 +517,18 @@ end tell
 
 function nativeClick(x, y) {
   focusTargetWindow();
+  const sx = Number(x);
+  const sy = Number(y);
+  if (!Number.isFinite(sx) || !Number.isFinite(sy)) {
+    throw new Error(`refusing native click with invalid point: ${x}, ${y}`);
+  }
+  if (sy < 36) {
+    throw new Error(`refusing native click in macOS menu bar at ${sx}, ${sy}`);
+  }
   const source = `
 import CoreGraphics
 import Foundation
-let p = CGPoint(x: ${Number(x).toFixed(1)}, y: ${Number(y).toFixed(1)})
+let p = CGPoint(x: ${sx.toFixed(1)}, y: ${sy.toFixed(1)})
 CGEvent(mouseEventSource: nil, mouseType: .leftMouseDown, mouseCursorPosition: p, mouseButton: .left)?.post(tap: .cghidEventTap)
 usleep(80_000)
 CGEvent(mouseEventSource: nil, mouseType: .leftMouseUp, mouseCursorPosition: p, mouseButton: .left)?.post(tap: .cghidEventTap)
@@ -545,14 +553,28 @@ function nativeClickElement(rect, innerHeight) {
   const contentYOffset = Math.max(0, bounds.height - Number(innerHeight || 0));
   const x = bounds.left + rect.x + rect.w / 2;
   const y = bounds.top + contentYOffset + rect.y + rect.h / 2;
+  const minY = bounds.top + Math.max(36, contentYOffset - 8);
+  if (
+    x < bounds.left ||
+    x > bounds.right ||
+    y < minY ||
+    y > bounds.bottom
+  ) {
+    throw new Error(`refusing native click outside Brave content bounds: ${JSON.stringify({ x, y, minY, bounds, rect, innerHeight, contentYOffset })}`);
+  }
   nativeClick(x, y);
   return { x, y, contentYOffset, bounds };
 }
 
 function nativeClickWindowRelative(x, y) {
   const bounds = frontWindowBounds();
-  nativeClick(bounds.left + Number(x), bounds.top + Number(y));
-  return { x: bounds.left + Number(x), y: bounds.top + Number(y), bounds };
+  const screenX = bounds.left + Number(x);
+  const screenY = bounds.top + Number(y);
+  if (screenX < bounds.left || screenX > bounds.right || screenY < bounds.top + 36 || screenY > bounds.bottom) {
+    throw new Error(`refusing native click outside Brave window bounds: ${JSON.stringify({ x: screenX, y: screenY, bounds })}`);
+  }
+  nativeClick(screenX, screenY);
+  return { x: screenX, y: screenY, bounds };
 }
 
 function sleep(ms) {
