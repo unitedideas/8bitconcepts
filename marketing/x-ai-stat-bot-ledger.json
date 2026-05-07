@@ -157,7 +157,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
-      "status": "posted",
+      "status": "drafted",
       "created_at": "2026-04-28T20:09:15+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -165,14 +165,10 @@
       "source": "AI Dev Board live stats",
       "source_url": "https://aidevboard.com/api/v1/stats",
       "route": "https://aidevboard.com",
-      "fact_id": "adb-live-stats-2026-05-07-10675-528-504",
-      "fact_key": "adb-live-stats:jobs=10675:companies=528:new_this_week=504:updated=2026-05-07T02:22:08Z",
-      "fingerprint": "d5b1d76f520de2ec",
-      "copy": "AI Dev Board is tracking 10,675 AI/ML roles across 528 companies. 504 roles were added this week.\n\nThat is the useful signal: not AI mindshare, but where companies are still paying for execution work.\n\nhttps://aidevboard.com",
-      "updated_at": "2026-05-07T02:30:29Z",
-      "posted_at": "2026-05-07T02:30:29Z",
-      "url": "https://x.com/8BitConcepts/status/2052213647913750946",
-      "note": "Posted from verified @8BitConcepts by 8bit-x-agent-publisher after refreshing stale draft counts against the live ADB stats endpoint, social-editor approval, shared lock claim, and Computer Use URL recovery."
+      "fact_id": "adb-total-jobs-9161-companies-524",
+      "fact_key": "71d43027a1a60f8bb8e53527",
+      "fingerprint": "708a1e42008d35e0",
+      "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now."
     },
     {
       "id": "x-ai-stat-2026-04-28T21:03:17+00:00-31d1c476",

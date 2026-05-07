@@ -1584,67 +1584,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-adb-live-stats-2026-05-06",
-      "source": "marketing/x-ai-stat-bot-ledger.json",
-      "source_item": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-06",
-      "posted_at": "2026-05-07T02:30:29Z",
-      "url": "https://x.com/8BitConcepts/status/2052213647913750946",
-      "route": "https://aidevboard.com",
-      "source_url": "https://aidevboard.com/api/v1/stats",
-      "fact_key": "adb-live-stats:jobs=10675:companies=528:new_this_week=504:updated=2026-05-07T02:22:08Z",
-      "fingerprint": "d5b1d76f520de2ec",
-      "copy": "AI Dev Board is tracking 10,675 AI/ML roles across 528 companies. 504 roles were added this week.\n\nThat is the useful signal: not AI mindshare, but where companies are still paying for execution work.\n\nhttps://aidevboard.com",
-      "original_fingerprint": "708a1e42008d35e0",
-      "editor": "agent-social-editor",
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "AI Dev Board is tracking 10,675 AI/ML roles across 528 companies. 504 roles were added this week.\n\nThat is the useful signal: not AI mindshare, but where companies are still paying for execution work.\n\nhttps://aidevboard.com",
-        "notes": [
-          "Tightened the second line and removed the label-style CTA."
-        ],
-        "closeout": "No scoped memory update needed."
-      },
-      "fact_checks": {
-        "checked_at": "2026-05-07T02:22:08Z",
-        "stats_endpoint": "https://aidevboard.com/api/v1/stats",
-        "total_jobs": 10675,
-        "total_companies": 528,
-        "new_this_week": 504,
-        "stats_updated_at": "2026-05-07T02:22:08Z",
-        "business_url": "https://aidevboard.com",
-        "business_url_status": 200
-      },
-      "facts_verified": [
-        "https://aidevboard.com/api/v1/stats returned HTTP 200 with overview.total_jobs=10675, overview.total_companies=528, overview.new_this_week=504, overview.updated_at=2026-05-07T02:22:08Z.",
-        "https://aidevboard.com/ returned HTTP 200.",
-        "systems/foundry-business-index.md lists AI Dev Board live URL as https://aidevboard.com and describes it as an AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.",
-        "Visible X profile timeline verified active account @8BitConcepts and status link after post."
-      ],
-      "posting_attempts": [
-        {
-          "route": "x_direct_api",
-          "result": "created_unverified",
-          "detail": "X returned empty HTTP 200 without a tweet id; treated as likely posted and did not switch candidates."
-        },
-        {
-          "route": "duplicate_recovery_browser_fallback",
-          "result": "blocked_after_direct_empty_200",
-          "detail": "Second exact-copy run fell back to browser CDP but Brave blocked JavaScript from Apple Events during profile verification."
-        },
-        {
-          "route": "computer_use_profile_recovery",
-          "result": "verified",
-          "detail": "Computer Use dismissed the unsaved fallback draft, loaded @8BitConcepts profile, and found the new status link with exact approved copy."
-        }
-      ],
-      "identity_verified": "@8BitConcepts verified on visible X profile timeline; post appeared under 8bitconcepts Verified account.",
-      "x_operator_closeout": "No scoped memory update needed."
     }
   ]
 }
