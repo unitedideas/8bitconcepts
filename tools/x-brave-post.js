@@ -42,6 +42,16 @@ const BRAVE_SAFE_STORAGE_SERVICE = "Brave Safe Storage";
 
 let xWebConfigCache = null;
 
+async function fetchWithTimeout(url, options = {}, timeoutMs = 30000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 function usage() {
   console.error("usage: node tools/x-brave-post.js (--text <copy> | --text-file <path> | --delete <statusUrlOrId>) [--expected-handle <handle>] [--dry-run] [--json] [--skip-lease]");
   process.exit(2);
@@ -170,7 +180,7 @@ function parseOperationOptional(mainJs, operationName) {
 async function xWebConfig() {
   if (xWebConfigCache) return xWebConfigCache;
   const { cookie } = xCookieAuth();
-  const home = await fetch(HOME_URL, {
+  const home = await fetchWithTimeout(HOME_URL, {
     headers: {
       "cookie": cookie,
       "user-agent": "Mozilla/5.0",
@@ -182,7 +192,7 @@ async function xWebConfig() {
   }
   const mainUrl = (html.match(/https:\/\/abs\.twimg\.com\/responsive-web\/client-web\/main\.[^"']+\.js/) || [])[0];
   if (!mainUrl) throw new Error("could not find X main JS bundle URL");
-  const mainRes = await fetch(mainUrl, { headers: { "user-agent": "Mozilla/5.0" } });
+  const mainRes = await fetchWithTimeout(mainUrl, { headers: { "user-agent": "Mozilla/5.0" } });
   const mainJs = await mainRes.text();
   if (!mainRes.ok) throw new Error(`could not fetch X main JS bundle: status ${mainRes.status}`);
   const bearer = (mainJs.match(/AAAAAAAAAAAAA[A-Za-z0-9%_-]+/) || [])[0];
@@ -215,7 +225,7 @@ async function xApiRequest(method, target, body = null) {
     "x-twitter-client-language": "en",
   };
   if (body !== null) headers["content-type"] = "application/json";
-  const res = await fetch(new URL(target, "https://x.com").toString(), {
+  const res = await fetchWithTimeout(new URL(target, "https://x.com").toString(), {
     method,
     headers,
     body: body === null ? undefined : JSON.stringify(body),
@@ -272,13 +282,21 @@ async function verifyTweetDirect(tweetId, text) {
   return Boolean(res.ok && fullText && normalize(fullText).includes(normalize(text).slice(0, 90)));
 }
 
-function collectTweets(value, tweets = []) {
-  if (!value || typeof value !== "object") return tweets;
-  if (value.legacy && value.legacy.full_text && value.rest_id) {
-    tweets.push(value);
-  }
-  for (const child of Object.values(value)) {
-    if (child && typeof child === "object") collectTweets(child, tweets);
+function collectTweets(value, tweetLimit = 80, nodeLimit = 20000) {
+  const tweets = [];
+  const stack = [value];
+  let visited = 0;
+  while (stack.length && tweets.length < tweetLimit && visited < nodeLimit) {
+    const current = stack.pop();
+    visited += 1;
+    if (!current || typeof current !== "object") continue;
+    if (current.legacy && current.legacy.full_text && current.rest_id) {
+      tweets.push(current);
+      continue;
+    }
+    for (const child of Object.values(current)) {
+      if (child && typeof child === "object") stack.push(child);
+    }
   }
   return tweets;
 }
@@ -315,12 +333,17 @@ async function postOrDryRunDirect(args, text) {
     return;
   }
   await xWebConfig();
-  try {
-    const existingUrl = await findPostedTweetDirect(args.expectedHandle, text);
-    if (args.json) console.log(JSON.stringify({ ok: true, url: existingUrl, verified: true, method: "x_direct_existing_recovery" }));
-    else console.log(existingUrl);
-    return;
-  } catch (_) {}
+  if (process.env.SOCIAL_X_SKIP_EXISTING_CHECK !== "1") {
+    try {
+      const existingUrl = await findPostedTweetDirect(args.expectedHandle, text);
+      if (args.json) console.log(JSON.stringify({ ok: true, url: existingUrl, verified: true, method: "x_direct_existing_recovery" }));
+      else console.log(existingUrl);
+      return;
+    } catch (error) {
+      if (process.env.SOCIAL_X_FIND_ONLY === "1") throw error;
+    }
+  }
+  if (process.env.SOCIAL_X_FIND_ONLY === "1") throw new Error("X direct timeline did not contain the expected post text");
   const op = xWebConfigCache.operations.CreateTweet;
   const created = await xApiRequest("POST", `/i/api/graphql/${op.queryId}/CreateTweet`, createTweetPayload(text));
   const tweet = created.json && created.json.data && created.json.data.create_tweet && created.json.data.create_tweet.tweet_results && created.json.data.create_tweet.tweet_results.result;
