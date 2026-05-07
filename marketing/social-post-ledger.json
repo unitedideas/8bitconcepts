@@ -1584,21 +1584,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "research-backlog-the-governance-vacuum-linkedin",
-      "source": "8bit-linkedin-agent-publisher",
-      "channel": "linkedin",
-      "account": "Shane Cheek / Founder at 8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-07",
-      "posted_at": "2026-05-07T04:26:36Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7458009099461496832",
-      "route": "https://8bitconcepts.com/research/the-governance-vacuum.html",
-      "fingerprint": "f088a71f927d36ce",
-      "copy": "Enterprise AI governance usually fails at runtime, not in the policy doc.\n\nThe useful split:\n\n1. Policy says what should happen.\n2. Infrastructure decides what can happen.\n3. Audit logs prove what did happen.\n\nThe missing test is whether governance can answer three questions during execution:\n\n1. Who authorized the model or agent decision?\n2. What constraints were active?\n3. Who gets paged when those constraints are violated?\n\nIf that is not wired into the model registry, API gateway, agent execution layer, and audit log sink, the system has principles but no enforcement path.\n\nSource:\nhttps://8bitconcepts.com/research/the-governance-vacuum.html",
-      "fact_key": "8bit-research:the-governance-vacuum:runtime-governance",
-      "note": "Posted from verified Shane Cheek / Founder at 8bitconcepts LinkedIn profile. Direct Voyager and page-context routes failed identity/auth checks; approved one-shot browser recovery opened the visible composer, posted, and captured the Post successful View post URL."
     }
   ]
 }
