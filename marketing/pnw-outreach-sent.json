@@ -5,13 +5,9 @@
     "subject": "AI for Atlantic & Pacific Freightways dispatch + invoicing",
     "sent_at": "2026-04-29T00:45:47.598187+00:00",
     "message_id": "bd888b5e-7331-478a-bbec-f46ca26aee42",
-    "followup_sent": true,
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-07T21:06:01.263018+00:00",
-    "followup_message_id": "eb23d229-b7ed-4a3d-a29e-eb57ba3feef8",
-    "followup_subject": "Re: AI for Atlantic & Pacific Freightways dispatch + invoicing",
-    "followup_route": "https://8bitconcepts.com/diagnostic.html"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "guy@pacnwtax.com",
@@ -19,13 +15,9 @@
     "subject": "AI for Pacific Northwest Tax and Accounting Services \u2014 without the disruption",
     "sent_at": "2026-04-29T00:45:47.889611+00:00",
     "message_id": "f2f41763-550b-402a-90c8-f472d6c7bd0c",
-    "followup_sent": true,
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-07T21:06:01.263018+00:00",
-    "followup_message_id": "a8e0cfa8-c010-4d8d-b94e-8037d472bc41",
-    "followup_subject": "Re: AI for Pacific Northwest Tax and Accounting Services \u2014 without the disruption",
-    "followup_route": "https://8bitconcepts.com/diagnostic.html"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "dsfabinc@gmail.com",
@@ -43,13 +35,9 @@
     "subject": "AI for JJH Law \u2014 without the disruption",
     "sent_at": "2026-04-29T00:45:48.420552+00:00",
     "message_id": "74d5ee72-b7e2-45e9-bea2-04860bea5a71",
-    "followup_sent": true,
+    "followup_sent": false,
     "delivery_status": "delivered",
-    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00",
-    "followup_sent_at": "2026-05-07T21:06:01.263018+00:00",
-    "followup_message_id": "ab049675-30d0-4b5f-ae55-9eb11606b97e",
-    "followup_subject": "Re: AI for JJH Law \u2014 without the disruption",
-    "followup_route": "https://8bitconcepts.com/diagnostic.html"
+    "delivery_checked_at": "2026-04-29T00:58:17.265482+00:00"
   },
   {
     "email": "info@gulicklogistics.com",
