@@ -5,6 +5,7 @@ __pycache__/
 *.log
 marketing/*.json
 marketing/*-ledger.json
+!marketing/social-post-ledger.json
 marketing/*-log-*.md
 marketing/daily-ai-insights.md
 ops/sweeper/
