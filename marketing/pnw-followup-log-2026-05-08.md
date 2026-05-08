@@ -19,6 +19,33 @@ No external email was sent in this run.
 
 Expected result: no follow-ups due and no pending sendable targets.
 
+## Business-agent duplicate-lock repair
+
+Automation: `business-agent-8bitconcepts`
+
+No external email was sent in this run. `marketing/pnw-outreach.py followup --hours 96`
+initially listed 4 due follow-ups, but sync-state already had sent public-action
+locks for the 8-recipient PNW follow-up batch:
+
+- `public-action-locks/email-outreach/87845d241a85a2af.json`
+- `public-action-locks/email/8bit-pnw-smb-followups-20260507T1948PDT.json`
+
+Repair:
+
+- Marked the 8 already-followed-up local records in `marketing/pnw-outreach-sent.json`
+  with the 2026-05-07 lock/message ids.
+- Added a sync-state public-action-lock backstop to `marketing/pnw-outreach.py`
+  so future runs skip follow-ups for records whose original send predates a sent
+  8bc PNW follow-up batch lock, even if the local ledger is stale again.
+
+Verification:
+
+- `python3 -m py_compile marketing/pnw-outreach.py marketing/_outreach_guards.py`
+- `python3 marketing/pnw-outreach.py followup --hours 96`
+- `python3 marketing/pnw-outreach.py send --dry-run`
+
+Expected result: no follow-ups due and no pending sendable targets.
+
 ## Portfolio routine repair
 
 Automation: `foundry-portfolio-marketing-daily`

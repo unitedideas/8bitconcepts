@@ -53,6 +53,7 @@ SENT_FILE = SCRIPT_DIR / "pnw-outreach-sent.json"
 SUPPRESSIONS_FILE = SCRIPT_DIR / "suppressions.json"
 RESEND_API_URL = "https://api.resend.com/emails"
 FROM_EMAIL = "Shane at 8bitconcepts <hello@8bitconcepts.com>"
+SYNC_STATE_ROOT = Path(os.environ.get("FOUNDRY_SYNC_STATE_ROOT", "/Users/owlassist/.foundry/foundry-sync-state"))
 
 def get_resend_api_key():
     """Fetch Resend API key from macOS keychain."""
@@ -215,6 +216,51 @@ def load_suppressed_emails():
         for item in data.get("emails", [])
         if item.get("email")
     }
+
+
+def load_sent_followup_lock_times():
+    """Return sent PNW follow-up lock timestamps from sync-state.
+
+    This is a duplicate-send backstop for recurring workers. The business repo's
+    ignored/local sent ledger has been clobbered by stale commits before; the
+    sync-state public-action lock is the durable source of truth for external
+    email batches that already left the account.
+    """
+    lock_times = []
+    lock_root = SYNC_STATE_ROOT / "public-action-locks"
+    for path in list((lock_root / "email-outreach").glob("*.json")) + list((lock_root / "email").glob("*.json")):
+        try:
+            data = json.loads(path.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        if data.get("business") != "8bitconcepts":
+            continue
+        if data.get("status") != "sent":
+            continue
+        is_pnw_followup = (
+            data.get("action_type") == "pnw_smb_followup_email_batch"
+            or data.get("channel") == "resend_email_followup"
+        )
+        if not is_pnw_followup:
+            continue
+        sent_at = data.get("sent_at") or data.get("claimed_at")
+        if not sent_at:
+            continue
+        try:
+            lock_times.append(datetime.fromisoformat(sent_at.replace("Z", "+00:00")))
+        except ValueError:
+            continue
+    return lock_times
+
+
+def is_covered_by_followup_lock(record, lock_times):
+    if not lock_times:
+        return False
+    try:
+        original_sent_at = datetime.fromisoformat(record.get("sent_at", ""))
+    except ValueError:
+        return False
+    return any(lock_time > original_sent_at for lock_time in lock_times)
 
 
 def save_sent(sent_records):
@@ -401,6 +447,7 @@ def cmd_followup(hours_after=96, send=False, limit=None):
     now = datetime.now(timezone.utc)
     followup_due = []
     suppressed = load_suppressed_emails()
+    followup_lock_times = load_sent_followup_lock_times()
 
     for email_addr, record in sent.items():
         if record.get("delivery_status") in ("bounced", "failed", "suppressed"):
@@ -408,6 +455,8 @@ def cmd_followup(hours_after=96, send=False, limit=None):
         if email_addr.strip().lower() in suppressed:
             continue
         if not is_sendable_email(email_addr):
+            continue
+        if is_covered_by_followup_lock(record, followup_lock_times):
             continue
         sent_at = datetime.fromisoformat(record.get("sent_at", ""))
         age = now - sent_at
