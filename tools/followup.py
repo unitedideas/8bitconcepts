@@ -203,6 +203,14 @@ DEFAULT_HOOK = (
     "on-brief for you"
 )
 
+TOPIC_SUBJECTS = {
+    "q2-2026-ai-hiring-snapshot": "AI engineering hiring data",
+    "q2-2026-entry-level-ai-gap": "entry-level AI hiring data",
+    "q2-2026-ai-compensation-by-skill": "AI compensation by skill data",
+    "q2-2026-remote-vs-onsite-ai-hiring": "remote vs onsite AI hiring data",
+    "q2-2026-mcp-ecosystem-health": "MCP verification data",
+}
+
 
 # ---------- helpers ----------
 
@@ -425,15 +433,28 @@ def build_followup(subject: str, topic_slug: Optional[str], hooks: dict) -> tupl
         # We have a known paper — build a tight referral URL.
         url = f"https://8bitconcepts.com/research/{topic_slug}.html"
         cta_cut = "the raw numbers" if "latest cut" in fresh else "the short write-up"
+        lead = f"{fresh}."
+        offer = f"Happy to send {cta_cut} or a tighter editorial angle."
     else:
         url = "https://8bitconcepts.com/research/"
         cta_cut = "the index page"
-    re_subject = subject if subject.lower().startswith("re:") else f"Re: {subject}"
+        lead = (
+            "We have fresh live-data cuts this week if one is more on-brief "
+            "than the original note."
+        )
+        offer = "Happy to send a tighter editorial angle."
+    clean_subject = TOPIC_SUBJECTS.get(topic_slug, subject)
+    if clean_subject.lower().startswith("sent-"):
+        clean_subject = TOPIC_SUBJECTS.get(topic_slug, "8bitconcepts research data")
+    re_subject = (
+        clean_subject
+        if clean_subject.lower().startswith("re:")
+        else f"Re: {clean_subject}"
+    )
     body = (
-        f"A quick follow-up on my note from earlier this week.\n\n"
-        f"Since then, {fresh}. Link if useful: {url}\n\n"
-        f"Happy to send over {cta_cut} or a tighter editorial angle if "
-        f"either would fit — otherwise no need to reply, I'll leave it here.\n\n"
+        f"{lead}\n\n"
+        f"Link if useful: {url}\n\n"
+        f"{offer}\n\n"
         f"Shane\n"
         f"8bitconcepts | hello@8bitconcepts.com\n"
     )
