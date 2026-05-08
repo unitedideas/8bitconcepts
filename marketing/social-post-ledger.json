@@ -1584,6 +1584,87 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-08-empty-200-unverifiable",
+      "status": "blocked",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "blocked_at": "2026-05-08T19:48:20Z",
+      "blocker": "X direct CreateTweet returned empty HTTP 200 without a tweet id for three approved X copies; read-only direct timeline verification found none of the attempted text; browser/CDP fallback failed before posting because Brave/Computer Use returned cgWindowNotFound and x-brave-post browser insertion left only a newline in the editor. No live X status URL was captured, so no public post was ledgered as posted.",
+      "post_attempted": true,
+      "public_action_locks_claimed": [
+        "public-action-locks/social-content/76f71fec80cbb912.json",
+        "public-action-locks/social-content/ad6fc6a1d9679150.json",
+        "public-action-locks/social-content/63b9327d8c58616d.json"
+      ],
+      "attempts": [
+        {
+          "candidate_id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+          "source": "marketing/x-ai-stat-bot-outbox.json",
+          "fact_key": "58b5de28df35f932a98442ce",
+          "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+          "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+          "copy": "Model API fees are 10-20% of what AI actually costs to ship.\n\nThe Integration Tax names the other cost centers: system integration, evaluation and testing, observability, and annual maintenance.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+          "editor_status": "approved",
+          "editor_closeout": "No scoped memory update needed",
+          "lock": "public-action-locks/social-content/76f71fec80cbb912.json",
+          "script_result": {
+            "ok": false,
+            "likely_posted": true,
+            "method": "x_direct_empty_200_unverifiable"
+          },
+          "timeline_verification": "not_found",
+          "fingerprint": "76f71fec80cbb912"
+        },
+        {
+          "candidate_id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28-short",
+          "source": "marketing/x-ai-stat-bot-outbox.json",
+          "fact_key": "58b5de28df35f932a98442ce",
+          "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+          "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+          "copy": "Model API fees are 10-20% of what AI costs to ship.\n\nThe rest is integration, evaluation, observability, and maintenance.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+          "editor_status": "approved",
+          "editor_closeout": "No scoped memory update needed",
+          "lock": "public-action-locks/social-content/ad6fc6a1d9679150.json",
+          "script_result": {
+            "ok": false,
+            "likely_posted": true,
+            "method": "x_direct_empty_200_unverifiable"
+          },
+          "timeline_verification": "not_found",
+          "fingerprint": "ad6fc6a1d9679150"
+        },
+        {
+          "candidate_id": "x-ai-stat-2026-05-08-nhs-live-stats",
+          "source": "marketing/x-ai-stat-bot-outbox.json",
+          "fact_key": "nhs-live-stat:2026-05-08:total_sites=4232:avg_score=35",
+          "route": "https://nothumansearch.ai",
+          "source_url": "https://nothumansearch.ai/api/v1/stats",
+          "copy": "Not Human Search is tracking 4,232 agent-ready sites right now. Average agent-readiness score: 35/100.\n\nThe useful signal is not who claims to be agent-ready. It is what a crawler can verify.",
+          "editor_status": "approved",
+          "editor_closeout": "No scoped memory update needed",
+          "lock": "public-action-locks/social-content/63b9327d8c58616d.json",
+          "script_result": {
+            "ok": false,
+            "likely_posted": true,
+            "method": "x_direct_empty_200_unverifiable"
+          },
+          "timeline_verification": "not_found",
+          "fingerprint": "63b9327d8c58616d"
+        }
+      ],
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200 and states model API costs are 10-20% of what AI actually costs to ship.",
+        "The Integration Tax page names system integration, evaluation and testing, observability, and annual maintenance as cost centers.",
+        "https://nothumansearch.ai/api/v1/stats returned HTTP 200 with total_sites=4232, avg_score=35, top_category=developer.",
+        "https://nothumansearch.ai/ returned HTTP 200 and describes Not Human Search as an agent-first service search/discovery directory."
+      ],
+      "latest_successful_x_post_age_gate": "latest posted X ledger entry older than 3 hours; loud automation-events failure written",
+      "social_editor_closeouts": [
+        "No scoped memory update needed"
+      ],
+      "x_operator_closeout": "Scoped memory update proposal: record that 2026-05-08 x-brave-post direct CreateTweet repeatedly returned empty 200 without timeline visibility, while browser fallback failed on Brave cgWindowNotFound/newline editor insertion; future X runs should prefer a verified API repair before retrying browser composer loops."
     }
   ]
 }
