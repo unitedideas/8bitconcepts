@@ -1584,6 +1584,39 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-posted-2026-05-08-mcp-devtools",
+      "date": "2026-05-08",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-08T21:05:26Z",
+      "url": "https://x.com/8BitConcepts/status/2052856887645962486",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source_url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_key": "22b86351dd4354cb04d47fb4",
+      "fingerprint": "deb2712608c7703c",
+      "copy": "As of May 4, Not Human Search indexed 7,159 agent-ready sites.\n\nDeveloper tools are the largest bucket: 1,708 sites, 23.9% of the index. Live MCP is thinner: 440 sites, 6.1%, pass a JSON-RPC handshake.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200 on 2026-05-08",
+        "The live report states that as of 2026-05-04 Not Human Search indexed 7,159 agent-ready sites",
+        "The live report states 440 of 7,159 sites, 6.1%, pass a live JSON-RPC MCP handshake",
+        "The live report states Developer tools account for 1,708 sites, 23.9% of the index",
+        "https://8bitconcepts.com/ returned HTTP 200",
+        "https://nothumansearch.ai/ returned HTTP 200"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed",
+        "notes": "Preserved verified numbers and route URL; removed unsupported broader enterprise-category claim."
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/deb2712608c7703c.json",
+      "posting_method": "tools/x-brave-post.js recovered live URL via authenticated X timeline after direct CreateTweet returned empty status 200 and browser composer insertion failed.",
+      "note": "Posted from verified @8BitConcepts after cadence, duplicate, source, social-editor, x-operator, Computer Use lease, and sync-state public-action-lock checks."
     }
   ]
 }
