@@ -547,7 +547,7 @@ def upsert_queued_items(queue: dict[str, object]) -> None:
             else:
                 items.append(record)
 
-    LEDGER_PATH.write_text(json.dumps(ledger, indent=2) + "\n", encoding="utf-8")
+    LEDGER_PATH.write_text(json.dumps(ledger, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -560,7 +560,7 @@ def main() -> int:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(render(target), encoding="utf-8")
     queue = render_queue(target)
-    QUEUE_PATH.write_text(json.dumps(queue, indent=2) + "\n", encoding="utf-8")
+    QUEUE_PATH.write_text(json.dumps(queue, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if not args.no_ledger:
         upsert_queued_items(queue)
     print(f"wrote {OUT_PATH}")

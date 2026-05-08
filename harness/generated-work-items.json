@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "generated_at": "2026-05-08T13:24:00Z",
+  "source": "8bit-daily-research-fact-queue",
+  "items": [
+    {
+      "id": "8bit-daily-research-adb-api-402-2026-05-08",
+      "type": "follow_up",
+      "severity": "medium",
+      "title": "Daily targeted research generator hit ADB API 402 for jobs and stats",
+      "details": "tools/generate-daily-ai-insights.py generated the 2026-05-08 targeted_research item, but research_findings.source_errors includes adb_stats_api and adb_jobs_api HTTP 402 Payment Required. The queue remains structurally valid, but targeted research quality is degraded because the generator fell back to a zero-role OpenAI sample.",
+      "next_step": "Update the generator to use an authenticated ADB source, a public summary route, or a graceful blocked/deferred target selection when ADB API endpoints return 402.",
+      "artifacts": [
+        "marketing/daily-ai-insights.md",
+        "marketing/daily-ai-insights-queue.json",
+        "marketing/social-post-ledger.json"
+      ]
+    }
+  ]
+}
