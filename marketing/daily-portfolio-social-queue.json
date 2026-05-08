@@ -24,7 +24,14 @@
           "copy": "Agentic technical interview evidence layer for Hatchways-style assessments.\n\nAgentic Evidence is shipping around this constraint: Candidate AI-evidence entry, reviewer handoff, repo-packaged Claude JSONL.\n\nhttps://agentic-evidence.fly.dev",
           "fingerprint": "733ec385cfb7bac7",
           "duplicate": false,
-          "length": 227
+          "length": 227,
+          "status": "posted",
+          "posted_at": "2026-05-08T13:07:32Z",
+          "url": "https://x.com/8BitConcepts/status/2052737101876297832",
+          "final_copy": "Agentic Evidence is a $199/month evidence layer for Hatchways-style technical assessments: candidate session review, reviewer packets, buyer packets, GitHub Actions adapter, 72-hour candidate TTL, 240-minute VM TTL, auto-teardown on submit, tamper-evident audit trail, and secret-pattern blocking.\n\nhttps://agentic-evidence.fly.dev",
+          "final_fingerprint": "5b8180469bd7fccd",
+          "queued_fingerprint": "733ec385cfb7bac7",
+          "social_editor_status": "approved"
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
