@@ -4,5 +4,8 @@ validation/
 __pycache__/
 *.log
 marketing/*.json
+marketing/*-ledger.json
+marketing/*-log-*.md
+marketing/daily-ai-insights.md
 ops/sweeper/
 ops/runbooks/sweeper.md
