@@ -6,7 +6,9 @@ from __future__ import annotations
 import json
 import math
 import pathlib
+import re
 import sys
+import urllib.error
 import urllib.request
 
 
@@ -18,6 +20,32 @@ def get_json(url: str) -> dict:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=20) as response:
         return json.loads(response.read().decode("utf-8"))
+
+
+def get_adb_overview() -> dict:
+    """Return public ADB proof stats without requiring paid API quota.
+
+    /api/v1/stats is now a billable anonymous endpoint and can return 402 once
+    the shared automation IP exhausts its monthly free quota. The /api/v1 root
+    remains intentionally public and carries the same rounded proof totals used
+    in 8bc consulting copy.
+    """
+    try:
+        return get_json("https://aidevboard.com/api/v1/stats")["overview"]
+    except urllib.error.HTTPError as exc:
+        if exc.code != 402:
+            raise
+
+    root = get_json("https://aidevboard.com/api/v1")
+    description = root.get("description", "")
+    jobs_match = re.search(r"([\d,]+)\+ curated AI/ML engineering jobs", description)
+    companies_match = re.search(r"from ([\d,]+) companies", description)
+    if not jobs_match or not companies_match:
+        raise AssertionError("ADB /api/v1 fallback missing jobs or companies proof stats")
+    return {
+        "total_jobs": int(jobs_match.group(1).replace(",", "")),
+        "total_companies": int(companies_match.group(1).replace(",", "")),
+    }
 
 
 def rounded_floor(value: int, step: int = 100) -> str:
@@ -32,7 +60,7 @@ def require_contains(path: pathlib.Path, expected: str) -> None:
 
 
 def main() -> int:
-    adb = get_json("https://aidevboard.com/api/v1/stats")["overview"]
+    adb = get_adb_overview()
     nhs = get_json("https://nothumansearch.ai/api/v1/stats")
     mcp = get_json("https://nothumansearch.ai/api/v1/search?has_mcp=true&limit=1")
     research_count = len(list((ROOT / "research").glob("*.html")))
