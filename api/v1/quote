@@ -8,6 +8,12 @@
   "supported_payment_modes": ["stripe_payment_link", "stripe_link", "link", "stripe_spt"],
   "checkout_endpoint": "https://aidevboard.com/api/v1/checkout",
   "unsupported_payment_modes": ["stripe_acp", "x402", "mpp"],
+  "fulfillment": {
+    "type": "professional_service",
+    "delivery": "scheduled",
+    "turnaround_days": 2,
+    "description": "30-minute diagnostic call plus written recommendation delivered within 48 hours via email."
+  },
   "quote_type": "static",
   "checkout_url": "https://buy.stripe.com/7sY7sE2rMfY97Bu8iL6oo03"
 }

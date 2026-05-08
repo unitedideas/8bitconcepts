@@ -39,8 +39,8 @@
       "fulfillment": {
         "type": "professional_service",
         "delivery": "scheduled",
-        "turnaround_days": 5,
-        "description": "Written diagnostic report delivered within 5 business days via email."
+        "turnaround_days": 2,
+        "description": "30-minute diagnostic call plus written recommendation delivered within 48 hours via email."
       },
       "checkout": {
         "mode": "stripe_payment_link",
