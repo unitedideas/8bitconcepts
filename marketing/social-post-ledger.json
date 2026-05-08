@@ -1584,6 +1584,411 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-07-cohere-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-07-cohere",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-07",
+      "posted_at": "2026-05-08T00:52:35Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7458317574607544320",
+      "route": "https://aidevboard.com/company/cohere",
+      "fact_key": "targeted-research:cohere:88:generative-ai,search,agents",
+      "fingerprint": "8d4f1ee13c053370",
+      "copy": "Cohere is a useful public read on where enterprise AI work is concentrating.\n\nAI Dev Board has 88 indexed Cohere AI roles, ranked 13th across 526 tracked companies and 10,656 total jobs. The indexed Cohere sample averages $235k, with a $170k-$300k published salary range.\n\nSample roles:\n1. Fine-Tuning Engineer\n2. Backend Engineer, Enterprise AI Platform\n3. Engineering Manager, Agentic Platform\n\nThe tags cluster around generative AI, search, agents, and cloud. That points less to generic chatbot work and more to the operating layer: fine-tuning, retrieval, enterprise platform work, and deployment paths.\n\nNHS shows cohere.com at 50/100 for public agent readiness, with llms.txt and a structured API visible. That matters because agent-facing infrastructure is becoming part of the hiring signal, not just the product surface.\n\nData:\nhttps://aidevboard.com/company/cohere\nhttps://nothumansearch.ai/site/cohere.com",
+      "note": "Backfilled from sync-state public-action lock because the repo ledger was missing the posted row after ignored state cleanup; no new public action occurred during this throttle run.",
+      "facts_verified": [
+        "Sync-state public-action lock is posted with the live LinkedIn URL.",
+        "Previous automation event records Cohere fact verification against AI Dev Board, Cohere careers, and NHS.",
+        "Cadence guardrail checked this row before any candidate selection, social-editor run, lock claim, browser use, or post attempt."
+      ],
+      "operator_closeouts": {
+        "linkedin-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "backfilled_at": "2026-05-08T05:58:08Z"
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-agentic-evidence-x",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-08",
+      "business": "Agentic Evidence",
+      "fingerprint": "5b8180469bd7fccd",
+      "fact_key": "portfolio-daily:2026-05-08:agentic-evidence",
+      "route": "https://agentic-evidence.fly.dev",
+      "note": "Posted by 8bit-x-agent-publisher after live Agentic Evidence fact checks, agent-social-editor approval, social-content lock claim, active @8BitConcepts verification through tools/x-brave-post.js, and direct timeline URL recovery after X returned an empty 200.",
+      "source_item": "portfolio-daily-2026-05-08-agentic-evidence",
+      "posted_at": "2026-05-08T13:07:32Z",
+      "url": "https://x.com/8BitConcepts/status/2052737101876297832",
+      "queued_fingerprint": "733ec385cfb7bac7",
+      "copy": "Agentic Evidence is a $199/month evidence layer for Hatchways-style technical assessments: candidate session review, reviewer packets, buyer packets, GitHub Actions adapter, 72-hour candidate TTL, 240-minute VM TTL, auto-teardown on submit, tamper-evident audit trail, and secret-pattern blocking.\n\nhttps://agentic-evidence.fly.dev",
+      "facts_verified": [
+        "https://agentic-evidence.fly.dev returned HTTP 200 on 2026-05-08T13:01Z.",
+        "https://agentic-evidence.fly.dev/llms.txt identifies Agentic Evidence as a developer-VM interview platform for retroactive Codex/Claude session review.",
+        "https://agentic-evidence.fly.dev/llms.txt lists Hatchways proof, reviewer packet, buyer packet, integration guide, pilot kit, follow-up packet, VM flow, GitHub Action adapter, OpenAPI, health, and pricing surfaces.",
+        "https://agentic-evidence.fly.dev/api/config returned $199/month, 25 candidate sessions, 500 agent messages, 2,000,000 estimated tokens, 72-hour session TTL, 240-minute VM TTL, auto teardown, tamper-evident audit trail, secret-pattern blocking, and overage disabled.",
+        "foundry-business-index identifies Agentic Evidence as an agentic technical interview evidence layer for Hatchways-style assessments."
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Agentic Evidence is a $199/month evidence layer for Hatchways-style technical assessments: candidate session review, reviewer packets, buyer packets, GitHub Actions adapter, 72-hour candidate TTL, 240-minute VM TTL, auto-teardown on submit, tamper-evident audit trail, and secret-pattern blocking.\n\nhttps://agentic-evidence.fly.dev",
+        "closeout": "No scoped memory update needed"
+      },
+      "operator_closeouts": {
+        "x-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "posting_result": {
+        "primary_result": "tools/x-brave-post.js returned likely_posted=true with EMPTY_200_NO_FALLBACK and no URL.",
+        "recovery_result": "SOCIAL_X_FIND_ONLY=1 tools/x-brave-post.js recovered the live status URL without posting a duplicate."
+      }
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-agentic-evidence-linkedin",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "Agentic Evidence",
+      "fingerprint": "3fedf7d6c8be4cbf",
+      "fact_key": "portfolio-daily:2026-05-08:agentic-evidence",
+      "route": "https://agentic-evidence.fly.dev",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-bring-your-ai-x",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "Bring Your AI",
+      "fingerprint": "499d4942365823df",
+      "fact_key": "portfolio-daily:2026-05-08:bring-your-ai",
+      "route": "https://bringyour.ai",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-bring-your-ai-linkedin",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "Bring Your AI",
+      "fingerprint": "9200c38c768a515d",
+      "fact_key": "portfolio-daily:2026-05-08:bring-your-ai",
+      "route": "https://bringyour.ai",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-ai-dev-board-x",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "AI Dev Board",
+      "fingerprint": "9ae7da775de30178",
+      "fact_key": "portfolio-daily:2026-05-08:ai-dev-board",
+      "route": "https://aidevboard.com",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-ai-dev-board-linkedin",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "AI Dev Board",
+      "fingerprint": "51dfc12e9ebce570",
+      "fact_key": "portfolio-daily:2026-05-08:ai-dev-board",
+      "route": "https://aidevboard.com",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-not-human-search-x",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "Not Human Search",
+      "fingerprint": "b5c121902a99cb29",
+      "fact_key": "portfolio-daily:2026-05-08:not-human-search",
+      "route": "https://nothumansearch.ai",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-not-human-search-linkedin",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "Not Human Search",
+      "fingerprint": "97d2d2d7f7d550fb",
+      "fact_key": "portfolio-daily:2026-05-08:not-human-search",
+      "route": "https://nothumansearch.ai",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-8bitconcepts-x",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "8bitconcepts",
+      "fingerprint": "90a959cf2cab9919",
+      "fact_key": "portfolio-daily:2026-05-08:8bitconcepts",
+      "route": "https://8bitconcepts.com",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "portfolio-daily-2026-05-08-8bitconcepts-linkedin",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "business": "8bitconcepts",
+      "fingerprint": "22cf078c80046f6d",
+      "fact_key": "portfolio-daily:2026-05-08:8bitconcepts",
+      "route": "https://8bitconcepts.com",
+      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
+    },
+    {
+      "id": "daily-targeted-research-2026-05-08-openai-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "08:30",
+      "fingerprint": "9e06081c111eec96",
+      "fact_key": "targeted-research:openai:362:distributed-systems,research,data-pipeline",
+      "route": "https://aidevboard.com/company/openai",
+      "format": "targeted documented research",
+      "target": {
+        "name": "OpenAI",
+        "x_mention": "@OpenAI",
+        "linkedin_mention": "@OpenAI",
+        "domain": "openai.com",
+        "company_slug": "openai"
+      },
+      "research_sources": {
+        "adb_company": "https://aidevboard.com/company/openai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=openai&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
+        "nhs_profile": "https://nothumansearch.ai/site/openai.com",
+        "official_source": "https://openai.com/careers/"
+      },
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-targeted-research-2026-05-08-openai-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "08:30",
+      "fingerprint": "75f7567158fcaeee",
+      "fact_key": "targeted-research:openai:362:distributed-systems,research,data-pipeline",
+      "route": "https://aidevboard.com/company/openai",
+      "format": "targeted documented research",
+      "target": {
+        "name": "OpenAI",
+        "x_mention": "@OpenAI",
+        "linkedin_mention": "@OpenAI",
+        "domain": "openai.com",
+        "company_slug": "openai"
+      },
+      "research_sources": {
+        "adb_company": "https://aidevboard.com/company/openai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=openai&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
+        "nhs_profile": "https://nothumansearch.ai/site/openai.com",
+        "official_source": "https://openai.com/careers/"
+      },
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-8bit-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "10:30",
+      "fingerprint": "d515af20e77c8ac2",
+      "fact_key": "8bit:integration-tax:model-cost-10-20",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/the-integration-tax.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-8bit-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-08-8bit",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-08",
+      "post_time_local": "10:30",
+      "posted_at": "2026-05-08T13:40:00Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7458510196865126401",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "8bit:integration-tax:model-cost-10-20",
+      "fingerprint": "b471493ebaa8832d",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/the-integration-tax.html"
+      ],
+      "copy": "Model API fees are usually 10-20% of the real cost of shipping AI.\n\nThe larger lines are data pipelines, system integration, evaluation/testing, observability, and maintenance.\n\nThat is why the budget conversation usually belongs before the model-choice conversation.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
+      "note": "Posted by 8bit-linkedin-agent-publisher after blocking the generated OpenAI targeted_research draft on fact mismatch, fact-checking the 8bit Integration Tax source, social-editor approval, social-content lock claim, and public LinkedIn URL verification. LinkedIn rewrote the route URL to lnkd.in in the rendered post; stable non-URL copy fragments matched.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200 on 2026-05-08.",
+        "The Integration Tax page states model API costs are 10-20% of what AI actually costs to ship / total AI project cost.",
+        "The Integration Tax page identifies larger cost lines around data pipelines, system integration, evaluation/testing, observability, and maintenance.",
+        "https://8bitconcepts.com/ returned HTTP 200 on 2026-05-08.",
+        "The generated OpenAI targeted_research draft was skipped because https://aidevboard.com/company/openai returned HTTP 200 and showed 362 open AI roles / avg $360k, contradicting the draft claim of 0 indexed roles."
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Model API fees are usually 10-20% of the real cost of shipping AI.\n\nThe larger lines are data pipelines, system integration, evaluation/testing, observability, and maintenance.\n\nThat is why the budget conversation usually belongs before the model-choice conversation.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "operator_closeouts": {
+        "linkedin-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "posting_result": {
+        "primary_result": "tools/linkedin-brave-post.js created https://www.linkedin.com/feed/update/urn:li:share:7458510196865126401 but its immediate live URL verification failed.",
+        "recovery_result": "Public unauthenticated fetch of the returned LinkedIn URL returned HTTP 200 and contained Shane Cheek plus the approved copy; no duplicate post was attempted."
+      }
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-nhs-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "12:30",
+      "fingerprint": "293c6fac908a130c",
+      "fact_key": "nhs:mcp-verticals:finance-health-education",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-nhs-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "12:30",
+      "fingerprint": "62e44c166ea835f4",
+      "fact_key": "nhs:mcp-verticals:finance-health-education",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-bya-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "14:30",
+      "fingerprint": "130f945fac2cbc3f",
+      "fact_key": "bya:case-study:no-data-remote-mcp",
+      "route": "https://8bitconcepts.com/case-studies.html#bringyour",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/case-studies.html#bringyour"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-bya-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "14:30",
+      "fingerprint": "67605e87b2bdc387",
+      "fact_key": "bya:case-study:no-data-remote-mcp",
+      "route": "https://8bitconcepts.com/case-studies.html#bringyour",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/case-studies.html#bringyour"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-adb-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "16:30",
+      "fingerprint": "a47213c55309e790",
+      "fact_key": "adb:skills:agents-2437",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-adb-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "queued",
+      "date": "2026-05-08",
+      "post_time_local": "16:30",
+      "fingerprint": "39b847448bb7977c",
+      "fact_key": "adb:skills:agents-2437",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html"
+      ],
+      "note": "Generated by tools/generate-daily-ai-insights.py; update to posted with URL after publication."
     }
   ]
 }
