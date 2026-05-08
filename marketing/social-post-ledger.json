@@ -3,6 +3,20 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "linkedin-observed-2026-05-08-integration-tax-real-cost",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-08",
+      "posted_at": "2026-05-08T21:38:46Z",
+      "url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_model-api-fees-are-usually-10-20-of-the-activity-7458510197343531009-kO5l",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fingerprint": "6f79aac8f39865e2",
+      "text": "Model API fees are usually 10-20% of the real cost of shipping AI.\n\nThe larger lines are data pipelines, system integration, evaluation/testing, observability, and maintenance.\n\nThat is why the budget conversation usually belongs before the model-choice conversation.\n\nSource: https://lnkd.in/egDA3z7Q",
+      "note": "Observed on the public Shane Cheek LinkedIn profile during the 8bit-linkedin-agent-publisher browser recovery path. The selected compensation-by-skill candidate was not posted because direct LinkedIn cookies were rejected, page-context Voyager returned 401, and browser recovery showed a logged-out public profile with no composer; channel was no longer stale because this live post was visible as Now."
+    },
+    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
