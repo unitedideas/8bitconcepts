@@ -38,7 +38,7 @@ def get_adb_overview() -> dict:
 
     root = get_json("https://aidevboard.com/api/v1")
     description = root.get("description", "")
-    jobs_match = re.search(r"([\d,]+)\+ curated AI/ML engineering jobs", description)
+    jobs_match = re.search(r"([\d,]+)\+\s+(?:curated|current)\s+AI/ML engineering jobs", description)
     companies_match = re.search(r"from ([\d,]+) companies", description)
     if not jobs_match or not companies_match:
         raise AssertionError("ADB /api/v1 fallback missing jobs or companies proof stats")
@@ -46,6 +46,15 @@ def get_adb_overview() -> dict:
         "total_jobs": int(jobs_match.group(1).replace(",", "")),
         "total_companies": int(companies_match.group(1).replace(",", "")),
     }
+
+
+def get_nhs_mcp_total() -> int:
+    try:
+        return int(get_json("https://nothumansearch.ai/api/v1/search?has_mcp=true&limit=1")["total"])
+    except urllib.error.HTTPError as exc:
+        if exc.code != 402:
+            raise
+    return int(get_json("https://nothumansearch.ai/api/v1/top?has_mcp=true&limit=1")["total"])
 
 
 def rounded_floor(value: int, step: int = 100) -> str:
@@ -62,14 +71,14 @@ def require_contains(path: pathlib.Path, expected: str) -> None:
 def main() -> int:
     adb = get_adb_overview()
     nhs = get_json("https://nothumansearch.ai/api/v1/stats")
-    mcp = get_json("https://nothumansearch.ai/api/v1/search?has_mcp=true&limit=1")
+    nhs_mcp_total = get_nhs_mcp_total()
     research_count = len(list((ROOT / "research").glob("*.html")))
 
     expected = {
         "adb_jobs": rounded_floor(int(adb["total_jobs"])),
         "adb_companies": f"{int(adb['total_companies']):,}",
         "nhs_sites": rounded_floor(int(nhs["total_sites"])),
-        "nhs_mcp": f"{int(mcp['total']):,}",
+        "nhs_mcp": f"{nhs_mcp_total:,}",
         "research_count": f"{research_count:,}",
     }
 
