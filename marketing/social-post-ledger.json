@@ -1612,6 +1612,32 @@
         "social-editor": "No scoped memory update needed"
       },
       "backfilled_at": "2026-05-08T02:22:18.660311Z"
+    },
+    {
+      "id": "daily-targeted-research-2026-05-07-cohere-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-07-cohere",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-07",
+      "posted_at": "2026-05-08T00:52:35Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7458317574607544320",
+      "route": "https://aidevboard.com/company/cohere",
+      "fact_key": "targeted-research:cohere:88:generative-ai,search,agents",
+      "fingerprint": "8d4f1ee13c053370",
+      "copy": "Cohere is a useful public read on where enterprise AI work is concentrating.\n\nAI Dev Board has 88 indexed Cohere AI roles, ranked 13th across 526 tracked companies and 10,656 total jobs. The indexed Cohere sample averages $235k, with a $170k-$300k published salary range.\n\nSample roles:\n1. Fine-Tuning Engineer\n2. Backend Engineer, Enterprise AI Platform\n3. Engineering Manager, Agentic Platform\n\nThe tags cluster around generative AI, search, agents, and cloud. That points less to generic chatbot work and more to the operating layer: fine-tuning, retrieval, enterprise platform work, and deployment paths.\n\nNHS shows cohere.com at 50/100 for public agent readiness, with llms.txt and a structured API visible. That matters because agent-facing infrastructure is becoming part of the hiring signal, not just the product surface.\n\nData:\nhttps://aidevboard.com/company/cohere\nhttps://nothumansearch.ai/site/cohere.com",
+      "note": "Backfilled from sync-state public-action lock and automation event because the repo ledger was missing the posted row; no new public action occurred during this throttle run.",
+      "facts_verified": [
+        "LinkedIn URL returned HTTP 200 and public metadata matched the approved copy fragment.",
+        "Sync-state public-action lock is posted with the live LinkedIn URL.",
+        "Sync-state automation event records Cohere fact verification against AI Dev Board, Cohere careers, and NHS."
+      ],
+      "operator_closeouts": {
+        "linkedin-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "backfilled_at": "2026-05-08T02:26:54.092Z"
     }
   ]
 }
