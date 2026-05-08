@@ -1584,6 +1584,38 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-08-ai-hiring-geography",
+      "source": "8bit research backlog",
+      "source_item": "research/q2-2026-ai-hiring-geography.html",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "blocked_at": "2026-05-08T22:35:55Z",
+      "blocker": "LinkedIn post blocked before public POST: direct Voyager rejected stored cookies (all LinkedIn cookie sources rejected; chrome-profile-3 returned 302), page-context Voyager could not start because Brave Browser was not running, approved one-shot browser recovery then timed out in osascript while opening the dedicated LinkedIn window/composer, and Computer Use app-state check returned `codex app-server exited before returning a response`. No Post successful/View post URL or activity-page URL was captured, so no public LinkedIn post was ledgered.",
+      "fingerprint": "67379be155819e6b",
+      "fact_key": "research-backlog:q2-2026-ai-hiring-geography",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-hiring-geography.html",
+      "copy": "AI hiring is more geographically concentrated than the remote-work story suggests.\n\nIn the current 8bit / AI Dev Board geography cut, 5,144 AI/ML engineering roles had a location classification.\n\nThe useful numbers:\n\n1. 67% are US-based: 3,458 of 5,144.\n2. 48% of the classified sample is in the San Francisco Bay Area: 2,446 roles across 252 companies.\n3. Remote-friendly postings are 13% of the classified market.\n4. Europe is 11% of the classified sample, with disclosed AI salaries 3% below the US median.\n\nThe practical read: AI engineering did not follow general software all the way into remote-first distribution. Compute, data gravity, research density, and immigration mechanics are pulling frontier AI work back toward a few hubs.\n\nFull cut:\nhttps://8bitconcepts.com/research/q2-2026-ai-hiring-geography.html",
+      "approved_final_copy": "AI hiring is more geographically concentrated than the remote-work story suggests.\n\nIn the current 8bit / AI Dev Board geography cut, 5,144 AI/ML engineering roles had a location classification.\n\nThe useful numbers:\n\n1. 67% are US-based: 3,458 of 5,144.\n2. 48% of the classified sample is in the San Francisco Bay Area: 2,446 roles across 252 companies.\n3. Remote-friendly postings are 13% of the classified market.\n4. Europe is 11% of the classified sample, with disclosed AI salaries 3% below the US median.\n\nThe practical read: AI engineering did not follow general software all the way into remote-first distribution. Compute, data gravity, research density, and immigration mechanics are pulling frontier AI work back toward a few hubs.\n\nFull cut:\nhttps://8bitconcepts.com/research/q2-2026-ai-hiring-geography.html",
+      "approved_final_fingerprint": "67379be155819e6b",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": false,
+      "live_url": "",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-ai-hiring-geography.html returned HTTP 200",
+        "Live page states 5,144 location-classified AI/ML engineering roles",
+        "Live page states 67% US-based: 3,458 of 5,144",
+        "Live page states 48% Bay Area: 2,446 roles across 252 companies",
+        "Live page states remote-friendly postings are 13% of the classified market",
+        "Live page states Europe is 11% of classified sample and disclosed European AI salaries are about 3% below US average",
+        "Methodology states the paper paginates the public aidevboard.com/api/v1/jobs endpoint and buckets location fields by city/region patterns"
+      ],
+      "next_action": "SLA watchdog should force-wake the LinkedIn publisher after cadence allows; first repair the local Brave/Computer Use app-server state or refresh LinkedIn auth cookies, then retry a non-duplicate LinkedIn candidate."
     }
   ]
 }
