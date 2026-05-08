@@ -72,6 +72,55 @@ paths:
             application/json:
               schema:
                 type: object
+  /local/:
+    get:
+      operationId: getLocalConsultingHub
+      summary: Pacific Northwest AI consulting service-area hub
+      responses:
+        "200":
+          description: HTML hub linking city-specific local AI consulting pages
+          content:
+            text/html:
+              schema:
+                type: string
+  /local/{city}.html:
+    get:
+      operationId: getLocalConsultingCityPage
+      summary: City-specific Pacific Northwest AI consulting page
+      description: |
+        Returns one city-specific local SEO page for embedded AI consulting.
+        Current city slugs are vancouver-wa, camas-wa, portland-or, tigard-or,
+        beaverton-or, hillsboro-or, lake-oswego-or, tualatin-or, sherwood-or,
+        battle-ground-wa, ridgefield-wa, and washougal-wa.
+      parameters:
+        - name: city
+          in: path
+          required: true
+          description: Local page slug without the .html suffix.
+          schema:
+            type: string
+            enum:
+              - vancouver-wa
+              - camas-wa
+              - portland-or
+              - tigard-or
+              - beaverton-or
+              - hillsboro-or
+              - lake-oswego-or
+              - tualatin-or
+              - sherwood-or
+              - battle-ground-wa
+              - ridgefield-wa
+              - washougal-wa
+      responses:
+        "200":
+          description: HTML local consulting landing page
+          content:
+            text/html:
+              schema:
+                type: string
+        "404":
+          description: City page not found
   /research.json:
     get:
       operationId: listResearchPapers
