@@ -1,35 +1,36 @@
 {
-  "generated_at": "2026-05-01T13:07:38.083646+00:00",
-  "source_index": "/Users/shanecheek/.foundry/foundry-sync-state/systems/foundry-business-index.md",
+  "generated_at": "2026-05-08T01:03:23.219985+00:00",
+  "source_index": "/Users/owlassist/.foundry/foundry-sync-state/systems/foundry-business-index.md",
   "cadence": "one X and one LinkedIn candidate per active business per day",
   "items": [
     {
-      "id": "portfolio-daily-2026-05-01-agentic-evidence",
+      "id": "portfolio-daily-2026-05-07-agentic-evidence",
       "kind": "portfolio_daily",
-      "date": "2026-05-01",
+      "date": "2026-05-07",
       "business": {
         "name": "Agentic Evidence",
         "stage": "Cooking / live MVP",
         "repo": "/Users/shanecheek/foundry-businesses/agentic-evidence",
         "url": "https://agentic-evidence.fly.dev",
         "primary_job": "Agentic technical interview evidence layer for Hatchways-style assessments.",
-        "current_motion": "Build toward strategic acquisition by Hatchways; VM/session evidence path is live.",
-        "next_move": "Add VM TTL teardown and disposable per-session repo templates."
+        "current_motion": "Candidate AI-evidence entry, reviewer handoff, repo-packaged Claude JSONL exports, assignment packet, guided Claude VM behavior, and finish checklist are live; 2026-05-04 commit `4f37230` added `/candidate/:sessionId/task`, `ae-task`, `ae-submit-steps`, Claude guidance injection, and procedural-prompt score filtering.",
+        "next_move": "Add hidden-test grading, optional GitHub App install UX, and reviewer analysis fields over captured sessions."
       },
-      "fact_key": "portfolio-daily:2026-05-01:agentic-evidence",
+      "fact_key": "portfolio-daily:2026-05-07:agentic-evidence",
       "route": "https://agentic-evidence.fly.dev",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "A useful AI product signal is whether the work creates a reusable surface.\n\nAgentic Evidence does that through: Agentic technical interview evidence layer for Hatchways-style assessments.\n\nLive route: https://agentic-evidence.fly.dev",
-          "fingerprint": "a32fef3c95a1a10e",
-          "duplicate": true
+          "copy": "Agentic technical interview evidence layer for Hatchways-style assessments.\n\nLive surface: https://agentic-evidence.fly.dev\n\nCurrent constraint: Add hidden-test grading, optional GitHub App install UX, and reviewer.",
+          "fingerprint": "088cf9f0c7398b12",
+          "duplicate": false,
+          "length": 204
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Agentic Evidence is a good example of how I want these products to compound.\n\nOne artifact should do more than one job. It should serve users, give agents something inspectable, create a marketing surface, and expose the next bottleneck.\n\nRight now the bottleneck is:\nAdd VM TTL teardown and disposable per-session repo templates.\n\nhttps://agentic-evidence.fly.dev",
-          "fingerprint": "d64d155460da0b9f",
-          "duplicate": true
+          "copy": "Agentic Evidence is live, and the interesting part is the current bottleneck.\n\nProduct: Agentic technical interview evidence layer for Hatchways-style assessments.\n\nConstraint: Add hidden-test grading, optional GitHub App install UX, and reviewer analysis fields over captured sessions.\n\nhttps://agentic-evidence.fly.dev",
+          "fingerprint": "6fe22ae22788c34b",
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -41,69 +42,33 @@
       ]
     },
     {
-      "id": "portfolio-daily-2026-05-01-geo-agent",
+      "id": "portfolio-daily-2026-05-07-bring-your-ai",
       "kind": "portfolio_daily",
-      "date": "2026-05-01",
-      "business": {
-        "name": "Geo Agent",
-        "stage": "Cooking / review prep",
-        "repo": "/Users/shanecheek/foundry-businesses/geo-agent",
-        "url": "https://geo-agent.fly.dev",
-        "primary_job": "Shopify GEO and agentic-search optimization app.",
-        "current_motion": "Shopify app-review readiness after benchmark/runtime repair.",
-        "next_move": "Replace template README/listing copy and submit Shopify app review."
-      },
-      "fact_key": "portfolio-daily:2026-05-01:geo-agent",
-      "route": "https://geo-agent.fly.dev",
-      "channels": {
-        "x": {
-          "account": "@8bitconcepts",
-          "copy": "Geo Agent is the daily operator note today.\n\nThe interesting part is not the landing page. It is the motion: Shopify app-review readiness after benchmark/runtime repair.\n\nhttps://geo-agent.fly.dev",
-          "fingerprint": "d7124e0db0f8e332",
-          "duplicate": true
-        },
-        "linkedin": {
-          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "The practical question for Geo Agent is not whether the idea is interesting.\n\nIt is whether the current motion keeps shrinking the distance between proof and distribution:\nShopify app-review readiness after benchmark/runtime repair.\n\nNext useful move:\nReplace template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
-          "fingerprint": "8e3ddeddebafb855",
-          "duplicate": true
-        }
-      },
-      "quality_gate": [
-        "uses the active business index as source",
-        "includes the product URL",
-        "states one concrete current motion or next move",
-        "routes second, teaches first",
-        "requires social-editor approval before posting"
-      ]
-    },
-    {
-      "id": "portfolio-daily-2026-05-01-bring-your-ai",
-      "kind": "portfolio_daily",
-      "date": "2026-05-01",
+      "date": "2026-05-07",
       "business": {
         "name": "Bring Your AI",
         "stage": "Running / revenue-ready",
-        "repo": "/Users/shanecheek/foundry-businesses/portable",
+        "repo": "/Users/shanecheek/go/src/foundry-apps/portable",
         "url": "https://bringyour.ai",
         "primary_job": "Local-first Claude Code to Codex harness migration.",
-        "current_motion": "Traffic and directory distribution; product, payments, and agent-readable commerce endpoints are live.",
-        "next_move": "Continue Claude/Codex-user distribution without MCP-org/punkpeye engagement from `unitedideas`; SPT/ACP and x402/MPP remain private-preview-gated."
+        "current_motion": "Product, payments, agent-readable commerce, direct Stripe checkout, hold-slot fallback, and `/pricing` page are live after design pass commit `30508b5`; `foundry-businesses/portable` is only a marketing mirror on 1P.",
+        "next_move": "Continue Claude/Codex-user distribution; SPT/ACP and x402/MPP remain private-preview-gated."
       },
-      "fact_key": "portfolio-daily:2026-05-01:bring-your-ai",
+      "fact_key": "portfolio-daily:2026-05-07:bring-your-ai",
       "route": "https://bringyour.ai",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "The next move for Bring Your AI: Continue Claude/Codex-user distribution without MCP-org/punkpeye engagement from.\n\nThat is the useful level for AI products: one live artifact, one next constraint, one measurable surface.\n\nhttps://bringyour.ai",
-          "fingerprint": "615cdc14c61261f4",
-          "duplicate": true
+          "copy": "Local-first Claude Code to Codex harness migration.\n\nBring Your AI is shipping around this constraint: Product, payments, agent-readable commerce, direct Stripe checkout.\n\nhttps://bringyour.ai",
+          "fingerprint": "4a2f8caa87685346",
+          "duplicate": false,
+          "length": 193
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Bring Your AI is the portfolio note today.\n\nWhat it does:\nLocal-first Claude Code to Codex harness migration.\n\nWhy it matters operationally:\nTraffic and directory distribution; product, payments, and agent-readable commerce endpoints are live.\n\nWhat needs to happen next:\nContinue Claude/Codex-user distribution without MCP-org/punkpeye engagement from `unitedideas`; SPT/ACP and x402/MPP remain private-preview-gated.\n\nhttps://bringyour.ai",
-          "fingerprint": "b9ddccea7a2bf0dc",
-          "duplicate": true
+          "copy": "Bring Your AI is a live product, not a roadmap.\n\nWhat is visible now: Product, payments, agent-readable commerce, direct Stripe checkout, hold-slot fallback, and /pricing page are live after design pass.\n\nWhat needs to happen next: Continue Claude/Codex-user distribution\n\nhttps://bringyour.ai",
+          "fingerprint": "ce9ef61f1522cbaf",
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -115,32 +80,33 @@
       ]
     },
     {
-      "id": "portfolio-daily-2026-05-01-ai-dev-board",
+      "id": "portfolio-daily-2026-05-07-ai-dev-board",
       "kind": "portfolio_daily",
-      "date": "2026-05-01",
+      "date": "2026-05-07",
       "business": {
         "name": "AI Dev Board",
         "stage": "Running",
-        "repo": "/Users/shanecheek/foundry-businesses/ai-dev-jobs",
+        "repo": "/Users/shanecheek/go/src/foundry-apps/ai-dev-jobs",
         "url": "https://aidevboard.com",
         "primary_job": "AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.",
-        "current_motion": "API/MCP/indexed-job distribution plus monetization surfaces.",
-        "next_move": "Keep API invariant green; improve SEO indexing and semantic/search conversion surfaces."
+        "current_motion": "API/MCP/indexed-job distribution plus employer conversion flow; `/post` plan-first flow and `/jobs` canonical redirect are live after design pass commit `ddc8b65`; `/tag/agents` visual cleanup is live in commit `4c30bea` with `AI Agent Jobs` title/meta and compact hero/search/filter layout; `foundry-businesses/ai-dev-jobs` is only a marketing/outreach mirror on 1P.",
+        "next_move": "Keep API invariant green; improve SEO indexing and hiring-side conversion surfaces."
       },
-      "fact_key": "portfolio-daily:2026-05-01:ai-dev-board",
+      "fact_key": "portfolio-daily:2026-05-07:ai-dev-board",
       "route": "https://aidevboard.com",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "AI Dev Board is worth talking about because it is not a deck. AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nCurrent motion: API/MCP/indexed-job distribution plus monetization surfaces.\n\nhttps://aidevboard.com",
-          "fingerprint": "22ee57d1479ec475",
-          "duplicate": true
+          "copy": "AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nCurrent move at AI Dev Board: API/MCP/indexed-job distribution plus employer conversion flow\n\nhttps://aidevboard.com",
+          "fingerprint": "b81113b1f432a8f4",
+          "duplicate": false,
+          "length": 199
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "AI Dev Board is one of the current Foundry businesses worth watching.\n\nThe job is simple: AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nCurrent motion:\nAPI/MCP/indexed-job distribution plus monetization surfaces.\n\nThe next move is not broad strategy. It is this:\nKeep API invariant green; improve SEO indexing and semantic/search conversion surfaces.\n\nLive route:\nhttps://aidevboard.com",
-          "fingerprint": "c50372c7d10dc749",
-          "duplicate": true
+          "copy": "AI Dev Board is live at https://aidevboard.com.\n\nWhat is shipping now: API/MCP/indexed-job distribution plus employer conversion flow\n\nWhat the product is for: AI/ML jobs board with REST API, MCP server, company claims, and promoted listings.\n\nNext move: Keep API invariant green",
+          "fingerprint": "e0063753e34c7256",
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -152,32 +118,33 @@
       ]
     },
     {
-      "id": "portfolio-daily-2026-05-01-not-human-search",
+      "id": "portfolio-daily-2026-05-07-not-human-search",
       "kind": "portfolio_daily",
-      "date": "2026-05-01",
+      "date": "2026-05-07",
       "business": {
         "name": "Not Human Search",
         "stage": "Running",
-        "repo": "/Users/shanecheek/foundry-businesses/nothumansearch",
+        "repo": "/Users/shanecheek/go/src/foundry-apps/nothumansearch",
         "url": "https://nothumansearch.ai",
         "primary_job": "Agentic-readiness search engine and scoring system.",
-        "current_motion": "Discovery, monitoring, score-fix monetization, and agent/MCP discoverability.",
+        "current_motion": "Discovery, monitoring, score-fix monetization, score reasons, and clearer search/monitor forms are live after design pass commit `73dc329`; `foundry-businesses/nothumansearch` is only a marketing/outreach mirror on 1P.",
         "next_move": "Continue distribution directories and improve indexed agent-first coverage."
       },
-      "fact_key": "portfolio-daily:2026-05-01:not-human-search",
+      "fact_key": "portfolio-daily:2026-05-07:not-human-search",
       "route": "https://nothumansearch.ai",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Current Foundry proof point: Not Human Search.\n\nIt tests a concrete wedge: Agentic-readiness search engine and scoring system.\n\nThe next useful move is also concrete: Continue distribution directories and improve indexed agent-first coverage.\n\nhttps://nothumansearch.ai",
-          "fingerprint": "47217118f6a272be",
-          "duplicate": true
+          "copy": "Agentic-readiness search engine and scoring system.\n\nNext move for Not Human Search: Continue distribution directories and improve indexed agent-first.\n\nhttps://nothumansearch.ai",
+          "fingerprint": "1e0478d5abb52eee",
+          "duplicate": false,
+          "length": 174
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Daily Foundry business note: Not Human Search.\n\nThis is the operating shape:\n\n1. Stage: Running.\n2. Job: Agentic-readiness search engine and scoring system.\n3. Motion: Discovery, monitoring, score-fix monetization, and agent/MCP discoverability.\n4. Next constraint: Continue distribution directories and improve indexed agent-first coverage.\n\nThe useful test is whether this keeps producing public proof instead of internal planning.\n\nhttps://nothumansearch.ai",
-          "fingerprint": "a4857a42fe4389fc",
-          "duplicate": true
+          "copy": "One live Foundry surface today is Not Human Search.\n\nProduct: Agentic-readiness search engine and scoring system.\n\nCurrent motion: Discovery, monitoring, score-fix monetization, score reasons, and clearer search/monitor forms are live after design pass commit 73dc329\n\nNext move: Continue distribution directories and improve indexed agent-first coverage.\n\nhttps://nothumansearch.ai",
+          "fingerprint": "e50654cee00a38cf",
+          "duplicate": false
         }
       },
       "quality_gate": [
@@ -189,32 +156,33 @@
       ]
     },
     {
-      "id": "portfolio-daily-2026-05-01-8bitconcepts",
+      "id": "portfolio-daily-2026-05-07-8bitconcepts",
       "kind": "portfolio_daily",
-      "date": "2026-05-01",
+      "date": "2026-05-07",
       "business": {
         "name": "8bitconcepts",
         "stage": "Running / agency funnel",
         "repo": "/Users/shanecheek/go/src/8bitconcepts",
         "url": "https://8bitconcepts.com",
         "primary_job": "Research, consulting funnel, and marketing/distribution engine for Foundry.",
-        "current_motion": "PNW SMB outreach, research, daily social posts, consulting leads.",
+        "current_motion": "PNW SMB outreach, research, daily social posts, consulting leads, proof-led consulting homepage, work-with-us page, and sourced diagnostic page are live after design pass commit `7371e41`.",
         "next_move": "Continue one-post-per-app daily social cadence and local-search/SMB lead work."
       },
-      "fact_key": "portfolio-daily:2026-05-01:8bitconcepts",
+      "fact_key": "portfolio-daily:2026-05-07:8bitconcepts",
       "route": "https://8bitconcepts.com",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "A useful AI product signal is whether the work creates a reusable surface.\n\n8bitconcepts does that through: Research, consulting funnel, and marketing/distribution engine for Foundry.\n\nLive route: https://8bitconcepts.com",
-          "fingerprint": "00a221e98f781b76",
-          "duplicate": true
+          "copy": "8bitconcepts is live: https://8bitconcepts.com\n\nResearch, consulting funnel, and marketing/distribution engine for Foundry.\n\nConstraint: Continue one-post-per-app daily social cadence and local-search/SMB.",
+          "fingerprint": "b417b30eebf8241b",
+          "duplicate": false,
+          "length": 202
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "8bitconcepts is a good example of how I want these products to compound.\n\nOne artifact should do more than one job. It should serve users, give agents something inspectable, create a marketing surface, and expose the next bottleneck.\n\nRight now the bottleneck is:\nContinue one-post-per-app daily social cadence and local-search/SMB lead work.\n\nhttps://8bitconcepts.com",
-          "fingerprint": "82563ca76b351909",
-          "duplicate": true
+          "copy": "8bitconcepts is a useful operating example because the proof is public.\n\nCurrent motion: PNW SMB outreach, research, daily social posts, consulting leads, proof-led consulting homepage, work-with-us page, and sourced.\n\nNext move: Continue one-post-per-app daily social cadence and local-search/SMB lead work.\n\nRoute: https://8bitconcepts.com",
+          "fingerprint": "25d0af2be86609fe",
+          "duplicate": false
         }
       },
       "quality_gate": [
