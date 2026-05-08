@@ -420,6 +420,7 @@ def get_resend_status(
 
 def build_followup(subject: str, topic_slug: Optional[str], hooks: dict) -> tuple[str, str]:
     fresh = hooks.get(topic_slug, DEFAULT_HOOK) if topic_slug else DEFAULT_HOOK
+    fresh = fresh.strip().rstrip(".!?")
     if topic_slug and topic_slug in FALLBACK_HOOK:
         # We have a known paper — build a tight referral URL.
         url = f"https://8bitconcepts.com/research/{topic_slug}.html"
@@ -429,8 +430,8 @@ def build_followup(subject: str, topic_slug: Optional[str], hooks: dict) -> tupl
         cta_cut = "the index page"
     re_subject = subject if subject.lower().startswith("re:") else f"Re: {subject}"
     body = (
-        f"Quick bump on my note from earlier this week.\n\n"
-        f"Since sending, {fresh}. Link if useful: {url}\n\n"
+        f"A quick follow-up on my note from earlier this week.\n\n"
+        f"Since then, {fresh}. Link if useful: {url}\n\n"
         f"Happy to send over {cta_cut} or a tighter editorial angle if "
         f"either would fit — otherwise no need to reply, I'll leave it here.\n\n"
         f"Shane\n"
