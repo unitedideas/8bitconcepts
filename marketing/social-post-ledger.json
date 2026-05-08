@@ -1584,6 +1584,50 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-research-fact-2026-05-08-8bit-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-08-8bit",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-08",
+      "posted_at": "2026-05-08T13:37:30Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7458510196865126401",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "8bit:integration-tax:model-cost-10-20",
+      "fingerprint": "b471493ebaa8832d",
+      "text": "Model API fees are usually 10-20% of the real cost of shipping AI.\n\nThe larger lines are data pipelines, system integration, evaluation/testing, observability, and maintenance.\n\nThat is why the budget conversation usually belongs before the model-choice conversation.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
+      "note": "Backfilled from sync-state public-action lock b471493ebaa8832d after stale automation commits dropped the local ledger row. Live URL and posted_at came from the sync-state posted lock."
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-failed-2026-05-08-adb-compensation-skill-leverage",
+      "source": "8bit research backlog",
+      "source_item": "q2-2026-ai-compensation-by-skill",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "failed",
+      "date": "2026-05-08",
+      "failed_at": "2026-05-08T20:34:15Z",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "fact_key": "adb:skills:agents-vs-distributed-systems-2026-05-08",
+      "fingerprint": "0e64d4e2a3a98ee9",
+      "text": "Agents show up more often in AI hiring copy. The pay signal is narrower.\n\nIn the current 8bit / AI Dev Board compensation sample, agents appears in 2,451 roles at $229,881 average salary. distributed-systems appears in 1,481 roles at $256,046 average salary.\n\nVolume and compensation leverage are not the same signal.\n\nSource: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "blocker": "LinkedIn auth hard stop before any public POST: direct Voyager cookies were rejected (chrome-profile-3:302), page-context /voyager/api/me returned 401, and approved one-shot browser recovery landed on the public signed-out Shane Cheek profile with Join now / Sign in visible. Active authenticated LinkedIn identity could not be verified, so no post was attempted or recorded as live.",
+      "facts_verified": [
+        "https://8bitconcepts.com/ returned HTTP 200",
+        "https://aidevboard.com/ returned HTTP 200",
+        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html returned HTTP 200",
+        "Live source page states agents appears in 2,451 roles at $229,881 average salary",
+        "Live source page states distributed-systems appears in 1,481 roles at $256,046 average salary"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": false,
+      "live_url": ""
     }
   ]
 }
