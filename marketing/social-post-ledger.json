@@ -1774,8 +1774,8 @@
       "status": "queued",
       "date": "2026-05-08",
       "post_time_local": "08:30",
-      "fingerprint": "b9abb89ef2321739",
-      "fact_key": "targeted-research:openai:0:",
+      "fingerprint": "9e06081c111eec96",
+      "fact_key": "targeted-research:openai:362:distributed-systems,research,data-pipeline",
       "route": "https://aidevboard.com/company/openai",
       "format": "targeted documented research",
       "target": {
@@ -1787,6 +1787,8 @@
       },
       "research_sources": {
         "adb_company": "https://aidevboard.com/company/openai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=openai&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
         "nhs_profile": "https://nothumansearch.ai/site/openai.com",
         "official_source": "https://openai.com/careers/"
       },
@@ -1800,8 +1802,8 @@
       "status": "queued",
       "date": "2026-05-08",
       "post_time_local": "08:30",
-      "fingerprint": "0fc4e84c0c77d7a4",
-      "fact_key": "targeted-research:openai:0:",
+      "fingerprint": "75f7567158fcaeee",
+      "fact_key": "targeted-research:openai:362:distributed-systems,research,data-pipeline",
       "route": "https://aidevboard.com/company/openai",
       "format": "targeted documented research",
       "target": {
@@ -1813,6 +1815,8 @@
       },
       "research_sources": {
         "adb_company": "https://aidevboard.com/company/openai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=openai&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
         "nhs_profile": "https://nothumansearch.ai/site/openai.com",
         "official_source": "https://openai.com/careers/"
       },

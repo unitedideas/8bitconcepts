@@ -10,8 +10,10 @@ callouts.
 from __future__ import annotations
 
 from collections import Counter
+from html.parser import HTMLParser
 import hashlib
 import json
+import re
 import statistics
 from datetime import date
 from typing import Any, Dict, List, Optional, Set, Tuple
@@ -21,7 +23,10 @@ import urllib.request
 USER_AGENT = "8bitconcepts-social-research/1.0 (+https://8bitconcepts.com)"
 ADB_STATS_URL = "https://aidevboard.com/api/v1/stats"
 ADB_JOBS_URL = "https://aidevboard.com/api/v1/jobs"
+ADB_API_ROOT_URL = "https://aidevboard.com/api/v1"
+ADB_COMPANY_URL = "https://aidevboard.com/company/{slug}"
 NHS_SITE_URL = "https://nothumansearch.ai/api/v1/site/{domain}"
+NHS_PROFILE_URL = "https://nothumansearch.ai/site/{domain}"
 
 X_ACCOUNT = "@8bitconcepts"
 LINKEDIN_PROFILE = "https://www.linkedin.com/in/shane-cheek-9173473b6/"
@@ -130,6 +135,22 @@ def safe_http_json(url: str) -> Tuple[JsonMap, Optional[str]]:
         return {}, str(exc)
 
 
+def http_text(url: str) -> str:
+    req = urllib.request.Request(
+        url,
+        headers={"Accept": "text/html,application/json", "User-Agent": USER_AGENT},
+    )
+    with urllib.request.urlopen(req, timeout=12) as response:
+        return response.read().decode("utf-8", errors="replace")
+
+
+def safe_http_text(url: str) -> Tuple[str, Optional[str]]:
+    try:
+        return http_text(url), None
+    except Exception as exc:
+        return "", str(exc)
+
+
 def pick_target(target_date: date) -> Target:
     return TARGETS[(target_date.toordinal() * 5) % len(TARGETS)]
 
@@ -152,6 +173,20 @@ def fmt_money(value: Any) -> str:
         return "salary not published"
 
 
+def parse_money_short(value: str) -> Optional[int]:
+    cleaned = value.strip().lower().replace(",", "")
+    match = re.search(r"\$?(\d+(?:\.\d+)?)\s*([km])?", cleaned)
+    if not match:
+        return None
+    amount = float(match.group(1))
+    suffix = match.group(2)
+    if suffix == "m":
+        amount *= 1_000_000
+    elif suffix == "k":
+        amount *= 1_000
+    return int(amount)
+
+
 def clean_text(value: str) -> str:
     return (
         value.replace("\u2014", "-")
@@ -161,6 +196,132 @@ def clean_text(value: str) -> str:
         .replace("\u201c", '"')
         .replace("\u201d", '"')
     )
+
+
+class CompanyPageParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.in_title = False
+        self.current_meta_name = ""
+        self.current_meta_content = ""
+        self.in_job_title = False
+        self.in_job_tags = 0
+        self.in_workplace = False
+        self.title_parts: List[str] = []
+        self.meta_description = ""
+        self.job_titles: List[str] = []
+        self.tags: List[str] = []
+        self.workplaces: List[str] = []
+        self._parts: List[str] = []
+
+    def handle_starttag(self, tag: str, attrs: List[Tuple[str, Optional[str]]]) -> None:
+        attrs_map = {key: value or "" for key, value in attrs}
+        classes = set(attrs_map.get("class", "").split())
+        if tag == "title":
+            self.in_title = True
+            self.title_parts = []
+        if tag == "meta" and attrs_map.get("name") == "description":
+            self.meta_description = attrs_map.get("content", "")
+        if tag == "h3" and "job-title" in classes:
+            self.in_job_title = True
+            self._parts = []
+        if tag == "div" and "job-tags" in classes:
+            self.in_job_tags += 1
+        if tag == "span" and "workplace-badge" in classes:
+            self.in_workplace = True
+            self._parts = []
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "title" and self.in_title:
+            self.in_title = False
+        if tag == "h3" and self.in_job_title:
+            self.in_job_title = False
+            text = clean_text(" ".join(" ".join(self._parts).split()))
+            text = re.sub(r"\s+(Featured|New)$", "", text).strip()
+            if text:
+                self.job_titles.append(text)
+            self._parts = []
+        if tag == "div" and self.in_job_tags:
+            self.in_job_tags -= 1
+        if tag == "span" and self.in_workplace:
+            self.in_workplace = False
+            text = clean_text(" ".join(" ".join(self._parts).split())).strip()
+            if text:
+                self.workplaces.append(text.lower().replace("-", ""))
+            self._parts = []
+
+    def handle_data(self, data: str) -> None:
+        if self.in_title:
+            self.title_parts.append(data)
+        if self.in_job_title or self.in_workplace:
+            self._parts.append(data)
+        if self.in_job_tags:
+            tag = clean_text(data.strip())
+            if tag:
+                self.tags.append(tag)
+
+    @property
+    def title(self) -> str:
+        return clean_text(" ".join(" ".join(self.title_parts).split()))
+
+
+def parse_adb_company_page(html: str) -> JsonMap:
+    parser = CompanyPageParser()
+    parser.feed(html)
+    text = f"{parser.title}\n{parser.meta_description}"
+
+    total_roles = 0
+    role_match = re.search(r"([\d,]+)\s+(?:open\s+)?AI(?:/ML)?(?: developer)? roles?", text, re.I)
+    if role_match:
+        total_roles = int(role_match.group(1).replace(",", ""))
+
+    avg_salary = None
+    salary_match = re.search(r"(?:Avg(?:erage)?(?: salary)?|average salary)\s+\$?([\d,.]+)\s*([km])?", text, re.I)
+    if salary_match:
+        avg_salary = parse_money_short("".join(part or "" for part in salary_match.groups()))
+
+    return {
+        "total_roles": total_roles,
+        "avg_salary": avg_salary,
+        "jobs": [
+            {
+                "title": title,
+                "tags": parser.tags[index * 4 : (index + 1) * 4],
+                "workplace": parser.workplaces[index] if index < len(parser.workplaces) else "",
+            }
+            for index, title in enumerate(parser.job_titles[:12])
+        ],
+    }
+
+
+def adb_overview_from_root() -> JsonMap:
+    root, error = safe_http_json(ADB_API_ROOT_URL)
+    if error:
+        return {}
+    description = str(root.get("description", ""))
+    jobs_match = re.search(r"([\d,]+)\+ current AI/ML engineering jobs", description)
+    companies_match = re.search(r"from ([\d,]+) companies", description)
+    if not jobs_match:
+        return {}
+    return {
+        "overview": {
+            "total_jobs": int(jobs_match.group(1).replace(",", "")),
+            "total_companies": int(companies_match.group(1).replace(",", "")) if companies_match else 0,
+        }
+    }
+
+
+def parse_nhs_profile_page(html: str) -> JsonMap:
+    score_match = re.search(r"Agentic Readiness\s+(\d+)/100", html)
+    found = {signal.strip().lower() for signal in re.findall(r'<span class="found">\+\d+\s+([^<]+)</span>', html)}
+    return {
+        "agentic_score": int(score_match.group(1)) if score_match else None,
+        "has_llms_txt": "llms.txt" in found,
+        "has_openapi": "openapi" in found,
+        "has_structured_api": "structured api" in found,
+        "has_ai_plugin": "ai-plugin" in found,
+        "has_mcp": "mcp" in found,
+    }
 
 
 def fingerprint(text: str) -> str:
@@ -195,6 +356,31 @@ def build_target_research(target_date: date) -> JsonMap:
     stats, stats_error = safe_http_json(ADB_STATS_URL)
     jobs_payload, jobs_error = safe_http_json(sources["adb_jobs_api"])
     nhs_payload, nhs_error = safe_http_json(NHS_SITE_URL.format(domain=target["domain"]))
+    company_fallback: JsonMap = {}
+    company_page_url = ADB_COMPANY_URL.format(slug=target["slug"])
+
+    if stats_error:
+        stats = adb_overview_from_root()
+        if stats:
+            stats_error = None
+    if jobs_error:
+        company_html, company_error = safe_http_text(company_page_url)
+        if company_html:
+            company_fallback = parse_adb_company_page(company_html)
+            jobs_payload = {
+                "total": company_fallback.get("total_roles"),
+                "jobs": company_fallback.get("jobs", []),
+            }
+            jobs_error = None
+        elif company_error:
+            jobs_error = f"{jobs_error}; company page fallback failed: {company_error}"
+    if nhs_error:
+        nhs_html, nhs_page_error = safe_http_text(NHS_PROFILE_URL.format(domain=target["domain"]))
+        if nhs_html:
+            nhs_payload = parse_nhs_profile_page(nhs_html)
+            nhs_error = None
+        elif nhs_page_error:
+            nhs_error = f"{nhs_error}; profile page fallback failed: {nhs_page_error}"
 
     companies = stats.get("companies", []) if isinstance(stats, dict) else []
     company_stat: JsonMap = {}
@@ -204,8 +390,14 @@ def build_target_research(target_date: date) -> JsonMap:
             break
 
     jobs = jobs_payload.get("jobs", []) if isinstance(jobs_payload, dict) else []
-    total_roles = int(jobs_payload.get("total") or company_stat.get("roles") or len(jobs) or 0)
-    avg_salary = company_stat.get("avg_salary")
+    total_roles = int(
+        jobs_payload.get("total")
+        or company_stat.get("roles")
+        or company_fallback.get("total_roles")
+        or len(jobs)
+        or 0
+    )
+    avg_salary = company_stat.get("avg_salary") or company_fallback.get("avg_salary")
     salary_midpoints = [
         int((job.get("salary_min", 0) + job.get("salary_max", 0)) / 2)
         for job in jobs

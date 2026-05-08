@@ -1,6 +1,6 @@
 # Daily AI Insight Drafts
 
-Generated: 2026-05-08 13:23 UTC
+Generated: 2026-05-08 15:01 UTC
 Post date: 2026-05-08
 X account: @8bitconcepts
 LinkedIn profile: https://www.linkedin.com/in/shane-cheek-9173473b6/
@@ -14,10 +14,10 @@ Target: OpenAI
 X mention: @OpenAI
 LinkedIn tag hint: @OpenAI
 Research angle: platform delivery, multicloud infrastructure, evals, and agent deployment loops
-Observed signal: 0 indexed roles, tracked company, salary not published average published salary, top tags: AI systems
-Sample roles: current public roles
-Workplace mix: workplace mix not published in current sample
-Longform decision: No longform trigger today.
+Observed signal: 362 indexed roles, tracked company, $360,000 average published salary, top tags: distributed-systems, research, data-pipeline
+Sample roles: Software Engineer, Delivery / CD; Backend Software Engineer, Applied Foundations
+Workplace mix: onsite: 5, remote: 4, hybrid: 3
+Longform decision: Paper trigger: OpenAI is a top-scale AI hiring signal with 362 indexed roles.
 
 Documented sources:
 - AI Dev Board company page: https://aidevboard.com/company/openai
@@ -27,13 +27,12 @@ Documented sources:
 - Official source: https://openai.com/careers/
 
 Source fetch errors:
-- adb_stats_api: HTTP Error 402: Payment Required
-- adb_jobs_api: HTTP Error 402: Payment Required
+- None
 
 #### X
 
 ```text
-Looking at public AI hiring as a market signal: @OpenAI has 0 indexed AI/ML roles on AI Dev Board, with current tags clustering around agent systems. Avg published salary: salary not published.
+Looking at public AI hiring as a market signal: @OpenAI has 362 indexed AI/ML roles on AI Dev Board, with current tags clustering around distributed-systems, research, data-pipeline. Avg published salary: $360,000.
 
 The read is not just hiring volume. It points to platform delivery, multicloud infrastructure, evals, and agent deployment loops. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?
 
@@ -45,10 +44,10 @@ Data: https://aidevboard.com/company/openai
 ```text
 Looking at @OpenAI through the public hiring data:
 
-1. 0 indexed AI/ML roles in AI Dev Board.
-2. Current sample tags cluster around agent systems.
-3. Sample roles include current public roles.
-4. Avg published salary in the indexed sample: salary not published.
+1. 362 indexed AI/ML roles in AI Dev Board.
+2. Current sample tags cluster around distributed-systems, research, data-pipeline, llm.
+3. Sample roles include Software Engineer, Delivery / CD; Backend Software Engineer, Applied Foundations; Product Manager, Cyber Safety.
+4. Avg published salary in the indexed sample: $360,000.
 
 The useful read is where the operational work is moving: platform delivery, multicloud infrastructure, evals, and agent deployment loops.
 
