@@ -1584,6 +1584,34 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-research-fact-2026-05-07-8bit-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-07-8bit",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-07",
+      "posted_at": "2026-05-07T20:39:37Z",
+      "url": "https://x.com/8BitConcepts/status/2052488020302196980",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "fingerprint": "d6b907f71b558974",
+      "copy": "In the shift-handoff simulation, digital handoff retained 100% of prior-shift entries. Modeled verbal handoff retained 40-60%.\n\nThe missing piece was the early warning: developing trends, before they became obvious problems.\n\nhttps://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "note": "Backfilled from sync-state public-action lock and automation event because the repo ledger was missing the posted row; no new public action occurred during this throttle run.",
+      "facts_verified": [
+        "8bit shift handoff paper HTTP 200",
+        "8bit homepage HTTP 200",
+        "100% digital handoff retention vs 40-60% modeled verbal handoff",
+        "developing trends/early warnings are the first category cut from verbal briefings",
+        "Foundry business index active 8bit URL"
+      ],
+      "operator_closeouts": {
+        "x-operator": "No scoped memory update needed",
+        "social-editor": "No scoped memory update needed"
+      },
+      "backfilled_at": "2026-05-08T02:22:18.660311Z"
     }
   ]
 }
