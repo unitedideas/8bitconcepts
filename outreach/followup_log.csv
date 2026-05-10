@@ -17,3 +17,13 @@ sent_at,original_send_id,to,subject,followup_id,status
 2026-05-08T18:43:56+00:00,9f414950-af9c-4be7-8a37-dad7033ed183,hello@dev.to,Re: AI compensation by skill data,dde03c7e-d9c0-468c-8808-b733a601683b,sent-delivered
 2026-05-08T18:43:57+00:00,e8f72f66-604b-45da-aee6-6325189b9a2b,frederic@thenewstack.io,Re: MCP verification data,6c782a5a-93da-4335-9596-35f4a1b4f04b,sent-delivered
 2026-05-08T18:43:58+00:00,78156b6a-a5b3-4498-a9e2-7f9ce98aa8b5,pkulp@morningbrew.com,Re: MCP verification data,8f661807-fbaf-4152-bda3-d09d42f9dd5b,sent-delivered
+2026-05-10T17:15:38+00:00,01a86a0e-a9f7-4a86-bf9c-470a759c8fc6,editorial@a16z.com,Re: a16z editorial — live data snapshot of AI engineering hiring + infrastructure,9122470e-7c4a-4fc7-a80f-31419b4742c2,sent-delivered
+2026-05-10T17:15:38+00:00,46e0ed7b-4008-45bb-b3a1-a9175704adae,tips@sfstandard.com,Re: 8bitconcepts research data,935321c2-d6e8-4b9e-80c8-e3b6aa177802,sent-delivered
+2026-05-10T17:15:39+00:00,14c3ec2d-7eea-46fc-87d8-c257f0f88bc4,pkrill@infoworld.com,Re: AI compensation by skill data,58a4ce04-71af-40f0-a3ac-c7dc1c0c15f0,sent-delivered
+2026-05-10T17:15:40+00:00,5a804960-46fa-4a00-925c-dab5f9d815fd,mturck@firstmarkcap.com,Re: MCP verification data,9fb613be-a36b-4200-ad10-945c3c426f9f,sent-delivered
+2026-05-10T17:15:41+00:00,66cf6b6b-6d9d-4b0d-83bf-fa3011d69705,alan@techstrong.ai,Re: MCP verification data,ceccf83b-73a3-43e6-9cfe-f28c4e88f887,sent-delivered
+2026-05-10T17:15:42+00:00,b13bd00b-499d-4360-8076-d156236efbfb,news@finextra.com,Re: MCP verification data,3fe05128-2d4f-48a8-aea7-c2be4ba8c4e9,sent-delivered
+2026-05-10T17:15:43+00:00,3c9df596-5520-4202-97b5-54215afc10e4,rowan@therundown.ai,Re: MCP verification data,778c47c1-d01a-4b18-9288-cf5bdd02350c,sent-delivered
+2026-05-10T17:15:44+00:00,6a6005b6-5cdb-47c4-966f-58bb39120f32,jbarron@d2emerge.com,Re: MCP verification data,16090a58-710e-4317-979c-8885d8dda3d6,sent-delivered
+2026-05-10T17:15:45+00:00,3c20c7ce-7b48-459f-b312-fb5134af1521,ben.tossell@gmail.com,Re: MCP verification data,292c8a4d-3771-4051-b8a8-aea651c66ffc,sent-delivered
+2026-05-10T17:15:46+00:00,a11764ba-94a2-43d2-a45d-be3400eaa1ed,hello@pulsemcp.com,Re: MCP verification data,f9db6703-b7b2-4fd7-843d-53335d7d03a8,sent-delivered
