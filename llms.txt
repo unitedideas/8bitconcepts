@@ -92,6 +92,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Abandonment Curve](https://8bitconcepts.com/research/the-abandonment-curve.html): Gartner projects that 60% of enterprise AI projects will be abandoned by end of 2026, and the indust
 
+- [The Rehearsal Problem](https://8bitconcepts.com/research/the-rehearsal-problem.html): Most enterprise AI systems are evaluated once — at launch — and then trusted indefinitely. But LLMs 
+
 ## Contact
 
 Website: https://8bitconcepts.com
