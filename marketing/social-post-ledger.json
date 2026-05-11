@@ -1607,6 +1607,24 @@
       "social_editor_closeout": "No scoped memory update needed",
       "x_operator_closeout": "No scoped memory update needed",
       "note": "Posted by 8bit-x-agent-publisher from verified @8BitConcepts via tools/x-brave-post.js. Initial X direct API returned empty 200; same-script find-only recovery captured the live status URL before ledgering."
+    },
+    {
+      "id": "daily-targeted-research-2026-05-11-cerebras-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "date": "2026-05-11",
+      "blocked_at": "2026-05-11T23:18:16.939Z",
+      "fingerprint": "359b61c43bacf5de",
+      "final_fingerprint": "6ad24b53643094a3",
+      "fact_key": "targeted-research:cerebras:32:generative-ai,agents,pytorch",
+      "route": "https://aidevboard.com/company/cerebras",
+      "final_copy": "Cerebras is a useful public lens on where AI infrastructure hiring is moving.\n\nAI Dev Board currently indexes 32 Cerebras AI developer roles. Sample roles include Senior Performance Engineer, Inference; ML Research Engineer (Inference); and Advanced Technology: AI/ML Research Scientist.\n\nThe tags cluster around inference, distributed systems, deep learning, PyTorch, TensorFlow, LLMs, agents, and generative AI.\n\nThe interesting question is where the compounding advantage sits: hardware, software automation, or the developer surface around both.\n\nSecondary agent-readiness lens: Not Human Search shows cerebras.ai at 15/100 with a structured API signal.\n\nData:\nhttps://aidevboard.com/company/cerebras\nhttps://nothumansearch.ai/site/cerebras.ai",
+      "blocker": "LinkedIn auth failed before identity verification: direct Voyager cookie path rejected all stores, page-context Voyager returned 401 for /voyager/api/me, and approved one-shot browser recovery hung without a View post URL or verified activity URL.",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
