@@ -1625,6 +1625,29 @@
       "social_editor_status": "approved",
       "social_editor_closeout": "No scoped memory update needed",
       "linkedin_operator_closeout": "No scoped memory update needed"
+    },
+    {
+      "id": "linkedin-shift-handoff-intelligence-2026-05-11",
+      "source": "8bit research backlog / agent-social-editor",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-11",
+      "posted_at": "2026-05-11T23:51:00Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7459750265693319168",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "fingerprint": "e85b772e3e56215a",
+      "final_copy": "The shift-handoff paper has one useful split: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%.\n\nThe risky loss is not always the obvious critical issue. It is the developing trend that is not urgent yet.\n\nhttps://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html returned HTTP 200",
+        "The page contains the claims 100%, 40-60%, verbal handoff, and developing trend",
+        "https://www.linkedin.com/feed/update/urn:li:share:7459750265693319168 publicly rendered Shane Cheek's post and matching stable copy on 2026-05-11"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn direct Voyager API. The script returned a share URL but failed internal text verification; public LinkedIn URL verification matched the approved copy."
     }
   ]
 }
