@@ -1584,6 +1584,29 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "x-live-stat-2026-05-11-nhs-agent-readiness",
+      "source": "marketing/x-ai-stat-bot-outbox.json refreshed with live source",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-11",
+      "posted_at": "2026-05-11T22:47:45Z",
+      "url": "https://x.com/8BitConcepts/status/2053970001133219857",
+      "route": "https://nothumansearch.ai",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "fact_key": "nhs-live-stats:2026-05-11:total_sites=4238,avg_score=35,top_category=developer",
+      "fingerprint": "0edad7883461750d",
+      "copy": "Not Human Search has 4,238 indexed sites.\n\nAverage agentic-readiness score: 35/100. Top category: developer.\n\nThe count is less interesting than the gap. Most of the web still needs basic agent-readable surfaces before agents can inspect it reliably.\n\nhttps://nothumansearch.ai",
+      "verified_facts": [
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4238, avg_score=35, top_category=developer on 2026-05-11",
+        "foundry-business-index identifies https://nothumansearch.ai as Not Human Search, an agentic-readiness search engine and scoring system"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by 8bit-x-agent-publisher from verified @8BitConcepts via tools/x-brave-post.js. Initial X direct API returned empty 200; same-script find-only recovery captured the live status URL before ledgering."
     }
   ]
 }
