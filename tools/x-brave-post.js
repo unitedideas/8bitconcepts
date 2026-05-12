@@ -357,7 +357,9 @@ async function postOrDryRunDirect(args, text) {
       if (attempt > 0) sleep(15000);
       try { recoveredUrl = await findPostedTweetDirect(args.expectedHandle, text); } catch (_) {}
       if (!recoveredUrl) {
-        try { recoveredUrl = findPostedTweet(args.expectedHandle, text); } catch (_) {}
+        if (process.env.SOCIAL_X_NO_BROWSER_FALLBACK !== "1") {
+          try { recoveredUrl = findPostedTweet(args.expectedHandle, text); } catch (_) {}
+        }
       }
     }
     if (recoveredUrl) {
@@ -839,6 +841,9 @@ function main() {
           if (args.json) console.log(JSON.stringify({ ok: true, url, verified: true, method: "x_direct_duplicate_recovery" }));
           else console.log(url);
           return;
+        }
+        if (process.env.SOCIAL_X_NO_BROWSER_FALLBACK === "1") {
+          throw error;
         }
         console.error(`X direct API failed; falling back to browser CDP: ${message}`);
       }
