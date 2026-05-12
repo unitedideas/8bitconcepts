@@ -1648,6 +1648,32 @@
       "social_editor_closeout": "No scoped memory update needed",
       "linkedin_operator_closeout": "No scoped memory update needed",
       "note": "Posted by tools/linkedin-brave-post.js through LinkedIn direct Voyager API. The script returned a share URL but failed internal text verification; public LinkedIn URL verification matched the approved copy."
+    },
+    {
+      "id": "daily-targeted-research-2026-05-11-cerebras-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-11-cerebras",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-11",
+      "posted_at": "2026-05-12T00:20:28Z",
+      "url": "https://x.com/8BitConcepts/status/2053993385468567910",
+      "route": "https://aidevboard.com/company/cerebras",
+      "fact_key": "targeted-research:cerebras:32:generative-ai,agents,pytorch",
+      "fingerprint": "9de7d8c371db8e42",
+      "copy": "Cerebras has 32 AI roles indexed on AI Dev Board, with tags including generative-ai, agents, and pytorch.\n\nThe public role mix points at inference performance, ML research, and accelerator systems work.\n\nhttps://aidevboard.com/company/cerebras",
+      "verified_facts": [
+        "https://aidevboard.com/company/cerebras returned HTTP 200 and showed 32 AI roles for Cerebras",
+        "ADB company page showed tags including generative-ai, agents, and pytorch",
+        "ADB company page showed sample roles including Senior Performance Engineer, Inference; ML Research Engineer (Inference); and Advanced Technology: AI/ML Research Scientist",
+        "https://www.cerebras.ai/careers redirected to https://www.cerebras.ai/join-us and returned HTTP 200",
+        "https://nothumansearch.ai/site/cerebras.ai returned HTTP 200 and showed score 15/100 with structured API signal"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by 8bit-x-agent-publisher after cadence check, fact-check, social-editor approval, sync-state public-action lock, Computer Use lease, and @8BitConcepts verification through tools/x-brave-post.js. Initial X direct API returned empty 200 likely_posted; find-only/browser recovery captured the live URL without a duplicate post."
     }
   ]
 }
