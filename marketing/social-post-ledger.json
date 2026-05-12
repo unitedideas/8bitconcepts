@@ -1584,24 +1584,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "daily-targeted-research-2026-05-11-cerebras-linkedin-attempt-20260512T022453Z",
-      "source": "8bit-linkedin-agent-publisher",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "blocked",
-      "blocked_at": "2026-05-12T02:24:53Z",
-      "blocker": "LinkedIn auth/posting failed: direct cookie Voyager route rejected all cookie stores (chrome-profile-3 returned 302); page-context Voyager identity returned 401; approved browser recovery path hung without success URL or hard-stop UI signal and was killed after timeout.",
-      "fingerprint": "c054f63de065efc0",
-      "source_candidate_id": "daily-targeted-research-2026-05-11-cerebras",
-      "fact_key": "targeted-research:cerebras:32:generative-ai,agents,pytorch",
-      "route": "https://aidevboard.com/company/cerebras",
-      "text": "Cerebras is a useful public read on where AI infrastructure work is moving.\n\nAI Dev Board currently indexes 32 open AI developer roles for Cerebras. The sample roles cluster around inference, ML research, accelerator performance, and AI systems work:\n\n1. Senior Performance Engineer, Inference.\n2. ML Research Engineer, Inference.\n3. Advanced Technology: AI/ML Research Scientist.\n\nThe tag pattern is consistent with that: agents, generative AI, PyTorch, LLMs, distributed systems, deep learning, inference, and TensorFlow.\n\nThe useful question is where the compounding advantage shows up: hardware, software automation, or the developer surface around both.\n\nNHS follow-up lens: the public agent-readiness profile shows a structured API signal. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/cerebras\nhttps://nothumansearch.ai/site/cerebras.ai",
-      "editor": "agent-social-editor",
-      "post_attempted": true,
-      "public_action_lock_claimed": true,
-      "next_action": "Restore LinkedIn authenticated session/cookie store or complete supervised browser identity verification, then rerun the clean LinkedIn-only publisher."
     }
   ]
 }
