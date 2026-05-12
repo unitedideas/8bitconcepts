@@ -1854,6 +1854,39 @@
         "Live LinkedIn URL returned HTTP 200 and included stable Mistral post text plus Shane Cheek."
       ],
       "note": "Ledger repair: live post row from commit 075306f was missing from the current ledger after later queue/X changes; verified the public URL and preserved the live LinkedIn record. Current run did not post a duplicate."
+    },
+    {
+      "id": "linkedin-agentic-commerce-gap-2026-05-12",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "8bit-research-backlog:the-agentic-commerce-gap",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-12",
+      "posted_at": "2026-05-12T21:18:01Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7460075398098337792/",
+      "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "fingerprint": "8e7de1e50ac9c405",
+      "copy": "Most businesses still sell to humans only.\n\nThat is turning into a distribution problem.\n\nIf an AI agent is comparing vendors, requesting a quote, checking refund terms, or trying to complete checkout, a normal landing page usually does not expose enough structure to act on.\n\nThe gap is not branding. It is machine-readable commerce infrastructure: catalog, quote, checkout, fulfillment, refund, and contact surfaces that agents can inspect without guessing.\n\nI wrote up the pattern here:\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "editor": "agent-social-editor",
+      "editor_status": "approved",
+      "editor_closeout": "No scoped memory update needed",
+      "posting_method": "linkedin_direct_cookie_voyager_api_created_then_public_html_verification",
+      "public_action_lock": "public-action-locks/social-content/8e7de1e50ac9c405.json",
+      "fact_checks": {
+        "checked_at": "2026-05-12T21:15:00Z",
+        "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+        "route_status": 200,
+        "portfolio_url": "https://8bitconcepts.com/",
+        "portfolio_url_status": 200,
+        "verified_claims": [
+          "8bit research page title/H1 is The Agentic Commerce Gap: Why Most Businesses Are Invisible to AI Agents.",
+          "8bit page meta description says AI agents are beginning to shop, quote, and purchase on behalf of users, and that most online businesses are architecturally invisible to them.",
+          "8bit homepage returned HTTP 200 and identifies the business as embedded AI consulting for operating businesses."
+        ]
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Script created share URL but its authenticated live verification failed; public LinkedIn HTML at the final URL returned HTTP 200 and included exact post body plus Shane Cheek author schema."
     }
   ]
 }
