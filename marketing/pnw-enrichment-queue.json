@@ -4,6 +4,12 @@
   "reason": "Remaining PNW SMB email-ready records are role-based addresses. Do not send until enriched with a personal decision-maker email or moved to a non-recurring human-supervised channel.",
   "blocked_records": [
     {
+      "company": "Miller's Heating & Air",
+      "current_email": "info@millersheating.com",
+      "blocker": "role_based_email",
+      "next_action": "Find the family owner's direct business email before outreach."
+    },
+    {
       "company": "High Tech Manufacturing",
       "current_email": "info@htmfg.com",
       "blocker": "role_based_email",
