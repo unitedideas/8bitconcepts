@@ -22,12 +22,6 @@
       "next_action": "Find Jill Kuehler's direct business email before outreach."
     },
     {
-      "company": "Miller's Heating & Air",
-      "current_email": "info@millersheating.com",
-      "blocker": "role_based_email",
-      "next_action": "Find the family owner or service manager's direct business email before outreach."
-    },
-    {
       "company": "Portland Pet Food Company",
       "current_email": "info@portlandpetfoodcompany.com",
       "blocker": "role_based_email",
