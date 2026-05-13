@@ -1586,6 +1586,58 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-13-nhs-mcp-digest-long",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "current-nothumansearch-digest-2026-05-13",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-13T16:54:54Z",
+      "fingerprint": "e5646a61be988b24",
+      "fact_key": "nhs-mcp-verified-445-total-4177-2026-05-13",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "text": "From today's Not Human Search digest: 4,177 agent-ready sites indexed; 445 pass a live JSON-RPC MCP handshake (10.7%).\n\nllms.txt is more common: 2,237 sites (53.6%).\n\nUseful split: llms.txt makes a site visible to agents. MCP makes it callable.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "blocker": "X posting blocked: first approved copy caused tools/x-brave-post.js to hang with no JSON output until killed; shorter approved copy returned X direct API empty HTTP 200 from CreateTweet, then browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use Brave fallback returned `codex app-server exited before returning a response`; public profile checks did not expose a new status URL.",
+      "verified_facts": [
+        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-13T16:41:30Z, mcp_verified=445, pct_mcp=10.7, llms_txt_count=2237, pct_llms_txt=53.6",
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4177",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://8bitconcepts.com/ returned HTTP 200"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-13-nhs-mcp-digest-short",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "current-nothumansearch-digest-2026-05-13",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-13T16:54:54Z",
+      "fingerprint": "686f82d4ea27b37e",
+      "fact_key": "nhs-mcp-verified-445-total-4177-2026-05-13",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "text": "Not Human Search indexes 4,177 agent-ready sites. 445 pass a live JSON-RPC MCP handshake: 10.7%. llms.txt makes a site visible to agents; MCP makes it callable. https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "blocker": "X posting blocked: first approved copy caused tools/x-brave-post.js to hang with no JSON output until killed; shorter approved copy returned X direct API empty HTTP 200 from CreateTweet, then browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use Brave fallback returned `codex app-server exited before returning a response`; public profile checks did not expose a new status URL.",
+      "verified_facts": [
+        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-13T16:41:30Z, mcp_verified=445, pct_mcp=10.7, llms_txt_count=2237, pct_llms_txt=53.6",
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4177",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://8bitconcepts.com/ returned HTTP 200"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true
     }
   ]
 }
