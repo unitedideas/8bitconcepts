@@ -46,6 +46,7 @@ URLS_TO_SUBMIT = [
     "/local/sherwood-or.html",
     "/local/ridgefield-wa.html",
     "/local/washougal-wa.html",
+    "/local/newberg-or.html",
     "/research/claude-code-pricing.html",
     "/research/how-to-use-claude-code.html",
     "/research/claude-code-vs-github-copilot.html",
