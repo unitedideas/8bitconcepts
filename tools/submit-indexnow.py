@@ -35,6 +35,7 @@ URLS_TO_SUBMIT = [
     "/local/beaverton-or.html",
     "/local/hillsboro-or.html",
     "/local/lake-oswego-or.html",
+    "/local/salem-or.html",
     "/local/tualatin-or.html",
     "/local/",
     "/research/the-agentic-commerce-gap.html",

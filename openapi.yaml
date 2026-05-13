@@ -90,7 +90,7 @@ paths:
       description: |
         Returns one city-specific local SEO page for embedded AI consulting.
         Current city slugs are vancouver-wa, camas-wa, portland-or, tigard-or,
-        beaverton-or, hillsboro-or, lake-oswego-or, tualatin-or, wilsonville-or,
+        beaverton-or, hillsboro-or, lake-oswego-or, salem-or, tualatin-or, wilsonville-or,
         sherwood-or, battle-ground-wa, ridgefield-wa, and washougal-wa.
       parameters:
         - name: city
@@ -107,6 +107,7 @@ paths:
               - beaverton-or
               - hillsboro-or
               - lake-oswego-or
+              - salem-or
               - tualatin-or
               - wilsonville-or
               - sherwood-or
