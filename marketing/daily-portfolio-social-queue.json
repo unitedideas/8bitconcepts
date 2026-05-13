@@ -21,10 +21,13 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Agentic technical interview evidence layer for Hatchways-style assessments.\n\nAgentic Evidence is shipping around this constraint: Candidate AI-evidence entry, reviewer handoff, repo-packaged Claude JSONL.\n\nhttps://agentic-evidence.fly.dev",
-          "fingerprint": "733ec385cfb7bac7",
+          "copy": "Agentic Evidence is live for Hatchways-style technical assessments.\n\nThe current path covers candidate AI-evidence entry, reviewer handoff, repo-packaged Claude JSONL exports, assignment packets, guided Claude VM behavior, and a finish checklist.\n\nhttps://agentic-evidence.fly.dev",
+          "fingerprint": "f052612f5fb68471",
           "duplicate": false,
-          "length": 227
+          "length": 280,
+          "status": "posted",
+          "posted_at": "2026-05-13T13:23:59Z",
+          "url": "https://x.com/8BitConcepts/status/2054551828814336475"
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
