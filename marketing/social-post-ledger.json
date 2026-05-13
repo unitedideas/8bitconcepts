@@ -1743,6 +1743,22 @@
       "public_action_lock_claimed": true,
       "post_attempted": true,
       "source_left_queued": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-12-mistral-ai-linkedin-final",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-12",
+      "posted_at": "2026-05-13T02:48:06Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7460158652373590016",
+      "route": "https://aidevboard.com/company/mistral-ai",
+      "secondary_route": "https://nothumansearch.ai/site/mistral.ai",
+      "fact_key": "targeted-research:mistral-ai:82:llm,pytorch,healthcare",
+      "fingerprint": "14bd6fe5d0cf6f7e",
+      "copy": "Mistral AI is a useful public read on where AI infrastructure hiring is moving.\n\n1. AI Dev Board has 82 indexed AI/ML roles for Mistral AI.\n2. Current tags include llm, pytorch, healthcare, and mlops.\n3. Sample roles include Applied AI, Fullstack Software Engineer and Applied AI, Technical Lead.\n4. Not Human Search shows mistral.ai at 40/100 for public agent readiness, with llms.txt and structured API signals present.\n\nThe hiring surface points at applied ML, enterprise rollout, and open model deployment. The agent-facing surface is thinner: enough for agents to inspect some public structure, not enough to treat the site as fully agent-ready.\n\nData:\nhttps://aidevboard.com/company/mistral-ai\nhttps://nothumansearch.ai/site/mistral.ai",
+      "note": "Facts verified against ADB public company page, NHS profile, and Mistral careers page. Posted by tools/linkedin-brave-post.js; script returned a live URL verification error after creation, then the public URL was fetched and stable copy fragments were verified."
     }
   ]
 }
