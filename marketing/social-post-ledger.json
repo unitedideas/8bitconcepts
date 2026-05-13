@@ -1586,6 +1586,60 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-13-anthropic",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-13-anthropic",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-05-13",
+      "blocked_at": "2026-05-13T15:37:39Z",
+      "fingerprint": "e28b28406027ae50",
+      "previous_fingerprint": "2a4bbc284a386a1d",
+      "fact_key": "targeted-research:anthropic:271:alignment,distributed-systems,llm",
+      "route": "https://aidevboard.com/company/anthropic",
+      "copy": "@AnthropicAI has 271 indexed AI/ML roles on AI Dev Board. Tags cluster around alignment, distributed systems, LLMs, and RL. Avg salary: $372k.\n\nThe work points to evals, RL infra, model behavior measurement, and inference launch.\n\nhttps://aidevboard.com/company/anthropic",
+      "blocker": "No public X post went live. Candidate 1 Anthropic full copy: tools/x-brave-post.js hung before stdout/status URL and was terminated; find-only confirmed no matching live post. Candidate 1 shortened copy: direct X returned EMPTY_200_NO_FALLBACK and timeline verification found no matching post; browser fallback timed out with spawnSync osascript ETIMEDOUT. Candidate 2 shift-handoff research_fact: direct X returned EMPTY_200_NO_FALLBACK and timeline verification found no matching post; CDP-only browser fallback failed with Runtime.enable timed out. Computer Use get_app_state for Brave returned codex app-server exited before returning a response. Active account was verified by the X script/direct authenticated flow before the failed post attempts, but no status URL was captured, so nothing was ledgered as posted.",
+      "facts_verified": [
+        "https://aidevboard.com/company/anthropic returned HTTP 200 and says Anthropic Jobs \u2014 271 AI Roles \u00b7 Avg $372k",
+        "The live page includes tags alignment, distributed-systems, llm, reinforcement-learning and sample roles around Performance RL, Training Insights, and Cloud Inference Launch Engineering",
+        "https://www.anthropic.com/careers returned HTTP 200",
+        "https://nothumansearch.ai/site/anthropic.com returned HTTP 200 and shows 20/100 with structured API signal"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_locks": [
+        "2a4bbc284a386a1d",
+        "e28b28406027ae50"
+      ]
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-13-shift-handoff",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-13-8bit",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-05-13",
+      "blocked_at": "2026-05-13T15:37:39Z",
+      "fingerprint": "3af9246f7e33276e",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "copy": "The shift-handoff paper has one useful split: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%.\n\nThe lost category is usually the early warning.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "blocker": "No public X post went live. Candidate 1 Anthropic full copy: tools/x-brave-post.js hung before stdout/status URL and was terminated; find-only confirmed no matching live post. Candidate 1 shortened copy: direct X returned EMPTY_200_NO_FALLBACK and timeline verification found no matching post; browser fallback timed out with spawnSync osascript ETIMEDOUT. Candidate 2 shift-handoff research_fact: direct X returned EMPTY_200_NO_FALLBACK and timeline verification found no matching post; CDP-only browser fallback failed with Runtime.enable timed out. Computer Use get_app_state for Brave returned codex app-server exited before returning a response. Active account was verified by the X script/direct authenticated flow before the failed post attempts, but no status URL was captured, so nothing was ledgered as posted.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html returned HTTP 200",
+        "The live page includes 100% and 40-60% handoff retention figures"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_locks": [
+        "3af9246f7e33276e"
+      ]
     }
   ]
 }
