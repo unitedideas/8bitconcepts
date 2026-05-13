@@ -1586,6 +1586,20 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-2026-05-13-agentic-commerce-gap",
+      "source": "sync-state public-action-locks/social-content/d4c2991268b190c9.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-13",
+      "posted_at": "2026-05-13T19:46:01Z",
+      "url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_ai-agents-do-not-need-a-prettier-landing-activity-7460414596323971072-KMjc",
+      "fingerprint": "d4c2991268b190c9",
+      "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "text": "AI agents do not need a prettier landing page from a seller. They need structured, machine-readable signals at each commerce stage: product catalog, deterministic quote endpoint, checkout handoff, payment rail declaration, refund and fulfillment policy, and discovery via llms.txt, ai-plugin.json, or OpenAPI.\n\nA site with llms.txt but no quote endpoint is easier for an agent to find. It is not easier for an agent to buy from.\n\nThat is the agentic commerce gap.\n\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "note": "Ledger repaired from sync-state posted lock after cadence check found the local ledger stale. Posted by 8bit-linkedin-agent-publisher."
     }
   ]
 }
