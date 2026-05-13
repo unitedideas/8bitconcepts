@@ -1586,6 +1586,42 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-13-adb-homepage-stats",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-13",
+      "posted_at": "2026-05-13T04:44:00Z",
+      "url": "https://x.com/8BitConcepts/status/2054421156317573623",
+      "route": "https://aidevboard.com",
+      "fact_key": "71d43027a1a60f8bb8e53527",
+      "fingerprint": "dd8824cf735d6584",
+      "copy": "AI Dev Board has 8,716 AI developer jobs across 528 companies.\n\nThe useful part is the agent-readable surface: salary data, company pages, and API access for hiring workflows.\n\nhttps://aidevboard.com",
+      "note": "Posted by Owl 8bit X agent publisher after live homepage fact-check, social-editor approval, sync-state public-action lock, existing automation desktop lease, and @8BitConcepts verification through tools/x-brave-post.js browser fallback. Anonymous stats API was quota-blocked, so the public count was verified from the live homepage only.",
+      "fact_checks": {
+        "checked_at": "2026-05-13T04:31:00Z",
+        "route": "https://aidevboard.com",
+        "route_status": 200,
+        "homepage_jobs": 8716,
+        "homepage_companies": 528,
+        "homepage_claims": [
+          "AI developer jobs",
+          "salaries",
+          "API access"
+        ],
+        "stats_endpoint": "https://aidevboard.com/api/v1/stats",
+        "stats_endpoint_result": "quota_exceeded for anonymous caller; not used as evidence"
+      },
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "AI Dev Board has 8,716 AI developer jobs across 528 companies.\n\nThe useful part is the agent-readable surface: salary data, company pages, and API access for hiring workflows.\n\nhttps://aidevboard.com",
+        "closeout": "No scoped memory update needed."
+      },
+      "x_operator_closeout": "No scoped memory update needed."
     }
   ]
 }
