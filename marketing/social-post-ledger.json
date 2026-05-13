@@ -1638,6 +1638,37 @@
       "x_operator_closeout": "No scoped memory update needed",
       "public_action_lock_claimed": true,
       "post_attempted": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-13-f298130a8b822637",
+      "source": "marketing/paper-distribution-queue.json",
+      "source_item": "q2-2026-mcp-ecosystem-health",
+      "channel": "linkedin",
+      "account": "Shane Cheek / Founder at 8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-13T18:09:54Z",
+      "fingerprint": "f298130a8b822637",
+      "fact_key": "nhs-mcp-verified-445-total-4169-2026-05-13T180406Z",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "text": "Not Human Search has 4,169 agent-ready sites indexed today. 445 pass a live JSON-RPC MCP handshake: 10.7%.\n\nllms.txt is more common: 2,242 sites, or 53.8%.\n\nThat split is the useful part. llms.txt makes a site legible to agents. MCP makes it callable.\n\nMethodology and current research: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "blocker": "LinkedIn posting blocked: direct Voyager cookie route rejected all LinkedIn cookie sources (chrome-profile-3 returned 302); page-context Voyager fallback failed identity verification with HTTP 401 from /voyager/api/me; approved one-shot browser recovery hung without JSON output or live URL and was stopped after cleanup. No public LinkedIn URL was produced.",
+      "verified_facts": [
+        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-13T18:04:06Z, mcp_verified=445, pct_mcp=10.7, llms_txt_count=2242, pct_llms_txt=53.8",
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4169",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://8bitconcepts.com/ returned HTTP 200"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true,
+      "routes_attempted": [
+        "direct_voyager_cookie",
+        "page_context_voyager",
+        "one_shot_browser_recovery"
+      ]
     }
   ]
 }
