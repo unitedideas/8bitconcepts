@@ -1856,6 +1856,21 @@
       "social_editor_status": "approved",
       "social_editor_closeout": "No scoped memory update needed",
       "x_operator_closeout": "No scoped memory update needed"
+    },
+    {
+      "id": "the-agentic-commerce-gap-linkedin-2026-05-13",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-13",
+      "posted_at": "2026-05-13T19:46:18Z",
+      "url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_ai-agents-do-not-need-a-prettier-landing-activity-7460414596323971072-KMjc",
+      "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "fact_key": "8bit-research:the-agentic-commerce-gap:linkedin",
+      "fingerprint": "d4c2991268b190c9",
+      "copy": "AI agents do not need a prettier landing page from a seller. They need structured, machine-readable signals at each commerce stage: product catalog, deterministic quote endpoint, checkout handoff, payment rail declaration, refund and fulfillment policy, and discovery via llms.txt, ai-plugin.json, or OpenAPI.\n\nA site with llms.txt but no quote endpoint is easier for an agent to find. It is not easier for an agent to buy from.\n\nThat is the agentic commerce gap.\n\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API. Script returned a created share URL but failed internal text verification; public LinkedIn canonical page independently verified Shane Cheek URL and stable copy fragments. LinkedIn rewrote the route URL to lnkd.in."
     }
   ]
 }
