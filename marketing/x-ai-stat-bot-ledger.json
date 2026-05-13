@@ -157,7 +157,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
-      "status": "posted",
+      "status": "drafted",
       "created_at": "2026-04-28T20:09:15+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -167,12 +167,8 @@
       "route": "https://aidevboard.com",
       "fact_id": "adb-total-jobs-9161-companies-524",
       "fact_key": "71d43027a1a60f8bb8e53527",
-      "fingerprint": "dd8824cf735d6584",
-      "copy": "AI Dev Board has 8,716 AI developer jobs across 528 companies.\n\nThe useful part is the agent-readable surface: salary data, company pages, and API access for hiring workflows.\n\nhttps://aidevboard.com",
-      "updated_at": "2026-05-13T04:44:00Z",
-      "posted_at": "2026-05-13T04:44:00Z",
-      "url": "https://x.com/8BitConcepts/status/2054421156317573623",
-      "note": "Posted 2026-05-13 with refreshed live homepage count: 8,716 jobs and 528 companies. Anonymous /api/v1/stats was quota-blocked, so homepage was used as the authoritative public source."
+      "fingerprint": "708a1e42008d35e0",
+      "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now."
     },
     {
       "id": "x-ai-stat-2026-04-28T21:03:17+00:00-31d1c476",
