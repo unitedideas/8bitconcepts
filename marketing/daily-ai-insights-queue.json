@@ -34,7 +34,7 @@
       },
       "fingerprint": {
         "x": "0e86d62010a753cc",
-        "linkedin": "8f474efa072c3782"
+        "linkedin": "4dc70ad58324915c"
       },
       "research_findings": {
         "indexed_roles": 103,
@@ -70,8 +70,8 @@
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Looking at @Waymo through the public hiring data:\n\n1. 103 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around autonomous-vehicles, llm, generative-ai, data-pipeline.\n3. Sample roles include Machine Learning Engineer, Depot Automation; Software Engineer, Marketplace ML Platform; Senior Staff Engineer, DevAI.\n4. Avg published salary in the indexed sample: $255,000.\n\nThe useful read is where the operational work is moving: robotics evaluation, prediction systems, simulation, and safety-critical deployment.\n\nWaymo is a useful public lens on this area. What is the cleaner proxy for readiness: model quality, scenario coverage, or operational monitoring?\n\nData:\nhttps://aidevboard.com/company/waymo",
-          "fingerprint": "8f474efa072c3782",
+          "copy": "Waymo is showing 103 indexed AI/ML roles in AI Dev Board, with an average published salary of $255,000.\n\nThe current sample clusters around autonomous vehicles, LLMs, generative AI, and data pipelines. Sample roles include Machine Learning Engineer, Depot Automation; Software Engineer, Marketplace ML Platform; and Senior Staff Engineer, DevAI.\n\nThe useful read is where the operational work is moving: robotics evaluation, prediction systems, simulation, and safety-critical deployment.\n\nWaymo is a clean public lens on this. Which proxy says more about readiness: model quality, scenario coverage, or operational monitoring?\n\nData:\nhttps://aidevboard.com/company/waymo",
+          "fingerprint": "4dc70ad58324915c",
           "duplicate": false
         }
       },
@@ -82,7 +82,13 @@
         "does not negatively call out the target",
         "includes a useful operator question or recommendation",
         "flags longform paper opportunity when the stat is large enough"
-      ]
+      ],
+      "social_editor": {
+        "status": "approved",
+        "original_fingerprint": "8f474efa072c3782",
+        "approved_at": "2026-05-14T21:55:58Z",
+        "closeout": "No scoped memory update needed"
+      }
     },
     {
       "id": "daily-research-fact-2026-05-14-8bit",
