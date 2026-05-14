@@ -94,6 +94,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Rehearsal Problem](https://8bitconcepts.com/research/the-rehearsal-problem.html): Most enterprise AI systems are evaluated once — at launch — and then trusted indefinitely. But LLMs 
 
+- [The Eval Debt Crisis](https://8bitconcepts.com/research/the-eval-debt-crisis.html): Most enterprise AI teams ship models the same way early web teams shipped without tests — fast, conf
+
 ## Contact
 
 Website: https://8bitconcepts.com

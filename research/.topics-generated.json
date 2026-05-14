@@ -52,5 +52,11 @@
     "slug": "the-rehearsal-problem",
     "tag": "AI Deployment Maturity",
     "generated_at": "2026-05-11T13:03:42.943062+00:00"
+  },
+  {
+    "title": "The Eval Debt Crisis",
+    "slug": "the-eval-debt-crisis",
+    "tag": "Engineering Maturity",
+    "generated_at": "2026-05-14T13:03:36.504640+00:00"
   }
 ]
