@@ -3,6 +3,36 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "q2-2026-mcp-ecosystem-health-linkedin-2026-05-14",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "research-backlog:q2-2026-mcp-ecosystem-health",
+      "candidate_id": "research-backlog-q2-2026-mcp-ecosystem-health-linkedin-refresh",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "posted_at": "2026-05-14T03:32:00Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7460532287651368960",
+      "fingerprint": "3424fe896cf20d7f",
+      "fact_key": "q2-2026-mcp-ecosystem-health:4238:443:10.5:3795",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "copy": "Most MCP claims are still not live tools.\n\nThe current 8bitconcepts / Not Human Search crawl has 4,238 agent-ready sites indexed. Only 443 of them, 10.5%, pass a live JSON-RPC MCP handshake.\n\nVerification here is not a string match. The crawler opens a connection, sends initialize, waits for the protocol handshake, and checks for a valid protocolVersion result.\n\nThat leaves 3,795 sites that did not verify as working MCP endpoints in this crawl. Some may be stale docs, auth walls, bad endpoint paths, or scanner false positives. For an agent, the distinction matters less than the failure mode: latency and context spent on a call that does not advance the task.\n\nMethodology + raw data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html\nhttps://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200 on 2026-05-14T03:30Z",
+        "Live article metadata says last updated 2026-05-11",
+        "Live article states 4,238 indexed agent-ready sites",
+        "Live article states 443 sites, 10.5%, pass a live JSON-RPC MCP handshake",
+        "Live article states the remaining 3,795 sites, 89.5%, did not verify as working MCP endpoints in this crawl",
+        "Live article states verification means opening a connection, sending initialize, waiting for protocol handshake, and confirming protocolVersion in result",
+        "Raw data gist https://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b returned HTTP 200"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Most MCP claims are still not live tools.\n\nThe current 8bitconcepts / Not Human Search crawl has 4,238 agent-ready sites indexed. Only 443 of them, 10.5%, pass a live JSON-RPC MCP handshake.\n\nVerification here is not a string match. The crawler opens a connection, sends initialize, waits for the protocol handshake, and checks for a valid protocolVersion result.\n\nThat leaves 3,795 sites that did not verify as working MCP endpoints in this crawl. Some may be stale docs, auth walls, bad endpoint paths, or scanner false positives. For an agent, the distinction matters less than the failure mode: latency and context spent on a call that does not advance the task.\n\nMethodology + raw data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html\nhttps://gist.github.com/unitedideas/c93bd6d9984729070c59b2ea6c6b301b",
+        "scoped_memory": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed; direct Voyager posted successfully, with public curl verification required because the script's internal live URL verification failed on a created post."
+    },
+    {
       "id": "8bit-x-agent-publisher-failed-2026-05-14-ai-compensation-by-skill-refresh",
       "source": "marketing/x-ai-stat-bot-ledger.json",
       "source_item": "x-ai-stat-2026-04-29T00:21:55+00:00-d0b36670",
