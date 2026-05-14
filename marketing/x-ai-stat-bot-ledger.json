@@ -238,6 +238,38 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-14-mcp-live-check",
+      "status": "blocked",
+      "created_at": "2026-05-14T20:03:23Z",
+      "blocked_at": "2026-05-14T20:03:23Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search digest",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_id": "nhs-mcp-verified-445-total-4172-2026-05-14",
+      "fact_key": "nhs-mcp-verified-445-total-4172-2026-05-14",
+      "fingerprint": "d8372659badc9fac",
+      "copy": "445 of 4,172 agent-ready sites pass a live MCP handshake: 10.7%.\n\nThe discovery file is easy. The round trip is still the product.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "blocker": "No public X URL verified. Direct identity dry-run verified @8BitConcepts; direct post returned empty 200 likely_posted=true but timeline recovery did not find the post text; browser fallback timed out and Computer Use returned app-server failure. No posted ledger row recorded.",
+      "verified_facts": [
+        "https://nothumansearch.ai/digest.json generated_at=2026-05-14T19:46:51Z",
+        "total_sites=4172",
+        "mcp_verified=445",
+        "pct_mcp=10.7",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "445 of 4,172 agent-ready sites pass a live MCP handshake: 10.7%.\n\nThe discovery file is easy. The round trip is still the product.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "notes": [
+          "No scoped memory update needed"
+        ]
+      },
+      "x_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
