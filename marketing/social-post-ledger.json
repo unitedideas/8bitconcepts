@@ -1586,52 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-blocked-2026-05-14-live-mcp-digest",
-      "source": "marketing/x-ai-stat-bot-outbox.json + https://nothumansearch.ai/digest.json refresh",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "blocked_at": "2026-05-14T18:42:44Z",
-      "fingerprint": "14c8b689f5a2d8bd",
-      "alternate_fingerprint": "c8ea140f1717a5e3",
-      "fact_key": "nhs-live-digest:mcp-verified-445:llms-2242:openapi-480:2026-05-14T18:30:54Z",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "source_url": "https://nothumansearch.ai/digest.json",
-      "copy": "Today's agent-readiness check: 445 sites verify as MCP servers. 2,242 publish llms.txt. 480 expose OpenAPI.\n\nDiscovery files are still much more common than working agent endpoints: 53.7% llms.txt vs. 10.7% MCP verified.\n\nMethodology: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "short_copy": "445 sites verify as MCP servers (10.7%). 2,242 publish llms.txt (53.7%). 480 expose OpenAPI.\n\nDiscovery files are still ahead of working agent endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "blocker": "X did not return a verifiable public status URL. Primary approved copy fingerprint 14c8b689f5a2d8bd: direct authenticated X API returned EMPTY_200_NO_FALLBACK likely_posted=true, but authenticated timeline recovery did not contain the expected post text. Browser fallback for the primary copy failed with spawnSync osascript ETIMEDOUT. Shorter approved copy fingerprint c8ea140f1717a5e3: direct authenticated X API returned the same EMPTY_200_NO_FALLBACK and authenticated timeline recovery did not contain the expected post text. Computer Use app-state fallback returned 'codex app-server exited before returning a response'. No public URL was verified; no ledger row was marked posted.",
-      "verified_facts": [
-        "https://nothumansearch.ai/digest.json returned HTTP 200",
-        "digest generated_at=2026-05-14T18:30:54Z",
-        "mcp_verified=445",
-        "llms_txt_count=2242",
-        "openapi_count=480",
-        "pct_mcp=10.7",
-        "pct_llms_txt=53.7",
-        "pct_openapi=11.5",
-        "https://8bitconcepts.com returned HTTP 200",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html is the 8bit MCP methodology/report route"
-      ],
-      "social_editor": [
-        {
-          "status": "approved",
-          "fingerprint": "14c8b689f5a2d8bd",
-          "final_copy": "Today's agent-readiness check: 445 sites verify as MCP servers. 2,242 publish llms.txt. 480 expose OpenAPI.\n\nDiscovery files are still much more common than working agent endpoints: 53.7% llms.txt vs. 10.7% MCP verified.\n\nMethodology: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-          "closeout": "No scoped memory update needed"
-        },
-        {
-          "status": "approved",
-          "fingerprint": "c8ea140f1717a5e3",
-          "final_copy": "445 sites verify as MCP servers (10.7%). 2,242 publish llms.txt (53.7%). 480 expose OpenAPI.\n\nDiscovery files are still ahead of working agent endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-          "closeout": "No scoped memory update needed"
-        }
-      ],
-      "x_operator_closeout": "No scoped memory update needed",
-      "post_attempted": true,
-      "public_post_verified": false,
-      "latest_x_post_was_older_than_hours": 314
     }
   ]
 }
