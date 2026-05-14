@@ -1647,6 +1647,86 @@
       ],
       "x_operator_closeout": "No scoped memory update needed",
       "no_linkedin_touched": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-14-waymo-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-14-waymo",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "date": "2026-05-14",
+      "posted_at": "2026-05-14T14:26:05Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7460696068784250881/",
+      "route": "https://aidevboard.com/company/waymo",
+      "fingerprint": "ac4f093d7bedd0b9",
+      "fact_key": "targeted-research:waymo:108:autonomous-vehicles,llm,generative-ai,data-pipeline",
+      "copy": "Waymo is a useful public lens on where autonomous-vehicle AI work is moving.\n\nAI Dev Board currently indexes 108 open AI/ML roles for Waymo, with 91 listings carrying salary data. The indexed salary range is $168k-$431k, with an average published salary of $252k.\n\nSample roles:\n\n1. Machine Learning Engineer, Depot Automation\n2. Software Engineer, Marketplace ML Platform\n3. Senior Machine Learning Engineer, Weather & Degraded Road Surfaces\n\nThe tags cluster around autonomous-vehicles, llm, generative-ai, and data-pipeline.\n\nThe useful read is less \"AI hiring is up\" and more where the operational work is landing: robotics evaluation, prediction systems, simulation, and safety-critical deployment.\n\nCleaner proxy for readiness: model quality, scenario coverage, or operational monitoring?\n\nData:\nhttps://aidevboard.com/company/waymo",
+      "verified_facts": [
+        "https://aidevboard.com/company/waymo returned HTTP 200 and title Waymo Jobs — 108 AI Roles · Avg $252k | AI Dev Jobs",
+        "The same ADB page states 108 open AI developer roles, 91 listings with salary data, average salary $252k, and salary range $168k-$431k",
+        "The same ADB page includes Machine Learning Engineer, Depot Automation; Software Engineer, Marketplace ML Platform; Senior Machine Learning Engineer, Weather & Degraded Road Surfaces",
+        "The same ADB page includes autonomous-vehicles, llm, generative-ai, and data-pipeline tags",
+        "https://waymo.com/careers/ loaded via https://careers.withwaymo.com/ with Waymo careers content",
+        "https://8bitconcepts.com/ returned HTTP 200"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Waymo is a useful public lens on where autonomous-vehicle AI work is moving.\n\nAI Dev Board currently indexes 108 open AI/ML roles for Waymo, with 91 listings carrying salary data. The indexed salary range is $168k-$431k, with an average published salary of $252k.\n\nSample roles:\n\n1. Machine Learning Engineer, Depot Automation\n2. Software Engineer, Marketplace ML Platform\n3. Senior Machine Learning Engineer, Weather & Degraded Road Surfaces\n\nThe tags cluster around autonomous-vehicles, llm, generative-ai, and data-pipeline.\n\nThe useful read is less \"AI hiring is up\" and more where the operational work is landing: robotics evaluation, prediction systems, simulation, and safety-critical deployment.\n\nCleaner proxy for readiness: model quality, scenario coverage, or operational monitoring?\n\nData:\nhttps://aidevboard.com/company/waymo",
+        "scoped_learning_closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by 8bit-linkedin-agent-publisher after cadence check, source fact-check, social-editor approval, public-action lock, and Shane Cheek identity verification through LinkedIn direct Voyager API. Script returned a created share URL; live public HTML verification matched stable copy fragments."
+    },
+    {
+      "id": "daily-research-fact-2026-05-14-8bit-linkedin-blocked",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "date": "2026-05-14",
+      "blocked_at": "2026-05-14T21:10:30Z",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "8bit:integration-tax:model-api-fees-10-20",
+      "fingerprint": "d565b1ea759d7e8a",
+      "copy": "Model API fees are usually only 10-20% of what an AI system costs to ship.\n\nThe larger cost centers are the parts around the model: data pipelines, system integration, evaluation and testing, observability, and annual maintenance.\n\nThat is why the budget conversation belongs before the model-choice conversation.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "blocker": "No public LinkedIn URL verified. Direct Voyager cookie route rejected stored LinkedIn cookies (chrome-profile-3 returned 302). Page-context Voyager fallback reached LinkedIn but /voyager/api/me returned 401 before Shane Cheek / Founder at 8bitconcepts identity could be verified. Approved one-shot browser recovery with SOCIAL_LINKEDIN_FORCE_BROWSER=1 hung without a URL or identity success and was killed; allow file was removed. No CAPTCHA/checkpoint/account lock or rate limit was observed; blocker is missing/expired LinkedIn auth plus hung browser recovery.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The live page states model API costs are 10-20% of what AI actually costs to ship",
+        "The live page names data pipelines, system integration, evaluation/testing, observability, and annual maintenance as larger cost centers",
+        "The live page argues the budget conversation belongs before the technical/model-choice conversation"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Model API fees are usually only 10-20% of what an AI system costs to ship.\n\nThe larger cost centers are the parts around the model: data pipelines, system integration, evaluation and testing, observability, and annual maintenance.\n\nThat is why the budget conversation belongs before the model-choice conversation.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+        "notes": [
+          "No scoped memory update needed"
+        ]
+      },
+      "linkedin_operator_closeout": "approved; No scoped memory update needed",
+      "post_attempts": [
+        {
+          "route": "direct_voyager_cookie_api",
+          "result": "failed",
+          "detail": "LinkedIn direct identity request failed; all LinkedIn cookie sources rejected (chrome-profile-3:302)"
+        },
+        {
+          "route": "page_context_voyager_api",
+          "result": "failed",
+          "detail": "LinkedIn /voyager/api/me returned 401 before identity verification"
+        },
+        {
+          "route": "one_shot_browser_recovery",
+          "result": "failed",
+          "detail": "SOCIAL_LINKEDIN_FORCE_BROWSER=1 recovery hung without verified identity or URL; killed and allow file removed"
+        }
+      ],
+      "locks": [
+        "public-action-locks/social-content/d565b1ea759d7e8a.json"
+      ],
+      "url": "",
+      "no_x_touched": true
     }
   ]
 }
