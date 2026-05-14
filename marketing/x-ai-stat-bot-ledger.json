@@ -157,7 +157,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T20:09:15+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -168,7 +168,23 @@
       "fact_id": "adb-total-jobs-9161-companies-524",
       "fact_key": "71d43027a1a60f8bb8e53527",
       "fingerprint": "708a1e42008d35e0",
-      "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now."
+      "copy": "AI Dev Board is tracking 9,161 AI/ML roles across 524 companies right now.",
+      "posted_at": "2026-05-14T03:56:00Z",
+      "url": "https://x.com/8BitConcepts/status/2054771421021434029",
+      "updated_at": "2026-05-14T03:56:00Z",
+      "latest_fingerprint": "f82278ae1b6c906e",
+      "latest_copy": "AI Dev Board currently lists 8,679 active AI/ML jobs from 520 AI companies.\n\n3,439 include salary data, averaging $226k.\n\nThat is the useful surface: agents can query the market directly instead of reading another hiring take.\n\nhttps://aidevboard.com",
+      "latest_fact_key": "adb-live-stats:2026-05-14:8679:520:3439:226k",
+      "verified_source_url": "https://aidevboard.com/llms.txt",
+      "verified_facts": [
+        "https://aidevboard.com/ returned HTTP 200 on 2026-05-14T03:49Z and is the AI Dev Board business URL in the Foundry portfolio index",
+        "https://aidevboard.com/llms.txt returned HTTP 200 on 2026-05-14T03:50Z",
+        "Live llms.txt states 8,679 curated roles from 520 AI companies",
+        "Live llms.txt Data Stats section states 8,679 active job listings updated daily",
+        "Live llms.txt Data Stats section states 3,439 listings include salary data with average $226k",
+        "https://aidevboard.com/api/v1 returned HTTP 200 with admin auth and describes AI Dev Board as a REST + MCP surface for current AI/ML engineering jobs"
+      ],
+      "note": "Refreshed from live AI Dev Board llms/API surfaces before posting via 8bit-x-agent-publisher."
     },
     {
       "id": "x-ai-stat-2026-04-28T21:03:17+00:00-31d1c476",
