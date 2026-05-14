@@ -1586,6 +1586,33 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "x-ai-stat-2026-05-14-nhs-live-stats",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-14",
+      "posted_at": "2026-05-14T23:54:17Z",
+      "url": "https://x.com/8BitConcepts/status/2055074035793625508",
+      "route": "https://nothumansearch.ai",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "fact_key": "nhs-live-stats-2026-05-14-total-4172-avg-35-top-developer",
+      "fingerprint": "ce4ff2fcab95f146",
+      "copy": "Not Human Search tracks 4,172 agent-ready sites. Average score: 35/100. Top category: developer tools.\n\nThe gap is still docs, APIs, and clean handoff paths.\n\nhttps://nothumansearch.ai",
+      "note": "Posted from verified @8BitConcepts after live NHS stats refresh, social-editor approval, duplicate checks, sync-state public-action lock, direct X API empty-200 retries, Brave CDP restart, and browser fallback via tools/x-brave-post.js.",
+      "verified_facts": [
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4172, avg_score=35, top_category=developer on 2026-05-14T23:37Z",
+        "https://nothumansearch.ai returned HTTP 200",
+        "Active X identity verified as @8BitConcepts by tools/x-brave-post.js dry run"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Not Human Search tracks 4,172 agent-ready sites. Average score: 35/100. Top category: developer tools.\n\nThe gap is still docs, APIs, and clean handoff paths.\n\nhttps://nothumansearch.ai",
+        "scoped_memory": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
