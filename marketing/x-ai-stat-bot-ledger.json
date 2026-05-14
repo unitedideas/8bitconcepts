@@ -238,38 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "8bit-x-agent-publisher-blocked-2026-05-14-mcp-verticals",
-      "source": "8bit MCP Ecosystem Health",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "date": "2026-05-14",
-      "blocked_at": "2026-05-14T20:33:08.117Z",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "fact_key": "nhs:mcp-verticals:live-2026-05-14",
-      "fingerprint": "d8929f38767b1aac",
-      "copy": "Developer tools are 1,300 agent-ready sites in the current MCP ecosystem audit, or 30.7% of the index.\n\nFinance has 201. Health has 54. Education has 21.\n\nThe ecosystem is still crowded around tools and thin in the regulated verticals where agent access probably matters more.\n\nSource: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "blocker": "No public X URL verified. Candidate d3ff9fbcd99e1530 and candidate d8929f38767b1aac both verified active @8BitConcepts through the direct X cookie path, then CreateTweet returned empty HTTP 200 / likely_posted=true. Authenticated timeline recovery did not contain the expected post text for either candidate. Browser/native fallback failed: tools/x-brave-post.js browser path timed out with spawnSync osascript ETIMEDOUT, and Computer Use get_app_state for Brave returned `codex app-server exited before returning a response`. No public post was ledgered as posted.",
-      "verified_facts": [
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
-        "Live page states developer tools account for 1,300 sites / 30.7% of the index",
-        "Live page states finance has 201 sites, health has 54, and education has 21"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "Developer tools are 1,300 agent-ready sites in the current MCP ecosystem audit, or 30.7% of the index.\n\nFinance has 201. Health has 54. Education has 21.\n\nThe ecosystem is still crowded around tools and thin in the regulated verticals where agent access probably matters more.\n\nSource: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-        "notes": [
-          "No scoped memory update needed."
-        ]
-      },
-      "locks": [
-        "public-action-locks/social-content/d8929f38767b1aac.json"
-      ],
-      "x_operator_closeout": "No scoped memory update needed",
-      "no_linkedin_touched": true,
-      "kind": "research_fact"
     }
   ]
 }
