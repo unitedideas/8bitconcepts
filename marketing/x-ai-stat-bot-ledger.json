@@ -217,12 +217,19 @@
       "fact_key": "d0b366705683b61e40d789eb",
       "fingerprint": "7f578dbb9c5027ea",
       "copy": "Research AI roles averaged $273,880, while generative-AI roles averaged $230,707 despite having about 2.5x more openings.",
-      "updated_at": "2026-05-14T02:14:31Z",
-      "blocker": "X post did not go live: tools/x-brave-post.js direct post returned empty 200 likely_posted=true but authenticated timeline verification found no matching status URL; browser/CDP fallback hung until killed; Computer Use fallback failed with app-server exited before returning a response.",
-      "latest_attempt_at": "2026-05-14T02:14:31Z",
-      "latest_fingerprint": "d3a54583387d8062",
-      "latest_copy": "AI compensation is not just “learn LLMs.”\n\nIn 3,548 salary-disclosed AI/ML engineering roles, research is the top-paying 100+ role skill tag: 740 roles at $279,788 avg.\n\nllm is the demand leader: 2,655 roles at $244,440 avg.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "verified_source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html"
+      "updated_at": "2026-05-14T03:02:05Z",
+      "blocker": "X post did not go live: tools/x-brave-post.js direct path returned empty 200 likely_posted=true, authenticated timeline find-only did not contain the expected post text, browser fallback failed with spawnSync osascript ETIMEDOUT, and Computer Use fallback returned codex app-server exited before returning a response.",
+      "latest_attempt_at": "2026-05-14T03:02:05Z",
+      "latest_fingerprint": "89984d3faae04f92",
+      "latest_copy": "Research AI roles average $279,788. Generative-AI roles average $233,414, despite having 1,892 openings versus 740 for research.\n\nThe market is paying more for frontier research leverage than broad GenAI implementation volume.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "verified_source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html returned HTTP 200 on 2026-05-14T02:49Z",
+        "Live paper states research roles average $279,788",
+        "Live paper states generative-AI roles average $233,414",
+        "Live paper states generative-AI has 1,892 openings versus 740 openings for research, roughly 2.6x more openings",
+        "https://8bitconcepts.com returned HTTP 200 and identifies 8bitconcepts as embedded AI consulting with research proof"
+      ]
     },
     {
       "id": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2",
