@@ -238,25 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "x-ai-stat-2026-05-14T05:18:02Z-nhs-mcp-verified-445-total-4169",
-      "status": "posted",
-      "created_at": "2026-05-14T05:18:02Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "kind": "live_stat",
-      "source": "Not Human Search live digest",
-      "source_url": "https://nothumansearch.ai/digest.json",
-      "route": "https://nothumansearch.ai",
-      "fact_id": "nhs-mcp-verified-445-total-4169",
-      "fact_key": "nhs-mcp-verified-445-total-4169",
-      "fingerprint": "a586c1205f4339de",
-      "copy": "Not Human Search is tracking 4,169 agent-ready sites. 445 pass a live MCP check: 10.7%.\n\nThe gap is the useful part. llms.txt is common enough to publish; live tool endpoints are still harder.\n\nhttps://nothumansearch.ai",
-      "updated_at": "2026-05-14T05:25:00Z",
-      "posted_at": "2026-05-14T05:25:00Z",
-      "url": "https://x.com/8BitConcepts/status/2054793532809031939",
-      "note": "Posted by 8bit-x-agent-publisher from verified @8BitConcepts. Facts refreshed from live NHS stats/digest; social-editor approved. X direct API returned empty 200, then authenticated timeline recovery verified the live status URL. X-operator closeout: No scoped memory update needed."
     }
   ]
 }

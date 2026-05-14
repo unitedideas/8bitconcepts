@@ -1586,33 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-14-nhs-mcp-live",
-      "source": "marketing/x-ai-stat-bot-outbox.json live refresh",
-      "source_url": "https://nothumansearch.ai/digest.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-14",
-      "posted_at": "2026-05-14T05:25:00Z",
-      "url": "https://x.com/8BitConcepts/status/2054793532809031939",
-      "route": "https://nothumansearch.ai",
-      "fact_key": "nhs-mcp-verified-445-total-4169",
-      "fingerprint": "a586c1205f4339de",
-      "copy": "Not Human Search is tracking 4,169 agent-ready sites. 445 pass a live MCP check: 10.7%.\n\nThe gap is the useful part. llms.txt is common enough to publish; live tool endpoints are still harder.\n\nhttps://nothumansearch.ai",
-      "verified_facts": [
-        "https://nothumansearch.ai/api/v1/stats returned total_sites=4169, avg_score=35, top_category=developer at 2026-05-14T05:18Z",
-        "https://nothumansearch.ai/digest.json returned mcp_verified=445, pct_mcp=10.7, llms_txt_count=2242, openapi_count=478, generated_at=2026-05-14T05:18:02Z",
-        "foundry-business-index lists Not Human Search business URL as https://nothumansearch.ai"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "Not Human Search is tracking 4,169 agent-ready sites. 445 pass a live MCP check: 10.7%.\n\nThe gap is the useful part. llms.txt is common enough to publish; live tool endpoints are still harder.\n\nhttps://nothumansearch.ai",
-        "closeout": "No scoped memory update needed"
-      },
-      "x_operator_closeout": "No scoped memory update needed",
-      "note": "Public-action lock a586c1205f4339de claimed before posting and marked posted after authenticated X timeline recovery verified the live URL."
     }
   ]
 }
