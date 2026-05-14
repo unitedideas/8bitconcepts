@@ -37,7 +37,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T05:58:51+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -47,8 +47,12 @@
       "route": "https://8bitconcepts.com/research/the-integration-tax.html",
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
-      "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+      "fingerprint": "175f5e682139a402",
+      "copy": "Model API fees are usually the easy 10-20%. The expensive parts are permissions, evals, workflow changes, observability, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "updated_at": "2026-05-14T13:25:14Z",
+      "posted_at": "2026-05-14T13:25:14Z",
+      "url": "https://x.com/8BitConcepts/status/2054915118790758749",
+      "note": "Posted by 8bit-x-agent-publisher after live source verification and social-editor approval."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
