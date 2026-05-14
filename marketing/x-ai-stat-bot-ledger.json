@@ -205,7 +205,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-29T00:21:55+00:00-d0b36670",
-      "status": "blocked",
+      "status": "failed",
       "created_at": "2026-04-29T00:21:55+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -217,8 +217,12 @@
       "fact_key": "d0b366705683b61e40d789eb",
       "fingerprint": "7f578dbb9c5027ea",
       "copy": "Research AI roles averaged $273,880, while generative-AI roles averaged $230,707 despite having about 2.5x more openings.",
-      "updated_at": "2026-04-29T00:23:59Z",
-      "blocker": "Could not verify active X account from this launchd worker: Computer Use returned cgWindowNotFound for Brave and Chrome, and direct screenshot capture was black. No public post attempted."
+      "updated_at": "2026-05-14T02:14:31Z",
+      "blocker": "X post did not go live: tools/x-brave-post.js direct post returned empty 200 likely_posted=true but authenticated timeline verification found no matching status URL; browser/CDP fallback hung until killed; Computer Use fallback failed with app-server exited before returning a response.",
+      "latest_attempt_at": "2026-05-14T02:14:31Z",
+      "latest_fingerprint": "d3a54583387d8062",
+      "latest_copy": "AI compensation is not just “learn LLMs.”\n\nIn 3,548 salary-disclosed AI/ML engineering roles, research is the top-paying 100+ role skill tag: 740 roles at $279,788 avg.\n\nllm is the demand leader: 2,655 roles at $244,440 avg.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "verified_source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html"
     },
     {
       "id": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2",

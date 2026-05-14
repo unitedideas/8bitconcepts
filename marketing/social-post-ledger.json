@@ -3,6 +3,36 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-14-ai-compensation-by-skill",
+      "source": "marketing/x-ai-stat-bot-ledger.json",
+      "source_item": "x-ai-stat-2026-04-29T00:21:55+00:00-d0b36670",
+      "candidate_id": "research-backlog-q2-2026-ai-compensation-by-skill-x",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "blocked_at": "2026-05-14T02:14:31Z",
+      "fingerprint": "d3a54583387d8062",
+      "fact_key": "d0b366705683b61e40d789eb",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "copy": "AI compensation is not just “learn LLMs.”\n\nIn 3,548 salary-disclosed AI/ML engineering roles, research is the top-paying 100+ role skill tag: 740 roles at $279,788 avg.\n\nllm is the demand leader: 2,655 roles at $244,440 avg.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "blocker": "X post did not go live: tools/x-brave-post.js direct post returned empty 200 likely_posted=true but authenticated timeline verification found no matching status URL; browser/CDP fallback hung until killed; Computer Use fallback failed with app-server exited before returning a response.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html returned HTTP 200",
+        "Research paper source states 3,548 salary-disclosed AI/ML engineering roles across 527 companies as of 2026-05-04",
+        "research tag: 740 roles, $279,788 average salary",
+        "llm tag: 2,655 roles, $244,440 average salary",
+        "median advertised salary across salary-disclosed roles: $212,750"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "AI compensation is not just “learn LLMs.”\n\nIn 3,548 salary-disclosed AI/ML engineering roles, research is the top-paying 100+ role skill tag: 740 roles at $279,788 avg.\n\nllm is the demand leader: 2,655 roles at $244,440 avg.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+        "notes": [
+          "No scoped memory update needed"
+        ]
+      },
+      "x_operator_closeout": "No scoped memory update needed; failure was local posting-tool/browser availability, not a new channel-content rule."
+    },
+    {
       "id": "linkedin-2026-05-14-ai-compensation-by-skill",
       "source": "8bit-linkedin-agent-publisher",
       "candidate_id": "research-backlog-q2-2026-ai-compensation-by-skill-linkedin",
