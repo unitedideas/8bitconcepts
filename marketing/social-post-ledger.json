@@ -1619,17 +1619,32 @@
     {
       "id": "daily-targeted-research-2026-05-14-waymo-linkedin",
       "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-14-waymo",
       "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "blocked",
+      "account": "Shane Cheek",
+      "status": "posted",
       "date": "2026-05-14",
-      "blocked_at": "2026-05-14T13:50:50Z",
-      "fingerprint": "55e465c068e78ff7",
-      "selected_final_fingerprint": "cd81d3a3a5a1f8f3",
-      "fact_key": "targeted-research:waymo:106:autonomous-vehicles,llm,data-pipeline",
+      "posted_at": "2026-05-14T14:26:05Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7460696068784250881/",
       "route": "https://aidevboard.com/company/waymo",
-      "blocker": "LinkedIn public post did not go live. Direct Voyager cookie path rejected stored LinkedIn cookies (chrome-profile-3 returned 302). Page-context Voyager fallback opened LinkedIn signed-out landing page showing Sign in as Shane / h*****@8bitconcepts.com, so active Shane Cheek / Founder at 8bitconcepts identity could not be verified. Approved one-shot browser recovery then timed out in osascript/native click while opening the composer. No CAPTCHA/checkpoint/account lock was observed; blocker is missing/expired browser auth plus native-click timeout before verified identity/permalink.",
-      "note": "Selected by 8bit-linkedin-agent-publisher; blocked before public post."
+      "fingerprint": "ac4f093d7bedd0b9",
+      "fact_key": "targeted-research:waymo:108:autonomous-vehicles,llm,generative-ai,data-pipeline",
+      "copy": "Waymo is a useful public lens on where autonomous-vehicle AI work is moving.\n\nAI Dev Board currently indexes 108 open AI/ML roles for Waymo, with 91 listings carrying salary data. The indexed salary range is $168k-$431k, with an average published salary of $252k.\n\nSample roles:\n\n1. Machine Learning Engineer, Depot Automation\n2. Software Engineer, Marketplace ML Platform\n3. Senior Machine Learning Engineer, Weather & Degraded Road Surfaces\n\nThe tags cluster around autonomous-vehicles, llm, generative-ai, and data-pipeline.\n\nThe useful read is less \"AI hiring is up\" and more where the operational work is landing: robotics evaluation, prediction systems, simulation, and safety-critical deployment.\n\nCleaner proxy for readiness: model quality, scenario coverage, or operational monitoring?\n\nData:\nhttps://aidevboard.com/company/waymo",
+      "verified_facts": [
+        "https://aidevboard.com/company/waymo returned HTTP 200 and title Waymo Jobs — 108 AI Roles · Avg $252k | AI Dev Jobs",
+        "The same ADB page states 108 open AI developer roles, 91 listings with salary data, average salary $252k, and salary range $168k-$431k",
+        "The same ADB page includes Machine Learning Engineer, Depot Automation; Software Engineer, Marketplace ML Platform; Senior Machine Learning Engineer, Weather & Degraded Road Surfaces",
+        "The same ADB page includes autonomous-vehicles, llm, generative-ai, and data-pipeline tags",
+        "https://waymo.com/careers/ loaded via https://careers.withwaymo.com/ with Waymo careers content",
+        "https://8bitconcepts.com/ returned HTTP 200"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Waymo is a useful public lens on where autonomous-vehicle AI work is moving.\n\nAI Dev Board currently indexes 108 open AI/ML roles for Waymo, with 91 listings carrying salary data. The indexed salary range is $168k-$431k, with an average published salary of $252k.\n\nSample roles:\n\n1. Machine Learning Engineer, Depot Automation\n2. Software Engineer, Marketplace ML Platform\n3. Senior Machine Learning Engineer, Weather & Degraded Road Surfaces\n\nThe tags cluster around autonomous-vehicles, llm, generative-ai, and data-pipeline.\n\nThe useful read is less \"AI hiring is up\" and more where the operational work is landing: robotics evaluation, prediction systems, simulation, and safety-critical deployment.\n\nCleaner proxy for readiness: model quality, scenario coverage, or operational monitoring?\n\nData:\nhttps://aidevboard.com/company/waymo",
+        "scoped_learning_closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by 8bit-linkedin-agent-publisher after cadence check, source fact-check, social-editor approval, public-action lock, and Shane Cheek identity verification through LinkedIn direct Voyager API. Script returned a created share URL; live public HTML verification matched stable copy fragments."
     }
   ]
 }
