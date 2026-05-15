@@ -1778,6 +1778,47 @@
       },
       "x_operator_closeout": "No scoped memory update needed",
       "note": "Posted by 8bit-x-agent-publisher. Active account verified by tools/x-brave-post.js direct authenticated X path; live URL recovered from authenticated timeline after CreateTweet returned empty 200 and browser fallback timed out."
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-15-agentic-evidence-hottee-auth",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "source_item": "portfolio-daily-2026-05-15-agentic-evidence",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "date": "2026-05-15",
+      "blocked_at": "2026-05-15T13:58:22Z",
+      "blocker": "LinkedIn post blocked after all required routes: direct cookie Voyager identity failed because all LinkedIn cookie sources were rejected (chrome-profile-3 returned 302); page-context Voyager identity returned 401 for /voyager/api/me; approved one-shot browser recovery hung for more than two minutes without returning a verified identity, Post successful View post URL, activity URL, checkpoint, CAPTCHA, account-lock, or rate-limit signal. The allow file was removed and no public post was ledgered.",
+      "fingerprint": "5195d814de9f92f3",
+      "fact_key": "portfolio-daily:2026-05-15:agentic-evidence",
+      "route": "https://agentic-evidence.fly.dev/",
+      "format": "portfolio_daily",
+      "copy": "HotTea is live at https://agentic-evidence.fly.dev/.\n\nIt is built around developer-VM interview evidence, not another hiring dashboard: retroactive Codex/Claude session review, reviewer packets, VM provisioning, GitHub Action evidence, and an API surface for the workflow.\n\nThe live health check is green for Stripe, Anthropic, and Fly Machines. Guardrails are explicit: 72-hour candidate sessions, 240-minute VM TTL, and a tamper-evident audit trail.\n\nThe public llms.txt also lists the useful paths: /sample-report, /api/vm/provision, /vm/bootstrap.sh, /github-action.yml, /api/github/evidence, /openapi.yaml, and $199/month pricing.",
+      "research_sources": [
+        "https://agentic-evidence.fly.dev/",
+        "https://agentic-evidence.fly.dev/health",
+        "https://agentic-evidence.fly.dev/llms.txt",
+        "https://agentic-evidence.fly.dev/sample-report",
+        "https://agentic-evidence.fly.dev/openapi.yaml"
+      ],
+      "facts_verified": [
+        "https://agentic-evidence.fly.dev/ returned HTTP 200",
+        "/health returned ok=true with Stripe, Anthropic, and Fly Machines configured",
+        "/health guardrails include candidateSessionTtlHours=72, vmTtlMinutes=240, tamperEvidentAuditTrail=true",
+        "/llms.txt identifies HotTea as a developer-VM interview platform for retroactive Codex/Claude session review",
+        "/llms.txt lists /sample-report, /api/vm/provision, /vm/bootstrap.sh, /github-action.yml, /api/github/evidence, /openapi.yaml, and $199/month pricing",
+        "/sample-report contains Claude JSONL, Codex/Claude, session, reviewer, and evidence language"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "HotTea is live at https://agentic-evidence.fly.dev/.\n\nIt is built around developer-VM interview evidence, not another hiring dashboard: retroactive Codex/Claude session review, reviewer packets, VM provisioning, GitHub Action evidence, and an API surface for the workflow.\n\nThe live health check is green for Stripe, Anthropic, and Fly Machines. Guardrails are explicit: 72-hour candidate sessions, 240-minute VM TTL, and a tamper-evident audit trail.\n\nThe public llms.txt also lists the useful paths: /sample-report, /api/vm/provision, /vm/bootstrap.sh, /github-action.yml, /api/github/evidence, /openapi.yaml, and $199/month pricing.",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "post_attempted": true,
+      "public_action_lock_claimed": true,
+      "source_left_queued": true,
+      "note": "No public LinkedIn URL was verified; latest sync-state LinkedIn posted lock before this run remains 2026-05-15T04:30:07Z."
     }
   ]
 }
