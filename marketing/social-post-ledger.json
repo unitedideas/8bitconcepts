@@ -1854,6 +1854,35 @@
       },
       "linkedin_operator_closeout": "No scoped memory update needed",
       "note": "Posted by 8bit-linkedin-agent-publisher. Direct LinkedIn Voyager API created the post but direct HTML verification failed; approved one-shot browser recovery verified the live URL and exact body in Brave. Sync-state social-content lock 1488a7d4e18d4b37 marked posted."
+    },
+    {
+      "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28-owl-2026-05-15",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-15",
+      "posted_at": "2026-05-15T14:48:56Z",
+      "url": "https://x.com/8BitConcepts/status/2055299126292795432",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "fingerprint": "33c0c6a18094c322",
+      "copy": "Model API spend is usually the easy 10-20%. The expensive part is permissions, data pipelines, evals, workflow redesign, observability, and last-mile integration into existing systems.",
+      "research_sources": [
+        "https://8bitconcepts.com/research/the-integration-tax.html"
+      ],
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "Page states model API costs are 10-20% of what AI costs to ship",
+        "Page names permissions, data pipeline, evals, workflow, observability, and last-mile integration as larger work"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Model API spend is usually the easy 10-20%. The expensive part is permissions, data pipelines, evals, workflow redesign, observability, and last-mile integration into existing systems.",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by Owl 8bit X agent publisher after cadence check, source fact-check, social-editor approval, public-action lock, and active @8BitConcepts verification through tools/x-brave-post.js. Earlier NHS digest candidate hit X empty-200/unverifiable and browser AppleScript timeout; no live URL found, so this non-duplicate linkless candidate was used."
     }
   ]
 }
