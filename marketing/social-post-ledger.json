@@ -1586,6 +1586,37 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-14-waymo-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-14",
+      "posted_at": "2026-05-14T21:55:58Z",
+      "posted_by": "8bit-linkedin-agent-publisher",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7460809696128712706",
+      "fingerprint": "4dc70ad58324915c",
+      "original_queue_fingerprint": "8f474efa072c3782",
+      "fact_key": "targeted-research:waymo:103:autonomous-vehicles,llm,generative-ai",
+      "route": "https://aidevboard.com/company/waymo",
+      "copy": "Waymo is showing 103 indexed AI/ML roles in AI Dev Board, with an average published salary of $255,000.\n\nThe current sample clusters around autonomous vehicles, LLMs, generative AI, and data pipelines. Sample roles include Machine Learning Engineer, Depot Automation; Software Engineer, Marketplace ML Platform; and Senior Staff Engineer, DevAI.\n\nThe useful read is where the operational work is moving: robotics evaluation, prediction systems, simulation, and safety-critical deployment.\n\nWaymo is a clean public lens on this. Which proxy says more about readiness: model quality, scenario coverage, or operational monitoring?\n\nData:\nhttps://aidevboard.com/company/waymo",
+      "text": "Waymo is showing 103 indexed AI/ML roles in AI Dev Board, with an average published salary of $255,000.\n\nThe current sample clusters around autonomous vehicles, LLMs, generative AI, and data pipelines. Sample roles include Machine Learning Engineer, Depot Automation; Software Engineer, Marketplace ML Platform; and Senior Staff Engineer, DevAI.\n\nThe useful read is where the operational work is moving: robotics evaluation, prediction systems, simulation, and safety-critical deployment.\n\nWaymo is a clean public lens on this. Which proxy says more about readiness: model quality, scenario coverage, or operational monitoring?\n\nData:\nhttps://aidevboard.com/company/waymo",
+      "verified_facts": [
+        "AI Dev Board Waymo company page returned HTTP 200 and showed 103 AI roles plus Avg $255k",
+        "AI Dev Board Waymo page contained sample roles and tags used in the post",
+        "Waymo careers page redirected to careers.withwaymo.com and returned a live Waymo careers page",
+        "Public LinkedIn URL returned HTTP 200 and contained the approved Waymo copy"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "locks": [
+        "public-action-locks/social-content/4dc70ad58324915c.json"
+      ],
+      "posting_method": "linkedin_voyager_api_created_share_public_url_verified_by_public_page_text",
+      "note": "Restored after later auto-commit 16f5a29 deleted the posted ledger row; sync-state public-action lock and automation event remained posted."
     }
   ]
 }
