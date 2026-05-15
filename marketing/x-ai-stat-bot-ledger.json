@@ -256,6 +256,25 @@
       "posted_at": "2026-05-15T03:05:04Z",
       "url": "https://x.com/8BitConcepts/status/2055122218003411380",
       "note": "Freshened from stale x-ai-stat-bot outbox path and verified against live AI Dev Board API root before posting."
+    },
+    {
+      "id": "x-ai-stat-2026-05-15T04:45:24Z-nhs-mcp-live-check",
+      "status": "posted",
+      "created_at": "2026-05-15T04:39:29Z",
+      "updated_at": "2026-05-15T04:45:24Z",
+      "posted_at": "2026-05-15T04:45:24Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search digest",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_id": "nhs-mcp-verified-445-total-4173",
+      "fact_key": "nhs_digest:mcp_verified=445,total_sites=4173,pct_mcp=10.7,generated_at=2026-05-15T04:39:29Z",
+      "fingerprint": "552d2e606443c609",
+      "copy": "445 of 4,173 agent-ready sites in Not Human Search pass a real MCP handshake: 10.7%.\n\nThe easier discovery files are spreading. Working MCP endpoints are still the bottleneck.\n\nMethodology: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "url": "https://x.com/8BitConcepts/status/2055146413525483544",
+      "note": "Used by 8bit-x-agent-publisher after daily queues were stale/duplicate and facts were refreshed from live NHS digest/stats."
     }
   ]
 }

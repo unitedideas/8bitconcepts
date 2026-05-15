@@ -1768,6 +1768,32 @@
       "linkedin_operator_closeout": "No scoped memory update needed",
       "public_action_lock_claimed": true,
       "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-15-nhs-mcp-live-check",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-bot-outbox:live_nhs_digest_current",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-15",
+      "posted_at": "2026-05-15T04:45:24Z",
+      "url": "https://x.com/8BitConcepts/status/2055146413525483544",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "fingerprint": "552d2e606443c609",
+      "fact_key": "nhs_digest:mcp_verified=445,total_sites=4173,pct_mcp=10.7,generated_at=2026-05-15T04:39:29Z",
+      "copy": "445 of 4,173 agent-ready sites in Not Human Search pass a real MCP handshake: 10.7%.\n\nThe easier discovery files are spreading. Working MCP endpoints are still the bottleneck.\n\nMethodology: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "facts_verified": [
+        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-15T04:39:29Z, mcp_verified=445, pct_mcp=10.7",
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4173 and avg_score=35",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "foundry-business-index lists Not Human Search at https://nothumansearch.ai and 8bitconcepts at https://8bitconcepts.com"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "note": "Posted from verified @8BitConcepts via X direct existing recovery after browser fallback timed out. Cadence violation recorded separately in sync-state automation event because stale uncommitted ledger state hid the 03:05Z X post during guard evaluation."
     }
   ]
 }
