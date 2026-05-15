@@ -1646,6 +1646,36 @@
         "e025b1fca3ce113c",
         "796825a04064fa19"
       ]
+    },
+    {
+      "id": "8bit-x-agent-publisher-posted-2026-05-15-cohere",
+      "date": "2026-05-15",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-15-cohere",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-15T22:09:03Z",
+      "url": "https://x.com/8BitConcepts/status/2055409611566714919",
+      "fingerprint": "9117ebc3e44f5cb7",
+      "fact_key": "targeted-research:cohere:90:search,generative-ai,agents",
+      "route": "https://aidevboard.com/company/cohere",
+      "source_url": "https://aidevboard.com/company/cohere",
+      "copy": "Cohere has 90 indexed AI developer roles on AI Dev Board, clustered around search, generative AI, agents, NLP, infrastructure, and distributed systems.\n\nhttps://aidevboard.com/company/cohere",
+      "facts_verified": [
+        "https://aidevboard.com/company/cohere returned HTTP 200 and said Cohere Jobs - 90 AI Roles / 90 open AI developer roles",
+        "The ADB company page listed search, generative-ai, llm, agents, distributed-systems, nlp, pytorch, and infrastructure among Cohere technologies",
+        "https://cohere.com/careers returned HTTP 200 and described enterprise AI, intelligent search/discovery, retrieval models Embed/Rerank, multilingual models, and private deployments"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Cohere has 90 indexed AI developer roles on AI Dev Board, clustered around search, generative AI, agents, NLP, infrastructure, and distributed systems.\n\nhttps://aidevboard.com/company/cohere",
+        "notes": [
+          "Shortened retry copy after the first X direct attempt returned empty-200/unverifiable. No scoped memory update needed."
+        ]
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "posting_method": "tools/x-brave-post.js direct authenticated X API; live URL recovered from authenticated timeline after empty 200 response"
     }
   ]
 }
