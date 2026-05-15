@@ -1819,6 +1819,41 @@
       "public_action_lock_claimed": true,
       "source_left_queued": true,
       "note": "No public LinkedIn URL was verified; latest sync-state LinkedIn posted lock before this run remains 2026-05-15T04:30:07Z."
+    },
+    {
+      "id": "daily-ai-insight-2026-05-01-afternoon-linkedin-posted-2026-05-15",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-ai-insight-2026-05-01-afternoon",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "date": "2026-05-15",
+      "posted_at": "2026-05-15T14:27:36Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7461059154623811584",
+      "fingerprint": "1488a7d4e18d4b37",
+      "fact_key": "nhs:agent-readiness-audit:total_sites=4175:avg_score=35",
+      "route": "https://nothumansearch.ai",
+      "format": "research_fact",
+      "copy": "Agent-readiness audits get clearer when they separate three things: what a site claims, what its endpoints return, and what fails under a real request.\n\nThat is the gap Not Human Search tracks across 4,175 sites. The average score is 35/100, using seven signals: llms.txt, ai-plugin.json, OpenAPI, structured APIs, MCP servers, robots.txt AI rules, and Schema.org markup.\n\nFor operators, the useful question is what needs to change around the model: state, workflow, evals, policy, and feedback loops.\n\nhttps://nothumansearch.ai",
+      "research_sources": [
+        "https://nothumansearch.ai",
+        "https://nothumansearch.ai/llms.txt",
+        "https://nothumansearch.ai/api/v1",
+        "https://nothumansearch.ai/api/v1/stats"
+      ],
+      "facts_verified": [
+        "https://nothumansearch.ai returned HTTP 200",
+        "https://nothumansearch.ai/llms.txt identifies Not Human Search as an agentic-first search engine and lists seven scoring signals",
+        "https://nothumansearch.ai/api/v1 returned agent-readable API endpoints",
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4175, avg_score=35, top_category=developer"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Agent-readiness audits get clearer when they separate three things: what a site claims, what its endpoints return, and what fails under a real request.\n\nThat is the gap Not Human Search tracks across 4,175 sites. The average score is 35/100, using seven signals: llms.txt, ai-plugin.json, OpenAPI, structured APIs, MCP servers, robots.txt AI rules, and Schema.org markup.\n\nFor operators, the useful question is what needs to change around the model: state, workflow, evals, policy, and feedback loops.\n\nhttps://nothumansearch.ai",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by 8bit-linkedin-agent-publisher. Direct LinkedIn Voyager API created the post but direct HTML verification failed; approved one-shot browser recovery verified the live URL and exact body in Brave. Sync-state social-content lock 1488a7d4e18d4b37 marked posted."
     }
   ]
 }
