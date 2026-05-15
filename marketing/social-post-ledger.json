@@ -1586,6 +1586,33 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "the-agentic-commerce-gap-linkedin-2026-05-15",
+      "source": "8bit research backlog",
+      "source_item": "the-agentic-commerce-gap",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-15",
+      "posted_at": "2026-05-15T18:45:10Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7461124352495947776",
+      "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "fact_key": "research:the-agentic-commerce-gap:agentic-commerce-surfaces",
+      "fingerprint": "5dec04920deeafc1",
+      "copy": "Most online sellers still treat commerce as a browser flow.\n\nThat breaks when the buyer is an AI agent.\n\nAn agent needs a machine-readable catalog, deterministic quote path, declared checkout handoff, explicit payment rails, fulfillment proof, and an agent discovery route.\n\nIf those surfaces are missing, it does not complain. It skips the seller.\n\nWe wrote up the gap here:\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "note": "Posted by 8bit-linkedin-agent-publisher after source fact-check, agent-social-editor approval, public-action lock, and LinkedIn API identity verification. Script created the share but text verifier failed; live URL returned HTTP 200 before ledgering.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-agentic-commerce-gap.html returned HTTP 200",
+        "https://8bitconcepts.com/.well-known/commerce.json returned HTTP 200",
+        "https://8bitconcepts.com/api/v1/catalog returned HTTP 200",
+        "LinkedIn URL returned HTTP 200 before ledgering: https://www.linkedin.com/feed/update/urn:li:share:7461124352495947776"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "scoped_memory": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
