@@ -238,6 +238,24 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-ai-stat-adb-api-root-2026-05-15",
+      "status": "posted",
+      "created_at": "2026-05-15T03:05:04Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "AI Dev Board API root",
+      "source_url": "https://aidevboard.com/api/v1",
+      "route": "https://aidevboard.com/api/v1",
+      "fact_id": "adb-api-root-8700-plus-527-companies",
+      "fact_key": "adb-api-root:2026-05-15:8700-plus-jobs-527-companies",
+      "fingerprint": "526e3d47ecb57841",
+      "copy": "AI Dev Board’s public API is advertising 8,700+ current AI/ML engineering jobs from 527 companies.\n\nThe more useful part is the interface: REST endpoints, MCP, OpenAPI, and quota semantics instead of another job-site scrape.\n\nhttps://aidevboard.com/api/v1",
+      "posted_at": "2026-05-15T03:05:04Z",
+      "url": "https://x.com/8BitConcepts/status/2055122218003411380",
+      "note": "Freshened from stale x-ai-stat-bot outbox path and verified against live AI Dev Board API root before posting."
     }
   ]
 }
