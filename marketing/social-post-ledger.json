@@ -3,6 +3,19 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "agentic-commerce-gap-linkedin-2026-05-15",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-15T18:45:10Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7461124352495947776",
+      "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "fingerprint": "5dec04920deeafc1",
+      "text": "Most online sellers still treat commerce as a browser flow.\n\nThat breaks when the buyer is an AI agent.\n\nAn agent needs a machine-readable catalog, deterministic quote path, declared checkout handoff, explicit payment rails, fulfillment proof, and an agent discovery route.\n\nIf those surfaces are missing, it does not complain. It skips the seller.\n\nWe wrote up the gap here:\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "note": "Ledger repair from sync-state social-content lock; prior automation posted and verified the live LinkedIn URL but left the repo ledger unstaged/stashed."
+    },
+    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
