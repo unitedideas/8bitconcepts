@@ -238,25 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "x-ai-stat-2026-05-14T23:53:42Z-nhs-live-stats",
-      "status": "posted",
-      "created_at": "2026-05-14T23:37:05Z",
-      "updated_at": "2026-05-14T23:54:17Z",
-      "posted_at": "2026-05-14T23:54:17Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "kind": "live_stat",
-      "source": "Not Human Search live stats",
-      "source_url": "https://nothumansearch.ai/api/v1/stats",
-      "route": "https://nothumansearch.ai",
-      "fact_id": "nhs-total-sites-4172-avg-35-top-developer",
-      "fact_key": "nhs-live-stats-2026-05-14-total-4172-avg-35-top-developer",
-      "fingerprint": "ce4ff2fcab95f146",
-      "copy": "Not Human Search tracks 4,172 agent-ready sites. Average score: 35/100. Top category: developer tools.\n\nThe gap is still docs, APIs, and clean handoff paths.\n\nhttps://nothumansearch.ai",
-      "url": "https://x.com/8BitConcepts/status/2055074035793625508",
-      "note": "Fallback X stat-bot material refreshed from live source and posted by 8bit-x-agent-publisher."
     }
   ]
 }
