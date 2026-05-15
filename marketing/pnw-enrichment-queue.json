@@ -1,43 +1,49 @@
 {
-  "updated_at": "2026-05-08T00:00:00Z",
-  "automation": "business-agent-8bitconcepts",
-  "reason": "Remaining PNW SMB email-ready records are role-based addresses. Do not send until enriched with a personal decision-maker email or moved to a non-recurring human-supervised channel.",
-  "blocked_records": [
-    {
-      "company": "High Tech Manufacturing",
-      "current_email": "info@htmfg.com",
-      "blocker": "role_based_email",
-      "next_action": "Find Steve Smith's personal business email or a verified direct contact before outreach."
-    },
-    {
-      "company": "Grady Britton",
-      "current_email": "hello@gradybritton.com",
-      "blocker": "role_based_email",
-      "next_action": "Find Paige Campbell's direct business email before outreach."
-    },
-    {
-      "company": "Freeland Spirits",
-      "current_email": "info@freelandspirits.com",
-      "blocker": "role_based_email",
-      "next_action": "Find Jill Kuehler's direct business email before outreach."
-    },
-    {
-      "company": "Portland Pet Food Company",
-      "current_email": "info@portlandpetfoodcompany.com",
-      "blocker": "role_based_email",
-      "next_action": "Find Katie McCarron's direct business email before outreach."
-    },
-    {
-      "company": "Jacobsen Salt Co.",
-      "current_email": "hello@jacobsensalt.com",
-      "blocker": "role_based_email",
-      "next_action": "Find Gabe Jacobsen's direct business email before outreach."
-    },
-    {
-      "company": "Bridge City Medical",
-      "current_email": "info@bridgecitymedical.com",
-      "blocker": "role_based_email",
-      "next_action": "Find the medical director/founder's direct business email before outreach."
-    }
-  ]
+    "updated_at": "2026-05-08T00:00:00Z",
+    "automation": "business-agent-8bitconcepts",
+    "reason": "Remaining PNW SMB email-ready records are role-based addresses. Do not send until enriched with a personal decision-maker email or moved to a non-recurring human-supervised channel.",
+    "blocked_records": [
+        {
+            "company": "High Tech Manufacturing",
+            "current_email": "info@htmfg.com",
+            "blocker": "role_based_email",
+            "next_action": "Find Steve Smith's personal business email or a verified direct contact before outreach."
+        },
+        {
+            "company": "Miller's Heating & Air",
+            "current_email": "info@millersheating.com",
+            "blocker": "role_based_email",
+            "next_action": "Find a family owner or operations lead's direct business email before outreach."
+        },
+        {
+            "company": "Grady Britton",
+            "current_email": "hello@gradybritton.com",
+            "blocker": "role_based_email",
+            "next_action": "Find Paige Campbell's direct business email before outreach."
+        },
+        {
+            "company": "Freeland Spirits",
+            "current_email": "info@freelandspirits.com",
+            "blocker": "role_based_email",
+            "next_action": "Find Jill Kuehler's direct business email before outreach."
+        },
+        {
+            "company": "Portland Pet Food Company",
+            "current_email": "info@portlandpetfoodcompany.com",
+            "blocker": "role_based_email",
+            "next_action": "Find Katie McCarron's direct business email before outreach."
+        },
+        {
+            "company": "Jacobsen Salt Co.",
+            "current_email": "hello@jacobsensalt.com",
+            "blocker": "role_based_email",
+            "next_action": "Find Gabe Jacobsen's direct business email before outreach."
+        },
+        {
+            "company": "Bridge City Medical",
+            "current_email": "info@bridgecitymedical.com",
+            "blocker": "role_based_email",
+            "next_action": "Find the medical director/founder's direct business email before outreach."
+        }
+    ]
 }
