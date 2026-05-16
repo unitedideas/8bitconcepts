@@ -1652,6 +1652,41 @@
       "blocker": "LinkedIn auth hard stop: direct cookie route rejected all LinkedIn cookie sources (chrome-profile-3 returned 302); page-context Voyager /voyager/api/me returned 401; approved one-shot browser recovery with SOCIAL_LINKEDIN_FORCE_BROWSER=1 produced no completion output for 90s and was killed. No public post went live.",
       "public_action_lock": "/Users/owlassist/.foundry/foundry-sync-state/public-action-locks/social-content/7caf6f3ed188f0d8.json",
       "linkedin_operator_closeout": "No scoped memory update needed."
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-2026-05-16-ai-compensation-by-skill",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "research/q2-2026-ai-compensation-by-skill.html",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "date": "2026-05-16",
+      "posted_at": "2026-05-16T02:29:22Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7461240960862035968",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "fact_key": "research:ai-compensation-by-skill:salary-disclosed-3548:research-279788:generative-ai-233414:2026-05-04",
+      "fingerprint": "0231728a716eddb1",
+      "copy": "Research-tagged AI engineering roles average $279,788 in the current 8bit/AI Dev Board compensation sample.\n\nGenerative-AI roles average $233,414 across 1,892 roles, with roughly 2.6x more openings than research-tagged roles.\n\nThat gap is the useful hiring signal. The broader gen-AI bucket has more volume, but the market is still paying a premium for scarcer research judgment.\n\nSample: 3,548 salary-disclosed AI/ML engineering roles across 527 companies as of 2026-05-04. Median advertised salary: $212,750.\n\nFull analysis: Q2 2026 AI Engineering Compensation by Skill\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html returned HTTP 200",
+        "Live page title: Q2 2026 AI Engineering Compensation by Skill -- 8bitconcepts",
+        "Live page says the analysis uses 3,548 salary-disclosed AI/ML engineering roles across 527 companies as of 2026-05-04",
+        "Live page says research-tagged roles average $279,788 across 740 roles",
+        "Live page says generative-AI roles average $233,414 across 1,892 roles",
+        "Live page says generative-AI has roughly 2.6x more openings than research-tagged roles",
+        "Live page says median advertised salary is $212,750 across 3,548 salary-disclosed roles",
+        "https://8bitconcepts.com returned HTTP 200",
+        "Public LinkedIn URL returned HTTP 200 and contained approved text plus Shane Cheek page content"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Research-tagged AI engineering roles average $279,788 in the current 8bit/AI Dev Board compensation sample.\n\nGenerative-AI roles average $233,414 across 1,892 roles, with roughly 2.6x more openings than research-tagged roles.\n\nThat gap is the useful hiring signal. The broader gen-AI bucket has more volume, but the market is still paying a premium for scarcer research judgment.\n\nSample: 3,548 salary-disclosed AI/ML engineering roles across 527 companies as of 2026-05-04. Median advertised salary: $212,750.\n\nFull analysis: Q2 2026 AI Engineering Compensation by Skill\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+        "scoped_learning_closeout": "No scoped memory update needed."
+      },
+      "post_method": "tools/linkedin-brave-post.js direct Voyager API returned share URL; public URL verification succeeded by HTTP 200 body match after script body verification failed",
+      "public_action_lock": "/Users/owlassist/.foundry/foundry-sync-state/public-action-locks/social-content/0231728a716eddb1.json",
+      "linkedin_operator_closeout": "No scoped memory update needed."
     }
   ]
 }
