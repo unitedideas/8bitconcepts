@@ -1586,6 +1586,50 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-16-openai-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-16",
+      "posted_at": "2026-05-16T18:02:44Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7461475711435005952",
+      "fingerprint": "e7f2909205605651",
+      "fact_key": "targeted-research:openai:369:distributed-systems,agents,llm",
+      "route": "https://aidevboard.com/company/openai",
+      "copy": "OpenAI's public hiring profile is a useful snapshot of where AI infrastructure work is showing up.\n\nAI Dev Board indexes 369 open AI developer roles for OpenAI. The visible sample includes Software Engineer, Delivery / CD; Staff / Senior Staff Backend Engineer, B2B Flywheel; and Tech Lead, Deployment & Operations - Custom Infrastructure.\n\nThe current visible tags cluster around distributed systems, LLMs, research, MLOps, agents, infrastructure, cloud, and search. Published compensation appears on 9 listings, with an average salary of $299k.\n\nThe agent-readiness profile is thinner: Not Human Search shows openai.com at 15/100, with structured API detected and llms.txt missing.\n\nThe useful read is the split between hiring demand and agent-readable surfaces. The jobs point toward delivery, backend systems, deployment, and infrastructure. The public site still leaves basic agent context on the table.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
+      "approved_final_copy": "OpenAI's public hiring profile is a useful snapshot of where AI infrastructure work is showing up.\n\nAI Dev Board indexes 369 open AI developer roles for OpenAI. The visible sample includes Software Engineer, Delivery / CD; Staff / Senior Staff Backend Engineer, B2B Flywheel; and Tech Lead, Deployment & Operations - Custom Infrastructure.\n\nThe current visible tags cluster around distributed systems, LLMs, research, MLOps, agents, infrastructure, cloud, and search. Published compensation appears on 9 listings, with an average salary of $299k.\n\nThe agent-readiness profile is thinner: Not Human Search shows openai.com at 15/100, with structured API detected and llms.txt missing.\n\nThe useful read is the split between hiring demand and agent-readable surfaces. The jobs point toward delivery, backend systems, deployment, and infrastructure. The public site still leaves basic agent context on the table.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
+      "approved_final_fingerprint": "e7f2909205605651",
+      "editor": "agent-social-editor",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "facts_verified": [
+        "https://aidevboard.com/company/openai returned HTTP 200 and showed 369 open AI developer roles at OpenAI, avg salary $299k, 9 listings with published compensation",
+        "Visible ADB sample roles included Software Engineer, Delivery / CD; Staff / Senior Staff Backend Engineer, B2B Flywheel; Tech Lead, Deployment & Operations - Custom Infrastructure",
+        "Visible ADB technologies included distributed-systems, llm, research, mlops, agents, infrastructure, cloud, search",
+        "https://nothumansearch.ai/site/openai.com returned HTTP 200 and showed openai.com Agentic Readiness 15/100, +15 structured API, missing +25 llms.txt",
+        "https://openai.com/careers/ returned HTTP 403 to the worker, so it was not cited in the final post"
+      ],
+      "post_method": "tools/linkedin-brave-post.js direct LinkedIn Voyager API; live URL verified through Brave body snapshot",
+      "source_item": "daily-targeted-research-2026-05-16-openai"
+    },
+    {
+      "id": "reconciled-linkedin-lock-2026-05-16-openai-135942",
+      "source": "foundry-sync-state/public-action-locks/social-content/be2901cf2c96af7b.json",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-16",
+      "posted_at": "2026-05-16T13:59:42Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7461414832706072576",
+      "fingerprint": "be2901cf2c96af7b",
+      "fact_key": "targeted-research:openai:360:research,agents,distributed-systems,llm",
+      "route": "https://aidevboard.com/company/openai",
+      "copy": "OpenAI is a useful lens on where AI work is moving from research into operations.\n\nAI Dev Board currently indexes 360 OpenAI AI/ML roles, including 70 remote positions. The indexed sample averages $316,000 in published salary and clusters around research, agents, distributed systems, and LLM work.\n\nThe operational read is more useful than the headline count: platform delivery, infrastructure, eval coverage, and agent deployment loops keep showing up around the work.\n\nNothumansearch also gives openai.com a 15/100 public agent-readiness score, with structured API detected. That is a separate lens on what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com\n\nWhere do you see the bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?",
+      "note": "Reconciled from sync-state posted public-action lock because the local ledger was missing this post during the cadence check. This row preserves the six-hour LinkedIn guardrail for future runs."
     }
   ]
 }
