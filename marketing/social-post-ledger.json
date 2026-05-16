@@ -1586,37 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-16-nhs-mcp-live-stat",
-      "source": "marketing/x-ai-stat-bot-outbox.json",
-      "source_item": "x-ai-stat-2026-04-28T21:03:17+00:00-31d1c476",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-15",
-      "posted_at": "2026-05-16T00:35:22.113Z",
-      "url": "https://x.com/8BitConcepts/status/2055446206567084071",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "source_url": "https://nothumansearch.ai/digest.json",
-      "fact_key": "nhs-mcp-verified-448-total-4176-llms-2243-2026-05-16",
-      "fingerprint": "6c7155ed562ff2f6",
-      "text": "448 of 4,176 indexed agent-ready sites pass a real MCP handshake. 10.7%.\n\n2,243 publish llms.txt.\n\nThe bottleneck is not claiming agent support. It is responding to a real request.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "verified_facts": [
-        "https://nothumansearch.ai/digest.json fetched at 2026-05-16T00:30Z",
-        "mcp_verified=448",
-        "total_sites=4176",
-        "llms_txt_count=2243",
-        "https://nothumansearch.ai returned HTTP 200",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "448 of 4,176 indexed agent-ready sites pass a real MCP handshake. 10.7%.\n\n2,243 publish llms.txt.\n\nThe bottleneck is not claiming agent support. It is responding to a real request.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-        "closeout": "No scoped memory update needed"
-      },
-      "x_operator_closeout": "No scoped memory update needed",
-      "note": "Posted by 8bit-x-agent-publisher from verified @8BitConcepts. Initial direct X CreateTweet returned empty 200; live URL recovered from authenticated timeline before ledgering."
     }
   ]
 }
