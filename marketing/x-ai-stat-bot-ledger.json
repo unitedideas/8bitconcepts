@@ -238,6 +238,25 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-ai-stat-2026-05-16T00:30:21Z-nhs-mcp-448",
+      "status": "posted",
+      "created_at": "2026-05-16T00:30:21Z",
+      "updated_at": "2026-05-16T00:35:22.113Z",
+      "posted_at": "2026-05-16T00:35:22.113Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search digest",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_id": "nhs-mcp-verified-448-total-4176-llms-2243",
+      "fact_key": "nhs-mcp-verified-448-total-4176-llms-2243-2026-05-16",
+      "fingerprint": "6c7155ed562ff2f6",
+      "copy": "448 of 4,176 indexed agent-ready sites pass a real MCP handshake. 10.7%.\n\n2,243 publish llms.txt.\n\nThe bottleneck is not claiming agent support. It is responding to a real request.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "url": "https://x.com/8BitConcepts/status/2055446206567084071",
+      "note": "Source outbox item refreshed to current live digest counts before posting."
     }
   ]
 }
