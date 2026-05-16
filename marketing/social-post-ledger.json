@@ -1586,6 +1586,36 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-16-openai-account-access",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-16-openai",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "blocked_at": "2026-05-16T16:54:30.201Z",
+      "date": "2026-05-16",
+      "route": "https://aidevboard.com/company/openai",
+      "fact_key": "targeted-research:openai:369:distributed-systems,agents,llm",
+      "fingerprint": "e0c0f6d3b0688704",
+      "copy": "OpenAI is showing 369 indexed AI developer roles on AI Dev Board, with a $299k average published salary in the indexed sample.\n\nThe useful signal is the shape of work:\n\n1. Sample roles include Software Engineer, Delivery / CD; Staff / Senior Staff Backend Engineer, B2B Flywheel; and Tech Lead, Deployment & Operations - Custom Infrastructure.\n2. Tags cluster around distributed-systems, agents, llm, and research.\n3. The matching Not Human Search profile shows openai.com at 15/100 agentic readiness: structured API present, llms.txt missing.\n\nThe read is not “OpenAI is hiring.” It is that the bottleneck is moving toward delivery systems, backend flywheels, custom infrastructure, and agent deployment loops.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
+      "blocker": "LinkedIn post blocked before any public POST: direct cookie Voyager route rejected stored LinkedIn cookies, page-context Voyager opened https://www.linkedin.com/ logged out with “Sign in as Shane” for hello@8bitconcepts.com instead of the approved Shane Cheek / Founder at 8bitconcepts profile, and approved one-shot browser recovery hung without a success URL until terminated. No active LinkedIn identity was verified, no public post URL was created, and the one-shot allow file was removed.",
+      "post_attempted": false,
+      "public_action_lock_claimed": true,
+      "source_left_queued": true,
+      "facts_verified": [
+        "https://aidevboard.com/company/openai returned HTTP 200 on 2026-05-16",
+        "ADB live page states OpenAI has 369 open AI developer roles and average salary $299k",
+        "ADB live page includes sample roles Software Engineer, Delivery / CD; Staff / Senior Staff Backend Engineer, B2B Flywheel; Tech Lead, Deployment & Operations - Custom Infrastructure",
+        "ADB live page includes tags distributed-systems, agents, llm, research",
+        "https://nothumansearch.ai/site/openai.com returned HTTP 200 and shows openai.com agentic readiness 15/100 with structured API present and llms.txt missing",
+        "https://openai.com/careers/ returned Cloudflare 403 to curl; no claims rely on that source"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "next_action": "SLA watchdog should force-wake this publisher only after the 6-hour channel cadence allows it; first executable fix is restoring a usable LinkedIn browser/session cookie for hello@8bitconcepts.com or Shane Cheek."
     }
   ]
 }
