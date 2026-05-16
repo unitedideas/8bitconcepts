@@ -1618,6 +1618,40 @@
       },
       "post_method": "tools/x-brave-post.js direct API empty-200 recovery; authenticated timeline verified existing live post",
       "x_operator_closeout": "No scoped memory update needed."
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-2026-05-15-xai-auth-blocked",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "daily-targeted-research-2026-05-01-xai",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "blocked",
+      "date": "2026-05-15",
+      "updated_at": "2026-05-16T02:01:23Z",
+      "route": "https://aidevboard.com/company/xai",
+      "source_url": "https://aidevboard.com/company/xai",
+      "secondary_url": "https://nothumansearch.ai/site/x.ai",
+      "fact_key": "targeted-research:xai:82:47-salary-data:295k:nhs-20-structured-api",
+      "fingerprint": "7caf6f3ed188f0d8",
+      "copy": "xAI is a useful public hiring-data snapshot right now.\n\nAI Dev Board has 82 open xAI roles indexed, with 47 carrying salary data. The current indexed range is $110k-$600k, with a $295k average.\n\nSample roles include:\n\n1. Member of Technical Staff - Voice Model\n2. Member of Technical Staff - Model Training\n3. Backend Engineer - API\n\nThe role tags cluster around distributed systems, LLMs, infrastructure, data pipelines, security, cloud, payments, and software engineering.\n\nThe agent-readiness view is separate: Not Human Search scores x.ai at 20/100, with structured API detected. That is a useful second lens because it shows what agents can inspect without relying on a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/xai\nhttps://nothumansearch.ai/site/x.ai",
+      "verified_facts": [
+        "https://aidevboard.com/company/xai returned HTTP 200",
+        "Current ADB page title/meta: xAI Jobs, 82 open AI developer roles, average salary $295k, range $110k-$600k, 4 remote positions, 47 roles with salary data",
+        "Current ADB page text/JSON-LD includes tags: distributed-systems, payments, llm, infrastructure, data-pipeline, security, cloud, software-engineering",
+        "Current ADB page includes sample roles: Member of Technical Staff - Voice Model; Member of Technical Staff - Model Training; Backend Engineer - API",
+        "https://nothumansearch.ai/site/x.ai returned HTTP 200",
+        "Current NHS page title/meta: x.ai Agentic Readiness 20/100; page text includes structured API",
+        "https://x.ai/careers returned HTTP 403 from this worker, so no direct official-careers claim was used"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "xAI is a useful public hiring-data snapshot right now.\n\nAI Dev Board has 82 open xAI roles indexed, with 47 carrying salary data. The current indexed range is $110k-$600k, with a $295k average.\n\nSample roles include:\n\n1. Member of Technical Staff - Voice Model\n2. Member of Technical Staff - Model Training\n3. Backend Engineer - API\n\nThe role tags cluster around distributed systems, LLMs, infrastructure, data pipelines, security, cloud, payments, and software engineering.\n\nThe agent-readiness view is separate: Not Human Search scores x.ai at 20/100, with structured API detected. That is a useful second lens because it shows what agents can inspect without relying on a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/xai\nhttps://nothumansearch.ai/site/x.ai",
+        "scoped_learning_closeout": "No scoped memory update needed."
+      },
+      "post_method": "tools/linkedin-brave-post.js direct cookie route, page-context Voyager route, and approved one-shot browser recovery attempted",
+      "blocker": "LinkedIn auth hard stop: direct cookie route rejected all LinkedIn cookie sources (chrome-profile-3 returned 302); page-context Voyager /voyager/api/me returned 401; approved one-shot browser recovery with SOCIAL_LINKEDIN_FORCE_BROWSER=1 produced no completion output for 90s and was killed. No public post went live.",
+      "public_action_lock": "/Users/owlassist/.foundry/foundry-sync-state/public-action-locks/social-content/7caf6f3ed188f0d8.json",
+      "linkedin_operator_closeout": "No scoped memory update needed."
     }
   ]
 }
