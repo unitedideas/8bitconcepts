@@ -205,7 +205,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-29T00:21:55+00:00-d0b36670",
-      "status": "blocked",
+      "status": "posted",
       "created_at": "2026-04-29T00:21:55+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -214,11 +214,14 @@
       "source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
       "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
       "fact_id": "research-premium-vs-genai",
-      "fact_key": "d0b366705683b61e40d789eb",
-      "fingerprint": "7f578dbb9c5027ea",
-      "copy": "Research AI roles averaged $273,880, while generative-AI roles averaged $230,707 despite having about 2.5x more openings.",
-      "updated_at": "2026-04-29T00:23:59Z",
-      "blocker": "Could not verify active X account from this launchd worker: Computer Use returned cgWindowNotFound for Brave and Chrome, and direct screenshot capture was black. No public post attempted."
+      "fact_key": "d0b366705683b61e40d789eb:refreshed-2026-05-16",
+      "fingerprint": "886e060edd16d57d",
+      "copy": "Research AI roles average $279,788. Generative-AI roles average $233,414, even with roughly 2.6x more openings.\n\nVolume is not the same thing as leverage.\n\nData: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "updated_at": "2026-05-16T01:48:00Z",
+      "posted_at": "2026-05-16T01:48:00Z",
+      "url": "https://x.com/8BitConcepts/status/2055463322779288036",
+      "note": "Posted by 8bit-x-agent-publisher after refreshing stale draft numbers against the live 8bit source page, social-editor approval, public-action lock, and verified @8BitConcepts authenticated timeline recovery.",
+      "previous_blocker": "Could not verify active X account from this launchd worker on 2026-04-29; later resolved by x-brave-post direct/authenticated timeline path."
     },
     {
       "id": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2",
