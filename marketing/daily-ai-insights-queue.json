@@ -35,7 +35,7 @@
       },
       "fingerprint": {
         "x": "b4cb4e414935ecad",
-        "linkedin": "7683a4bbe69bc445"
+        "linkedin": "be2901cf2c96af7b"
       },
       "research_findings": {
         "indexed_roles": 360,
@@ -75,8 +75,12 @@
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Looking at @OpenAI through the public hiring data:\n\n1. 360 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around research, agents, distributed-systems, llm.\n3. Sample roles include Software Engineer, Delivery / CD; Data Scientist, Core Experimentation; Platform Product Partnerships Lead.\n4. Avg published salary in the indexed sample: $316,000.\n\nThe useful read is where the operational work is moving: platform delivery, multicloud infrastructure, evals, and agent deployment loops.\n\nOpenAI is a useful public lens on this area. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
-          "fingerprint": "7683a4bbe69bc445",
-          "duplicate": false
+          "fingerprint": "be2901cf2c96af7b",
+          "duplicate": false,
+          "approved_final_copy": "OpenAI is a useful lens on where AI work is moving from research into operations.\n\nAI Dev Board currently indexes 360 OpenAI AI/ML roles, including 70 remote positions. The indexed sample averages $316,000 in published salary and clusters around research, agents, distributed systems, and LLM work.\n\nThe operational read is more useful than the headline count: platform delivery, infrastructure, eval coverage, and agent deployment loops keep showing up around the work.\n\nNothumansearch also gives openai.com a 15/100 public agent-readiness score, with structured API detected. That is a separate lens on what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com\n\nWhere do you see the bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?",
+          "posted_url": "https://www.linkedin.com/feed/update/urn:li:share:7461414832706072576",
+          "posted_at": "2026-05-16T13:59:33Z",
+          "status": "posted"
         }
       },
       "quality_gate": [
