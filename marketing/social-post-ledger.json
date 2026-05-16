@@ -1586,6 +1586,20 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-posted-2026-05-16-openai-adb-lock-reconcile",
+      "source": "sync-state public-action-locks/social-content/b4cb4e414935ecad.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-16",
+      "posted_at": "2026-05-16T13:25:40Z",
+      "url": "https://x.com/8BitConcepts/status/2055640273712218488",
+      "route": "https://aidevboard.com/company/openai",
+      "fingerprint": "b4cb4e414935ecad",
+      "copy": "OpenAI's ADB page shows 360 open AI developer roles, 70 remote positions, and a $316k average across 3 listings with published comp.\n\nTags include research, agents, and distributed-systems.\n\nhttps://aidevboard.com/company/openai",
+      "note": "Reconciled from posted sync-state social-content lock during 2026-05-16 X cadence guard. No new post attempted."
     }
   ]
 }
