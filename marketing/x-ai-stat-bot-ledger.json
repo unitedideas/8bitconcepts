@@ -252,6 +252,20 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-16-mcp-long-tail",
+      "status": "posted_by_x_agent_publisher",
+      "created_at": "2026-05-16T20:36:49Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "source": "8bit research backlog",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_key": "8bit:mcp-ecosystem:jobs-26-news-11-greenfield-below-116",
+      "fingerprint": "1ab80c6b52a1b319",
+      "copy": "Jobs has 26 indexed MCP sites. News has 11.\n\nThe audit's threshold is blunt: any vertical below 116 indexed sites is green field.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "url": "https://x.com/8BitConcepts/status/2055748624920015172",
+      "note": "Cross-ledger audit row for clean X publisher run; x-ai-stat outbox was not used because available drafts were stale, duplicate, or already blocked."
     }
   ]
 }

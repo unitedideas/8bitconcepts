@@ -1859,6 +1859,35 @@
         "https://8bitconcepts.com/ returned HTTP 200"
       ],
       "social_editor_status": "approved"
+    },
+    {
+      "id": "8bit-x-mcp-long-tail-2026-05-16-1ab80c6b52a1b319",
+      "source": "8bit-x-agent-publisher",
+      "source_item": "research-backlog:q2-2026-mcp-ecosystem-health:jobs-news-long-tail",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-16T20:36:49Z",
+      "url": "https://x.com/8BitConcepts/status/2055748624920015172",
+      "fingerprint": "1ab80c6b52a1b319",
+      "fact_key": "8bit:mcp-ecosystem:jobs-26-news-11-greenfield-below-116",
+      "copy": "Jobs has 26 indexed MCP sites. News has 11.\n\nThe audit's threshold is blunt: any vertical below 116 indexed sites is green field.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "Live paper states jobs has 26 indexed sites and news has 11 in the long tail",
+        "Live paper states any vertical below 116 indexed sites is green field",
+        "Portfolio index lists 8bitconcepts business URL as https://8bitconcepts.com/"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_copy": "Jobs has 26 indexed MCP sites. News has 11.\n\nThe audit's threshold is blunt: any vertical below 116 indexed sites is green field.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "x_identity": {
+        "screenName": "8BitConcepts",
+        "name": "8bitconcepts",
+        "id": "2024284620335050752"
+      },
+      "deleted_duplicate_url": "https://x.com/8BitConcepts/status/2055748149936046469",
+      "note": "X direct CreateTweet returned empty HTTP 200 initially; direct timeline recovery verified two retry posts. Deleted longer duplicate and kept this shorter approved status."
     }
   ]
 }
