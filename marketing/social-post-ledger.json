@@ -1586,6 +1586,18 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-17-xai-linkedin",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-17T14:03:56Z",
+      "url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_xai-is-hiring-across-82-indexed-ai-developer-activity-7461778180018974720-ovti",
+      "fingerprint": "921d14b555464c82",
+      "text": "xAI is hiring across 82 indexed AI developer roles on AI Dev Board.\n\nThe public hiring page is useful because the signal is concrete:\n\n1. Average listed salary is $295k.\n2. 47 listings include published compensation.\n3. The indexed salary range runs from $110k to $600k.\n4. Current role signals include distributed systems, LLMs, infrastructure, data pipelines, security, cloud, and software engineering.\n\nThe read is less about a single model release and more about where the operating work is accumulating: infrastructure, model-serving systems, security, and product-scale feedback loops.\n\nThe Not Human Search lens is thinner. x.ai shows a 20/100 agentic-readiness score, with structured API as the detected public signal. That is still useful context for what agents can inspect without relying on a browser session.\n\nData:\nhttps://aidevboard.com/company/xai\nhttps://nothumansearch.ai/site/x.ai",
+      "note": "Mirrored from sync-state public-action lock after cadence guard found the repo ledger stale."
     }
   ]
 }
