@@ -59,10 +59,13 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Local-first Claude Code to Codex harness migration.\n\nBring Your AI is shipping around this constraint: Product, payments, agent-readable commerce, direct Stripe checkout.\n\nhttps://bringyour.ai",
-          "fingerprint": "4a2f8caa87685346",
+          "copy": "Bring Your AI is live for local-first Claude Code to Codex harness migration.\n\nProduct, payments, agent-readable commerce, direct Stripe checkout, and signed Ed25519 license fulfillment are all exposed from the live site.\n\nhttps://bringyour.ai",
+          "fingerprint": "07bbcdaed2398861",
           "duplicate": false,
-          "length": 193
+          "length": 193,
+          "status": "posted",
+          "posted_at": "2026-05-17T21:05:52.036646Z",
+          "url": "https://x.com/8BitConcepts/status/2056118477367435530"
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
