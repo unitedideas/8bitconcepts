@@ -67,7 +67,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T12:55:03+00:00-e715f4d6",
-      "status": "blocked",
+      "status": "drafted",
       "created_at": "2026-04-28T12:55:03+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -78,21 +78,7 @@
       "fact_id": "nhs-mcp-verified-417-total-7118",
       "fact_key": "e715f4d67d567c484508eca3",
       "fingerprint": "459626304720e8a3",
-      "copy": "Live MCP check: 417 of 7,118 agent-ready sites pass a real MCP handshake. That is 5.9%.",
-      "blocked_at": "2026-05-16T20:13:04Z",
-      "refreshed_fact_key": "nhs-digest:mcp-verified-450-total-4175-2026-05-16",
-      "refreshed_copy": "450 of 4,175 agent-ready sites passed a live MCP/JSON-RPC handshake in today's Not Human Search digest. That is 10.8%.\n\nThe gap is still callable endpoints, not discovery-file claims.",
-      "refreshed_fingerprints": [
-        "fe923a3f6b0eb610",
-        "07de3279ed847f3f",
-        "a9b30e263d591c40"
-      ],
-      "blocker": "No verified public X URL. The first tools/x-brave-post.js attempt hung with no stdout/stderr and was killed; direct authenticated X retries for URL and linkless approved copies returned empty HTTP 200 / likely_posted=true but authenticated timeline recovery did not contain the expected post text. Browser fallback failed with spawnSync osascript ETIMEDOUT, CDP-only browser fallback failed with Runtime.enable timed out, and Computer Use returned codex app-server exited before returning a response. No ledger row was marked posted.",
-      "facts_verified": [
-        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-16T19:58:47Z, total_sites=4175, mcp_verified=450, pct_mcp=10.8",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200 and describes MCP verification as live JSON-RPC handshake verification",
-        "https://8bitconcepts.com/ returned HTTP 200"
-      ]
+      "copy": "Live MCP check: 417 of 7,118 agent-ready sites pass a real MCP handshake. That is 5.9%."
     },
     {
       "id": "x-ai-stat-2026-04-28T13:53:05+00:00-e118bc1d",
@@ -252,20 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-16-mcp-long-tail",
-      "status": "posted_by_x_agent_publisher",
-      "created_at": "2026-05-16T20:36:49Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "source": "8bit research backlog",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "fact_key": "8bit:mcp-ecosystem:jobs-26-news-11-greenfield-below-116",
-      "fingerprint": "1ab80c6b52a1b319",
-      "copy": "Jobs has 26 indexed MCP sites. News has 11.\n\nThe audit's threshold is blunt: any vertical below 116 indexed sites is green field.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "url": "https://x.com/8BitConcepts/status/2055748624920015172",
-      "note": "Cross-ledger audit row for clean X publisher run; x-ai-stat outbox was not used because available drafts were stale, duplicate, or already blocked."
     }
   ]
 }

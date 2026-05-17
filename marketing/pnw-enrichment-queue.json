@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-16T21:37:00Z",
+  "updated_at": "2026-05-08T00:00:00Z",
   "automation": "business-agent-8bitconcepts",
   "reason": "Remaining PNW SMB email-ready records are role-based addresses. Do not send until enriched with a personal decision-maker email or moved to a non-recurring human-supervised channel.",
   "blocked_records": [
@@ -38,12 +38,6 @@
       "current_email": "info@bridgecitymedical.com",
       "blocker": "role_based_email",
       "next_action": "Find the medical director/founder's direct business email before outreach."
-    },
-    {
-      "company": "Miller's Heating & Air",
-      "current_email": "info@millersheating.com",
-      "blocker": "role_based_email",
-      "next_action": "Find the family owner or operations lead's direct business email before outreach."
     }
   ]
 }
