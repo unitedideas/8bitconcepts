@@ -1586,6 +1586,50 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-17-integration-tax-eval",
+      "source": "8bit-x-agent-publisher",
+      "source_item": "8bit-research-backlog:the-integration-tax:evaluation-testing",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-16",
+      "posted_at": "2026-05-17T04:13:14.065Z",
+      "url": "https://x.com/8BitConcepts/status/2055863922415309005",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "8bit-research:the-integration-tax:evaluation-testing-10-20",
+      "fingerprint": "22180bfbac99f67c",
+      "copy": "Evaluation infra is not polish. Model APIs are often only 10-20% of AI project cost; evaluation and testing can add another 10-20% of build cost.\n\nWithout it, teams cannot tell whether production outputs are correct or degrading.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "note": "Posted by 8bit-x-agent-publisher after source fact-check, agent-social-editor approval, active @8BitConcepts identity verification, social-content lock, empty-200 X response, and authenticated timeline recovery.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The page states model API costs are 10-20% of total AI project cost",
+        "The Evaluation and Testing section states evaluation/testing is 10-20% of build cost",
+        "The page states teams need evaluation infrastructure to know whether model outputs are correct in production and whether outputs degrade over time"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Evaluation infra is not polish. Model APIs are often only 10-20% of AI project cost; evaluation and testing can add another 10-20% of build cost.\n\nWithout it, teams cannot tell whether production outputs are correct or degrading.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "attempts": [
+        {
+          "at": "2026-05-17T04:13:14.065Z",
+          "fingerprint": "2e3a3dc9e188a42c",
+          "result": "blocked",
+          "blocker": "Initial approved copy hit X direct empty HTTP 200 with no status URL; authenticated timeline recovery found no matching post, so it was not ledgered as posted.",
+          "copy": "Evaluation infrastructure is not polish. Model API costs are often only 10-20% of total AI project cost; evaluation and testing can be another 10-20% of build cost.\n\nWithout it, teams cannot tell whether production outputs are correct or degrading over time.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html"
+        },
+        {
+          "at": "2026-05-17T04:13:14.065Z",
+          "fingerprint": "22180bfbac99f67c",
+          "result": "posted",
+          "method": "x_direct_empty_200_existing_recovery",
+          "url": "https://x.com/8BitConcepts/status/2055863922415309005"
+        }
+      ]
     }
   ]
 }
