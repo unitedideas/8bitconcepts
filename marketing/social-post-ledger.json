@@ -1586,6 +1586,20 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-17-mcp-digest-auth",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "blocked",
+      "blocked_at": "2026-05-17T13:13:44Z",
+      "fingerprint": "8e90b93824faab06",
+      "text": "The MCP ecosystem still looks more like discovery metadata than callable infrastructure.\n\nNothingHumanSearch's 2026-05-17 digest has 4,175 indexed agent-ready sites. 450 passed a live JSON-RPC MCP handshake. That is 10.8%.\n\nThe adjacent discovery surfaces are much more common: 2,241 publish llms.txt, and 485 publish OpenAPI.\n\nThat gap matters for agent builders. A manifest, docs page, or llms.txt file can help discovery, but it is not the same thing as an endpoint an agent can initialize and call.\n\nThe operational check is simple: does the endpoint answer initialize, or does it only advertise that it exists?\n\nMethodology + live data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_key": "nhs-mcp-digest-2026-05-17-4175-450",
+      "blocker": "LinkedIn auth hard stop: direct Voyager cookies rejected (chrome-profile-3 returned 302), page-context Voyager identity returned 401, and approved one-shot browser recovery hung without success/blocker output until stopped; no live LinkedIn URL captured.",
+      "note": "Candidate facts verified against https://nothumansearch.ai/digest.json and live 8bit research URL; social-editor approved final copy before posting attempts."
     }
   ]
 }
