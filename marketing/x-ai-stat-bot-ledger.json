@@ -89,7 +89,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T13:53:05+00:00-e118bc1d",
-      "status": "drafted",
+      "status": "posted",
       "created_at": "2026-04-28T13:53:05+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -100,7 +100,14 @@
       "fact_id": "llms-txt-share-2026-04-27",
       "fact_key": "e118bc1da71e8675e706d97c",
       "fingerprint": "78ff2b7a63ff11c4",
-      "copy": "5,027 of 7,040 agent-ready sites publish llms.txt. The easier discovery file is winning; live MCP is still the bottleneck."
+      "copy": "5,027 of 7,040 agent-ready sites publish llms.txt. The easier discovery file is winning; live MCP is still the bottleneck.",
+      "updated_at": "2026-05-18T14:18:50Z",
+      "posted_at": "2026-05-18T14:18:50Z",
+      "url": "https://x.com/8BitConcepts/status/2056378447686193296",
+      "posted_copy": "2,246 of 4,174 agent-ready sites publish llms.txt. 446 pass a live MCP handshake.\n\nStatic discovery is much further along than working MCP endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "refreshed_fact_key": "nhs-digest-live-2026-05-18-llms-mcp",
+      "refreshed_fingerprint": "a676c93c9e80595f",
+      "note": "Posted via 8bit-x-agent-publisher with refreshed 2026-05-18 NHS digest numbers."
     },
     {
       "id": "x-ai-stat-2026-04-28T15:10:07+00:00-a612e2e5",
