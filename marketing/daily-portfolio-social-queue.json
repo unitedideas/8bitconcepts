@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T19:06:56.605462+00:00",
+  "generated_at": "2026-05-18T19:50:41.237653+00:00",
   "source_index": "/Users/owlassist/.foundry/foundry-sync-state/systems/foundry-business-index.md",
   "cadence": "one X and one LinkedIn candidate per active business per day",
   "items": [
@@ -24,11 +24,7 @@
           "copy": "Agentic technical interview evidence layer for Hatchways-style assessments.\n\nAgentic Evidence is shipping around this constraint: Candidate AI-evidence entry, reviewer handoff, repo-packaged Claude JSONL.\n\nhttps://agentic-evidence.fly.dev",
           "fingerprint": "733ec385cfb7bac7",
           "duplicate": false,
-          "length": 227,
-          "status": "posted",
-          "posted_at": "2026-05-18T19:07:46Z",
-          "url": "https://x.com/8BitConcepts/status/2056451005014032545",
-          "posted_fingerprint": "30c5cba8e6934d50"
+          "length": 227
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
