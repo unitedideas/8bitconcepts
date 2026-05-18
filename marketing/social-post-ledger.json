@@ -1586,6 +1586,97 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-18-xai-empty-200-original",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-17-xai",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-18T05:19:55Z",
+      "fingerprint": "add97a7538146dfc",
+      "fact_key": "targeted-research:xai:82:distributed-systems,pytorch,agents",
+      "route": "https://aidevboard.com/company/xai",
+      "copy": "@xai has 82 open AI developer roles indexed on AI Dev Board. Avg published salary: $295k across 47 listings with comp. 4 of 82 are remote. Tags near the sample roles include distributed-systems, PyTorch, and agents. The signal is infrastructure-heavy model work. https://aidevboard.com/company/xai",
+      "blocker": "X CreateTweet returned HTTP 200 with an empty body/no tweet id across approved candidates; direct timeline verification did not find the xAI posts, and the short shift-handoff retries returned the same empty-body 200. No live status URL was captured, so no public X post was ledgered as posted.",
+      "verified_facts": [
+        "https://aidevboard.com/company/xai returned HTTP 200",
+        "Public ADB company page verifies xAI has 82 open AI developer roles and avg salary $295k based on 47 listings with published compensation",
+        "Public ADB company page verifies 4 of 82 roles are remote",
+        "Visible sample roles include Member of Technical Staff - Voice Model, Member of Technical Staff - Model Training, Backend Engineer - API, and Member of Technical Staff - Multimodal Understanding",
+        "Official x.ai careers page returned HTTP 403 from this worker and was not used as proof"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_used": true,
+        "scoped_memory": "No scoped memory update needed"
+      },
+      "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-18-xai-empty-200-short",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-17-xai",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-18T05:19:55Z",
+      "fingerprint": "8ce500741c33d307",
+      "fact_key": "targeted-research:xai:82:distributed-systems,pytorch,agents",
+      "route": "https://aidevboard.com/company/xai",
+      "copy": "xAI has 82 open AI developer roles indexed on AI Dev Board.\n\nAvg published salary: $295k across 47 comp listings. 4 of 82 are remote.\n\nThe role mix points more toward infrastructure-heavy model and product systems: Voice Model, Model Training, Backend Engineer - API, Multimodal Understanding.\n\nhttps://aidevboard.com/company/xai",
+      "blocker": "X CreateTweet returned HTTP 200 with an empty body/no tweet id across approved candidates; direct timeline verification did not find the xAI posts, and the short shift-handoff retries returned the same empty-body 200. No live status URL was captured, so no public X post was ledgered as posted.",
+      "social_editor": {
+        "status": "approved",
+        "final_copy_used": true,
+        "scoped_memory": "No scoped memory update needed"
+      },
+      "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-18-shift-handoff-empty-200",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-17-8bit",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-18T05:19:55Z",
+      "fingerprint": "810a38885b7541b0",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "copy": "In the shift-handoff paper, the digital scenario retained 100% of prior-shift entries. The modeled verbal handoff retained 40-60%.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "blocker": "X CreateTweet returned HTTP 200 with an empty body/no tweet id for the approved shift-handoff candidate; no live status URL was captured.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html returned HTTP 200",
+        "Page contains 100%, 40-60%, and verbal handoff references"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_used": true,
+        "scoped_memory": "No scoped memory update needed"
+      },
+      "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-18-shift-handoff-empty-200-short",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-17-8bit",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-18T05:19:55Z",
+      "fingerprint": "eb1d7250b35ee8ec",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "copy": "Digital shift handoffs retained 100% of prior-shift entries. Modeled verbal handoffs retained 40-60%.\n\nhttps://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "blocker": "X CreateTweet returned HTTP 200 with an empty body/no tweet id on the shortest approved shift-handoff retry; no live status URL was captured.",
+      "social_editor": {
+        "status": "approved",
+        "final_copy_used": true,
+        "scoped_memory": "No scoped memory update needed"
+      },
+      "public_action_lock_claimed": true
     }
   ]
 }
