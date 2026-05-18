@@ -1586,6 +1586,33 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-18-adb-api-root",
+      "source": "8bit-x-agent-publisher",
+      "source_item": "x-ai-stat-bot-outbox:adb-live-stats-refreshed",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-18",
+      "posted_at": "2026-05-18T22:21:03.724975Z",
+      "url": "https://x.com/8BitConcepts/status/2056499752595005527",
+      "route": "https://aidevboard.com/api/v1",
+      "fact_key": "adb-api-root-rest-mcp-quota-2026-05-18",
+      "fingerprint": "c2b3d367d641e75d",
+      "copy": "AI Dev Board's API root is live: HTTP 200, application/json.\n\nIt describes REST + MCP access to 8,700+ current AI/ML engineering jobs from 527 companies, and quota-exceeded responses include limit, used, reset_at_unix, register_url, and subscribe_url.\n\nhttps://aidevboard.com/api/v1",
+      "facts_verified": [
+        "https://aidevboard.com/ returned HTTP 200 text/html during this run",
+        "https://aidevboard.com/api/v1 returned HTTP 200 application/json during this run",
+        "API root describes AI Dev Board as REST + MCP surface for 8,700+ current AI/ML engineering jobs from 527 companies",
+        "API root quota policy declares quota_exceeded responses include limit, used, reset_at_unix, register_url, and subscribe_url"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "scoped_learning_closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by tools/x-brave-post.js from verified @8BitConcepts path. X CreateTweet returned empty 200 first; SOCIAL_X_FIND_ONLY recovered and verified the live status URL from the authenticated timeline before ledgering."
     }
   ]
 }
