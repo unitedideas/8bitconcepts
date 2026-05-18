@@ -1586,36 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-18-nhs-llms-mcp-live",
-      "status": "posted",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "source": "8bit-x-agent-publisher",
-      "source_item": "x-ai-stat-2026-04-28T13:53:05+00:00-e118bc1d-refreshed",
-      "kind": "live_stat",
-      "fact_key": "nhs-digest-live-2026-05-18-llms-mcp",
-      "fingerprint": "a676c93c9e80595f",
-      "text": "2,246 of 4,174 agent-ready sites publish llms.txt. 446 pass a live MCP handshake.\n\nStatic discovery is much further along than working MCP endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "copy": "2,246 of 4,174 agent-ready sites publish llms.txt. 446 pass a live MCP handshake.\n\nStatic discovery is much further along than working MCP endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "url": "https://x.com/8BitConcepts/status/2056378447686193296",
-      "posted_at": "2026-05-18T14:18:50Z",
-      "verified_at": "2026-05-18T14:18:50Z",
-      "verification": "tools/x-brave-post.js returned X direct 200/no tweet body, then SOCIAL_X_FIND_ONLY=1 direct authenticated timeline recovery verified the live status URL.",
-      "verified_facts": {
-        "source_url": "https://nothumansearch.ai/digest.json",
-        "source_generated_at": "2026-05-18T14:04:56Z",
-        "total_sites": 4174,
-        "llms_txt_count": 2246,
-        "mcp_verified": 446,
-        "pct_llms_txt": "53.8",
-        "pct_mcp": "10.7",
-        "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-        "route_status": 200
-      },
-      "editor": "agent-social-editor",
-      "editor_status": "approved"
     }
   ]
 }
