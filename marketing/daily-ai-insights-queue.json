@@ -1,55 +1,59 @@
 {
-  "generated_at": "2026-05-01T01:16:26.468888+00:00",
+  "generated_at": "2026-05-18T13:20:45.836626+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
     "hacker_news": "8bitconcepts; only for technical systems artifacts"
   },
-  "cadence": "two AI insight posts per day; one daily targeted documented research post",
+  "cadence": "five AI insight posts per day; one targeted documented research post plus four rotating research facts across 8bit, NHS, BYA, and ADB",
   "items": [
     {
-      "id": "daily-targeted-research-2026-05-01-xai",
+      "id": "daily-targeted-research-2026-05-18-scale-ai",
       "kind": "targeted_research",
-      "date": "2026-05-01",
-      "slot": "morning",
+      "date": "2026-05-18",
+      "slot": "targeted",
       "post_time_local": "08:30",
       "timezone": "America/Los_Angeles",
       "target": {
-        "name": "xAI",
-        "x_mention": "@xai",
-        "linkedin_mention": "@xAI",
-        "domain": "x.ai",
-        "company_slug": "xai"
+        "name": "Scale AI",
+        "x_mention": "@scale_AI",
+        "linkedin_mention": "@Scale AI",
+        "domain": "scale.com",
+        "company_slug": "scale-ai"
       },
-      "fact_key": "targeted-research:xai:98:distributed-systems,data-pipeline,llm",
-      "theme": "xAI public AI hiring signal",
+      "fact_key": "targeted-research:scale-ai:132:llm,generative-ai,agents",
+      "theme": "Scale AI public AI hiring signal",
       "format": "targeted documented research",
       "asset_brief": "Small source-backed stat card: role count, top tags, sample roles, operator question.",
-      "route": "https://aidevboard.com/company/xai",
+      "route": "https://aidevboard.com/company/scale-ai",
       "research_sources": {
-        "adb_company": "https://aidevboard.com/company/xai",
-        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=xai&limit=100",
+        "adb_company": "https://aidevboard.com/company/scale-ai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=scale-ai&limit=100",
         "adb_stats_api": "https://aidevboard.com/api/v1/stats",
-        "nhs_profile": "https://nothumansearch.ai/site/x.ai",
-        "official_source": "https://x.ai/careers"
+        "nhs_profile": "https://nothumansearch.ai/site/scale.com",
+        "official_source": "https://scale.com/careers"
+      },
+      "fingerprint": {
+        "x": "558f0d5cf79d992e",
+        "linkedin": "6706b594096fb250"
       },
       "research_findings": {
-        "indexed_roles": 98,
-        "rank": 11,
-        "avg_salary": 287740,
+        "indexed_roles": 132,
+        "rank": null,
+        "avg_salary": 244000,
         "top_tags": [
-          "distributed-systems",
-          "data-pipeline",
           "llm",
-          "payments"
+          "generative-ai",
+          "agents",
+          "data-pipeline"
         ],
         "sample_titles": [
-          "Member of Technical Staff - Voice Model",
-          "Member of Technical Staff - Model Training",
-          "Backend Engineer - API"
+          "Director, Enterprise Machine Learning & Research",
+          "Manager, Machine Learning Research Scientist, GenAI",
+          "Senior Staff Forward Deployed AI Engineer, Enterprise"
         ],
-        "workplace_mix": "onsite: 20",
-        "nhs_score": 20,
+        "workplace_mix": "onsite: 12",
+        "nhs_score": 15,
         "nhs_signals": [
           "structured API"
         ],
@@ -61,14 +65,14 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Looking at public AI hiring as a market signal: @xai has 98 indexed AI/ML roles on AI Dev Board, with current tags clustering around distributed-systems, data-pipeline, llm. Avg published salary: $287,740. xAI is #11 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to multimodal understanding, model serving, product feedback loops, and consumer-scale AI. Which signal is more useful for builders: model capability, latency, or the feedback loop around the product?\n\nData: https://aidevboard.com/company/xai",
-          "fingerprint": "d0e4cca70be9c118",
+          "copy": "Looking at public AI hiring as a market signal: @scale_AI has 132 indexed AI/ML roles on AI Dev Board, with current tags clustering around llm, generative-ai, agents. Avg published salary: $244,000.\n\nThe read is not just hiring volume. It points to enterprise ML delivery, expert feedback loops, data quality, and applied agent systems. Does the constraint look more like data quality, workflow integration, or evaluation coverage?\n\nData: https://aidevboard.com/company/scale-ai",
+          "fingerprint": "558f0d5cf79d992e",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Looking at @xAI through the public hiring data:\n\n1. 98 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around distributed-systems, data-pipeline, llm, payments.\n3. Sample roles include Member of Technical Staff - Voice Model; Member of Technical Staff - Model Training; Backend Engineer - API.\n4. Avg published salary in the indexed sample: $287,740.\n\nThe useful read is where the operational work is moving: multimodal understanding, model serving, product feedback loops, and consumer-scale AI.\n\nxAI is a useful public lens on this area. Which signal is more useful for builders: model capability, latency, or the feedback loop around the product?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/xai\nhttps://nothumansearch.ai/site/x.ai",
-          "fingerprint": "c6ea5885446bc1c7",
+          "copy": "Looking at @Scale AI through the public hiring data:\n\n1. 132 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around llm, generative-ai, agents, data-pipeline.\n3. Sample roles include Director, Enterprise Machine Learning & Research; Manager, Machine Learning Research Scientist, GenAI; Senior Staff Forward Deployed AI Engineer, Enterprise.\n4. Avg published salary in the indexed sample: $244,000.\n\nThe useful read is where the operational work is moving: enterprise ML delivery, expert feedback loops, data quality, and applied agent systems.\n\nScale AI is a useful public lens on this area. Does the constraint look more like data quality, workflow integration, or evaluation coverage?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/scale-ai\nhttps://nothumansearch.ai/site/scale.com",
+          "fingerprint": "6706b594096fb250",
           "duplicate": false
         }
       },
@@ -82,37 +86,175 @@
       ]
     },
     {
-      "id": "daily-ai-insight-2026-05-01-afternoon",
-      "kind": "generic_insight",
-      "date": "2026-05-01",
-      "slot": "afternoon",
-      "post_time_local": "14:30",
+      "id": "daily-research-fact-2026-05-18-8bit",
+      "kind": "research_fact",
+      "date": "2026-05-18",
+      "slot": "8bit",
+      "post_time_local": "10:30",
       "timezone": "America/Los_Angeles",
-      "theme": "Agent readiness is a live behavior, not a badge.",
-      "format": "mini teardown",
-      "asset_brief": "Three-column table: claim, endpoint response, what broke.",
-      "route": "https://nothumansearch.ai",
-      "funnel": "agent-readiness audits and Not Human Search",
+      "product": "8bit",
+      "theme": "AI integration budgets",
+      "format": "little fact",
+      "asset_brief": "Cost stack: data, integration, evals, observability, maintenance, model fees.",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "funnel": "8bitconcepts research",
+      "fact_key": "8bit:integration-tax:model-cost-10-20",
+      "research_sources": [
+        "https://8bitconcepts.com/research/the-integration-tax.html"
+      ],
+      "fingerprint": {
+        "x": "d515af20e77c8ac2",
+        "linkedin": "10e029c31f27bd4e"
+      },
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.\n\nMore field notes: https://nothumansearch.ai",
-          "fingerprint": "0206cb13ee4d42e7",
+          "copy": "Little fact from the 8bit research stack: model API fees are usually 10-20% of the AI build cost. The rest is data plumbing, integration, evals, observability, and maintenance.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
+          "fingerprint": "d515af20e77c8ac2",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://nothumansearch.ai",
-          "fingerprint": "cd9fdcb7ca81b451",
+          "copy": "Little fact from the 8bit research stack: model API fees are usually 10-20% of an AI build. The bigger lines are data pipelines, system integration, evaluation, observability, and maintenance.\n\nThat is why the budget conversation has to happen before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+          "fingerprint": "10e029c31f27bd4e",
           "duplicate": false
         }
       },
       "quality_gate": [
-        "AI topic",
-        "teaches one specific thing",
-        "routes to a proof point",
-        "not sales-first",
-        "has a click/comment trigger"
+        "one small verified fact",
+        "source-backed by 8bit research or case-study page",
+        "routes to the relevant product or paper",
+        "no sales-first CTA",
+        "materially different fact_key from previous posts"
+      ]
+    },
+    {
+      "id": "daily-research-fact-2026-05-18-nhs",
+      "kind": "research_fact",
+      "date": "2026-05-18",
+      "slot": "nhs",
+      "post_time_local": "12:30",
+      "timezone": "America/Los_Angeles",
+      "product": "nhs",
+      "theme": "Greenfield MCP verticals",
+      "format": "little fact",
+      "asset_brief": "Vertical maturity: finance, health, education.",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "funnel": "Not Human Search research",
+      "fact_key": "nhs:mcp-verticals:finance-health-education",
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
+      ],
+      "fingerprint": {
+        "x": "293c6fac908a130c",
+        "linkedin": "62e44c166ea835f4"
+      },
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28. The agent ecosystem is crowded in tools and thin in regulated verticals.\n\nSource: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+          "fingerprint": "293c6fac908a130c",
+          "duplicate": false
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "Little fact from the NHS MCP audit: developer tools had 1,686 indexed sites. Health had 72. Education had 28.\n\nThe agent ecosystem is crowded around tools and still thin in regulated verticals where the workflow value is high.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+          "fingerprint": "62e44c166ea835f4",
+          "duplicate": false
+        }
+      },
+      "quality_gate": [
+        "one small verified fact",
+        "source-backed by 8bit research or case-study page",
+        "routes to the relevant product or paper",
+        "no sales-first CTA",
+        "materially different fact_key from previous posts"
+      ]
+    },
+    {
+      "id": "daily-research-fact-2026-05-18-bya",
+      "kind": "research_fact",
+      "date": "2026-05-18",
+      "slot": "bya",
+      "post_time_local": "14:30",
+      "timezone": "America/Los_Angeles",
+      "product": "bya",
+      "theme": "Local-first agent migration",
+      "format": "little fact",
+      "asset_brief": "Privacy boundary: remote discovery, local movement.",
+      "route": "https://8bitconcepts.com/case-studies.html#bringyour",
+      "funnel": "Bring Your AI proof point",
+      "fact_key": "bya:case-study:no-data-remote-mcp",
+      "research_sources": [
+        "https://8bitconcepts.com/case-studies.html#bringyour"
+      ],
+      "fingerprint": {
+        "x": "130f945fac2cbc3f",
+        "linkedin": "67605e87b2bdc387"
+      },
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents. The actual move runs locally.\n\nSource: https://8bitconcepts.com/case-studies.html#bringyour",
+          "fingerprint": "130f945fac2cbc3f",
+          "duplicate": false
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "Little fact from the BYA case study: the remote MCP surface has 4 tools and accepts no harness files, GitHub handles, generated memories, API keys, or file contents.\n\nThe product boundary is the point: discovery can happen through an agent surface, but private context moves locally.\n\nSource:\nhttps://8bitconcepts.com/case-studies.html#bringyour",
+          "fingerprint": "67605e87b2bdc387",
+          "duplicate": false
+        }
+      },
+      "quality_gate": [
+        "one small verified fact",
+        "source-backed by 8bit research or case-study page",
+        "routes to the relevant product or paper",
+        "no sales-first CTA",
+        "materially different fact_key from previous posts"
+      ]
+    },
+    {
+      "id": "daily-research-fact-2026-05-18-adb",
+      "kind": "research_fact",
+      "date": "2026-05-18",
+      "slot": "adb",
+      "post_time_local": "16:30",
+      "timezone": "America/Los_Angeles",
+      "product": "adb",
+      "theme": "AI skill demand",
+      "format": "little fact",
+      "asset_brief": "Skill demand vs salary.",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "funnel": "AI Dev Board research",
+      "fact_key": "adb:skills:agents-2437",
+      "research_sources": [
+        "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html"
+      ],
+      "fingerprint": {
+        "x": "a47213c55309e790",
+        "linkedin": "39b847448bb7977c"
+      },
+      "channels": {
+        "x": {
+          "account": "@8bitconcepts",
+          "copy": "Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.\n\nSource: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+          "fingerprint": "a47213c55309e790",
+          "duplicate": false
+        },
+        "linkedin": {
+          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+          "copy": "Little fact from the ADB skill data: agents appeared in 2,437 indexed roles, but distributed-systems paid higher on average: $252,318 vs $229,919.\n\nVolume and negotiating leverage are not the same signal.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+          "fingerprint": "39b847448bb7977c",
+          "duplicate": false
+        }
+      },
+      "quality_gate": [
+        "one small verified fact",
+        "source-backed by 8bit research or case-study page",
+        "routes to the relevant product or paper",
+        "no sales-first CTA",
+        "materially different fact_key from previous posts"
       ]
     }
   ]
