@@ -73,7 +73,13 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "Looking at @Scale AI through the public hiring data:\n\n1. 132 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around llm, generative-ai, agents, data-pipeline.\n3. Sample roles include Director, Enterprise Machine Learning & Research; Manager, Machine Learning Research Scientist, GenAI; Senior Staff Forward Deployed AI Engineer, Enterprise.\n4. Avg published salary in the indexed sample: $244,000.\n\nThe useful read is where the operational work is moving: enterprise ML delivery, expert feedback loops, data quality, and applied agent systems.\n\nScale AI is a useful public lens on this area. Does the constraint look more like data quality, workflow integration, or evaluation coverage?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/scale-ai\nhttps://nothumansearch.ai/site/scale.com",
           "fingerprint": "6706b594096fb250",
-          "duplicate": false
+          "duplicate": false,
+          "posted": true,
+          "posted_at": "2026-05-18T14:37:19Z",
+          "posted_url": "https://www.linkedin.com/feed/update/urn:li:activity:7462148992454537216/",
+          "posted_fingerprint": "d3b7956a586de1e0",
+          "final_copy": "Scale AI has 132 open AI developer roles indexed on AI Dev Board.\n\nThe salary signal is high: $244k average across 80 listings with compensation.\n\nSample roles:\n1. Director, Enterprise Machine Learning & Research\n2. Manager, Machine Learning Research Scientist, GenAI\n3. Senior Staff Forward Deployed AI Engineer, Enterprise\n\nThe hiring side points at enterprise ML and deployed AI systems. The agent-readiness side is thinner: Not Human Search scores scale.com at 15/100, with structured API as the only detected signal.\n\nHiring data: https://aidevboard.com/company/scale-ai\nAgent-readiness profile: https://nothumansearch.ai/site/scale.com",
+          "editor": "agent-social-editor"
         }
       },
       "quality_gate": [

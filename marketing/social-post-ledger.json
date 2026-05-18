@@ -3,6 +3,20 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "daily-targeted-research-2026-05-18-scale-ai-linkedin",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-18T14:37:19Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7462148992454537216/",
+      "fingerprint": "d3b7956a586de1e0",
+      "text": "Scale AI has 132 open AI developer roles indexed on AI Dev Board.\n\nThe salary signal is high: $244k average across 80 listings with compensation.\n\nSample roles:\n1. Director, Enterprise Machine Learning & Research\n2. Manager, Machine Learning Research Scientist, GenAI\n3. Senior Staff Forward Deployed AI Engineer, Enterprise\n\nThe hiring side points at enterprise ML and deployed AI systems. The agent-readiness side is thinner: Not Human Search scores scale.com at 15/100, with structured API as the only detected signal.\n\nHiring data: https://aidevboard.com/company/scale-ai\nAgent-readiness profile: https://nothumansearch.ai/site/scale.com",
+      "source_item": "daily-targeted-research-2026-05-18-scale-ai",
+      "fact_key": "targeted-research:scale-ai:132:llm,generative-ai,agents",
+      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API. Direct API returned a created share URL; public LinkedIn page verified via canonical activity URL. LinkedIn rewrote route URLs to lnkd.in in the rendered post."
+    },
+    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
