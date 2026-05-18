@@ -3,20 +3,6 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
-      "id": "daily-targeted-research-2026-05-18-scale-ai-linkedin",
-      "source": "8bit-linkedin-agent-publisher",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "posted",
-      "posted_at": "2026-05-18T14:37:19Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7462148992454537216/",
-      "fingerprint": "d3b7956a586de1e0",
-      "text": "Scale AI has 132 open AI developer roles indexed on AI Dev Board.\n\nThe salary signal is high: $244k average across 80 listings with compensation.\n\nSample roles:\n1. Director, Enterprise Machine Learning & Research\n2. Manager, Machine Learning Research Scientist, GenAI\n3. Senior Staff Forward Deployed AI Engineer, Enterprise\n\nThe hiring side points at enterprise ML and deployed AI systems. The agent-readiness side is thinner: Not Human Search scores scale.com at 15/100, with structured API as the only detected signal.\n\nHiring data: https://aidevboard.com/company/scale-ai\nAgent-readiness profile: https://nothumansearch.ai/site/scale.com",
-      "source_item": "daily-targeted-research-2026-05-18-scale-ai",
-      "fact_key": "targeted-research:scale-ai:132:llm,generative-ai,agents",
-      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API. Direct API returned a created share URL; public LinkedIn page verified via canonical activity URL. LinkedIn rewrote route URLs to lnkd.in in the rendered post."
-    },
-    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
@@ -804,7 +790,7 @@
       "fact_key": "adb_stats:top_companies:Speechify=1063,OpenAI=354,Anthropic=283",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "AI hiring signal (public AI Dev Board stats):\n\nSpeechify: 1063\nOpenAI: 354\nAnthropic: 283\n\nAs of 10:52 am PT. Mindshare ≠ hiring signal. What metric do you track to find where execution work is actually happening?",
+      "copy": "AI hiring signal (public AI Dev Board stats):\n\nSpeechify: 1063\nOpenAI: 354\nAnthropic: 283\n\nAs of 10:52 am PT. Mindshare \u2260 hiring signal. What metric do you track to find where execution work is actually happening?",
       "note": "Validator posted to close the 2h gap; stats fetched live from /api/v1/stats."
     },
     {
@@ -820,7 +806,7 @@
       "fact_key": "adb_stats:top_companies:Speechify=1063,OpenAI=354,Anthropic=283",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "AI hiring signal from the public AI Dev Board stats endpoint:\n\n- Speechify: 1063 indexed AI/ML roles\n- OpenAI: 354 indexed AI/ML roles\n- Anthropic: 283 indexed AI/ML roles\n\nAs of 10:52 am PT.\n\nMindshare and hiring don’t always match. If you had to pick one proxy for where AI execution work is really happening (infra, evals, deployment loops, applied product), what do you use?\n\nData: https://aidevboard.com/api/v1/stats",
+      "copy": "AI hiring signal from the public AI Dev Board stats endpoint:\n\n- Speechify: 1063 indexed AI/ML roles\n- OpenAI: 354 indexed AI/ML roles\n- Anthropic: 283 indexed AI/ML roles\n\nAs of 10:52 am PT.\n\nMindshare and hiring don\u2019t always match. If you had to pick one proxy for where AI execution work is really happening (infra, evals, deployment loops, applied product), what do you use?\n\nData: https://aidevboard.com/api/v1/stats",
       "note": "LinkedIn browser post did not complete with a verified permalink; sync-state lock marked failed."
     },
     {
@@ -852,7 +838,7 @@
       "fact_key": "adb_stats:overview.total_jobs=9906,companies=527,median_salary=212750,tags.llm=2655,tags.agents=2451,tag.distributed-systems=1481 (updated_at=2026-04-30T20:56:35Z)",
       "format": "stat",
       "route": "https://aidevboard.com/api/v1/stats",
-      "copy": "Public AI Dev Board snapshot (updated 1:56pm PT):\n\n- 9,906 AI/ML jobs across 527 companies\n- median posted salary: $212,750\n- tag counts: llm 2,655; agents 2,451\n- distributed-systems: 1,481 jobs, $256,046 avg salary\n\nIf you’re trying to track where execution work is actually happening (vs mindshare), what do you look at?\n\nData: https://aidevboard.com/api/v1/stats",
+      "copy": "Public AI Dev Board snapshot (updated 1:56pm PT):\n\n- 9,906 AI/ML jobs across 527 companies\n- median posted salary: $212,750\n- tag counts: llm 2,655; agents 2,451\n- distributed-systems: 1,481 jobs, $256,046 avg salary\n\nIf you\u2019re trying to track where execution work is actually happening (vs mindshare), what do you look at?\n\nData: https://aidevboard.com/api/v1/stats",
       "note": "Blocked: Brave AppleScript focus/activate operations are SIGKILLed in this Codex exec environment, so tools/linkedin-brave-post.js could not complete a verified permalink. Sync-state lock marked failed at public-action-locks/social-content/9b62abfed4f04467.json."
     },
     {
@@ -1339,7 +1325,7 @@
           "at": "2026-05-01T08:24:36Z",
           "fingerprint": "df110af4579482f1",
           "result": "blocked",
-          "blocker": "Second same-run LinkedIn publish attempt used social-content lock df110af4579482f1. The first df110 attempt failed in System Events accessibility lookup with `Can’t get window 1 of process \"Brave Browser\"`; recover-only found no matching live URL; retry with guarded clickAXButton stayed on https://www.linkedin.com/feed/?shareActive=true and exited without a verified LinkedIn URL. No public post was ledgered.",
+          "blocker": "Second same-run LinkedIn publish attempt used social-content lock df110af4579482f1. The first df110 attempt failed in System Events accessibility lookup with `Can\u2019t get window 1 of process \"Brave Browser\"`; recover-only found no matching live URL; retry with guarded clickAXButton stayed on https://www.linkedin.com/feed/?shareActive=true and exited without a verified LinkedIn URL. No public post was ledgered.",
           "copy": "Agentic Evidence is the portfolio note today.\n\nThe point is not another assessment dashboard. It is an inspectable evidence layer for agentic technical interviews: the work, the session trail, and the next bottleneck are visible instead of buried in a summary.\n\nCurrent constraint:\nVM TTL teardown and disposable per-session repo templates.\n\nhttps://agentic-evidence.fly.dev"
         },
         {
@@ -1387,7 +1373,7 @@
       "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record.",
       "last_checked_at": "2026-05-01T11:27:36Z",
       "last_blocker": "Retry after same-run LinkedIn window-targeting repair failed: tools/linkedin-brave-post.js ran with exact approved copy fingerprint cdc6162ee921c67b, held the Computer Use lease as 8bit-linkedin-brave-post pid 78529, then exited with `LinkedIn live URL verification failed for (missing url)`. No public LinkedIn URL was verified, so this lock remains failed and must not be ledgered as posted.",
-      "approved_final_copy": "Geo Agent is past the “is this interesting?” phase.\n\nThe useful question now is whether the work keeps reducing the gap between proof and distribution.\n\nCurrent state: live app route is up, benchmark/runtime repair is done, and the motion is Shopify app-review readiness.\n\nNext move is less glamorous and more important:\nreplace the template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
+      "approved_final_copy": "Geo Agent is past the \u201cis this interesting?\u201d phase.\n\nThe useful question now is whether the work keeps reducing the gap between proof and distribution.\n\nCurrent state: live app route is up, benchmark/runtime repair is done, and the motion is Shopify app-review readiness.\n\nNext move is less glamorous and more important:\nreplace the template README/listing copy and submit Shopify app review.\n\nhttps://geo-agent.fly.dev",
       "approved_final_fingerprint": "cfd6352df0ce6041",
       "last_repair_commit": "ba2a68a",
       "blocked_attempts": [
@@ -1600,166 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-agentic-evidence-x",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "Agentic Evidence",
-      "fingerprint": "733ec385cfb7bac7",
-      "fact_key": "portfolio-daily:2026-05-18:agentic-evidence",
-      "route": "https://agentic-evidence.fly.dev",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-agentic-evidence-linkedin",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "Agentic Evidence",
-      "fingerprint": "3fedf7d6c8be4cbf",
-      "fact_key": "portfolio-daily:2026-05-18:agentic-evidence",
-      "route": "https://agentic-evidence.fly.dev",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-bring-your-ai-x",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "Bring Your AI",
-      "fingerprint": "499d4942365823df",
-      "fact_key": "portfolio-daily:2026-05-18:bring-your-ai",
-      "route": "https://bringyour.ai",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-bring-your-ai-linkedin",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "Bring Your AI",
-      "fingerprint": "9200c38c768a515d",
-      "fact_key": "portfolio-daily:2026-05-18:bring-your-ai",
-      "route": "https://bringyour.ai",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-ai-dev-board-x",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "AI Dev Board",
-      "fingerprint": "9ae7da775de30178",
-      "fact_key": "portfolio-daily:2026-05-18:ai-dev-board",
-      "route": "https://aidevboard.com",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-ai-dev-board-linkedin",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "AI Dev Board",
-      "fingerprint": "51dfc12e9ebce570",
-      "fact_key": "portfolio-daily:2026-05-18:ai-dev-board",
-      "route": "https://aidevboard.com",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-not-human-search-x",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "Not Human Search",
-      "fingerprint": "b5c121902a99cb29",
-      "fact_key": "portfolio-daily:2026-05-18:not-human-search",
-      "route": "https://nothumansearch.ai",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-not-human-search-linkedin",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "Not Human Search",
-      "fingerprint": "97d2d2d7f7d550fb",
-      "fact_key": "portfolio-daily:2026-05-18:not-human-search",
-      "route": "https://nothumansearch.ai",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-8bitconcepts-x",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "8bitconcepts",
-      "fingerprint": "90a959cf2cab9919",
-      "fact_key": "portfolio-daily:2026-05-18:8bitconcepts",
-      "route": "https://8bitconcepts.com",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "portfolio-daily-2026-05-18-8bitconcepts-linkedin",
-      "source": "marketing/daily-portfolio-social-queue.json",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "queued",
-      "date": "2026-05-18",
-      "business": "8bitconcepts",
-      "fingerprint": "22cf078c80046f6d",
-      "fact_key": "portfolio-daily:2026-05-18:8bitconcepts",
-      "route": "https://8bitconcepts.com",
-      "note": "Generated by tools/generate-portfolio-social-queue.py; publisher must fact-check, run social-editor, claim lock, post, capture URL, and update this record."
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-18-nhs-llms-mcp-live",
-      "status": "posted",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "source": "8bit-x-agent-publisher",
-      "source_item": "x-ai-stat-2026-04-28T13:53:05+00:00-e118bc1d-refreshed",
-      "kind": "live_stat",
-      "fact_key": "nhs-digest-live-2026-05-18-llms-mcp",
-      "fingerprint": "a676c93c9e80595f",
-      "text": "2,246 of 4,174 agent-ready sites publish llms.txt. 446 pass a live MCP handshake.\n\nStatic discovery is much further along than working MCP endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "copy": "2,246 of 4,174 agent-ready sites publish llms.txt. 446 pass a live MCP handshake.\n\nStatic discovery is much further along than working MCP endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "url": "https://x.com/8BitConcepts/status/2056378447686193296",
-      "posted_at": "2026-05-18T14:18:50Z",
-      "verified_at": "2026-05-18T14:18:50Z",
-      "verification": "tools/x-brave-post.js returned X direct 200/no tweet body, then SOCIAL_X_FIND_ONLY=1 direct authenticated timeline recovery verified the live status URL.",
-      "verified_facts": {
-        "source_url": "https://nothumansearch.ai/digest.json",
-        "source_generated_at": "2026-05-18T14:04:56Z",
-        "total_sites": 4174,
-        "llms_txt_count": 2246,
-        "mcp_verified": 446,
-        "pct_llms_txt": "53.8",
-        "pct_mcp": "10.7",
-        "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-        "route_status": 200
-      },
-      "editor": "agent-social-editor",
-      "editor_status": "approved"
     }
   ]
 }
