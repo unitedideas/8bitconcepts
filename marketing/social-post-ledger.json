@@ -1586,6 +1586,84 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-18-integration-tax-451770b5715e1dbd",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-18T13:17:36Z",
+      "fingerprint": "451770b5715e1dbd",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "copy": "Model API costs are usually the easy 10-20%.\n\nThe expensive part is the integration tax: data pipelines, evals, observability, permissions, workflow redesign, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "blocker": "X CreateTweet returned HTTP 200 with empty body/no tweet id for three approved, fact-checked copies; authenticated direct timeline verification found no matching post each time. Browser fallback hung in tools/x-brave-post.js after direct failure and was killed before any verified post URL. No public X post could be proven live.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "Page states model API costs are 10-20% of what AI actually costs to ship",
+        "Page names integration work including data pipelines, evaluation/testing, observability, permissions/workflow changes, and existing-system integration"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true,
+      "live_url_verified": false
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-18-integration-tax-short-0d281ee5684e2e9c",
+      "source": "retry_shortened_same_verified_point",
+      "source_item": "8bit-x-agent-publisher-blocked-2026-05-18-integration-tax-451770b5715e1dbd",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-18T13:17:36Z",
+      "fingerprint": "0d281ee5684e2e9c",
+      "fact_key": "58b5de28df35f932a98442ce:short",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "copy": "Model API costs are only 10-20% of shipping AI.\n\nThe rest is integration: data pipelines, evals, observability, permissions, workflow changes, and existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "blocker": "X CreateTweet returned HTTP 200 with empty body/no tweet id for three approved, fact-checked copies; authenticated direct timeline verification found no matching post each time. Browser fallback hung in tools/x-brave-post.js after direct failure and was killed before any verified post URL. No public X post could be proven live.",
+      "verified_facts": [
+        "Same verified source and fact set as the first integration-tax attempt"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true,
+      "live_url_verified": false
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-18-nhs-live-stats-74ba672a69e82f41",
+      "source": "live_not_human_search_stats",
+      "source_item": "https://nothumansearch.ai/api/v1/stats",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-18T13:17:36Z",
+      "fingerprint": "74ba672a69e82f41",
+      "fact_key": "nhs_stats:total_sites=4174,avg_score=35,top_category=developer",
+      "route": "https://nothumansearch.ai",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "copy": "Not Human Search is tracking 4,174 agent-ready sites.\n\nAverage agent-readiness score: 35/100.\nTop category: developer.\n\nThat is the useful signal: the web is adding agent-facing surfaces faster than it is making them reliable.\n\nhttps://nothumansearch.ai",
+      "blocker": "X CreateTweet returned HTTP 200 with empty body/no tweet id for three approved, fact-checked copies; authenticated direct timeline verification found no matching post each time. Browser fallback hung in tools/x-brave-post.js after direct failure and was killed before any verified post URL. No public X post could be proven live.",
+      "verified_facts": [
+        "https://nothumansearch.ai/api/v1/stats returned HTTP 200",
+        "total_sites=4174",
+        "avg_score=35",
+        "top_category=developer",
+        "https://nothumansearch.ai returned HTTP 200"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true,
+      "live_url_verified": false
     }
   ]
 }

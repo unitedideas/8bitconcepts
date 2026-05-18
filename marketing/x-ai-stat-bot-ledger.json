@@ -37,7 +37,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
-      "status": "drafted",
+      "status": "blocked",
       "created_at": "2026-04-28T05:58:51+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -48,7 +48,14 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "updated_at": "2026-05-18T13:17:36Z",
+      "blocker": "X CreateTweet returned HTTP 200 with empty body/no tweet id for three approved, fact-checked copies; authenticated direct timeline verification found no matching post each time. Browser fallback hung in tools/x-brave-post.js after direct failure and was killed before any verified post URL. No public X post could be proven live.",
+      "blocked_fingerprints": [
+        "451770b5715e1dbd",
+        "0d281ee5684e2e9c"
+      ],
+      "note": "Two social-editor-approved copies failed at X direct empty-200/no-timeline verification; do not retry this fact until X posting path is repaired."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
