@@ -1767,6 +1767,31 @@
       "x_operator_closeout": "No scoped memory update needed",
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-19-mcp-llms-handshake",
+      "source": "8bit research backlog",
+      "source_item": "q2-2026-mcp-ecosystem-health-refreshed-fact",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-19",
+      "posted_at": "2026-05-19T14:18:58Z",
+      "url": "https://x.com/8BitConcepts/status/2056378447686193296",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_key": "8bit-research:mcp-ecosystem-health:2026-05-18:llms-2246-mcp-446",
+      "fingerprint": "28cd2cef9a7955cb",
+      "copy": "2,246 of 4,174 agent-ready sites publish llms.txt. 446 pass a live MCP handshake.\n\nStatic discovery is common. Callable endpoints are still the bottleneck.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "note": "Posted by Owl 8bit-x-agent-publisher after cadence check, source fact-check, agent-social-editor approval, public-action lock, and active @8BitConcepts verification through tools/x-brave-post.js. Primary longer approved copy c54f3ecb7e721596 hung without a status URL; short retry posted via x_direct_existing_recovery.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "Report states 4,174 agent-ready sites indexed as of 2026-05-18",
+        "Report states 2,246 publish llms.txt, 53.8% of the index",
+        "Report states 446 pass a live JSON-RPC MCP handshake, 10.7% of the index"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
