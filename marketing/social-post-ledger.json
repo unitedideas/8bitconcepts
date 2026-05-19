@@ -1741,6 +1741,32 @@
       "x_operator_closeout": "No scoped memory update needed",
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-19-bringyour-x-platform-browser",
+      "date": "2026-05-19",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "source_item": "portfolio-daily-2026-05-19-bring-your-ai",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-19T13:42:30Z",
+      "blocker": "X platform/browser hard stop: tools/x-brave-post.js direct path returned fetch failed even with browser fallback disabled; normal script fallback exited with spawnSync osascript ETIMEDOUT; Computer Use get_app_state for Brave returned codex app-server exited before returning a response; direct Brave CDP recovery timed out on Runtime.enable. No public post URL was produced.",
+      "fingerprint": "6644422c17d0f988",
+      "fact_key": "portfolio-daily:2026-05-19:bring-your-ai",
+      "text": "Bring Your AI moves Claude Code harnesses into Codex without sending harness data to the remote MCP surface. The migration path stays local-first through the CLI or local MCP server.\n\nhttps://bringyour.ai",
+      "facts_verified": [
+        "https://bringyour.ai returned HTTP 200",
+        "https://bringyour.ai/llms.txt documents Claude Code to Codex preview and migrate commands",
+        "https://bringyour.ai/.well-known/mcp.json returned HTTP 200 and states the remote MCP accepts no harness data or file contents",
+        "https://bringyour.ai/api/v1/catalog returned HTTP 200 and lists lifetime licenses with Stripe Payment Link, Stripe Link, and SPT support",
+        "https://bringyour.ai/.well-known/commerce.json returned HTTP 200 and states x402/MPP are not enabled"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "post_attempted": false,
+      "public_action_lock_claimed": true
     }
   ]
 }
