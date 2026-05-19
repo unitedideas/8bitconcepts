@@ -1586,6 +1586,29 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-2026-05-19-agentic-accountability-gap",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-19",
+      "posted_at": "2026-05-19T16:43:14Z",
+      "posted_by": "owl-8bit-linkedin-agent-publisher",
+      "url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_enterprise-teams-spent-three-years-learning-activity-7462542975013732367--u6F",
+      "route": "https://8bitconcepts.com/research/the-agentic-accountability-gap.html",
+      "fingerprint": "8882eab5d956e9b9",
+      "format": "8bit research backlog",
+      "copy": "Enterprise teams spent three years learning how to stop AI from saying the wrong thing.\n\nThen they gave those models calendars, code repositories, and API keys.\n\nThe risk moved from output quality to outcome control: what did the agent do, who approved it, what changed, and what evidence exists afterward?\n\nWe wrote up the accountability gap here:\nhttps://8bitconcepts.com/research/the-agentic-accountability-gap.html",
+      "fact_check": {
+        "business_url": "https://8bitconcepts.com",
+        "source_url": "https://8bitconcepts.com/research/the-agentic-accountability-gap.html",
+        "source_http_status": 200,
+        "live_linkedin_public_verification": "canonical page contained stable copy fragments"
+      },
+      "editor": "agent-social-editor",
+      "linkedin_operator_note": "Initial agentic-commerce candidate blocked by existing same-angle posted sync-state lock 8e7de1e50ac9c405; selected accountability-gap fallback."
     }
   ]
 }
