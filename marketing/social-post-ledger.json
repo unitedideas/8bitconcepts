@@ -1586,66 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-blocked-2026-05-19-cerebras-8bde57ceee52486c",
-      "source": "marketing/daily-ai-insights-queue.json",
-      "source_item": "daily-targeted-research-2026-05-19-cerebras",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "blocked_at": "2026-05-19T23:18:51Z",
-      "fingerprint": "8bde57ceee52486c",
-      "fact_key": "targeted-research:cerebras:32:generative-ai,agents,pytorch",
-      "route": "https://aidevboard.com/company/cerebras",
-      "text": "Cerebras has 32 indexed AI/ML roles on AI Dev Board.\n\nSample roles: Senior Performance Engineer, Inference; ML Research Engineer (Inference); Advanced Technology: AI/ML Research Scientist.\n\nThe tags point at generative AI, agents, PyTorch, and deep learning. The question is where the hiring signal clusters: accelerator performance, inference infrastructure, or the developer surface around both.\n\nhttps://aidevboard.com/company/cerebras",
-      "blocker": "X post did not go live: tools/x-brave-post.js direct path produced no output for more than 3 minutes and was killed; authenticated timeline recovery found no matching post; browser fallback with SOCIAL_X_FORCE_BROWSER=1 failed with spawnSync osascript ETIMEDOUT.",
-      "facts_verified": [
-        "https://aidevboard.com/company/cerebras returned HTTP 200 and states 32 open AI developer roles at Cerebras.",
-        "The ADB company page lists Senior Performance Engineer, Inference; ML Research Engineer (Inference); Advanced Technology: AI/ML Research Scientist.",
-        "The ADB company page lists tags including generative-ai, agents, pytorch, and deep-learning.",
-        "https://www.cerebras.ai/careers redirected to https://www.cerebras.ai/join-us and returned HTTP 200.",
-        "https://nothumansearch.ai/site/cerebras.ai returned HTTP 200 and shows score 15/100 with structured API."
-      ],
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "Cerebras has 32 indexed AI/ML roles on AI Dev Board.\n\nSample roles: Senior Performance Engineer, Inference; ML Research Engineer (Inference); Advanced Technology: AI/ML Research Scientist.\n\nThe tags point at generative AI, agents, PyTorch, and deep learning. The question is where the hiring signal clusters: accelerator performance, inference infrastructure, or the developer surface around both.\n\nhttps://aidevboard.com/company/cerebras",
-        "closeout": "No scoped memory update needed"
-      },
-      "x_operator_closeout": "No scoped memory update needed",
-      "public_action_lock_claimed": true,
-      "live_url": "",
-      "next_action": "SLA watchdog should force-wake this publisher because the latest live X post is older than 6 hours; retry after fixing x-brave-post direct hang or osascript Apple Events timeout."
-    },
-    {
-      "id": "8bit-x-agent-publisher-blocked-2026-05-19-cerebras-8fb6a145ed7282a8",
-      "source": "marketing/daily-ai-insights-queue.json",
-      "source_item": "daily-targeted-research-2026-05-19-cerebras",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "blocked_at": "2026-05-19T23:18:51Z",
-      "fingerprint": "8fb6a145ed7282a8",
-      "fact_key": "targeted-research:cerebras:32:generative-ai,agents,pytorch",
-      "route": "https://aidevboard.com/company/cerebras",
-      "text": "Cerebras has 32 open AI developer roles indexed on AI Dev Board. The sample titles/tags cluster around inference/performance, generative AI, agents, PyTorch, and deep learning.\n\nhttps://aidevboard.com/company/cerebras",
-      "blocker": "Short approved retry did not go live: tools/x-brave-post.js direct path again produced no output for more than 90 seconds and was killed; authenticated timeline recovery found no matching post.",
-      "facts_verified": [
-        "https://aidevboard.com/company/cerebras returned HTTP 200 and states 32 open AI developer roles at Cerebras.",
-        "The ADB company page lists Senior Performance Engineer, Inference; ML Research Engineer (Inference); Advanced Technology: AI/ML Research Scientist.",
-        "The ADB company page lists tags including generative-ai, agents, pytorch, and deep-learning.",
-        "https://www.cerebras.ai/careers redirected to https://www.cerebras.ai/join-us and returned HTTP 200.",
-        "https://nothumansearch.ai/site/cerebras.ai returned HTTP 200 and shows score 15/100 with structured API."
-      ],
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "Cerebras has 32 open AI developer roles indexed on AI Dev Board. The sample titles/tags cluster around inference/performance, generative AI, agents, PyTorch, and deep learning.\n\nhttps://aidevboard.com/company/cerebras",
-        "closeout": "No scoped memory update needed"
-      },
-      "x_operator_closeout": "No scoped memory update needed",
-      "public_action_lock_claimed": true,
-      "live_url": "",
-      "next_action": "SLA watchdog should force-wake this publisher because the latest live X post is older than 6 hours; retry after fixing x-brave-post direct hang or osascript Apple Events timeout."
     }
   ]
 }
