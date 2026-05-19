@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T00:02:31.487488+00:00",
+  "generated_at": "2026-05-19T01:04:51.143071+00:00",
   "source_index": "/Users/owlassist/.foundry/foundry-sync-state/systems/foundry-business-index.md",
   "cadence": "one X and one LinkedIn candidate per active business per day",
   "items": [
@@ -28,8 +28,8 @@
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Agentic Evidence is aimed at one narrow interview problem: reviewers need to see how a candidate worked with AI, not just the final diff.\n\nThe live sample packet now includes a candidate VM flow, GitHub Action evidence, session exports, hidden-test results, and a reviewer report.\n\nhttps://agentic-evidence.fly.dev/sample-report",
-          "fingerprint": "7e25ea685479ce67",
+          "copy": "Agentic Evidence is aimed at one narrow interview problem: reviewers need to see how a candidate worked with AI, not just the final diff.\n\nThe live sample packet includes a candidate VM flow, GitHub Action evidence, session exports, hidden-test results, and a reviewer report.\n\nhttps://agentic-evidence.fly.dev/sample-report",
+          "fingerprint": "e704ca51a4c37497",
           "duplicate": false
         }
       },
@@ -104,8 +104,8 @@
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "AI Dev Board is built around an agent-readable hiring surface.\n\nThe public product has a REST API, MCP server, job feeds, company pages, and promoted listings. That matters because agents can query the market directly instead of scraping a search page.\n\nhttps://aidevboard.com/api/v1",
-          "fingerprint": "7b0df8c9ddfda13c",
+          "copy": "AI Dev Board is built around an agent-readable hiring surface.\n\nThe public product has a REST API, MCP server, job feeds, company pages, and promoted listings. Agents can query the market directly instead of scraping a search page.\n\nhttps://aidevboard.com/api/v1",
+          "fingerprint": "07501f4489e03fc5",
           "duplicate": false
         }
       },
