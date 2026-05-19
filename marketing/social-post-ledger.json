@@ -1614,6 +1614,34 @@
         "closeout": "No scoped memory update needed"
       },
       "x_operator_closeout": "No scoped memory update needed"
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-2026-05-19-mcp-agent-readable-stack-linkedin",
+      "source": "marketing/paper-distribution-queue.json",
+      "source_item": "q2-2026-mcp-ecosystem-health",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "date": "2026-05-19",
+      "posted_at": "2026-05-19T04:07:27Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7462353202760515584",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_key": "q2-2026-mcp-agent-readable-stack-2026-05-18",
+      "fingerprint": "89fbf4722be46ab1",
+      "copy": "MCP is a useful signal, but the better test is whether the server ships the rest of the agent-readable stack too.\n\nThe 2026-05-18 8bit / Not Human Search crawl has 4,174 agent-ready sites indexed. 446 pass a live JSON-RPC MCP handshake, or 10.7% of the index.\n\nThe strongest 100-point sites are boring in the right way: llms.txt, ai-plugin.json, OpenAPI, structured API, AI-friendly robots.txt, Schema.org, and a live MCP endpoint that answers initialize.\n\nThat is the bar I would use for agent infrastructure: callable and inspectable.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "note": "Posted by 8bit-linkedin-agent-publisher via tools/linkedin-brave-post.js direct LinkedIn Voyager API. The script returned a post-created verification error, then the public LinkedIn URL was verified with HTTP 200, Shane Cheek author metadata, and exact approved-copy text in public post markup.",
+      "fact_checks": {
+        "checked_at": "2026-05-19T04:05:00Z",
+        "research_page": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200 and states 4,174 indexed agent-ready sites, 446 live JSON-RPC MCP handshakes, and 10.7% MCP-verified share from 2026-05-18 data.",
+        "nothumansearch_stats": "https://nothumansearch.ai/api/v1/stats returned total_sites=4174.",
+        "portfolio_url": "systems/foundry-business-index.md lists 8bitconcepts live URL as https://8bitconcepts.com/."
+      },
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "MCP is a useful signal, but the better test is whether the server ships the rest of the agent-readable stack too.\n\nThe 2026-05-18 8bit / Not Human Search crawl has 4,174 agent-ready sites indexed. 446 pass a live JSON-RPC MCP handshake, or 10.7% of the index.\n\nThe strongest 100-point sites are boring in the right way: llms.txt, ai-plugin.json, OpenAPI, structured API, AI-friendly robots.txt, Schema.org, and a live MCP endpoint that answers initialize.\n\nThat is the bar I would use for agent infrastructure: callable and inspectable.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
