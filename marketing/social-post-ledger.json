@@ -1586,6 +1586,34 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-19-ai-dev-board-agent-readable-x",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-19",
+      "posted_at": "2026-05-19T03:38:58Z",
+      "url": "https://x.com/8BitConcepts/status/2056579654727970962",
+      "route": "https://aidevboard.com",
+      "fact_key": "adb-agent-readable-surface-2026-05-19",
+      "fingerprint": "8e5b1cf2017a4a65",
+      "copy": "AI Dev Board is agent-readable without a browser: REST, MCP, OpenAPI, company records, and 8,700+ current AI/ML engineering jobs from 527 companies.\n\nhttps://aidevboard.com",
+      "note": "Posted by 8bit-x-agent-publisher after stale daily queues, public ADB homepage/API-root fact check, agent-social-editor approval, social-content lock, and @8BitConcepts verification through tools/x-brave-post.js authenticated timeline recovery.",
+      "fact_checks": {
+        "checked_at": "2026-05-19T03:38:58Z",
+        "homepage": "https://aidevboard.com returned HTTP 200 and advertised 8699 AI developer jobs plus API access",
+        "api_root": "https://aidevboard.com/api/v1 returned HTTP 200 and described REST + MCP, OpenAPI, company records, 8,700+ current AI/ML engineering jobs from 527 companies, docs, MCP endpoint, and quota policy",
+        "stats_endpoint": "https://aidevboard.com/api/v1/stats returned anonymous quota_exceeded; exact live stats were not used"
+      },
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "AI Dev Board is agent-readable without a browser: REST, MCP, OpenAPI, company records, and 8,700+ current AI/ML engineering jobs from 527 companies.\n\nhttps://aidevboard.com",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
