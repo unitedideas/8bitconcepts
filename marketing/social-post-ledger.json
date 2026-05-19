@@ -1732,6 +1732,22 @@
       "fact_key": "adb-api-root-rest-mcp-quota-2026-05-18",
       "copy": "AI Dev Board exposes both REST and MCP for the same hiring data.\n\nThe useful bit is that agents do not need to scrape the job board: they can query indexed AI/ML roles, company data, salary fields, and quotas directly.\n\nhttps://aidevboard.com/api/v1",
       "note": "Restored from sync-state posted event and public-action lock during 8bit-x-agent-publisher cadence check; no new post attempted in this repair run."
+    },
+    {
+      "id": "daily-research-fact-2026-05-18-8bit-linkedin",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-18-8bit",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-18",
+      "posted_at": "2026-05-18T21:03:40Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7462246156996083714/",
+      "fingerprint": "9302047d91a5e850",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "daily-research-fact:2026-05-18:8bit:integration-tax",
+      "copy": "Model API fees are usually 10-20% of what an AI build actually costs to ship.\n\nThe bigger lines are data pipelines, data quality, system integration, evaluation, observability, and maintenance.\n\nThat is why the budget conversation belongs before the model-choice conversation.\n\nSource:\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "note": "Restored from sync-state social-content lock 9302047d91a5e850 and automation event after cadence check found the latest LinkedIn post missing from the local ledger."
     }
   ]
 }
