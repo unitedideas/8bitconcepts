@@ -1586,6 +1586,49 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-posted-2026-05-20-nhs-agent-readiness",
+      "source": "sync-state public-action lock backfill",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-20",
+      "posted_at": "2026-05-20T17:30:25Z",
+      "url": "https://x.com/8BitConcepts/status/2057151218829705667",
+      "route": "https://nothumansearch.ai",
+      "fingerprint": "8a6ab8b98a0cae00",
+      "fact_key": "nhs-live-stats:2026-05-20:total-sites-4176:mcp-451:llms-2249",
+      "copy": "Not Human Search is tracking 4,176 agent-ready sites. 451 pass a live MCP check. 2,249 publish llms.txt.\n\nThe useful read: discovery files are much more common than working agent endpoints.\n\nhttps://nothumansearch.ai",
+      "note": "Backfilled by 8bit-x-agent-publisher after detecting the sync-state posted lock and automation event inside the 6-hour X cadence cap; no new post was attempted in this run.",
+      "source_lock": "public-action-locks/social-content/8a6ab8b98a0cae00.json"
+    },
+    {
+      "id": "8bit-x-agent-publisher-posted-2026-05-20-nhs-live-stats-4180",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T16:42:09+00:00-056e8240",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-20",
+      "posted_at": "2026-05-20T20:00:20Z",
+      "url": "https://x.com/8BitConcepts/status/2057185596880379960",
+      "route": "https://nothumansearch.ai",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "fact_key": "nhs-live-stats:2026-05-20:total-sites-4180:avg-score-35",
+      "fingerprint": "53fd84785f3d9152",
+      "copy": "Not Human Search is tracking 4,180 agent-ready sites. Average agent-readiness score: 35/100.\n\nThe useful part is not the count. It is that agent readiness can be measured as behavior, not claimed as a badge.\n\nhttps://nothumansearch.ai",
+      "verified_facts": [
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4180 and avg_score=35 on 2026-05-20 UTC",
+        "https://nothumansearch.ai returned HTTP 200",
+        "foundry-business-index identifies Not Human Search as https://nothumansearch.ai and the active agentic-readiness search engine/scoring system"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by 8bit-x-agent-publisher from verified @8BitConcepts via tools/x-brave-post.js under the launchd-held Computer Use lease; direct create returned empty 200 and the script recovered the live URL from the authenticated timeline."
     }
   ]
 }
