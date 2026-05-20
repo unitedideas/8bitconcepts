@@ -1586,44 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-linkedin-agent-publisher-agentic-commerce-gap-2026-05-20",
-      "source": "sync-state public-action lock backfill",
-      "source_item": "research-backlog-agentic-commerce-gap-linkedin-2026-05-20",
-      "channel": "linkedin",
-      "account": "Shane Cheek / Founder at 8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-20",
-      "posted_at": "2026-05-20T16:30:21Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7462902067016278017/",
-      "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
-      "source_url": "https://8bitconcepts.com/api/v1/catalog",
-      "fingerprint": "48707343d53dc342",
-      "copy": "Most businesses are still invisible to buying agents.\n\nWe have been testing seller sites against an agentic commerce readiness standard. The recurring gaps are basic:\n\n1. Fewer than 5% expose a machine-readable catalog an agent can parse without scraping.\n2. Fewer than 2% expose a deterministic quote endpoint.\n3. Fewer than 1% declare payment rails in a way an agent can read without guessing from the checkout UI.\n\n8bitconcepts is dogfooding the other side: /api/v1/catalog, /.well-known/agent.json, explicit supported payment modes, and explicit unsupported modes.\n\nThe useful question is not whether agents will buy everything tomorrow. It is whether the business has any surface an agent can safely inspect when the buyer asks it to compare, quote, or purchase.\n\nPaper:\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html\n\nCatalog proof:\nhttps://8bitconcepts.com/api/v1/catalog",
-      "verified_facts": [
-        "Imported from sync-state posted lock public-action-locks/social-content/48707343d53dc342.json after the local ledger was stale.",
-        "The posting run verified Shane Cheek / Founder at 8bitconcepts before publishing."
-      ],
-      "social_editor_status": "approved",
-      "lock_path": "public-action-locks/social-content/48707343d53dc342.json",
-      "note": "Backfilled by 8bit-linkedin-agent-publisher so the 6-hour LinkedIn cadence guard sees the public post; no new LinkedIn post was attempted in this run."
-    },
-    {
-      "id": "8bit-x-agent-publisher-posted-2026-05-20-nhs-agent-readiness",
-      "source": "sync-state public-action lock backfill",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-20",
-      "posted_at": "2026-05-20T17:30:25Z",
-      "url": "https://x.com/8BitConcepts/status/2057151218829705667",
-      "route": "https://nothumansearch.ai",
-      "fingerprint": "8a6ab8b98a0cae00",
-      "fact_key": "nhs-live-stats:2026-05-20:total-sites-4176:mcp-451:llms-2249",
-      "copy": "Not Human Search is tracking 4,176 agent-ready sites. 451 pass a live MCP check. 2,249 publish llms.txt.\n\nThe useful read: discovery files are much more common than working agent endpoints.\n\nhttps://nothumansearch.ai",
-      "note": "Backfilled by 8bit-x-agent-publisher after detecting the sync-state posted lock and automation event inside the 6-hour X cadence cap; no new post was attempted in this run.",
-      "source_lock": "public-action-locks/social-content/8a6ab8b98a0cae00.json"
     }
   ]
 }
