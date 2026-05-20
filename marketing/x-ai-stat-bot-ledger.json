@@ -112,7 +112,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T16:42:09+00:00-056e8240",
-      "status": "posted",
+      "status": "drafted",
       "created_at": "2026-04-28T16:42:09+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -120,14 +120,10 @@
       "source": "Not Human Search live stats",
       "source_url": "https://nothumansearch.ai/api/v1/stats",
       "route": "https://nothumansearch.ai",
-      "fact_id": "nhs-total-sites-4180-avg-35",
-      "fact_key": "nhs-live-stats:2026-05-20:total-sites-4180:avg-score-35",
-      "fingerprint": "53fd84785f3d9152",
-      "copy": "Not Human Search is tracking 4,180 agent-ready sites. Average agent-readiness score: 35/100.\n\nThe useful part is not the count. It is that agent readiness can be measured as behavior, not claimed as a badge.\n\nhttps://nothumansearch.ai",
-      "updated_at": "2026-05-20T20:00:20Z",
-      "posted_at": "2026-05-20T20:00:20Z",
-      "url": "https://x.com/8BitConcepts/status/2057185596880379960",
-      "note": "Posted by 8bit-x-agent-publisher after live source refresh, social-editor approval, public-action lock, and verified @8BitConcepts timeline recovery."
+      "fact_id": "nhs-total-sites-4108-avg-34",
+      "fact_key": "056e8240993c8291f319d318",
+      "fingerprint": "8b599a252e9b0d43",
+      "copy": "Not Human Search is tracking 4,108 agent-ready sites. Average agent-readiness score: 34.0/100."
     },
     {
       "id": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
