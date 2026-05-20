@@ -1586,6 +1586,22 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-posted-2026-05-20-nhs-agent-readiness",
+      "source": "sync-state public-action lock backfill",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-20",
+      "posted_at": "2026-05-20T17:30:25Z",
+      "url": "https://x.com/8BitConcepts/status/2057151218829705667",
+      "route": "https://nothumansearch.ai",
+      "fingerprint": "8a6ab8b98a0cae00",
+      "fact_key": "nhs-live-stats:2026-05-20:total-sites-4176:mcp-451:llms-2249",
+      "copy": "Not Human Search is tracking 4,176 agent-ready sites. 451 pass a live MCP check. 2,249 publish llms.txt.\n\nThe useful read: discovery files are much more common than working agent endpoints.\n\nhttps://nothumansearch.ai",
+      "note": "Backfilled by 8bit-x-agent-publisher after detecting the sync-state posted lock and automation event inside the 6-hour X cadence cap; no new post was attempted in this run.",
+      "source_lock": "public-action-locks/social-content/8a6ab8b98a0cae00.json"
     }
   ]
 }
