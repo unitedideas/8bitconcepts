@@ -1586,42 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "research-backlog-the-governance-handoff-linkedin-2026-05-20",
-      "source": "8bit-linkedin-agent-publisher",
-      "source_item": "research-backlog-the-governance-handoff",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "posted",
-      "date": "2026-05-20",
-      "posted_at": "2026-05-20T22:45:30Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7462996726942101504",
-      "canonical_url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_the-ai-deployment-bottleneck-is-starting-activity-7462996727659409409-Khpw",
-      "route": "https://8bitconcepts.com/research/the-governance-handoff.html",
-      "fact_key": "research-backlog:the-governance-handoff:grant-thornton-78:spglobal-17-42-46",
-      "fingerprint": "897e7a907bf02a13",
-      "copy": "The AI deployment bottleneck is starting to look less like model quality and more like governance ownership.\n\nGrant Thornton's 2026 AI Impact Survey says 78% of business executives lack strong confidence they could pass an independent AI governance audit within 90 days.\n\nS&P Global / 451 Research found the share of companies abandoning most AI initiatives rose from 17% to 42%. The average organization scrapped 46% of proof-of-concept projects before production.\n\nThe useful read is not that AI stopped working. It is that ownership got diffuse after the pilot: compliance owns policy, engineering owns deployment, security owns risk, and nobody owns the runtime handoff.\n\nThat is the governance handoff problem.\n\nNew 8bit paper:\nhttps://8bitconcepts.com/research/the-governance-handoff.html",
-      "note": "Posted by clean LinkedIn-only publisher after source fact-check, agent-social-editor approval, sync-state social-content lock, direct Voyager API create, and rendered public LinkedIn page verification.",
-      "account_verified": "Shane Cheek / Founder at 8bitconcepts",
-      "method": "tools/linkedin-brave-post.js direct Voyager API; public rendered page verified after script verifier failed",
-      "facts_verified": [
-        "https://8bitconcepts.com/research/the-governance-handoff.html returned HTTP 200",
-        "Grant Thornton 2026 AI Impact Survey reports 78% of business executives lack strong confidence they could pass an independent AI governance audit within 90 days",
-        "S&P Global / 451 Research reports the share of companies abandoning most AI initiatives rose from 17% to 42%",
-        "S&P Global / 451 Research reports the average organization scrapped 46% of proof-of-concept projects before production",
-        "LinkedIn rendered public post page contained the approved copy fragment and canonical activity URL"
-      ],
-      "source_urls": [
-        "https://www.grantthornton.com/services/advisory-services/artificial-intelligence/2026-ai-impact-survey",
-        "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "agent": "agent-social-editor",
-        "closeout": "No scoped memory update needed."
-      },
-      "linkedin_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
