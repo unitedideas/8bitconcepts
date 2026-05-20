@@ -238,6 +238,25 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-ai-stat-live-nhs-2026-05-20T172639Z",
+      "status": "posted",
+      "created_at": "2026-05-20T17:26:39Z",
+      "updated_at": "2026-05-20T17:31:09Z",
+      "posted_at": "2026-05-20T17:31:09Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search digest",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "route": "https://nothumansearch.ai",
+      "fact_id": "nhs-live-digest-2026-05-20",
+      "fact_key": "nhs-live-digest-2026-05-20-total-4176-mcp-451-llms-2249",
+      "fingerprint": "8a6ab8b98a0cae00",
+      "copy": "Not Human Search is tracking 4,176 agent-ready sites. 451 pass a live MCP check. 2,249 publish llms.txt.\n\nThe useful read: discovery files are much more common than working agent endpoints.\n\nhttps://nothumansearch.ai",
+      "url": "https://x.com/8BitConcepts/status/2057151218829705667",
+      "note": "Live-stat outbox fallback selected because current daily insight and portfolio queues were stale/drained for 2026-05-20. Facts refreshed from NHS digest before posting."
     }
   ]
 }
