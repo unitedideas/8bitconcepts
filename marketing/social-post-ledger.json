@@ -1586,6 +1586,37 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-research-fact-2026-05-20-8bit-x",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-20",
+      "post_time_local": "10:30",
+      "fingerprint": "a111b4423d7ba42a",
+      "fact_key": "8bit:integration-tax:model-cost-10-20",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "format": "little fact",
+      "target": null,
+      "research_sources": [
+        "https://8bitconcepts.com/research/the-integration-tax.html"
+      ],
+      "note": "Restored after stale auto-commit removed the posted row. Original post was made by 8bit-x-agent-publisher after Mistral candidate returned X direct empty-200/timeline-miss twice; fallback research_fact was fact-checked, social-editor approved, lock claimed, active @8BitConcepts verified by tools/x-brave-post.js direct identity, and live URL recovered from authenticated timeline.",
+      "posted_at": "2026-05-20T14:56:14Z",
+      "url": "https://x.com/8BitConcepts/status/2057113013250134261",
+      "copy": "Model API fees are usually 10-20% of AI project cost. The rest is data plumbing, integration, evals, observability, and maintenance.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
+      "approved_final_copy": "Model API fees are usually 10-20% of AI project cost. The rest is data plumbing, integration, evals, observability, and maintenance.\n\nSource: https://8bitconcepts.com/research/the-integration-tax.html",
+      "approved_final_fingerprint": "a111b4423d7ba42a",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The page states model API fees are typically 10-20% of total AI project costs",
+        "The page discusses data plumbing, integration, evaluation, observability, and maintenance as non-model cost areas"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
