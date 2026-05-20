@@ -1600,6 +1600,21 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "x-ai-stat-2026-05-20-mcp-live-check-451",
+      "source": "8bit-x-agent-publisher",
+      "source_item_id": "x-ai-stat-live-mcp-digest-2026-05-20T033409Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-20T03:45:29Z",
+      "url": "https://x.com/8BitConcepts/status/2056944144405459386",
+      "fingerprint": "32c981e85a3fffce",
+      "text": "451 of 4,175 agent-ready sites pass a live MCP handshake.\n\n2,249 publish llms.txt. 483 publish OpenAPI.\n\nPassive agent docs are still ahead of working agent endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_key": "nhs-digest:2026-05-20T03:34:09Z:mcp451:sites4175:llms2249:openapi483",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "note": "Facts verified against https://nothumansearch.ai/digest.json generated_at=2026-05-20T03:34:09Z; route verified live 200; social-editor approved shortened copy; X script verified @8BitConcepts and recovered live status URL from direct timeline."
     }
   ]
 }
