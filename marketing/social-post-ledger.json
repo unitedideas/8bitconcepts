@@ -1829,6 +1829,52 @@
         "6f2cb6261f66fdf5",
         "1152a4fca62f0355"
       ]
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-20-mistral-linkedin-auth",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-20-mistral-ai",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "blocked_at": "2026-05-20T14:23:56Z",
+      "date": "2026-05-20",
+      "blocker": "No public LinkedIn post verified. Direct Voyager route rejected all LinkedIn cookie sources (chrome-profile-3 returned 302); page-context Voyager identity returned 401 for /voyager/api/me; approved one-shot browser recovery timed out in osascript while opening the composer before verified identity or posting. Active LinkedIn identity could not be verified, so posting failed closed.",
+      "fingerprint": "451653a8ce5d5144",
+      "original_fingerprint": "5108bb899e8bd16f",
+      "fact_key": "targeted-research:mistral-ai:83:llm,pytorch,generative-ai",
+      "route": "https://aidevboard.com/company/mistral-ai",
+      "format": "targeted documented research",
+      "copy": "Mistral AI has 83 open AI developer roles indexed on AI Dev Board.\n\nThe visible sample points to infrastructure-heavy applied AI work:\n\n1. Tags include llm, infrastructure, pytorch, fine-tuning, generative-ai, distributed-systems, mlops, and research.\n2. Sample roles include Applied AI, Fullstack Software Engineer, Critical and Sovereign Institutions, Paris.\n3. Sample roles also include Applied AI, Technical Lead, Forward Deployed AI Engineer - Abu Dhabi.\n\nThe careers page is live. The agent-facing profile is thinner: Not Human Search scores mistral.ai at 40/100, with llms.txt and a structured API visible.\n\nThat gap is useful. The hiring surface shows serious AI deployment work. The public agent surface shows what an automated evaluator can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/mistral-ai\nhttps://nothumansearch.ai/site/mistral.ai",
+      "facts_verified": [
+        "https://aidevboard.com/company/mistral-ai returned HTTP 200 and states Mistral AI has 83 open AI developer roles",
+        "Visible ADB sample roles include Applied AI, Fullstack Software Engineer, Critical and Sovereign Institutions, Paris and Applied AI, Technical Lead, Forward Deployed AI Engineer - Abu Dhabi",
+        "https://mistral.ai/careers/ returned HTTP 200",
+        "https://nothumansearch.ai/site/mistral.ai returned HTTP 200 and shows Agentic Readiness Score 40/100 with llms.txt and structured API signals",
+        "foundry-business-index lists AI Dev Board and Not Human Search as active portfolio URLs"
+      ],
+      "attempts": [
+        {
+          "route": "direct_voyager",
+          "result": "cookie_sources_rejected_302"
+        },
+        {
+          "route": "page_context_voyager",
+          "result": "identity_401"
+        },
+        {
+          "route": "one_shot_browser_recovery",
+          "result": "osascript_timeout_opening_composer"
+        }
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "source_left_queued": true,
+      "post_attempted": true,
+      "public_action_locks_claimed": [
+        "451653a8ce5d5144"
+      ]
     }
   ]
 }
