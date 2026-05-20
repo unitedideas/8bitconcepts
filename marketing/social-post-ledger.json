@@ -3,20 +3,6 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
-      "id": "daily-targeted-research-2026-05-19-cerebras-linkedin-final",
-      "source": "8bit-linkedin-agent-publisher",
-      "source_item_id": "daily-targeted-research-2026-05-19-cerebras",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "posted",
-      "posted_at": "2026-05-20T02:42:46.650Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7462693861413400576",
-      "fingerprint": "c07181fc1c9dac45",
-      "text": "Cerebras is a useful public lens on AI infrastructure hiring right now.\n\nAI Dev Board has 32 open AI developer roles indexed for Cerebras:\nhttps://aidevboard.com/company/cerebras\n\nThe indexed tags include generative-ai, agents, pytorch, and deep-learning.\n\nSample titles:\n1. Senior Performance Engineer, Inference\n2. ML Research Engineer (Inference)\n3. Advanced Technology: AI/ML Research Scientist\n\nThe official Cerebras careers page redirects to /join-us and links to open positions:\nhttps://www.cerebras.ai/careers\n\nThe agent-readiness side is a separate lens. Not Human Search shows Cerebras at 15/100:\nhttps://nothumansearch.ai/site/cerebras.ai\n\nThat split is the useful read: strong public hiring signal, weaker public agent-inspection surface.",
-      "fact_key": "targeted-research:cerebras:32:generative-ai,agents,pytorch",
-      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API. Script returned created URL but strict verification failed; public curl verification returned HTTP 200 and matched Cerebras, AI Dev Board, 32 open, agent-readiness, and Shane Cheek text."
-    },
-    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
@@ -1600,21 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "x-ai-stat-2026-05-20-mcp-live-check-451",
-      "source": "8bit-x-agent-publisher",
-      "source_item_id": "x-ai-stat-live-mcp-digest-2026-05-20T033409Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "posted_at": "2026-05-20T03:45:29Z",
-      "url": "https://x.com/8BitConcepts/status/2056944144405459386",
-      "fingerprint": "32c981e85a3fffce",
-      "text": "451 of 4,175 agent-ready sites pass a live MCP handshake.\n\n2,249 publish llms.txt. 483 publish OpenAPI.\n\nPassive agent docs are still ahead of working agent endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "fact_key": "nhs-digest:2026-05-20T03:34:09Z:mcp451:sites4175:llms2249:openapi483",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "note": "Facts verified against https://nothumansearch.ai/digest.json generated_at=2026-05-20T03:34:09Z; route verified live 200; social-editor approved shortened copy; X script verified @8BitConcepts and recovered live status URL from direct timeline."
     }
   ]
 }
