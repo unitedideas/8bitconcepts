@@ -238,6 +238,24 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-nhs-live-stats-2026-05-20",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-20T00:27:42Z",
+      "url": "https://x.com/8BitConcepts/status/2056893854708883623",
+      "fingerprint": "310c2c9ec073b0f1",
+      "text": "Not Human Search is tracking 4,175 agent-ready sites. Average agent-readiness score: 35/100.\n\nAI-facing surfaces are spreading faster than useful ones.\n\nhttps://nothumansearch.ai",
+      "fact_key": "nhs-live-stats-total-sites-4175-avg-score-35-2026-05-20",
+      "route": "https://nothumansearch.ai",
+      "verified_sources": {
+        "stats": "https://nothumansearch.ai/api/v1/stats total_sites=4175 avg_score=35 top_category=developer",
+        "route": "https://nothumansearch.ai HTTP 200"
+      },
+      "note": "Posted by tools/x-brave-post.js from verified @8BitConcepts via x_direct_existing_recovery after social-editor approved shortened copy."
     }
   ]
 }
