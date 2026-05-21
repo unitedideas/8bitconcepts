@@ -37,7 +37,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
-      "status": "failed",
+      "status": "drafted",
       "created_at": "2026-04-28T05:58:51+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -48,13 +48,7 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
-      "updated_at": "2026-05-21T02:56:50Z",
-      "blocker": "No public X post went live. Direct authenticated X API returned empty 200/unverifiable for both social-editor-approved copies; authenticated timeline verification did not contain either post; browser fallback via tools/x-brave-post.js failed with spawnSync osascript ETIMEDOUT; Computer Use fallback failed with codex app-server exited before returning a response.",
-      "attempted_fingerprints": [
-        "067d21ed3614ab70",
-        "2b5cf1831a3c460f"
-      ]
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
@@ -244,76 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "x-ai-stat-2026-05-21-nhs-stats-blocked",
-      "status": "blocked",
-      "created_at": "2026-05-21T02:08:59Z",
-      "updated_at": "2026-05-21T02:08:59Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "kind": "live_stat",
-      "source": "Not Human Search live stats",
-      "source_url": "https://nothumansearch.ai/api/v1/stats",
-      "route": "https://nothumansearch.ai",
-      "fact_id": "nhs-total-sites-4180-avg-35",
-      "fact_key": "nhs-total-sites-4180-avg-35-developer",
-      "fingerprint": "c463ed015e17c9be",
-      "copy": "Not Human Search now tracks 4,180 sites for agentic readiness.\n\nAverage score: 35/100. Top category: developer tools.\n\nThe useful read: agent-readable surfaces are spreading, but most websites still are not close to plug-and-play for autonomous agents.\n\nhttps://nothumansearch.ai",
-      "blocker": "No public X URL verified; direct X empty 200 was not found in timeline, browser fallback timed out, and Computer Use app-server failed."
-    },
-    {
-      "id": "x-ai-stat-2026-05-21-compensation-blocked",
-      "status": "blocked",
-      "created_at": "2026-05-21T02:08:59Z",
-      "updated_at": "2026-05-21T02:08:59Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "kind": "stat",
-      "source": "AI Compensation by Skill",
-      "source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "fact_id": "research-premium-vs-genai-2026-05-21",
-      "fact_key": "research-premium-279788-genai-233414-openings-2.6x",
-      "fingerprint": "6eb742bc8f198802",
-      "copy": "Research AI roles averaged $279,788 in a 3,548-posting compensation cut.\n\nGenerative-AI roles averaged $233,414, despite roughly 2.6x more openings.\n\nThat $46k premium is not demand volume. It is where scarce skill shows up.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "blocker": "No public X URL verified; direct X returned empty 200/no created tweet and browser fallback timed out."
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-21-comp-skill-split-blocked",
-      "source": "AI Compensation by Skill",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "date": "2026-05-20",
-      "blocked_at": "2026-05-21T02:25:30Z",
-      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "fingerprint": "3ff6ba20a4244ca2",
-      "fact_key": "comp-skill:demand-llm-2655:pay-research-279788",
-      "kind": "stat",
-      "created_at": "2026-05-21T02:25:30Z",
-      "updated_at": "2026-05-21T02:25:30Z",
-      "source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "copy": "Q2 AI compensation has a useful split: LLM is the most common skill tag in the sample at 2,655 roles, while research is the top-paying tag at $279,788.\n\nDemand volume and scarcity are not the same signal.\n\nData: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "blocker": "Verified live source page HTTP 200 and facts: 3,548 salary-disclosed roles, median $212,750, LLM most common skill tag at 2,655 roles, research top-paying tag at $279,788. agent-social-editor approved; @8BitConcepts identity verified by x-brave-post dry run. Live post attempt hung with no output; authenticated timeline lookup did not find expected text; direct retry returned X empty 200/unverifiable; Computer Use fallback returned codex app-server exited before returning a response. No public X status URL verified."
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-21-comp-skill-split-short-blocked",
-      "source": "AI Compensation by Skill",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "date": "2026-05-20",
-      "blocked_at": "2026-05-21T02:25:30Z",
-      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "fingerprint": "e6f82169f56d68dc",
-      "fact_key": "comp-skill:demand-llm-2655:pay-research-279788",
-      "kind": "stat",
-      "created_at": "2026-05-21T02:25:30Z",
-      "updated_at": "2026-05-21T02:25:30Z",
-      "source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "copy": "Q2 AI comp: LLM is the demand tag at 2,655 roles. Research is the top-paying tag at $279,788.\n\nDemand volume and scarcity are different signals.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "blocker": "Shorter social-editor-approved retry of same verified point. @8BitConcepts identity verified by x-brave-post dry run. Live post attempt hung; authenticated timeline lookup did not find expected text; direct no-browser retry returned X empty 200/unverifiable. No public X status URL verified."
     }
   ]
 }
