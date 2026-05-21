@@ -1822,6 +1822,36 @@
       "public_action_lock": "public-action-locks/social-content/705c04c35d356b6c.json",
       "post_attempted": true,
       "linkedin_operator_closeout": "No scoped memory update needed"
+    },
+    {
+      "id": "daily-research-fact-2026-05-21-8bit-linkedin-posted",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-21-8bit",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-21T14:18:07Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7463231117714759680",
+      "fingerprint": "73a7aa6cdea597f7",
+      "original_fingerprint": "04894f4e1db9f2e5",
+      "fact_key": "8bit:shift-handoff:100-vs-40-60",
+      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "text": "The shift-handoff simulation kept 100% of prior-shift entries in the digital scenario. The modeled verbal handoff kept 40-60%.\n\nThe dangerous loss was not the obvious critical issue. It was the developing trend that was not urgent yet, because that is the first thing cut from a verbal briefing.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html\n\n8bitconcepts: https://8bitconcepts.com/",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/shift-handoff-intelligence.html returned HTTP 200",
+        "The page metadata/body states a multi-industry simulation showed 100% information retention with digital shift handoff vs 40-60% with verbal briefings",
+        "The page body says developing trends are the most dangerous category because they are the first thing cut from a verbal briefing",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts business URL in the portfolio index",
+        "LinkedIn direct Voyager identity/post path created share URL; URL returned HTTP 200; activity recovery matched exact post text but card exposed no permalink"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_fingerprint": "73a7aa6cdea597f7",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/73a7aa6cdea597f7.json",
+      "note": "Posted by 8bit-linkedin-agent-publisher via tools/linkedin-brave-post.js direct Voyager API. Script reported created share URL but immediate full-body verification failed because LinkedIn URL rendering differed; recover-only found the exact text in recent activity without a card permalink, and the API-created URL returned HTTP 200."
     }
   ]
 }
