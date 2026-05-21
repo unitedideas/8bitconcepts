@@ -1612,6 +1612,34 @@
       "fingerprint": "6eb742bc8f198802",
       "text": "Research AI roles averaged $279,788 in a 3,548-posting compensation cut.\n\nGenerative-AI roles averaged $233,414, despite roughly 2.6x more openings.\n\nThat $46k premium is not demand volume. It is where scarce skill shows up.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
       "note": "Verified source page HTTP 200 and compensation facts 2026-05-21T02:04Z; social-editor approved; direct X returned empty 200/no created tweet; browser fallback failed with spawnSync osascript ETIMEDOUT. No public post URL verified."
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-21-comp-skill-split-blocked",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T02:25:30Z",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "fingerprint": "3ff6ba20a4244ca2",
+      "fact_key": "comp-skill:demand-llm-2655:pay-research-279788",
+      "text": "Q2 AI compensation has a useful split: LLM is the most common skill tag in the sample at 2,655 roles, while research is the top-paying tag at $279,788.\n\nDemand volume and scarcity are not the same signal.\n\nData: https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "note": "Verified live source page HTTP 200 and facts: 3,548 salary-disclosed roles, median $212,750, LLM most common skill tag at 2,655 roles, research top-paying tag at $279,788. agent-social-editor approved; @8BitConcepts identity verified by x-brave-post dry run. Live post attempt hung with no output; authenticated timeline lookup did not find expected text; direct retry returned X empty 200/unverifiable; Computer Use fallback returned codex app-server exited before returning a response. No public X status URL verified."
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-21-comp-skill-split-short-blocked",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T02:25:30Z",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "fingerprint": "e6f82169f56d68dc",
+      "fact_key": "comp-skill:demand-llm-2655:pay-research-279788",
+      "text": "Q2 AI comp: LLM is the demand tag at 2,655 roles. Research is the top-paying tag at $279,788.\n\nDemand volume and scarcity are different signals.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "note": "Shorter social-editor-approved retry of same verified point. @8BitConcepts identity verified by x-brave-post dry run. Live post attempt hung; authenticated timeline lookup did not find expected text; direct no-browser retry returned X empty 200/unverifiable. No public X status URL verified."
     }
   ]
 }
