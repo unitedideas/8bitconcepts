@@ -238,25 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "x-ai-stat-2026-05-21-adb-homepage-8760-api-access",
-      "status": "posted",
-      "created_at": "2026-05-21T04:49:18Z",
-      "updated_at": "2026-05-21T04:49:18Z",
-      "posted_at": "2026-05-21T04:49:18Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "kind": "live_stat",
-      "source": "AI Dev Board homepage",
-      "source_url": "https://aidevboard.com/",
-      "route": "https://aidevboard.com",
-      "fact_id": "adb-homepage-8760-api-access-2026-05-21",
-      "fact_key": "homepage:adb:8760:api-access",
-      "fingerprint": "9166f917e4ac30c1",
-      "copy": "AI Dev Board is advertising 8,760 AI developer roles with salary data. It is also a REST API and MCP server agents can query directly: https://aidevboard.com",
-      "url": "https://x.com/8BitConcepts/status/2057322551781855732",
-      "note": "Fallback stat refreshed from homepage because anonymous stats API quota was exceeded."
     }
   ]
 }
