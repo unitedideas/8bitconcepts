@@ -1588,82 +1588,30 @@
       "public_action_lock_claimed": true
     },
     {
-      "id": "8bit-x-agent-publisher-blocked-2026-05-21-nhs-mcp-live-linked",
-      "source": "live:https://nothumansearch.ai/digest.json",
+      "id": "8bit-x-agent-publisher-posted-2026-05-21-nhs-live-stats",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2-refresh",
       "channel": "x",
       "account": "@8bitconcepts",
-      "status": "blocked",
-      "blocked_at": "2026-05-21T16:29:43Z",
+      "status": "posted",
       "date": "2026-05-21",
-      "fingerprint": "4345a5e4c9c901ba",
-      "fact_key": "nhs-digest:2026-05-21T16:15:13Z:mcp_verified=450,total_sites=4171,llms_txt=2251",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "text": "MCP adoption is still narrow.\n\nNot Human Search has 4,171 agent-ready sites in today's digest. 450 pass a verified MCP check, or 10.8%.\n\nllms.txt is already much more common: 2,251 sites.\n\nData route: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "blocker": "No public X post went live. Direct @8BitConcepts identity check passed, but tools/x-brave-post.js hung on the first approved linked copy; direct no-browser retry for the shorter linked copy returned EMPTY_200_NO_FALLBACK and the authenticated timeline did not contain the expected post text; linkless approved copy also returned EMPTY_200_NO_FALLBACK and timeline lookup did not contain the expected text after a delay. Browser fallback could not verify or recover a URL because Computer Use returned `codex app-server exited before returning a response`, Brave CDP returned `Runtime.enable timed out`, and a minimal Brave AppleScript URL read hung until killed.",
+      "posted_at": "2026-05-21T16:55:00Z",
+      "url": "https://x.com/8BitConcepts/status/2057504618473775558",
+      "route": "https://nothumansearch.ai",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "fact_key": "nhs-total-sites-4170-avg-35",
+      "fingerprint": "6bd773d9107a7ef3",
+      "copy": "Not Human Search is tracking 4,170 agent-ready sites. Average readiness score: 35/100.\n\nReadiness is a live behavior check: endpoints, specs, schemas, and broken requests.\n\nhttps://nothumansearch.ai",
       "facts_verified": [
-        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-21T16:15:13Z, total_sites=4171, mcp_verified=450, llms_txt_count=2251",
-        "450 / 4171 = 10.8% rounded to one decimal",
-        "https://nothumansearch.ai returned HTTP 200 and is the Not Human Search portfolio URL",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200"
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4170, avg_score=35, top_category=developer",
+        "https://nothumansearch.ai/ returned HTTP 200 and is the Not Human Search business URL in the Foundry portfolio index"
       ],
       "social_editor_status": "approved",
       "social_editor_closeout": "No scoped memory update needed",
       "x_operator_closeout": "No scoped memory update needed",
-      "public_action_lock": "public-action-locks/social-content/4345a5e4c9c901ba.json",
+      "public_action_lock": "public-action-locks/social-content/6bd773d9107a7ef3.json",
       "post_attempted": true,
-      "note": "linked approved copy; script hung before URL"
-    },
-    {
-      "id": "8bit-x-agent-publisher-blocked-2026-05-21-nhs-mcp-live-short-linked",
-      "source": "live:https://nothumansearch.ai/digest.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "blocked_at": "2026-05-21T16:29:43Z",
-      "date": "2026-05-21",
-      "fingerprint": "b917c276986dce0a",
-      "fact_key": "nhs-digest:2026-05-21T16:15:13Z:mcp_verified=450,total_sites=4171,llms_txt=2251",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "text": "MCP is still the narrow path.\n\nToday's Not Human Search digest has 4,171 agent-ready sites. 450 pass verified MCP checks, or 10.8%. llms.txt appears on 2,251.\n\nData: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "blocker": "No public X post went live. Direct @8BitConcepts identity check passed, but tools/x-brave-post.js hung on the first approved linked copy; direct no-browser retry for the shorter linked copy returned EMPTY_200_NO_FALLBACK and the authenticated timeline did not contain the expected post text; linkless approved copy also returned EMPTY_200_NO_FALLBACK and timeline lookup did not contain the expected text after a delay. Browser fallback could not verify or recover a URL because Computer Use returned `codex app-server exited before returning a response`, Brave CDP returned `Runtime.enable timed out`, and a minimal Brave AppleScript URL read hung until killed.",
-      "facts_verified": [
-        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-21T16:15:13Z, total_sites=4171, mcp_verified=450, llms_txt_count=2251",
-        "450 / 4171 = 10.8% rounded to one decimal",
-        "https://nothumansearch.ai returned HTTP 200 and is the Not Human Search portfolio URL",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200"
-      ],
-      "social_editor_status": "approved",
-      "social_editor_closeout": "No scoped memory update needed",
-      "x_operator_closeout": "No scoped memory update needed",
-      "public_action_lock": "public-action-locks/social-content/b917c276986dce0a.json",
-      "post_attempted": true,
-      "note": "short linked approved copy; X returned empty 200 but no timeline match"
-    },
-    {
-      "id": "8bit-x-agent-publisher-blocked-2026-05-21-nhs-mcp-live-linkless",
-      "source": "live:https://nothumansearch.ai/digest.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "blocked",
-      "blocked_at": "2026-05-21T16:29:43Z",
-      "date": "2026-05-21",
-      "fingerprint": "82fd662d8ac6e315",
-      "fact_key": "nhs-digest:2026-05-21T16:15:13Z:mcp_verified=450,total_sites=4171,llms_txt=2251",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "text": "MCP is still the narrow path.\n\nToday's Not Human Search digest has 4,171 agent-ready sites. 450 pass verified MCP checks: 10.8%.\n\nllms.txt appears on 2,251.",
-      "blocker": "No public X post went live. Direct @8BitConcepts identity check passed, but tools/x-brave-post.js hung on the first approved linked copy; direct no-browser retry for the shorter linked copy returned EMPTY_200_NO_FALLBACK and the authenticated timeline did not contain the expected post text; linkless approved copy also returned EMPTY_200_NO_FALLBACK and timeline lookup did not contain the expected text after a delay. Browser fallback could not verify or recover a URL because Computer Use returned `codex app-server exited before returning a response`, Brave CDP returned `Runtime.enable timed out`, and a minimal Brave AppleScript URL read hung until killed.",
-      "facts_verified": [
-        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-21T16:15:13Z, total_sites=4171, mcp_verified=450, llms_txt_count=2251",
-        "450 / 4171 = 10.8% rounded to one decimal",
-        "https://nothumansearch.ai returned HTTP 200 and is the Not Human Search portfolio URL",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200"
-      ],
-      "social_editor_status": "approved",
-      "social_editor_closeout": "No scoped memory update needed",
-      "x_operator_closeout": "No scoped memory update needed",
-      "public_action_lock": "public-action-locks/social-content/82fd662d8ac6e315.json",
-      "post_attempted": true,
-      "note": "linkless approved copy; X returned empty 200 but no timeline match"
+      "note": "First approved copy fingerprint 982d74d33f6d1791 was claimed but did not verify live. Short approved copy posted after X direct create returned an empty 200 and authenticated timeline recovery found the live status URL."
     }
   ]
 }
