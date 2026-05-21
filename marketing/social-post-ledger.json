@@ -1586,24 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "daily-nhs-mcp-digest-x-2026-05-21",
-      "source": "8bit-x-agent-publisher",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "posted_at": "2026-05-21T23:03:02Z",
-      "url": "https://x.com/8BitConcepts/status/2057597973027287176",
-      "fingerprint": "cba090629ac6d93f",
-      "fact_key": "nhs_digest:mcp_verified=451,total=4171,llms_txt=2251,generated_at=2026-05-21T22:56:32Z",
-      "text": "451 of 4,171 agent-ready sites in the NHS digest pass a real MCP handshake: 10.8%.\n\n2,251 publish llms.txt. Static discovery is common; callable endpoints are still the bar.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "sources": [
-        "https://nothumansearch.ai/digest.json",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
-      ],
-      "note": "Posted from verified @8BitConcepts via tools/x-brave-post.js. Direct X API returned empty 200, then authenticated timeline recovery verified the live status URL. Facts verified from NHS digest generated_at 2026-05-21T22:56:32Z."
     }
   ]
 }

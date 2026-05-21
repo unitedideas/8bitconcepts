@@ -238,25 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "x-ai-stat-2026-05-21T22:56:32Z-nhs-mcp-451",
-      "status": "posted",
-      "created_at": "2026-05-21T22:56:32Z",
-      "updated_at": "2026-05-21T23:03:02Z",
-      "posted_at": "2026-05-21T23:03:02Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "kind": "live_stat",
-      "source": "Not Human Search digest",
-      "source_url": "https://nothumansearch.ai/digest.json",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "fact_id": "nhs-mcp-verified-451-total-4171-llms-2251",
-      "fact_key": "nhs_digest:mcp_verified=451,total=4171,llms_txt=2251,generated_at=2026-05-21T22:56:32Z",
-      "fingerprint": "cba090629ac6d93f",
-      "copy": "451 of 4,171 agent-ready sites in the NHS digest pass a real MCP handshake: 10.8%.\n\n2,251 publish llms.txt. Static discovery is common; callable endpoints are still the bar.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "url": "https://x.com/8BitConcepts/status/2057597973027287176",
-      "note": "Selected by 8bit-x-agent-publisher after daily insight/portfolio queues were stale for current-day X work; approved by agent-social-editor."
     }
   ]
 }
