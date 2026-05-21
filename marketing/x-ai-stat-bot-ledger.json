@@ -48,7 +48,19 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "blocked_attempts": [
+        {
+          "run_id": "8bit-x-agent-publisher-2026-05-21-integration-tax",
+          "at": "2026-05-21T15:50:53Z",
+          "status": "blocked",
+          "fingerprints": [
+            "c89d5656cf50b39d",
+            "cab4a7e1ad08eaf9"
+          ],
+          "blocker": "No public X post went live. Full approved copy: tools/x-brave-post.js hung with no stdout and was killed; authenticated timeline recovery did not contain the expected post text; browser/CDP fallback failed with spawnSync osascript ETIMEDOUT. Short approved copy: direct authenticated X path failed before posting with X authenticated home fetch failed: status 403. Computer Use fallback failed with codex app-server exited before returning a response. No live X status URL was created."
+        }
+      ]
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",

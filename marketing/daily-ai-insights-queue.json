@@ -1,78 +1,74 @@
 {
-  "generated_at": "2026-05-21T13:21:00.098528+00:00",
+  "generated_at": "2026-05-01T01:16:26.468888+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
     "hacker_news": "8bitconcepts; only for technical systems artifacts"
   },
-  "cadence": "five AI insight posts per day; one targeted documented research post plus four rotating research facts across 8bit, NHS, BYA, and ADB",
+  "cadence": "two AI insight posts per day; one daily targeted documented research post",
   "items": [
     {
-      "id": "daily-targeted-research-2026-05-21-anthropic",
+      "id": "daily-targeted-research-2026-05-01-xai",
       "kind": "targeted_research",
-      "date": "2026-05-21",
-      "slot": "targeted",
+      "date": "2026-05-01",
+      "slot": "morning",
       "post_time_local": "08:30",
       "timezone": "America/Los_Angeles",
       "target": {
-        "name": "Anthropic",
-        "x_mention": "@AnthropicAI",
-        "linkedin_mention": "@Anthropic",
-        "domain": "anthropic.com",
-        "company_slug": "anthropic"
+        "name": "xAI",
+        "x_mention": "@xai",
+        "linkedin_mention": "@xAI",
+        "domain": "x.ai",
+        "company_slug": "xai"
       },
-      "fact_key": "targeted-research:anthropic:270:alignment,llm,distributed-systems",
-      "theme": "Anthropic public AI hiring signal",
+      "fact_key": "targeted-research:xai:98:distributed-systems,data-pipeline,llm",
+      "theme": "xAI public AI hiring signal",
       "format": "targeted documented research",
       "asset_brief": "Small source-backed stat card: role count, top tags, sample roles, operator question.",
-      "route": "https://aidevboard.com/company/anthropic",
+      "route": "https://aidevboard.com/company/xai",
       "research_sources": {
-        "adb_company": "https://aidevboard.com/company/anthropic",
-        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=anthropic&limit=100",
+        "adb_company": "https://aidevboard.com/company/xai",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=xai&limit=100",
         "adb_stats_api": "https://aidevboard.com/api/v1/stats",
-        "nhs_profile": "https://nothumansearch.ai/site/anthropic.com",
-        "official_source": "https://www.anthropic.com/careers"
-      },
-      "fingerprint": {
-        "x": "de6ae0f00d9eabdd",
-        "linkedin": "8b93fb39511ef353"
+        "nhs_profile": "https://nothumansearch.ai/site/x.ai",
+        "official_source": "https://x.ai/careers"
       },
       "research_findings": {
-        "indexed_roles": 270,
-        "rank": null,
-        "avg_salary": 374000,
+        "indexed_roles": 98,
+        "rank": 11,
+        "avg_salary": 287740,
         "top_tags": [
-          "alignment",
-          "llm",
           "distributed-systems",
-          "search"
+          "data-pipeline",
+          "llm",
+          "payments"
         ],
         "sample_titles": [
-          "Research Engineer, Performance RL",
-          "Research Lead, Training Insights",
-          "Product Manager, Developer Productivity"
+          "Member of Technical Staff - Voice Model",
+          "Member of Technical Staff - Model Training",
+          "Backend Engineer - API"
         ],
-        "workplace_mix": "hybrid: 11, onsite: 1",
+        "workplace_mix": "onsite: 20",
         "nhs_score": 20,
         "nhs_signals": [
           "structured API"
         ],
         "source_errors": {},
-        "paper_candidate": true,
-        "paper_reason": "Anthropic is a top-scale AI hiring signal with 270 indexed roles."
+        "paper_candidate": false,
+        "paper_reason": ""
       },
       "funnel": "AI Dev Board data, Not Human Search agent-readiness check, or 8bit research follow-up",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Looking at public AI hiring as a market signal: @AnthropicAI has 270 indexed AI/ML roles on AI Dev Board, with current tags clustering around alignment, llm, distributed-systems. Avg published salary: $374,000.\n\nThe read is not just hiring volume. It points to long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment. Which layer becomes the hardest to operationalize first: eval design, tool-use environments, or production feedback?\n\nData: https://aidevboard.com/company/anthropic",
-          "fingerprint": "de6ae0f00d9eabdd",
+          "copy": "Looking at public AI hiring as a market signal: @xai has 98 indexed AI/ML roles on AI Dev Board, with current tags clustering around distributed-systems, data-pipeline, llm. Avg published salary: $287,740. xAI is #11 by indexed role count in the current AI Dev Board sample.\n\nThe read is not just hiring volume. It points to multimodal understanding, model serving, product feedback loops, and consumer-scale AI. Which signal is more useful for builders: model capability, latency, or the feedback loop around the product?\n\nData: https://aidevboard.com/company/xai",
+          "fingerprint": "d0e4cca70be9c118",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Looking at @Anthropic through the public hiring data:\n\n1. 270 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around alignment, llm, distributed-systems, search.\n3. Sample roles include Research Engineer, Performance RL; Research Lead, Training Insights; Product Manager, Developer Productivity.\n4. Avg published salary in the indexed sample: $374,000.\n\nThe useful read is where the operational work is moving: long-horizon evals, RL infrastructure, model behavior measurement, and safe agent deployment.\n\nAnthropic is a useful public lens on this area. Which layer becomes the hardest to operationalize first: eval design, tool-use environments, or production feedback?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/anthropic\nhttps://nothumansearch.ai/site/anthropic.com",
-          "fingerprint": "8b93fb39511ef353",
+          "copy": "Looking at @xAI through the public hiring data:\n\n1. 98 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around distributed-systems, data-pipeline, llm, payments.\n3. Sample roles include Member of Technical Staff - Voice Model; Member of Technical Staff - Model Training; Backend Engineer - API.\n4. Avg published salary in the indexed sample: $287,740.\n\nThe useful read is where the operational work is moving: multimodal understanding, model serving, product feedback loops, and consumer-scale AI.\n\nxAI is a useful public lens on this area. Which signal is more useful for builders: model capability, latency, or the feedback loop around the product?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/xai\nhttps://nothumansearch.ai/site/x.ai",
+          "fingerprint": "c6ea5885446bc1c7",
           "duplicate": false
         }
       },
@@ -86,175 +82,37 @@
       ]
     },
     {
-      "id": "daily-research-fact-2026-05-21-8bit",
-      "kind": "research_fact",
-      "date": "2026-05-21",
-      "slot": "8bit",
-      "post_time_local": "10:30",
-      "timezone": "America/Los_Angeles",
-      "product": "8bit",
-      "theme": "Shift handoff intelligence",
-      "format": "little fact",
-      "asset_brief": "Handoff comparison: digital capture vs verbal retention.",
-      "route": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
-      "funnel": "8bitconcepts research",
-      "fact_key": "8bit:shift-handoff:100-vs-40-60",
-      "research_sources": [
-        "https://8bitconcepts.com/research/shift-handoff-intelligence.html"
-      ],
-      "fingerprint": {
-        "x": "0e1c55e9d8fb5675",
-        "linkedin": "04894f4e1db9f2e5"
-      },
-      "channels": {
-        "x": {
-          "account": "@8bitconcepts",
-          "copy": "Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%. The lost category is usually the early warning.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html",
-          "fingerprint": "0e1c55e9d8fb5675",
-          "duplicate": false
-        },
-        "linkedin": {
-          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the shift-handoff paper: the digital scenario retained 100% of prior-shift entries; the modeled verbal handoff retained 40-60%.\n\nThe dangerous loss is not the obvious critical issue. It is the developing trend that is not urgent yet.\n\nSource:\nhttps://8bitconcepts.com/research/shift-handoff-intelligence.html",
-          "fingerprint": "04894f4e1db9f2e5",
-          "duplicate": false
-        }
-      },
-      "quality_gate": [
-        "one small verified fact",
-        "source-backed by 8bit research or case-study page",
-        "routes to the relevant product or paper",
-        "no sales-first CTA",
-        "materially different fact_key from previous posts"
-      ]
-    },
-    {
-      "id": "daily-research-fact-2026-05-21-nhs",
-      "kind": "research_fact",
-      "date": "2026-05-21",
-      "slot": "nhs",
-      "post_time_local": "12:30",
-      "timezone": "America/Los_Angeles",
-      "product": "nhs",
-      "theme": "Live MCP verification",
-      "format": "little fact",
-      "asset_brief": "MCP claim vs live JSON-RPC handshake.",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "funnel": "Not Human Search research",
-      "fact_key": "nhs:mcp-ecosystem:7118-417",
-      "research_sources": [
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
-      ],
-      "fingerprint": {
-        "x": "20e4f40205a31f07",
-        "linkedin": "9d64f6c4c25879d4"
-      },
-      "channels": {
-        "x": {
-          "account": "@8bitconcepts",
-          "copy": "Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake. A manifest is not the same as a callable endpoint.\n\nSource: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-          "fingerprint": "20e4f40205a31f07",
-          "duplicate": false
-        },
-        "linkedin": {
-          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake.\n\nThat gap matters. Agents need a callable endpoint, not a badge or a static manifest.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-          "fingerprint": "9d64f6c4c25879d4",
-          "duplicate": false
-        }
-      },
-      "quality_gate": [
-        "one small verified fact",
-        "source-backed by 8bit research or case-study page",
-        "routes to the relevant product or paper",
-        "no sales-first CTA",
-        "materially different fact_key from previous posts"
-      ]
-    },
-    {
-      "id": "daily-research-fact-2026-05-21-bya",
-      "kind": "research_fact",
-      "date": "2026-05-21",
-      "slot": "bya",
+      "id": "daily-ai-insight-2026-05-01-afternoon",
+      "kind": "generic_insight",
+      "date": "2026-05-01",
+      "slot": "afternoon",
       "post_time_local": "14:30",
       "timezone": "America/Los_Angeles",
-      "product": "bya",
-      "theme": "On-device inference",
-      "format": "little fact",
-      "asset_brief": "Local inference as a privacy and cost boundary.",
-      "route": "https://8bitconcepts.com/research/on-device-inference.html",
-      "funnel": "Bring Your AI research path",
-      "fact_key": "bya:on-device:local-context",
-      "research_sources": [
-        "https://8bitconcepts.com/research/on-device-inference.html"
-      ],
-      "fingerprint": {
-        "x": "579fc4e1b1384df3",
-        "linkedin": "eb417f2d529464f3"
-      },
+      "theme": "Agent readiness is a live behavior, not a badge.",
+      "format": "mini teardown",
+      "asset_brief": "Three-column table: claim, endpoint response, what broke.",
+      "route": "https://nothumansearch.ai",
+      "funnel": "agent-readiness audits and Not Human Search",
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Little fact from the local-inference paper: the best model without local context can be worse than a smaller model next to the data. The useful system knows when to stay local.\n\nSource: https://8bitconcepts.com/research/on-device-inference.html",
-          "fingerprint": "579fc4e1b1384df3",
+          "copy": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.\n\nMore field notes: https://nothumansearch.ai",
+          "fingerprint": "0206cb13ee4d42e7",
           "duplicate": false
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the local-inference paper: the best model without local context can be worse than a smaller model next to the data.\n\nFor agent tooling, that is the same product boundary BYA uses: keep private working context on the user's machine unless there is a real reason to move it.\n\nSource:\nhttps://8bitconcepts.com/research/on-device-inference.html",
-          "fingerprint": "eb417f2d529464f3",
+          "copy": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://nothumansearch.ai",
+          "fingerprint": "cd9fdcb7ca81b451",
           "duplicate": false
         }
       },
       "quality_gate": [
-        "one small verified fact",
-        "source-backed by 8bit research or case-study page",
-        "routes to the relevant product or paper",
-        "no sales-first CTA",
-        "materially different fact_key from previous posts"
-      ]
-    },
-    {
-      "id": "daily-research-fact-2026-05-21-adb",
-      "kind": "research_fact",
-      "date": "2026-05-21",
-      "slot": "adb",
-      "post_time_local": "16:30",
-      "timezone": "America/Los_Angeles",
-      "product": "adb",
-      "theme": "AI workplace premium",
-      "format": "little fact",
-      "asset_brief": "Workplace mix and salary bands.",
-      "route": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
-      "funnel": "AI Dev Board research",
-      "fact_key": "adb:remote-vs-onsite:hybrid-253469",
-      "research_sources": [
-        "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html"
-      ],
-      "fingerprint": {
-        "x": "4e5f88b891ab6a94",
-        "linkedin": "4f5a23cbb89df31d"
-      },
-      "channels": {
-        "x": {
-          "account": "@8bitconcepts",
-          "copy": "Little fact from the ADB hiring data: hybrid AI/ML roles averaged $253,469, ahead of remote at $218,273 and onsite at $216,846 across 9,161 classified roles.\n\nSource: https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
-          "fingerprint": "4e5f88b891ab6a94",
-          "duplicate": false
-        },
-        "linkedin": {
-          "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the ADB hiring data: hybrid AI/ML roles averaged $253,469, ahead of remote at $218,273 and onsite at $216,846 across 9,161 classified roles.\n\nThe practical read is that hybrid concentrates seniority and major-metro salary bands.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
-          "fingerprint": "4f5a23cbb89df31d",
-          "duplicate": false
-        }
-      },
-      "quality_gate": [
-        "one small verified fact",
-        "source-backed by 8bit research or case-study page",
-        "routes to the relevant product or paper",
-        "no sales-first CTA",
-        "materially different fact_key from previous posts"
+        "AI topic",
+        "teaches one specific thing",
+        "routes to a proof point",
+        "not sales-first",
+        "has a click/comment trigger"
       ]
     }
   ]
