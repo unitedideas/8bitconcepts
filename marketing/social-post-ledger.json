@@ -1622,6 +1622,33 @@
       "public_action_lock_claimed": true,
       "post_attempted": true,
       "note": "No public LinkedIn post went live; latest posted LinkedIn ledger row is older than 3 hours, so sync-state automation event was written as loud failure."
+    },
+    {
+      "id": "q2-2026-mcp-ecosystem-health-linkedin-live-digest-2026-05-21",
+      "date": "2026-05-21",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "paper-backlog:q2-2026-mcp-ecosystem-health",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "posted_at": "2026-05-21T05:16:06Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7463095012440973314",
+      "fingerprint": "afc02ea203e404ef",
+      "fact_key": "nhs-mcp-digest:2026-05-21T05:14Z:4180:453:2253:487",
+      "text": "Most MCP discovery is still citation, not infrastructure.\n\nLive Not Human Search digest as of May 21:\n\n1. 4,180 agent-ready sites indexed.\n2. 453 pass a live JSON-RPC MCP handshake.\n3. 2,253 publish llms.txt.\n4. 487 publish OpenAPI.\n\nVerified MCP is 10.8% of the indexed agent-ready web. The useful test is not whether a site mentions MCP. It is whether an agent can send initialize and get a valid protocol response back.\n\nMethodology and raw data route:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "facts_verified": [
+        "https://nothumansearch.ai/digest.json generated_at=2026-05-21T05:14:00Z",
+        "digest total_sites=4180, mcp_verified=453, pct_mcp=10.8, llms_txt_count=2253, openapi_count=487",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "foundry-business-index identifies 8bitconcepts live URL as https://8bitconcepts.com/"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "public_action_lock": "public-action-locks/social-content/afc02ea203e404ef.json",
+      "posting_method": "tools/linkedin-brave-post.js direct Voyager API; public LinkedIn HTML verified text and Shane Cheek author after script verification warning",
+      "note": "LinkedIn rewrote the raw route URL to lnkd.in in the rendered post; verification matched stable text fragments and author profile."
     }
   ]
 }
