@@ -1646,6 +1646,69 @@
       "x_operator_closeout": "No scoped memory update needed",
       "public_action_lock": "public-action-locks/social-content/4acede819273d90e.json",
       "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-21-mcp-empty-200",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-21-nhs",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-21T14:53:25Z",
+      "date": "2026-05-21",
+      "fingerprint": "1aab99d90bfcfb8e",
+      "original_fingerprint": "20e4f40205a31f07",
+      "fact_key": "nhs:mcp-ecosystem:4174-446",
+      "queue_fact_key": "nhs:mcp-ecosystem:7118-417",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "text": "The current MCP audit shows 4,174 agent-ready sites indexed. 446 are MCP-verified by JSON-RPC handshake: 10.7%.\n\nA manifest is not the same as a callable endpoint.\n\nSource: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "blocker": "No public X post went live. For two approved non-duplicate candidates, direct authenticated X API returned empty 200/unverifiable and authenticated timeline recovery did not contain the expected post text. Browser/script fallback hung on osascript and was killed after a bounded wait. Computer Use fallback failed with app-server exited before returning a response. No live X status URL was created.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "Live page says 4,174 agent-ready sites indexed",
+        "Live page says 446 MCP-verified via JSON-RPC handshake",
+        "Live page says 10.7% MCP verification",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts business URL in the portfolio index"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_fingerprint": "1aab99d90bfcfb8e",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/1aab99d90bfcfb8e.json",
+      "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-21-bya-empty-200",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-research-fact-2026-05-21-bya",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-21T14:53:25Z",
+      "date": "2026-05-21",
+      "fingerprint": "4ce94221c647ded3",
+      "original_fingerprint": "579fc4e1b1384df3",
+      "fact_key": "bya:on-device:local-context",
+      "route": "https://8bitconcepts.com/research/on-device-inference.html",
+      "text": "The useful boundary in local inference is not model size by itself. A smaller local model with the right working context can beat a bigger remote model with none.\n\nSource: https://8bitconcepts.com/research/on-device-inference.html",
+      "blocker": "No public X post went live. For two approved non-duplicate candidates, direct authenticated X API returned empty 200/unverifiable and authenticated timeline recovery did not contain the expected post text. Browser/script fallback hung on osascript and was killed after a bounded wait. Computer Use fallback failed with app-server exited before returning a response. No live X status URL was created.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/on-device-inference.html returned HTTP 200",
+        "Page discusses on-device inference and local context",
+        "Page says most local jobs do not need frontier intelligence",
+        "Page says the important wave is software that can reason over local context all day without asking permission for every small step",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the 8bitconcepts business URL in the portfolio index"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_fingerprint": "4ce94221c647ded3",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/4ce94221c647ded3.json",
+      "post_attempted": true
     }
   ]
 }
