@@ -1586,6 +1586,52 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-21-anthropic-linkedin-attempt",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-21-anthropic",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "date": "2026-05-21",
+      "blocked_at": "2026-05-21T18:31:59Z",
+      "fingerprint": "8f8520eafdc68779",
+      "fact_key": "targeted-research:anthropic:270:alignment,llm,distributed-systems",
+      "route": "https://aidevboard.com/company/anthropic",
+      "copy": "Anthropic is a useful public lens on where AI operational work is moving.\n\nAI Dev Board currently indexes 270 Anthropic AI roles, with an average published salary of $374,000.\n\nSample roles:\n1. Research Engineer, Performance RL\n2. Research Lead, Training Insights\n3. Product Manager, Developer Productivity\n\nSample tags and terms cluster around alignment, LLM, distributed systems, and search.\n\nThe hiring read is less about headcount and more about the layers getting productized: RL infrastructure, model behavior measurement, developer productivity, and safe agent deployment.\n\nThe agent-readiness read is thinner. Not Human Search shows anthropic.com at 20/100, with Structured API present.\n\nOfficial careers source:\nhttps://www.anthropic.com/careers\n\nData:\nhttps://aidevboard.com/company/anthropic\nhttps://nothumansearch.ai/site/anthropic.com\n\nWhich layer gets hardest first: eval design, tool-use environments, or production feedback?",
+      "blocker": "LinkedIn post did not go live. Direct Voyager route rejected all cookie sources: chrome-profile-3 returned 302. Page-context route opened LinkedIn signed-out landing page with Sign in as Shane (h*****@8bitconcepts.com) and failed API readiness, so active Shane Cheek / Founder at 8bitconcepts identity was not verified. Approved one-shot browser recovery then timed out in osascript while opening the composer: spawnSync osascript ETIMEDOUT at openComposer/nativeClickElement. No public LinkedIn POST URL or activity page was captured.",
+      "facts_verified": [
+        "https://aidevboard.com/company/anthropic returned HTTP 200 with title: Anthropic Jobs \u2014 270 AI Roles \u00b7 Avg $374k | AI Dev Jobs",
+        "ADB public page contains sample roles: Research Engineer, Performance RL; Research Lead, Training Insights; Product Manager, Developer Productivity",
+        "ADB public page contains alignment and distributed-systems terms; generated ADB queue source included LLM and search",
+        "https://nothumansearch.ai/site/anthropic.com returned HTTP 200 with title: Anthropic \u2014 Agentic Readiness 20/100 \u2014 Not Human Search and Structured API present",
+        "https://www.anthropic.com/careers returned HTTP 200 with title: Careers \\ Anthropic"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "notes": [
+          "No scoped memory update needed"
+        ]
+      },
+      "posting_attempts": [
+        {
+          "route": "direct_voyager",
+          "result": "blocked",
+          "blocker": "all LinkedIn cookie sources rejected; chrome-profile-3 returned 302"
+        },
+        {
+          "route": "page_context_voyager",
+          "result": "blocked",
+          "blocker": "LinkedIn signed-out landing page; active identity not verified"
+        },
+        {
+          "route": "one_shot_browser_recovery",
+          "result": "blocked",
+          "blocker": "spawnSync osascript ETIMEDOUT while opening composer"
+        }
+      ],
+      "linkedin_operator_closeout": "No scoped memory update needed."
     }
   ]
 }
