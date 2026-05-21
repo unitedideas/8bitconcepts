@@ -1692,6 +1692,88 @@
         "note": "approved shorter retry copy"
       },
       "x_operator_closeout": "No scoped memory update needed."
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-21-six-percent-primary",
+      "source": "8bit-research-backlog",
+      "source_item": "the-six-percent",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T03:28:10Z",
+      "fingerprint": "d264a1da1afd005e",
+      "fact_key": "8bit-research:the-six-percent:mckinsey-88-6",
+      "route": "https://8bitconcepts.com/research/the-six-percent.html",
+      "source_url": "https://8bitconcepts.com/research/the-six-percent.html",
+      "copy": "McKinsey's 2025 AI survey is the gap in one line: 88% of organizations use AI, but about 6% qualify as high performers.\n\nThe issue is not missing tools. It is that most companies have not rewired the work around them.\n\nhttps://8bitconcepts.com/research/the-six-percent.html",
+      "blocker": "No public X post URL verified. @8BitConcepts identity verified by x-brave-post dry run; live direct X API attempt hung without output and was stopped; public profile check did not find the post; browser-forced fallback later failed with spawnSync osascript ETIMEDOUT.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-six-percent.html returned HTTP 200",
+        "McKinsey State of AI 2025 confirms 88% regular AI use in at least one business function",
+        "McKinsey defines AI high performers as respondents attributing 5%+ EBIT impact to AI and significant value; about 6% of respondents",
+        "McKinsey survey had 1,993 participants in 105 nations"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_used": true,
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed."
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-21-six-percent-short",
+      "source": "8bit-research-backlog",
+      "source_item": "the-six-percent",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T03:28:10Z",
+      "fingerprint": "c71525857abc991f",
+      "fact_key": "8bit-research:the-six-percent:mckinsey-88-6",
+      "route": "https://8bitconcepts.com/research/the-six-percent.html",
+      "source_url": "https://8bitconcepts.com/research/the-six-percent.html",
+      "copy": "McKinsey's 2025 AI survey: 88% of organizations use AI. About 6% qualify as high performers.\n\nThe gap is not tool access. It is whether the work changed around the tools.\n\nhttps://8bitconcepts.com/research/the-six-percent.html",
+      "blocker": "Shorter social-editor-approved retry. X direct API returned empty HTTP 200/unverifiable; browser CDP fallback failed with spawnSync osascript ETIMEDOUT. No public X status URL verified.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-six-percent.html returned HTTP 200",
+        "McKinsey State of AI 2025 confirms 88% regular AI use in at least one business function",
+        "McKinsey AI high performers represent about 6% of respondents"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_used": true,
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed."
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-21-foundation-trap",
+      "source": "8bit-research-backlog",
+      "source_item": "the-foundation-trap",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T03:28:10Z",
+      "fingerprint": "53b699e739858236",
+      "fact_key": "8bit-research:the-foundation-trap:six-layer-stack",
+      "route": "https://8bitconcepts.com/research/the-foundation-trap.html",
+      "source_url": "https://8bitconcepts.com/research/the-foundation-trap.html",
+      "copy": "The agent infrastructure stack is not one decision. It is at least six: model providers, orchestration frameworks, retrieval, memory/state, evals, and integration glue.\n\nEach layer is moving at a different speed. Each has at least three serious vendors. None has consolidated.\n\nThat is the foundation trap.\n\nhttps://8bitconcepts.com/research/the-foundation-trap.html",
+      "blocker": "Third non-duplicate social-editor-approved candidate. Bounded x-brave-post attempt timed out after 90s with no public X status URL verified.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-foundation-trap.html returned HTTP 200",
+        "The page describes six agent infrastructure layers: model providers, orchestration frameworks, retrieval systems, memory/state, evaluation tooling, and integration glue",
+        "The page states each layer is maturing at a different speed, has at least three serious vendors competing, and none has consolidated"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_used": true,
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed."
     }
   ]
 }
