@@ -48,19 +48,7 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
-      "blocked_attempts": [
-        {
-          "run_id": "8bit-x-agent-publisher-2026-05-21-integration-tax",
-          "at": "2026-05-21T15:50:53Z",
-          "status": "blocked",
-          "fingerprints": [
-            "c89d5656cf50b39d",
-            "cab4a7e1ad08eaf9"
-          ],
-          "blocker": "No public X post went live. Full approved copy: tools/x-brave-post.js hung with no stdout and was killed; authenticated timeline recovery did not contain the expected post text; browser/CDP fallback failed with spawnSync osascript ETIMEDOUT. Short approved copy: direct authenticated X path failed before posting with X authenticated home fetch failed: status 403. Computer Use fallback failed with codex app-server exited before returning a response. No live X status URL was created."
-        }
-      ]
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
@@ -195,7 +183,20 @@
       "fact_id": "nhs-mcp-verified-418-total-7117",
       "fact_key": "31d1c4764d73859d0ab14740",
       "fingerprint": "4d26e7a267b48471",
-      "copy": "Live MCP check: 418 of 7,117 agent-ready sites pass a real MCP handshake. That is 5.9%."
+      "copy": "Live MCP check: 418 of 7,117 agent-ready sites pass a real MCP handshake. That is 5.9%.",
+      "blocked_attempts": [
+        {
+          "run_id": "8bit-x-agent-publisher-2026-05-21-nhs-mcp-live",
+          "at": "2026-05-21T16:29:43Z",
+          "status": "blocked",
+          "fingerprints": [
+            "4345a5e4c9c901ba",
+            "b917c276986dce0a",
+            "82fd662d8ac6e315"
+          ],
+          "blocker": "No public X post went live. Direct @8BitConcepts identity check passed, but tools/x-brave-post.js hung on the first approved linked copy; direct no-browser retry for the shorter linked copy returned EMPTY_200_NO_FALLBACK and the authenticated timeline did not contain the expected post text; linkless approved copy also returned EMPTY_200_NO_FALLBACK and timeline lookup did not contain the expected text after a delay. Browser fallback could not verify or recover a URL because Computer Use returned `codex app-server exited before returning a response`, Brave CDP returned `Runtime.enable timed out`, and a minimal Brave AppleScript URL read hung until killed."
+        }
+      ]
     },
     {
       "id": "x-ai-stat-2026-04-28T21:57:19+00:00-e3ae40e6",
