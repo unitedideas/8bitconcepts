@@ -1586,69 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "agentic-commerce-gap-linkedin-2026-05-21",
-      "date": "2026-05-21",
-      "source": "8bit-linkedin-agent-publisher",
-      "source_item": "research/the-agentic-commerce-gap.html",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "blocked",
-      "blocked_at": "2026-05-21T05:07:28.030Z",
-      "route": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
-      "fact_key": "8bit-research:agentic-commerce-gap:commerce-surfaces",
-      "fingerprint": "bac31c931d29fc6b",
-      "copy": "Agentic commerce is not an AI page on a website.\n\nThe practical surfaces are smaller and more useful:\n\n1. A product catalog an agent can parse without scraping.\n2. A deterministic quote endpoint.\n3. A declared checkout handoff.\n4. Explicit supported and unsupported payment rails.\n5. Discovery files like llms.txt, ai-plugin.json, or OpenAPI.\n\nWithout those, most businesses are architecturally invisible to AI agents.\n\nResearch note:\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html",
-      "verified_facts": [
-        "https://8bitconcepts.com/research/the-agentic-commerce-gap.html returned HTTP 200 on 2026-05-21 UTC",
-        "article title: The Agentic Commerce Gap: Why Most Businesses Are Invisible to AI Agents",
-        "article description says AI agents are beginning to shop, quote, and purchase and most online businesses are architecturally invisible to them",
-        "article lists machine-readable seller surfaces: product catalog, deterministic quote endpoint, checkout handoff, supported/unsupported payment rail declaration, and discovery files such as llms.txt, ai-plugin.json, or OpenAPI",
-        "portfolio index lists 8bitconcepts as active at https://8bitconcepts.com"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "Agentic commerce is not an AI page on a website.\n\nThe practical surfaces are smaller and more useful:\n\n1. A product catalog an agent can parse without scraping.\n2. A deterministic quote endpoint.\n3. A declared checkout handoff.\n4. Explicit supported and unsupported payment rails.\n5. Discovery files like llms.txt, ai-plugin.json, or OpenAPI.\n\nWithout those, most businesses are architecturally invisible to AI agents.\n\nResearch note:\nhttps://8bitconcepts.com/research/the-agentic-commerce-gap.html",
-        "scoped_learning": "No scoped memory update needed"
-      },
-      "linkedin_operator_closeout": "approved_for_editor; No scoped memory update needed",
-      "blocker": "LinkedIn posting blocked: direct Voyager cookies rejected with chrome-profile-3 302; page-context Voyager opened signed-out LinkedIn landing page with Sign in as Shane; approved one-shot browser recovery timed out in osascript while opening composer (spawnSync osascript ETIMEDOUT). No CAPTCHA/checkpoint/rate-limit text was observed, but active LinkedIn authenticated posting identity could not be verified.",
-      "posting_attempts": [
-        "direct_voyager_cookie_route_failed_cookie_sources_rejected_chrome_profile_3_302",
-        "page_context_voyager_route_failed_signed_out_landing_page_sign_in_as_shane",
-        "one_shot_browser_recovery_failed_osascript_timeout_opening_composer"
-      ],
-      "public_action_lock_claimed": true,
-      "post_attempted": true,
-      "note": "No public LinkedIn post went live; latest posted LinkedIn ledger row is older than 3 hours, so sync-state automation event was written as loud failure."
-    },
-    {
-      "id": "q2-2026-mcp-ecosystem-health-linkedin-live-digest-2026-05-21",
-      "date": "2026-05-21",
-      "source": "8bit-linkedin-agent-publisher",
-      "source_item": "paper-backlog:q2-2026-mcp-ecosystem-health",
-      "channel": "linkedin",
-      "account": "Shane Cheek",
-      "status": "posted",
-      "posted_at": "2026-05-21T05:16:06Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7463095012440973314",
-      "fingerprint": "afc02ea203e404ef",
-      "fact_key": "nhs-mcp-digest:2026-05-21T05:14Z:4180:453:2253:487",
-      "text": "Most MCP discovery is still citation, not infrastructure.\n\nLive Not Human Search digest as of May 21:\n\n1. 4,180 agent-ready sites indexed.\n2. 453 pass a live JSON-RPC MCP handshake.\n3. 2,253 publish llms.txt.\n4. 487 publish OpenAPI.\n\nVerified MCP is 10.8% of the indexed agent-ready web. The useful test is not whether a site mentions MCP. It is whether an agent can send initialize and get a valid protocol response back.\n\nMethodology and raw data route:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "facts_verified": [
-        "https://nothumansearch.ai/digest.json generated_at=2026-05-21T05:14:00Z",
-        "digest total_sites=4180, mcp_verified=453, pct_mcp=10.8, llms_txt_count=2253, openapi_count=487",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
-        "foundry-business-index identifies 8bitconcepts live URL as https://8bitconcepts.com/"
-      ],
-      "social_editor_status": "approved",
-      "social_editor_closeout": "No scoped memory update needed",
-      "linkedin_operator_closeout": "No scoped memory update needed",
-      "public_action_lock_claimed": true,
-      "public_action_lock": "public-action-locks/social-content/afc02ea203e404ef.json",
-      "posting_method": "tools/linkedin-brave-post.js direct Voyager API; public LinkedIn HTML verified text and Shane Cheek author after script verification warning",
-      "note": "LinkedIn rewrote the raw route URL to lnkd.in in the rendered post; verification matched stable text fragments and author profile."
     }
   ]
 }
