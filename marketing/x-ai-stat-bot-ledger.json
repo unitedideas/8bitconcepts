@@ -37,7 +37,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
-      "status": "drafted",
+      "status": "failed",
       "created_at": "2026-04-28T05:58:51+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -48,7 +48,13 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "updated_at": "2026-05-21T02:56:50Z",
+      "blocker": "No public X post went live. Direct authenticated X API returned empty 200/unverifiable for both social-editor-approved copies; authenticated timeline verification did not contain either post; browser fallback via tools/x-brave-post.js failed with spawnSync osascript ETIMEDOUT; Computer Use fallback failed with codex app-server exited before returning a response.",
+      "attempted_fingerprints": [
+        "067d21ed3614ab70",
+        "2b5cf1831a3c460f"
+      ]
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",

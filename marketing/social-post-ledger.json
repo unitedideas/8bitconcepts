@@ -1640,6 +1640,58 @@
       "fact_key": "comp-skill:demand-llm-2655:pay-research-279788",
       "text": "Q2 AI comp: LLM is the demand tag at 2,655 roles. Research is the top-paying tag at $279,788.\n\nDemand volume and scarcity are different signals.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
       "note": "Shorter social-editor-approved retry of same verified point. @8BitConcepts identity verified by x-brave-post dry run. Live post attempt hung; authenticated timeline lookup did not find expected text; direct no-browser retry returned X empty 200/unverifiable. No public X status URL verified."
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-21-integration-tax-primary",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T02:56:50Z",
+      "fingerprint": "067d21ed3614ab70",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "copy": "Model API costs are usually the easy 10-20%. The expensive work is permissions, workflow integration, evals, observability, data pipelines, error handling, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "blocker": "No public X post went live. Direct authenticated X API returned empty 200/unverifiable for both social-editor-approved copies; authenticated timeline verification did not contain either post; browser fallback via tools/x-brave-post.js failed with spawnSync osascript ETIMEDOUT; Computer Use fallback failed with codex app-server exited before returning a response.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "Source page states model API costs are 10-20% of total AI project cost",
+        "Source page identifies permissions/workflow integration, evaluation/testing, observability, data pipeline, error handling, and last-mile existing-system integration as production AI cost centers"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "note": "approved primary copy"
+      },
+      "x_operator_closeout": "No scoped memory update needed."
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-21-integration-tax-short",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T02:56:50Z",
+      "fingerprint": "2b5cf1831a3c460f",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "copy": "Model API fees are usually the easy 10-20%. The expensive work is everything around them: permissions, workflow integration, evaluation, observability, data pipelines, error handling, and last-mile integration into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "blocker": "No public X post went live. Direct authenticated X API returned empty 200/unverifiable for both social-editor-approved copies; authenticated timeline verification did not contain either post; browser fallback via tools/x-brave-post.js failed with spawnSync osascript ETIMEDOUT; Computer Use fallback failed with codex app-server exited before returning a response.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "Source page states model API costs are 10-20% of total AI project cost",
+        "Source page identifies permissions/workflow integration, evaluation/testing, observability, data pipeline, error handling, and last-mile existing-system integration as production AI cost centers"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "note": "approved shorter retry copy"
+      },
+      "x_operator_closeout": "No scoped memory update needed."
     }
   ]
 }
