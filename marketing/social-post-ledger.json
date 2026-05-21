@@ -1586,6 +1586,32 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-21-nhs-stats-blocked",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T02:08:59Z",
+      "route": "https://nothumansearch.ai",
+      "fingerprint": "c463ed015e17c9be",
+      "text": "Not Human Search now tracks 4,180 sites for agentic readiness.\n\nAverage score: 35/100. Top category: developer tools.\n\nThe useful read: agent-readable surfaces are spreading, but most websites still are not close to plug-and-play for autonomous agents.\n\nhttps://nothumansearch.ai",
+      "note": "Verified NHS stats endpoint 2026-05-21T01:57Z; social-editor approved; direct X returned unverifiable empty 200 and recovery lookup found no tweet; browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use app-server exited before returning a response. No public post URL verified."
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-21-compensation-blocked",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-05-20",
+      "blocked_at": "2026-05-21T02:08:59Z",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "fingerprint": "6eb742bc8f198802",
+      "text": "Research AI roles averaged $279,788 in a 3,548-posting compensation cut.\n\nGenerative-AI roles averaged $233,414, despite roughly 2.6x more openings.\n\nThat $46k premium is not demand volume. It is where scarce skill shows up.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "note": "Verified source page HTTP 200 and compensation facts 2026-05-21T02:04Z; social-editor approved; direct X returned empty 200/no created tweet; browser fallback failed with spawnSync osascript ETIMEDOUT. No public post URL verified."
     }
   ]
 }

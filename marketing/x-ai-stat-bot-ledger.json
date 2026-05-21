@@ -238,6 +238,40 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-ai-stat-2026-05-21-nhs-stats-blocked",
+      "status": "blocked",
+      "created_at": "2026-05-21T02:08:59Z",
+      "updated_at": "2026-05-21T02:08:59Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search live stats",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "route": "https://nothumansearch.ai",
+      "fact_id": "nhs-total-sites-4180-avg-35",
+      "fact_key": "nhs-total-sites-4180-avg-35-developer",
+      "fingerprint": "c463ed015e17c9be",
+      "copy": "Not Human Search now tracks 4,180 sites for agentic readiness.\n\nAverage score: 35/100. Top category: developer tools.\n\nThe useful read: agent-readable surfaces are spreading, but most websites still are not close to plug-and-play for autonomous agents.\n\nhttps://nothumansearch.ai",
+      "blocker": "No public X URL verified; direct X empty 200 was not found in timeline, browser fallback timed out, and Computer Use app-server failed."
+    },
+    {
+      "id": "x-ai-stat-2026-05-21-compensation-blocked",
+      "status": "blocked",
+      "created_at": "2026-05-21T02:08:59Z",
+      "updated_at": "2026-05-21T02:08:59Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "stat",
+      "source": "AI Compensation by Skill",
+      "source_url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "fact_id": "research-premium-vs-genai-2026-05-21",
+      "fact_key": "research-premium-279788-genai-233414-openings-2.6x",
+      "fingerprint": "6eb742bc8f198802",
+      "copy": "Research AI roles averaged $279,788 in a 3,548-posting compensation cut.\n\nGenerative-AI roles averaged $233,414, despite roughly 2.6x more openings.\n\nThat $46k premium is not demand volume. It is where scarce skill shows up.\n\nhttps://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "blocker": "No public X URL verified; direct X returned empty 200/no created tweet and browser fallback timed out."
     }
   ]
 }
