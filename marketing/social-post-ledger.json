@@ -1586,32 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-posted-2026-05-21-nhs-live-stats",
-      "source": "marketing/x-ai-stat-bot-outbox.json",
-      "source_item": "x-ai-stat-2026-04-29T01:29:13+00:00-9b68cca2-refresh",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-21",
-      "posted_at": "2026-05-21T16:55:00Z",
-      "url": "https://x.com/8BitConcepts/status/2057504618473775558",
-      "route": "https://nothumansearch.ai",
-      "source_url": "https://nothumansearch.ai/api/v1/stats",
-      "fact_key": "nhs-total-sites-4170-avg-35",
-      "fingerprint": "6bd773d9107a7ef3",
-      "copy": "Not Human Search is tracking 4,170 agent-ready sites. Average readiness score: 35/100.\n\nReadiness is a live behavior check: endpoints, specs, schemas, and broken requests.\n\nhttps://nothumansearch.ai",
-      "facts_verified": [
-        "https://nothumansearch.ai/api/v1/stats returned total_sites=4170, avg_score=35, top_category=developer",
-        "https://nothumansearch.ai/ returned HTTP 200 and is the Not Human Search business URL in the Foundry portfolio index"
-      ],
-      "social_editor_status": "approved",
-      "social_editor_closeout": "No scoped memory update needed",
-      "x_operator_closeout": "No scoped memory update needed",
-      "public_action_lock": "public-action-locks/social-content/6bd773d9107a7ef3.json",
-      "post_attempted": true,
-      "note": "First approved copy fingerprint 982d74d33f6d1791 was claimed but did not verify live. Short approved copy posted after X direct create returned an empty 200 and authenticated timeline recovery found the live status URL."
     }
   ]
 }
