@@ -1586,53 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-failed-2026-05-22-nhs-live-mcp",
-      "source": "marketing/x-ai-stat-bot-outbox.json + https://nothumansearch.ai/digest.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "failed",
-      "date": "2026-05-22",
-      "failed_at": "2026-05-22T14:56:33Z",
-      "fingerprint": "9e93f3a0f61f0b3c",
-      "fact_key": "nhs-live-mcp-451-total-4171-2026-05-22",
-      "route": "https://nothumansearch.ai/digest",
-      "approved_final_copy": "Not Human Search checked 4,171 agent-ready sites today. 451 pass a real MCP handshake. 2,252 publish llms.txt.\n\nThat is the split: visible to agents is easier than callable by agents.\n\nhttps://nothumansearch.ai/digest",
-      "verified_sources": {
-        "nothumansearch_stats": "https://nothumansearch.ai/api/v1/stats total_sites=4171 avg_score=35",
-        "nothumansearch_digest": "https://nothumansearch.ai/digest.json generated_at=2026-05-22T14:48:40Z mcp_verified=451 llms_txt_count=2252"
-      },
-      "blocker": "No public X post verified. tools/x-brave-post.js hung without JSON for the social-editor-approved Not Human Search live-stat copy; Computer Use fallback failed with \"codex app-server exited before returning a response\"; the next approved non-duplicate MCP backlog candidate also timed out after 90s with no JSON. Web search found no matching live @8BitConcepts status for either copy.",
-      "attempted_fingerprints": [
-        "9e93f3a0f61f0b3c",
-        "acdd9aaec3ab5bab"
-      ],
-      "post_attempted": true,
-      "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-failed-2026-05-22-mcp-backlog",
-      "source": "marketing/x-premium-growth-log.json + marketing/x-articles/q2-2026-mcp-ecosystem-health.md",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "failed",
-      "date": "2026-05-22",
-      "failed_at": "2026-05-22T14:56:33Z",
-      "fingerprint": "acdd9aaec3ab5bab",
-      "fact_key": "mcp-agent-visible-vs-agent-usable-stack",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "approved_final_copy": "Agent-visible is not agent-usable. A real surface needs the boring stack: llms.txt, ai-plugin, OpenAPI, structured API, AI-friendly robots, Schema.org, and a live MCP initialize response.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "verified_sources": {
-        "report": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html HTTP 200; methodology includes live MCP initialize response and agent-ready stack"
-      },
-      "blocker": "No public X post verified. tools/x-brave-post.js hung without JSON for the social-editor-approved Not Human Search live-stat copy; Computer Use fallback failed with \"codex app-server exited before returning a response\"; the next approved non-duplicate MCP backlog candidate also timed out after 90s with no JSON. Web search found no matching live @8BitConcepts status for either copy.",
-      "attempted_fingerprints": [
-        "9e93f3a0f61f0b3c",
-        "acdd9aaec3ab5bab"
-      ],
-      "post_attempted": true,
-      "public_action_lock_claimed": true
     }
   ]
 }
