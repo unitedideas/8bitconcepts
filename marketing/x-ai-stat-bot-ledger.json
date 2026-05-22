@@ -37,7 +37,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
-      "status": "blocked",
+      "status": "drafted",
       "created_at": "2026-04-28T05:58:51+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -48,17 +48,7 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
-      "updated_at": "2026-05-22T19:26:25Z",
-      "blocker": "No verified public X post. Direct tools/x-brave-post.js hung without JSON and was killed; direct CreateTweet retry returned empty HTTP 200 with no tweet id; recovery-only authenticated timeline check did not find the post; browser-forced fallback returned spawnSync osascript ETIMEDOUT; Computer Use get_app_state for Brave returned codex app-server exited before returning a response.",
-      "last_attempted_copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
-      "last_attempted_fingerprint": "434bc6bfa430eb51",
-      "verified_facts": [
-        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200 on 2026-05-22",
-        "The source page states model API costs are 10-20% of what AI costs to ship",
-        "The source/outbox framing covers permissions, evals, workflow redesign, observability, and last-mile integration costs",
-        "agent-social-editor approved final_copy with route URL and returned No scoped memory update needed"
-      ]
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
@@ -137,7 +127,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
-      "status": "posted",
+      "status": "drafted",
       "created_at": "2026-04-28T18:26:11+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -148,22 +138,7 @@
       "fact_id": "developer-tools-mcp-category",
       "fact_key": "22b86351dd4354cb04d47fb4",
       "fingerprint": "6c4882c5a4070d25",
-      "copy": "Developer tools account for 1,672 agent-ready sites, 23.8% of the indexed MCP/agent-ready web.",
-      "updated_at": "2026-05-22T19:55:01.318Z",
-      "posted_at": "2026-05-22T19:55:01.318Z",
-      "url": "https://x.com/8BitConcepts/status/2057912922714906699",
-      "posted_fingerprint": "6f6f35ad37f0ae10",
-      "posted_copy": "Developer tools are the crowded part of the agent-ready web: 1,228 indexed sites in today's NHS digest.\n\nThe thinner markets are finance, health, education, and jobs. That is where agent integrations still have room.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "verified_facts": [
-        "https://nothumansearch.ai/digest.json returned HTTP 200 on 2026-05-22",
-        "digest generated_at=2026-05-22T19:50:31Z",
-        "digest categories include developer count=1228",
-        "digest mcp_verified=451 total_sites=4174 llms_txt_count=2252 openapi_count=489",
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
-        "Direct authenticated X dry-run verified active account @8BitConcepts",
-        "X CreateTweet returned empty HTTP 200 without tweet id; authenticated timeline recovery verified the status URL"
-      ],
-      "note": "Original category count was refreshed against the live 2026-05-22 NHS digest before posting."
+      "copy": "Developer tools account for 1,672 agent-ready sites, 23.8% of the indexed MCP/agent-ready web."
     },
     {
       "id": "x-ai-stat-2026-04-28T19:33:13+00:00-31836ea7",
