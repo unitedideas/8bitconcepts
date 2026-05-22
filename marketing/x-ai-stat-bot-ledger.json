@@ -37,7 +37,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
-      "status": "failed",
+      "status": "drafted",
       "created_at": "2026-04-28T05:58:51+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -48,13 +48,7 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
-      "failed_at": "2026-05-22T14:29:11Z",
-      "attempted_fingerprints": [
-        "efb49f1cbb4aaa3e",
-        "2d2a054a32a1fb1f"
-      ],
-      "blocker": "8bit-x-agent-publisher verified source and social-editor approved full plus shortened Integration Tax variants, but no public X post was verified. tools/x-brave-post.js hung without JSON for both variants and Computer Use get_app_state for Brave failed, preventing safe browser fallback."
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
@@ -244,6 +238,28 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-ai-stat-2026-05-22T144840Z-nhs-live-mcp-451",
+      "status": "failed",
+      "created_at": "2026-05-22T14:48:40Z",
+      "updated_at": "2026-05-22T14:56:33Z",
+      "failed_at": "2026-05-22T14:56:33Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search digest",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "route": "https://nothumansearch.ai/digest",
+      "fact_id": "nhs-mcp-verified-451-total-4171",
+      "fact_key": "nhs-live-mcp-451-total-4171-2026-05-22",
+      "fingerprint": "9e93f3a0f61f0b3c",
+      "copy": "Not Human Search checked 4,171 agent-ready sites today. 451 pass a real MCP handshake. 2,252 publish llms.txt.\n\nThat is the split: visible to agents is easier than callable by agents.\n\nhttps://nothumansearch.ai/digest",
+      "attempted_fingerprints": [
+        "9e93f3a0f61f0b3c",
+        "acdd9aaec3ab5bab"
+      ],
+      "blocker": "No public X post verified. tools/x-brave-post.js hung without JSON for the social-editor-approved Not Human Search live-stat copy; Computer Use fallback failed with \"codex app-server exited before returning a response\"; the next approved non-duplicate MCP backlog candidate also timed out after 90s with no JSON. Web search found no matching live @8BitConcepts status for either copy."
     }
   ]
 }
