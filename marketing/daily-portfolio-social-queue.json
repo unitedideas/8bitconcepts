@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T16:09:08.052876+00:00",
+  "generated_at": "2026-05-22T18:01:36.512845+00:00",
   "source_index": "/Users/owlassist/.foundry/foundry-sync-state/systems/foundry-business-index.md",
   "cadence": "one X and one LinkedIn candidate per active business per day",
   "items": [
@@ -21,10 +21,10 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Agentic Evidence is a developer-VM evidence layer for technical interviews.\n\nCurrent constraint: hidden-test grading, optional GitHub App install UX, and reviewer analysis over captured sessions.\n\nhttps://agentic-evidence.fly.dev",
-          "fingerprint": "daa33fbc11225380",
+          "copy": "Agentic technical interview evidence layer for Hatchways-style assessments.\n\nLive surface: https://agentic-evidence.fly.dev\n\nCurrent constraint: Add hidden-test grading, optional GitHub App install UX, and reviewer.",
+          "fingerprint": "088cf9f0c7398b12",
           "duplicate": false,
-          "length": 229
+          "length": 204
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -135,10 +135,10 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "Not Human Search ranks sites by agentic readiness.\n\nNext move: distribution directories and better indexed agent-first coverage.\n\nhttps://nothumansearch.ai",
-          "fingerprint": "790d5dc9b85d3d6e",
+          "copy": "Agentic-readiness search engine and scoring system.\n\nNext move for Not Human Search: Continue distribution directories and improve indexed agent-first.\n\nhttps://nothumansearch.ai",
+          "fingerprint": "1e0478d5abb52eee",
           "duplicate": false,
-          "length": 155
+          "length": 174
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -173,15 +173,15 @@
       "channels": {
         "x": {
           "account": "@8bitconcepts",
-          "copy": "8bitconcepts is the consulting and research surface behind the Foundry portfolio.\n\nCurrent constraint: local-search and SMB lead work, not more generic AI content.\n\nhttps://8bitconcepts.com",
-          "fingerprint": "e4e6e4afbb49ef77",
+          "copy": "8bitconcepts is live: https://8bitconcepts.com\n\nResearch, consulting funnel, and marketing/distribution engine for Foundry.\n\nConstraint: Continue one-post-per-app daily social cadence and local-search/SMB.",
+          "fingerprint": "b417b30eebf8241b",
           "duplicate": false,
-          "length": 189
+          "length": 202
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "8bitconcepts is a useful operating example because the proof is public.\n\nCurrent motion: PNW SMB outreach, research, daily social posts, consulting leads, and a proof-led consulting funnel.\n\nNext move: local-search and SMB lead work.\n\nhttps://8bitconcepts.com",
-          "fingerprint": "6dfdb56394e8fd76",
+          "copy": "8bitconcepts is a useful operating example because the proof is public.\n\nCurrent motion: PNW SMB outreach, research, daily social posts, consulting leads, proof-led consulting homepage, work-with-us page, and sourced.\n\nNext move: Continue one-post-per-app daily social cadence and local-search/SMB lead work.\n\nRoute: https://8bitconcepts.com",
+          "fingerprint": "25d0af2be86609fe",
           "duplicate": false
         }
       },
