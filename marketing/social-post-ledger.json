@@ -1621,6 +1621,58 @@
         "https://aidevboard.com/company/waymo",
         "https://careers.withwaymo.com/"
       ]
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-22-integration-tax-linked",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "failed_at": "2026-05-22T14:09:51Z",
+      "fingerprint": "3b0b30591e519a84",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "text": "Model API costs are usually the easy 10-20%. The expensive part is evals, observability, data pipelines, integration error handling, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "blocker": "No public X post verified. Direct authenticated X API returned EMPTY_200_NO_FALLBACK; authenticated timeline recovery did not contain the expected text after delay; browser fallback failed with spawnSync osascript ETIMEDOUT before returning a status URL.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200 on 2026-05-22.",
+        "The source page says model API costs are 10-20% of what AI actually costs to ship.",
+        "The source page names evaluation/testing, observability, data pipelines, integration error handling, and last-mile existing-system integration as the work/cost centers.",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the business URL in the portfolio index."
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "post_attempted": true,
+      "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-22-integration-tax-short",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "failed_at": "2026-05-22T14:09:51Z",
+      "fingerprint": "33a538e4686c41c6",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "text": "Model API costs are the easy 10-20%.\n\nThe expensive part is evals, observability, data pipelines, integration error handling, and the last mile into existing systems.",
+      "blocker": "No public X post verified. Shortened social-editor-approved copy also returned EMPTY_200_NO_FALLBACK from the direct authenticated X API; authenticated timeline recovery did not contain the expected text; browser fallback hung with no JSON result and was killed after a bounded wait.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200 on 2026-05-22.",
+        "The source page says model API costs are 10-20% of what AI actually costs to ship.",
+        "The source page names evaluation/testing, observability, data pipelines, integration error handling, and last-mile existing-system integration as the work/cost centers.",
+        "https://8bitconcepts.com/ returned HTTP 200 and is the business URL in the portfolio index."
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "post_attempted": true,
+      "public_action_lock_claimed": true
     }
   ]
 }

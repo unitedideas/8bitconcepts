@@ -22,7 +22,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:57:10+00:00-c6e848ef",
-      "status": "drafted",
+      "status": "failed",
       "created_at": "2026-04-28T05:57:10+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -48,7 +48,13 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "failed_at": "2026-05-22T14:09:51Z",
+      "attempted_fingerprints": [
+        "3b0b30591e519a84",
+        "33a538e4686c41c6"
+      ],
+      "blocker": "8bit-x-agent-publisher verified the source and social-editor approved linked and shortened variants, but no public X post was verified. Direct authenticated X API returned EMPTY_200_NO_FALLBACK for both variants; authenticated timeline recovery did not contain either expected text; browser fallback failed with osascript timeout/hang."
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
