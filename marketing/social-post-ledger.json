@@ -1586,6 +1586,41 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-targeted-research-2026-05-22-waymo-linkedin",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "date": "2026-05-22",
+      "post_time_local": "08:30",
+      "fingerprint": "5de925af64cf8a5a",
+      "fact_key": "targeted-research:waymo:104:autonomous-vehicles,generative-ai,llm",
+      "route": "https://aidevboard.com/company/waymo",
+      "format": "targeted documented research",
+      "target": {
+        "name": "Waymo",
+        "x_mention": "@Waymo",
+        "linkedin_mention": "@Waymo",
+        "domain": "waymo.com",
+        "company_slug": "waymo"
+      },
+      "research_sources": {
+        "adb_company": "https://aidevboard.com/company/waymo",
+        "adb_jobs_api": "https://aidevboard.com/api/v1/jobs?company=waymo&limit=100",
+        "adb_stats_api": "https://aidevboard.com/api/v1/stats",
+        "official_source": "https://waymo.com/careers/"
+      },
+      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API. Initial script verification failed, then direct Brave URL verification confirmed the live post body and URL.",
+      "posted_at": "2026-05-22T13:52:28Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7463587015696101376/",
+      "text": "Waymo is a useful public lens on where autonomous-vehicle AI work is moving.\n\nAI Dev Board has 104 indexed Waymo AI roles. The page lists an average published salary of $254,000, based on 87 listings with compensation.\n\nSample roles:\n1. Machine Learning Engineer, Depot Automation\n2. Software Engineer, Marketplace ML Platform\n3. Senior Staff Engineer, DevAI\n\nThe tags cluster around autonomous vehicles, robotics, deep learning, generative AI, TensorFlow, PyTorch, LLMs, and machine learning.\n\nThe cleaner proxy for readiness might be less about model quality alone and more about the hiring mix around evaluation, simulation, data pipelines, and operational monitoring.\n\nData:\nhttps://aidevboard.com/company/waymo",
+      "candidate_id": "daily-targeted-research-2026-05-22-waymo",
+      "verified_sources": [
+        "https://aidevboard.com/company/waymo",
+        "https://careers.withwaymo.com/"
+      ]
     }
   ]
 }
