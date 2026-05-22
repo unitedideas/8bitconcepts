@@ -1641,6 +1641,37 @@
       "public_action_lock_claimed": true,
       "post_attempted": false,
       "url": ""
+    },
+    {
+      "id": "8bit-x-agent-publisher-2026-05-22-mcp-developer-tools",
+      "source": "marketing/x-ai-stat-bot-ledger.json",
+      "source_item": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-22",
+      "posted_at": "2026-05-22T19:55:01.318Z",
+      "url": "https://x.com/8BitConcepts/status/2057912922714906699",
+      "fingerprint": "6f6f35ad37f0ae10",
+      "fact_key": "22b86351dd4354cb04d47fb4:refreshed-2026-05-22",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "text": "Developer tools are the crowded part of the agent-ready web: 1,228 indexed sites in today's NHS digest.\n\nThe thinner markets are finance, health, education, and jobs. That is where agent integrations still have room.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "facts_verified": [
+        "https://nothumansearch.ai/digest.json returned HTTP 200 on 2026-05-22",
+        "digest generated_at=2026-05-22T19:50:31Z",
+        "digest categories include developer count=1228",
+        "digest mcp_verified=451 total_sites=4174 llms_txt_count=2252 openapi_count=489",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "Direct authenticated X dry-run verified active account @8BitConcepts",
+        "X CreateTweet returned empty HTTP 200 without tweet id; authenticated timeline recovery verified the status URL"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/6f6f35ad37f0ae10.json",
+      "note": "Posted from verified @8BitConcepts via direct authenticated X API; status URL recovered from authenticated timeline after empty-200 response."
     }
   ]
 }
