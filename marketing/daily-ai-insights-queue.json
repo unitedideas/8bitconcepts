@@ -148,13 +148,13 @@
       "asset_brief": "MCP claim vs live JSON-RPC handshake.",
       "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "funnel": "Not Human Search research",
-      "fact_key": "nhs:mcp-ecosystem:7118-417",
+      "fact_key": "nhs:mcp-ecosystem:4174-446",
       "research_sources": [
         "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html"
       ],
       "fingerprint": {
         "x": "20e4f40205a31f07",
-        "linkedin": "9d64f6c4c25879d4"
+        "linkedin": "004d690d65ecdcf7"
       },
       "channels": {
         "x": {
@@ -165,9 +165,20 @@
         },
         "linkedin": {
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-          "copy": "Little fact from the NHS MCP audit: the index had 7,118 agent-ready sites, but 417 passed the live JSON-RPC MCP handshake.\n\nThat gap matters. Agents need a callable endpoint, not a badge or a static manifest.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-          "fingerprint": "9d64f6c4c25879d4",
-          "duplicate": false
+          "copy": "4,174 agent-ready sites in the Not Human Search index. 446 passed a live JSON-RPC MCP handshake.\n\nThat is 10.7% of the index.\n\nFor this audit, verification meant a TCP connection plus HTTP POST to the declared `/mcp` endpoint with JSON-RPC 2.0 `initialize`, returning a valid result with `protocolVersion`.\n\nAgents need a callable endpoint, not a badge or a static manifest.\n\nSource:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+          "fingerprint": "004d690d65ecdcf7",
+          "duplicate": false,
+          "status": "posted",
+          "posted_at": "2026-05-22T02:18:08Z",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7463412865664794629",
+          "editor": "agent-social-editor",
+          "verified_facts": [
+            "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+            "Live source page states 4,174 agent-ready sites indexed as of 2026-05-18",
+            "Live source page states 446 passed a live JSON-RPC MCP handshake, 10.7% of the index",
+            "Verification definition on source page: TCP connection plus HTTP POST to declared /mcp endpoint with JSON-RPC 2.0 initialize and valid result containing protocolVersion",
+            "https://nothumansearch.ai returned HTTP 200 and identifies itself as the agentic-first search engine for services, APIs, and tools"
+          ]
         }
       },
       "quality_gate": [
@@ -176,7 +187,10 @@
         "routes to the relevant product or paper",
         "no sales-first CTA",
         "materially different fact_key from previous posts"
-      ]
+      ],
+      "status": "posted_linkedin",
+      "posted_linkedin_at": "2026-05-22T02:18:08Z",
+      "posted_linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7463412865664794629"
     },
     {
       "id": "daily-research-fact-2026-05-21-bya",
