@@ -238,6 +238,30 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-ai-stat-failed-2026-05-22-d832ca5588c9871f",
+      "status": "failed",
+      "created_at": "2026-05-22T15:31:20.392Z",
+      "updated_at": "2026-05-22T15:31:20.392Z",
+      "failed_at": "2026-05-22T15:31:20.392Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "research_backlog",
+      "source": "8bitconcepts The Harness Gap",
+      "source_url": "https://8bitconcepts.com/research/the-harness-gap.html",
+      "route": "https://8bitconcepts.com/research/the-harness-gap.html",
+      "fact_id": "the-harness-gap-60-70-engineering-cycles",
+      "fact_key": "research:the-harness-gap:60-70-engineering-cycles-short",
+      "fingerprint": "d832ca5588c9871f",
+      "copy": "Enterprise AI teams spend 60-70% of engineering cycles chasing model failures.\n\nThe missing layer is the AI harness around raw LLM APIs and production workloads.\n\nhttps://8bitconcepts.com/research/the-harness-gap.html",
+      "attempted_fingerprints": [
+        "6a4d42d31f12a8e6",
+        "c108b9ea35497c73",
+        "400bcfdba873dbdb",
+        "d832ca5588c9871f"
+      ],
+      "blocker": "No public X post verified. Verified @8BitConcepts through tools/x-brave-post.js dry-run direct auth. Normal and forced-browser x-brave-post.js paths hung without JSON and were killed. Computer Use fallback failed with \"codex app-server exited before returning a response\". Direct X GraphQL CreateTweet returned HTTP 200 with an empty body for approved xAI and Harness Gap copies; authenticated timeline FIND_ONLY and web search did not find the expected text, so no URL could be ledgered without duplicate risk."
     }
   ]
 }
