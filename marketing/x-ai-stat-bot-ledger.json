@@ -37,7 +37,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
-      "status": "drafted",
+      "status": "blocked",
       "created_at": "2026-04-28T05:58:51+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -48,7 +48,16 @@
       "fact_id": "model-api-cost-share",
       "fact_key": "58b5de28df35f932a98442ce",
       "fingerprint": "d98634ae51b8b3ec",
-      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems."
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "updated_at": "2026-05-22T18:32:45Z",
+      "blocker": "No verified public X post. Direct tools/x-brave-post.js attempt hung without output and was killed; browser-forced fallback returned spawnSync osascript ETIMEDOUT. Prior stale lock had no live URL.",
+      "last_attempted_copy": "Model API spend is usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "last_attempted_fingerprint": "05337348f970f417",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The article states model API costs are 10-20% of what AI costs to ship",
+        "The article covers permissions, evals, workflow redesign, observability, and integration/last-mile costs"
+      ]
     },
     {
       "id": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
@@ -112,7 +121,7 @@
     },
     {
       "id": "x-ai-stat-2026-04-28T16:42:09+00:00-056e8240",
-      "status": "drafted",
+      "status": "blocked",
       "created_at": "2026-04-28T16:42:09+00:00",
       "channel": "x",
       "account": "@8bitconcepts",
@@ -123,7 +132,15 @@
       "fact_id": "nhs-total-sites-4108-avg-34",
       "fact_key": "056e8240993c8291f319d318",
       "fingerprint": "8b599a252e9b0d43",
-      "copy": "Not Human Search is tracking 4,108 agent-ready sites. Average agent-readiness score: 34.0/100."
+      "copy": "Not Human Search is tracking 4,108 agent-ready sites. Average agent-readiness score: 34.0/100.",
+      "updated_at": "2026-05-22T18:32:45Z",
+      "blocker": "No verified public X post. Direct identity dry-run verified @8BitConcepts, but direct CreateTweet returned empty/no-id HTTP 200 and authenticated timeline recovery did not contain the post text. Browser-forced fallback returned spawnSync osascript ETIMEDOUT. Computer Use get_app_state for Brave returned codex app-server exited before returning a response.",
+      "last_attempted_copy": "Not Human Search is tracking 4,171 agent-ready sites. Average agent-readiness score: 35/100.",
+      "last_attempted_fingerprint": "d29749bf232158bc",
+      "verified_facts": [
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4171, avg_score=35, top_category=developer on 2026-05-22",
+        "https://nothumansearch.ai returned HTTP 200"
+      ]
     },
     {
       "id": "x-ai-stat-2026-04-28T18:26:11+00:00-22b86351",

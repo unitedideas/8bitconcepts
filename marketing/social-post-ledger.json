@@ -1847,6 +1847,47 @@
       "x_operator_closeout": "No scoped memory update needed",
       "public_action_lock": "public-action-locks/social-content/d088043ed26f2422.json",
       "post_attempted": true
+    },
+    {
+      "id": "x-publisher-2026-05-22-integration-tax-blocked",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-05-22",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "copy": "Model API spend is usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "blocker": "No verified public X post. Direct tools/x-brave-post.js attempt hung without output and was killed; browser-forced fallback returned spawnSync osascript ETIMEDOUT. Prior stale lock had no live URL.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "The article states model API costs are 10-20% of what AI costs to ship",
+        "The article covers permissions, evals, workflow redesign, observability, and integration/last-mile costs"
+      ],
+      "editor": "agent-social-editor",
+      "selected_from": "marketing/x-ai-stat-bot-outbox.json",
+      "fingerprint": "05337348f970f417",
+      "updated_at": "2026-05-22T18:33:23Z"
+    },
+    {
+      "id": "x-publisher-2026-05-22-nhs-live-stats-blocked",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "date": "2026-05-22",
+      "route": "https://nothumansearch.ai",
+      "fact_key": "056e8240993c8291f319d318",
+      "copy": "Not Human Search is tracking 4,171 agent-ready sites. Average agent-readiness score: 35/100.",
+      "blocker": "No verified public X post. Direct identity dry-run verified @8BitConcepts, but direct CreateTweet returned empty/no-id HTTP 200 and authenticated timeline recovery did not contain the post text. Browser-forced fallback returned spawnSync osascript ETIMEDOUT. Computer Use get_app_state for Brave returned codex app-server exited before returning a response.",
+      "verified_facts": [
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4171, avg_score=35, top_category=developer on 2026-05-22",
+        "https://nothumansearch.ai returned HTTP 200"
+      ],
+      "editor": "agent-social-editor",
+      "selected_from": "marketing/x-ai-stat-bot-outbox.json",
+      "fingerprint": "d29749bf232158bc",
+      "updated_at": "2026-05-22T18:33:23Z"
     }
   ]
 }
