@@ -1760,6 +1760,93 @@
       "x_operator_closeout": "No scoped memory update needed",
       "public_action_lock": "public-action-locks/social-content/0b4efb0441569b85.json",
       "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-22-bringyour-long",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "source_item": "portfolio-daily-2026-05-22-bring-your-ai",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-22T17:31:30Z",
+      "business": "Bring Your AI",
+      "fingerprint": "ee780aa75fcb7e26",
+      "fact_key": "portfolio-daily:2026-05-22:bring-your-ai",
+      "route": "https://bringyour.ai",
+      "copy": "Bring Your AI is a local-first Claude Code to Codex harness migration product.\n\nProduct, pricing, direct Stripe checkout, hold-slot fallback, and agent-readable commerce are live. The homepage advertises /llms.txt, /openapi.yaml, commerce.json, agent.json, ai-plugin.json, and /mcp.\n\nhttps://bringyour.ai",
+      "blocker": "No public X post verified. Direct X CreateTweet returned HTTP 200 with empty body/no status id on three approved copies; authenticated timeline checks did not contain the expected text after delay; browser fallback failed with spawnSync osascript ETIMEDOUT. Active X direct identity had passed earlier through the posting script, but no status URL was produced.",
+      "verified_facts": [
+        "https://bringyour.ai returned HTTP 200 on 2026-05-22",
+        "homepage Link headers advertised /llms.txt, /openapi.yaml, /.well-known/commerce.json, /.well-known/agent.json, /.well-known/ai-plugin.json, and /mcp",
+        "/.well-known/commerce.json declared Stripe Link/Payment Link/SPT support and x402/MPP/ACP unavailable",
+        "/.well-known/agent.json pointed agents to /api/v1/catalog and /api/v1/checkout",
+        "/api/v1/catalog returned three products"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/ee780aa75fcb7e26.json",
+      "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-22-bringyour-short",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "source_item": "portfolio-daily-2026-05-22-bring-your-ai",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-22T17:31:30Z",
+      "business": "Bring Your AI",
+      "fingerprint": "38d6229a31a3dc2e",
+      "fact_key": "portfolio-daily:2026-05-22:bring-your-ai",
+      "route": "https://bringyour.ai",
+      "copy": "Bring Your AI has the agent-readable bits live: /llms.txt, /openapi.yaml, commerce.json, agent.json, ai-plugin.json, /mcp, catalog, checkout.\n\nLocal-first Claude Code to Codex harness migration.\n\nhttps://bringyour.ai",
+      "blocker": "No public X post verified. Direct X CreateTweet returned HTTP 200 with empty body/no status id on three approved copies; authenticated timeline checks did not contain the expected text after delay; browser fallback failed with spawnSync osascript ETIMEDOUT. Active X direct identity had passed earlier through the posting script, but no status URL was produced.",
+      "verified_facts": [
+        "https://bringyour.ai returned HTTP 200 on 2026-05-22",
+        "homepage Link headers advertised /llms.txt, /openapi.yaml, /.well-known/commerce.json, /.well-known/agent.json, /.well-known/ai-plugin.json, and /mcp",
+        "/.well-known/commerce.json declared Stripe Link/Payment Link/SPT support and x402/MPP/ACP unavailable",
+        "/.well-known/agent.json pointed agents to /api/v1/catalog and /api/v1/checkout",
+        "/api/v1/catalog returned three products"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/38d6229a31a3dc2e.json",
+      "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-22-ai-dev-board",
+      "source": "marketing/daily-portfolio-social-queue.json",
+      "source_item": "portfolio-daily-2026-05-22-ai-dev-board",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-22T17:31:30Z",
+      "business": "AI Dev Board",
+      "fingerprint": "d088043ed26f2422",
+      "fact_key": "portfolio-daily:2026-05-22:ai-dev-board",
+      "route": "https://aidevboard.com",
+      "copy": "AI Dev Board is a job board agents can actually use.\n\n8,737 AI developer jobs, REST + OpenAPI, a live MCP server with 13 tools, and catalog/checkout endpoints.\n\nhttps://aidevboard.com",
+      "blocker": "No public X post verified. Direct X CreateTweet returned HTTP 200 with empty body/no status id on three approved copies; authenticated timeline checks did not contain the expected text after delay; browser fallback failed with spawnSync osascript ETIMEDOUT. Active X direct identity had passed earlier through the posting script, but no status URL was produced.",
+      "verified_facts": [
+        "https://aidevboard.com returned HTTP 200 on 2026-05-22",
+        "homepage showed 8,737 AI developer jobs",
+        "/llms.txt listed REST API, OpenAPI, MCP server, and 13 MCP tools",
+        "/api/v1 root listed jobs, match, salary, company, catalog, quote, and checkout endpoints",
+        "/.well-known/mcp.json returned 13 tools and /mcp returned HTTP 200 JSON"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/d088043ed26f2422.json",
+      "post_attempted": true
     }
   ]
 }
