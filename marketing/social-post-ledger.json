@@ -3,6 +3,43 @@
   "rule": "Every social post gets a normalized text fingerprint before it is queued or posted. If the fingerprint already exists with status posted, scheduled, or queued, do not post it again.",
   "items": [
     {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-22-ai-hiring-snapshot-auth",
+      "date": "2026-05-22",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "8bit research backlog:q2-2026-ai-hiring-snapshot",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "blocked",
+      "blocked_at": "2026-05-22T13:23:30Z",
+      "blocker": "No public LinkedIn post verified. Direct Voyager route rejected authenticated cookie stores (chrome-profile-3 returned 302); page-context Voyager /voyager/api/me returned 401; approved one-shot browser recovery produced no success URL or blocker output after more than 120 seconds and was killed. Treat as LinkedIn auth/session blocker until the approved Shane Cheek / Founder at 8bitconcepts profile can be verified again.",
+      "fingerprint": "69fc9c3547ab39d4",
+      "fact_key": "research:q2-2026-ai-hiring-snapshot",
+      "text": "Q2 AI hiring demand is still real, but the concentration is the more useful part.\n\nThe current 8bit snapshot tracks 9,906 active AI/ML engineering roles across 527 companies. Median salary is $212k. The data shows 337 new roles posted this week, with Speechify leading the indexed sample at 1,063 open roles.\n\nThe read is not just that AI hiring is up. It is that the market is concentrating around a smaller set of companies and execution-heavy skill clusters. That matters if we are deciding where to hire, where to apply, or which agent infrastructure problems are worth building for.\n\nData, generated from aidevboard.com listings:\nhttps://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html returned HTTP 200",
+        "Live page meta last-updated=2026-05-04",
+        "Live page meta description reports 9,906 active AI/ML engineering roles, 527 companies hiring, $212k median salary, 337 new roles this week, and Speechify leading with 1,063 open roles",
+        "foundry-business-index identifies 8bitconcepts as the active research/consulting funnel at https://8bitconcepts.com/"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true
+    },
+    {
+      "id": "8bit-linkedin-shift-handoff-2026-05-22",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "posted_at": "2026-05-22T05:43:40Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7463464024102309888",
+      "fingerprint": "4cad724b6f93f23b",
+      "text": "The shift-handoff simulation retained 100% of prior-shift entries in the digital scenario, versus 40-60% with verbal briefings.\n\nThe failure point is not usually the obvious critical issue. It is the developing pattern that is not urgent yet.\n\nSource: https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "note": "Reconciled from sync-state social-content lock because local ledger was missing the 2026-05-22 successful LinkedIn post."
+    },
+    {
       "id": "geo-agent-linkedin-background-2026-05-01",
       "source": "8bit-linkedin-agent-publisher",
       "channel": "linkedin",
