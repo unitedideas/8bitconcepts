@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T13:06:37.188785+00:00",
+  "generated_at": "2026-05-24T13:23:23.004231+00:00",
   "account_policy": {
     "x": "@8bitconcepts",
     "linkedin": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
@@ -74,10 +74,11 @@
           "copy": "Looking at @OpenAI through the public hiring data:\n\n1. 372 indexed AI/ML roles in AI Dev Board.\n2. Current sample tags cluster around distributed-systems, research, agents, llm.\n3. Sample roles include Software Engineer, Delivery / CD; Security Researcher, Agentic AI Threats; Staff / Senior Staff Backend Engineer, B2B Flywheel.\n4. Avg published salary in the indexed sample: $304,000.\n\nThe useful read is where the operational work is moving: platform delivery, multicloud infrastructure, evals, and agent deployment loops.\n\nOpenAI is a useful public lens on this area. Where do you see the operational bottleneck moving next: eval coverage, deployment, permissions, or feedback loops?\n\nNHS follow-up lens: public agent-readiness profile shows structured API. That is useful for checking what agents can inspect without a human browsing the site.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
           "fingerprint": "3efa655a80f0ccaf",
           "duplicate": false,
-          "posted_url": "https://www.linkedin.com/feed/update/urn:li:share:7464301351989288961",
           "posted_at": "2026-05-24T13:09:31Z",
-          "posted_fingerprint": "c896a96291aa3906",
-          "status": "posted"
+          "status": "posted",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7464301351989288961",
+          "posted_url": "https://www.linkedin.com/feed/update/urn:li:share:7464301351989288961",
+          "posted_fingerprint": "c896a96291aa3906"
         }
       },
       "quality_gate": [

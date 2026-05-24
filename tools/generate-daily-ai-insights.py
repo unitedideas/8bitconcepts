@@ -484,6 +484,83 @@ def render_queue(target: date) -> dict[str, object]:
     }
 
 
+def preserve_existing_queue_channel_state(queue: dict[str, object]) -> None:
+    existing_items = {}
+    if QUEUE_PATH.exists():
+        try:
+            existing_queue = json.loads(QUEUE_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            existing_queue = {"items": []}
+        existing_items = {
+            item.get("id"): item
+            for item in existing_queue.get("items", [])
+            if isinstance(item, dict)
+        }
+
+    ledger_items = {}
+    if LEDGER_PATH.exists():
+        try:
+            ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            ledger = {"items": []}
+        ledger_items = {
+            item.get("id"): item
+            for item in ledger.get("items", [])
+            if isinstance(item, dict)
+        }
+
+    if not existing_items and not ledger_items:
+        return
+
+    protected_channel_keys = {
+        "status",
+        "posted_url",
+        "posted_at",
+        "posted_fingerprint",
+        "url",
+        "blocked_at",
+        "blocker",
+        "claimed_at",
+        "scheduled_at",
+    }
+    protected_statuses = {
+        "posted",
+        "scheduled",
+        "claimed",
+        "blocked",
+        "removed",
+        "sent",
+        "submitted",
+        "deferred_recent_related_post",
+    }
+
+    def preserve(channel_data: dict[str, object], existing_channel: dict[str, object]) -> None:
+        if existing_channel.get("status") not in protected_statuses:
+            return
+        for key in protected_channel_keys:
+            if key in existing_channel:
+                channel_data[key] = existing_channel[key]
+        if existing_channel.get("url") and "posted_url" not in channel_data:
+            channel_data["posted_url"] = existing_channel["url"]
+        if existing_channel.get("fingerprint") != channel_data.get("fingerprint"):
+            channel_data["posted_fingerprint"] = existing_channel.get("fingerprint")
+
+    for item in queue.get("items", []):
+        existing_item = existing_items.get(item.get("id"))
+        existing_channels = (existing_item or {}).get("channels") or {}
+        channels = item.get("channels") or {}
+        for channel, channel_data in channels.items():
+            existing_channel = existing_channels.get(channel) or {}
+            preserve(channel_data, existing_channel)
+
+            ledger_id = f"{item.get('id')}-{channel}"
+            ledger_item = ledger_items.get(ledger_id) or {}
+            if ledger_item.get("original_fingerprint") in {channel_data.get("fingerprint"), channel_data.get("posted_fingerprint")}:
+                preserve(channel_data, ledger_item)
+            elif ledger_item.get("fingerprint") == channel_data.get("fingerprint"):
+                preserve(channel_data, ledger_item)
+
+
 def upsert_queued_items(queue: dict[str, object]) -> None:
     if LEDGER_PATH.exists():
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
@@ -560,6 +637,7 @@ def main() -> int:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(render(target), encoding="utf-8")
     queue = render_queue(target)
+    preserve_existing_queue_channel_state(queue)
     QUEUE_PATH.write_text(json.dumps(queue, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if not args.no_ledger:
         upsert_queued_items(queue)
