@@ -1586,6 +1586,35 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-24-mcp-health-browser-control",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T13:53:05+00:00-e118bc1d",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-24T23:47:49Z",
+      "fingerprint": "faf527cfcb75100d",
+      "fact_key": "mcp-health:2026-05-18:llms-2246:mcp-446:total-4174",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "copy": "2,246 of 4,174 agent-ready sites publish llms.txt. Only 446 verified as working MCP endpoints through a live JSON-RPC handshake.\n\nDiscovery files are showing up faster than callable agent endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "blocker": "No public X post went live. Approved copy was fact-checked and sync-state lock faf527cfcb75100d was claimed, but tools/x-brave-post.js first hung with no stdout/stderr and was killed; direct authenticated X API returned EMPTY_200_NO_FALLBACK and timeline recovery did not find the post; forced browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use get_app_state for Brave then failed with codex app-server exited before returning a response. Active @8BitConcepts could not be safely re-verified at post time and no status URL was captured.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200 on 2026-05-24",
+        "The page states that as of 2026-05-18, 4,174 agent-ready sites were indexed",
+        "The page states 446 sites, 10.7%, were MCP-verified via live JSON-RPC handshake",
+        "The page stat card states 2,246 sites publish llms.txt, 53.8% of the index",
+        "The page states 3,728 sites, 89.3%, did not verify as working MCP endpoints in the crawl"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "2,246 of 4,174 agent-ready sites publish llms.txt. Only 446 verified as working MCP endpoints through a live JSON-RPC handshake.\n\nDiscovery files are showing up faster than callable agent endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/faf527cfcb75100d.json",
+      "post_attempted": false
     }
   ]
 }
