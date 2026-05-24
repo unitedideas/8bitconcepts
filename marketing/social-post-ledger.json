@@ -1613,6 +1613,21 @@
       },
       "lock": "public-action-locks/social-content/cffc322139dcfc14.json",
       "note": "Posted by clean LinkedIn-only 8bit publisher via tools/linkedin-brave-post.js direct Voyager API; initial script verification failed after creation, then public post page verified stable text fragments before ledgering."
+    },
+    {
+      "id": "8bit-x-agent-publisher-nhs-digest-2026-05-24-x",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-24T14:18:51Z",
+      "url": "https://x.com/8BitConcepts/status/2058552857088123238",
+      "fingerprint": "bdc41972af865a7e",
+      "copy": "Not Human Search is tracking 4,177 agent-ready sites today.\n\n450 verify as working MCP endpoints. 2,260 publish llms.txt. 492 expose OpenAPI.\n\nThe pattern has not changed: discovery files are easier than live agent interfaces.\n\nData: https://nothumansearch.ai/digest",
+      "route": "https://nothumansearch.ai/digest",
+      "fact_key": "nhs-digest-2026-05-24-sites-4177-mcp-450-llms-2260-openapi-492",
+      "source_url": "https://nothumansearch.ai/digest",
+      "note": "Posted by 8bit-x-agent-publisher after live digest fact-check, agent-social-editor approval, public-action lock, and @8BitConcepts direct timeline recovery from X empty-200 response. Restored again after stale ledger churn removed the row; this run was throttled by the 6-hour X cadence guard."
     }
   ]
 }
