@@ -238,6 +238,23 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027-20260524-blocked",
+      "status": "blocked",
+      "created_at": "2026-04-28T20:09:15+00:00",
+      "updated_at": "2026-05-24T06:13:19Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "AI Dev Board live surfaces",
+      "source_url": "https://aidevboard.com/llms.txt",
+      "route": "https://aidevboard.com",
+      "fact_id": "adb-live-surface-8737-516-13tools",
+      "fact_key": "adb-live-surface:2026-05-24:8737-516-13tools",
+      "fingerprint": "465542e76bf07442",
+      "copy": "AI Dev Board is live: https://aidevboard.com returns 200.\n\nIts llms.txt lists 8,737 curated AI/ML roles from 516 AI companies, plus REST API access and a 13-tool MCP server.",
+      "blocker": "X posting failed after approved-copy retries: direct authenticated CreateTweet returned HTTP 200 with no tweet body and no recoverable timeline status URL for both candidates; browser fallback returned spawnSync osascript ETIMEDOUT. No public post attempted beyond X API calls that returned unverifiable empty 200 responses; follow-up find-only checks did not find the expected text."
     }
   ]
 }
