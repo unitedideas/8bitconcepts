@@ -238,24 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "x-ai-stat-2026-05-24T14:16:15+00:00-nhs-digest-live",
-      "status": "posted",
-      "created_at": "2026-05-24T14:16:15+00:00",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "kind": "live_stat",
-      "source": "Not Human Search digest",
-      "source_url": "https://nothumansearch.ai/digest",
-      "route": "https://nothumansearch.ai/digest",
-      "fact_id": "nhs-sites-4177-mcp-450-llms-2260-openapi-492",
-      "fact_key": "nhs-digest-2026-05-24-sites-4177-mcp-450-llms-2260-openapi-492",
-      "fingerprint": "bdc41972af865a7e",
-      "copy": "Not Human Search is tracking 4,177 agent-ready sites today.\n\n450 verify as working MCP endpoints. 2,260 publish llms.txt. 492 expose OpenAPI.\n\nThe pattern has not changed: discovery files are easier than live agent interfaces.\n\nData: https://nothumansearch.ai/digest",
-      "posted_at": "2026-05-24T14:18:51Z",
-      "url": "https://x.com/8BitConcepts/status/2058552857088123238",
-      "note": "Posted by 8bit-x-agent-publisher after live digest fact-check and social-editor approval."
     }
   ]
 }
