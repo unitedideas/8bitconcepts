@@ -1586,6 +1586,19 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-2026-05-24-nhs-digest-mcp-round-trip",
+      "source": "automation-events/2026-05-24.jsonl",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-24",
+      "posted_at": "2026-05-24T02:54:00Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7464145257388146688",
+      "fingerprint": "4c919411ba48adbf",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "note": "Reconciled from prior 8bit-linkedin-agent-publisher automation log; direct Voyager posted live and public LinkedIn verification confirmed Shane Cheek post text with verified NHS digest counts."
     }
   ]
 }
