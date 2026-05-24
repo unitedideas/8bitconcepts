@@ -1586,6 +1586,35 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-24-mcp-digest-auth",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "research-backlog:q2-2026-mcp-ecosystem-health",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "blocked_at": "2026-05-24T15:50:03Z",
+      "fingerprint": "728d6ec57e2c2cbf",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fact_key": "nhs-mcp-digest:2026-05-24:4177:450",
+      "copy": "Current Not Human Search digest: 4,177 agent-ready sites indexed. 450 are MCP-verified by live handshake. That is 10.8%.\n\nThe useful distinction is not whether a site mentions MCP. It is whether an agent can send a JSON-RPC initialize request and get a valid response.\n\nStatic directory entries are citations. Working MCP endpoints are infrastructure.\n\nMethodology and report:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html\n\nLive endpoint:\nhttps://nothumansearch.ai/mcp",
+      "blocker": "LinkedIn posting blocked after required recovery sequence: direct Voyager identity rejected all stored LinkedIn cookie sources (chrome-profile-3 redirected), page-context Voyager opened a signed-out LinkedIn page showing \"Sign in as Shane\" for h*****@8bitconcepts.com, forced one-shot browser recovery with SOCIAL_LINKEDIN_FORCE_BROWSER=1 stayed silent without a verified active identity or public URL, and Computer Use state inspection failed with \"codex app-server exited before returning a response\". The stuck linkedin-brave-post.js process was terminated and the one-shot allow file was removed. No public POST was verified.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200 text/html",
+        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-24T15:42:49Z, total_sites=4177, mcp_verified=450",
+        "450 / 4177 = 10.8% rounded to one decimal place",
+        "https://nothumansearch.ai/mcp returned HTTP 200 application/json"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy_fingerprint": "728d6ec57e2c2cbf",
+        "scoped_learning_closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "post_attempted": false,
+      "public_action_lock_claimed": true,
+      "note": "Latest posted LinkedIn ledger row is older than 6 hours, so this is a loud failure for the SLA watchdog. Auth appears expired or unavailable for the stored LinkedIn browser/cookie routes."
     }
   ]
 }
