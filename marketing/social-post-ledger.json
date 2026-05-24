@@ -1586,6 +1586,33 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-2026-05-24-the-harness-gap",
+      "source": "8bit research backlog",
+      "source_item": "research/the-harness-gap.html",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-24",
+      "posted_at": "2026-05-24T16:54:47Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7464358025739386880/",
+      "route": "https://8bitconcepts.com/research/the-harness-gap.html",
+      "fact_key": "8bit-research:the-harness-gap:60-70-harness-gap",
+      "fingerprint": "cffc322139dcfc14",
+      "copy": "Most enterprise AI teams are not blocked by the model.\n\nThey are blocked by the harness around it: evals, state, retrieval, workflow boundaries, observability, policy, and recovery paths.\n\nThe model gets blamed because the surrounding system was never made inspectable.\n\nResearch note:\nhttps://8bitconcepts.com/research/the-harness-gap.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-harness-gap.html returned HTTP 200 on 2026-05-24",
+        "Live page title/headline is The Harness Gap",
+        "Live page states enterprise AI teams are spending 60-70% of engineering cycles chasing model failures when the missing surrounding harness is the problem",
+        "Public LinkedIn post page returned HTML containing stable approved-copy fragments and Shane Cheek identity marker"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "scoped_memory": "No scoped memory update needed"
+      },
+      "lock": "public-action-locks/social-content/cffc322139dcfc14.json",
+      "note": "Posted by clean LinkedIn-only 8bit publisher via tools/linkedin-brave-post.js direct Voyager API; initial script verification failed after creation, then public post page verified stable text fragments before ledgering."
     }
   ]
 }
