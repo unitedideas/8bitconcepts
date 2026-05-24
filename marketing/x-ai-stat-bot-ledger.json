@@ -272,6 +272,23 @@
       "fingerprint": "3ef79c20cae6909f",
       "copy": "Model APIs are usually the easy 10-20% of an AI project. The integration tax is the rest: data pipelines, ERP/custom integration, evals, observability, maintenance, permissions, workflow, and last-mile systems work.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
       "blocker": "No public X URL verified; direct API empty-200 unverifiable, browser fallback AppleScript timeout, Computer Use app state unavailable."
+    },
+    {
+      "id": "x-ai-stat-2026-05-24T-blocked-entry-level-ai-gap",
+      "status": "blocked",
+      "created_at": "2026-04-28T12:00:02+00:00",
+      "updated_at": "2026-05-24T03:37:17Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "stat",
+      "source": "8bit entry-level AI gap research",
+      "source_url": "https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "fact_id": "entry-level-ai-gap-6.2-619-9906-65-senior-plus",
+      "fact_key": "ca00110a6e9b669c803921d1:refreshed-2026-05-24",
+      "fingerprint": "3da310e5381d2524",
+      "copy": "Only 6.2% of classified AI/ML engineering roles in the AI Dev Board index are open to juniors: 619 of 9,906. Senior, lead, and principal roles make up 65%.\n\nThe junior AI market is a narrow pipe, not a closed pipe.\n\nhttps://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "blocker": "No public X URL verified; browser path hung and direct timeline check did not contain expected text."
     }
   ]
 }

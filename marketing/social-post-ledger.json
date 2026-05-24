@@ -1800,6 +1800,93 @@
       "public_action_lock_claimed": true,
       "post_attempted": true,
       "note": "Posted via tools/linkedin-brave-post.js direct Voyager route. The API returned a share URL but internal live-body verification failed; public LinkedIn page verification then confirmed the post text and URL."
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-24-cohere-full",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-23-cohere",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-24T03:37:17Z",
+      "fingerprint": "e6b4929291d3bc06",
+      "fact_key": "targeted-research:cohere:89:generative-ai,search,agents",
+      "route": "https://aidevboard.com/company/cohere",
+      "source_url": "https://aidevboard.com/company/cohere",
+      "copy": "@cohere has 89 indexed AI/ML roles on AI Dev Board. Tags cluster around generative-ai, search, and agents.\n\nThe useful read is where the roles cluster: data infrastructure, agentic platforms, ML internships, and FDE.\n\nhttps://aidevboard.com/company/cohere",
+      "blocker": "No public X post went live or could be verified. Direct X timeline check did not contain the expected post text. tools/x-brave-post.js direct API returned empty 200 then browser/CDP fallback failed with spawnSync osascript ETIMEDOUT.",
+      "verified_facts": [
+        "https://aidevboard.com/company/cohere returned HTTP 200",
+        "ADB Cohere page visibly contained 89 and tags generative-ai, search, agents",
+        "https://nothumansearch.ai/site/cohere.com returned HTTP 200 and showed 50/100 with llms.txt and Structured API",
+        "https://cohere.com/careers returned HTTP 200",
+        "X direct cookie identity dry-run returned @8BitConcepts / 8bitconcepts"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "@cohere has 89 indexed AI/ML roles on AI Dev Board. Tags cluster around generative-ai, search, and agents.\n\nThe useful read is where the roles cluster: data infrastructure, agentic platforms, ML internships, and FDE.\n\nhttps://aidevboard.com/company/cohere",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-24-cohere-short",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-targeted-research-2026-05-23-cohere",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-24T03:37:17Z",
+      "fingerprint": "06289c7147a23352",
+      "fact_key": "targeted-research:cohere:89:generative-ai,search,agents",
+      "route": "https://aidevboard.com/company/cohere",
+      "source_url": "https://aidevboard.com/company/cohere",
+      "copy": "@cohere has 89 indexed AI/ML roles on AI Dev Board. The useful signal is the cluster: generative-ai, search, agents.\n\nhttps://aidevboard.com/company/cohere",
+      "blocker": "No public X post went live or could be verified. Direct X timeline check did not contain the expected post text. Shorter approved copy entered tools/x-brave-post.js, but browser path hung without returning a URL and was killed after timeout.",
+      "verified_facts": [
+        "https://aidevboard.com/company/cohere returned HTTP 200",
+        "ADB Cohere page visibly contained 89 and tags generative-ai, search, agents",
+        "X direct cookie identity dry-run returned @8BitConcepts / 8bitconcepts"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "@cohere has 89 indexed AI/ML roles on AI Dev Board. The useful signal is the cluster: generative-ai, search, agents.\n\nhttps://aidevboard.com/company/cohere",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-failed-2026-05-24-entry-level-ai-gap",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T12:00:02+00:00-ca00110a",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-24T03:37:17Z",
+      "fingerprint": "3da310e5381d2524",
+      "fact_key": "ca00110a6e9b669c803921d1:refreshed-2026-05-24",
+      "route": "https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "source_url": "https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "copy": "Only 6.2% of classified AI/ML engineering roles in the AI Dev Board index are open to juniors: 619 of 9,906. Senior, lead, and principal roles make up 65%.\n\nThe junior AI market is a narrow pipe, not a closed pipe.\n\nhttps://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "blocker": "No public X post went live or could be verified. tools/x-brave-post.js hung without returning a URL and was killed after timeout; direct X timeline check did not contain the expected post text.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html returned HTTP 200",
+        "The live page states 6.2% of AI/ML engineering roles are open to juniors, 619 of 9,906",
+        "The live page states senior, lead, and principal roles together account for 65%",
+        "X direct cookie identity dry-run returned @8BitConcepts / 8bitconcepts"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Only 6.2% of classified AI/ML engineering roles in the AI Dev Board index are open to juniors: 619 of 9,906. Senior, lead, and principal roles make up 65%.\n\nThe junior AI market is a narrow pipe, not a closed pipe.\n\nhttps://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true
     }
   ]
 }
