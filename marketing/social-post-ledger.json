@@ -1771,6 +1771,35 @@
       "x_operator_closeout": "No scoped memory update needed",
       "public_action_lock_claimed": true,
       "post_attempted": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-2026-05-24-nhs-digest-mcp-round-trip",
+      "source": "live-nothumansearch-digest",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-24T02:54:00Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7464145257388146688",
+      "fingerprint": "4c919411ba48adbf",
+      "fact_key": "nhs-digest-2026-05-24T024652Z-total-4178-llms-2261-mcp-450",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "copy": "nothumansearch.ai/digest.json was generated at 2026-05-24T02:46:52Z.\n\nIt has 4,178 indexed agent-ready sites, 2,261 with llms.txt, and 450 with a verified MCP handshake.\n\nThe agentic web has context files. The harder part is still the round trip.\n\nMethodology: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "verified_facts": [
+        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-24T02:46:52Z total_sites=4178 llms_txt_count=2261 mcp_verified=450",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200 and documents JSON-RPC/MCP handshake methodology",
+        "LinkedIn direct identity verification passed for Shane Cheek / Founder at 8bitconcepts before POST",
+        "Public LinkedIn URL returned Shane Cheek post text with the verified digest counts"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "nothumansearch.ai/digest.json was generated at 2026-05-24T02:46:52Z.\n\nIt has 4,178 indexed agent-ready sites, 2,261 with llms.txt, and 450 with a verified MCP handshake.\n\nThe agentic web has context files. The harder part is still the round trip.\n\nMethodology: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true,
+      "note": "Posted via tools/linkedin-brave-post.js direct Voyager route. The API returned a share URL but internal live-body verification failed; public LinkedIn page verification then confirmed the post text and URL."
     }
   ]
 }
