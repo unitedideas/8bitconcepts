@@ -1586,20 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "q2-2026-mcp-live-handshake-linkedin-2026-05-24",
-      "source": "8bit-linkedin-agent-publisher",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "failed",
-      "attempted_at": "2026-05-24T01:44:45Z",
-      "fingerprint": "27729cdd0e8b8590",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "fact_key": "8bit-research:q2-2026-mcp-ecosystem-health:446-of-4174-live-handshake",
-      "text": "Most MCP-positive sites still are not live MCP endpoints.\n\nIn the latest 8bitconcepts crawl, 446 of 4,174 agent-ready sites passed a live JSON-RPC MCP handshake. That is 10.7%.\n\nThat line matters because static discovery and live tool use are different things. A directory can find `mcp` in `llms.txt` or a manifest. An agent needs the endpoint to answer `initialize` with a valid `protocolVersion`.\n\nThe unverified group is not proof of bad faith. It can mean stale docs, auth walls, wrong endpoint paths, proxy issues, scanner false positives, or manifests that were never wired up.\n\nFor builders: if an agent is going to depend on a tool, test the handshake before the workflow depends on it.\n\nMethodology and data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "last_blocker": "LinkedIn public post did not go live. Direct Voyager cookie route rejected local cookie stores (chrome-profile-3:302); page-context Voyager identity returned 401; approved one-shot browser recovery hung for more than two minutes with no success URL and was killed. No CAPTCHA/checkpoint/account-lock screen was captured before the hang.",
-      "note": "Social-editor approved final_copy; facts verified against live 8bit research page HTTP 200 before posting attempt."
     }
   ]
 }
