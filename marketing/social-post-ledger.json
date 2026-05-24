@@ -1887,6 +1887,35 @@
       "x_operator_closeout": "No scoped memory update needed",
       "public_action_lock_claimed": true,
       "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-posted-2026-05-24-integration-tax",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-24",
+      "posted_at": "2026-05-24T04:09:51Z",
+      "url": "https://x.com/8BitConcepts/status/2058399797389021695",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "fingerprint": "ad456e873e248061",
+      "copy": "Model APIs are usually the easy 10-20%.\n\nThe expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "note": "Posted by 8bit-x-agent-publisher from verified @8BitConcepts. Daily queues were stale/drained; source backlog fact was verified against the live 8bit Integration Tax research page, social-editor approved final_copy, sync-state lock was claimed before the successful post, and X timeline recovery returned the live URL after CreateTweet returned an empty 200 body.",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "Source page states model API costs are 10-20% of AI shipping cost and discusses permissions, evals, workflow/data pipeline/integration, observability, and last-mile existing systems."
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Model APIs are usually the easy 10-20%.\n\nThe expensive part is permissions, evals, workflow redesign, observability, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true
     }
   ]
 }
