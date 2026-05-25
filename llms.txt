@@ -100,6 +100,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Harness Gap](https://8bitconcepts.com/research/the-harness-gap.html): Most enterprise AI teams are spending 60-70% of their engineering cycles chasing model failures — ha
 
+- [The Prompt Debt Spiral](https://8bitconcepts.com/research/the-prompt-debt-spiral.html): Most engineering teams treat prompts like they once treated SQL queries stuffed into application cod
+
 ## Contact
 
 Website: https://8bitconcepts.com
