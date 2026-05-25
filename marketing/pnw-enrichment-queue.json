@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-25T11:03:00Z",
+  "updated_at": "2026-05-25T12:05:00Z",
   "automation": "business-agent-8bitconcepts",
   "reason": "Remaining PNW SMB email-ready records are role-based addresses. Do not send until enriched with a personal decision-maker email or moved to a non-recurring human-supervised channel.",
   "blocked_records": [
