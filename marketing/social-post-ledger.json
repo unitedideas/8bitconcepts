@@ -1586,33 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-linkedin-agent-publisher-2026-05-25-openai-hiring-signal",
-      "source": "8bit-linkedin-agent-publisher",
-      "source_item": "daily-targeted-research-2026-04-30-openai-linkedin",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "posted",
-      "date": "2026-05-25",
-      "posted_at": "2026-05-25T16:46:28Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7464718541498511360",
-      "canonical_url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_openais-ai-dev-board-page-shows-372-open-activity-7464718542270107649-TDY5",
-      "fingerprint": "d1884ac65dd22513",
-      "fact_key": "targeted-research:openai:372:public-hiring-agentic-readiness",
-      "route": "https://aidevboard.com/company/openai",
-      "secondary_route": "https://nothumansearch.ai/site/openai.com",
-      "copy": "OpenAI\u2019s AI Dev Board page shows 372 open AI developer roles, with an average listed salary of $304k across 10 listings.\n\nA few public hiring signals from the same page:\n\n1. Listed salary range: $162k-$490k.\n2. Remote positions: 74.\n3. Sample roles include Software Engineer, Delivery / CD; Security Researcher, Agentic AI Threats; and Staff / Senior Staff Backend Engineer, B2B Flywheel.\n\nNot Human Search also shows openai.com at 15/100 agentic readiness: structured API present, llms.txt missing.\n\nThe useful read is where the operational work appears to be moving: deployment, security, experimentation infrastructure, and agentic AI threat modeling.\n\nData:\nhttps://aidevboard.com/company/openai\nhttps://nothumansearch.ai/site/openai.com",
-      "verified_facts": [
-        "https://aidevboard.com/company/openai returned HTTP 200 and title/meta showed 372 AI roles and Avg $304k",
-        "ADB page meta showed salary range $162k-$490k and 74 remote positions",
-        "ADB page contained sample roles Software Engineer, Delivery / CD; Security Researcher, Agentic AI Threats; Staff / Senior Staff Backend Engineer, B2B Flywheel",
-        "https://nothumansearch.ai/site/openai.com returned HTTP 200 and title/meta showed Agentic Readiness 15/100",
-        "NHS page score reasons showed +15 structured API and missing +25 llms.txt",
-        "OpenAI official careers page returned HTTP 403 and was not used as a source",
-        "Aidevboard and NHS API calls returned anonymous quota_exceeded and were not used as sources"
-      ],
-      "note": "Posted by clean LinkedIn-only 8bit publisher after LinkedIn specialist selection, source fact-check, social-editor approval, duplicate check, public-action lock, and live public LinkedIn page verification. Script returned a share URL but failed internal verification; public curl verification found the canonical public post page and full articleBody by Shane Cheek."
     }
   ]
 }
