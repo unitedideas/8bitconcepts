@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-05-23T21:06:00Z",
+  "generated_at": "2026-05-25T04:03:30Z",
   "source": "business-agent-8bitconcepts",
   "items": [
     {
@@ -12,6 +12,19 @@
         "Move or mark bounced/suppressed recipients from the latest follow-up probe out of active follow-up eligibility.",
         "Prefer personal verified contacts before the next 8bc outreach batch; do not send to role-based or suppressed addresses.",
         "Record the cleaned counts and next send-safe segment in the PNW/outreach ledger."
+      ],
+      "human_gate_kind": null,
+      "public": false
+    },
+    {
+      "title": "Enrich Miller's Heating & Air before any 8bc PNW outreach send",
+      "priority": 58,
+      "source": "foundry-portfolio-marketing-daily",
+      "created_at": "2026-05-25T04:03:30Z",
+      "acceptance_criteria": [
+        "Find a non-role-based decision-maker route or mark the row LinkedIn-only with an explicit enrichment blocker.",
+        "Keep info@millersheating.com out of sendable email batches unless a prior relationship or verified routing reason is recorded.",
+        "Rerun python3 tools/verify-pnw-outreach-queue.py and record the clean result before the next PNW send."
       ],
       "human_gate_kind": null,
       "public": false
