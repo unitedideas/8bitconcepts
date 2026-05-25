@@ -1586,6 +1586,32 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "q2-2026-mcp-ecosystem-health-linkedin-2026-05-25-refresh",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "paper-distribution:q2-2026-mcp-ecosystem-health",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-25",
+      "posted_at": "2026-05-25T03:56:00Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7464524602954846209",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fingerprint": "b9e97ffa7c270a3d",
+      "text": "MCP adoption looks much healthier if we count discovery files instead of working endpoints.\n\nThe current Not Human Search digest has 4,179 indexed sites. 2,260 publish llms.txt, 492 publish OpenAPI, and 450 pass a live MCP handshake.\n\nThat is 10.8% with a working MCP endpoint.\n\nDiscovery metadata is becoming normal. Working agent endpoints are still the harder operational surface.\n\nMethodology and live paper:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://nothumansearch.ai/digest.json generated_at=2026-05-25T03:54:27Z",
+        "NHS digest category counts sum to 4179 indexed sites",
+        "NHS digest mcp_verified=450 and pct_mcp=10.8",
+        "NHS digest llms_txt_count=2260 and openapi_count=492",
+        "LinkedIn returned a live post URL and the public page body contained the approved copy fragments"
+      ],
+      "social_editor_status": "approved",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "social_editor_closeout": "No scoped memory update needed",
+      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API. The script returned a verification failure after creation, but the returned public URL served HTTP 200 and contained the approved copy, so the post was ledgered as live."
     }
   ]
 }
