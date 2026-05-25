@@ -64,12 +64,12 @@
     {
       "paper": "q2-2026-mcp-ecosystem-health",
       "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "status": "in_progress_linkedin_blocked",
+      "status": "in_progress",
       "channel_state": {
-        "linkedin": "blocked_auth_or_browser_control"
+        "linkedin": "posted"
       },
-      "last_attempted_at": "2026-05-25T00:03:16Z",
-      "linkedin_blocker": "LinkedIn post blocked before any public POST: direct Voyager identity rejected all LinkedIn cookie sources with auth redirect/302, page-context Voyager identity returned 401 for /voyager/api/me, and approved one-shot native browser recovery under the held Computer Use lease hung without a success URL or selector error until terminated. No active LinkedIn identity was verified and no public LinkedIn URL was created. One-shot allow file was removed."
+      "last_posted_at": "2026-05-25T00:29:47Z",
+      "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7464472237538988032"
     }
   ]
 }

@@ -1634,6 +1634,32 @@
         "Paper states 4,174 indexed agent-ready sites, 446 verified MCP handshakes, 10.7%, and 3,728 unverified working MCP endpoints as of 2026-05-18.",
         "NHS public stats returned total_sites=4179 during this run."
       ]
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-posted-2026-05-24-mcp-ecosystem-health",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "posted",
+      "posted_at": "2026-05-25T00:29:47Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7464472237538988032",
+      "fingerprint": "18735a13493e5d5b",
+      "text": "Most MCP claims still are not callable endpoints.\n\nThe latest 8bitconcepts / Not Human Search MCP ecosystem audit indexed 4,174 agent-ready sites. 446 passed a live JSON-RPC handshake against their declared /mcp endpoint. That is 10.7%.\n\nThe test was plain: send a JSON-RPC 2.0 initialize request and require a valid result containing protocolVersion.\n\n3,728 sites in this crawl did not verify as working MCP endpoints. Static directory presence is not enough if the endpoint does not answer.\n\nMethodology + raw data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "candidate": "q2-2026-mcp-ecosystem-health",
+      "fact_checks": [
+        "Live paper URL returned HTTP 200.",
+        "Paper states 4,174 indexed agent-ready sites, 446 verified MCP handshakes, 10.7%, and 3,728 unverified working MCP endpoints as of 2026-05-18.",
+        "NHS public stats returned total_sites=4179 during this run."
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "Most MCP claims still are not callable endpoints.\n\nThe latest 8bitconcepts / Not Human Search MCP ecosystem audit indexed 4,174 agent-ready sites. 446 passed a live JSON-RPC handshake against their declared /mcp endpoint. That is 10.7%.\n\nThe test was plain: send a JSON-RPC 2.0 initialize request and require a valid result containing protocolVersion.\n\n3,728 sites in this crawl did not verify as working MCP endpoints. Static directory presence is not enough if the endpoint does not answer.\n\nMethodology + raw data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/18735a13493e5d5b.json",
+      "verification": "Direct Voyager API created the share URL; Brave CDP live page verification matched Shane Cheek and the approved copy. LinkedIn rewrote the research URL to lnkd.in."
     }
   ]
 }
