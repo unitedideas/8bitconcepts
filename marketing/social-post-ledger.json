@@ -1615,6 +1615,25 @@
       "x_operator_closeout": "No scoped memory update needed",
       "public_action_lock": "public-action-locks/social-content/faf527cfcb75100d.json",
       "post_attempted": false
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-24-mcp-ecosystem-health-auth",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "Shane Cheek",
+      "status": "blocked",
+      "blocked_at": "2026-05-25T00:03:16Z",
+      "url": null,
+      "fingerprint": "0ab7cc7a535cd9af",
+      "text": "Most MCP claims still are not callable endpoints.\n\nIn the latest 8bitconcepts / Not Human Search MCP ecosystem audit, 4,174 agent-ready sites were indexed. 446 passed a live JSON-RPC handshake against their declared /mcp endpoint. That is 10.7%.\n\nThe test was plain: send a JSON-RPC 2.0 initialize request and get a valid result containing protocolVersion.\n\n3,728 sites in this crawl did not verify as working MCP endpoints. Static directory presence is not enough if the endpoint does not answer.\n\nMethodology + raw data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "blocker": "LinkedIn post blocked before any public POST: direct Voyager identity rejected all LinkedIn cookie sources with auth redirect/302, page-context Voyager identity returned 401 for /voyager/api/me, and approved one-shot native browser recovery under the held Computer Use lease hung without a success URL or selector error until terminated. No active LinkedIn identity was verified and no public LinkedIn URL was created. One-shot allow file was removed.",
+      "candidate": "q2-2026-mcp-ecosystem-health",
+      "fact_checks": [
+        "Live paper URL returned HTTP 200.",
+        "Paper states 4,174 indexed agent-ready sites, 446 verified MCP handshakes, 10.7%, and 3,728 unverified working MCP endpoints as of 2026-05-18.",
+        "NHS public stats returned total_sites=4179 during this run."
+      ]
     }
   ]
 }
