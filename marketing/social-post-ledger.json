@@ -1604,6 +1604,34 @@
         "https://nothumansearch.ai/"
       ],
       "note": "Route verified HTTP 200 before posting; social-editor approved final_copy; X direct API returned empty 200 but timeline recovery verified the live status URL."
+    },
+    {
+      "id": "q2-2026-mcp-ecosystem-health-linkedin-2026-05-25",
+      "source": "marketing/paper-distribution-queue.json",
+      "source_item": "q2-2026-mcp-ecosystem-health",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-25",
+      "posted_at": "2026-05-25T14:29:33Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7464683884811571200",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fingerprint": "0415aba08d3f1f56",
+      "fact_key": "paper:q2-2026-mcp-ecosystem-health:mcp-verified-446-of-4174-2026-05-18",
+      "copy": "Most MCP claims are still not live endpoints.\n\nThe latest 8bit / Not Human Search snapshot found 4,174 agent-ready sites. 446 passed a live JSON-RPC MCP handshake: 10.7%.\n\nThe rest are not necessarily fake. The unverified cohort includes stale docs, auth walls, wrong endpoint paths, and manifests pointing at something that does not answer initialize.\n\nFor agents, the failure mode is the same: latency and context spent on a tool that does not advance the task.\n\nMethodology + raw data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "paper snapshot date is 2026-05-18",
+        "4,174 agent-ready sites indexed in the paper snapshot",
+        "446 of 4,174 passed a live JSON-RPC MCP handshake, 10.7%",
+        "the paper describes the unverified cohort as not verified as working MCP endpoints in that crawl, not as fake or bad-faith"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by 8bit-linkedin-agent-publisher after fact-check, social-editor approval, duplicate check, sync-state public-action lock, direct Voyager creation, and public LinkedIn metadata verification."
     }
   ]
 }
