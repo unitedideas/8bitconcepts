@@ -64,16 +64,7 @@
     {
       "paper": "q2-2026-mcp-ecosystem-health",
       "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "status": "in_progress",
-      "channel_state": {
-        "linkedin": "posted"
-      },
-      "channel_urls": {
-        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7464799357624721409/"
-      },
-      "channel_posted_at": {
-        "linkedin": "2026-05-25T22:09:35Z"
-      }
+      "status": "in_progress"
     }
   ]
 }
