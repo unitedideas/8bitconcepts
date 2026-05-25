@@ -255,6 +255,40 @@
       "fingerprint": "faf527cfcb75100d",
       "copy": "2,246 of 4,174 agent-ready sites publish llms.txt. Only 446 verified as working MCP endpoints through a live JSON-RPC handshake.\n\nDiscovery files are showing up faster than callable agent endpoints.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "blocker": "No public X post went live. Approved copy was fact-checked and sync-state lock faf527cfcb75100d was claimed, but tools/x-brave-post.js first hung with no stdout/stderr and was killed; direct authenticated X API returned EMPTY_200_NO_FALLBACK and timeline recovery did not find the post; forced browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use get_app_state for Brave then failed with codex app-server exited before returning a response. Active @8BitConcepts could not be safely re-verified at post time and no status URL was captured."
+    },
+    {
+      "id": "x-ai-stat-blocked-2026-05-25-adb-live-full",
+      "status": "blocked",
+      "created_at": "2026-05-25T01:00:06Z",
+      "updated_at": "2026-05-25T01:00:06Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "AI Dev Board homepage",
+      "source_url": "https://aidevboard.com",
+      "route": "https://aidevboard.com",
+      "fact_id": "adb-live-homepage-jobs-companies-2026-05-25",
+      "fact_key": "adb-live-homepage:2026-05-25:jobs-8737:companies-528",
+      "fingerprint": "e60c305edcf2320e",
+      "copy": "AI Dev Board is tracking 8,737 AI developer jobs from 528 companies.\n\nThe useful part is the query surface: a real site, REST API, and MCP server agents can use without scraping a static list.\n\nhttps://aidevboard.com",
+      "blocker": "No public X post verified. Approved AI Dev Board copy was fact-checked against the live ADB homepage and @8BitConcepts direct identity was available through the X posting script, but direct X CreateTweet returned HTTP 200 with empty/no tweet id for both full and shortened approved copies; authenticated UserTweets timeline checks did not contain either expected text after delay; forced browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use get_app_state for Brave failed with codex app-server exited before returning a response. No status URL was captured, so the worker did not mark a public post as live."
+    },
+    {
+      "id": "x-ai-stat-blocked-2026-05-25-adb-live-short",
+      "status": "blocked",
+      "created_at": "2026-05-25T01:00:06Z",
+      "updated_at": "2026-05-25T01:00:06Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "AI Dev Board homepage",
+      "source_url": "https://aidevboard.com",
+      "route": "https://aidevboard.com",
+      "fact_id": "adb-live-homepage-jobs-companies-2026-05-25",
+      "fact_key": "adb-live-homepage:2026-05-25:jobs-8737:companies-528",
+      "fingerprint": "fd1056f5428ba5bc",
+      "copy": "AI Dev Board is live: 8,737 AI developer jobs from 528 companies, with REST and MCP access for agents.\n\nhttps://aidevboard.com",
+      "blocker": "No public X post verified. Approved AI Dev Board copy was fact-checked against the live ADB homepage and @8BitConcepts direct identity was available through the X posting script, but direct X CreateTweet returned HTTP 200 with empty/no tweet id for both full and shortened approved copies; authenticated UserTweets timeline checks did not contain either expected text after delay; forced browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use get_app_state for Brave failed with codex app-server exited before returning a response. No status URL was captured, so the worker did not mark a public post as live."
     }
   ]
 }

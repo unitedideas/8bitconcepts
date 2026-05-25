@@ -1660,6 +1660,62 @@
       "linkedin_operator_closeout": "No scoped memory update needed",
       "public_action_lock": "public-action-locks/social-content/18735a13493e5d5b.json",
       "verification": "Direct Voyager API created the share URL; Brave CDP live page verification matched Shane Cheek and the approved copy. LinkedIn rewrote the research URL to lnkd.in."
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-25-adb-full",
+      "source": "8bit-x-agent-publisher",
+      "source_item": "x-ai-stat-backlog-adb-live-homepage",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-25T01:00:06Z",
+      "fingerprint": "e60c305edcf2320e",
+      "fact_key": "adb-live-homepage:2026-05-25:jobs-8737:companies-528",
+      "route": "https://aidevboard.com",
+      "copy": "AI Dev Board is tracking 8,737 AI developer jobs from 528 companies.\n\nThe useful part is the query surface: a real site, REST API, and MCP server agents can use without scraping a static list.\n\nhttps://aidevboard.com",
+      "blocker": "No public X post verified. Approved AI Dev Board copy was fact-checked against the live ADB homepage and @8BitConcepts direct identity was available through the X posting script, but direct X CreateTweet returned HTTP 200 with empty/no tweet id for both full and shortened approved copies; authenticated UserTweets timeline checks did not contain either expected text after delay; forced browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use get_app_state for Brave failed with codex app-server exited before returning a response. No status URL was captured, so the worker did not mark a public post as live.",
+      "verified_facts": [
+        "https://aidevboard.com/ returned HTTP 200 on 2026-05-25",
+        "AI Dev Board homepage title/meta/hero state 8,737 AI developer jobs",
+        "AI Dev Board homepage states 528 companies",
+        "Foundry business index lists AI Dev Board as active at https://aidevboard.com/ with REST API and MCP server positioning"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "AI Dev Board is tracking 8,737 AI developer jobs from 528 companies.\n\nThe useful part is the query surface: a real site, REST API, and MCP server agents can use without scraping a static list.\n\nhttps://aidevboard.com",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/e60c305edcf2320e.json",
+      "post_attempted": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-25-adb-short",
+      "source": "8bit-x-agent-publisher",
+      "source_item": "x-ai-stat-backlog-adb-live-homepage",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-25T01:00:06Z",
+      "fingerprint": "fd1056f5428ba5bc",
+      "fact_key": "adb-live-homepage:2026-05-25:jobs-8737:companies-528",
+      "route": "https://aidevboard.com",
+      "copy": "AI Dev Board is live: 8,737 AI developer jobs from 528 companies, with REST and MCP access for agents.\n\nhttps://aidevboard.com",
+      "blocker": "No public X post verified. Approved AI Dev Board copy was fact-checked against the live ADB homepage and @8BitConcepts direct identity was available through the X posting script, but direct X CreateTweet returned HTTP 200 with empty/no tweet id for both full and shortened approved copies; authenticated UserTweets timeline checks did not contain either expected text after delay; forced browser fallback failed with spawnSync osascript ETIMEDOUT; Computer Use get_app_state for Brave failed with codex app-server exited before returning a response. No status URL was captured, so the worker did not mark a public post as live.",
+      "verified_facts": [
+        "https://aidevboard.com/ returned HTTP 200 on 2026-05-25",
+        "AI Dev Board homepage title/meta/hero state 8,737 AI developer jobs",
+        "AI Dev Board homepage states 528 companies",
+        "Foundry business index lists AI Dev Board as active at https://aidevboard.com/ with REST API and MCP server positioning"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "final_copy": "AI Dev Board is live: 8,737 AI developer jobs from 528 companies, with REST and MCP access for agents.\n\nhttps://aidevboard.com",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "public-action-locks/social-content/fd1056f5428ba5bc.json",
+      "post_attempted": true
     }
   ]
 }
