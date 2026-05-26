@@ -182,7 +182,21 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "One live Foundry surface today is 8bitconcepts.\n\nProduct: Research, consulting funnel, and marketing/distribution engine for Foundry.\n\nCurrent motion: PNW SMB outreach\n\nNext move: Continue one-post-per-app daily social cadence and local-search/SMB lead work.\n\nhttps://8bitconcepts.com",
           "fingerprint": "ec300967a26ec395",
-          "duplicate": false
+          "duplicate": false,
+          "status": "blocked",
+          "blocked_at": "2026-05-26T18:35:01Z",
+          "blocker": "LinkedIn auth hard stop: direct Voyager rejected stored cookies with all LinkedIn cookie sources rejected (chrome-profile-3:302), page-context Voyager returned 401 for /voyager/api/me, and approved one-shot browser recovery opened the LinkedIn login screen for h*****@8bitconcepts.com instead of an authenticated feed. Active Shane Cheek / Founder at 8bitconcepts identity could not be verified, so no public post was attempted.",
+          "selected_final_fingerprint": "76f1b10d46e25178",
+          "final_copy": "8bitconcepts is the portfolio note today.\n\nThe useful part is not the agency wrapper. It is the operating surface: research, consulting pages, lead capture, a diagnostic offer, local pages, and the distribution engine behind the other Foundry businesses.\n\nThat is the site now: less publication, more evidence-backed consulting funnel.\n\nhttps://8bitconcepts.com",
+          "facts_verified": [
+            "https://8bitconcepts.com/ returned HTTP 200 and identifies 8bitconcepts as embedded AI consulting for operating businesses",
+            "https://8bitconcepts.com/work-with-us.html returned HTTP 200 and exposes the consulting work-with-us surface",
+            "https://8bitconcepts.com/diagnostic.html returned HTTP 200 and exposes the AI Org Diagnostic surface",
+            "foundry-business-index identifies 8bitconcepts as a running agency funnel for research, consulting, daily social posts, consulting leads, proof-led homepage, work-with-us page, and sourced diagnostic page"
+          ],
+          "social_editor_status": "approved",
+          "social_editor_closeout": "No scoped memory update needed",
+          "linkedin_operator_closeout": "No scoped memory update needed"
         }
       },
       "quality_gate": [
