@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-05-25T04:03:30Z",
+  "generated_at": "2026-05-26T13:07:16Z",
   "source": "business-agent-8bitconcepts",
   "items": [
     {
@@ -25,6 +25,19 @@
         "Find a non-role-based decision-maker route or mark the row LinkedIn-only with an explicit enrichment blocker.",
         "Keep info@millersheating.com out of sendable email batches unless a prior relationship or verified routing reason is recorded.",
         "Rerun python3 tools/verify-pnw-outreach-queue.py and record the clean result before the next PNW send."
+      ],
+      "human_gate_kind": null,
+      "public": false
+    },
+    {
+      "title": "Prune stale portfolio social ledger rows for archived Geo Agent",
+      "priority": 52,
+      "source": "8bit-portfolio-social-queue-daily",
+      "created_at": "2026-05-26T13:07:16Z",
+      "acceptance_criteria": [
+        "Review older queued portfolio_daily ledger rows from 2026-04-30, 2026-05-01, and 2026-05-02.",
+        "Mark stale Geo Agent rows removed or blocked with the current archived/parked reason without changing posted/sent/submitted rows.",
+        "Confirm the next portfolio queue run still includes only Agentic Evidence, Bring Your AI, AI Dev Board, Not Human Search, and 8bitconcepts."
       ],
       "human_gate_kind": null,
       "public": false
