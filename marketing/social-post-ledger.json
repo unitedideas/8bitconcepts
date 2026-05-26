@@ -1586,6 +1586,25 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "daily-ai-insight-2026-05-01-afternoon-linkedin-retry-2026-05-26",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked_auth_required_duplicate_retry",
+      "date": "2026-05-26",
+      "attempted_at": "2026-05-26T05:40:37.254Z",
+      "route": "https://nothumansearch.ai",
+      "fingerprint": "1e815903c17c4b99",
+      "original_item_id": "daily-ai-insight-2026-05-01-afternoon-linkedin",
+      "original_posted_url": "https://www.linkedin.com/feed/update/urn:li:share:7455847787696652290/",
+      "approved_final_copy": "An agent-readiness audit needs three columns: what the site claims, what the endpoint returns, and what breaks under a real request.\n\nThat gap is usually where the work is. The useful operator question is what changes around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://nothumansearch.ai",
+      "editor": "agent-social-editor",
+      "editor_note": "approved; No scoped memory update needed",
+      "linkedin_operator_note": "LinkedIn-appropriate; No scoped memory update needed",
+      "blocker": "No public LinkedIn post went live. Candidate daily-ai-insight-2026-05-01-afternoon-linkedin was discovered to already be posted on 2026-05-01 at https://www.linkedin.com/feed/update/urn:li:share:7455847787696652290/ under prior edited fingerprint 3cf1c5fe4b36474a. The retry copy fingerprint 1e815903c17c4b99 was claimed before the duplicate-by-id was noticed; posting then failed through all allowed routes: direct Voyager rejected all cookie sources, page-context Voyager returned 401 for /voyager/api/me, and one-shot browser recovery opened LinkedIn login for Shane Cheek / h*****@8bitconcepts.com instead of an authenticated feed. Active LinkedIn identity could not be verified, so no externally visible action completed.",
+      "note": "No new LinkedIn post was created; this row records the failed retry and exact blocker."
     }
   ]
 }
