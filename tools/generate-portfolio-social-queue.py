@@ -115,16 +115,27 @@ def clipped(value: str, limit: int) -> str:
     cut = value[: limit - 1].rstrip()
     if " " in cut:
         cut = cut.rsplit(" ", 1)[0].rstrip()
-    return cut.rstrip(" ,;:-") + "."
+    cut = cut.rstrip(" ,;:-")
+    if ", and " in cut:
+        cut = cut.rsplit(", and ", 1)[0].rstrip(" ,;:-")
+    while cut.lower().split()[-1:] in (["and"], ["or"], ["with"], ["plus"]):
+        cut = cut.rsplit(" ", 1)[0].rstrip(" ,;:-")
+    return cut
 
 
 def first_clause(value: str, limit: int) -> str:
     cleaned = clean_text(value)
-    for separator in ("; ", ": ", ". ", ", "):
+    fallback = cleaned
+    for separator in ("; ", ": ", ", ", ". "):
+        if separator not in cleaned:
+            continue
         head = cleaned.split(separator, 1)[0].strip()
-        if len(head) >= 24:
-            return clipped(head, limit)
-    return clipped(cleaned, limit)
+        if 16 <= len(head) <= limit:
+            return head
+        if len(head) > limit:
+            fallback = head
+            continue
+    return clipped(fallback, limit)
 
 
 def x_length(text: str) -> int:
