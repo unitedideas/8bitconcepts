@@ -1999,6 +1999,33 @@
       "social_editor_status": "approved",
       "social_editor_closeout": "No scoped memory update needed",
       "linkedin_operator_closeout": "No scoped memory update needed"
+    },
+    {
+      "id": "portfolio-daily-2026-05-26-agentic-evidence-x-approved-failed",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "failed",
+      "attempted_at": "2026-05-26T18:15:40.517Z",
+      "fingerprint": "30e6f80e925617b4",
+      "text": "Agentic Evidence is live: https://agentic-evidence.fly.dev/\n\nIt is an agentic technical interview evidence layer for Hatchways-style assessments.\n\nNext constraint: hidden-test grading.",
+      "route": "https://agentic-evidence.fly.dev/",
+      "fact_key": "portfolio-daily:2026-05-26:agentic-evidence",
+      "note": "Social-editor approved; live URL verified. Direct X API returned empty 200 and no authenticated timeline recovery; forced browser/CDP fallback failed with spawnSync osascript ETIMEDOUT. Publisher moved to next candidate."
+    },
+    {
+      "id": "x-ai-stat-2026-05-26-nhs-live-stats",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-26T18:15:40.517Z",
+      "url": "https://x.com/8BitConcepts/status/2059265377583219136",
+      "fingerprint": "fa18ac3e83e5af76",
+      "text": "Not Human Search is tracking 4,173 agent-ready sites.\n\nAverage agent-readiness score: 35/100. The top category is developer tools.\n\nhttps://nothumansearch.ai/",
+      "route": "https://nothumansearch.ai/",
+      "fact_key": "nhs-live-stats:2026-05-26:total-sites-4173:avg-score-35:top-category-developer",
+      "note": "Facts refreshed from https://nothumansearch.ai/api/v1/stats on 2026-05-26: total_sites=4173, avg_score=35, top_category=developer. Social-editor approved final_copy. Posted via tools/x-brave-post.js direct authenticated X API; script returned verified status URL."
     }
   ]
 }

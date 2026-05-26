@@ -302,6 +302,24 @@
       ],
       "post_attempted": true,
       "live_url": ""
+    },
+    {
+      "id": "x-ai-stat-2026-05-26-nhs-live-stats",
+      "status": "posted",
+      "created_at": "2026-05-26T18:15:40.517Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search live stats",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "route": "https://nothumansearch.ai/",
+      "fact_id": "nhs-total-sites-4173-avg-35-top-category-developer",
+      "fact_key": "nhs-live-stats:2026-05-26:total-sites-4173:avg-score-35:top-category-developer",
+      "fingerprint": "fa18ac3e83e5af76",
+      "copy": "Not Human Search is tracking 4,173 agent-ready sites.\n\nAverage agent-readiness score: 35/100. The top category is developer tools.\n\nhttps://nothumansearch.ai/",
+      "posted_at": "2026-05-26T18:15:40.517Z",
+      "url": "https://x.com/8BitConcepts/status/2059265377583219136",
+      "note": "Refreshed from live NHS stats endpoint before posting; social-editor approved final copy."
     }
   ]
 }
