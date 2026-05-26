@@ -1586,6 +1586,33 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "q2-2026-mcp-ecosystem-health-linkedin-2026-05-26",
+      "source": "marketing/paper-distribution-queue.json",
+      "source_item": "q2-2026-mcp-ecosystem-health",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-26T01:28:34Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7464849360296579073",
+      "canonical_post_url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_mcp-adoption-has-a-verification-problem-activity-7464849360296579073-k2Wm",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fingerprint": "f77610ad29cbf018",
+      "fact_key": "paper:q2-2026-mcp-ecosystem-health:nhs-digest-2026-05-26T01:24:44Z",
+      "copy": "MCP adoption has a verification problem.\n\nThe live Not Human Search digest has 4,172 agent-ready sites indexed. 456 verify as MCP endpoints after a JSON-RPC 2.0 initialize handshake. That is 10.9%.\n\nThe useful distinction is not who mentions MCP. It is who answers when an agent actually calls the declared /mcp endpoint and gets a valid result with protocolVersion.\n\nStatic manifests and llms.txt references are useful discovery surfaces. They are not the same as a callable tool.\n\nMethodology and raw data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "verified_facts": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://nothumansearch.ai/digest.json generated_at=2026-05-26T01:24:44Z",
+        "digest total_sites=4172 and mcp_verified=456, 10.9%",
+        "LinkedIn public URL returned HTTP 200 and rendered approved copy in metadata"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by Owl 8bit LinkedIn agent publisher after cadence check, source fact-check, social-editor approval, duplicate check, public-action lock, and LinkedIn identity verification through tools/linkedin-brave-post.js direct Voyager API."
     }
   ]
 }
