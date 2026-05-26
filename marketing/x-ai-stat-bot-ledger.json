@@ -238,6 +238,37 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-26-nhs-live-stats-browser-timeout",
+      "status": "blocked",
+      "created_at": "2026-05-26T13:30:42.661677Z",
+      "updated_at": "2026-05-26T13:30:42.661677Z",
+      "blocked_at": "2026-05-26T13:30:42.661677Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search live stats",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "route": "https://nothumansearch.ai",
+      "fact_id": "nhs-total-sites-4173-avg-35",
+      "fact_key": "nhs-live-stats:2026-05-26T13:25Z:total_sites=4173:avg_score=35",
+      "fingerprint": "9924bdd0fae4d5e9",
+      "copy": "Not Human Search is tracking 4,173 agent-ready sites. Average agent-readiness score: 35/100.\n\nThe useful test is which endpoints survive a real agent request.\n\nhttps://nothumansearch.ai",
+      "blocker": "X public post blocked before publication: tools/x-brave-post.js verified enough to attempt through the approved path, but X direct CreateTweet returned HTTP 200 with an empty response and no status URL, then browser CDP/Apple Events fallback timed out twice with spawnSync osascript ETIMEDOUT. Both attempts used social-editor-approved copy and claimed sync-state locks; no live X URL was observed, so no post was ledgered as posted.",
+      "facts_verified": [
+        "https://nothumansearch.ai/api/v1/stats returned HTTP 200 with total_sites=4173, avg_score=35, top_category=developer",
+        "https://nothumansearch.ai returned HTTP 200 and identifies Not Human Search as an agentic-first search engine for services, APIs, and tools ranked by agent readiness"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_locks": [
+        "public-action-locks/social-content/f3a9ce10fda72a94.json",
+        "public-action-locks/social-content/9924bdd0fae4d5e9.json"
+      ],
+      "post_attempted": false,
+      "live_url": ""
     }
   ]
 }
