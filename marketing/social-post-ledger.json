@@ -1975,6 +1975,30 @@
       },
       "linkedin_operator_closeout": "No scoped memory update needed",
       "note": "No public LinkedIn action: identity could not be verified because LinkedIn requires login for the configured account."
+    },
+    {
+      "id": "q2-2026-mcp-ecosystem-health-linkedin-auth-blocked-2026-05-26-fd74475b526033b7",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "date": "2026-05-26",
+      "blocked_at": "2026-05-26T17:36:35Z",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fingerprint": "fd74475b526033b7",
+      "copy": "The useful MCP number is not pages that mention MCP. It is endpoints that answer a real initialize request.\n\nCurrent Not Human Search digest: 4,173 agent-ready sites indexed; 2,257 publish llms.txt; 485 expose OpenAPI; 456 pass a live JSON-RPC MCP initialize handshake.\n\nThat puts verified MCP at 10.9% of the current index. Agents cannot build against a citation. They need an endpoint that initializes.\n\nMethodology:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html\n\nLive digest:\nhttps://nothumansearch.ai/digest.json",
+      "note": "Selected Q2 2026 MCP Ecosystem Health from the paper distribution queue; social-editor approved final copy; LinkedIn hard-stopped before identity verification and no public post was attempted.",
+      "blocker": "LinkedIn auth hard stop: direct Voyager rejected stored cookies with all LinkedIn cookie sources rejected (chrome-profile-3:302), page-context Voyager returned 401 for /voyager/api/me, and approved one-shot browser recovery opened the LinkedIn login screen for h*****@8bitconcepts.com instead of an authenticated feed. Active Shane Cheek / Founder at 8bitconcepts identity could not be verified, so no public post was attempted.",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://nothumansearch.ai/digest.json returned total_sites=4173, mcp_verified=456, pct_mcp=10.9, llms_txt_count=2257, pct_llms_txt=54.1, openapi_count=485, pct_openapi=11.6",
+        "The paper states MCP verification means a live JSON-RPC initialize handshake, not a string match or static manifest"
+      ],
+      "public_action_lock_claimed": true,
+      "post_attempted": false,
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
