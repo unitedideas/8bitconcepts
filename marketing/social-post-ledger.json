@@ -1822,6 +1822,36 @@
         "Live page describes Claude Code to Codex operating-context migration, local-first CLI + MCP, free preview, and unchanged source files",
         "foundry-business-index marks Bring Your AI as running / revenue-ready with primary job: local-first Claude Code to Codex harness migration"
       ]
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-26-nhs-auth",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-ai-insight-2026-05-01-afternoon",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "blocked_at": "2026-05-26T14:33:49Z",
+      "blocker": "LinkedIn auth hard stop: direct Voyager rejected stored cookies with all LinkedIn cookie sources rejected, page-context Voyager returned 401 for /voyager/api/me, and approved one-shot browser recovery opened the LinkedIn login screen for h*****@8bitconcepts.com instead of an authenticated feed. Active Shane Cheek / Founder at 8bitconcepts identity could not be verified, so no public post was attempted.",
+      "fingerprint": "21ce553c63e0eba8",
+      "fact_key": "daily-ai-insight-2026-05-01-afternoon:nothumansearch-agent-readiness-audit",
+      "route": "https://nothumansearch.ai",
+      "text": "Agent-readiness audits get useful when they separate claims from behavior.\n\nNot Human Search indexes 4,173+ sites and scores them 0-100 across seven agentic signals: llms.txt, ai-plugin.json, OpenAPI specs, structured APIs, MCP servers, robots.txt AI rules, and Schema.org markup.\n\nThe practical question is what survives a real request: what the site claims, what the endpoint returns, and what breaks when an agent actually uses it.\n\nhttps://nothumansearch.ai",
+      "facts_verified": [
+        "https://nothumansearch.ai returned HTTP 200",
+        "https://nothumansearch.ai/llms.txt says Not Human Search is an agentic-first search engine and indexes 4173+ sites",
+        "https://nothumansearch.ai/llms.txt says sites are scored 0-100 across seven agentic signals: llms.txt, ai-plugin.json, OpenAPI specs, structured APIs, MCP servers, robots.txt AI rules, and Schema.org markup",
+        "https://nothumansearch.ai/llms.txt lists MCP endpoint https://nothumansearch.ai/mcp and tools including search_agents, get_site_details, get_stats, list_categories, get_top_sites, submit_site, register_monitor, verify_mcp, find_mcp_servers, recent_additions, and check_url",
+        "marketing/social-post-ledger.json showed latest posted LinkedIn row at 2026-05-02T19:31:15Z, outside the six-hour cadence cap",
+        "marketing/social-post-ledger.json already had q2-2026-mcp-ecosystem-health-linkedin as posted, so the paper queue LinkedIn item was treated as duplicate/already posted",
+        "marketing/daily-ai-insights-queue.json daily-targeted-research-2026-05-01-xai LinkedIn fingerprint was already posted, so the generic NHS insight was selected next"
+      ],
+      "selected_after": "q2-2026-mcp paper row already marked posted on LinkedIn; daily xAI targeted research LinkedIn fingerprint already posted",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": false,
+      "source_left_queued": true
     }
   ]
 }
