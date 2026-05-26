@@ -1746,6 +1746,59 @@
       "public_action_lock_claimed": true,
       "post_attempted": false,
       "source_left_queued": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-26-x-posting-empty-200-browser-timeout",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-26T14:13:27.210Z",
+      "blocker": "No public X post went live. Candidate 1 and shortened retry used verified NHS digest facts and social-editor approval; direct X CreateTweet returned HTTP 200 with empty/unverifiable response, direct timeline recovery did not contain the expected text, and browser fallback failed with spawnSync osascript ETIMEDOUT. Candidate 2 used verified 8bit Integration Tax facts and social-editor approval; direct X CreateTweet again returned empty/unverifiable HTTP 200 and direct timeline recovery did not contain the expected text. Computer Use fallback failed with codex app-server exited before returning a response. Active @8BitConcepts identity could not be safely re-verified through the fallback path after these failures, and no status URL was captured.",
+      "fingerprints": [
+        "a8e2c1dc655c4e4a",
+        "7baaf8392feef14a",
+        "07d03769aa913177"
+      ],
+      "route": "https://nothumansearch.ai/digest",
+      "fallback_route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "facts_verified": [
+        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-26T14:01:14Z, total_sites=4173, mcp_verified=456, pct_mcp=10.9, llms_txt_count=2257, pct_llms_txt=54.1, openapi_count=485, pct_openapi=11.6",
+        "https://nothumansearch.ai returned HTTP 200 and is the Not Human Search business URL in the portfolio index",
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200 and states model API costs are 10-20% of AI shipping cost; the other 80% is integration work including permissions, evals, workflow redesign, observability, and last mile systems work"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_locks": [
+        "public-action-locks/social-content/a8e2c1dc655c4e4a.json",
+        "public-action-locks/social-content/7baaf8392feef14a.json",
+        "public-action-locks/social-content/07d03769aa913177.json"
+      ],
+      "blocked_attempts": [
+        {
+          "fingerprint": "a8e2c1dc655c4e4a",
+          "copy": "456 of 4,173 indexed agent-ready sites verify as working MCP endpoints. That is 10.9%\n\nllms.txt is much more common: 2,257 sites, 54.1%.\n\nThe easier discovery file is winning. The live endpoint is still the real integration test.\n\nhttps://nothumansearch.ai/digest",
+          "result": "blocked",
+          "blocker": "tools/x-brave-post.js hung without output under the pre-held automation Computer Use lease and was killed; no status URL was captured."
+        },
+        {
+          "fingerprint": "7baaf8392feef14a",
+          "copy": "456 of 4,173 agent-ready sites verify as working MCP endpoints: 10.9%.\n\nllms.txt appears on 2,257 sites: 54.1%.\n\nDiscovery files are easier than live endpoints. The endpoint is still the integration test.\n\nhttps://nothumansearch.ai/digest",
+          "result": "blocked",
+          "blocker": "direct X CreateTweet returned empty/unverifiable HTTP 200; direct timeline recovery did not contain the expected post; browser fallback failed with spawnSync osascript ETIMEDOUT."
+        },
+        {
+          "fingerprint": "07d03769aa913177",
+          "copy": "Model API costs are usually the easy 10-20%.\n\nThe other 80% is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+          "result": "blocked",
+          "blocker": "direct X CreateTweet returned empty/unverifiable HTTP 200; direct timeline recovery did not contain the expected post."
+        }
+      ],
+      "post_attempted": true,
+      "live_url": "",
+      "latest_x_post_before_run": "2026-05-01T16:08:52.332Z",
+      "loud_failure_for_sla_watchdog": true
     }
   ]
 }

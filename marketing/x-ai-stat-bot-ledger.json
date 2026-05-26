@@ -269,6 +269,39 @@
       ],
       "post_attempted": false,
       "live_url": ""
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-26-integration-tax-empty-200",
+      "status": "blocked",
+      "created_at": "2026-05-26T14:13:27.210Z",
+      "updated_at": "2026-05-26T14:13:27.210Z",
+      "blocked_at": "2026-05-26T14:13:27.210Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "field_note",
+      "source": "8bitconcepts Integration Tax",
+      "source_url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_id": "model-api-cost-share",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "fingerprint": "07d03769aa913177",
+      "copy": "Model API costs are usually the easy 10-20%.\n\nThe other 80% is permissions, evals, workflow redesign, observability, and the last mile into existing systems.",
+      "blocker": "No public X post went live. Candidate 1 and shortened retry used verified NHS digest facts and social-editor approval; direct X CreateTweet returned HTTP 200 with empty/unverifiable response, direct timeline recovery did not contain the expected text, and browser fallback failed with spawnSync osascript ETIMEDOUT. Candidate 2 used verified 8bit Integration Tax facts and social-editor approval; direct X CreateTweet again returned empty/unverifiable HTTP 200 and direct timeline recovery did not contain the expected text. Computer Use fallback failed with codex app-server exited before returning a response. Active @8BitConcepts identity could not be safely re-verified through the fallback path after these failures, and no status URL was captured.",
+      "facts_verified": [
+        "https://nothumansearch.ai/digest.json returned generated_at=2026-05-26T14:01:14Z, total_sites=4173, mcp_verified=456, pct_mcp=10.9, llms_txt_count=2257, pct_llms_txt=54.1, openapi_count=485, pct_openapi=11.6",
+        "https://nothumansearch.ai returned HTTP 200 and is the Not Human Search business URL in the portfolio index",
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200 and states model API costs are 10-20% of AI shipping cost; the other 80% is integration work including permissions, evals, workflow redesign, observability, and last mile systems work"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_locks": [
+        "public-action-locks/social-content/a8e2c1dc655c4e4a.json",
+        "public-action-locks/social-content/7baaf8392feef14a.json",
+        "public-action-locks/social-content/07d03769aa913177.json"
+      ],
+      "post_attempted": true,
+      "live_url": ""
     }
   ]
 }
