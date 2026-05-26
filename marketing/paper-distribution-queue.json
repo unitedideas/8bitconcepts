@@ -66,7 +66,7 @@
       "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "status": "in_progress_linkedin_blocked_auth",
       "channel_state": {
-        "linkedin": "blocked_auth"
+        "linkedin": "blocked_linkedin_auth_hard_stop"
       },
       "linkedin_duplicate_source": "marketing/social-post-ledger.json:q2-2026-mcp-ecosystem-health-linkedin",
       "last_linkedin_attempt_at": "2026-05-26T16:35:06Z",
@@ -78,7 +78,10 @@
         "https://nothumansearch.ai/digest.json returned total_sites=4173, mcp_verified=456, pct_mcp=10.9, llms_txt_count=2257, pct_llms_txt=54.1, openapi_count=485, pct_openapi=11.6",
         "https://nothumansearch.ai/mcp returned HTTP 200 and advertises tools including verify_mcp, search_agents, get_site_details, get_stats, submit_site, check_url, register_monitor, list_categories, get_top_sites, recent_additions, and find_mcp_servers",
         "The paper states MCP verification means a live JSON-RPC initialize handshake, not a string match or static manifest"
-      ]
+      ],
+      "last_linkedin_blocked_at": "2026-05-26T17:04:47Z",
+      "last_linkedin_blocker": "LinkedIn auth hard stop: direct Voyager rejected stored cookies with all LinkedIn cookie sources rejected (chrome-profile-3:302), page-context Voyager returned 401 for /voyager/api/me, and approved one-shot browser recovery opened the LinkedIn login screen for h*****@8bitconcepts.com instead of an authenticated feed. Active Shane Cheek / Founder at 8bitconcepts identity could not be verified, so no public post was attempted.",
+      "last_linkedin_fingerprint": "632024149327e4a7"
     }
   ]
 }
