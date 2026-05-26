@@ -304,7 +304,7 @@ def upsert_ledger(queue: dict[str, object]) -> None:
                 existing.update(record)
             else:
                 items.append(record)
-    LEDGER_PATH.write_text(json.dumps(ledger, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    LEDGER_PATH.write_text(json.dumps(ledger, indent=2) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -317,7 +317,7 @@ def main() -> int:
     target = date.fromisoformat(args.date) if args.date else date.today()
     index_path = Path(args.index).expanduser()
     queue = render_queue(target, index_path)
-    QUEUE_PATH.write_text(json.dumps(queue, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    QUEUE_PATH.write_text(json.dumps(queue, indent=2) + "\n", encoding="utf-8")
     if not args.no_ledger:
         upsert_ledger(queue)
     print(f"wrote {QUEUE_PATH}")
