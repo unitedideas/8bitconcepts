@@ -47,33 +47,24 @@
     "paper_with_new_external_hook"
   ],
   "active_backlog": [
-    {
-      "paper": "on-device-inference",
-      "url": "https://8bitconcepts.com/research/on-device-inference.html",
-      "status": "distributed_with_devto_hashnode_blocked",
-      "channel_state": {
-        "x": "posted",
-        "reddit": "posted_profile_subreddit_removed",
-        "hacker_news": "posted",
-        "linkedin": "posted",
-        "devto_hashnode": "blocked_no_first_party_account_or_api_credential",
-        "newsletter_outreach": "sent",
-        "indexing_discovery": "submitted"
-      }
-    },
+        {
+            "paper": "on-device-inference",
+            "url": "https://8bitconcepts.com/research/on-device-inference.html",
+            "status": "distributed_with_devto_hashnode_blocked",
+            "channel_state": {
+                "x": "posted",
+                "reddit": "posted_profile_subreddit_removed",
+                "hacker_news": "posted",
+                "linkedin": "posted",
+                "devto_hashnode": "blocked_no_first_party_account_or_api_credential",
+                "newsletter_outreach": "sent",
+                "indexing_discovery": "submitted"
+            }
+        },
     {
       "paper": "q2-2026-mcp-ecosystem-health",
       "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "status": "in_progress_with_linkedin_blocked",
-      "channel_state": {
-        "linkedin": "blocked_auth_identity_verification_failed"
-      },
-      "last_linkedin_attempt": {
-        "at": "2026-05-26T00:21:45.194Z",
-        "fingerprint": "3b97f237f1dc9518",
-        "blocker": "LinkedIn posting blocked before public post: direct Voyager identity failed because all cookie sources were rejected (chrome-profile-3 redirected); page-context Voyager identity returned HTTP 401 for /voyager/api/me; forced one-shot browser recovery with the approved token and existing Computer Use lease produced no success URL or blocker output and was stopped after hanging beyond the expected recovery window. No live LinkedIn URL was captured, so the post was not recorded as posted.",
-        "social_editor_status": "approved"
-      }
+      "status": "in_progress"
     }
   ]
 }
