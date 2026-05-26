@@ -2077,6 +2077,35 @@
       "fact_key": "nhs-live-stats:total_sites-4174:avg_score-35:2026-05-26",
       "route": "https://nothumansearch.ai",
       "note": "Posted from verified @8BitConcepts via tools/x-brave-post.js direct X timeline recovery. Facts verified from https://nothumansearch.ai/api/v1/stats total_sites=4174 avg_score=35 top_category=developer; route returned HTTP 200. Short-copy retry lock 3f33e95d9bc10ed7 was not posted."
+    },
+    {
+      "id": "portfolio-daily-2026-05-26-agentic-evidence-linkedin-posted-b393812e1de5c49b",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "portfolio-daily-2026-05-26-agentic-evidence-linkedin",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-26T20:03:11Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7465130170161532930/",
+      "fingerprint": "b393812e1de5c49b",
+      "original_fingerprint": "6735f288660b1a3e",
+      "fact_key": "portfolio-daily:2026-05-26:agentic-evidence",
+      "route": "https://agentic-evidence.fly.dev",
+      "business": "Agentic Evidence",
+      "copy": "Agentic Evidence is useful because the proof surface is public.\n\nThe live product gives reviewers a way to inspect candidate AI-evidence packets instead of relying on a resume claim. The current surface includes reviewer handoff, repo-packaged Claude JSONL exports, assignment packets, guided VM flow, OpenAPI, health, and a $199/month price point.\n\nNext useful move: hidden-test grading.\n\nhttps://agentic-evidence.fly.dev",
+      "facts_verified": [
+        "https://agentic-evidence.fly.dev/ returned HTTP 200",
+        "https://agentic-evidence.fly.dev/health returned HTTP 200",
+        "https://agentic-evidence.fly.dev/llms.txt returned HTTP 200 and describes a developer-VM interview platform for retroactive Codex/Claude session review",
+        "llms.txt lists reviewer packets, Hatchways proof pages, VM flow, GitHub Action adapter, optional GitHub App install UX, OpenAPI, health, and $199/month pricing",
+        "foundry-business-index identifies Agentic Evidence as a cooking/live MVP for agentic technical interview evidence with candidate AI-evidence entry, reviewer handoff, repo-packaged Claude JSONL exports, assignment packet, guided Claude VM behavior, and finish checklist live"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true,
+      "note": "Posted by tools/linkedin-brave-post.js. Script created the LinkedIn share URL; manual browser verification confirmed the live post body because script live-URL verifier failed after creation."
     }
   ]
 }
