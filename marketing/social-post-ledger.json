@@ -1920,6 +1920,33 @@
       "linkedin_operator_closeout": "No scoped memory update needed",
       "public_action_lock_claimed": true,
       "post_attempted": false
+    },
+    {
+      "id": "q2-2026-mcp-ecosystem-health-linkedin-2026-05-26",
+      "source": "8bit-linkedin-agent-publisher",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "blocked_at": "2026-05-26T16:35:06Z",
+      "paper": "q2-2026-mcp-ecosystem-health",
+      "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "fingerprint": "24181ede7f149498",
+      "fact_key": "paper:q2-2026-mcp-ecosystem-health:nhs_digest:4173:456:10.9",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "note": "Selected from paper-distribution queue as newest LinkedIn-unposted paper. Social-editor approved final copy; LinkedIn auth hard-stopped before posting.",
+      "blocker": "LinkedIn auth hard stop: direct Voyager rejected stored cookies with all LinkedIn cookie sources rejected (chrome-profile-3:302), page-context Voyager returned 401 for /voyager/api/me, and approved one-shot browser recovery opened the LinkedIn login screen for h*****@8bitconcepts.com instead of an authenticated feed. Active Shane Cheek / Founder at 8bitconcepts identity could not be verified, so no public post was attempted.",
+      "final_copy": "Most MCP discovery signals still are not working endpoints.\n\nCurrent Not Human Search digest: 4,173 agent-ready sites indexed. 2,257 publish llms.txt. 456 pass a live JSON-RPC MCP initialize handshake. That is 10.9%.\n\nThe distinction matters. A string match for MCP in llms.txt or a static manifest is a citation. A working MCP endpoint has to complete the call.\n\nIf you are building agents against static MCP directories, the failure mode is wasted connections and context on endpoints that never initialize.\n\nFull methodology and source links:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html\n\nLive digest:\nhttps://nothumansearch.ai/digest.json",
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://nothumansearch.ai/digest.json returned total_sites=4173, mcp_verified=456, pct_mcp=10.9, llms_txt_count=2257, pct_llms_txt=54.1, openapi_count=485, pct_openapi=11.6",
+        "https://nothumansearch.ai/mcp returned HTTP 200 and advertises tools including verify_mcp, search_agents, get_site_details, get_stats, submit_site, check_url, register_monitor, list_categories, get_top_sites, recent_additions, and find_mcp_servers",
+        "The paper states MCP verification means a live JSON-RPC initialize handshake, not a string match or static manifest"
+      ],
+      "public_action_lock_claimed": true,
+      "post_attempted": false
     }
   ]
 }
