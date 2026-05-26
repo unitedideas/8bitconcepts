@@ -1613,6 +1613,66 @@
       },
       "linkedin_operator_closeout": "No scoped memory update needed",
       "note": "Posted by Owl 8bit LinkedIn agent publisher after cadence check, source fact-check, social-editor approval, duplicate check, public-action lock, and LinkedIn identity verification through tools/linkedin-brave-post.js direct Voyager API."
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-26-adb-agent-surface-long-copy",
+      "date": "2026-05-25",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-26T02:18:00Z",
+      "blocker": "No live X status URL: tools/x-brave-post.js direct API returned empty/unverifiable 200 and browser fallback failed with osascript ETIMEDOUT before a verified public post.",
+      "fingerprint": "acd3c93ad4374c3f",
+      "fact_key": "adb-agent-surface:2026-05-26:8737-jobs-13-mcp-tools",
+      "route": "https://aidevboard.com",
+      "copy": "AI Dev Board is showing 8,737 AI jobs right now.\n\nThe useful part is the surface area: REST, OpenAPI, and 13 MCP tools over the same index, including search, matching, salary data, tags, catalog quotes, and checkout.\n\nhttps://aidevboard.com",
+      "verified_facts": [
+        "https://aidevboard.com returned HTTP 200 and showed 8,737 AI jobs",
+        "https://aidevboard.com/llms.txt returned HTTP 200 and documented REST, OpenAPI, and 13 MCP tools",
+        "https://aidevboard.com/api/v1 returned HTTP 200 and listed jobs, companies, job_match, salary_trends, tags, trending_companies, catalog, quote, checkout, and stats endpoints",
+        "https://aidevboard.com/.well-known/mcp.json returned HTTP 200 and listed the MCP endpoint and 13 tools",
+        "https://aidevboard.com/api/v1/stats returned HTTP 402 quota_exceeded, so no stats API values were used"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "source_left_queued": true,
+      "post_attempted": true,
+      "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-x-agent-publisher-blocked-2026-05-26-adb-agent-surface-short-copy",
+      "date": "2026-05-25",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T20:09:15+00:00-71d43027",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "blocked",
+      "blocked_at": "2026-05-26T02:18:00Z",
+      "blocker": "No live X status URL: shorter social-editor-approved retry returned likely_posted=true from X direct empty 200, but authenticated timeline find did not contain the expected text; Computer Use recovery was unavailable with codex app-server exited before returning a response.",
+      "fingerprint": "f4e75b9bae311edf",
+      "fact_key": "adb-agent-surface:2026-05-26:8737-jobs-13-mcp-tools",
+      "route": "https://aidevboard.com",
+      "copy": "AI Dev Board is at 8,737 AI jobs.\n\nThe useful part is the agent surface: REST, OpenAPI, and 13 MCP tools over the same index.\n\nhttps://aidevboard.com",
+      "verified_facts": [
+        "https://aidevboard.com returned HTTP 200 and showed 8,737 AI jobs",
+        "https://aidevboard.com/llms.txt returned HTTP 200 and documented REST, OpenAPI, and 13 MCP tools",
+        "https://aidevboard.com/api/v1 returned HTTP 200 and listed jobs, companies, job_match, salary_trends, tags, trending_companies, catalog, quote, checkout, and stats endpoints",
+        "https://aidevboard.com/.well-known/mcp.json returned HTTP 200 and listed the MCP endpoint and 13 tools",
+        "https://aidevboard.com/api/v1/stats returned HTTP 402 quota_exceeded, so no stats API values were used"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "source_left_queued": true,
+      "post_attempted": true,
+      "public_action_lock_claimed": true
     }
   ]
 }
