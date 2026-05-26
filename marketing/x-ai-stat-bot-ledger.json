@@ -320,6 +320,24 @@
       "posted_at": "2026-05-26T18:15:40.517Z",
       "url": "https://x.com/8BitConcepts/status/2059265377583219136",
       "note": "Refreshed from live NHS stats endpoint before posting; social-editor approved final copy."
+    },
+    {
+      "id": "x-ai-stat-2026-05-26T19:35:00Z-nhs-live-sites-4174",
+      "status": "posted",
+      "created_at": "2026-05-26T19:35:00Z",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "kind": "live_stat",
+      "source": "Not Human Search live stats",
+      "source_url": "https://nothumansearch.ai/api/v1/stats",
+      "route": "https://nothumansearch.ai",
+      "fact_id": "nhs-total-sites-4174-avg-35",
+      "fact_key": "nhs-live-stats:total_sites-4174:avg_score-35:2026-05-26",
+      "fingerprint": "42514ca147514eb6",
+      "copy": "Not Human Search is tracking 4,174 sites in its agent-readiness index. Average score: 35/100.\n\nThat is the useful gap. A lot of the web now has some AI-facing surface, but most sites still are not built for agents to inspect, call, or verify cleanly.\n\nhttps://nothumansearch.ai",
+      "posted_at": "2026-05-26T19:35:00Z",
+      "url": "https://x.com/8BitConcepts/status/2059355068059824311",
+      "note": "Facts verified from live NHS stats endpoint on 2026-05-26. Initial direct CreateTweet returned empty 200 and browser fallback timed out; authenticated timeline recovery returned the live status URL."
     }
   ]
 }

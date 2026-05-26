@@ -2063,6 +2063,20 @@
       "social_editor_status": "approved",
       "social_editor_closeout": "No scoped memory update needed",
       "linkedin_operator_closeout": "No scoped memory update needed"
+    },
+    {
+      "id": "x-nhs-live-agent-readiness-2026-05-26",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-26T19:35:00Z",
+      "url": "https://x.com/8BitConcepts/status/2059355068059824311",
+      "fingerprint": "42514ca147514eb6",
+      "text": "Not Human Search is tracking 4,174 sites in its agent-readiness index. Average score: 35/100.\n\nThat is the useful gap. A lot of the web now has some AI-facing surface, but most sites still are not built for agents to inspect, call, or verify cleanly.\n\nhttps://nothumansearch.ai",
+      "fact_key": "nhs-live-stats:total_sites-4174:avg_score-35:2026-05-26",
+      "route": "https://nothumansearch.ai",
+      "note": "Posted from verified @8BitConcepts via tools/x-brave-post.js direct X timeline recovery. Facts verified from https://nothumansearch.ai/api/v1/stats total_sites=4174 avg_score=35 top_category=developer; route returned HTTP 200. Short-copy retry lock 3f33e95d9bc10ed7 was not posted."
     }
   ]
 }
