@@ -1586,6 +1586,33 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28-owl-2026-05-26",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T05:58:51+00:00-58b5de28",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-26",
+      "posted_at": "2026-05-26T22:42:29.834Z",
+      "url": "https://x.com/8BitConcepts/status/2059110403209359662",
+      "route": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "fact_key": "58b5de28df35f932a98442ce",
+      "fingerprint": "a746c6e54c37d91a",
+      "copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, retries, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "approved_final_copy": "Model API costs are usually the easy 10-20%. The expensive part is permissions, evals, workflow redesign, observability, retries, and the last mile into existing systems.\n\nhttps://8bitconcepts.com/research/the-integration-tax.html",
+      "approved_final_fingerprint": "a746c6e54c37d91a",
+      "editor": "agent-social-editor",
+      "operator": "agent-x-operator",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/the-integration-tax.html returned HTTP 200",
+        "Live page states model API costs are 10-20% of what AI actually costs to ship",
+        "Live page names evaluation/testing, observability, workflow/data pipeline, and last-mile integration as non-model cost centers",
+        "https://8bitconcepts.com/ is the 8bitconcepts business URL in the Foundry business index"
+      ],
+      "public_action_lock": "/Users/owlassist/.foundry/foundry-sync-state/public-action-locks/social-content/a746c6e54c37d91a.json",
+      "note": "Posted by Owl 8bit X agent publisher after source fact-check, social-editor approval, public-action lock, active @8BitConcepts verification, and tools/x-brave-post.js live URL capture."
     }
   ]
 }
