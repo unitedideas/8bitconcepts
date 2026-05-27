@@ -104,7 +104,14 @@
           "profile": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
           "copy": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request. The gap is usually where the work is.\n\nThe useful question for operators is what changes in the system around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://nothumansearch.ai",
           "fingerprint": "cd9fdcb7ca81b451",
-          "duplicate": false
+          "duplicate": false,
+          "posted": true,
+          "status": "posted",
+          "posted_at": "2026-05-27T00:22:12.459Z",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7465195386727735298/",
+          "final_copy": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request.\n\nThat gap is usually where the work is.\n\nFor operators, the more useful question is what changes around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://nothumansearch.ai",
+          "posted_fingerprint": "b30690dc51d9022b",
+          "original_fingerprint": "cd9fdcb7ca81b451"
         }
       },
       "quality_gate": [

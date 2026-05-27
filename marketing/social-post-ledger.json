@@ -1644,6 +1644,31 @@
       "post_attempted": true,
       "public_action_lock_claimed": true,
       "note": "Blocked by LinkedIn auth/identity verification before any public post went live. No URL captured and no success ledgered."
+    },
+    {
+      "id": "daily-ai-insight-2026-05-01-afternoon-linkedin-2026-05-27",
+      "date": "2026-05-27",
+      "source": "marketing/daily-ai-insights-queue.json",
+      "source_item": "daily-ai-insight-2026-05-01-afternoon",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-27T00:22:12.459Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7465195386727735298/",
+      "route": "https://nothumansearch.ai",
+      "fingerprint": "b30690dc51d9022b",
+      "original_fingerprint": "cd9fdcb7ca81b451",
+      "fact_key": "daily-ai-insight-2026-05-01-afternoon",
+      "text": "A useful agent-readiness audit has three columns: what the site claims, what the endpoint returns, and what breaks under a real request.\n\nThat gap is usually where the work is.\n\nFor operators, the more useful question is what changes around the model: state, workflow, evals, policy, and feedback loops.\n\nMore field notes:\nhttps://nothumansearch.ai",
+      "facts_verified": [
+        "https://nothumansearch.ai returned HTTP 200",
+        "Live LinkedIn URL returned HTTP 200 and contained stable approved-copy fragments",
+        "Live LinkedIn URL contained Shane Cheek identity text"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "note": "Posted by tools/linkedin-brave-post.js through LinkedIn Voyager API. Script created the share URL but its internal verification failed; external live URL verification confirmed the approved text and Shane identity before ledgering."
     }
   ]
 }
