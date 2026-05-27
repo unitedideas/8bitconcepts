@@ -1586,34 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-27-mcp-handshake-014a24fb729cf2cf",
-      "source": "8bit research backlog",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-27",
-      "posted_at": "2026-05-27T17:30:30.586535Z",
-      "url": "https://x.com/8BitConcepts/status/2059687400864194622",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "fact_key": "8bit-mcp-ecosystem-health:2026-05-25:451-of-4173-mcp-handshake",
-      "fingerprint": "014a24fb729cf2cf",
-      "copy": "451 of 4,173 indexed agent-ready sites passed a live JSON-RPC MCP handshake in the latest Not Human Search crawl.\n\nThat is 10.8%.\n\nThe useful split is not who mentions MCP. It is who survives an initialize round trip.\n\nData: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "note": "Posted by 8bit-x-agent-publisher after live 8bit report fact-check, agent-social-editor approval, duplicate check, social-content lock, and @8BitConcepts verification through tools/x-brave-post.js direct existing recovery.",
-      "verified_facts": [
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
-        "Live page states 4,173 agent-ready sites indexed as of 2026-05-25",
-        "Live page states 451 sites passed a live JSON-RPC MCP handshake",
-        "Live page states 451/4,173 is 10.8% of the index",
-        "Live page states the distinction is MCP mentions/discovery surfaces versus a completed initialize round trip"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "451 of 4,173 indexed agent-ready sites passed a live JSON-RPC MCP handshake in the latest Not Human Search crawl.\n\nThat is 10.8%.\n\nThe useful split is not who mentions MCP. It is who survives an initialize round trip.\n\nData: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-        "closeout": "No scoped memory update needed"
-      },
-      "x_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
