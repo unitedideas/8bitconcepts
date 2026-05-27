@@ -1586,6 +1586,32 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-27-mcp-health-auth",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "blocked",
+      "blocked_at": "2026-05-27T13:28:37Z",
+      "blocker": "LinkedIn post blocked before public POST: direct Brave/Chrome cookie Voyager identity rejected all local cookie stores (brave-default:302, chrome-profile-3:302); page-context Voyager /voyager/api/me returned 401; approved one-shot browser recovery hung without producing identity/composer/post URL evidence and was terminated. Active LinkedIn identity could not be safely verified, so no public post was attempted beyond authenticated publish routes.",
+      "fingerprint": "67ae2bdeec0f027d",
+      "copy": "A declared `/mcp` endpoint is still not the same as a working endpoint.\n\nThe refreshed 8bitconcepts crawl shows 4,174 agent-ready sites in Not Human Search as of 2026-05-27. Only 456 of them, 10.9%, pass a live JSON-RPC initialize handshake.\n\nThe same digest shows 2,257 sites publishing `llms.txt` and 485 with OpenAPI. Discovery files are useful. The operational gap is whether the endpoint answers when an agent calls it.\n\nMethodology and live data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source": "marketing/paper-distribution-queue.json",
+      "source_item": "q2-2026-mcp-ecosystem-health",
+      "fact_key": "q2-2026-mcp-ecosystem-health:2026-05-27-digest:4174:456:10.9",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://nothumansearch.ai/digest.json returned HTTP 200 with generated_at=2026-05-27T13:23:42Z",
+        "digest total_sites=4174, mcp_verified=456, pct_mcp=10.9, llms_txt_count=2257, openapi_count=485",
+        "https://nothumansearch.ai returned HTTP 200"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": false,
+      "note": "No live LinkedIn URL captured; leaving channel blocked on LinkedIn auth/identity verification rather than claiming success."
     }
   ]
 }

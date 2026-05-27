@@ -47,24 +47,29 @@
     "paper_with_new_external_hook"
   ],
   "active_backlog": [
-        {
-            "paper": "on-device-inference",
-            "url": "https://8bitconcepts.com/research/on-device-inference.html",
-            "status": "distributed_with_devto_hashnode_blocked",
-            "channel_state": {
-                "x": "posted",
-                "reddit": "posted_profile_subreddit_removed",
-                "hacker_news": "posted",
-                "linkedin": "posted",
-                "devto_hashnode": "blocked_no_first_party_account_or_api_credential",
-                "newsletter_outreach": "sent",
-                "indexing_discovery": "submitted"
-            }
-        },
+    {
+      "paper": "on-device-inference",
+      "url": "https://8bitconcepts.com/research/on-device-inference.html",
+      "status": "distributed_with_devto_hashnode_blocked",
+      "channel_state": {
+        "x": "posted",
+        "reddit": "posted_profile_subreddit_removed",
+        "hacker_news": "posted",
+        "linkedin": "posted",
+        "devto_hashnode": "blocked_no_first_party_account_or_api_credential",
+        "newsletter_outreach": "sent",
+        "indexing_discovery": "submitted"
+      }
+    },
     {
       "paper": "q2-2026-mcp-ecosystem-health",
       "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "status": "in_progress"
+      "status": "in_progress_linkedin_blocked",
+      "channel_state": {
+        "linkedin": "blocked_auth_identity_verification_failed_2026-05-27"
+      },
+      "last_attempted_at": "2026-05-27T13:28:37Z",
+      "last_blocker": "LinkedIn post blocked before public POST: direct Brave/Chrome cookie Voyager identity rejected all local cookie stores (brave-default:302, chrome-profile-3:302); page-context Voyager /voyager/api/me returned 401; approved one-shot browser recovery hung without producing identity/composer/post URL evidence and was terminated. Active LinkedIn identity could not be safely verified, so no public post was attempted beyond authenticated publish routes."
     }
   ]
 }
