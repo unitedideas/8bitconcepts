@@ -64,12 +64,7 @@
     {
       "paper": "q2-2026-mcp-ecosystem-health",
       "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "status": "in_progress",
-      "channel_state": {
-        "linkedin": "blocked_auth_identity_2026-05-26"
-      },
-      "last_linkedin_blocker": "linkedin_auth_hard_stop: direct Voyager rejected cookie stores (chrome-profile-3 302), page-context Voyager /voyager/api/me returned 401, and approved browser recovery hung without verified LinkedIn identity or post URL capture.",
-      "last_linkedin_attempt_at": "2026-05-26T23:15:13Z"
+      "status": "in_progress"
     }
   ]
 }
