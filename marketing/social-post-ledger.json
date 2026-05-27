@@ -1612,6 +1612,34 @@
       },
       "linkedin_operator_closeout": "No scoped memory update needed",
       "cadence_note": "Posted after direct ledger scan missed an existing 2026-05-27T00:22:12Z LinkedIn post in later event history; record kept explicit for audit."
+    },
+    {
+      "id": "x-ai-stat-2026-05-27-mcp-live-check-e3007014",
+      "source": "marketing/x-ai-stat-bot-outbox.json",
+      "source_item": "x-ai-stat-2026-04-28T12:55:03+00:00-e715f4d6",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "posted_at": "2026-05-27T03:58:03Z",
+      "url": "https://x.com/8BitConcepts/status/2059484005511102540",
+      "fingerprint": "e3007014e3278f8d",
+      "fact_key": "nhs-mcp-live-check:2026-05-27:456-of-4174",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "text": "Not Human Search's 2026-05-27 digest found 456 of 4,174 indexed sites pass a live MCP JSON-RPC handshake: 10.9%.\n\nThe stats endpoint shows the same 4,174-site index at a 35 average agentic-readiness score. A manifest is still not the same thing as an endpoint an agent can initialize.\n\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "facts_verified": [
+        "https://nothumansearch.ai/digest.json generated_at=2026-05-27T03:52:15Z with total_sites=4174, mcp_verified=456, pct_mcp=10.9",
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4174 and avg_score=35",
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200 and documents live JSON-RPC handshake methodology",
+        "X active account verified as @8BitConcepts by tools/x-brave-post.js",
+        "Live X URL captured by browser fallback after direct API empty-200: https://x.com/8BitConcepts/status/2059484005511102540"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "x_operator_closeout": "No scoped memory update needed",
+      "public_action_lock": "/Users/owlassist/.foundry/foundry-sync-state/public-action-locks/social-content/e3007014e3278f8d.json",
+      "note": "Selected X AI stat bot outbox candidate after current daily insight and portfolio queues had no today-dated X item; stale MCP counts refreshed from live NHS digest before posting."
     }
   ]
 }
