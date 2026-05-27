@@ -1586,18 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "x-ledger-backfill-2026-05-27-2059706811675287906",
-      "source": "8bit-x-agent-publisher",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "posted_at": "2026-05-27T18:43:01Z",
-      "url": "https://x.com/8BitConcepts/status/2059706811675287906",
-      "fingerprint": "31482b08982ee011",
-      "text": null,
-      "note": "Backfilled from sync-state automation event because repo ledger was stale during the 2026-05-27 X publisher run; copy unavailable in local evidence."
     }
   ]
 }
