@@ -1628,6 +1628,33 @@
       "fingerprint": "c5ee2f92a0b63df2",
       "copy": "Today's Not Human Search digest: 456 of 4,174 agent-ready sites pass a live MCP handshake. 10.9%.\n\nDiscovery files are much easier to ship: 2,257 sites have llms.txt; 485 have OpenAPI.\n\nMethod: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
       "note": "Posted from verified @8BitConcepts via tools/x-brave-post.js. X direct API returned empty 200 first; live status URL was recovered through the current/profile verification path before ledgering."
+    },
+    {
+      "id": "8bit-linkedin-agent-publisher-cerebras-2026-05-27",
+      "source": "8bit-linkedin-agent-publisher",
+      "source_item": "targeted-research:cerebras:33:agent-readiness",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "date": "2026-05-27",
+      "posted_at": "2026-05-27T14:47:00Z",
+      "url": "https://www.linkedin.com/posts/shane-cheek-9173473b6_cerebras-has-33-indexed-ai-roles-on-ai-dev-activity-7465410422406283264-7FXW",
+      "route": "https://aidevboard.com/company/cerebras",
+      "fingerprint": "92e20cef47d7be81",
+      "fact_key": "targeted-research:cerebras:33:nothumansearch-score-15",
+      "copy": "Cerebras has 33 indexed AI roles on AI Dev Board.\n\nThe public careers route is live, and the current indexed company page points to hiring around AI systems work without published salary data in the source.\n\nThe second lens is agent readiness: Not Human Search currently scores cerebras.ai at 15/100. That is a useful contrast for companies building AI infrastructure. The hiring surface is active, but the public agent-readable surface is still thin.\n\nData:\nhttps://aidevboard.com/company/cerebras\nhttps://nothumansearch.ai/site/cerebras.ai",
+      "facts_verified": [
+        "https://aidevboard.com/company/cerebras returned HTTP 200 and title/meta showed Cerebras Jobs / 33 AI Roles",
+        "https://nothumansearch.ai/site/cerebras.ai returned HTTP 200 and title/meta showed Cerebras Agentic Readiness 15/100",
+        "https://www.cerebras.ai/careers returned the Cerebras site with careers navigation",
+        "Public LinkedIn URL returned HTTP 200 and contained the approved copy fragments plus shane-cheek-9173473b6"
+      ],
+      "social_editor_status": "approved",
+      "social_editor_closeout": "No scoped memory update needed",
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "public_action_lock_claimed": true,
+      "post_attempted": true,
+      "note": "tools/linkedin-brave-post.js created the LinkedIn post through the direct Voyager route after identity verification, then failed its own live verifier. The public canonical activity URL was independently verified before ledgering."
     }
   ]
 }
