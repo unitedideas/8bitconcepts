@@ -1612,6 +1612,22 @@
       "public_action_lock_claimed": true,
       "post_attempted": false,
       "note": "No live LinkedIn URL captured; leaving channel blocked on LinkedIn auth/identity verification rather than claiming success."
+    },
+    {
+      "id": "x-nhs-mcp-digest-2026-05-27",
+      "source": "8bit-x-agent-publisher",
+      "channel": "x",
+      "account": "@8bitconcepts",
+      "status": "posted",
+      "date": "2026-05-27",
+      "posted_at": "2026-05-27T13:46:16.029282Z",
+      "url": "https://x.com/8BitConcepts/status/2059632086202683649",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "source_url": "https://nothumansearch.ai/digest.json",
+      "fact_key": "nhs_digest:mcp_verified=456,total_sites=4174,pct_mcp=10.9,llms_txt=2257,openapi=485,generated_at=2026-05-27T13:39:58Z",
+      "fingerprint": "c5ee2f92a0b63df2",
+      "copy": "Today's Not Human Search digest: 456 of 4,174 agent-ready sites pass a live MCP handshake. 10.9%.\n\nDiscovery files are much easier to ship: 2,257 sites have llms.txt; 485 have OpenAPI.\n\nMethod: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "note": "Posted from verified @8BitConcepts via tools/x-brave-post.js. X direct API returned empty 200 first; live status URL was recovered through the current/profile verification path before ledgering."
     }
   ]
 }
