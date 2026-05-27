@@ -1586,31 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-x-agent-publisher-2026-05-27-nhs-digest",
-      "source": "nothumansearch.ai/digest.json",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "status": "posted",
-      "date": "2026-05-27",
-      "posted_at": "2026-05-27T18:43:01Z",
-      "url": "https://x.com/8BitConcepts/status/2059706811675287906",
-      "route": "https://nothumansearch.ai/digest",
-      "fact_key": "nhs-digest-2026-05-27-4180-2267-456",
-      "fingerprint": "ae0baaea709bb461",
-      "copy": "Not Human Search tracks 4,180 agent-ready sites.\n\n2,267 publish llms.txt. 456 pass MCP verification.\n\nDiscovery files still beat live tool endpoints.\n\nData: https://nothumansearch.ai/digest",
-      "note": "Posted by 8bit-x-agent-publisher from verified @8BitConcepts via tools/x-brave-post.js direct authenticated X recovery after social-editor approval and sync-state lock.",
-      "verified_facts": [
-        "https://nothumansearch.ai/api/v1/stats returned HTTP 200 with total_sites=4180, avg_score=35, top_category=developer",
-        "https://nothumansearch.ai/digest.json returned HTTP 200 with generated_at=2026-05-27T18:33:45Z, llms_txt_count=2267, openapi_count=494, mcp_verified=456, pct_llms_txt=54.2, pct_openapi=11.8, pct_mcp=10.9, submissions_week=1208",
-        "Foundry business index identifies Not Human Search as the active agentic-readiness search engine and scoring system"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "scoped_memory": "No scoped memory update needed"
-      },
-      "x_operator_closeout": "No scoped memory update needed"
     }
   ]
 }
