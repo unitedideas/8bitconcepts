@@ -1586,37 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "8bit-linkedin-agent-publisher-blocked-2026-05-27-prompt-debt-spiral",
-      "source": "8bit research backlog",
-      "source_item": "the-prompt-debt-spiral",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "blocked",
-      "blocked_at": "2026-05-27T01:33:44Z",
-      "fingerprint": "da83749e29251e03",
-      "fact_key": "8bit-research:the-prompt-debt-spiral:prompt-debt",
-      "route": "https://8bitconcepts.com/research/the-prompt-debt-spiral.html",
-      "copy": "Prompt debt is becoming the AI version of configuration sprawl.\n\nA University of North Texas study analyzed 93,142 Python files across major LLM API integrations. Prompt design showed up as the primary source of LLM-specific self-admitted technical debt. Instruction-based prompts accounted for 38.60% of the prompt techniques attracting debt; few-shot prompts accounted for 18.13%.\n\nThe issue is not that prompts are bad. It is that teams still manage production behavior as disposable strings: scattered across repos, weak ownership, little regression testing, and no clear model-upgrade playbook.\n\nWhen the model changes, that becomes a migration audit nobody budgeted for.\n\nI wrote up the framework here:\nhttps://8bitconcepts.com/research/the-prompt-debt-spiral.html",
-      "blocker": "LinkedIn post blocked after source verification, social-editor approval, duplicate check, and claimed sync-state social-content lock: direct LinkedIn cookie route failed because all cookie sources were rejected (chrome-profile-3 returned 302); page-context Voyager identity check returned HTTP 401 from /voyager/api/me; approved one-shot browser recovery with SOCIAL_LINKEDIN_FORCE_BROWSER=1 and the supervised allow token produced no verifiable identity, composer success, or live URL within four minutes and was stopped. No public LinkedIn post was verified.",
-      "facts_verified": [
-        "https://8bitconcepts.com/research/the-prompt-debt-spiral.html returned HTTP 200",
-        "Article title is The Prompt Debt Spiral",
-        "Article cites arXiv PromptDebt: A Comprehensive Study of Technical Debt Across LLM Projects",
-        "arXiv source says it analyzed 93,142 Python files across major LLM APIs",
-        "arXiv source says prompt design emerged as the primary source of LLM-specific self-admitted technical debt",
-        "arXiv source says instruction-based prompts account for 38.60% and few-shot prompts account for 18.13% among prompt techniques attracting debt"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "final_copy": "Prompt debt is becoming the AI version of configuration sprawl.\n\nA University of North Texas study analyzed 93,142 Python files across major LLM API integrations. Prompt design showed up as the primary source of LLM-specific self-admitted technical debt. Instruction-based prompts accounted for 38.60% of the prompt techniques attracting debt; few-shot prompts accounted for 18.13%.\n\nThe issue is not that prompts are bad. It is that teams still manage production behavior as disposable strings: scattered across repos, weak ownership, little regression testing, and no clear model-upgrade playbook.\n\nWhen the model changes, that becomes a migration audit nobody budgeted for.\n\nI wrote up the framework here:\nhttps://8bitconcepts.com/research/the-prompt-debt-spiral.html",
-        "closeout": "No scoped memory update needed"
-      },
-      "linkedin_operator_closeout": "No scoped memory update needed",
-      "public_action_lock_claimed": true,
-      "public_post_verified": false,
-      "next_action": "Force-wake this publisher after LinkedIn auth is restored or when a noninteractive cookie store can verify Shane Cheek / Founder at 8bitconcepts before posting."
     }
   ]
 }
