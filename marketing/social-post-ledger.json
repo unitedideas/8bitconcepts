@@ -1586,6 +1586,32 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
+    },
+    {
+      "id": "q2-2026-mcp-ecosystem-health-linkedin-2026-05-27",
+      "source": "marketing/paper-distribution-queue.json",
+      "source_item": "q2-2026-mcp-ecosystem-health",
+      "channel": "linkedin",
+      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
+      "status": "posted",
+      "posted_at": "2026-05-27T03:40:00Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7465244778968809472",
+      "fingerprint": "cdf741a1dcd98321",
+      "fact_key": "paper:q2-2026-mcp-ecosystem-health:linkedin:2026-05-27-live-digest",
+      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "text": "The current MCP-readiness gap is still large.\n\nNot Human Search's latest digest has 4,174 agent-ready sites indexed. 456 verify as working MCP endpoints through a live JSON-RPC handshake, or 10.9% of the index.\n\nThat is the useful operator read: a text claim, manifest, or discovery signal is not the same thing as an endpoint an agent can actually initialize.\n\nQ2 methodology and live data source:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "facts_verified": [
+        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
+        "https://nothumansearch.ai/digest.json generated_at=2026-05-27T03:36:30Z with mcp_verified=456 and pct_mcp=10.9",
+        "https://nothumansearch.ai/api/v1/stats returned total_sites=4174",
+        "Live LinkedIn URL returned HTTP 200 with approved text fragments and Shane Cheek identity"
+      ],
+      "social_editor": {
+        "status": "approved",
+        "closeout": "No scoped memory update needed"
+      },
+      "linkedin_operator_closeout": "No scoped memory update needed",
+      "cadence_note": "Posted after direct ledger scan missed an existing 2026-05-27T00:22:12Z LinkedIn post in later event history; record kept explicit for audit."
     }
   ]
 }
