@@ -238,25 +238,6 @@
       "posted_at": "2026-04-29T01:33:27Z",
       "url": "https://x.com/8BitConcepts/status/2049300494800314767",
       "note": "Posted from verified @8BitConcepts via Brave/Computer Use."
-    },
-    {
-      "id": "x-ai-stat-2026-05-27T133958Z-nhs-mcp-digest",
-      "status": "posted",
-      "created_at": "2026-05-27T13:39:58Z",
-      "channel": "x",
-      "account": "@8bitconcepts",
-      "kind": "live_stat",
-      "source": "Not Human Search digest",
-      "source_url": "https://nothumansearch.ai/digest.json",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "fact_id": "nhs-mcp-verified-456-total-4174",
-      "fact_key": "nhs_digest:mcp_verified=456,total_sites=4174,pct_mcp=10.9,llms_txt=2257,openapi=485,generated_at=2026-05-27T13:39:58Z",
-      "fingerprint": "c5ee2f92a0b63df2",
-      "copy": "Today's Not Human Search digest: 456 of 4,174 agent-ready sites pass a live MCP handshake. 10.9%.\n\nDiscovery files are much easier to ship: 2,257 sites have llms.txt; 485 have OpenAPI.\n\nMethod: https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "updated_at": "2026-05-27T13:46:16.029282Z",
-      "posted_at": "2026-05-27T13:46:16.029282Z",
-      "url": "https://x.com/8BitConcepts/status/2059632086202683649",
-      "note": "Refreshed from live NHS digest before posting; social-editor approved final_copy."
     }
   ]
 }
