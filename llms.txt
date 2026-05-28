@@ -102,6 +102,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Prompt Debt Spiral](https://8bitconcepts.com/research/the-prompt-debt-spiral.html): Most engineering teams treat prompts like they once treated SQL queries stuffed into application cod
 
+- [The Pilot Purgatory](https://8bitconcepts.com/research/the-pilot-purgatory.html): Most enterprise AI initiatives don't fail at the model level — they fail at the moment of scaling. C
+
 ## Contact
 
 Website: https://8bitconcepts.com
