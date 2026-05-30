@@ -1586,33 +1586,6 @@
       "source_left_queued": true,
       "post_attempted": false,
       "public_action_lock_claimed": true
-    },
-    {
-      "id": "q2-2026-mcp-ecosystem-health-linkedin-2026-05-30",
-      "source": "marketing/paper-distribution-queue.json",
-      "source_item": "q2-2026-mcp-ecosystem-health",
-      "channel": "linkedin",
-      "account": "https://www.linkedin.com/in/shane-cheek-9173473b6/",
-      "status": "posted",
-      "date": "2026-05-30",
-      "posted_at": "2026-05-30T20:52:19Z",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7466591939052769280",
-      "fingerprint": "79e8fc516e49be66",
-      "fact_key": "paper:q2-2026-mcp-ecosystem-health:linkedin:2026-05-30-digest",
-      "route": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "copy": "Most MCP claims still are not callable endpoints.\n\nCurrent Not Human Search digest: 455 of 4,190 indexed agent-ready sites pass a live JSON-RPC MCP handshake. That is 10.9%.\n\n2,275 publish llms.txt. 499 publish OpenAPI. Those are useful discovery surfaces, but they are not the same as a server that answers initialize with a valid protocolVersion.\n\nThe operational read: static MCP directories are useful leads, not runtime dependencies. Live verification should happen before an agent spends tokens and latency on a tool.\n\nMethodology + data:\nhttps://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "verified_facts": [
-        "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html returned HTTP 200",
-        "https://nothumansearch.ai/digest.json generated_at=2026-05-30T20:49:40Z",
-        "digest total_sites=4190, mcp_verified=455, pct_mcp=10.9, llms_txt_count=2275, openapi_count=499",
-        "LinkedIn public post page returned the approved copy for Shane Cheek at the live share URL"
-      ],
-      "social_editor": {
-        "status": "approved",
-        "scoped_memory": "No scoped memory update needed"
-      },
-      "linkedin_operator_closeout": "No scoped memory update needed",
-      "note": "Posted by 8bit-linkedin-agent-publisher after cadence check, source fact-check, social-editor approval, duplicate check, sync-state public-action lock, LinkedIn identity verification in tools/linkedin-brave-post.js, and public URL verification."
     }
   ]
 }

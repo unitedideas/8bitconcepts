@@ -47,33 +47,24 @@
     "paper_with_new_external_hook"
   ],
   "active_backlog": [
-    {
-      "paper": "on-device-inference",
-      "url": "https://8bitconcepts.com/research/on-device-inference.html",
-      "status": "distributed_with_devto_hashnode_blocked",
-      "channel_state": {
-        "x": "posted",
-        "reddit": "posted_profile_subreddit_removed",
-        "hacker_news": "posted",
-        "linkedin": "posted",
-        "devto_hashnode": "blocked_no_first_party_account_or_api_credential",
-        "newsletter_outreach": "sent",
-        "indexing_discovery": "submitted"
-      }
-    },
+        {
+            "paper": "on-device-inference",
+            "url": "https://8bitconcepts.com/research/on-device-inference.html",
+            "status": "distributed_with_devto_hashnode_blocked",
+            "channel_state": {
+                "x": "posted",
+                "reddit": "posted_profile_subreddit_removed",
+                "hacker_news": "posted",
+                "linkedin": "posted",
+                "devto_hashnode": "blocked_no_first_party_account_or_api_credential",
+                "newsletter_outreach": "sent",
+                "indexing_discovery": "submitted"
+            }
+        },
     {
       "paper": "q2-2026-mcp-ecosystem-health",
       "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "status": "in_progress",
-      "channel_state": {
-        "linkedin": "posted"
-      },
-      "posted_urls": {
-        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7466591939052769280"
-      },
-      "posted_at": {
-        "linkedin": "2026-05-30T20:52:19Z"
-      }
+      "status": "in_progress"
     }
   ]
 }
