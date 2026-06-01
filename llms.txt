@@ -104,6 +104,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Pilot Purgatory](https://8bitconcepts.com/research/the-pilot-purgatory.html): Most enterprise AI initiatives don't fail at the model level — they fail at the moment of scaling. C
 
+- [The Quiet Regression](https://8bitconcepts.com/research/the-quiet-regression.html): Most engineering teams have a deployment pipeline for their application code. Almost none have one f
+
 ## Contact
 
 Website: https://8bitconcepts.com
