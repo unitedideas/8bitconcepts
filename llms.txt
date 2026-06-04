@@ -106,6 +106,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Quiet Regression](https://8bitconcepts.com/research/the-quiet-regression.html): Most engineering teams have a deployment pipeline for their application code. Almost none have one f
 
+- [The Redesign Lag](https://8bitconcepts.com/research/the-redesign-lag.html): Most engineering leaders deploying agentic AI in 2026 are making a quiet bet: that they can bolt aut
+
 ## Contact
 
 Website: https://8bitconcepts.com
