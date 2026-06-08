@@ -108,6 +108,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Redesign Lag](https://8bitconcepts.com/research/the-redesign-lag.html): Most engineering leaders deploying agentic AI in 2026 are making a quiet bet: that they can bolt aut
 
+- [The Governance Handshake](https://8bitconcepts.com/research/the-governance-handshake.html): Enterprises are discovering a dangerous gap between who owns AI decisions on paper and who actually 
+
 ## Contact
 
 Website: https://8bitconcepts.com
