@@ -110,6 +110,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Governance Handshake](https://8bitconcepts.com/research/the-governance-handshake.html): Enterprises are discovering a dangerous gap between who owns AI decisions on paper and who actually 
 
+- [The Skill Shelf Life](https://8bitconcepts.com/research/the-skill-shelf-life.html): Companies are spending aggressively to hire AI-capable engineers — then watching those skills expire
+
 ## Contact
 
 Website: https://8bitconcepts.com
