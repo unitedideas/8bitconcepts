@@ -112,6 +112,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Skill Shelf Life](https://8bitconcepts.com/research/the-skill-shelf-life.html): Companies are spending aggressively to hire AI-capable engineers — then watching those skills expire
 
+- [The Rollback Illusion](https://8bitconcepts.com/research/the-rollback-illusion.html): Engineering teams have spent decades perfecting the art of the rollback — a clean, reliable escape h
+
 ## Contact
 
 Website: https://8bitconcepts.com
