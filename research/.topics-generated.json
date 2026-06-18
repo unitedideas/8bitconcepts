@@ -112,5 +112,11 @@
     "slug": "the-rollback-illusion",
     "tag": "Engineering Maturity",
     "generated_at": "2026-06-15T13:04:11.428688+00:00"
+  },
+  {
+    "title": "The Inference Cliff",
+    "slug": "the-inference-cliff",
+    "tag": "Cost Architecture",
+    "generated_at": "2026-06-18T13:03:52.813289+00:00"
   }
 ]

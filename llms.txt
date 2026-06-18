@@ -114,6 +114,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Rollback Illusion](https://8bitconcepts.com/research/the-rollback-illusion.html): Engineering teams have spent decades perfecting the art of the rollback — a clean, reliable escape h
 
+- [The Inference Cliff](https://8bitconcepts.com/research/the-inference-cliff.html): Most Series B-D companies price their AI-powered products based on what the model costs during devel
+
 ## Contact
 
 Website: https://8bitconcepts.com
