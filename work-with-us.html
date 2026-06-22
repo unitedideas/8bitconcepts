@@ -593,7 +593,15 @@ async function submitLead(e) {
   const btn = form.querySelector('button[type=submit]');
   const status = document.getElementById('lead-status');
   const data = Object.fromEntries(new FormData(form).entries());
-  data.source = '8bitconcepts-work-with-us';
+  const params = new URLSearchParams(window.location.search);
+  data.source = params.get('utm_source') === 'linkedin' && params.get('utm_medium') === 'qlimit'
+    ? '8bitconcepts-linkedin-qlimit'
+    : '8bitconcepts-work-with-us';
+  data.landing_url = window.location.href;
+  ['qc', 'utm_source', 'utm_medium', 'utm_campaign'].forEach((key) => {
+    const value = params.get(key);
+    if (value) data[key] = value;
+  });
   status.style.color = '';
   status.textContent = 'Sending…';
   btn.disabled = true;

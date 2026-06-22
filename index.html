@@ -267,6 +267,58 @@
 
     .btn-secondary:hover { border-color: var(--terra); }
 
+    .campaign-strip {
+      display: none;
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 32px 28px;
+    }
+
+    .campaign-strip.is-visible { display: block; }
+
+    .campaign-strip-inner {
+      background: var(--slate-1);
+      border: 1px solid rgba(217,119,87,0.32);
+      border-radius: 10px;
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .campaign-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 8px;
+    }
+
+    .campaign-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .campaign-copy {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.55;
+      max-width: 680px;
+    }
+
+    .campaign-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     .hero-proof {
       max-width: 1020px;
       margin: 0 auto;
@@ -693,6 +745,10 @@
       .hero h1 { overflow-wrap: break-word; }
       .hero-ctas { flex-direction: column; }
       .hero-ctas a { width: 100%; text-align: center; }
+      .campaign-strip { padding: 0 20px 28px; }
+      .campaign-strip-inner { grid-template-columns: 1fr; }
+      .campaign-actions { justify-content: stretch; }
+      .campaign-actions a { width: 100%; text-align: center; }
       .hero-proof { padding: 4px 20px 28px; }
       .hero-proof-inner { grid-template-columns: 1fr; }
       .live-wrap { padding: 32px 20px 60px; }
@@ -723,6 +779,20 @@
     <div class="hero-ctas">
       <a href="/work-with-us.html#lead-form" class="btn-primary">Request a 30-min intro &rarr;</a>
       <a href="/work-with-us.html#offers" class="btn-secondary">How it works</a>
+    </div>
+  </div>
+
+  <div class="campaign-strip" id="qlimit-campaign-strip">
+    <div class="campaign-strip-inner">
+      <div>
+        <div class="campaign-kicker">LinkedIn pilot</div>
+        <div class="campaign-title">Need AI hiring data or an agent-readable workflow shipped?</div>
+        <p class="campaign-copy">We build the same kind of live API, lead capture, and attribution loops that power AI Dev Jobs and Not Human Search. Bring one recruiting, ops, or review workflow and we will map the smallest useful build.</p>
+      </div>
+      <div class="campaign-actions">
+        <a class="btn-primary campaign-link" href="/work-with-us.html#lead-form">Request an intro</a>
+        <a class="btn-secondary" href="/case-studies.html#aidevboard">See the API case</a>
+      </div>
     </div>
   </div>
 
@@ -1003,6 +1073,25 @@
   </footer>
 
   <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('utm_source') !== 'linkedin' || params.get('utm_medium') !== 'qlimit') return;
+      const strip = document.getElementById('qlimit-campaign-strip');
+      if (!strip) return;
+      strip.classList.add('is-visible');
+      const preserved = new URLSearchParams();
+      ['qc', 'utm_source', 'utm_medium', 'utm_campaign'].forEach((key) => {
+        const value = params.get(key);
+        if (value) preserved.set(key, value);
+      });
+      if (!preserved.toString()) return;
+      document.querySelectorAll('a.campaign-link, a.nav-cta, .hero-ctas a.btn-primary').forEach((link) => {
+        const target = new URL(link.getAttribute('href'), window.location.origin);
+        preserved.forEach((value, key) => target.searchParams.set(key, value));
+        link.setAttribute('href', target.pathname + target.search + target.hash);
+      });
+    }());
+
     async function subscribe8bc(e) {
       e.preventDefault();
       const form = e.target;
