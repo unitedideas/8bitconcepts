@@ -116,6 +116,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Inference Cliff](https://8bitconcepts.com/research/the-inference-cliff.html): Most Series B-D companies price their AI-powered products based on what the model costs during devel
 
+- [The Silent Rollout](https://8bitconcepts.com/research/the-silent-rollout.html): Most enterprise AI deployments don't fail at the model level — they fail at the moment of handoff. E
+
 ## Contact
 
 Website: https://8bitconcepts.com
