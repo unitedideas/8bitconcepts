@@ -118,6 +118,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Silent Rollout](https://8bitconcepts.com/research/the-silent-rollout.html): Most enterprise AI deployments don't fail at the model level — they fail at the moment of handoff. E
 
+- [The Fallback Paradox](https://8bitconcepts.com/research/the-fallback-paradox.html): Engineering teams building multi-provider LLM fallback chains believe they are buying reliability. T
+
 ## Contact
 
 Website: https://8bitconcepts.com
