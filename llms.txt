@@ -120,6 +120,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Fallback Paradox](https://8bitconcepts.com/research/the-fallback-paradox.html): Engineering teams building multi-provider LLM fallback chains believe they are buying reliability. T
 
+- [The Autonomy Ceiling](https://8bitconcepts.com/research/the-autonomy-ceiling.html): Engineering teams are shipping AI agents that can technically act autonomously but are operationally
+
 ## Contact
 
 Website: https://8bitconcepts.com
