@@ -122,6 +122,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Autonomy Ceiling](https://8bitconcepts.com/research/the-autonomy-ceiling.html): Engineering teams are shipping AI agents that can technically act autonomously but are operationally
 
+- [The Ownership Vacuum](https://8bitconcepts.com/research/the-ownership-vacuum.html): Most enterprise AI deployments are technically live but organizationally orphaned. No single team ow
+
 ## Contact
 
 Website: https://8bitconcepts.com
