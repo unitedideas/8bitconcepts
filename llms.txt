@@ -124,6 +124,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Ownership Vacuum](https://8bitconcepts.com/research/the-ownership-vacuum.html): Most enterprise AI deployments are technically live but organizationally orphaned. No single team ow
 
+- [The Velocity Trap](https://8bitconcepts.com/research/the-velocity-trap.html): Engineering teams at Series B-D companies are shipping AI features faster than any previous technolo
+
 ## Contact
 
 Website: https://8bitconcepts.com
