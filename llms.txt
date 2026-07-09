@@ -126,6 +126,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Velocity Trap](https://8bitconcepts.com/research/the-velocity-trap.html): Engineering teams at Series B-D companies are shipping AI features faster than any previous technolo
 
+- [The Semantic Debt Bomb](https://8bitconcepts.com/research/the-semantic-debt-bomb.html): Engineering teams have spent two years tuning prompts, swapping models, and layering guardrails — an
+
 ## Contact
 
 Website: https://8bitconcepts.com
