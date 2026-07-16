@@ -130,6 +130,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Benchmark Betrayal](https://8bitconcepts.com/research/the-benchmark-betrayal.html): Engineering teams spend weeks running evals against public benchmarks, score their shortlisted model
 
+- [The Culture Multiplier](https://8bitconcepts.com/research/the-culture-multiplier.html): Engineering leaders are spending the bulk of their AI budgets on models, infrastructure, and tooling
+
 ## Contact
 
 Website: https://8bitconcepts.com
