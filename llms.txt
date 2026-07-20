@@ -132,6 +132,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Culture Multiplier](https://8bitconcepts.com/research/the-culture-multiplier.html): Engineering leaders are spending the bulk of their AI budgets on models, infrastructure, and tooling
 
+- [The Prompt Versioning Void](https://8bitconcepts.com/research/the-prompt-versioning-void.html): Most engineering teams can tell you exactly which commit broke their API. Almost none can tell you w
+
 ## Contact
 
 Website: https://8bitconcepts.com
