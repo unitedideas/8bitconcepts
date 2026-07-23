@@ -134,6 +134,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Prompt Versioning Void](https://8bitconcepts.com/research/the-prompt-versioning-void.html): Most engineering teams can tell you exactly which commit broke their API. Almost none can tell you w
 
+- [The Org Memory Leak](https://8bitconcepts.com/research/the-org-memory-leak.html): Companies are spending millions fine-tuning AI systems to understand their business — then watching 
+
 ## Contact
 
 Website: https://8bitconcepts.com
