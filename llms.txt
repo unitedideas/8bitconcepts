@@ -136,6 +136,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Org Memory Leak](https://8bitconcepts.com/research/the-org-memory-leak.html): Companies are spending millions fine-tuning AI systems to understand their business — then watching 
 
+- [The Skill Collapse](https://8bitconcepts.com/research/the-skill-collapse.html): Companies are reporting 30–40% gains in developer velocity from AI tooling — and quietly watching th
+
 ## Contact
 
 Website: https://8bitconcepts.com
