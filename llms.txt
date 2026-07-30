@@ -138,6 +138,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Skill Collapse](https://8bitconcepts.com/research/the-skill-collapse.html): Companies are reporting 30–40% gains in developer velocity from AI tooling — and quietly watching th
 
+- [The Probabilistic Contract](https://8bitconcepts.com/research/the-probabilistic-contract.html): Your engineering team spent years building systems with a foundational assumption: given the same in
+
 ## Contact
 
 Website: https://8bitconcepts.com
