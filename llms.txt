@@ -140,6 +140,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Probabilistic Contract](https://8bitconcepts.com/research/the-probabilistic-contract.html): Your engineering team spent years building systems with a foundational assumption: given the same in
 
+- [The Reliability Tax](https://8bitconcepts.com/research/the-reliability-tax.html): Engineering teams building on LLM APIs are quietly absorbing a hidden operational cost that never ap
+
 ## Contact
 
 Website: https://8bitconcepts.com
