@@ -142,6 +142,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Reliability Tax](https://8bitconcepts.com/research/the-reliability-tax.html): Engineering teams building on LLM APIs are quietly absorbing a hidden operational cost that never ap
 
+- [The Prompt-to-Process Gap](https://8bitconcepts.com/research/the-prompt-to-process-gap.html): Most enterprise AI initiatives don't fail at the model level — they fail at the handoff between a wo
+
 ## Contact
 
 Website: https://8bitconcepts.com
