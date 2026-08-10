@@ -144,6 +144,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Prompt-to-Process Gap](https://8bitconcepts.com/research/the-prompt-to-process-gap.html): Most enterprise AI initiatives don't fail at the model level — they fail at the handoff between a wo
 
+- [The Consensus Trap](https://8bitconcepts.com/research/the-consensus-trap.html): Multi-agent AI systems were supposed to eliminate single points of failure. Instead, enterprises are
+
 ## Contact
 
 Website: https://8bitconcepts.com
