@@ -146,6 +146,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Consensus Trap](https://8bitconcepts.com/research/the-consensus-trap.html): Multi-agent AI systems were supposed to eliminate single points of failure. Instead, enterprises are
 
+- [The Escalation Void](https://8bitconcepts.com/research/the-escalation-void.html): Enterprises have spent months designing what their AI agents should do when everything goes right. A
+
 ## Contact
 
 Website: https://8bitconcepts.com
