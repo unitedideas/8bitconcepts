@@ -148,6 +148,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Escalation Void](https://8bitconcepts.com/research/the-escalation-void.html): Enterprises have spent months designing what their AI agents should do when everything goes right. A
 
+- [The Explainability Debt](https://8bitconcepts.com/research/the-explainability-debt.html): Companies are shipping AI decisions they cannot explain — not because they chose to, but because the
+
 ## Contact
 
 Website: https://8bitconcepts.com
