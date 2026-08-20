@@ -220,5 +220,11 @@
     "slug": "the-explainability-debt",
     "tag": "AI Governance",
     "generated_at": "2026-08-17T13:04:02.505328+00:00"
+  },
+  {
+    "title": "The Inference Sprawl",
+    "slug": "the-inference-sprawl",
+    "tag": "Cost Architecture",
+    "generated_at": "2026-08-20T13:04:27.987593+00:00"
   }
 ]

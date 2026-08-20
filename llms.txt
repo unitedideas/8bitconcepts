@@ -150,6 +150,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Explainability Debt](https://8bitconcepts.com/research/the-explainability-debt.html): Companies are shipping AI decisions they cannot explain — not because they chose to, but because the
 
+- [The Inference Sprawl](https://8bitconcepts.com/research/the-inference-sprawl.html): Companies that successfully moved AI from pilot to production are discovering a new crisis: their in
+
 ## Contact
 
 Website: https://8bitconcepts.com
