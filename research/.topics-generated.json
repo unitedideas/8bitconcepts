@@ -226,5 +226,11 @@
     "slug": "the-inference-sprawl",
     "tag": "Cost Architecture",
     "generated_at": "2026-08-20T13:04:27.987593+00:00"
+  },
+  {
+    "title": "The Prompt-to-Production Gap",
+    "slug": "the-prompt-to-production-gap",
+    "tag": "Engineering Maturity",
+    "generated_at": "2026-08-24T13:04:16.523942+00:00"
   }
 ]
