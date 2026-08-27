@@ -154,6 +154,8 @@ Both scripts run `claude mcp add` automatically if Claude Code is installed, oth
 
 - [The Prompt-to-Production Gap](https://8bitconcepts.com/research/the-prompt-to-production-gap.html): Most enterprise AI teams can get a working demo in days. Getting that same system into production — 
 
+- [The Confidence Collapse](https://8bitconcepts.com/research/the-confidence-collapse.html): Enterprise teams are shipping AI features faster than ever — and trusting them less than ever. A gro
+
 ## Contact
 
 Website: https://8bitconcepts.com
