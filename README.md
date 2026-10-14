@@ -2,7 +2,11 @@
 
 [![NHS Agentic Readiness](https://nothumansearch.ai/badge/8bitconcepts.com.svg)](https://nothumansearch.ai/site/8bitconcepts.com)
 
-**Independent research on enterprise AI adoption.** Papers on governance gaps, handoff patterns, and the maturity ladder most AI deployments skip.
+**AI consulting, workflow automation, and research on enterprise AI adoption.** Based in Washougal, Washington, serving the Pacific Northwest and remote teams.
+
+- [Services and project inquiries](https://8bitconcepts.com/work-with-us.html?utm_source=github&utm_medium=referral&utm_campaign=repository)
+- [Case studies](https://8bitconcepts.com/case-studies.html)
+- [Research archive](https://8bitconcepts.com/research/overview.html)
 
 🌐 **Live site:** [8bitconcepts.com](https://8bitconcepts.com)
 📰 **RSS:** [8bitconcepts.com/feed.xml](https://8bitconcepts.com/feed.xml)
@@ -10,7 +14,7 @@
 
 ## What's here
 
-10+ research papers on what actually separates shipping agentic systems from pilots:
+Selected articles on enterprise AI implementation, governance, and operations:
 
 - **[Beyond the Prompt](https://8bitconcepts.com/research/beyond-the-prompt.html)** — why prompt engineering stops working at scale
 - **[The Agentic Accountability Gap](https://8bitconcepts.com/research/the-agentic-accountability-gap.html)** — who's on the hook when the agent decides
@@ -23,7 +27,7 @@
 - **[The Six Percent](https://8bitconcepts.com/research/the-six-percent.html)** — what separates the 6% of teams shipping production agents from the rest
 - **[Shift Handoff Intelligence](https://8bitconcepts.com/research/shift-handoff-intelligence.html)** — patterns for passing state between humans and agents
 
-New papers roughly weekly. Subscribe via [RSS](https://8bitconcepts.com/feed.xml) or the [newsletter form on the homepage](https://8bitconcepts.com).
+Read publication dates on each article and follow the [RSS feed](https://8bitconcepts.com/feed.xml) for additions. Newsletter delivery is currently paused.
 
 ## Topic pages
 
@@ -39,7 +43,7 @@ The full corpus is structured at [llms.txt](https://8bitconcepts.com/llms.txt) a
 
 ## Related
 
-- **[aidevboard.com](https://aidevboard.com)** — AI Dev Jobs board with REST API + MCP server (8,400+ listings)
+- **[aidevboard.com](https://aidevboard.com)** — AI Dev Jobs board with REST API + MCP server
 - **[nothumansearch.ai](https://nothumansearch.ai)** — search engine for AI agents
 
 ## License
