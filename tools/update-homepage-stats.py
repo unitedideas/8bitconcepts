@@ -70,12 +70,12 @@ def build_stats(stats: dict[str, Any], digest: dict[str, Any]) -> dict[str, str]
 
     total_jobs = int(ov.get("total_jobs", 0) or 0)
 
-    # Hiring: "<em>{total}</em> live AI/ML roles — {top_company} leads with {top_count}"
+    # Hiring: "<em>{total}</em> AI/ML roles in this snapshot — {top_company} leads with {top_count}"
     top_co = companies[0] if companies else {}
     top_co_name = str(top_co.get("company", "")) or "—"
     top_co_roles = int(top_co.get("roles", 0) or 0)
     hiring = (
-        f"<em>{fmt_thousands(total_jobs)}</em> live AI/ML roles &mdash; "
+        f"<em>{fmt_thousands(total_jobs)}</em> AI/ML roles in this snapshot &mdash; "
         f"{top_co_name} leads with {fmt_thousands(top_co_roles)}"
     )
 
