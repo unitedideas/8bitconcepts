@@ -357,6 +357,7 @@
       .row { grid-template-columns: 1fr; }
     }
   </style>
+  <script src="/attribution.js"></script>
 </head>
 <body>
 
@@ -593,7 +594,7 @@ async function submitLead(e) {
   const btn = form.querySelector('button[type=submit]');
   const status = document.getElementById('lead-status');
   const data = Object.fromEntries(new FormData(form).entries());
-  const params = new URLSearchParams(window.location.search);
+  const params = window.eightBitAttribution || new URLSearchParams(window.location.search);
   data.source = params.get('utm_source') === 'linkedin' && params.get('utm_medium') === 'qlimit'
     ? '8bitconcepts-linkedin-qlimit'
     : '8bitconcepts-work-with-us';
