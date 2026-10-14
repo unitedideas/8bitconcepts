@@ -548,6 +548,7 @@ def main() -> int:
     if not RESEARCH_DIR.is_dir():
         print(f"ERROR: {RESEARCH_DIR} not found", file=sys.stderr)
         return 2
+    subprocess.run([sys.executable, str(REPO / "tools/generate-research-index.py")], check=True)
     papers = load_papers()
     if not papers:
         print("ERROR: no research papers found", file=sys.stderr)

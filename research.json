@@ -7,127 +7,700 @@
     "url": "https://8bitconcepts.com"
   },
   "license": "https://8bitconcepts.com/about",
-  "updated_at": "2026-04-29",
-  "total": 16,
+  "updated_at": "2026-10-14T15:36:51.967024+00:00",
+  "total": 76,
   "papers": [
+    {
+      "slug": "beyond-the-prompt",
+      "title": "Beyond the Prompt",
+      "summary": "The teams shipping reliable production agentic systems are not prompting harder. They have moved through a specific engineering maturity ladder. Here is what it looks like.",
+      "url": "https://8bitconcepts.com/research/beyond-the-prompt.html",
+      "tags": [
+        "llm",
+        "engineering",
+        "systems-design"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "shift-handoff-intelligence",
+      "title": "Shift Handoff Intelligence",
+      "summary": "A multi-industry simulation across manufacturing, food processing, and data center operations shows 100% information retention with digital shift handoff vs. 40-60% with verbal briefings. The pattern detection gap is where preventable failures originate.",
+      "url": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
+      "tags": [
+        "agents",
+        "context",
+        "handoff",
+        "operations"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-agentic-accountability-gap",
+      "title": "The Agentic Accountability Gap",
+      "summary": "Enterprise teams spent three years learning how to stop AI from saying the wrong thing. Then they handed those same models a calendar, a code repository, and an API key — and kept the same playbook. The guardrails built for outputs were never designed for outcomes.",
+      "url": "https://8bitconcepts.com/research/the-agentic-accountability-gap.html",
+      "tags": [
+        "agents",
+        "governance",
+        "accountability",
+        "compliance"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-fallback-paradox",
+      "title": "The Fallback Paradox",
+      "summary": "Engineering teams building multi-provider LLM fallback chains believe they are buying reliability. The data suggests they are buying complexity that fails in exactly the conditions reliability is most needed — high load, model degradation, and provider outages — while quietly inflating inference costs by 40–60% during normal operations.",
+      "url": "https://8bitconcepts.com/research/the-fallback-paradox.html",
+      "tags": [],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-governance-handshake",
+      "title": "The Governance Handshake",
+      "summary": "Enterprises are discovering a dangerous gap between who owns AI decisions on paper and who actually makes them in production. Most enterprise AI governance failures don't happen because no one built a policy—they happen because accountability breaks down at the handoff points between teams.",
+      "url": "https://8bitconcepts.com/research/the-governance-handshake.html",
+      "tags": [],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-governance-vacuum",
+      "title": "The Governance Vacuum",
+      "summary": "Most enterprises now have AI deployed in production. Almost none have decided who owns it when it breaks. Enterprise AI governance has been treated as a documentation problem when it is actually an engineering problem.",
+      "url": "https://8bitconcepts.com/research/the-governance-vacuum.html",
+      "tags": [],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-guardrails-gap",
+      "title": "The Guardrails Gap",
+      "summary": "Engineering teams spent 2023 and 2024 obsessing over what their AI would say. In 2026, the threat has shifted entirely — and most organizations haven't caught up. Agentic systems are now taking actions: writing to databases, calling APIs, sending emails, executing code.",
+      "url": "https://8bitconcepts.com/research/the-guardrails-gap.html",
+      "tags": [
+        "agents",
+        "safety",
+        "governance",
+        "enterprise"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-hallucination-budget",
+      "title": "The Hallucination Budget",
+      "summary": "Most engineering teams ship LLM features with less testing rigor than they apply to a login form — yet when production hallucinations surface, the cost isn't abstract. It lands on customer trust, legal exposure, and engineering cycles spent firefighting instead of building.",
+      "url": "https://8bitconcepts.com/research/the-hallucination-budget.html",
+      "tags": [
+        "llm",
+        "reliability",
+        "evaluation",
+        "enterprise"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-integration-tax",
+      "title": "The Integration Tax",
+      "summary": "Model API costs are 10-20% of what AI actually costs to ship. Here is where the other 80% goes -- and why most project budgets are wrong before they start.",
+      "url": "https://8bitconcepts.com/research/the-integration-tax.html",
+      "tags": [
+        "integration",
+        "tco",
+        "infrastructure",
+        "enterprise"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-mandate-trap",
+      "title": "The Mandate Trap",
+      "summary": "Shopify's AI mandate worked. Duolingo's didn't. The tech press treated both as the same story. They weren't -- and the companies now copying the Shopify memo template are learning the wrong lesson.",
+      "url": "https://8bitconcepts.com/research/the-mandate-trap.html",
+      "tags": [
+        "adoption",
+        "leadership",
+        "strategy"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-measurement-problem",
+      "title": "The Measurement Problem",
+      "summary": "A company ran an AI system for eight months before discovering a vendor model update had degraded it for four of them. They found out because one employee noticed. Most companies have no better mechanism.",
+      "url": "https://8bitconcepts.com/research/the-measurement-problem.html",
+      "tags": [
+        "roi",
+        "metrics",
+        "evaluation",
+        "enterprise"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-observability-blind-spot",
+      "title": "The Observability Blind Spot",
+      "summary": "Engineering teams spent years building world-class observability for their APIs — then they deployed LLMs and went functionally blind. Traditional APM is categorically unfit for LLM production systems.",
+      "url": "https://8bitconcepts.com/research/the-observability-blind-spot.html",
+      "tags": [],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-org-chart-problem",
+      "title": "The Org Chart Problem",
+      "summary": "AI transformation fails not because of technology but because of where it gets placed in the org chart. The companies winning have created a new organizational primitive.",
+      "url": "https://8bitconcepts.com/research/the-org-chart-problem.html",
+      "tags": [
+        "adoption",
+        "organizational-design",
+        "change-management"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-rate-limit-ceiling",
+      "title": "The Rate Limit Ceiling",
+      "summary": "Engineering teams obsess over model quality, but the thing quietly killing AI products in production isn't hallucinations or prompt drift — it's infrastructure throttling. When 60% of LLM errors in production traces come from exceeded rate limits, the bottleneck isn't your model. It's your architecture.",
+      "url": "https://8bitconcepts.com/research/the-rate-limit-ceiling.html",
+      "tags": [],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-reliability-tax",
+      "title": "The Reliability Tax",
+      "summary": "Engineering teams building on LLM APIs are quietly absorbing a hidden operational cost that never appears in their AI budget: the engineering hours spent writing retries, fallback chains, validation layers, and incident playbooks to compensate for the fact that their AI provider's uptime SLA doesn't actually guarantee output quality. A model can return HTTP 200 and still be on fire.",
+      "url": "https://8bitconcepts.com/research/the-reliability-tax.html",
+      "tags": [],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-silent-rollout",
+      "title": "The Silent Rollout",
+      "summary": "Most enterprise AI deployments don't fail at the model level — they fail at the moment of handoff. The most dangerous phase of enterprise AI deployment isn't the pilot or the build — it's the six months after launch.",
+      "url": "https://8bitconcepts.com/research/the-silent-rollout.html",
+      "tags": [],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "the-six-percent",
+      "title": "The Six Percent",
+      "summary": "88% of organizations use AI. Only 6% see meaningful returns. McKinsey studied nearly 2,000 companies across 105 countries to find out what separates them. The answer has nothing to do with which tools they bought.",
+      "url": "https://8bitconcepts.com/research/the-six-percent.html",
+      "tags": [
+        "adoption",
+        "case-studies",
+        "best-practices"
+      ],
+      "date_published": "2026-04-01"
+    },
+    {
+      "slug": "q2-2026-ai-compensation-by-skill",
+      "title": "Q2 2026 AI Engineering Compensation by Skill",
+      "summary": "Live AI engineering compensation by skill: top-paying tags, most in-demand tags, sweet-spot skills, salary by experience level, distribution across 3,480 salary-disclosed roles. Median $220,000. Auto-regenerated weekly from aidevboard.com API.",
+      "url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
+      "tags": [
+        "compensation",
+        "salary",
+        "market-data",
+        "live-data"
+      ],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "q2-2026-ai-hiring-geography",
+      "title": "Q2 2026 AI Hiring by Geography",
+      "summary": "Live analysis: 68% of AI/ML roles are in the US, 46% in SF Bay Area alone. European AI salaries within 3% of US median ($248,520 vs $246,847). Top 15 cities by AI role count, regional salary, remote vs onsite mix. Auto-regenerated weekly.",
+      "url": "https://8bitconcepts.com/research/q2-2026-ai-hiring-geography.html",
+      "tags": [],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "q2-2026-ai-hiring-snapshot",
+      "title": "Q2 2026 AI Engineering Hiring Snapshot",
+      "summary": "Live data from aidevboard.com: 8,967 active AI/ML engineering roles, 486 companies hiring, $220k median salary, 0 new roles posted this week. OpenAI leads with 417 open roles. Analysis with full source data.",
+      "url": "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
+      "tags": [
+        "hiring",
+        "market-data",
+        "live-data",
+        "enterprise"
+      ],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "q2-2026-entry-level-ai-gap",
+      "title": "Q2 2026 The Junior AI Hiring Gap",
+      "summary": "Live analysis: only 6.2% of AI/ML engineering roles are open to juniors (558 of 8,967). 11.0:1 senior-plus-to-junior ratio &mdash; the tightest in tech. Why the squeeze exists, which companies still hire juniors, and the actionable path in. Auto-regenerated weekly.",
+      "url": "https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
+      "tags": [
+        "hiring",
+        "entry-level",
+        "career",
+        "market-data",
+        "live-data"
+      ],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "q2-2026-mcp-ecosystem-health",
+      "title": "Q2 2026 MCP Ecosystem Health",
+      "summary": "Live MCP ecosystem health: 5,197 agent-ready sites indexed, 673 (12.9%) MCP-verified via JSON-RPC handshake. 3,036 publish llms.txt, 829 publish OpenAPI. Category breakdown, newly-indexed servers, gaps.",
+      "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
+      "tags": [
+        "mcp",
+        "agents",
+        "live-data",
+        "ecosystem"
+      ],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "q2-2026-remote-vs-onsite-ai-hiring",
+      "title": "Q2 2026 Remote vs Onsite AI Hiring",
+      "summary": "Live AI engineering workplace analysis: hybrid averages $274,679, remote $224,682, onsite $220,924 across 8,967 classified roles. 53% onsite, 29% remote, 18% hybrid. Auto-regenerated weekly.",
+      "url": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
+      "tags": [
+        "workplace",
+        "remote",
+        "hybrid",
+        "market-data",
+        "live-data"
+      ],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "the-compounding-gap",
+      "title": "The Compounding Gap",
+      "summary": "The adoption gap between fast-moving and slow-moving companies isn't linear -- it compounds. By the time slow movers notice, the lead is structural and unrecoverable. Why 2026 is the last year you can still close it.",
+      "url": "https://8bitconcepts.com/research/the-compounding-gap.html",
+      "tags": [],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "the-context-wall",
+      "title": "The Context Wall",
+      "summary": "AI agents fail 97.5% of real organizational work. The failure mechanism has nothing to do with model quality or coding skill -- it's the missing infrastructure of context. Why solo deployments fail and what they need installed instead.",
+      "url": "https://8bitconcepts.com/research/the-context-wall.html",
+      "tags": [],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "the-domain-advantage",
+      "title": "The Domain Advantage",
+      "summary": "The 20 years of operating expertise you've built is exactly what AI can't replicate. The scarce skill in 2026 is problem framing, not model operation -- which means established operators already have the hardest ingredient. They just need the install on top.",
+      "url": "https://8bitconcepts.com/research/the-domain-advantage.html",
+      "tags": [],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "the-expansion-tax",
+      "title": "The Expansion Tax",
+      "summary": "If you're using AI to cut costs, you're paying a tax on the real opportunity. When execution costs drop by an order of magnitude, the market itself expands -- and the companies cutting headcount are ceding that new territory to competitors who move in.",
+      "url": "https://8bitconcepts.com/research/the-expansion-tax.html",
+      "tags": [],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "the-foundation-trap",
+      "title": "The Foundation Trap",
+      "summary": "Every AI architecture decision you make today is a bet on which infrastructure layer survives 2027. Most operators are placing this bet without knowing what they're trading off. Why the cost of a wrong foundation compounds.",
+      "url": "https://8bitconcepts.com/research/the-foundation-trap.html",
+      "tags": [],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "the-pnw-ai-desert",
+      "title": "The PNW AI Desert",
+      "summary": "There are 8,400+ AI/ML jobs open across the major hubs. Almost none are in Vancouver WA, Portland OR, Camas WA, or Tigard OR. The AI hiring market does not extend to PNW SMB territory -- which has a specific, immediate implication for operating businesses here.",
+      "url": "https://8bitconcepts.com/research/the-pnw-ai-desert.html",
+      "tags": [],
+      "date_published": "2026-04-17"
+    },
+    {
+      "slug": "on-device-inference",
+      "title": "Your AI Is Moving Back Onto the Machine - 8bitConcepts",
+      "summary": "The future of AI inference is not cloud versus device. The shift is hierarchy: cloud for frontier work, devices for the everyday intelligence layer close to private context.",
+      "url": "https://8bitconcepts.com/research/on-device-inference.html",
+      "tags": [
+        "ai",
+        "inference",
+        "edge-computing",
+        "privacy",
+        "hardware"
+      ],
+      "date_published": "2026-04-28"
+    },
     {
       "slug": "the-self-testing-layer",
       "title": "The Self-Testing Layer",
       "summary": "A researched white paper on why agentic businesses need self-testing, self-improving systems: artifact scoring, feedback loops, evaluator calibration, audit trails, and regression infrastructure.",
       "url": "https://8bitconcepts.com/research/the-self-testing-layer.html",
-      "tags": ["agents", "evaluation", "self-improvement", "governance"]
+      "tags": [
+        "agents",
+        "evaluation",
+        "self-improvement",
+        "governance"
+      ],
+      "date_published": "2026-04-29"
     },
     {
-      "slug": "q2-2026-entry-level-ai-gap",
-      "title": "Q2 2026 The Junior AI Hiring Gap",
-      "summary": "Live experience-level data: only ~7% of AI/ML engineering roles are open to juniors. For every entry-level role, ~10 senior-plus roles -- the tightest junior-to-senior ratio in tech. Why the squeeze exists, companies still hiring juniors, and the career-switcher playbook.",
-      "url": "https://8bitconcepts.com/research/q2-2026-entry-level-ai-gap.html",
-      "tags": ["hiring", "entry-level", "career", "market-data", "live-data"]
+      "slug": "the-abandonment-curve",
+      "title": "The Abandonment Curve",
+      "summary": "Gartner projects that 60% of enterprise AI projects will be abandoned by end of 2026, and the industry has largely blamed data readiness. That diagnosis is wrong — or at least incomplete. This paper maps the abandonment curve, identifies the three organizational moments where AI projects most commonly collapse, and gives engineering leaders a framework for crossing the gap that nobody budgeted for.",
+      "url": "https://8bitconcepts.com/research/the-abandonment-curve.html",
+      "tags": [],
+      "date_published": "2026-05-01"
     },
     {
-      "slug": "q2-2026-remote-vs-onsite-ai-hiring",
-      "title": "Q2 2026 Remote vs Onsite AI Hiring",
-      "summary": "Live workplace data: hybrid AI/ML roles pay a ~$35k premium over remote+onsite ($253k vs $218k). 55% of AI engineering still requires full onsite attendance. Onsite-heavy and remote-friendly companies, hybrid-premium analysis.",
-      "url": "https://8bitconcepts.com/research/q2-2026-remote-vs-onsite-ai-hiring.html",
-      "tags": ["workplace", "remote", "hybrid", "market-data", "live-data"]
+      "slug": "the-eval-debt-crisis",
+      "title": "The Eval Debt Crisis",
+      "summary": "Most enterprise AI teams ship models the same way early web teams shipped without tests — fast, confidently, and with no real way to know when something breaks. Evaluation frameworks are the unit tests of AI systems, yet fewer than one in five production deployments has a structured eval suite in place.",
+      "url": "https://8bitconcepts.com/research/the-eval-debt-crisis.html",
+      "tags": [],
+      "date_published": "2026-05-01"
     },
     {
-      "slug": "q2-2026-ai-compensation-by-skill",
-      "title": "Q2 2026 AI Engineering Compensation by Skill",
-      "summary": "Research roles pay a $42k premium over generative-AI roles ($274k vs $231k avg), even though generative-AI has 2.5x more openings. Top-paying skill tags, most in-demand tags, sweet-spot skills, salary distribution across 3,402 salary-disclosed roles.",
-      "url": "https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html",
-      "tags": ["compensation", "salary", "market-data", "live-data"]
+      "slug": "the-governance-handoff",
+      "title": "The Governance Handoff",
+      "summary": "Most enterprises have someone responsible for AI governance — they just don't know who it is. This paper maps the governance handoff problem: how diffuse ownership of AI oversight creates compounding risk, slows deployment, and quietly becomes the real reason AI initiatives stall after the pilot phase.",
+      "url": "https://8bitconcepts.com/research/the-governance-handoff.html",
+      "tags": [],
+      "date_published": "2026-05-01"
     },
     {
-      "slug": "q2-2026-mcp-ecosystem-health",
-      "title": "Q2 2026 MCP Ecosystem Health",
-      "summary": "Live audit: 5,578 agent-ready sites indexed, only 575 (10.3%) pass a live JSON-RPC handshake. Category breakdown, newly-verified servers, and the regulated verticals still waiting to be built.",
-      "url": "https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html",
-      "tags": ["mcp", "agents", "live-data", "ecosystem"]
+      "slug": "the-harness-gap",
+      "title": "The Harness Gap",
+      "summary": "Most enterprise AI teams are spending 60-70% of their engineering cycles chasing model failures when the model was never the problem. The missing layer — the AI harness — sits between raw LLM APIs and production workloads, and the companies that build it first are winning.",
+      "url": "https://8bitconcepts.com/research/the-harness-gap.html",
+      "tags": [],
+      "date_published": "2026-05-01"
     },
     {
-      "slug": "q2-2026-ai-hiring-snapshot",
-      "title": "Q2 2026 AI Engineering Hiring Snapshot",
-      "summary": "Live market data: 8,618 AI/ML engineering roles across 513 companies, $213k median, 599 new this week. OpenAI leads with 336 open roles.",
-      "url": "https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html",
-      "tags": ["hiring", "market-data", "live-data", "enterprise"]
+      "slug": "the-pilot-purgatory",
+      "title": "The Pilot Purgatory",
+      "summary": "Most enterprise AI initiatives don't fail at the model level — they fail at the moment of scaling. The bottleneck isn't capability. It's the organizational immune system: approval chains, data access politics, and infrastructure gaps that were never designed to carry production AI workloads.",
+      "url": "https://8bitconcepts.com/research/the-pilot-purgatory.html",
+      "tags": [],
+      "date_published": "2026-05-01"
     },
     {
-      "slug": "the-guardrails-gap",
-      "title": "The Guardrails Gap",
-      "summary": "Why enterprise AI safety frameworks fail when agents act autonomously.",
-      "url": "https://8bitconcepts.com/research/the-guardrails-gap.html",
-      "tags": ["agents", "safety", "governance", "enterprise"]
+      "slug": "the-prompt-debt-spiral",
+      "title": "The Prompt Debt Spiral",
+      "summary": "Most engineering teams treat prompts like they once treated SQL queries stuffed into application code: scattered across repos, owned by no one, tested by nobody, and quietly accumulating into a liability that compounds with every model upgrade.",
+      "url": "https://8bitconcepts.com/research/the-prompt-debt-spiral.html",
+      "tags": [],
+      "date_published": "2026-05-01"
     },
     {
-      "slug": "the-hallucination-budget",
-      "title": "The Hallucination Budget",
-      "summary": "Quantifying the cost of AI hallucinations and mitigation strategies for production systems.",
-      "url": "https://8bitconcepts.com/research/the-hallucination-budget.html",
-      "tags": ["llm", "reliability", "evaluation", "enterprise"]
+      "slug": "the-rehearsal-problem",
+      "title": "The Rehearsal Problem",
+      "summary": "Most enterprise AI systems are evaluated once — at launch — and then trusted indefinitely. But LLMs degrade silently: model updates shift behavior, data drift corrupts retrieval, and prompt logic that worked in March fails by September. The result is a growing class of production AI systems that are confidently wrong, and no one is watching.",
+      "url": "https://8bitconcepts.com/research/the-rehearsal-problem.html",
+      "tags": [],
+      "date_published": "2026-05-01"
     },
     {
-      "slug": "the-measurement-problem",
-      "title": "The Measurement Problem",
-      "summary": "How enterprises measure AI ROI and where standard metrics fail.",
-      "url": "https://8bitconcepts.com/research/the-measurement-problem.html",
-      "tags": ["roi", "metrics", "evaluation", "enterprise"]
+      "slug": "the-validation-gap",
+      "title": "The Validation Gap",
+      "summary": "Most engineering teams can tell you whether their AI pipeline ran. Almost none can tell you whether it worked. The dominant failure mode in production AI isn't model error — it's silent degradation between pipeline stages that no gate catches.",
+      "url": "https://8bitconcepts.com/research/the-validation-gap.html",
+      "tags": [],
+      "date_published": "2026-05-01"
     },
     {
-      "slug": "the-org-chart-problem",
-      "title": "The Org Chart Problem",
-      "summary": "Why organizational structure determines AI adoption outcomes.",
-      "url": "https://8bitconcepts.com/research/the-org-chart-problem.html",
-      "tags": ["adoption", "organizational-design", "change-management"]
+      "slug": "claude-code-context-limit-fix",
+      "title": "Claude Code Context Limit: Why It Breaks Mid-Task and the Fix",
+      "summary": "Claude Code's context window fills up on long sessions and large repos, killing your work mid-task. Here is what actually works for continuing without losing your session.",
+      "url": "https://8bitconcepts.com/research/claude-code-context-limit-fix.html",
+      "tags": [],
+      "date_published": "2026-05-06"
     },
     {
-      "slug": "the-mandate-trap",
-      "title": "The Mandate Trap",
-      "summary": "Top-down AI mandates vs. bottom-up adoption — which actually drives results.",
-      "url": "https://8bitconcepts.com/research/the-mandate-trap.html",
-      "tags": ["adoption", "leadership", "strategy"]
+      "slug": "claude-code-for-teams",
+      "title": "Claude Code for Teams: Setup, Sharing, and Making It Work in 2026",
+      "summary": "Running Claude Code across a development team is different from running it solo. Shared CLAUDE.md, API key management, cost attribution, and the coordination problems that appear at scale.",
+      "url": "https://8bitconcepts.com/research/claude-code-for-teams.html",
+      "tags": [],
+      "date_published": "2026-05-07"
     },
     {
-      "slug": "the-integration-tax",
-      "title": "The Integration Tax",
-      "summary": "Hidden costs of integrating AI into existing workflows and systems.",
-      "url": "https://8bitconcepts.com/research/the-integration-tax.html",
-      "tags": ["integration", "tco", "infrastructure", "enterprise"]
+      "slug": "claude-code-hooks",
+      "title": "Claude Code Hooks: Automate Guardrails, Logging, and Workflow Enforcement",
+      "summary": "Claude Code hooks let you run code on specific events — block dangerous commands, log tool calls, auto-run tests, trigger notifications. A practical guide for power users.",
+      "url": "https://8bitconcepts.com/research/claude-code-hooks.html",
+      "tags": [],
+      "date_published": "2026-05-07"
     },
     {
-      "slug": "the-six-percent",
-      "title": "The Six Percent",
-      "summary": "The small fraction of organizations getting real value from AI — and what they do differently.",
-      "url": "https://8bitconcepts.com/research/the-six-percent.html",
-      "tags": ["adoption", "case-studies", "best-practices"]
+      "slug": "claude-code-mcp",
+      "title": "Claude Code MCP Servers: How to Add, Configure, and Use Them",
+      "summary": "Step-by-step guide to adding MCP servers to Claude Code. Command syntax, scope options (.mcp.json for teams), environment variables, and the tools that actually matter.",
+      "url": "https://8bitconcepts.com/research/claude-code-mcp.html",
+      "tags": [],
+      "date_published": "2026-05-07"
     },
     {
-      "slug": "beyond-the-prompt",
-      "title": "Beyond the Prompt",
-      "summary": "Moving past prompt engineering to systematic AI integration.",
-      "url": "https://8bitconcepts.com/research/beyond-the-prompt.html",
-      "tags": ["llm", "engineering", "systems-design"]
+      "slug": "claude-code-pricing",
+      "title": "Claude Code Pricing: What It Actually Costs in 2026",
+      "summary": "Claude Code is billed on API usage, not a flat monthly fee. What you'll actually pay per session, how to control costs, and when it's worth it vs Cursor or Copilot.",
+      "url": "https://8bitconcepts.com/research/claude-code-pricing.html",
+      "tags": [],
+      "date_published": "2026-05-07"
     },
     {
-      "slug": "shift-handoff-intelligence",
-      "title": "Shift Handoff Intelligence",
-      "summary": "Maintaining context and knowledge across AI system transitions and human-agent handoffs.",
-      "url": "https://8bitconcepts.com/research/shift-handoff-intelligence.html",
-      "tags": ["agents", "context", "handoff", "operations"]
+      "slug": "claude-code-tips",
+      "title": "Claude Code Tips: 12 Ways to Get More Out of Every Session",
+      "summary": "Practical Claude Code tips for developers who already have it installed. Model switching, CLAUDE.md, MCP setup, /compact timing, and the patterns that actually improve output quality.",
+      "url": "https://8bitconcepts.com/research/claude-code-tips.html",
+      "tags": [],
+      "date_published": "2026-05-07"
     },
     {
-      "slug": "the-agentic-accountability-gap",
-      "title": "The Agentic Accountability Gap",
-      "summary": "Why governance frameworks built for generative AI fail for agentic systems.",
-      "url": "https://8bitconcepts.com/research/the-agentic-accountability-gap.html",
-      "tags": ["agents", "governance", "accountability", "compliance"]
+      "slug": "claude-code-vs-aider",
+      "title": "Claude Code vs Aider: Two Terminal Agents, Different Philosophy",
+      "summary": "Both Claude Code and Aider are terminal-based AI coding agents. Both bill at API rates. The difference is model lock-in, git integration depth, and what each does best.",
+      "url": "https://8bitconcepts.com/research/claude-code-vs-aider.html",
+      "tags": [],
+      "date_published": "2026-05-07"
     },
     {
-      "slug": "on-device-inference",
-      "title": "Your AI Is Moving Back Onto the Machine",
-      "summary": "The future of AI inference is not cloud versus device. The shift is hierarchy: cloud for frontier work, devices for the everyday intelligence layer close to private context.",
-      "url": "https://8bitconcepts.com/research/on-device-inference.html",
-      "tags": ["ai", "inference", "edge-computing", "privacy", "hardware"]
+      "slug": "claude-code-vs-codex",
+      "title": "Claude Code vs OpenAI Codex CLI: Side-by-Side Comparison (2026)",
+      "summary": "Claude Code vs OpenAI Codex CLI: model quality, pricing, config files, MCP support, sandboxing, and when to pick each. Accurate 2026 comparison from developers who've used both.",
+      "url": "https://8bitconcepts.com/research/claude-code-vs-codex.html",
+      "tags": [],
+      "date_published": "2026-05-07"
+    },
+    {
+      "slug": "claude-code-vs-cursor",
+      "title": "Claude Code vs Cursor: A Practical Comparison for Working Developers",
+      "summary": "Claude Code and Cursor solve different problems. Here is what each is actually good at, where each falls short, and why the most productive teams use both.",
+      "url": "https://8bitconcepts.com/research/claude-code-vs-cursor.html",
+      "tags": [],
+      "date_published": "2026-05-07"
+    },
+    {
+      "slug": "claude-code-vs-gemini",
+      "title": "Claude Code vs Gemini CLI: Side-by-Side Comparison (2026)",
+      "summary": "Claude Code vs Google Gemini CLI: model quality, pricing, approval modes, Google Search grounding, Plan Mode, and when to pick each. Accurate 2026 comparison.",
+      "url": "https://8bitconcepts.com/research/claude-code-vs-gemini.html",
+      "tags": [],
+      "date_published": "2026-05-07"
+    },
+    {
+      "slug": "claude-code-vs-github-copilot",
+      "title": "Claude Code vs GitHub Copilot: Which One Is Right for You?",
+      "summary": "GitHub Copilot and Claude Code do different things. Copilot is an inline completion engine. Claude Code is an agentic task runner. Here's when to use each.",
+      "url": "https://8bitconcepts.com/research/claude-code-vs-github-copilot.html",
+      "tags": [],
+      "date_published": "2026-05-07"
+    },
+    {
+      "slug": "claude-code-vs-windsurf",
+      "title": "Claude Code vs Windsurf: Which AI Coding Tool Is Right for You?",
+      "summary": "Claude Code is a terminal agent. Windsurf is an IDE. Both are agentic — but they fit different workflows. Here's how to pick the right one.",
+      "url": "https://8bitconcepts.com/research/claude-code-vs-windsurf.html",
+      "tags": [],
+      "date_published": "2026-05-07"
+    },
+    {
+      "slug": "claude-md-guide",
+      "title": "Claude Code CLAUDE.md: The Practical Guide to Project Memory",
+      "summary": "CLAUDE.md gives Claude Code persistent project context across sessions. Here is what to put in it, what makes it worse, and the one problem it cannot solve.",
+      "url": "https://8bitconcepts.com/research/claude-md-guide.html",
+      "tags": [],
+      "date_published": "2026-05-07"
+    },
+    {
+      "slug": "how-to-use-claude-code",
+      "title": "How to Use Claude Code: A Practical Guide for 2026",
+      "summary": "Claude Code is Anthropic's agentic coding tool. How to install it, set up your API key, configure CLAUDE.md, and use it effectively for real development work.",
+      "url": "https://8bitconcepts.com/research/how-to-use-claude-code.html",
+      "tags": [],
+      "date_published": "2026-05-07"
+    },
+    {
+      "slug": "the-agentic-commerce-gap",
+      "title": "The Agentic Commerce Gap: Why Most Businesses Are Invisible to AI Agents",
+      "summary": "AI agents are beginning to shop, quote, and purchase on behalf of users. Most online businesses are architecturally invisible to them. Here is what that means and what to do about it.",
+      "url": "https://8bitconcepts.com/research/the-agentic-commerce-gap.html",
+      "tags": [],
+      "date_published": "2026-05-07"
+    },
+    {
+      "slug": "the-autonomy-ceiling",
+      "title": "The Autonomy Ceiling",
+      "summary": "Engineering teams are shipping AI agents that can technically act autonomously but are operationally constrained to never actually do so. Approval gates, human-in-the-loop checkpoints, and liability-driven override policies have quietly stripped most enterprise agents down to expensive autocomplete.",
+      "url": "https://8bitconcepts.com/research/the-autonomy-ceiling.html",
+      "tags": [],
+      "date_published": "2026-06-01"
+    },
+    {
+      "slug": "the-inference-cliff",
+      "title": "The Inference Cliff",
+      "summary": "Most Series B-D companies price their AI-powered products based on what the model costs during development — then ship to production and watch unit economics collapse. The problem isn't the model. It's that inference cost at scale follows a non-linear curve that almost no team models in advance.",
+      "url": "https://8bitconcepts.com/research/the-inference-cliff.html",
+      "tags": [],
+      "date_published": "2026-06-01"
+    },
+    {
+      "slug": "the-quiet-regression",
+      "title": "The Quiet Regression",
+      "summary": "Most engineering teams have a deployment pipeline for their application code. Almost none have one for their prompts. As a result, the most business-critical logic in a modern AI system ships without versioning, without rollback, and without any signal when a silent quality regression erodes the product that customers are paying for.",
+      "url": "https://8bitconcepts.com/research/the-quiet-regression.html",
+      "tags": [],
+      "date_published": "2026-06-01"
+    },
+    {
+      "slug": "the-redesign-lag",
+      "title": "The Redesign Lag",
+      "summary": "Most engineering leaders deploying agentic AI in 2026 are making a quiet bet: that they can bolt autonomous systems onto org structures designed for human handoffs, approval chains, and ticket queues — and figure out the people side later. The gap isn't that companies are moving too slowly on AI. It's that they're moving too fast on tooling and too slowly on everything that has to change around it.",
+      "url": "https://8bitconcepts.com/research/the-redesign-lag.html",
+      "tags": [],
+      "date_published": "2026-06-01"
+    },
+    {
+      "slug": "the-rollback-illusion",
+      "title": "The Rollback Illusion",
+      "summary": "Engineering teams have spent decades perfecting the art of the rollback — a clean, reliable escape hatch when a deployment goes wrong. But AI systems don't roll back. When an LLM-powered feature degrades, poisons downstream data, or quietly shifts user behavior over weeks, there is no git revert that fixes it.",
+      "url": "https://8bitconcepts.com/research/the-rollback-illusion.html",
+      "tags": [],
+      "date_published": "2026-06-01"
+    },
+    {
+      "slug": "the-skill-shelf-life",
+      "title": "The Skill Shelf Life",
+      "summary": "Companies are spending aggressively to hire AI-capable engineers — then watching those skills expire in 18 months or less as the toolchain underneath them shifts. The problem isn't that teams can't learn AI. It's that the half-life of what they learned is shrinking faster than any training program can track.",
+      "url": "https://8bitconcepts.com/research/the-skill-shelf-life.html",
+      "tags": [],
+      "date_published": "2026-06-01"
+    },
+    {
+      "slug": "the-benchmark-betrayal",
+      "title": "The Benchmark Betrayal",
+      "summary": "Engineering teams spend weeks running evals against public benchmarks, score their shortlisted models, make a vendor decision — and then watch production fall apart. The model that topped your internal leaderboard hallucinates under burst load, drifts semantically when context fills past 60%, and returns schema-inconsistent outputs under conditions your benchmark never tested.",
+      "url": "https://8bitconcepts.com/research/the-benchmark-betrayal.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-culture-multiplier",
+      "title": "The Culture Multiplier",
+      "summary": "Engineering leaders are spending the bulk of their AI budgets on models, infrastructure, and tooling — yet organizational factors like culture, manager support, and talent practices account for more than twice the impact on AI outcomes than any individual technology choice.",
+      "url": "https://8bitconcepts.com/research/the-culture-multiplier.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-org-memory-leak",
+      "title": "The Org Memory Leak",
+      "summary": "Companies are spending millions fine-tuning AI systems to understand their business — then watching that knowledge evaporate every time a prompt changes, a model is swapped, or an engineer leaves.",
+      "url": "https://8bitconcepts.com/research/the-org-memory-leak.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-ownership-vacuum",
+      "title": "The Ownership Vacuum",
+      "summary": "Most enterprise AI deployments are technically live but organizationally orphaned. No single team owns the output, no one is accountable when the model drifts, and when something breaks, the blame diffuses across product, data, platform, and legal until nothing gets fixed.",
+      "url": "https://8bitconcepts.com/research/the-ownership-vacuum.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-probabilistic-contract",
+      "title": "The Probabilistic Contract",
+      "summary": "Your engineering team spent years building systems with a foundational assumption: given the same inputs, you get the same outputs. That contract is gone. Yet most Series B–D companies are still running LLMs in production the same way they'd run a REST API.",
+      "url": "https://8bitconcepts.com/research/the-probabilistic-contract.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-prompt-versioning-void",
+      "title": "The Prompt Versioning Void",
+      "summary": "Most engineering teams can tell you exactly which commit broke their API. Almost none can tell you which prompt change degraded their AI output quality three weeks ago. As organizations scale from one LLM feature to dozens, prompts have become the most consequential unversioned artifact in the modern software stack.",
+      "url": "https://8bitconcepts.com/research/the-prompt-versioning-void.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-semantic-debt-bomb",
+      "title": "The Semantic Debt Bomb",
+      "summary": "Engineering teams have spent two years tuning prompts, swapping models, and layering guardrails — and most of it is sitting on a foundation that was never designed to hold weight. The real reason enterprise LLM systems keep producing inconsistent, unreliable outputs isn't the model. It's the data beneath it.",
+      "url": "https://8bitconcepts.com/research/the-semantic-debt-bomb.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-skill-collapse",
+      "title": "The Skill Collapse",
+      "summary": "Companies are reporting 30–40% gains in developer velocity from AI tooling — and quietly watching their senior engineers lose the ability to reason through the problems AI can't solve. The productivity numbers are real. So is the atrophy. And the two are directly connected.",
+      "url": "https://8bitconcepts.com/research/the-skill-collapse.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-velocity-trap",
+      "title": "The Velocity Trap",
+      "summary": "Engineering teams at Series B-D companies are shipping AI features faster than any previous technology cycle — and accumulating a category of technical debt that doesn't show up in any existing framework. It's not prompt debt. It's not eval debt. It's architectural debt created specifically by the pressure to keep pace with model capability releases.",
+      "url": "https://8bitconcepts.com/research/the-velocity-trap.html",
+      "tags": [],
+      "date_published": "2026-07-01"
+    },
+    {
+      "slug": "the-confidence-collapse",
+      "title": "The Confidence Collapse",
+      "summary": "Enterprise teams are shipping AI features faster than ever — and trusting them less than ever. A growing body of evidence points to a paradox at the heart of 2026 AI deployment: the more production experience engineers accumulate with LLMs, the less confidence they report in their own outputs.",
+      "url": "https://8bitconcepts.com/research/the-confidence-collapse.html",
+      "tags": [],
+      "date_published": "2026-08-01"
+    },
+    {
+      "slug": "the-consensus-trap",
+      "title": "The Consensus Trap",
+      "summary": "Multi-agent AI systems were supposed to eliminate single points of failure. Instead, enterprises are discovering that when multiple agents agree, they're often all wrong in the same direction — and no human catches it until the damage is done.",
+      "url": "https://8bitconcepts.com/research/the-consensus-trap.html",
+      "tags": [],
+      "date_published": "2026-08-01"
+    },
+    {
+      "slug": "the-escalation-void",
+      "title": "The Escalation Void",
+      "summary": "Enterprises have spent months designing what their AI agents should do when everything goes right. Almost none of them have designed what happens when an agent gets stuck, hits an ambiguous decision boundary, or is about to take an irreversible action with no human in the loop.",
+      "url": "https://8bitconcepts.com/research/the-escalation-void.html",
+      "tags": [],
+      "date_published": "2026-08-01"
+    },
+    {
+      "slug": "the-explainability-debt",
+      "title": "The Explainability Debt",
+      "summary": "Companies are shipping AI decisions they cannot explain — not because they chose to, but because they never built the infrastructure to try. When a regulator, customer, or board asks why the model did what it did, most engineering teams discover too late that explainability wasn't a feature they could add after the fact.",
+      "url": "https://8bitconcepts.com/research/the-explainability-debt.html",
+      "tags": [],
+      "date_published": "2026-08-01"
+    },
+    {
+      "slug": "the-inference-sprawl",
+      "title": "The Inference Sprawl",
+      "summary": "Companies that successfully moved AI from pilot to production are discovering a new crisis: their inference costs are scaling faster than the business value they're capturing. Not because they chose the wrong models — but because nobody owns the decision of which model runs which workload.",
+      "url": "https://8bitconcepts.com/research/the-inference-sprawl.html",
+      "tags": [],
+      "date_published": "2026-08-01"
+    },
+    {
+      "slug": "the-prompt-to-process-gap",
+      "title": "The Prompt-to-Process Gap",
+      "summary": "Most enterprise AI initiatives don't fail at the model level — they fail at the handoff between a working prototype and a repeatable organizational process. This paper examines why the last 10% of AI deployment consumes more organizational energy than the first 90%, and why most companies have no framework, owner, or budget line for it.",
+      "url": "https://8bitconcepts.com/research/the-prompt-to-process-gap.html",
+      "tags": [],
+      "date_published": "2026-08-01"
+    },
+    {
+      "slug": "the-prompt-to-production-gap",
+      "title": "The Prompt-to-Production Gap",
+      "summary": "Most enterprise AI teams can get a working demo in days. Getting that same system into production — hardened, monitored, and trusted by the business — takes six to eighteen months. That gap isn't a tooling problem or a talent problem. It's a discipline problem.",
+      "url": "https://8bitconcepts.com/research/the-prompt-to-production-gap.html",
+      "tags": [],
+      "date_published": "2026-08-01"
     }
   ]
 }

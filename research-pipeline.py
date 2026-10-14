@@ -507,8 +507,11 @@ def update_llms_txt(topic):
 def update_feed_xml(topic, research_data):
     """Regenerate feed.xml from research.json so the new paper shows up at the top."""
     import datetime, json as _json
+    from email.utils import format_datetime
+    from html import escape
     feed_path = SCRIPT_DIR / "feed.xml"
     json_path = SCRIPT_DIR / "research.json"
+    subprocess.run([sys.executable, str(SCRIPT_DIR / "tools/generate-research-index.py")], check=True)
     if not json_path.exists():
         return
     with open(json_path) as f:
@@ -528,10 +531,14 @@ def update_feed_xml(topic, research_data):
         '<managingEditor>hello@8bitconcepts.com (8bitconcepts)</managingEditor>',
     ]
     for p in reversed(papers):  # newest-first
-        cats = "".join(f"<category>{t}</category>" for t in p.get("tags", []))
+        published = datetime.datetime.fromisoformat(p["date_published"].replace("Z", "+00:00"))
+        if published.tzinfo is None:
+            published = published.replace(tzinfo=datetime.timezone.utc)
+        pub_date = format_datetime(published)
+        cats = "".join(f"<category>{escape(t)}</category>" for t in p.get("tags", []))
         lines.append(
-            f'<item><title>{p["title"]}</title><link>{p["url"]}</link><guid>{p["url"]}</guid>'
-            f'<pubDate>{now}</pubDate><description><![CDATA[{p["summary"]}]]></description>{cats}</item>'
+            f'<item><title>{escape(p["title"])}</title><link>{escape(p["url"])}</link><guid>{escape(p["url"])}</guid>'
+            f'<pubDate>{pub_date}</pubDate><description>{escape(p["summary"])}</description>{cats}</item>'
         )
     lines.append("</channel></rss>")
     with open(feed_path, "w") as f:
