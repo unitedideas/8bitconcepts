@@ -4,9 +4,10 @@
 <title>8bitconcepts Research</title>
 <link>https://8bitconcepts.com/</link>
 <atom:link href="https://8bitconcepts.com/feed.xml" rel="self" type="application/rss+xml" />
+<atom:link href="https://pubsubhubbub.appspot.com/" rel="hub" />
 <description>Independent research on enterprise AI strategy, governance, and operational risk.</description>
 <language>en-us</language>
-<lastBuildDate>Wed, 14 Oct 2026 15:38:43 GMT</lastBuildDate>
+<lastBuildDate>Wed, 14 Oct 2026 15:49:01 GMT</lastBuildDate>
 <managingEditor>hello@8bitconcepts.com (8bitconcepts)</managingEditor>
 <item><title>The Prompt-to-Production Gap</title><link>https://8bitconcepts.com/research/the-prompt-to-production-gap.html</link><guid>https://8bitconcepts.com/research/the-prompt-to-production-gap.html</guid><pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate><description>Most enterprise AI teams can get a working demo in days. Getting that same system into production — hardened, monitored, and trusted by the business — takes six to eighteen months. That gap isn&#x27;t a tooling problem or a talent problem. It&#x27;s a discipline problem.</description></item>
 <item><title>The Prompt-to-Process Gap</title><link>https://8bitconcepts.com/research/the-prompt-to-process-gap.html</link><guid>https://8bitconcepts.com/research/the-prompt-to-process-gap.html</guid><pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate><description>Most enterprise AI initiatives don&#x27;t fail at the model level — they fail at the handoff between a working prototype and a repeatable organizational process. This paper examines why the last 10% of AI deployment consumes more organizational energy than the first 90%, and why most companies have no framework, owner, or budget line for it.</description></item>

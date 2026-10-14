@@ -525,6 +525,7 @@ def update_feed_xml(topic, research_data):
         '<title>8bitconcepts Research</title>',
         '<link>https://8bitconcepts.com/</link>',
         '<atom:link href="https://8bitconcepts.com/feed.xml" rel="self" type="application/rss+xml" />',
+        '<atom:link href="https://pubsubhubbub.appspot.com/" rel="hub" />',
         '<description>Independent research on enterprise AI strategy, governance, and operational risk.</description>',
         '<language>en-us</language>',
         f'<lastBuildDate>{now}</lastBuildDate>',
