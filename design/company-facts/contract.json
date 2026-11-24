@@ -34,9 +34,9 @@
       "reviewed_at": "2026-11-24T21:49:10.680398+00:00",
       "remaining_limitations": [
         "No measured conversion lift or commercial outcome from these edits.",
-        "The standalone catalog-data canary still fails on unchanged local landing-page job figures; no full-site data-accuracy claim.",
         "Research argument correctness and private product/payment flows are outside this review.",
-        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification."
+        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification.",
+        "Local pages beyond their corrected catalog panels retain unresolved claims and are outside this design approval."
       ]
     },
     {
@@ -65,9 +65,9 @@
       "reviewed_at": "2026-11-24T21:49:10.680398+00:00",
       "remaining_limitations": [
         "No measured conversion lift or commercial outcome from these edits.",
-        "The standalone catalog-data canary still fails on unchanged local landing-page job figures; no full-site data-accuracy claim.",
         "Research argument correctness and private product/payment flows are outside this review.",
-        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification."
+        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification.",
+        "Local pages beyond their corrected catalog panels retain unresolved claims and are outside this design approval."
       ]
     },
     {
@@ -96,9 +96,9 @@
       "reviewed_at": "2026-11-24T21:49:10.680398+00:00",
       "remaining_limitations": [
         "No measured conversion lift or commercial outcome from these edits.",
-        "The standalone catalog-data canary still fails on unchanged local landing-page job figures; no full-site data-accuracy claim.",
         "Research argument correctness and private product/payment flows are outside this review.",
-        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification."
+        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification.",
+        "Local pages beyond their corrected catalog panels retain unresolved claims and are outside this design approval."
       ]
     },
     {
@@ -127,11 +127,21 @@
       "reviewed_at": "2026-11-24T21:49:10.680398+00:00",
       "remaining_limitations": [
         "No measured conversion lift or commercial outcome from these edits.",
-        "The standalone catalog-data canary still fails on unchanged local landing-page job figures; no full-site data-accuracy claim.",
         "Research argument correctness and private product/payment flows are outside this review.",
-        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification."
+        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification.",
+        "Local pages beyond their corrected catalog panels retain unresolved claims and are outside this design approval."
       ]
     }
   ],
-  "review_scope": "Company identity, owned-project evidence copy, article count synchronization, inquiry attribution, contrast, focus and reflow on four covered pages. Linked article claims and local-page catalog figures remain outside this review."
+  "review_scope": "Company identity, owned-project evidence copy, article count synchronization, inquiry attribution, contrast, focus and reflow on four covered pages. Dated catalog panels on the 20 local pages have a separate scoped correction receipt. Their broader savings, delivery and other copy remains outside this approval.",
+  "local_catalog_correction": {
+    "reviewed_at": "2026-11-24T22:07:24.968952+00:00",
+    "scope": "Dated catalog panel and source link only. No local-page or full-site design approval.",
+    "remaining_findings": [
+      "Local pages still contain unverified savings and capacity promises.",
+      "Meta descriptions and body copy still contain unverified cost and delivery claims.",
+      "The linked historical research argument is not approved by this correction."
+    ],
+    "review_status": "Scoped factual correction; existing local-page claims still need revision."
+  }
 }

@@ -89,20 +89,20 @@ def main() -> int:
         "research_count": f"{research_count:,}",
     }
 
-    checks = []
-    for page in [
-        "local/vancouver-wa.html",
-        "local/camas-wa.html",
-        "local/portland-or.html",
-        "local/tigard-or.html",
-        "local/beaverton-or.html",
-        "local/hillsboro-or.html",
-        "local/lake-oswego-or.html",
-    ]:
-        checks.append((page, f"{expected['adb_jobs']} AI/ML jobs"))
-
-    for page, value in checks:
-        require_contains(ROOT / page, value)
+    local_pages = sorted((ROOT / "local").glob("*.html"))
+    service_pages = [page for page in local_pages if page.name != "index.html"]
+    if len(service_pages) != 20:
+        raise AssertionError("Expected 20 local service pages; review snapshot coverage")
+    for page in service_pages:
+        require_contains(page, f"{expected['adb_jobs']} AI/ML jobs")
+        text = page.read_text(encoding="utf-8")
+        panel = re.search(r"<strong[^>]*>AI hiring catalog snapshot:</strong>(.*?)</span>", text, re.S)
+        if not panel or not re.search(r'<time datetime="\d{4}-\d{2}-\d{2}">', panel.group(1)):
+            raise AssertionError(f"{page.relative_to(ROOT)} missing dated catalog context")
+        if "Local hiring availability requires separate research." not in panel.group(1):
+            raise AssertionError(f"{page.relative_to(ROOT)} missing catalog limitation")
+        if "hire-locally path" in text or "cannot hire local AI capacity" in text:
+            raise AssertionError(f"{page.relative_to(ROOT)} retains unsupported local-hiring inference")
 
     print(json.dumps(expected, sort_keys=True))
     return 0
