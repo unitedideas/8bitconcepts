@@ -1,0 +1,71 @@
+{
+  "category": "service acquisition",
+  "audience": "Operating-business buyers and directory reviewers evaluating 8BitConcepts implementation work.",
+  "traffic_intent": "Verify owned projects, inspect product documentation, and request a relevant consulting intro.",
+  "primary_conversion": "Qualified consulting inquiry",
+  "quality_metric": "A real buyer describes a business workflow or technical need; exclude operator checks, crawler visits and generic forms.",
+  "scope": "Owned-project case-study copy, article count markers on four existing pages, campaign capture on direct case-study arrivals and a factual share card.",
+  "observed_findings": [
+    "Case study advertises API Pro pricing while current public API policy says Pro paywalling is disabled.",
+    "Paid-customer/build-time, cost comparisons and always-current operational assertions have no supporting evidence in this task.",
+    "Validated article index and manifest both contain 76 articles; evergreen headlines say 46 or 49.",
+    "Case-study landing page omits the shared attribution script."
+  ],
+  "source_evidence": [
+    {
+      "url": "https://aidevboard.com/api/v1",
+      "observed": "Current public reads are free; REST and MCP surfaces are documented.",
+      "date": "2026-11-24"
+    },
+    {
+      "url": "https://nothumansearch.ai/api/v1",
+      "observed": "Search, site records, readiness scoring and MCP discovery are documented.",
+      "date": "2026-11-24"
+    },
+    {
+      "url": "https://bringyour.ai/",
+      "observed": "Local setup migration, previews, snapshots and product pricing are published.",
+      "date": "2026-11-24"
+    },
+    {
+      "path": "research.json",
+      "observed": "76 validated article entries, excluding directory and overview pages."
+    }
+  ],
+  "same_category_references": [
+    {
+      "path": "work-with-us.html",
+      "lesson": "Keep inquiry expectations beside the next action."
+    },
+    {
+      "path": "index.html",
+      "lesson": "Use the existing dark canvas, orange action and readable muted text roles."
+    },
+    {
+      "url": "https://getservices.ai/marketplace/experts/8bitconcepts-agency",
+      "lesson": "Separate company identity, service description and evidence of work."
+    }
+  ],
+  "design_decisions": [
+    "Retain page layout and the four existing project anchors.",
+    "Replace unsupported outcome claims with inspectable implementation descriptions and primary-source links.",
+    "Let the existing research-index build update marked article totals.",
+    "Use existing brand typography and color roles; correct action/footer contrast and keyboard focus."
+  ],
+  "evidence_classes": {
+    "measured": "Archive article count and observed public API policies.",
+    "standard": "WCAG contrast, focus and reflow requirements.",
+    "observed_pattern": "Primary documentation links support company/work verification.",
+    "conversion_hypothesis": "Clearer evidence may reduce buyer verification friction; no lift is measured."
+  },
+  "render_conditions": [
+    "1440x1000 desktop",
+    "390x844 mobile",
+    "320px reflow",
+    "First screen, full page and decision area"
+  ],
+  "limits": [
+    "No revenue, customer, delivery-time, universal integration or full-site accessibility claim.",
+    "Local landing-page catalog counts and research article assertions are outside this review."
+  ]
+}

@@ -8,6 +8,7 @@ const root = path.resolve(__dirname, '..');
   let passed = 0;
   try {
     for (const scenario of [
+      {name:'direct case study campaign', caseLanding:true, query:'?utm_source=project-proof&utm_medium=referral&utm_campaign=agency-listing', expected:'project-proof'},
       {name:'directory via case studies', referrer:'https://hypestar.org/project/8bitconcepts', via:true, expected:'hypestar'},
       {name:'second directory', referrer:'https://getservices.ai/marketplace/experts/8bitconcepts-agency', expected:'getservices'},
       {name:'MCP Repository via case studies', referrer:'https://mcprepository.com/', via:true, expected:'mcprepository'},
@@ -35,9 +36,10 @@ const root = path.resolve(__dirname, '..');
         return route.fulfill({status:200,contentType:file.endsWith('.js')?'text/javascript':file.endsWith('.svg')?'image/svg+xml':'text/html',body:fs.readFileSync(file)});
       });
       const page = await context.newPage();
-      await page.goto('https://8bitconcepts.test/' + (scenario.directForm?'work-with-us.html':'') + (scenario.query || ''), scenario.referrer ? {referer:scenario.referrer}:{});
+      await page.goto('https://8bitconcepts.test/' + (scenario.directForm?'work-with-us.html':scenario.caseLanding?'case-studies.html':'') + (scenario.query || ''), scenario.referrer ? {referer:scenario.referrer}:{});
       if (scenario.via) await page.locator('nav a[href="/case-studies.html"]').click();
-      if (!scenario.directForm) await page.goto('https://8bitconcepts.test/work-with-us.html', {referer:scenario.nextReferrer || 'https://8bitconcepts.test/'});
+      if (scenario.caseLanding) await page.locator('.cta-buttons a.primary').click();
+      else if (!scenario.directForm) await page.goto('https://8bitconcepts.test/work-with-us.html', {referer:scenario.nextReferrer || 'https://8bitconcepts.test/'});
       await page.locator('input[name="name"]').fill('Browser verification');
       await page.locator('input[name="email"]').fill('browser@example.invalid');
       await page.locator('textarea[name="message"]').fill('Verify attribution without a real inquiry.');
@@ -45,6 +47,10 @@ const root = path.resolve(__dirname, '..');
       await page.waitForFunction(() => !document.querySelector('#lead-status').textContent.includes('Sending'));
       assert.ok(body, scenario.name + ': request was intercepted');
       assert.equal(body.utm_source, scenario.expected, scenario.name);
+      if (scenario.caseLanding) {
+        assert.equal(body.utm_medium, 'referral');
+        assert.equal(body.utm_campaign, 'agency-listing');
+      }
       if (scenario.name === 'MCP Repository via case studies') {
         assert.equal(body.utm_medium, 'referral');
         assert.equal(body.utm_campaign, 'directory-listing');

@@ -72,7 +72,14 @@ def main() -> int:
     adb = get_adb_overview()
     nhs = get_json("https://nothumansearch.ai/api/v1/stats")
     nhs_mcp_total = get_nhs_mcp_total()
-    research_count = len(list((ROOT / "research").glob("*.html")))
+    manifest = json.loads((ROOT / "research.json").read_text(encoding="utf-8"))
+    research_count = len(manifest["papers"])
+    if manifest.get("total") != research_count:
+        raise AssertionError("Research manifest total differs from its article records")
+    for name in ("index.html", "work-with-us.html", "case-studies.html", "404.html"):
+        markers = re.findall(r"<span data-research-count>([0-9,]+)</span>", (ROOT / name).read_text(encoding="utf-8"))
+        if not markers or any(int(value.replace(",", "")) != research_count for value in markers):
+            raise AssertionError(f"{name} article totals differ from the research manifest")
 
     expected = {
         "adb_jobs": rounded_floor(int(adb["total_jobs"])),
@@ -82,15 +89,7 @@ def main() -> int:
         "research_count": f"{research_count:,}",
     }
 
-    checks = [
-        ("work-with-us.html", f"{expected['research_count']} papers"),
-        ("case-studies.html", expected["adb_jobs"]),
-        ("case-studies.html", expected["adb_companies"]),
-        ("case-studies.html", expected["nhs_sites"]),
-        ("case-studies.html", expected["nhs_mcp"]),
-        ("index.html", f"{expected['research_count']} papers"),
-        ("404.html", f"All {expected['research_count']} papers"),
-    ]
+    checks = []
     for page in [
         "local/vancouver-wa.html",
         "local/camas-wa.html",

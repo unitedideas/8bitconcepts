@@ -61,4 +61,35 @@ class IndexTests(unittest.TestCase):
             self.assertIn('01 Apr 2026',item.findtext('pubDate'))
             self.assertEqual(item.findtext('description'),"A team's work & results")
 
+    def test_current_manifest_still_repairs_site_totals_without_changing_prices(self):
+        import contextlib
+        import io
+        import json
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'research').mkdir()
+            self.page(root / 'research', 'sample')
+            (root / 'research/index.html').write_text('directory page')
+            (root / 'research/overview.html').write_text('overview page')
+            papers = index.build_papers(root / 'research', [])
+            manifest = {'papers': papers, 'total': 1, 'updated_at': 'unchanged'}
+            (root / 'research.json').write_text(json.dumps(manifest))
+            pages = [root / name for name in ('index.html', 'work-with-us.html', 'case-studies.html', '404.html')]
+            for page in pages:
+                page.write_text('<span data-research-count>49</span> articles. Price $49.')
+            previous = index.ROOT
+            index.ROOT = root
+            try:
+                with contextlib.redirect_stdout(io.StringIO()):
+                    index.main()
+                for page in pages:
+                    self.assertEqual(page.read_text(), '<span data-research-count>1</span> articles. Price $49.')
+                self.assertEqual(json.loads((root / 'research.json').read_text()), manifest)
+                mtimes = [page.stat().st_mtime_ns for page in pages]
+                with contextlib.redirect_stdout(io.StringIO()):
+                    index.main()
+                self.assertEqual([page.stat().st_mtime_ns for page in pages], mtimes)
+            finally:
+                index.ROOT = previous
+
 if __name__=='__main__':unittest.main()

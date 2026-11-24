@@ -56,16 +56,29 @@ def build_papers(directory, previous):
         raise ValueError('No article pages found')
     return sorted(papers, key=lambda p:(p['date_published'], p['slug']))
 
+def sync_site_counts(count):
+    for name in ('index.html', 'work-with-us.html', 'case-studies.html', '404.html'):
+        path = ROOT / name
+        if not path.is_file():
+            continue
+        original = path.read_text(encoding='utf-8')
+        updated = re.sub(r'(<span data-research-count>)[0-9,]+(</span>)',
+                         lambda match: match[1] + str(count) + match[2], original)
+        if updated != original:
+            path.write_text(updated, encoding='utf-8')
+
+
 def main():
     output = ROOT / 'research.json'
     manifest = json.loads(output.read_text())
     papers = build_papers(ROOT / 'research', manifest.get('papers', []))
     if manifest.get('papers') == papers and manifest.get('total') == len(papers):
         print('Research index already current: %d articles' % len(papers))
-        return
-    manifest.update(papers=papers, total=len(papers), updated_at=datetime.now(timezone.utc).isoformat())
-    output.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + '\n')
-    print('Updated research index: %d articles' % len(papers))
+    else:
+        manifest.update(papers=papers, total=len(papers), updated_at=datetime.now(timezone.utc).isoformat())
+        output.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + '\n')
+        print('Updated research index: %d articles' % len(papers))
+    sync_site_counts(len(papers))
 
 if __name__ == '__main__':
     main()

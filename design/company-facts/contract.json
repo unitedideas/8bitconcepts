@@ -3,7 +3,9 @@
   "skill": "$design-director",
   "discover": [
     "index.html",
-    "work-with-us.html"
+    "work-with-us.html",
+    "case-studies.html",
+    "404.html"
   ],
   "surfaces": [
     {
@@ -13,9 +15,9 @@
       "audience": "Directory editors verifying the company and operating-business teams considering AI consulting in the Pacific Northwest or remotely.",
       "primary_conversion": "Qualified consulting intro request",
       "quality_metric": "Genuine business inquiries describing a relevant workflow or system need; exclude operator checks and generic submissions from conversion evidence.",
-      "evidence_brief": "design/company-facts/evidence-brief.json",
+      "evidence_brief": "design/case-evidence/evidence-brief.json",
       "verdict": "approved",
-      "reviewed_source_sha256": "202e19cc60aac8c29c200f0bacc145a6241f468ef8bf316a164c94f349fb079f",
+      "reviewed_source_sha256": "a2010785cd10ddf2ca344e63c222c9a5c1d463c77f2f4f6d53ca73127707fd89",
       "renders": {
         "desktop": "design/company-facts/home-desktop.png",
         "mobile": "design/company-facts/home-mobile.png"
@@ -29,11 +31,12 @@
         "responsive": true
       },
       "blocking_issues": [],
-      "reviewed_at": "2026-11-24T20:47:44.374321+00:00",
+      "reviewed_at": "2026-11-24T21:49:10.680398+00:00",
       "remaining_limitations": [
-        "Qualified inquiry lift is unmeasured.",
-        "Linked case-study pages and research claims require separate evidence review.",
-        "Accessibility checks cover rendered text/control contrast, focus, keyboard use and reflow; this is not a full WCAG conformance audit."
+        "No measured conversion lift or commercial outcome from these edits.",
+        "The standalone catalog-data canary still fails on unchanged local landing-page job figures; no full-site data-accuracy claim.",
+        "Research argument correctness and private product/payment flows are outside this review.",
+        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification."
       ]
     },
     {
@@ -43,9 +46,9 @@
       "audience": "Directory editors verifying the company and operating-business teams considering AI consulting in the Pacific Northwest or remotely.",
       "primary_conversion": "Qualified consulting intro request",
       "quality_metric": "Genuine business inquiries describing a relevant workflow or system need; exclude operator checks and generic submissions from conversion evidence.",
-      "evidence_brief": "design/company-facts/evidence-brief.json",
+      "evidence_brief": "design/case-evidence/evidence-brief.json",
       "verdict": "approved",
-      "reviewed_source_sha256": "3d1c0fdfdb953e74abf085843644d54251fdb13be2977acb8772778948ecc64e",
+      "reviewed_source_sha256": "9b830b4d7393a73fdc9a56a398ba7dbc14e125c9fc4a2932e2d9247cc21e51b2",
       "renders": {
         "desktop": "design/company-facts/consulting-desktop.png",
         "mobile": "design/company-facts/consulting-mobile.png"
@@ -59,13 +62,76 @@
         "responsive": true
       },
       "blocking_issues": [],
-      "reviewed_at": "2026-11-24T20:47:44.374586+00:00",
+      "reviewed_at": "2026-11-24T21:49:10.680398+00:00",
       "remaining_limitations": [
-        "Qualified inquiry lift is unmeasured.",
-        "Linked case-study pages and research claims require separate evidence review.",
-        "Accessibility checks cover rendered text/control contrast, focus, keyboard use and reflow; this is not a full WCAG conformance audit."
+        "No measured conversion lift or commercial outcome from these edits.",
+        "The standalone catalog-data canary still fails on unchanged local landing-page job figures; no full-site data-accuracy claim.",
+        "Research argument correctness and private product/payment flows are outside this review.",
+        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification."
+      ]
+    },
+    {
+      "id": "projects",
+      "source": "case-studies.html",
+      "category": "service acquisition",
+      "audience": "Business buyers and directory reviewers inspecting company work.",
+      "primary_conversion": "Qualified consulting inquiry",
+      "quality_metric": "A relevant business workflow inquiry, excluding operator checks.",
+      "evidence_brief": "design/case-evidence/evidence-brief.json",
+      "verdict": "approved",
+      "checks": {
+        "five_second": true,
+        "decision": true,
+        "trust": true,
+        "visual": true,
+        "accessibility": true,
+        "responsive": true
+      },
+      "blocking_issues": [],
+      "renders": {
+        "desktop": "design/case-evidence/projects-desktop.png",
+        "mobile": "design/case-evidence/projects-mobile.png"
+      },
+      "reviewed_source_sha256": "a78b3cf1cfe1a1bce8c1acec97ddd4de1a6e2baa1ecff29aecb360654da5b630",
+      "reviewed_at": "2026-11-24T21:49:10.680398+00:00",
+      "remaining_limitations": [
+        "No measured conversion lift or commercial outcome from these edits.",
+        "The standalone catalog-data canary still fails on unchanged local landing-page job figures; no full-site data-accuracy claim.",
+        "Research argument correctness and private product/payment flows are outside this review.",
+        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification."
+      ]
+    },
+    {
+      "id": "not-found",
+      "source": "404.html",
+      "category": "high-volume information",
+      "audience": "Visitors arriving through a missing page.",
+      "primary_conversion": "Reach useful research or the homepage",
+      "quality_metric": "Successful navigation to intended content; no business-conversion claim.",
+      "evidence_brief": "design/case-evidence/evidence-brief.json",
+      "verdict": "approved",
+      "checks": {
+        "five_second": true,
+        "decision": true,
+        "trust": true,
+        "visual": true,
+        "accessibility": true,
+        "responsive": true
+      },
+      "blocking_issues": [],
+      "renders": {
+        "desktop": "design/case-evidence/not-found-desktop.png",
+        "mobile": "design/case-evidence/not-found-mobile.png"
+      },
+      "reviewed_source_sha256": "6ac936b42683b068c76c4575e1bda7165a70320b1d185c01002ab31e8f9a1fc3",
+      "reviewed_at": "2026-11-24T21:49:10.680398+00:00",
+      "remaining_limitations": [
+        "No measured conversion lift or commercial outcome from these edits.",
+        "The standalone catalog-data canary still fails on unchanged local landing-page job figures; no full-site data-accuracy claim.",
+        "Research argument correctness and private product/payment flows are outside this review.",
+        "Contrast, focus, reflow and rendered inspection are scoped checks, not full WCAG certification."
       ]
     }
   ],
-  "review_scope": "Two-page company verification, inquiry path, contrast and footer layout repair. No certification of linked case-study claims, research findings, payment behavior or conversion lift."
+  "review_scope": "Company identity, owned-project evidence copy, article count synchronization, inquiry attribution, contrast, focus and reflow on four covered pages. Linked article claims and local-page catalog figures remain outside this review."
 }

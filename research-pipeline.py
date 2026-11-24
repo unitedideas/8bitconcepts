@@ -551,7 +551,8 @@ def git_commit_and_push(topic):
     """Commit new paper and push to deploy."""
     os.chdir(SCRIPT_DIR)
     slug = topic["slug"]
-    subprocess.run(["git", "add", f"research/{slug}.html", "index.html",
+    subprocess.run(["git", "add", f"research/{slug}.html", "index.html", "work-with-us.html",
+                    "case-studies.html", "404.html",
                     "research/.topics-generated.json", "sitemap.xml", "llms.txt",
                     "feed.xml", "research.json"],
                     capture_output=True)
