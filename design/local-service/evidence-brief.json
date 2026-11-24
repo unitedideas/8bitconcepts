@@ -1,0 +1,25 @@
+{
+  "category": "service acquisition",
+  "audience": "Local operating-business buyers evaluating AI workflow help.",
+  "primary_conversion": "A relevant workflow inquiry.",
+  "quality_metric": "Genuine inquiries with an identifiable business need; exclude operator tests and generic submissions.",
+  "main_question": "What work can we discuss, what proof can I inspect, and what happens after I inquire?",
+  "required_proof": "Owned-project examples, current service description, and clear scope before agreement. No client results or savings inferred.",
+  "references": [
+    {
+      "url": "https://8bitconcepts.com/work-with-us.html",
+      "lesson": "Describe the work and inquiry path; published offer terms do not establish prior customer outcomes."
+    },
+    {
+      "url": "https://8bitconcepts.com/case-studies.html",
+      "lesson": "Label owned implementation examples and link inspectable sources."
+    }
+  ],
+  "evidence_classes": {
+    "observed": "Twenty local pages repeat the same unsupported savings and delivery claims.",
+    "standards": "Check text contrast, visible focus, labels, reflow and keyboard access.",
+    "hypothesis": "Specific work descriptions and a clear inquiry step can improve comprehension. No measured conversion effect."
+  },
+  "visual_constraints": "Keep existing navigation, layout, local service-area links, industry examples, catalog panel and form fields. Check desktop and mobile.",
+  "review_scope": "Local-page offer, metadata and control readability. No full-site accuracy or conversion-lift claim."
+}

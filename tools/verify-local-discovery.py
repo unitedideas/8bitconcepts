@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import html
 import pathlib
 import re
 import sys
@@ -51,6 +52,23 @@ def main() -> int:
         errors.append(f"missing from openapi enum: {missing_openapi_enum}")
     if api_root.get("stats", {}).get("local_service_area_pages") != len(paths):
         errors.append("api/v1 stats.local_service_area_pages does not match sitemap local page count")
+
+    unsupported = (
+        "10–15 hrs/wk", "2–3×", "$50k–$500k/year", "permanently",
+        "Costs less than a senior hire", "Compounds forever",
+        "can't run as code in a week", "cannot run as code in a week",
+        "reply within 24h", "highest-ROI",
+    )
+    for local_path in paths:
+        source = read(local_path.lstrip("/"))
+        public_copy = html.unescape(source)
+        for claim in unsupported:
+            if claim.casefold() in public_copy.casefold():
+                errors.append(f"{local_path} retains unsupported claim: {claim}")
+        for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', source, re.S):
+            data = json.loads(block)
+            if data.get("@type") == "ProfessionalService" and "geo" in data:
+                errors.append(f"{local_path} implies an unverified branch-office coordinate")
 
     if errors:
         for error in errors:
