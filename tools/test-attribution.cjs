@@ -10,6 +10,8 @@ const root = path.resolve(__dirname, '..');
     for (const scenario of [
       {name:'directory via case studies', referrer:'https://hypestar.org/project/8bitconcepts', via:true, expected:'hypestar'},
       {name:'second directory', referrer:'https://getservices.ai/marketplace/experts/8bitconcepts-agency', expected:'getservices'},
+      {name:'MCP Repository via case studies', referrer:'https://mcprepository.com/', via:true, expected:'mcprepository'},
+      {name:'lookalike directory remains unattributed', referrer:'https://mcprepository.com.example.org/'},
       {name:'explicit campaign wins', query:'?utm_source=partner&utm_medium=referral&utm_campaign=consulting', referrer:'https://hypestar.org/', expected:'partner'},
       {name:'LinkedIn preserved', query:'?utm_source=linkedin&utm_medium=qlimit&qc=example-campaign', expected:'linkedin', source:'8bitconcepts-linkedin-qlimit'},
       {name:'direct remains unattributed'},
@@ -43,6 +45,10 @@ const root = path.resolve(__dirname, '..');
       await page.waitForFunction(() => !document.querySelector('#lead-status').textContent.includes('Sending'));
       assert.ok(body, scenario.name + ': request was intercepted');
       assert.equal(body.utm_source, scenario.expected, scenario.name);
+      if (scenario.name === 'MCP Repository via case studies') {
+        assert.equal(body.utm_medium, 'referral');
+        assert.equal(body.utm_campaign, 'directory-listing');
+      }
       assert.equal(body.source, scenario.source || '8bitconcepts-work-with-us');
       assert.equal(body.email, 'browser@example.invalid');
       assert.ok(!JSON.stringify(body).includes('private@example.org'));

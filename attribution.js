@@ -14,6 +14,7 @@
     const directories = {
       'hypestar.org': 'hypestar',
       'getservices.ai': 'getservices',
+      'mcprepository.com': 'mcprepository',
       'www.aiagencymap.com': 'aiagencymap',
       'aiagencymap.com': 'aiagencymap'
     };
