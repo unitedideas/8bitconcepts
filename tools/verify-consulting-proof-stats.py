@@ -83,10 +83,6 @@ def main() -> int:
     }
 
     checks = [
-        ("work-with-us.html", expected["adb_jobs"]),
-        ("work-with-us.html", f"{expected['adb_companies']}+ companies"),
-        ("work-with-us.html", expected["nhs_sites"]),
-        ("work-with-us.html", f"{expected['nhs_mcp']} MCP-positive sites"),
         ("work-with-us.html", f"{expected['research_count']} papers"),
         ("case-studies.html", expected["adb_jobs"]),
         ("case-studies.html", expected["adb_companies"]),

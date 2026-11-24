@@ -57,8 +57,13 @@
       --terra-dim2: rgba(217,119,87,0.08);
       --text: #e8e8e9;
       --text-dim: #8b8d91;
-      --text-dimmer: #5a5c61;
+      --text-dimmer: #82868e;
+      --on-action: #111214;
+      --control-border: #6f737c;
     }
+    input::placeholder, textarea::placeholder { color: var(--text-dim); opacity: 1; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
+
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       background: var(--slate);
@@ -93,12 +98,12 @@
     }
     .nav-links a:hover { color: var(--text); }
     .nav-links a.nav-cta {
-      background: var(--terra); color: #ffffff;
+      background: var(--terra); color: var(--on-action);
       padding: 7px 16px; border-radius: 6px;
       font-size: 14px; font-weight: 600;
       text-decoration: none; transition: opacity 0.15s;
     }
-    .nav-links a.nav-cta:hover { color: #ffffff; opacity: 0.88; }
+    .nav-links a.nav-cta:hover { color: var(--on-action); opacity: 0.88; }
 
     .hero {
       padding: 128px 32px 32px;
@@ -124,7 +129,7 @@
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-block;
-      background: var(--terra); color: white;
+      background: var(--terra); color: var(--on-action);
       padding: 13px 24px; border-radius: 6px;
       font-size: 15px; font-weight: 600;
       text-decoration: none; transition: opacity 0.15s;
@@ -302,17 +307,17 @@
     label.required::after { content: ' *'; color: var(--terra); }
     input, textarea, select {
       padding: 11px 14px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--control-border);
       border-radius: 6px;
       font-size: 15px;
       background: var(--slate-2);
       color: var(--text);
       font-family: inherit;
     }
-    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--terra); }
+    input:focus, textarea:focus, select:focus {  border-color: var(--terra); }
     textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
     button[type=submit] {
-      background: var(--terra); color: white;
+      background: var(--terra); color: var(--on-action);
       padding: 14px 22px; border-radius: 6px;
       font-size: 15px; font-weight: 600;
       border: none; cursor: pointer; font-family: inherit;
@@ -397,8 +402,8 @@
       <p style="font-size:14px;margin:0;"><strong style="color:var(--text);">when the workflow is a fit.</strong> The target applies to the specific support, ops, review, or data workflow we automate &mdash; not every team or company-wide output.</p>
     </div>
     <div class="pitch-item" style="display:flex;flex-direction:column;">
-      <h3 style="color:var(--terra);font-size:24px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:8px;">Out-execute</h3>
-      <p style="font-size:14px;margin:0;"><strong style="color:var(--text);">bigger competitors.</strong> The companies pulling away in 2026 aren't bigger or better-funded &mdash; they ship AI faster. We help you ship faster than you can hire to do it.</p>
+      <h3 style="color:var(--terra);font-size:24px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:8px;">Measure first</h3>
+      <p style="font-size:14px;margin:0;"><strong style="color:var(--text);">before expanding.</strong> Start with one workflow whose volume, time cost, and quality can be measured. Expand after verifying the result.</p>
     </div>
   </div>
 </div>
@@ -474,22 +479,22 @@
 <div class="proof">
   <div class="section-eyebrow">Proof</div>
   <h2 class="section-title">We ship our own AI products. Same playbook.</h2>
-  <p class="section-sub">Three real systems we built and operate &mdash; same engagement model we'd use inside your business. Each shipped in 4&ndash;6 weeks. <a href="/case-studies.html" style="color:var(--terra);border-bottom:1px solid rgba(217,119,87,0.4);text-decoration:none;">See full case studies &rarr;</a></p>
+  <p class="section-sub">Products and a research pipeline we build and operate. <a href="/case-studies.html" style="color:var(--terra);border-bottom:1px solid rgba(217,119,87,0.4);text-decoration:none;">See full case studies &rarr;</a></p>
   <div class="proof-grid">
     <a class="proof-card" href="/case-studies.html#aidevboard" target="_blank" rel="noopener">
       <div class="ptag">Case 01 &middot; B2B SaaS</div>
       <h3>aidevboard.com</h3>
-      <p>AI/ML job board with a real REST API for agents. 8,700+ jobs, 527+ companies, monetized API tier. <strong>6 weeks to first paid customer.</strong></p>
+      <p>AI/ML job board with an agent API and checkout workflow. <strong>See the product case study.</strong></p>
     </a>
     <a class="proof-card" href="/case-studies.html#nothumansearch" target="_blank" rel="noopener">
       <div class="ptag">Case 02 &middot; Agent infra</div>
       <h3>nothumansearch.ai</h3>
-      <p>Agent-first search index + MCP server in the official registry. 4,100+ sites indexed, 451 MCP-positive sites detected. <strong>4 weeks scraper to public UI.</strong></p>
+      <p>Agent-first search index and MCP server. <strong>See the search product and integration case study.</strong></p>
     </a>
     <a class="proof-card" href="/case-studies.html#research-pipeline" target="_blank" rel="noopener">
       <div class="ptag">Case 03 &middot; Content</div>
       <h3>Research pipeline</h3>
-      <p>49 papers, including 6 data snapshots. Research dates appear on each paper. Email delivery is currently paused. <strong>2 weeks to first paper.</strong></p>
+      <p>49 papers, including 6 data snapshots. Research dates appear on each paper. <strong>Email delivery is currently paused.</strong></p>
     </a>
   </div>
 </div>
@@ -498,7 +503,7 @@
   <div class="form-inner">
     <div class="form-eyebrow">Intro request</div>
     <h2 class="form-title">Tell us what you're trying to do.</h2>
-    <p class="form-sub">This page uses an inquiry form, not instant calendar booking. Send the context and we'll reply from hello@8bitconcepts.com with next available times, or tell you directly if the work is not a fit.</p>
+    <p class="form-sub" id="company-details">8BitConcepts is based in Washougal, Washington, serving Pacific Northwest and remote teams. Your business contact is Shane Cheek. Send the workflow context through this inquiry form; we'll reply from hello@8bitconcepts.com about fit and next available times.</p>
     <form id="lead-form-el" onsubmit="return submitLead(event)">
       <div style="position:absolute;left:-5000px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
         <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
@@ -550,7 +555,7 @@
       <label class="required">What are you trying to do?
         <textarea name="message" required placeholder="The workflow you want to compress, the problem you keep hitting, or the system you'd like built. A paragraph is plenty."></textarea>
       </label>
-      <button type="submit">Send intro request — we'll reply within 24h</button>
+      <button type="submit">Send intro request</button>
       <p id="lead-status"></p>
     </form>
     <p class="form-fallback">Prefer email or need to bypass the form? <a href="mailto:hello@8bitconcepts.com?subject=Consulting%20inquiry">hello@8bitconcepts.com</a> &middot; Have a specific question first? <a href="/faq.html">14 common questions answered &rarr;</a></p>
@@ -614,7 +619,7 @@ async function submitLead(e) {
     });
     if (res.ok) {
       status.style.color = '#8ecf8e';
-      status.textContent = 'Got it. We\'ll reply within 24h from hello@8bitconcepts.com.';
+      status.textContent = 'Got it. We\'ll reply from hello@8bitconcepts.com about fit and next available times.';
       form.reset();
     } else {
       const body = await res.text();

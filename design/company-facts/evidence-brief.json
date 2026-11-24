@@ -1,0 +1,76 @@
+{
+  "category": "service acquisition",
+  "scope": "Company identity and intro-request copy, action text contrast, muted text, placeholders, form boundaries and keyboard focus on the homepage and service page. Conversion lift is unmeasured. Replace unsupported competitor and revenue wording with process and implementation descriptions. Keep generated research links in a native expandable footer list and remove stale consulting-page catalog counts and unverified paid-customer/build-time claims.",
+  "audience": "Directory editors verifying the company and operating-business teams considering AI consulting in the Pacific Northwest or remotely.",
+  "traffic_intent": "Verify who operates the business, where it is based and how to inquire.",
+  "primary_conversion": "Qualified consulting intro request",
+  "quality_metric": "Genuine business inquiries describing a relevant workflow or system need; exclude operator checks and generic submissions from conversion evidence.",
+  "observed_problem": {
+    "type": "observed publisher feedback",
+    "finding": "AIAgencies.fyi editor could not find Washougal or Shane on the primary website; source inspection confirmed both absent.",
+    "source_date": "2026-11-24"
+  },
+  "verified_facts": [
+    {
+      "fact": "Washougal, Washington and business contact Shane Cheek",
+      "source": "https://getservices.ai/marketplace/experts/8bitconcepts-agency",
+      "verification": "Public page loaded and displayed both facts on 2026-11-24."
+    },
+    {
+      "fact": "City Washougal, WA",
+      "source": "https://pnwsmallbusiness.com/b/8bitconcepts",
+      "verification": "Claimed public business profile loaded and displayed city on 2026-11-24."
+    }
+  ],
+  "same_category_references": [
+    {
+      "url": "https://getservices.ai/marketplace/experts/8bitconcepts-agency",
+      "class": "observed pattern",
+      "lesson": "Keep named contact and location visible alongside service information."
+    },
+    {
+      "url": "https://pnwsmallbusiness.com/b/8bitconcepts",
+      "class": "observed pattern",
+      "lesson": "A city-only service-business identity can be public without a street or phone."
+    }
+  ],
+  "reader_questions": [
+    "Is this the same business as its directory profiles?",
+    "Where is it based and does it serve remote teams?",
+    "Who is the business contact and what happens after an intro request?"
+  ],
+  "information_before_decision": [
+    "Verified city and named business contact",
+    "Inquiry rather than an instant booking",
+    "Reply about fit and availability without an unverified fixed-time guarantee"
+  ],
+  "design_decisions": [
+    "Retain existing layout, typography and brand orange; use dark text on orange actions and readable muted text.",
+    "Use stable company-details anchors for public verification.",
+    "Use request language for the inquiry action.",
+    "Preserve all form fields, attribution and endpoint behavior.",
+    "Measure text and control contrast against rendered backgrounds; provide visible keyboard focus.",
+    "Describe measured workflow validation and a checkout implementation without implying verified revenue or competitor outcomes.",
+    "Preserve generated article links inside a keyboard-operable details list; preserve the existing publisher insertion boundary.",
+    "Keep dated catalog counts in research instead of duplicating mutable counts as consulting proof."
+  ],
+  "evidence_classes": {
+    "measured_conversion_result": "None available for this change.",
+    "standard": "WCAG text contrast, readable reflow and keyboard-operable links.",
+    "practitioner_principle": "Put proof and company identity near the decision.",
+    "conversion_hypothesis": "Visible first-party contact/location details reduce verification friction and improve trust; outcome not measured."
+  },
+  "desktop_mobile_constraints": [
+    "Inspect first screen, full page and the company/contact decision area at 1440px desktop and 390px mobile.",
+    "Avoid horizontal page overflow; preserve visible inquiry actions and form fields."
+  ],
+  "remaining_hypotheses": [
+    "Qualified inquiry lift remains unmeasured.",
+    "Older case-study pages and research article claims are outside this two-page review and still require a separate evidence audit."
+  ],
+  "fact_limits": "No street address, phone, founding year, team size, legal title or new price supplied.",
+  "contrast_standards": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+  ]
+}

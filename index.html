@@ -122,8 +122,13 @@
       --terra-dim2: rgba(217,119,87,0.08);
       --text: #e8e8e9;
       --text-dim: #8b8d91;
-      --text-dimmer: #5a5c61;
+      --text-dimmer: #82868e;
+      --on-action: #111214;
+      --control-border: #6f737c;
     }
+
+    input::placeholder, textarea::placeholder { color: var(--text-dim); opacity: 1; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
 
     html { scroll-behavior: smooth; overflow-x: hidden; }
 
@@ -184,7 +189,7 @@
 
     .nav-links a.nav-cta {
       background: var(--terra);
-      color: #ffffff;
+      color: var(--on-action);
       padding: 7px 16px;
       border-radius: 6px;
       font-size: 14px;
@@ -194,7 +199,7 @@
       transition: opacity 0.15s;
     }
 
-    .nav-links a.nav-cta:hover { color: #ffffff; opacity: 0.88; }
+    .nav-links a.nav-cta:hover { color: var(--on-action); opacity: 0.88; }
 
     /* HERO */
     .hero {
@@ -252,7 +257,7 @@
 
     .btn-primary {
       background: var(--terra);
-      color: #ffffff;
+      color: var(--on-action);
       font-weight: 600;
     }
 
@@ -579,7 +584,7 @@
       flex: 1;
       min-width: 260px;
       padding: 12px 16px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--control-border);
       border-radius: 6px;
       font-size: 15px;
       background: var(--slate-2);
@@ -588,13 +593,12 @@
     }
 
     .subscribe-form input[type=email]:focus {
-      outline: none;
       border-color: var(--terra);
     }
 
     .subscribe-form button {
       background: var(--terra);
-      color: white;
+      color: var(--on-action);
       padding: 12px 22px;
       border-radius: 6px;
       font-size: 15px;
@@ -732,6 +736,15 @@
       margin-bottom: 12px;
     }
 
+    .footer-research { margin-top: 20px; }
+    .footer-research summary { cursor: pointer; padding: 10px; color: var(--text); }
+    .footer-research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px; max-width: 1020px; margin: 16px auto; }
+    .footer-research .research-card { display: block; text-align: left; padding: 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--slate-1); }
+    .footer-research .research-card-tag { font-size: 11px; color: var(--terra); margin-bottom: 8px; }
+    .footer-research .research-card-title { font-size: 16px; color: var(--text); font-weight: 600; margin-bottom: 8px; }
+    .footer-research .research-card-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+    .footer-research summary:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
+
     .footer-sep {
       color: var(--text-dimmer);
       margin: 0 8px;
@@ -806,7 +819,7 @@
       <a class="hero-proof-card" href="/case-studies.html#aidevboard">
         <span>Case study</span>
         <strong>aidevboard.com</strong>
-        <em>AI/ML job board with a real agent API and paid loop.</em>
+        <em>AI/ML job board with an agent API and checkout workflow.</em>
       </a>
       <a class="hero-proof-card" href="/case-studies.html#nothumansearch">
         <span>Case study</span>
@@ -836,9 +849,9 @@
         <p style="font-size:14px;color:var(--text-dim);line-height:1.55;margin:0;">An upside target for the specific workflow we ship, not a blanket company-wide promise.</p>
       </div>
       <div style="background:var(--slate-1);border:1px solid var(--border);border-radius:10px;padding:24px 26px;display:flex;flex-direction:column;">
-        <div style="font-size:26px;font-weight:700;letter-spacing:-0.025em;color:var(--terra);margin-bottom:6px;line-height:1.1;">Out-execute</div>
-        <h3 style="font-size:15px;letter-spacing:-0.01em;color:var(--text);margin-bottom:8px;font-weight:600;">bigger competitors</h3>
-        <p style="font-size:14px;color:var(--text-dim);line-height:1.55;margin:0;">Companies pulling away in 2026 aren't bigger or better-funded &mdash; they ship AI faster. Be one of them.</p>
+        <div style="font-size:26px;font-weight:700;letter-spacing:-0.025em;color:var(--terra);margin-bottom:6px;line-height:1.1;">Measure first</div>
+        <h3 style="font-size:15px;letter-spacing:-0.01em;color:var(--text);margin-bottom:8px;font-weight:600;">before expanding</h3>
+        <p style="font-size:14px;color:var(--text-dim);line-height:1.55;margin:0;">Start with one workflow whose volume, time cost, and quality can be measured. Expand after verifying the result.</p>
       </div>
     </div>
     <div style="margin-top:22px;text-align:center;">
@@ -922,12 +935,12 @@
   </div>
 
   <!-- ABOUT -->
-  <div class="about-section">
+  <div class="about-section" id="company-details">
     <div class="about-inner">
       <div class="about-eyebrow">About</div>
-      <h2 class="about-title">Who writes this</h2>
+      <h2 class="about-title">About 8BitConcepts</h2>
       <p class="about-body">
-        8bitconcepts is an embedded AI consultancy. We sit inside operating businesses and ship the workforce + process automation their teams will actually use &mdash; then leave the runbooks behind. We also build and run our own production AI products: <a href="https://aidevboard.com">aidevboard.com</a> (AI/ML jobs + agent API) and <a href="https://nothumansearch.ai">nothumansearch.ai</a> (agent-first search index, MCP server). The research above is the public version of analysis we run inside engagements &mdash; free to read, free to cite. <strong>Want to talk?</strong> <a href="/work-with-us.html#lead-form">Book an intro call</a> or email <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a>.
+        8BitConcepts is an embedded AI consultancy based in Washougal, Washington, serving Pacific Northwest and remote teams. We build AI systems and workflow automation for operating businesses, with documentation and training for the people using them. We also build and run our own products: <a href="https://aidevboard.com">aidevboard.com</a> (AI/ML jobs and agent API) and <a href="https://nothumansearch.ai">nothumansearch.ai</a> (agent-first search index and MCP server). We publish research on enterprise AI. <strong>Want to talk?</strong> <a href="/work-with-us.html#lead-form">Request an intro</a> or contact Shane Cheek at <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a>.
       </p>
     </div>
   </div>
@@ -979,6 +992,9 @@
       <a href="/openapi.yaml">OpenAPI</a>
       <span class="footer-sep">&middot;</span>
       <a href="/llms.txt">llms.txt</a>
+      <details class="footer-research">
+        <summary>Browse research articles</summary>
+        <div class="footer-research-grid">
       <a class="research-card" href="/research/the-rate-limit-ceiling.html">
         <div class="research-card-tag">LLMOps</div>
         <div class="research-card-title">The Rate Limit Ceiling</div>
@@ -1164,6 +1180,8 @@
         <div class="research-card-title">The Confidence Collapse</div>
         <div class="research-card-desc">Enterprise teams are shipping AI features faster than ever — and trusting them less than ever. A growing body of evidence points to a paradox at the heart of 2026 AI deployment: the more production ex</div>
       </a>
+    </div>
+      </details>
     </div>
     <p>&copy; 2026 8bitconcepts &mdash; <a href="mailto:hello@8bitconcepts.com">hello@8bitconcepts.com</a></p>
   </footer>

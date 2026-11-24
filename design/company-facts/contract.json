@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "skill": "$design-director",
+  "discover": [
+    "index.html",
+    "work-with-us.html"
+  ],
+  "surfaces": [
+    {
+      "id": "home",
+      "source": "index.html",
+      "category": "service acquisition",
+      "audience": "Directory editors verifying the company and operating-business teams considering AI consulting in the Pacific Northwest or remotely.",
+      "primary_conversion": "Qualified consulting intro request",
+      "quality_metric": "Genuine business inquiries describing a relevant workflow or system need; exclude operator checks and generic submissions from conversion evidence.",
+      "evidence_brief": "design/company-facts/evidence-brief.json",
+      "verdict": "approved",
+      "reviewed_source_sha256": "202e19cc60aac8c29c200f0bacc145a6241f468ef8bf316a164c94f349fb079f",
+      "renders": {
+        "desktop": "design/company-facts/home-desktop.png",
+        "mobile": "design/company-facts/home-mobile.png"
+      },
+      "checks": {
+        "five_second": true,
+        "decision": true,
+        "trust": true,
+        "visual": true,
+        "accessibility": true,
+        "responsive": true
+      },
+      "blocking_issues": [],
+      "reviewed_at": "2026-11-24T20:47:44.374321+00:00",
+      "remaining_limitations": [
+        "Qualified inquiry lift is unmeasured.",
+        "Linked case-study pages and research claims require separate evidence review.",
+        "Accessibility checks cover rendered text/control contrast, focus, keyboard use and reflow; this is not a full WCAG conformance audit."
+      ]
+    },
+    {
+      "id": "consulting",
+      "source": "work-with-us.html",
+      "category": "service acquisition",
+      "audience": "Directory editors verifying the company and operating-business teams considering AI consulting in the Pacific Northwest or remotely.",
+      "primary_conversion": "Qualified consulting intro request",
+      "quality_metric": "Genuine business inquiries describing a relevant workflow or system need; exclude operator checks and generic submissions from conversion evidence.",
+      "evidence_brief": "design/company-facts/evidence-brief.json",
+      "verdict": "approved",
+      "reviewed_source_sha256": "3d1c0fdfdb953e74abf085843644d54251fdb13be2977acb8772778948ecc64e",
+      "renders": {
+        "desktop": "design/company-facts/consulting-desktop.png",
+        "mobile": "design/company-facts/consulting-mobile.png"
+      },
+      "checks": {
+        "five_second": true,
+        "decision": true,
+        "trust": true,
+        "visual": true,
+        "accessibility": true,
+        "responsive": true
+      },
+      "blocking_issues": [],
+      "reviewed_at": "2026-11-24T20:47:44.374586+00:00",
+      "remaining_limitations": [
+        "Qualified inquiry lift is unmeasured.",
+        "Linked case-study pages and research claims require separate evidence review.",
+        "Accessibility checks cover rendered text/control contrast, focus, keyboard use and reflow; this is not a full WCAG conformance audit."
+      ]
+    }
+  ],
+  "review_scope": "Two-page company verification, inquiry path, contrast and footer layout repair. No certification of linked case-study claims, research findings, payment behavior or conversion lift."
+}
