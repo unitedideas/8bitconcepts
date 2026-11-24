@@ -15,6 +15,7 @@
       'hypestar.org': 'hypestar',
       'getservices.ai': 'getservices',
       'mcprepository.com': 'mcprepository',
+      'aiagencies.fyi': 'aiagencies',
       'www.aiagencymap.com': 'aiagencymap',
       'aiagencymap.com': 'aiagencymap'
     };

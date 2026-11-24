@@ -12,6 +12,8 @@ const root = path.resolve(__dirname, '..');
       {name:'directory via case studies', referrer:'https://hypestar.org/project/8bitconcepts', via:true, expected:'hypestar'},
       {name:'second directory', referrer:'https://getservices.ai/marketplace/experts/8bitconcepts-agency', expected:'getservices'},
       {name:'MCP Repository via case studies', referrer:'https://mcprepository.com/', via:true, expected:'mcprepository'},
+      {name:'AIAgencies published listing via case studies', referrer:'https://aiagencies.fyi/us/wa/washougal/8bitconcepts', via:true, expected:'aiagencies'},
+      {name:'AIAgencies lookalike remains unattributed', referrer:'https://aiagencies.fyi.example.org/'},
       {name:'lookalike directory remains unattributed', referrer:'https://mcprepository.com.example.org/'},
       {name:'explicit campaign wins', query:'?utm_source=partner&utm_medium=referral&utm_campaign=consulting', referrer:'https://hypestar.org/', expected:'partner'},
       {name:'LinkedIn preserved', query:'?utm_source=linkedin&utm_medium=qlimit&qc=example-campaign', expected:'linkedin', source:'8bitconcepts-linkedin-qlimit'},
@@ -51,7 +53,7 @@ const root = path.resolve(__dirname, '..');
         assert.equal(body.utm_medium, 'referral');
         assert.equal(body.utm_campaign, 'agency-listing');
       }
-      if (scenario.name === 'MCP Repository via case studies') {
+      if (['MCP Repository via case studies', 'AIAgencies published listing via case studies'].includes(scenario.name)) {
         assert.equal(body.utm_medium, 'referral');
         assert.equal(body.utm_campaign, 'directory-listing');
       }
