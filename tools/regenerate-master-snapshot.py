@@ -10,19 +10,21 @@ citable reference gist, pulling fresh data from:
 Rebuilds the master markdown (topline numbers, top 10 hiring, top 15 tags,
 workplace + seniority, 3 key signals, companion research links, data APIs,
 attribution) with the current date on the "**Updated**:" line, writes to a
-tempfile, then pushes via `gh gist edit`. Non-fatal on gist failure.
+tempfile, then pushes via `gh gist edit` and verifies the stored content.
+Invalid source data and publication failures return a nonzero exit status.
 
 Master gist: https://gist.github.com/unitedideas/4050cc4da4f874ff711fec1730940ddc
 
 Usage:
     python3 tools/regenerate-master-snapshot.py          # full run
     python3 tools/regenerate-master-snapshot.py --dry-run # fetch + render, don't write
-    python3 tools/regenerate-master-snapshot.py --once    # render + log, skip gist edit
+    python3 tools/regenerate-master-snapshot.py --once    # one run, including publication
 """
 from __future__ import annotations
 
 import argparse
 import json
+import math
 import subprocess
 import sys
 import tempfile
@@ -40,6 +42,7 @@ NHS_DIGEST_URL = "https://nothumansearch.ai/digest.json"
 # Public gist: https://gist.github.com/unitedideas/4050cc4da4f874ff711fec1730940ddc
 GIST_ID = "4050cc4da4f874ff711fec1730940ddc"
 GIST_MD_FILENAME = "state-of-ai-engineering.md"
+GIST_DESCRIPTION = "State of AI Engineering: AI Dev Board and Not Human Search catalog snapshot"
 GIST_URL = f"https://gist.github.com/unitedideas/{GIST_ID}"
 GIST_MD_RAW_URL = f"https://gist.githubusercontent.com/unitedideas/{GIST_ID}/raw/{GIST_MD_FILENAME}"
 
@@ -61,10 +64,10 @@ def fmt_salary(n: Any) -> str:
     try:
         v = int(n)
         if v <= 0:
-            return "—"
+            return "Not reported"
         return f"${v:,}"
     except (TypeError, ValueError):
-        return "—"
+        return "Not reported"
 
 
 def level_label(key: str) -> str:
@@ -79,8 +82,55 @@ def level_label(key: str) -> str:
     }.get(key, key.capitalize() if key else "—")
 
 
+def validate_sources(stats: dict[str, Any], digest: dict[str, Any]) -> None:
+    if not isinstance(stats, dict) or not isinstance(digest, dict):
+        raise ValueError("Source responses must be JSON objects")
+    overview = stats.get("overview")
+    salary = stats.get("salary")
+    if not isinstance(overview, dict) or not isinstance(salary, dict):
+        raise ValueError("Hiring overview or salary data is missing")
+    for key in ("total_jobs", "total_companies", "new_this_week", "jobs_with_salary"):
+        value = overview.get(key)
+        minimum = 1 if key in ("total_jobs", "total_companies") else 0
+        if type(value) is not int or value < minimum:
+            raise ValueError(f"Invalid hiring count: {key}")
+    if overview["jobs_with_salary"] > overview["total_jobs"]:
+        raise ValueError("Salary coverage exceeds the role count")
+    median = salary.get("median")
+    if overview["jobs_with_salary"] and (
+        type(median) not in (int, float) or not math.isfinite(median) or median <= 0
+    ):
+        raise ValueError("Disclosed salary median is missing or invalid")
+    for name, label, count in (
+        ("companies", "company", "roles"),
+        ("tags", "tag", "count"),
+        ("workplace", "type", "count"),
+        ("experience_levels", "level", "count"),
+    ):
+        rows = stats.get(name)
+        if not isinstance(rows, list) or not rows:
+            raise ValueError(f"Missing hiring table: {name}")
+        for row in rows:
+            if not isinstance(row, dict) or not isinstance(row.get(label), str) or not row[label]:
+                raise ValueError(f"Invalid label in {name}")
+            if type(row.get(count)) is not int or row[count] < 0:
+                raise ValueError(f"Invalid count in {name}")
+    for key in ("total_sites", "mcp_verified"):
+        value = digest.get(key)
+        minimum = 1 if key == "total_sites" else 0
+        if type(value) is not int or value < minimum:
+            raise ValueError(f"Invalid infrastructure count: {key}")
+    if digest["mcp_verified"] > digest["total_sites"]:
+        raise ValueError("MCP-verified entries exceed indexed entries")
+    for stamp in (overview.get("updated_at"), digest.get("generated_at")):
+        if not isinstance(stamp, str) or not stamp:
+            raise ValueError("Source timestamps are missing")
+        datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+
+
 def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) -> str:
-    ov = stats.get("overview", {}) or {}
+    validate_sources(stats, digest)
+    ov = stats["overview"]
     salary = stats.get("salary", {}) or {}
     tags = stats.get("tags", []) or []
     companies = stats.get("companies", []) or []
@@ -99,79 +149,51 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     nhs_mcp_pct = (nhs_mcp / nhs_total * 100) if nhs_total else 0
 
     # Top 10 hiring companies
-    top_companies = companies[:10]
+    top_companies = sorted(companies, key=lambda row: row["roles"], reverse=True)[:10]
 
-    # Top 15 skill tags (by posting count — already sorted desc from API)
-    top_tags = tags[:15]
+    # Top 15 skill tags by reported posting count.
+    top_tags = sorted(tags, key=lambda row: row["count"], reverse=True)[:15]
 
     # Workplace ordering: Onsite, Remote, Hybrid
     ws_map = {w.get("type"): w for w in workplaces}
 
-    # Seniority — API returns already desc by count
-    top_levels = experience_levels[:5]
+    # Most frequent seniority labels returned by the API.
+    top_levels = sorted(experience_levels, key=lambda row: row["count"], reverse=True)[:5]
 
-    # Build signals dynamically from data
-    # Signal 1: agents crossover — is "agents" ranked above "pytorch"?
-    tag_ranks = {t.get("tag"): i for i, t in enumerate(tags)}
-    agents_rank = tag_ranks.get("agents", 999)
-    pytorch_rank = tag_ranks.get("pytorch", 999)
-    agents_signal = (
-        "**Agent tag crossover**: Generic ML tags (pytorch, tensorflow) have been eclipsed by "
-        "`agents` as the #2 most-demanded skill across postings. Confirms the market shift toward "
-        "agentic AI at hiring layer."
-        if agents_rank < pytorch_rank
-        else "**Agent tag crossover**: `agents` is now a top-tier demanded skill, on par with "
-             "generic ML tags like pytorch and tensorflow."
+    top_tag = top_tags[0]
+    tag_observation = (
+        f"**Most frequent returned tag**: `{top_tag['tag']}` appears on "
+        f"{fmt_thousands(top_tag['count'])} indexed roles. A role can carry multiple tags."
     )
-
-    # Signal 2: research premium vs. generative-ai
-    def tag_row(name: str) -> dict[str, Any]:
-        for t in tags:
-            if t.get("tag") == name:
-                return t
-        return {}
-
-    research_tag = tag_row("research")
-    genai_tag = tag_row("generative-ai")
-    research_avg = int(research_tag.get("avg_salary", 0) or 0)
-    genai_avg = int(genai_tag.get("avg_salary", 0) or 0)
-    research_count = int(research_tag.get("count", 0) or 0)
-    genai_count = int(genai_tag.get("count", 0) or 0)
-    if research_avg > 0 and genai_avg > 0 and research_avg > genai_avg and genai_count > 0:
-        premium_k = (research_avg - genai_avg) // 1000
-        ratio = genai_count / research_count if research_count else 0
-        research_signal = (
-            f"**Research premium**: Roles tagged `research` pay a ~${premium_k}k premium over "
-            f"`generative-ai` roles despite gen-AI having {ratio:.1f}× more openings. The "
-            f"most-advertised skill isn't the best-paid."
-        )
-    else:
-        research_signal = (
-            "**Research premium**: Specialized research roles continue to command salary premiums "
-            "over more generic generative-AI postings, despite gen-AI having far more openings."
-        )
-
-    # Signal 3: MCP verification gap
-    mcp_signal = (
-        f"**MCP verification gap**: Only ~{nhs_mcp_pct:.0f}% of sites claiming MCP/agent-readiness "
-        f"survive a live JSON-RPC handshake. The ecosystem is "
-        f"{100 - nhs_mcp_pct:.0f}% documentation-only."
-        if nhs_total
-        else "**MCP verification gap**: Most sites claiming MCP/agent-readiness do not survive a "
-             "live JSON-RPC handshake. The ecosystem remains largely documentation-only."
+    salary_observation = (
+        f"**Salary coverage**: {fmt_thousands(jobs_with_salary)} of "
+        f"{fmt_thousands(total_jobs)} roles disclose salary ({salary_disclosed_pct:.1f}%). "
+        "Salary summaries cover those disclosures."
+    )
+    mcp_observation = (
+        f"**MCP coverage**: {fmt_thousands(nhs_mcp)} of {fmt_thousands(nhs_total)} "
+        f"indexed entries are marked MCP-verified ({nhs_mcp_pct:.1f}%) in the NHS snapshot."
     )
 
     # ---------- Markdown assembly ----------
     lines: list[str] = []
-    lines.append("# State of AI Engineering — Q2 2026 Live Snapshot")
+    lines.append("# State of AI Engineering: Catalog Snapshot")
     lines.append("")
     lines.append(f"**Updated**: {today}")
     lines.append("")
     lines.append(
-        "A single reference combining hiring, compensation, and infrastructure-verification data "
-        "from the AI engineering ecosystem. Sources are live public APIs from "
-        "[aidevboard.com](https://aidevboard.com) and [nothumansearch.ai](https://nothumansearch.ai)."
+        "Correction (2026-11-24): The previous zero-role figures and trend claims "
+        "were not validated and have been withdrawn. Figures below describe the "
+        "linked catalog snapshots."
     )
+    lines.append("")
+    lines.append(
+        "Hiring figures describe [AI Dev Board](https://aidevboard.com)'s indexed roles. "
+        "Infrastructure figures describe [Not Human Search](https://nothumansearch.ai)'s "
+        "indexed websites. Both catalogs are operated by 8BitConcepts."
+    )
+    lines.append("")
+    lines.append(f"Source timestamps: ADB {ov['updated_at']}; NHS {digest['generated_at']}.")
     lines.append("")
 
     # Topline numbers
@@ -186,9 +208,9 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     lines.append(
         f"| Salary-disclosed roles | {fmt_thousands(jobs_with_salary)} ({salary_disclosed_pct:.1f}%) |"
     )
-    lines.append(f"| Agent-ready sites indexed | **{fmt_thousands(nhs_total)}** |")
+    lines.append(f"| Websites indexed by NHS | **{fmt_thousands(nhs_total)}** |")
     lines.append(
-        f"| MCP servers verified (live probe) | **{fmt_thousands(nhs_mcp)}** ({nhs_mcp_pct:.1f}%) |"
+        f"| Entries marked MCP-verified by NHS | **{fmt_thousands(nhs_mcp)}** ({nhs_mcp_pct:.1f}%) |"
     )
     lines.append("")
 
@@ -221,18 +243,20 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     lines.append("")
     lines.append("| Mode | Roles | Avg Salary |")
     lines.append("|---|---:|---:|")
-    for key in ("onsite", "remote", "hybrid"):
+    for key in ["onsite", "remote", "hybrid"] + [
+        key for key in ws_map if key not in ("onsite", "remote", "hybrid")
+    ]:
         w = ws_map.get(key)
         if not w:
             continue
-        label = {"onsite": "Onsite", "remote": "Remote", "hybrid": "Hybrid"}[key]
+        label = key.capitalize()
         count = int(w.get("count", 0) or 0)
         avg_salary = fmt_salary(w.get("avg_salary", 0))
         lines.append(f"| {label} | {fmt_thousands(count)} | {avg_salary} |")
     lines.append("")
 
     # Seniority mix
-    lines.append("## Seniority mix")
+    lines.append("## Most frequent seniority labels")
     lines.append("")
     lines.append("| Level | Roles |")
     lines.append("|---|---:|")
@@ -243,27 +267,27 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     lines.append("")
 
     # Key signals
-    lines.append("## Key signals")
+    lines.append("## Observations from these catalogs")
     lines.append("")
-    lines.append(f"- {agents_signal}")
-    lines.append(f"- {research_signal}")
-    lines.append(f"- {mcp_signal}")
+    lines.append(f"- {tag_observation}")
+    lines.append(f"- {salary_observation}")
+    lines.append(f"- {mcp_observation}")
     lines.append("")
 
     # Companion research
-    lines.append("## Companion research (auto-refreshed weekly)")
+    lines.append("## Related research")
     lines.append("")
     lines.append(
         "- [Q2 2026 AI Hiring Snapshot](https://8bitconcepts.com/research/q2-2026-ai-hiring-snapshot.html) "
-        "— full hiring writeup"
+        "(hiring writeup)"
     )
     lines.append(
         "- [Q2 2026 AI Compensation by Skill](https://8bitconcepts.com/research/q2-2026-ai-compensation-by-skill.html) "
-        "— salary by tag"
+        "(salary by tag)"
     )
     lines.append(
         "- [Q2 2026 MCP Ecosystem Health](https://8bitconcepts.com/research/q2-2026-mcp-ecosystem-health.html) "
-        "— verification rates"
+        "(infrastructure coverage)"
     )
     lines.append(
         "- [Research Atlas (full set)](https://8bitconcepts.com/research/overview.html)"
@@ -274,10 +298,10 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     lines.append("## Data APIs (free, no auth)")
     lines.append("")
     lines.append(
-        "- ADB: `https://aidevboard.com/api/v1/stats` — hiring, salaries, companies, tags"
+        "- ADB: `https://aidevboard.com/api/v1/stats` (hiring, salaries, companies, tags)"
     )
     lines.append(
-        "- NHS: `https://nothumansearch.ai/digest.json` — MCP ecosystem, verification, categories"
+        "- NHS: `https://nothumansearch.ai/digest.json` (indexed infrastructure and categories)"
     )
     lines.append("")
 
@@ -285,17 +309,26 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     lines.append("## Attribution")
     lines.append("")
     lines.append(
-        "Free to cite. Attribute to *aidevboard.com* and *nothumansearch.ai*. For reporters: "
-        "happy to supply specific data cuts — email hello@8bitconcepts.com."
+        "Published by [8BitConcepts](https://8bitconcepts.com/?utm_source=github-gist&utm_medium=referral&utm_campaign=master-snapshot). "
+        "[AI consulting and workflow automation](https://8bitconcepts.com/work-with-us.html?utm_source=github-gist&utm_medium=referral&utm_campaign=master-snapshot). "
+        "Free to cite with attribution to AI Dev Board and Not Human Search. "
+        "Questions: hello@8bitconcepts.com."
     )
 
     return "\n".join(lines) + "\n"
 
 
 def update_gist(md_text: str) -> bool:
-    """Write markdown to a tempfile and push to the master gist via `gh gist edit`.
-    Non-fatal on failure — logs and returns False.
-    """
+    """Publish only to the expected owned gist, then verify all changed fields."""
+    current = subprocess.run(["gh", "api", f"gists/{GIST_ID}"], capture_output=True, text=True)
+    if current.returncode != 0:
+        print("   Gist preflight read failed", file=sys.stderr)
+        return False
+    data = json.loads(current.stdout)
+    if (data.get("owner", {}).get("login") != "unitedideas" or data.get("public") is not True
+            or GIST_MD_FILENAME not in data.get("files", {})):
+        print("   Gist owner, visibility or filename differs from expected", file=sys.stderr)
+        return False
     tmpdir = Path(tempfile.gettempdir()) / "master-snapshot-gist"
     try:
         tmpdir.mkdir(parents=True, exist_ok=True)
@@ -303,19 +336,29 @@ def update_gist(md_text: str) -> bool:
         md_path.write_text(md_text, encoding="utf-8")
         print(f"   Wrote gist file to {md_path}")
     except Exception as e:
-        print(f"   Gist temp write failed (non-fatal): {e}", file=sys.stderr)
+        print(f"   Gist temp write failed: {type(e).__name__}", file=sys.stderr)
         return False
 
-    cmd = ["gh", "gist", "edit", GIST_ID, "--filename", GIST_MD_FILENAME, "--", str(md_path)]
+    cmd = ["gh", "gist", "edit", GIST_ID, "--desc", GIST_DESCRIPTION,
+           "--filename", GIST_MD_FILENAME, "--", str(md_path)]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         print(
-            f"   gh gist edit {GIST_MD_FILENAME} failed (non-fatal): {r.stderr[:400]}",
+            f"   gh gist edit failed with exit status {r.returncode}",
             file=sys.stderr,
         )
         return False
-    print(f"   Gist updated: {GIST_MD_FILENAME}")
-    print(f"   Gist live: {GIST_URL}")
+    readback = subprocess.run(["gh", "api", f"gists/{GIST_ID}"], capture_output=True, text=True)
+    if readback.returncode != 0:
+        print("   Gist write returned success; readback failed", file=sys.stderr)
+        return False
+    stored = json.loads(readback.stdout)
+    if (stored.get("owner", {}).get("login") != "unitedideas" or stored.get("public") is not True
+            or stored.get("description") != GIST_DESCRIPTION
+            or stored.get("files", {}).get(GIST_MD_FILENAME, {}).get("content") != md_text):
+        print("   Gist readback differs from requested content or description", file=sys.stderr)
+        return False
+    print(f"   Gist content and description verified: {GIST_URL}")
     return True
 
 
@@ -324,7 +367,7 @@ def main() -> int:
         description="Regenerate the State of AI Engineering master gist from live data."
     )
     parser.add_argument("--dry-run", action="store_true", help="Fetch + render, don't write")
-    parser.add_argument("--once", action="store_true", help="Render + log, skip gist edit")
+    parser.add_argument("--once", action="store_true", help="One run including publication (same as default)")
     args = parser.parse_args()
 
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -341,7 +384,13 @@ def main() -> int:
     except Exception as e:
         print(f"  NHS digest fetch failed: {e}", file=sys.stderr)
         return 2
-    ov = stats.get("overview", {}) or {}
+    print("2. Validating sources and rendering master markdown...")
+    try:
+        md_text = build_markdown(stats, digest, today)
+    except (ValueError, TypeError, KeyError) as e:
+        print(f"   Source validation failed: {e}", file=sys.stderr)
+        return 2
+    ov = stats["overview"]
     print(
         f"   ADB: {ov.get('total_jobs')} jobs / {ov.get('total_companies')} cos / "
         f"{ov.get('new_this_week')} new this wk"
@@ -351,8 +400,6 @@ def main() -> int:
         f"{digest.get('llms_txt_count')} llms.txt"
     )
 
-    print("2. Rendering master markdown...")
-    md_text = build_markdown(stats, digest, today)
     print(f"   Rendered {len(md_text)} chars")
 
     if args.dry_run:
@@ -362,9 +409,6 @@ def main() -> int:
         return 0
 
     if args.once:
-        # Still push the gist in --once mode (there's no "commit" step for this script,
-        # the gist IS the artifact). Mirror the hiring script's spirit: --once is for
-        # validation, but we still want to see the live update when testing.
         print("\n3. Updating master gist (--once: will still push gist)...")
     else:
         print("\n3. Updating master gist...")
@@ -372,14 +416,14 @@ def main() -> int:
     try:
         ok = update_gist(md_text)
     except Exception as e:
-        print(f"   Gist update unhandled exception (non-fatal): {e}", file=sys.stderr)
+        print(f"   Gist update failed: {type(e).__name__}", file=sys.stderr)
         ok = False
 
     if ok:
         print("\n=== Done. ===")
         return 0
-    print("\n=== Done (gist update failed — see above). ===")
-    return 0  # Non-fatal — mirror hiring script behavior
+    print("\n=== Publication failed; inspect the current gist before retrying. ===")
+    return 1
 
 
 if __name__ == "__main__":

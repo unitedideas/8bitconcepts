@@ -1,0 +1,311 @@
+{
+  "companies": [
+    {
+      "company": "OpenAI",
+      "roles": 410,
+      "avg_salary": 342875
+    },
+    {
+      "company": "Anthropic",
+      "roles": 410,
+      "avg_salary": 386805
+    },
+    {
+      "company": "LILT",
+      "roles": 364
+    },
+    {
+      "company": "Anduril",
+      "roles": 288,
+      "avg_salary": 201740
+    },
+    {
+      "company": "Nebius",
+      "roles": 191,
+      "avg_salary": 187803
+    },
+    {
+      "company": "xAI",
+      "roles": 154,
+      "avg_salary": 209824
+    },
+    {
+      "company": "Graphcore",
+      "roles": 147
+    },
+    {
+      "company": "Helsing",
+      "roles": 130,
+      "avg_salary": 153625
+    },
+    {
+      "company": "Harvey AI",
+      "roles": 127,
+      "avg_salary": 245110
+    },
+    {
+      "company": "SpaceX",
+      "roles": 116,
+      "avg_salary": 190608
+    },
+    {
+      "company": "Scale AI",
+      "roles": 113,
+      "avg_salary": 239626
+    },
+    {
+      "company": "FluidStack",
+      "roles": 109,
+      "avg_salary": 250000
+    },
+    {
+      "company": "Sierra",
+      "roles": 108
+    },
+    {
+      "company": "Waymo",
+      "roles": 104,
+      "avg_salary": 259246
+    },
+    {
+      "company": "Horizon3 AI",
+      "roles": 98,
+      "avg_salary": 232548
+    },
+    {
+      "company": "Lila Sciences",
+      "roles": 92,
+      "avg_salary": 235191
+    },
+    {
+      "company": "Perplexity",
+      "roles": 90,
+      "avg_salary": 400000
+    },
+    {
+      "company": "Mercor",
+      "roles": 81,
+      "avg_salary": 174250
+    },
+    {
+      "company": "Databricks",
+      "roles": 71,
+      "avg_salary": 219690
+    },
+    {
+      "company": "Cohere",
+      "roles": 69
+    }
+  ],
+  "experience_levels": [
+    {
+      "level": "senior",
+      "count": 2960
+    },
+    {
+      "level": "lead",
+      "count": 2653
+    },
+    {
+      "level": "mid",
+      "count": 2163
+    },
+    {
+      "level": "junior",
+      "count": 734
+    },
+    {
+      "level": "principal",
+      "count": 606
+    }
+  ],
+  "overview": {
+    "jobs_with_salary": 3518,
+    "new_this_week": 497,
+    "total_companies": 440,
+    "total_jobs": 9116,
+    "updated_at": "2026-11-24T19:24:01Z"
+  },
+  "salary": {
+    "average": 236867,
+    "distribution": [
+      {
+        "range": "under_100k",
+        "count": 54
+      },
+      {
+        "range": "100k_150k",
+        "count": 264
+      },
+      {
+        "range": "150k_200k",
+        "count": 867
+      },
+      {
+        "range": "200k_250k",
+        "count": 1060
+      },
+      {
+        "range": "250k_300k",
+        "count": 671
+      },
+      {
+        "range": "300k_400k",
+        "count": 397
+      },
+      {
+        "range": "400k_plus",
+        "count": 205
+      }
+    ],
+    "max": 850000,
+    "median": 223750,
+    "min": 41000,
+    "p25": 183656,
+    "p75": 274500
+  },
+  "tags": [
+    {
+      "tag": "agents",
+      "count": 3009,
+      "avg_salary": 244327
+    },
+    {
+      "tag": "llm",
+      "count": 2715,
+      "avg_salary": 253478
+    },
+    {
+      "tag": "cloud",
+      "count": 1896,
+      "avg_salary": 228988
+    },
+    {
+      "tag": "payments",
+      "count": 1560,
+      "avg_salary": 210865
+    },
+    {
+      "tag": "distributed-systems",
+      "count": 1526,
+      "avg_salary": 262626
+    },
+    {
+      "tag": "generative-ai",
+      "count": 1355,
+      "avg_salary": 243137
+    },
+    {
+      "tag": "healthcare",
+      "count": 1271,
+      "avg_salary": 223792
+    },
+    {
+      "tag": "robotics",
+      "count": 1261,
+      "avg_salary": 207098
+    },
+    {
+      "tag": "data-pipeline",
+      "count": 978,
+      "avg_salary": 245961
+    },
+    {
+      "tag": "pytorch",
+      "count": 971,
+      "avg_salary": 251563
+    },
+    {
+      "tag": "fine-tuning",
+      "count": 823,
+      "avg_salary": 254659
+    },
+    {
+      "tag": "research",
+      "count": 804,
+      "avg_salary": 294810
+    },
+    {
+      "tag": "search",
+      "count": 695,
+      "avg_salary": 291305
+    },
+    {
+      "tag": "reinforcement-learning",
+      "count": 672,
+      "avg_salary": 288901
+    },
+    {
+      "tag": "deep-learning",
+      "count": 642,
+      "avg_salary": 238611
+    },
+    {
+      "tag": "infrastructure",
+      "count": 630,
+      "avg_salary": 255958
+    },
+    {
+      "tag": "machine-learning",
+      "count": 620,
+      "avg_salary": 248879
+    },
+    {
+      "tag": "computer-vision",
+      "count": 601,
+      "avg_salary": 208830
+    },
+    {
+      "tag": "security",
+      "count": 600,
+      "avg_salary": 244409
+    },
+    {
+      "tag": "gpu",
+      "count": 564,
+      "avg_salary": 240535
+    },
+    {
+      "tag": "alignment",
+      "count": 495,
+      "avg_salary": 368156
+    },
+    {
+      "tag": "autonomous-vehicles",
+      "count": 494,
+      "avg_salary": 219684
+    },
+    {
+      "tag": "api-design",
+      "count": 489,
+      "avg_salary": 224449
+    },
+    {
+      "tag": "mlops",
+      "count": 486,
+      "avg_salary": 235958
+    },
+    {
+      "tag": "tensorflow",
+      "count": 336,
+      "avg_salary": 241279
+    }
+  ],
+  "workplace": [
+    {
+      "type": "onsite",
+      "count": 4975,
+      "avg_salary": 221556
+    },
+    {
+      "type": "remote",
+      "count": 2445,
+      "avg_salary": 230838
+    },
+    {
+      "type": "hybrid",
+      "count": 1696,
+      "avg_salary": 286169
+    }
+  ]
+}
