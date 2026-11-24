@@ -201,7 +201,7 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     lines.append("")
     lines.append("| Metric | Value |")
     lines.append("|---|---:|")
-    lines.append(f"| Active AI/ML engineering roles | **{fmt_thousands(total_jobs)}** |")
+    lines.append(f"| Active roles indexed by AI Dev Board | **{fmt_thousands(total_jobs)}** |")
     lines.append(f"| Hiring companies indexed | **{fmt_thousands(total_companies)}** |")
     lines.append(f"| New roles posted this week | **{fmt_thousands(new_this_week)}** |")
     lines.append(f"| Median salary (disclosed) | **{fmt_salary(median)}** |")
@@ -215,7 +215,7 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     lines.append("")
 
     # Top 10 companies
-    lines.append("## Top 10 AI companies hiring")
+    lines.append("## Top 10 hiring companies in this catalog")
     lines.append("")
     lines.append("| Rank | Company | Roles | Avg Salary |")
     lines.append("|---:|---|---:|---:|")
@@ -227,7 +227,7 @@ def build_markdown(stats: dict[str, Any], digest: dict[str, Any], today: str) ->
     lines.append("")
 
     # Top 15 tags
-    lines.append("## Top 15 most-demanded skill tags")
+    lines.append("## Top 15 returned tags by posting count")
     lines.append("")
     lines.append("| Tag | Postings | Avg Salary |")
     lines.append("|---|---:|---:|")

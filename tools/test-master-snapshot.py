@@ -49,7 +49,7 @@ class MasterSnapshotTests(unittest.TestCase):
 
     def test_captured_data_has_real_counts_and_scoped_observations(self):
         text = self.render()
-        self.assertIn("| Active AI/ML engineering roles | **9,116** |", text)
+        self.assertIn("| Active roles indexed by AI Dev Board | **9,116** |", text)
         self.assertIn("| Hiring companies indexed | **440** |", text)
         self.assertIn("| Entries marked MCP-verified by NHS | **967** (15.0%) |", text)
         self.assertRegex(text, r"\| \d+ \| OpenAI \| 410 \|")
